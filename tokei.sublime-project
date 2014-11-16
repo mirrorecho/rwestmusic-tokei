@@ -1,0 +1,10 @@
+{
+	"folders":
+	[
+		{
+			"follow_symlinks": true,
+			"path": "."
+		}
+	],
+	"virtualenv": "/Users/randallwest/Code/venvs/abjad_2.15"
+}
