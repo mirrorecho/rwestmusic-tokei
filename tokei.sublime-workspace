@@ -62,12 +62,20 @@
 				"buffer_size": 251,
 				"line_ending": "Unix"
 			}
+		},
+		{
+			"file": "caesium.py",
+			"settings":
+			{
+				"buffer_size": 19,
+				"line_ending": "Unix"
+			}
 		}
 	],
 	"build_system": "Packages/Virtualenv/Python + Virtualenv.sublime-build",
 	"command_palette":
 	{
-		"height": 398.0,
+		"height": 414.0,
 		"selected_items":
 		[
 			[
@@ -87,7 +95,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 608.0
+		"width": 522.0
 	},
 	"console":
 	{
@@ -109,7 +117,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/randallwest/Code/mirrorecho/rwestmusic-tokei"
+		"/home/randall/Code/mirrorecho/rwestmusic-tokei"
 	],
 	"file_history":
 	[
@@ -180,8 +188,8 @@
 						"selection":
 						[
 							[
-								237,
-								237
+								251,
+								251
 							]
 						],
 						"settings":
@@ -298,6 +306,34 @@
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "caesium.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 19,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								19,
+								19
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
 					"type": "text"
 				}
 			]
