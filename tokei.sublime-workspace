@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"start",
+				"start_pitch"
+			],
+			[
+				"score",
+				"scoretools"
+			],
+			[
 				"flute",
 				"flute2_staff"
 			],
@@ -65,6 +73,14 @@
 		},
 		{
 			"file": "caesium.py",
+			"settings":
+			{
+				"buffer_size": 1327,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "clepsydra.py",
 			"settings":
 			{
 				"buffer_size": 19,
@@ -188,8 +204,8 @@
 						"selection":
 						[
 							[
-								251,
-								251
+								231,
+								231
 							]
 						],
 						"settings":
@@ -314,6 +330,34 @@
 					"semi_transient": false,
 					"settings":
 					{
+						"buffer_size": 1327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								313,
+								313
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": -0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "clepsydra.py",
+					"semi_transient": false,
+					"settings":
+					{
 						"buffer_size": 19,
 						"regions":
 						{
@@ -333,7 +377,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
@@ -372,7 +416,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 100.0
+		"height": 260.0
 	},
 	"output.find_results":
 	{
