@@ -1,6 +1,7 @@
 from abjad import *
 from collections import OrderedDict
 
+# TO DO... move this to a library for use in other pieces...
 class Part(scoretools.Container):
     
     def __init__(self, instrument=None):
@@ -14,33 +15,72 @@ class Part(scoretools.Container):
         return staff
 
 class Arrangement():
+    """
+    Represents a collection of parts. Parts should be added in score order.
+    """
+
+    # TO DOs:
+    # - get/set length
+    # - option to hide empty parts/staves
+    # - fill parts with rests/skips
+    # - arrange at certain duration
+    # - specify paper/book/misc lilypond output settings
 
     score = scoretools.Score([])
 
     parts = OrderedDict()
 
     def __init__(self):
+        pass
 
-        self.parts['flute1'] = Part(instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
-        self.parts['flute2'] = Part(instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
-        self.parts['oboe1'] = Part(instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
-        self.parts['oboe2'] = Part(instrumenttools.Oboe(instrument_name="Oboe 2", short_instrument_name="ob.2"))
-        self.parts['clarinet1'] = Part(instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 1 in Bb", short_instrument_name="cl.1"))
-        self.parts['clarinet2'] = Part(instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 2 in Bb", short_instrument_name="cl.2"))
-        self.parts['bassoon1'] = Part(instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"))
-        self.parts['bassoon2'] = Part(instrumenttools.Bassoon(instrument_name="Bassoon 2", short_instrument_name="bsn.2"))
+    def add_part(self, name, instrument=None):
+        self.parts[name] = Part(instrument)
 
+    def make_score(self):
+
+        self.score = scoretools.Score([])
+
+        self.score.extend([self.parts[x].make_staff() for x in self.parts])
+
+        return self.score
+
+    def partial_score(self, part_names):
+        score = scoretools.Score([])
+
+        score.extend([self.parts[x].make_staff() for x in part_names])
+
+        return score
+
+    def append_arrangement(self, arrangement):
+        for part_name in self.parts:
+            self.parts[part_name].extend(arrangement.parts[part_name])
+
+
+class TokeiArrangement(Arrangement):
+
+
+    def __init__(self):
+
+        self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
+        self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
+        self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
+        self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 2", short_instrument_name="ob.2"))
+        self.add_part(name='clarinet1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 1 in Bb", short_instrument_name="cl.1"))
+        self.add_part(name='clarinet2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 2 in Bb", short_instrument_name="cl.2"))
+        self.add_part(name='bassoon1', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"))
+        self.add_part(name='bassoon2', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 2", short_instrument_name="bsn.2"))
+
+        self.add_part(name='horn1', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 1", short_instrument_name="hn.1"))
+        self.add_part(name='horn2', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 2", short_instrument_name="hn.2"))
+        self.add_part(name='trumpet', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 1", short_instrument_name="tpt.1"))
+        self.add_part(name='trumpet', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 2", short_instrument_name="tpt.2"))
+        self.add_part(name='trombone1', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"))
+        self.add_part(name='trombone2', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"))
+        self.add_part(name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"))
+
+        super().__init__()
 
        
-        # self.horn1 = scoretools.Container()
-        # self.horn2 = scoretools.Container()
-        # self.trumpet1 = scoretools.Container()
-        # self.trumpet2 = scoretools.Container()
-        # self.trombone1 = scoretools.Container()
-        # self.trombone2 = scoretools.Container()
-        # # is tuba happening?
-        # self.tuba = scoretools.Container()
-
         # # to do... figure out instrument (and staff) changes for perc
         # self.perc1 = scoretools.Container()
         # self.perc2 = scoretools.Container()
@@ -98,17 +138,3 @@ class Arrangement():
         # self.bass_1 =  scoretools.Container()
         # self.bass_2 =  scoretools.Container()
 
-    def make_score(self):
-
-        self.score = scoretools.Score([])
-
-        self.score.extend([self.parts[x].make_staff() for x in self.parts])
-
-        return self.score
-
-    def partial_score(self, part_names):
-        score = scoretools.Score([])
-
-        score.extend([self.parts[x].make_staff() for x in part_names])
-
-        return score

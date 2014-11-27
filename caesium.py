@@ -1,6 +1,6 @@
 from abjad import *
 
-
+# Just messing around with ideas at this point...
 
 class PitchArrayArranger()
 
