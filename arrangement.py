@@ -1,5 +1,6 @@
 from abjad import *
 from collections import OrderedDict
+from shutil import copyfile
 
 # TO DO... move this to a library for use in other pieces...
 class Part(scoretools.Container):
@@ -14,7 +15,7 @@ class Part(scoretools.Container):
         staff.extend(self)
         return staff
 
-class Arrangement():
+class Arrangement:
     """
     Represents a collection of parts. Parts should be added in score order.
     """
@@ -26,12 +27,17 @@ class Arrangement():
     # - arrange at certain duration
     # - specify paper/book/misc lilypond output settings
 
-    score = scoretools.Score([])
+    score = None # scoretools.Score([])
 
-    parts = OrderedDict()
+    parts = None # OrderedDict()
+
+    project_path = "/home/randall/Code/mirrorecho/rwestmusic-tokei"
+
+    name = "full-score"
 
     def __init__(self):
-        pass
+        self.parts = OrderedDict()
+        self.score = scoretools.Score([])
 
     def add_part(self, name, instrument=None):
         self.parts[name] = Part(instrument)
@@ -42,7 +48,39 @@ class Arrangement():
 
         self.score.extend([self.parts[x].make_staff() for x in self.parts])
 
-        return self.score
+    def make_pdf(self, subfolder = None):
+        """
+        similar to abjad's builtin show()... but uses arrangement-specific file path/name instead of the abjad default,
+        creates and returns pdf filename without showing it, and pdf file name does NOT increment
+        """
+        self.make_score()
+        assert '__illustrate__' in dir(self.score)
+        result = topleveltools.persist(self.score).as_pdf()
+        pdf_file_path = result[0]
+        abjad_formatting_time = result[1]
+        lilypond_rendering_time = result[2]
+        success = result[3]
+        if success:
+            subfolder = subfolder + "/" if subfolder is not None else ""
+            project_pdf_file_path = self.project_path + "/pdf/" + subfolder + self.name + ".pdf"
+            
+            # not sure why save_last_pdf_as doesn't work (UnicodeDecodeError)... so just using copyfile isntead
+            #systemtools.IOManager.save_last_pdf_as(project_pdf_file_path)
+
+            copyfile(pdf_file_path, project_pdf_file_path)
+
+            return project_pdf_file_path
+        if return_timing:
+            return abjad_formatting_time, lilypond_rendering_time
+
+    def show_pdf(self):
+        """
+        calls make_pdf and then shows the pdf: similar to abjad's builtin show() method... 
+        but uses arrangement-specific file path/name instead of the abjad default 
+        and pdf filename does NOT increment
+        """
+        pdf_file_path = self.make_pdf()
+        systemtools.IOManager.open_file(pdf_file_path)
 
     def partial_score(self, part_names):
         score = scoretools.Score([])
@@ -61,6 +99,8 @@ class TokeiArrangement(Arrangement):
 
     def __init__(self):
 
+        super().__init__()
+
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
         self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -77,8 +117,6 @@ class TokeiArrangement(Arrangement):
         self.add_part(name='trombone1', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"))
         self.add_part(name='trombone2', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"))
         self.add_part(name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"))
-
-        super().__init__()
 
        
         # # to do... figure out instrument (and staff) changes for perc
