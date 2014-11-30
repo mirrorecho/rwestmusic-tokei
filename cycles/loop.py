@@ -1,5 +1,6 @@
 from abjad import *
-from arrangement import TokeiArrangement
+from arrangement import TokeiArrangement, Part, PianoStaffPart
+from cycles.transform import AddData
 
 class Cycle:
     """
@@ -19,12 +20,14 @@ class Cycle:
         """
         fills empty parts in this cycle's arrangement with measures of full length skips so that cycles align properly
         """
+        
         for part_name, part in self.arrangement.parts.items():
-            if len(part) == 0:
-                #print([d.pair for d in self.data["measures_durations"]])
+            if part.is_simultaneous:
+                for part_line in part:
+                    if len(part_line) == 0:
+                        part_line.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
+            elif len(part) == 0:
                 part.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
-            #else:
-                #print(part.select_leaves())
 
 class CycleLoop:
     cycles = []
@@ -40,6 +43,13 @@ class CycleLoop:
 
     def add_transform(self, transform):
         self.transforms.append(transform)
+
+    def add_data(self, name, value, **kwargs):
+        self.add_transform(AddData(
+                        name, 
+                        value=value,
+                        **kwargs
+                        ))
 
     def add_cycle(self, index=None, add_flags=[]):
         cycle = Cycle()
@@ -70,8 +80,6 @@ class CycleLoop:
 
     def make_arrangement(self):
         for cycle in self.cycles:
-            print(cycle)
-            print(cycle.arrangement)
             cycle.fill_skips()
         arrangement = self.cycles[0].arrangement
         for cycle in self.cycles[1:]:
