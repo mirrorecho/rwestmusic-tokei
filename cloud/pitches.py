@@ -2,6 +2,8 @@ from abjad import *
 
 from arrangement import Arrangement
 
+import random
+
 def get_diatonic_spread(pitch_line):
     pass
 
@@ -29,8 +31,31 @@ class TallyAppBase:
     def tally_pitch_across_columns(self, cloud, line_index, column_index, across_colum_index):
         pass
 
-class TallyNoParallels(TallyAppBase):
-        pass
+class TallyParallelIntervals(TallyAppBase):
+    def __init__(self, interval_ratings=[(0,-100),], by_pitch_class=True, line_weights=None, column_weights=None):
+        # default is to dock off 100 points for parallel unisons/octaves
+        self.interval_ratings = interval_ratings
+        self.by_pitch_class = by_pitch_class
+        super().__init__(line_weights=line_weights, column_weights=column_weights)
+
+    def tally_pitch_across_lines(self, cloud, line_index, column_index, across_line_index):
+        # only makes sense starting from 2nd column:
+        if column_index > 0:
+            melodic_interval_1 = cloud.pitch_lines[line_index][column_index] - cloud.pitch_lines[line_index][column_index-1]
+            melodic_interval_2 = cloud.pitch_lines[across_line_index][column_index] - cloud.pitch_lines[across_line_index][column_index-1]
+            #if motion is parallel...
+            if melodic_interval_1 == melodic_interval_2:
+                interval = abs(cloud.pitch_lines[line_index][column_index] - cloud.pitch_lines[across_line_index][column_index])
+                if self.by_pitch_class:
+                    interval = interval % 12
+                for i,rating in self.interval_ratings:
+                    if interval == i:
+                        cloud.add_tally(line_index, column_index, rating)
+                        cloud.add_tally(across_line_index, column_index, rating)
+
+
+                
+        
 
 class CloudPitches:
 
@@ -45,7 +70,7 @@ class CloudPitches:
         
         # fill initial tallies with 0s 
         # also QUESTION: is pitch-by-pitch tally enough? or should the entire lines/columns be tallied as well?
-        self.tallies = [[0] * num_columns] * num_lines
+        self.tallies = [[0] * self.num_columns] * self.num_lines
         # using a running total to avoid looping/summing up repeatedly to get total... does this even make a difference?
         self.tally_total = 0
 
@@ -61,13 +86,13 @@ class CloudPitches:
         self.tally_apps.append(tally_app)
 
     def get_tallies(self):
-        for line_index in range(num_lines):
+        for line_index in range(self.num_lines):
             
             # line tallies for all apps
             for app in self.tally_apps:
                 app.tally_line(self, line_index)
             
-            for column_index in range(num_columns):
+            for column_index in range(self.num_columns):
                 
                 if line_index == 0:
                     #column tallies for all apps
@@ -85,9 +110,28 @@ class CloudPitches:
 
                 for across_column_index in range(column_index):
                     for app in self.tally_apps:
-                        #cross-column tallies (e.g. voice leading) for all lines before this one
-                        app.tally_pitch_across_lines(self, line_index, column_index, across_line_index) 
+                        #cross-column tallies (e.g. overall voice direction)... QUESTION - will this even be useful?
+                        app.tally_pitch_across_columns(self, line_index, column_index, across_column_index) 
 
+    # WORTH IT...?
+    # def voice_leading_interval(line_index1, line_index2, column_index):
+    #     inverval_line1 = cloud[line_index1][column_index] - cloud[line_index1][column_index-1]
+    #     inverval_line2 = cloud[line_index2][column_index] - cloud[line_index2][column_index-1]
+    #     return interval_line1 - interval_line2 if cloud[line_index1][column_index] > cloud[line_index2][column_index] else interval_line2 - interval_line1
+
+    def randomize_column(self, column_index):
+        # any more efficient way to do this...?        
+        # TO DO... DON'T RANDOMIZE dont_touch_pitches
+        # a new list for the column
+        new_column = [x[column_index] for x in self.pitch_lines]
+        # randomize the new column
+        random.shuffle(new_column, random.random)
+        for i, line in enumerate(self.pitch_lines):
+            line[column_index] = new_column[i]
+
+    def rearrange(self):
+        pass
+    
 
     def save(self):
         pass

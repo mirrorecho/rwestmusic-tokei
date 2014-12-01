@@ -1,8 +1,8 @@
 from abjad import *
 
-from cloud.pitches import CloudPitches
+from cloud.pitches import CloudPitches, TallyParallelIntervals
 
-simple_line = [16, 14, 12, 11, 9, 7, 5, 4, 2, 0, -2, -3, -5, -7, -9, -10, -12, -14, -16, -17, -19, -21, -23, -24]
+simple_line = [0, 0, 0, 0, 16, 14, 12, 11, 9, 7, 5, 4, 2, 0, -2, -3, -5, -7, -9, -10, -12, -14, -16, -17, -19, -21, -23, -24]
 
 pitch_lines = [
         simple_line,
@@ -16,5 +16,9 @@ pitch_lines = [
     ]
 
 cloud = CloudPitches(project="rwestmusic-tokei", pitch_lines=pitch_lines)
+cloud.randomize_column(0)
+cloud.add_tally_app(TallyParallelIntervals())
+cloud.get_tallies()
+print(cloud.tallies)
 
-cloud.show()
+#cloud.show()
