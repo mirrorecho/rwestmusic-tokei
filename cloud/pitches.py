@@ -31,6 +31,34 @@ class TallyAppBase:
     def tally_pitch_across_columns(self, cloud, line_index, column_index, across_colum_index):
         pass
 
+class TallyMelodicIntervals(TallyAppBase):
+    def __init__(self, interval_ratings=[], over_incremental_add=None, by_pitch_class=False, bidirectional=True, line_weights=None, column_weights=None):
+        # default is to dock off 100 points for parallel unisons/octaves
+        self.interval_ratings = interval_ratings
+        self.by_pitch_class = by_pitch_class
+        self.bidirectional = bidirectional
+        self.over_incremental_add = over_incremental_add
+        super().__init__(line_weights=line_weights, column_weights=column_weights)
+
+    def tally_pitch(self, cloud, line_index, column_index):
+        # only makes sense starting from 2nd column:
+        if column_index > 0:
+            melodic_interval = cloud.pitch_lines[line_index][column_index] - cloud.pitch_lines[line_index][column_index-1]
+            if self.bidirectional:
+                melodic_interval = abs(melodic_interval)
+            if self.by_pitch_class:
+                melodic_interval = melodic_interval % 12
+            for i,rating in self.interval_ratings:
+                if melodic_interval == i:
+                    cloud.add_tally(line_index, column_index, rating)
+                    cloud.add_tally(line_index, column_index - 1, rating)
+            # can be used to dock for big jumps
+            if self.over_incremental_add is not None:
+                if abs(melodic_interval) > self.over_incremental_add[0]:
+                    over_rating = (abs(melodic_interval) - self.over_incremental_add[0]) * self.over_incremental_add[1]
+                    cloud.add_tally(line_index, column_index, over_rating)
+
+
 class TallyParallelIntervals(TallyAppBase):
     def __init__(self, interval_ratings=[(0,-100),], by_pitch_class=True, line_weights=None, column_weights=None):
         # default is to dock off 100 points for parallel unisons/octaves
@@ -68,15 +96,18 @@ class CloudPitches:
         self.dont_touch_pitches = None # [[]] # for future use
         self.tally_apps = []
         
-        # fill initial tallies with 0s 
-        # also QUESTION: is pitch-by-pitch tally enough? or should the entire lines/columns be tallied as well?
-        self.tallies = [[0] * self.num_columns] * self.num_lines
-        # using a running total to avoid looping/summing up repeatedly to get total... does this even make a difference?
-        self.tally_total = 0
+        self.reset_tally()
 
         self.voice_ranges = [["[A3 A5]"]] # TO DO... extrapolate last entry for total # of lines/columns
         self.auto_move_into_ranges = True
         self.octave_transpositions_allowed = True
+
+    def reset_tally(self):
+        # fill initial tallies with 0s 
+        # also QUESTION: is pitch-by-pitch tally enough? or should the entire lines/columns be tallied as well?
+        self.tallies = [[0 for c in range(self.num_columns)] for l in range(self.num_lines)]
+        # using a running total to avoid looping/summing up repeatedly to get total... does this even make a difference?
+        self.tally_total = 0        
 
     def add_tally(self, line_index, column_index, value):
         self.tallies[line_index][column_index] += value
@@ -86,6 +117,7 @@ class CloudPitches:
         self.tally_apps.append(tally_app)
 
     def get_tallies(self):
+        self.reset_tally()
         for line_index in range(self.num_lines):
             
             # line tallies for all apps
@@ -119,6 +151,35 @@ class CloudPitches:
     #     inverval_line2 = cloud[line_index2][column_index] - cloud[line_index2][column_index-1]
     #     return interval_line1 - interval_line2 if cloud[line_index1][column_index] > cloud[line_index2][column_index] else interval_line2 - interval_line1
 
+    def column(self, column_index):
+        return [line[column_index] for line in self.pitch_lines]
+
+    def tallies_column(self, column_index):
+        return [line[column_index] for line in self.tallies]
+
+    def worst_column_index(self):
+        column_sums = [sum(self.tallies_column(c)) for c in range(self.num_columns)]
+        return column_sums.index(min(column_sums))
+
+    def column_swap2_weighted(self, column_index):
+        tallies_column = self.tallies_column(column_index)
+        # RESEARCH THIS STATEMENT... HOW DOES IT WORK?
+        indeces_sorted = [i[0] for i in sorted(enumerate(tallies_column), key=lambda x:x[1])]
+        swap1 = None
+        swap2 = None
+        # TO DO... document this
+        for i in range(self.num_lines):
+            if swap1 is not None and random.randrange(0,5) < 3:
+                swap2 = indeces_sorted[i]
+                print("Swapping " + str(swap1) + " with " + str(swap2) + " ... now it's ...")
+                self.pitch_lines[swap1][column_index], self.pitch_lines[swap2][column_index] = self.pitch_lines[swap2][column_index], self.pitch_lines[swap1][column_index]
+                break
+            if random.randrange(0,2) == 0:
+                swap1 = indeces_sorted[i]
+
+
+
+
     def randomize_column(self, column_index):
         # any more efficient way to do this...?        
         # TO DO... DON'T RANDOMIZE dont_touch_pitches
@@ -128,6 +189,10 @@ class CloudPitches:
         random.shuffle(new_column, random.random)
         for i, line in enumerate(self.pitch_lines):
             line[column_index] = new_column[i]
+
+    def randomize_all_columns(self):
+        for c in range(self.num_columns):
+            self.randomize_column(c)
 
     def rearrange(self):
         pass

@@ -4,6 +4,102 @@
 		"selected_items":
 		[
 			[
+				"Ta",
+				"TallyMelodicIntervals  (class)"
+			],
+			[
+				"over",
+				"over_rating"
+			],
+			[
+				"melo",
+				"melodic_interval"
+			],
+			[
+				"mel",
+				"melodic_interval"
+			],
+			[
+				"tall",
+				"tally_total  (variable)"
+			],
+			[
+				"sw",
+				"swap1"
+			],
+			[
+				"ind",
+				"indeces_sorted"
+			],
+			[
+				"num",
+				"num_lines"
+			],
+			[
+				"line",
+				"line_index"
+			],
+			[
+				"ta",
+				"tallies_column  (function)"
+			],
+			[
+				"colu",
+				"column_index"
+			],
+			[
+				"column",
+				"column_index"
+			],
+			[
+				"p",
+				"pitch_lines  (variable)"
+			],
+			[
+				"Tall",
+				"TallyParallelIntervals  (class)"
+			],
+			[
+				"inter",
+				"interval_line2"
+			],
+			[
+				"col",
+				"column_index"
+			],
+			[
+				"cl",
+				"cloud"
+			],
+			[
+				"new",
+				"new_column"
+			],
+			[
+				"r",
+				"randomize_column  (function)"
+			],
+			[
+				"tally_note_acro",
+				"tally_note_across_lines"
+			],
+			[
+				"ac",
+				"across_line_index"
+			],
+			[
+				"colum",
+				"column_index"
+			],
+			[
+				"pitch",
+				"pitch_lines"
+			],
+			[
+				"voice",
+				"voice_ranges"
+			],
+			[
 				"pith",
 				"pitch_lines"
 			],
@@ -14,10 +110,6 @@
 			[
 				"proje",
 				"project_path"
-			],
-			[
-				"pitch",
-				"pitch_array"
 			],
 			[
 				"arrange",
@@ -299,7 +391,7 @@
 			"file": "cloud/pitches.py",
 			"settings":
 			{
-				"buffer_size": 1948,
+				"buffer_size": 9990,
 				"line_ending": "Unix"
 			}
 		},
@@ -307,7 +399,7 @@
 			"file": "pitches_test.py",
 			"settings":
 			{
-				"buffer_size": 560,
+				"buffer_size": 1790,
 				"line_ending": "Unix"
 			}
 		}
@@ -417,6 +509,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"pitch_lines",
 			"arrange",
 			"arguments",
 			"apply_stop_iter",
@@ -434,6 +527,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"pitches",
 			"args",
 			"stop_iter",
 			"start_iter",
@@ -450,7 +544,7 @@
 	"groups":
 	[
 		{
-			"selected": 6,
+			"selected": 7,
 			"sheets":
 			[
 				{
@@ -466,8 +560,8 @@
 						"selection":
 						[
 							[
-								6569,
-								6569
+								566,
+								566
 							]
 						],
 						"settings":
@@ -579,11 +673,11 @@
 							"sublime_auto_complete": true,
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 2965.0,
+						"translation.x": -0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -599,8 +693,8 @@
 						"selection":
 						[
 							[
-								628,
-								628
+								153,
+								153
 							]
 						],
 						"settings":
@@ -611,7 +705,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -745,7 +839,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 5,
 					"type": "text"
 				},
 				{
@@ -876,11 +970,11 @@
 							"tab_size": 4,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": -0.0,
+						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -896,8 +990,8 @@
 						"selection":
 						[
 							[
-								830,
-								830
+								65,
+								65
 							]
 						],
 						"settings":
@@ -1015,7 +1109,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1031,8 +1125,8 @@
 						"selection":
 						[
 							[
-								257,
-								257
+								233,
+								233
 							]
 						],
 						"settings":
@@ -1144,10 +1238,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 420.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1156,15 +1250,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1948,
+						"buffer_size": 9990,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1369,
-								1369
+								7498,
+								7498
 							]
 						],
 						"settings":
@@ -1276,10 +1370,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 300.0,
+						"translation.y": 2820.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1288,15 +1382,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 560,
+						"buffer_size": 1790,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								547,
-								547
+								1720,
+								1720
 							]
 						],
 						"settings":
@@ -1409,10 +1503,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1029.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1451,7 +1545,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 275.0
+		"height": 491.0
 	},
 	"output.find_results":
 	{
