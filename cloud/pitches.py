@@ -3,6 +3,7 @@ from abjad import *
 from arrangement import Arrangement
 
 import random
+import copy
 
 def get_diatonic_spread(pitch_line):
     pass
@@ -171,14 +172,10 @@ class CloudPitches:
         for i in range(self.num_lines):
             if swap1 is not None and random.randrange(0,5) < 3:
                 swap2 = indeces_sorted[i]
-                print("Swapping " + str(swap1) + " with " + str(swap2) + " ... now it's ...")
                 self.pitch_lines[swap1][column_index], self.pitch_lines[swap2][column_index] = self.pitch_lines[swap2][column_index], self.pitch_lines[swap1][column_index]
                 break
             if random.randrange(0,2) == 0:
                 swap1 = indeces_sorted[i]
-
-
-
 
     def randomize_column(self, column_index):
         # any more efficient way to do this...?        
@@ -194,9 +191,51 @@ class CloudPitches:
         for c in range(self.num_columns):
             self.randomize_column(c)
 
-    def rearrange(self):
-        pass
-    
+    def rearrange_try(self):
+        try_type_number = random.randrange(0,5)
+        if try_type_number == 0:
+            # completely randomize the worst column
+            self.randomize_column(self.worst_column_index())
+        elif try_type_number == 1:
+            # swap 2 (weighted) in the worst column
+            self.column_swap2_weighted(self.worst_column_index())
+        elif try_type_number == 2:
+            # swap 2 (weighted) in all columns
+            for i in range(self.num_columns):
+                self.column_swap2_weighted(i)
+        elif try_type_number == 3:
+            # completely randomize some random column
+            self.randomize_column(random.randrange(self.num_columns))
+        elif try_type_number == 4:
+            # swap 2 (weighted) in some random column
+            self.column_swap2_weighted(random.randrange(self.num_columns))
+
+
+    def get_rearranged(self):
+        tries = []
+        best_try = self
+        # BETTER TO USE RECURSION HERE?
+        # this should get a variety of try type cominations...
+        for i in range(3):
+            i_try = copy.deepcopy(self)
+            i_try.rearrange_try()
+            i_try.get_tallies()
+            if i_try.tally_total > best_try.tally_total:
+                best_try = i_try
+            for j in range(3):
+                j_try = copy.deepcopy(i_try)
+                j_try.rearrange_try()
+                j_try.get_tallies()
+                if j_try.tally_total > best_try.tally_total:
+                    best_try = j_try
+                for k in range(3):
+                    k_try = copy.deepcopy(j_try)
+                    k_try.rearrange_try()
+                    k_try.get_tallies()
+                    if k_try.tally_total > best_try.tally_total:
+                        best_try = k_try
+        return best_try
+
 
     def save(self):
         pass
@@ -205,7 +244,7 @@ class CloudPitches:
         pass
 
     def show(self):
-        arrangement = Arrangement(project=self.project, title="Cloud Pitch Lines", name="cloud-pitches-show")
+        arrangement = Arrangement(project=self.project, title="Cloud Pitch Lines: SCORE = " + str(self.tally_total), name="cloud-pitches-show")
         for i, line in enumerate(self.pitch_lines):
             arrangement.add_part(name="line" + str(i), instrument=instrumenttools.Instrument(instrument_name="Line " + str(i), short_instrument_name=str(i)))
             line_music = scoretools.make_notes(line, durationtools.Duration(1,4))
