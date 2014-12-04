@@ -10,6 +10,8 @@ def get_diatonic_spread(pitch_line):
 
 class TallyAppBase:
 
+    # TO DO... some way to window/overlap to tally up longer things effectively?
+
     line_weights = None # could be used to make the tally count more at given spots
     column_weights = None # could be used to make the tally count more at given spots
 
@@ -33,12 +35,12 @@ class TallyAppBase:
         pass
 
 class TallyMelodicIntervals(TallyAppBase):
-    def __init__(self, interval_ratings=[], over_incremental_add=None, by_pitch_class=False, bidirectional=True, line_weights=None, column_weights=None):
+    def __init__(self, interval_ratings=[], over_incremental_multiplier=None, by_pitch_class=False, bidirectional=True, line_weights=None, column_weights=None):
         # default is to dock off 100 points for parallel unisons/octaves
         self.interval_ratings = interval_ratings
         self.by_pitch_class = by_pitch_class
         self.bidirectional = bidirectional
-        self.over_incremental_add = over_incremental_add
+        self.over_incremental_multiplier = over_incremental_multiplier
         super().__init__(line_weights=line_weights, column_weights=column_weights)
 
     def tally_pitch(self, cloud, line_index, column_index):
@@ -54,9 +56,9 @@ class TallyMelodicIntervals(TallyAppBase):
                     cloud.add_tally(line_index, column_index, rating)
                     cloud.add_tally(line_index, column_index - 1, rating)
             # can be used to dock for big jumps
-            if self.over_incremental_add is not None:
-                if abs(melodic_interval) > self.over_incremental_add[0]:
-                    over_rating = (abs(melodic_interval) - self.over_incremental_add[0]) * self.over_incremental_add[1]
+            if self.over_incremental_multiplier is not None:
+                if abs(melodic_interval) > self.over_incremental_multiplier[0]:
+                    over_rating = (abs(melodic_interval) - self.over_incremental_multiplier[0]) * self.over_incremental_multiplier[1]
                     cloud.add_tally(line_index, column_index, over_rating)
 
 
@@ -83,8 +85,54 @@ class TallyParallelIntervals(TallyAppBase):
                         cloud.add_tally(across_line_index, column_index, rating)
 
 
+class TallyCircleOfFifthsRange(TallyAppBase):
+    def __init__(self, fifth_range_max=7, over_range_multiplier=-44):
+        self.fifth_range_max = fifth_range_max
+        self.over_range_multiplier = over_range_multiplier
                 
+    def tally_line(self, cloud, line_index):
+        #QUESTION... what about
+
+        line = cloud.pitch_lines[line_index]
+
+        # just to keep things concise, n = the number of columns
+        n = cloud.num_columns
         
+        # gets the index of each pitch on the circle of 5ths (with C as 0, G as 1, etc.)
+        fifths_away = [(line[c] * 7) % 12 for c in range(n)]
+
+        # sorts the circle of fifths indeces used (so we have a picture of what that distribution is like)
+        fifths_away_sorted = copy.deepcopy(fifths_away)
+        fifths_away_sorted.sort()
+
+        fifths_away_sorted_gaps = [
+                    (fifths_away_sorted[0] - fifths_away_sorted[n-1]) % 12 if i==0 
+                    else fifths_away_sorted[i] - fifths_away_sorted[i-1]  for i in range(n)
+                    ]
+
+        largest_gap = max(fifths_away_sorted_gaps)
+
+        print(line)
+        print(fifths_away)
+        print(fifths_away_sorted)
+        print(fifths_away_sorted_gaps)
+        print(largest_gap)
+
+        if largest_gap <= (12 - self.fifth_range_max):
+        
+            largest_gap_at_fifth = fifths_away_sorted[fifths_away_sorted_gaps.index(largest_gap)]
+
+            for i in range(n):
+                fifth_distance = (fifths_away[i] - largest_gap_at_fifth) % 12
+                if fifth_distance >= self.fifth_range_max:
+                    print(fifth_distance)
+                    badness = fifth_distance - self.fifth_range_max + 1 if fifth_distance <= (self.fifth_range_max / 2) + 6 else 12 - fifth_distance
+                    print(badness)
+                    cloud.add_tally(line_index, i, badness * self.over_range_multiplier)
+
+
+
+
 
 class CloudPitches:
 
