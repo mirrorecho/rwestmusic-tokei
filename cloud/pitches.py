@@ -111,23 +111,34 @@ class TallyCircleOfFifthsRange(TallyAppBase):
                     ]
 
         largest_gap = max(fifths_away_sorted_gaps)
+        print("-----------------------------------------------")
 
-        print(line)
-        print(fifths_away)
-        print(fifths_away_sorted)
-        print(fifths_away_sorted_gaps)
-        print(largest_gap)
+        print("line:               " + str(line))
+        print("fifths away:        " + str(fifths_away))
+        print("fifths away sorted: " +  str(fifths_away_sorted))
+        print("gaps:               " + str(fifths_away_sorted_gaps))
+        print("-----------------------------------------------")
+        print("largest gap: " + str(largest_gap))
+
+        # TO DO ... MOVE THIS INTO THE IF BELOW
+        largest_gap_at_fifth = fifths_away_sorted[fifths_away_sorted_gaps.index(largest_gap)]
+        mid_fifths_range = (largest_gap_at_fifth + ((12-largest_gap) / 2)) % 12
+        print("largest gap before: " + str(largest_gap_at_fifth))
+        print("mid fifths range: " + str(mid_fifths_range))
+        print("-----------------------------------------------")
+        print()
 
         if largest_gap <= (12 - self.fifth_range_max):
         
-            largest_gap_at_fifth = fifths_away_sorted[fifths_away_sorted_gaps.index(largest_gap)]
+
 
             for i in range(n):
-                fifth_distance = (fifths_away[i] - largest_gap_at_fifth) % 12
-                if fifth_distance >= self.fifth_range_max:
-                    print(fifth_distance)
-                    badness = fifth_distance - self.fifth_range_max + 1 if fifth_distance <= (self.fifth_range_max / 2) + 6 else 12 - fifth_distance
-                    print(badness)
+                fifth_distance_over = (fifths_away[i] - mid_fifths_range) % 12
+                fifth_distance_under = (mid_fifths_range - fifths_away[i]) % 12
+                fifth_min_distance = min(fifth_distance_over, fifth_distance_under)
+                print(fifth_min_distance)
+                if fifth_min_distance > ((self.fifth_range_max - 1) / 2):
+                    badness = fifth_min_distance - ((self.fifth_range_max - 1) / 2)
                     cloud.add_tally(line_index, i, badness * self.over_range_multiplier)
 
 

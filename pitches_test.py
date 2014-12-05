@@ -41,7 +41,7 @@ from cloud.pitches import CloudPitches, TallyParallelIntervals, TallyMelodicInte
 
 # tally_loop(cloud)
 
-my_line = [0, 2, 4, 5, 7, 9, 11, -4]
+my_line = [8, 10, 0, 1, 2]
 cloud = CloudPitches(project="rwestmusic-tokei", pitch_lines=[my_line])
 cloud.add_tally_app(TallyCircleOfFifthsRange())
 cloud.get_tallies()

@@ -4,6 +4,46 @@
 		"selected_items":
 		[
 			[
+				"over_",
+				"over_max_rating_multiplier"
+			],
+			[
+				"fifth",
+				"fifth_range_max"
+			],
+			[
+				"line",
+				"line_music"
+			],
+			[
+				"fif",
+				"fifth_range_max"
+			],
+			[
+				"largest",
+				"largest_gap"
+			],
+			[
+				"range",
+				"range_ratings"
+			],
+			[
+				"fifths",
+				"fifths_away_sorted_gaps"
+			],
+			[
+				"lines",
+				"lines_fifth_range"
+			],
+			[
+				"fi",
+				"fifths_range_ratings"
+			],
+			[
+				"Tall",
+				"TallyAppBase"
+			],
+			[
 				"tall",
 				"tally_loop"
 			],
@@ -68,10 +108,6 @@
 				"indeces_sorted"
 			],
 			[
-				"line",
-				"line_index"
-			],
-			[
 				"colu",
 				"column_index"
 			],
@@ -82,10 +118,6 @@
 			[
 				"p",
 				"pitch_lines  (variable)"
-			],
-			[
-				"Tall",
-				"TallyParallelIntervals  (class)"
 			],
 			[
 				"inter",
@@ -415,7 +447,7 @@
 			"file": "cloud/pitches.py",
 			"settings":
 			{
-				"buffer_size": 11715,
+				"buffer_size": 13721,
 				"line_ending": "Unix"
 			}
 		},
@@ -423,7 +455,7 @@
 			"file": "pitches_test.py",
 			"settings":
 			{
-				"buffer_size": 2086,
+				"buffer_size": 2364,
 				"line_ending": "Unix"
 			}
 		}
@@ -533,6 +565,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"index(",
 			"pitch_lines",
 			"arrange",
 			"arguments",
@@ -568,7 +601,7 @@
 	"groups":
 	[
 		{
-			"selected": 7,
+			"selected": 6,
 			"sheets":
 			[
 				{
@@ -1265,7 +1298,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1274,15 +1307,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11715,
+						"buffer_size": 13721,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9392,
-								9392
+								963,
+								963
 							]
 						],
 						"settings":
@@ -1394,10 +1427,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3720.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 0,
 					"type": "text"
 				},
 				{
@@ -1406,15 +1439,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2086,
+						"buffer_size": 2364,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								611,
-								611
+								703,
+								703
 							]
 						],
 						"settings":
@@ -1527,10 +1560,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": -0.0,
-						"translation.y": 180.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 2,
 					"type": "text"
 				}
 			]
