@@ -1,5 +1,6 @@
 from abjad import *
 from cycles.cells import IntervalRepeatCell
+from cloud.pitches import CloudPitches
 
 import copy
 
