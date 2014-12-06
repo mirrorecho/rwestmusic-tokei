@@ -4,7 +4,6 @@ from arrangement import TokeiArrangement
 from cycles.loop import CycleLoop, Cycle
 from cycles.transform import *
 
-
 day_music = CycleLoop()
 night_music = CycleLoop()
 
