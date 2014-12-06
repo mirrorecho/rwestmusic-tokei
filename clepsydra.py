@@ -3,6 +3,7 @@ from abjad import *
 from arrangement import TokeiArrangement
 from cycles.loop import CycleLoop, Cycle
 from cycles.transform import *
+from cloud.pitches import * 
 
 
 # cycles and transformations...
@@ -55,42 +56,25 @@ music.add_data("steady_double_harmony", 7)
 music.add_data("steady_range_mid", value = pitchtools.PitchRange('[C4, C5]'))
 
 music.add_transform(
-    AddMusicFromIntervalRepeatCell(
-        "steady_music", 
-        #pitch_range = "steady_range_mid",
+    AddPitchesFromIntervalRepeatCell(
+        "steady_pitches", 
         intervals = "steady_intervals",
         start_pitch = "ref_pitch",
-        durations = "steady_durations",
         times = 6
         ))
 
 music.add_transform(
-    AddMusicCopy(
-        "steady_music_harmony",
-        copy_from = "steady_music",
+    AddPitchesCopy(
+        "steady_pitches_harmony",
+        copy_from = "steady_pitches",
         transpose = "steady_double_harmony"
     ))
 
-music.transforms.append(
-    ArrangeMusic(
-        "steady_music", 
-        part = "oboe2",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
 
-music.transforms.append(
-    ArrangeMusic(
-        "steady_music_harmony", 
-        part = "oboe1",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
+# -----------------------------------------------------
+# STEADY 2 (counterpoint on top of sequence)
 
-# ----------------------------------------------------------------------------------------------------------------------------------------
-# STREAM 2 (counterpoint on top of sequence)
-
-# the steady lines are each doubled at a 5th...
+# the conterpart starts on the 3rd
 music.add_data("steady2_start_above_ref", 4)
 
 music.add_transform(
@@ -104,36 +88,70 @@ music.add_transform(
 music.add_data("steady2_intervals", [3, 5, -2, -1])
 
 music.add_transform(
-    AddMusicFromIntervalRepeatCell(
-        "steady2_music", 
+    AddPitchesFromIntervalRepeatCell(
+        "steady2_pitches", 
         intervals = "steady2_intervals",
         start_pitch = "ref_stream2_pitch",
-        durations = "steady_durations",
         times = 6
         ))
 
 music.add_transform(
-    AddMusicCopy(
-        "steady2_music_harmony",
-        copy_from = "steady2_music",
+    AddPitchesCopy(
+        "steady2_pitches_harmony",
+        copy_from = "steady2_pitches",
         transpose = "steady_double_harmony" #transposition is the same as steady
     ))
 
+# -----------------------------------------------------
+# now rearrange and arrange!
+
+music.add_transform(
+    ModCloudPitchesRearrangeLines(
+        "cloud_steady",
+        pitch_lines = ["steady_pitches", "steady_pitches_harmony", "steady2_pitches", "steady2_pitches_harmony"],
+        tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+            # TallyParallelIntervals(interval_ratings=[(0,-40), (7,-11), (5,2), (2,4), (4,4)]), 
+            TallyMelodicIntervals(interval_ratings=[(0, 20), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (7,6), (10,-2), (11,-2)])
+            ],
+        times = 222,
+        start_flag = "before_movin",
+    ))
+
 music.transforms.append(
-    ArrangeMusic(
-        "steady2_music", 
+    ArrangePitches(
+        "steady_pitches", 
+        durations = "steady_durations",
+        part = "oboe1",
+        start_flag = "before_movin",
+        pitch_range = "steady_range_mid"
+        ))
+music.transforms.append(
+    ArrangePitches(
+        "steady_pitches_harmony", 
+        durations = "steady_durations",
+        part = "oboe2",
+        start_flag = "before_movin",
+        pitch_range = "steady_range_mid"
+        ))
+music.transforms.append(
+    ArrangePitches(
+        "steady2_pitches", 
+        durations = "steady_durations",
+        part = "clarinet1",
+        start_flag = "before_movin",
+        pitch_range = "steady_range_mid"
+        ))
+music.transforms.append(
+    ArrangePitches(
+        "steady2_pitches_harmony", 
+        durations = "steady_durations",
         part = "clarinet2",
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
 
-music.transforms.append(
-    ArrangeMusic(
-        "steady2_music_harmony", 
-        part = "clarinet1",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)

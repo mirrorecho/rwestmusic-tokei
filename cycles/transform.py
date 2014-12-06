@@ -4,6 +4,8 @@ from cloud.pitches import CloudPitches
 
 import copy
 
+# QUESTION... MAYBE BETTER TO DEAL WITH PITCHES EVERYWHERE AS NUMBERS HERE???? (not named/numbered pitches yet)
+
 class TransformBase:
 
     name = ""
@@ -71,6 +73,21 @@ class AddData(TransformBase):
     def apply(self, cycle, previous_cycle):
         cycle.data[self.name] = self.args["value"]
 
+
+class AddMusicFromPitches(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        pitches = cycle.data[self.args["pitches"]]
+        durations = cycle.data[self.args["durations"]]
+        # use make_leaves to map intervals + start pitch to durations to create the music
+        raw_music = scoretools.make_leaves(pitches, durations)
+        # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
+        cycle.data[self.name] = mutate(raw_music).split(
+                        cycle.data["measures_durations"],
+                        fracture_spanners=False,
+                        tie_split_notes=True,
+                        )
+
+# just inherit this from the above???
 class AddMusicFromRelativePitches(TransformBase):
     def apply(self, cycle, previous_cycle):
         start_pitch = cycle.data[self.args["start_pitch"]]
@@ -88,6 +105,23 @@ class AddMusicFromRelativePitches(TransformBase):
                         tie_split_notes=True,
                         )
 
+class ModCloudPitchesRearrangeLines(TransformBase):
+    # tally_apps
+    # times 
+    # pitch_lines 
+    def apply(self, cycle, previous_cycle):
+        pitch_lines = [cycle.data[n] for n in self.args["pitch_lines"]]
+        # assume we don't need the project, since we won't be showing anything directly...
+        cloud = CloudPitches(pitch_lines=pitch_lines)
+        cloud.randomize_all_columns()
+        for tally_app in self.args["tally_apps"]:
+            cloud.add_tally_app(tally_app)
+        for i in range(self.args["times"]):
+            cloud.get_tallies()
+            cloud = cloud.get_rearranged()
+        for j, n in enumerate(self.args["pitch_lines"]):
+            cycle.data[n] = cloud.pitch_lines[j]
+
 class AddMusicFromIntervalRepeatCell(TransformBase):
     def apply(self, cycle, previous_cycle):
         pitch_range = None
@@ -98,6 +132,17 @@ class AddMusicFromIntervalRepeatCell(TransformBase):
         cycle.data[self.name] = scoretools.Container()
         for i in range(self.args["times"]):
             cycle.data[self.name].extend(cell.make_notes(durations))
+            cell.next()
+
+class AddPitchesFromIntervalRepeatCell(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        pitch_range = None
+        if "pitch_range" in self.args:
+            pitch_range = cycle.data[self.args["pitch_range"]]
+        cell = IntervalRepeatCell(cycle.data[self.args["intervals"]], cycle.data[self.args["start_pitch"]], pitch_range)
+        cycle.data[self.name] = []
+        for i in range(self.args["times"]):
+            cycle.data[self.name].extend(cell.pitches)
             cell.next()
 
 class ModTransposePitch(TransformBase):
@@ -116,6 +161,14 @@ class AddMusicCopy(TransformBase):
                 note.written_pitch += cycle.data[self.args["transpose"]]
         cycle.data[self.name] = music
 
+class AddPitchesCopy(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        transpose = 0
+        if "transpose" in self.args:
+            transpose = cycle.data[self.args["transpose"]]
+        copy_from = cycle.data[self.args["copy_from"]]
+        cycle.data[self.name] = [pitch + transpose for pitch in copy_from]
+
 class AddPitchCopy(TransformBase):
     def apply(self, cycle, previous_cycle):
         transpose = 0
@@ -132,6 +185,26 @@ class ArrangeMusic(TransformBase):
             for i, note in enumerate(iterate(music).by_class(Note)):
                 note.written_pitch = pitchtools.transpose_pitch_expr_into_pitch_range([note.written_pitch.pitch_number], cycle.data[self.args["pitch_range"]])[0]
 
+
+        cycle.arrangement.parts[self.args["part"]].extend(music)
+
+
+class ArrangePitches(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        pitches = cycle.data[self.name]
+        durations = cycle.data[self.args["durations"]]
+        # use make_leaves to map intervals + start pitch to durations to create the music
+        raw_music = scoretools.make_leaves(pitches, durations)
+        # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
+        music = mutate(raw_music).split(
+                        cycle.data["measures_durations"],
+                        fracture_spanners=False,
+                        tie_split_notes=True,
+                        )
+        if "pitch_range" in self.args:
+            # QUESTION... does this work for chords or to they need to be handled separately?
+            for i, note in enumerate(iterate(music).by_class(Note)):
+                note.written_pitch = pitchtools.transpose_pitch_expr_into_pitch_range([note.written_pitch.pitch_number], cycle.data[self.args["pitch_range"]])[0]
 
         cycle.arrangement.parts[self.args["part"]].extend(music)
 
