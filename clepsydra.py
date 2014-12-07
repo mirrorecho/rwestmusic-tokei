@@ -39,6 +39,54 @@ music.transforms.append(
         start_flag = "start_movin"
         ))
 
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# PUSHING THE JI and REF
+
+music.add_data("push_durations",  [Duration(1,4) for i in range(12)])
+
+# would be better to figure out how to fill the whole thing with straight quarter notes...
+music.add_transform(
+    ArrangePitch(
+        "ji_pitch", 
+        durations = "push_durations",
+        part = "violinI",
+        stop_flag="start_movin"
+        ))
+# TO DO... add down bows...
+
+
+music.add_transform(
+    ArrangePitch(
+        "ji_pitch", 
+        part = "flute1"
+        ))
+
+
+music.add_transform(
+    ArrangePitch(
+        "ref_pitch", 
+        part = "flute2"
+        ))
+
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# rhythmic fabric:
+music.add_data("pattern_ma", "b8 b8 r4 r2 R1 R1")
+
+music.add_data("pattern1", "r8 c8 r8 c8 c4 c4")
+
+music.add_transform(
+    ArrangeRhythm(
+        "pattern_ma",
+        part = "taiko1"
+        ))
+
+music.add_transform(
+    ArrangeRhythm(
+        "pattern1",
+        part = "taiko2",
+        times = 3
+        ))
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # STEADY (harmonic sequence)
@@ -105,20 +153,21 @@ music.add_transform(
 # -----------------------------------------------------
 # now rearrange and arrange!
 
-music.add_transform(
-    ModCloudPitchesRearrangeLines(
-        "cloud_steady",
-        pitch_lines = ["steady_pitches", "steady_pitches_harmony", "steady2_pitches", "steady2_pitches_harmony"],
-        tally_apps = [
-            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
-            # TallyParallelIntervals(interval_ratings=[(0,-40), (7,-11), (5,2), (2,4), (4,4)]), 
-            TallyMelodicIntervals(interval_ratings=[(0, 20), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (7,6), (10,-2), (11,-2)])
-            ],
-        times = 222,
-        start_flag = "before_movin",
-    ))
+# WORKS WELL ENOUGH????
+# music.add_transform(
+#     ModCloudPitchesRearrangeLines(
+#         "cloud_steady",
+#         pitch_lines = ["steady_pitches", "steady_pitches_harmony", "steady2_pitches", "steady2_pitches_harmony"],
+#         tally_apps = [
+#             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+#             # TallyParallelIntervals(interval_ratings=[(0,-40), (7,-11), (5,2), (2,4), (4,4)]), 
+#             TallyMelodicIntervals(interval_ratings=[(0, 20), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (7,6), (10,-2), (11,-2)])
+#             ],
+#         times = 222,
+#         start_flag = "before_movin",
+#     ))
 
-music.transforms.append(
+music.add_transform(
     ArrangePitches(
         "steady_pitches", 
         durations = "steady_durations",
@@ -126,7 +175,7 @@ music.transforms.append(
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
-music.transforms.append(
+music.add_transform(
     ArrangePitches(
         "steady_pitches_harmony", 
         durations = "steady_durations",
@@ -134,7 +183,7 @@ music.transforms.append(
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
-music.transforms.append(
+music.add_transform(
     ArrangePitches(
         "steady2_pitches", 
         durations = "steady_durations",
@@ -142,7 +191,7 @@ music.transforms.append(
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
-music.transforms.append(
+music.add_transform(
     ArrangePitches(
         "steady2_pitches_harmony", 
         durations = "steady_durations",
@@ -184,21 +233,7 @@ music.add_transform(
 
 # ARRANGEMENT STUFF:
 
-music.add_transform(
-    ArrangePitch(
-        "ji_pitch", 
-        part = "flute1",
-        start_iter = 0
-        ))
 
-
-
-music.add_transform(
-    ArrangePitch(
-        "ref_pitch", 
-        part = "flute2",
-        start_iter = 0
-        ))
 
 music.apply_transforms()
 
