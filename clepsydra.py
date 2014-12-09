@@ -42,29 +42,30 @@ music.transforms.append(
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # PUSHING THE JI and REF
 
-music.add_data("push_durations",  [Duration(1,4) for i in range(12)])
+#music.add_data("push_durations",  [Duration(1,4) for i in range(12)])
+music.add_data("push_durations",  "c4\downbow " * 12)
 
 # would be better to figure out how to fill the whole thing with straight quarter notes...
 music.add_transform(
-    ArrangePitch(
-        "ji_pitch", 
+    MakeMusic(
+        pitch="ji_pitch", 
         durations = "push_durations",
         part = "violinI",
         stop_flag="start_movin"
         ))
 # TO DO... add down bows...
 
-
 music.add_transform(
-    ArrangePitch(
-        "ji_pitch", 
+    MakeMusic(
+        pitch="ji_pitch", 
+        durations="measures_durations",
         part = "flute1"
         ))
 
-
 music.add_transform(
-    ArrangePitch(
-        "ref_pitch", 
+    MakeMusic(
+        pitch="ref_pitch", 
+        durations="measures_durations",
         part = "flute2"
         ))
 
@@ -75,14 +76,14 @@ music.add_data("pattern_ma", "b8 b8 r4 r2 R1 R1")
 music.add_data("pattern1", "r8 c8 r8 c8 c4 c4")
 
 music.add_transform(
-    ArrangeRhythm(
-        "pattern_ma",
+    MakeMusic(
+        durations="pattern_ma",
         part = "taiko1"
         ))
 
 music.add_transform(
-    ArrangeRhythm(
-        "pattern1",
+    MakeMusic(
+        durations="pattern1",
         part = "taiko2",
         times = 3
         ))
@@ -168,32 +169,32 @@ music.add_transform(
 #     ))
 
 music.add_transform(
-    ArrangePitches(
-        "steady_pitches", 
+    MakeMusic(
+        pitches="steady_pitches", 
         durations = "steady_durations",
         part = "oboe1",
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
 music.add_transform(
-    ArrangePitches(
-        "steady_pitches_harmony", 
+    MakeMusic(
+        pitches="steady_pitches_harmony", 
         durations = "steady_durations",
         part = "oboe2",
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
 music.add_transform(
-    ArrangePitches(
-        "steady2_pitches", 
+    MakeMusic(
+        pitches="steady2_pitches", 
         durations = "steady_durations",
         part = "clarinet1",
         start_flag = "before_movin",
         pitch_range = "steady_range_mid"
         ))
 music.add_transform(
-    ArrangePitches(
-        "steady2_pitches_harmony", 
+    MakeMusic(
+        pitches="steady2_pitches_harmony", 
         durations = "steady_durations",
         part = "clarinet2",
         start_flag = "before_movin",
@@ -215,7 +216,7 @@ music.add_data("stream_durations", [
                 ])
 
 music.add_transform(
-    AddMusicFromRelativePitches(
+    MakeMusic(
         "stream_music",
         start_pitch = "ref_pitch", 
         relative_pitches = "stream_pitches",
@@ -224,8 +225,8 @@ music.add_transform(
         ))
 
 music.add_transform(
-    ArrangeMusic(
-        "stream_music", 
+    CopyMusic(
+        copy_from="stream_music", 
         part = "trumpet1",
         start_flag = "before_movin"
         ))

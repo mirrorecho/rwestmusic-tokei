@@ -26,9 +26,10 @@ def music_from_durations(durations, times=None, split_durations=None, pitches=No
     else:
         music = scoretools.make_leaves([0], durations)
 
-    for i, note in enumerate(iterate(music).by_class(Note)):
-        #QUESTION... should we NOT loop around the pitches?
-       note.written_pitch += pitchs[i % len(pitches)]
+    if pitches is not None:
+        for i, note in enumerate(iterate(music).by_class(Note)):
+            #QUESTION... should we NOT loop around the pitches?
+           note.written_pitch += pitches[i % len(pitches)]
 
     if times is not None:
         music_times = scoretools.Container()
@@ -60,7 +61,7 @@ class TransformBase:
 
     args = {}
 
-    def __init__(self, name, stop_flag=None, start_flag=None, start_iter=None, stop_iter=None, apply_flags=[], **kwargs):
+    def __init__(self, name=None, stop_flag=None, start_flag=None, start_iter=None, stop_iter=None, apply_flags=[], **kwargs):
         self.name = name
         
         self.start_flag = start_flag
@@ -114,36 +115,57 @@ class AddData(TransformBase):
         cycle.data[self.name] = self.args["value"]
 
 
-class AddMusicFromPitches(TransformBase):
+class MakeMusic(TransformBase):
     def apply(self, cycle, previous_cycle):
-        pitches = cycle.data[self.args["pitches"]]
-        durations = cycle.data[self.args["durations"]]
-        # use make_leaves to map intervals + start pitch to durations to create the music
-        raw_music = scoretools.make_leaves(pitches, durations)
-        # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
-        cycle.data[self.name] = mutate(raw_music).split(
-                        cycle.data["measures_durations"],
-                        fracture_spanners=False,
-                        tie_split_notes=True,
-                        )
+        if "pitches" in self.args:
+            pitches = [get_pitch_number(p) for p in cycle.data[self.args["pitches"]]]
+        elif "pitch" in self.args:
+            pitches = [get_pitch_number(cycle.data[self.args["pitch"]])]
+        elif "relative_pitches" in self.args and "start_pitch" in self.args:
+            start_pitch = cycle.data[self.args["start_pitch"]]
+            relative_pitches = cycle.data[self.args["relative_pitches"]]        
+            pitches = [get_pitch_number(start_pitch) + i for i in relative_pitches]
+        else:
+            pitches = None
 
-# just inherit this from the above???
-class AddMusicFromRelativePitches(TransformBase):
-    def apply(self, cycle, previous_cycle):
-        start_pitch = cycle.data[self.args["start_pitch"]]
-        relative_pitches = cycle.data[self.args["relative_pitches"]]
-        durations = cycle.data[self.args["durations"]]
-        # use make_leaves to map intervals + start pitch to durations to create the music
-        raw_music = scoretools.make_leaves(
-                        [start_pitch.pitch_number + i for i in relative_pitches], 
-                        durations,
-                        )
+        # better to pull from cycle data instead of just passing parameter???
+        if "times" in self.args:
+            times=self.args["times"]
+        else:
+            times = None
+
         # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
-        cycle.data[self.name] = mutate(raw_music).split(
-                        cycle.data["measures_durations"],
-                        fracture_spanners=False,
-                        tie_split_notes=True,
-                        )
+        music = music_from_durations(
+                        durations=cycle.data[self.args["durations"]], 
+                        split_durations=cycle.data["measures_durations"], 
+                        pitches=pitches,
+                        times=times)
+
+        if "pitch_range" in self.args:
+            # QUESTION... does this work for chords or to they need to be handled separately?
+            for i, note in enumerate(iterate(music).by_class(Note)):
+                note.written_pitch = pitchtools.transpose_pitch_expr_into_pitch_range([note.written_pitch.pitch_number], cycle.data[self.args["pitch_range"]])[0]
+        
+        # if a part is specified, then add the music to that... otherwise add it to the data defined by this transform name
+        if "part" in self.args:
+            cycle.arrangement.parts[self.args["part"]].extend(music)
+        else:
+            cycle.data[self.name] = music
+
+class CopyMusic(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        music = copy.deepcopy(cycle.data[self.args["copy_from"]])
+        if "transpose" in self.args:
+            # QUESTION... does this work for chords or to they need to be handled separately?
+            for i, note in enumerate(iterate(music).by_class(Note)):
+                note.written_pitch += cycle.data[self.args["transpose"]]
+        # if a part is specified, then add the music to that... otherwise add it to the data defined by this transform name
+        if "part" in self.args:
+            cycle.arrangement.parts[self.args["part"]].extend(music)
+        else:
+            cycle.data[self.name] = music
+
+
 
 class ModCloudPitchesRearrangeLines(TransformBase):
     # tally_apps
@@ -192,14 +214,6 @@ class ModTransposePitch(TransformBase):
             new_pitch = previous_pitch.transpose(self.args["value"])
             cycle.data[self.name] = new_pitch
 
-class AddMusicCopy(TransformBase):
-    def apply(self, cycle, previous_cycle):
-        music = copy.deepcopy(cycle.data[self.args["copy_from"]])
-        if "transpose" in self.args:
-            # QUESTION... does this work for chords or to they need to be handled separately?
-            for i, note in enumerate(iterate(music).by_class(Note)):
-                note.written_pitch += cycle.data[self.args["transpose"]]
-        cycle.data[self.name] = music
 
 class AddPitchesCopy(TransformBase):
     def apply(self, cycle, previous_cycle):
@@ -216,82 +230,4 @@ class AddPitchCopy(TransformBase):
             transpose = cycle.data[self.args["transpose"]]
         cycle.data[self.name] = pitchtools.NumberedPitch(cycle.data[self.args["copy_from"]] + transpose)
 
-class ArrangeMusic(TransformBase):
-    def apply(self, cycle, previous_cycle):
-        # copying the music... since we may use it for multiple parts...
-        music = copy.deepcopy(cycle.data[self.name])
-        if "pitch_range" in self.args:
-            # QUESTION... does this work for chords or to they need to be handled separately?
-            for i, note in enumerate(iterate(music).by_class(Note)):
-                note.written_pitch = pitchtools.transpose_pitch_expr_into_pitch_range([note.written_pitch.pitch_number], cycle.data[self.args["pitch_range"]])[0]
 
-
-        cycle.arrangement.parts[self.args["part"]].extend(music)
-
-class ArrangePitches(TransformBase):
-    def apply(self, cycle, previous_cycle):
-        pitches = [get_pitch_number(p) for p in cycle.data[self.name]]
-        # if "durations" in self.args:
-        #     durations = cycle.data[self.args["durations"]]
-        #     # use make_leaves to map intervals + start pitch to durations to create the music
-        #     raw_music = scoretools.make_leaves(pitches, durations)
-        # elif "music_pattern" in self.args:
-        #     if type(cycle.data[self.args["music"]]) is str:
-        #         raw_music = scoretools.Container(cycle.data[self.args["music"]])
-        #     # if type of c_music not string, then assume it's aready container of music...
-        #     else:
-        #         raw_music = copy.deepcopy(cycle.data[self.args["music"]])
-        #     # TO DO... account for ties...
-        #     for i, note in enumerate(iterate(raw_music).by_class(Note)):
-        #         #QUESTION... should we NOT loop around the pitches?
-        #        note.written_pitch += pitchs[i % len(pitches)]
-        # # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
-        # music = mutate(raw_music).split(
-        #                 cycle.data["measures_durations"],
-        #                 fracture_spanners=False,
-        #                 tie_split_notes=True,
-        #                 )
-        if "pitch_range" in self.args:
-            # QUESTION... does this work for chords or to they need to be handled separately?
-            for i, note in enumerate(iterate(music).by_class(Note)):
-                note.written_pitch = pitchtools.transpose_pitch_expr_into_pitch_range([note.written_pitch.pitch_number], cycle.data[self.args["pitch_range"]])[0]
-
-        cycle.arrangement.parts[self.args["part"]].extend(music)
-
-
-class ArrangePitch(TransformBase):
-    def apply(self, cycle, previous_cycle):
-        # really necessary to create this container first?
-        music = scoretools.Container()
-        
-        # TO DO... handle before and after durations
-        if "durations" in self.args:
-            durations = cycle.data[self.args["durations"]]
-            # use make_leaves to map intervals + start pitch to durations to create the music
-            raw_music = scoretools.make_leaves(get_pitch_number(cycle.data[self.name]), durations)
-            # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
-            music.extend(mutate(raw_music).split(
-                            cycle.data["measures_durations"],
-                            fracture_spanners=False,
-                            tie_split_notes=True,
-                            ))
-
-        else: 
-            music.extend(scoretools.make_notes(cycle.data[self.name], cycle.data["measures_durations"]))
-        cycle.arrangement.parts[self.args["part"]].extend(music)
-
-# similar to arrange pitches above, but for percussion parts where we only arrange the rhythm
-class ArrangeRhythm(TransformBase):
-    def apply(self, cycle, previous_cycle):
-
-        # note... we'll apply the split after getting the music from the durations...
-        raw_music = music_from_durations(cycle.data[self.name])
-
-
-      
-        music = mutate(music).split(
-                        cycle.data["measures_durations"],
-                        fracture_spanners=False,
-                        tie_split_notes=True,
-                        )
-        cycle.arrangement.parts[self.args["part"]].extend(music)
