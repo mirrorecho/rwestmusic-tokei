@@ -176,22 +176,23 @@ class MakeMusicFromHits(TransformBase):
     def apply(self, cycle, previous_cycle):
         talea = []
         hits = cycle.data[self.name]
-        cycle_length = self.args["cycle_length"]
-        for i in range(len(hits)):
-            prev = 1 if i==0 else hits[i-1] # a little confusing, but the 1 gets the fence posts right at the start
-            talea.append(prev - hits[i] - 1) # adds rests between each note(could be 0)
-            talea.append(1)
-        talea.append(hits[len(hits)-1] - (cycle_length -1) ) # adds final rest (could be 0)
-        talea = [t for t in talea if t!=0] # (gets rid of 0-length rests)
-        print(talea)
-        durations = scoretools.Container()
-        durations.extend(scoretools.make_leaves_from_talea(talea, self.args["denominator"]))
-        for part, pitch in zip(self.args["parts"], cycle.data[self.args["pitches"]]):
-            music = music_from_durations(
-                            durations=durations, 
-                            split_durations=cycle.data["measures_durations"], 
-                            pitches=[pitch])
-            cycle.arrangement.parts[part].extend(music)
+        if len(hits) > 0:
+            cycle_length = self.args["cycle_length"]
+            talea.append(0 - hits[0]) # adds initial rest (could be 0)
+            for i in range(len(hits)):
+                if i>0:
+                    talea.append(hits[i-1] - (hits[i] - 1)) # adds rests between each note(could be 0)
+                talea.append(1)
+            talea.append(hits[len(hits)-1] - (cycle_length -1) ) # adds final rest (could be 0)
+            talea = [t for t in talea if t!=0] # (gets rid of 0-length rests)
+            durations = scoretools.Container()
+            durations.extend(scoretools.make_leaves_from_talea(talea, self.args["denominator"]))
+            for part, pitch in zip(self.args["parts"], cycle.data[self.args["pitches"]]):
+                music = music_from_durations(
+                                durations=durations, 
+                                split_durations=cycle.data["measures_durations"], 
+                                pitches=[pitch])
+                cycle.arrangement.parts[part].extend(music)
 
 
 
@@ -249,6 +250,7 @@ class ModAddPoint(TransformBase):
     """
     #TO DO... test if data is list?
     def apply(self, cycle, previous_cycle):
+        cycle.data[self.name] = cycle.data[self.name].copy()
         cycle.data[self.name].append(self.args["point"])
         cycle.data[self.name].sort()
 
