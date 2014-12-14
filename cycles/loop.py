@@ -20,13 +20,13 @@ class Cycle:
         """
         fills empty parts in this cycle's arrangement with measures of full length skips so that cycles align properly
         """
-        
+        # TO DO... this could be better... 
         for part_name, part in self.arrangement.parts.items():
             if part.is_simultaneous:
                 for part_line in part:
-                    if len(part_line) == 0:
+                    if len(part_line.select_leaves()) == 0:
                         part_line.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
-            elif len(part) == 0:
+            elif len(part.select_leaves()) == 0:
                 part.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
 
 class CycleLoop:

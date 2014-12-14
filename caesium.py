@@ -6,13 +6,32 @@ from cycles.transform import *
 from cloud.pitches import * 
 
 
+class MakeMa(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        cycle.data["measures_durations"] = [durationtools.Duration(1,4)]
+        # WHY IS THIS BREAKING fill_skips????
+        # for part in cycle.arrangement.parts:
+        #     cycle.arrangement.parts[part].extend(scoretools.Container("r4 \\fermata"))
+        #     # TO DO... Hide time signature and add dotted bar line(s)
 
 
 music = CycleLoop()
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
 music.add_cycle()
+music.add_cycle()
+music.add_cycle(add_flags=["first_hit"])
+music.add_cycle()
+music.add_cycle(add_flags=["2hits"])
+music.add_cycle(add_flags=["3hits"])
+music.add_cycle(add_flags=["ma"])
+music.add_cycle()
+music.add_cycle(add_flags=["1hit_2"])
+music.add_cycle()
+music.add_cycle(add_flags=["ma"])
 music.add_cycle(add_flags=["final"])
+
+
 
 # is this the best way to deal with the meter and measures??
 music.add_data("measures_durations", [durationtools.Duration(4,4) for i in range(3)])
@@ -26,9 +45,27 @@ music.add_data("steady_strike", "c8[ c]")
 #music.add_data("force_line_pitches", ["d'", "c'", "bf", "g", "a", "e"])
 #music.add_data("force_line_durations", [durationtools.Duration(1,4) for i in range(6)])
 
-music.add_data("force_line_pitches", ["d'", "c'", "bf", "g", "a", "e'", "g", "a"])
-music.add_data("force_line_durations", [durationtools.Duration(3,8) for i in range(8)])
+def joinalter(it, delimiter):
+    for x in it:
+        yield delimiter
+        yield x
 
+force_line_pitches = ["bf'", "cs''", "d''", "e''", "fs''", "g''"]
+force_line_pitches_wrap = force_line_pitches.copy()
+force_line_pitches_wrap.insert(0, "a'")
+force_line_pitches_wrap.append("a'")
+force_line_pitches_alter = (joinalter(force_line_pitches, "a'"))
+
+
+music.add_data("force_line_pitches", force_line_pitches)
+music.add_data("force_line_pitches_wrap", force_line_pitches_wrap)
+music.add_data("force_line_pitches_alter", force_line_pitches_alter)
+
+music.add_data("force_line_durations", [durationtools.Duration(2,6) for i in range(6)])
+music.add_data("force_line_durations_wrap", [durationtools.Duration(3,8) for i in range(8)])
+music.add_data("force_line_durations_alter", [durationtools.Duration(1,4) for i in range(12)])
+
+# --------------------------------------------------------------------------------------
 music.add_transform(
     MakeMusic(
         durations="yoga_class",
@@ -40,6 +77,8 @@ music.add_transform(
         times=12,
         part = "shime"
         ))
+# --------------------------------------------------------------------------------------
+
 music.add_transform(
     MakeMusic(
         pitches = "force_line_pitches",
@@ -47,6 +86,46 @@ music.add_transform(
         #times=2,
         part = "violinI"
         ))
+
+# --------------------------------------------------------------------------------------
+
+music.add_data("hit_points", [10], start_flag="first_hit", stop_flag="1hit_2")
+music.add_data("hit_pitches", ["a'", "e''"])
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        start_flag="2hits",
+        point=6
+        ))
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        start_flag="3hits",
+        point=13
+        ))
+music.add_data("hit_points", [0], start_flag="1hit_2")
+
+music.add_transform(
+    MakeMusicFromHits(
+        "hit_points",
+        parts=["trumpet1", "trumpet2"],
+        pitches="hit_pitches",
+        cycle_length=24,
+        denominator=8,
+        start_flag="first_hit",
+        ))
+
+#transform hit points to come more often...
+
+# --------------------------------------------------------------------------------------
+
+music.add_transform(
+    MakeMa(
+        "make_ma",
+        apply_flags="ma",
+        ))
+
+# --------------------------------------------------------------------------------------
 
 
 music.apply_transforms()
