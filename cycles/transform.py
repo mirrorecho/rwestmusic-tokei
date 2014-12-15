@@ -61,7 +61,7 @@ class TransformBase:
 
     args = {}
 
-    def __init__(self, name=None, stop_flag=None, start_flag=None, start_iter=None, stop_iter=None, apply_flags=[], **kwargs):
+    def __init__(self, name=None, stop_flag=None, start_flag=None, start_iter=None, stop_iter=None, apply_flags=[], skip_flags=[], **kwargs):
         self.name = name
         
         self.start_flag = start_flag
@@ -69,6 +69,7 @@ class TransformBase:
         self.start_iter = start_iter
         self.stop_iter = stop_iter
         self.apply_flags = apply_flags
+        self.skip_flags = skip_flags
 
         # TO DO... add skip flags?
 
@@ -95,7 +96,12 @@ class TransformBase:
         ):
             self.is_loop_active = True        
 
-        return self.is_loop_active or any(f in self.apply_flags for f in flags)
+        return ((
+                    self.is_loop_active 
+                    or any(f in self.apply_flags for f in flags)
+                ) 
+                and not any(f in self.skip_flags for f in flags)
+                ) 
 
 
     def apply(self, cycle, previous_cycle):
@@ -137,7 +143,7 @@ class MakeMusic(TransformBase):
         # split notes accross bar lines (with ties) .... QUESTION... should this happen here or at the arrangement mod?
         music = music_from_durations(
                         durations=cycle.data[self.args["durations"]], 
-                        split_durations=cycle.data["measures_durations"], 
+                        split_durations=cycle.measures_durations, 
                         pitches=pitches,
                         times=times)
 
@@ -148,9 +154,23 @@ class MakeMusic(TransformBase):
         
         # if a part is specified, then add the music to that... otherwise add it to the data defined by this transform name
         if "part" in self.args:
-            cycle.arrangement.parts[self.args["part"]].extend(music)
+            cycle.arrange_music(self.args["part"], music)
         else:
             cycle.data[self.name] = music
+
+class ArrangeAll(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        for part_name, part in cycle.arrangement.parts.items():
+            if part.is_simultaneous:
+                for i in range(len(part)):
+                    music = copy.deepcopy(cycle.data[self.name])
+                    cycle.arrange_music(part_name=part_name, music=music, staff_number=i)
+            else:
+                music = copy.deepcopy(cycle.data[self.name])
+                cycle.arrange_music(part_name=part_name, music=music)
+            # TO DO... Hide time signature and add dotted bar line(s)
+
+
 
 class CopyMusic(TransformBase):
     def apply(self, cycle, previous_cycle):
@@ -161,7 +181,7 @@ class CopyMusic(TransformBase):
                 note.written_pitch += cycle.data[self.args["transpose"]]
         # if a part is specified, then add the music to that... otherwise add it to the data defined by this transform name
         if "part" in self.args:
-            cycle.arrangement.parts[self.args["part"]].extend(music)
+            cycle.arrange_music(self.args["part"], music)
         else:
             cycle.data[self.name] = music
 
@@ -187,12 +207,12 @@ class MakeMusicFromHits(TransformBase):
             talea = [t for t in talea if t!=0] # (gets rid of 0-length rests)
             durations = scoretools.Container()
             durations.extend(scoretools.make_leaves_from_talea(talea, self.args["denominator"]))
-            for part, pitch in zip(self.args["parts"], cycle.data[self.args["pitches"]]):
+            for part_name, pitch in zip(self.args["parts"], cycle.data[self.args["pitches"]]):
                 music = music_from_durations(
                                 durations=durations, 
-                                split_durations=cycle.data["measures_durations"], 
+                                split_durations=cycle.measures_durations, 
                                 pitches=[pitch])
-                cycle.arrangement.parts[part].extend(music)
+                cycle.arrange_music(part_name, music)
 
 
 

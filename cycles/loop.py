@@ -10,11 +10,12 @@ class Cycle:
     flags = []
     arrangement = None
 
-    def __init__(self):
+    def __init__(self, measures_durations):
         # measures durations used in many transformations... default to 1 measure of 4/4
-        self.data["measures_durations"] = [(4,4)]
+        self.measures_durations = measures_durations
         # to do... don't restrict this to a tokei arrangement??
         self.arrangement = TokeiArrangement()
+        self.fill_skips()
 
     def fill_skips(self):
         """
@@ -24,14 +25,28 @@ class Cycle:
         for part_name, part in self.arrangement.parts.items():
             if part.is_simultaneous:
                 for part_line in part:
-                    if len(part_line.select_leaves()) == 0:
-                        part_line.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
-            elif len(part.select_leaves()) == 0:
-                part.extend(scoretools.make_spacer_skip_measures([d.pair for d in self.data["measures_durations"]]))
+                    if len(part_line) == 0:
+                        part_line.extend(scoretools.make_spacer_skip_measures(self.measures_durations))
+            elif len(part) == 0:
+                part.extend(scoretools.make_spacer_skip_measures(self.measures_durations))
+
+    def arrange_music(self, part_name, music, staff_number=None): #staff_number used for piano/multistaff parts
+        part = self.arrangement.parts[part_name]
+        if part.is_simultaneous:
+            old_music = part[0 if staff_number is None else staff_number]
+        else:
+            old_music = part
+        music_replace = mutate(old_music).replace_measure_contents(music)
+        for m_old, m_new in zip(old_music, music_replace):
+            m_old = m_new
+
 
 class CycleLoop:
-    cycles = []
-    transforms = []
+
+    def __init__(self, measures_durations=[(4,4), (4,4)]):
+        self.cycles = []
+        self.transforms = []
+        self.measures_durations = measures_durations
 
     def flag_index(self, flag):
         """
@@ -51,8 +66,8 @@ class CycleLoop:
                         **kwargs
                         ))
 
-    def add_cycle(self, index=None, add_flags=[]):
-        cycle = Cycle()
+    def add_cycle(self, index=None, add_flags=[], measures_durations=None):
+        cycle = Cycle(self.measures_durations if measures_durations is None else measures_durations)
         if index is None:
             self.cycles.append(cycle)
         else:
@@ -70,17 +85,13 @@ class CycleLoop:
             self.add_cycle(index + 1, add_flags)
 
     def apply_transforms(self):
-        i = 0
-        for cycle in self.cycles:
+        for i, cycle in enumerate(self.cycles):
             for transform in self.transforms:
                 previous_cycle = self.cycles[i-1] if i > 0 else None
                 if transform.is_active(i, len(self.cycles), cycle.flags):
                     transform.apply(cycle, previous_cycle)
-            i += 1
 
     def make_arrangement(self):
-        for cycle in self.cycles:
-            cycle.fill_skips()
         arrangement = self.cycles[0].arrangement
         for cycle in self.cycles[1:]:
             arrangement.append_arrangement(cycle.arrangement)

@@ -95,11 +95,14 @@ class Arrangement:
     def add_piano_staff_part(self, name, instrument=None):
         self.parts[name] = PianoStaffPart(instrument)
 
-    def make_score(self):
+    def make_score(self, part_names = None):
 
         self.score = scoretools.Score([])
 
-        self.score.extend([self.parts[x].make_staff() for x in self.parts])
+        if part_names is None:
+            part_names = self.parts
+
+        self.score.extend([self.parts[x].make_staff() for x in part_names])
 
     def make_lilypond_file(self):
         """
@@ -145,6 +148,9 @@ class Arrangement:
         paper_height = lilypondfiletools.LilyPondDimension(17, 'in')
         lilypond_file.paper_block.paper_height = paper_height
 
+        system_system_spacing = layouttools.make_spacing_vector(0, 0, 20, 0)
+        lilypond_file.paper_block.system_system_spacing = system_system_spacing
+
         lilypond_file.header_block.composer = markuptools.Markup('Randall West')
 
         # TO DO... move "for Taiko and Orchestra" to subtitle
@@ -152,12 +158,12 @@ class Arrangement:
 
         return lilypond_file
 
-    def make_pdf(self, subfolder = None):
+    def make_pdf(self, subfolder = None, part_names = None):
         """
         similar to abjad's builtin show()... but uses arrangement-specific file path/name instead of the abjad default,
         creates and returns pdf filename without showing it, and pdf file name does NOT increment
         """
-        self.make_score()
+        self.make_score(part_names=part_names)
         lilypond_file = self.make_lilypond_file()
         assert '__illustrate__' in dir(lilypond_file)
         result = topleveltools.persist(lilypond_file).as_pdf()
@@ -175,21 +181,14 @@ class Arrangement:
         if return_timing:
             return abjad_formatting_time, lilypond_rendering_time
 
-    def show_pdf(self):
+    def show_pdf(self, part_names = None):
         """
         calls make_pdf and then shows the pdf: similar to abjad's builtin show() method... 
         but uses arrangement-specific file path/name instead of the abjad default 
         and pdf filename does NOT increment
         """
-        pdf_file_path = self.make_pdf()
+        pdf_file_path = self.make_pdf(part_names=part_names)
         systemtools.IOManager.open_file(pdf_file_path)
-
-    def partial_score(self, part_names):
-        score = scoretools.Score([])
-
-        score.extend([self.parts[x].make_staff() for x in part_names])
-
-        return score
 
     def append_arrangement(self, arrangement):
         for part_name in self.parts:
