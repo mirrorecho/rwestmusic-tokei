@@ -56,7 +56,7 @@ music.add_data("force_line_pitches", force_line_pitches)
 music.add_data("force_line_pitches_wrap", force_line_pitches_wrap)
 music.add_data("force_line_pitches_alter", force_line_pitches_alter)
 
-music.add_data("force_line_durations", [durationtools.Duration(2,6) for i in range(6)])
+music.add_data("force_line_durations", [durationtools.Duration(2,4) for i in range(6)])
 music.add_data("force_line_durations_wrap", [durationtools.Duration(3,8) for i in range(8)])
 music.add_data("force_line_durations_alter", [durationtools.Duration(1,4) for i in range(12)])
 
@@ -76,14 +76,14 @@ music.add_transform(
         ))
 # --------------------------------------------------------------------------------------
 
-# music.add_transform(
-#     MakeMusic(
-#         pitches = "force_line_pitches",
-#         durations="force_line_durations",
-#         #times=2,
-#         part = "violinI",
-#         skip_flags="ma",
-#         ))
+music.add_transform(
+    MakeMusic(
+        pitches = "force_line_pitches",
+        durations="force_line_durations",
+        #times=2,
+        part = "violinI",
+        skip_flags="ma",
+        ))
 
 # --------------------------------------------------------------------------------------
 
@@ -131,4 +131,4 @@ music.apply_transforms()
 
 music_arrangement = music.make_arrangement()
 
-music_arrangement.show_pdf(part_names=["taiko1", "trumpet2", "trumpet1"])
+music_arrangement.show_pdf(part_names=["taiko1", "trumpet2", "trumpet1", "violinI"])
