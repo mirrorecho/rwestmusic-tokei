@@ -60,11 +60,13 @@ music.add_data("force_line_pitches_alter", force_line_pitches_alter)
 music.add_data("force_line_ma_pitches", force_line_pitches_alter)
 
 # TO DO:
-# quick way to copy pitches to a stacked interval set
-# repeat each pitch possibility
+# quick way to copy pitches to a stacked interval set 9 total (2 a, bf, e, and 5 for each chord)
+# repeat each pitch like [a bf bf bf a cs cs cs etc.]
 # cloud pitches to use ranges (for each point!)
+# winds ranges mid to widely spaced
+# make for_line_pitches_alter cloud (with winds ranges)
 # save the pitch cloud
-# make for_line_pitches_alter cloud 
+
 
 
 music.add_data("force_line_durations", [durationtools.Duration(2,4) for i in range(6)])
