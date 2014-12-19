@@ -13,20 +13,21 @@ music = CycleLoop([(4,4) for i in range(3)])
 ma_duration = [(1,4)]
 
 music.add_cycle(add_flags=["start"])
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+
+music.add_cycle(add_flags=["first_hit"])
+music.add_cycle()
+music.add_cycle(add_flags=["2hits"])
+music.add_cycle(add_flags=["3hits"])
+
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
 music.add_cycle()
+music.add_cycle(add_flags=["1hit_2"])
 music.add_cycle()
-music.add_cycle()
-music.add_cycle(add_flags=["first_hit"])
-# music.add_cycle()
-# music.add_cycle(add_flags=["2hits"])
-# music.add_cycle(add_flags=["3hits"])
-# music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
-# music.add_cycle()
-# music.add_cycle(add_flags=["1hit_2"])
-# music.add_cycle()
-# music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
-# music.add_cycle(add_flags=["final"])
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+music.add_cycle(add_flags=["final"])
 
 
 music.add_data("steady_durations", Duration(1,8))
@@ -56,6 +57,16 @@ music.add_data("force_line_pitches", force_line_pitches)
 music.add_data("force_line_pitches_wrap", force_line_pitches_wrap)
 music.add_data("force_line_pitches_alter", force_line_pitches_alter)
 
+music.add_data("force_line_ma_pitches", force_line_pitches_alter)
+
+# TO DO:
+# quick way to copy pitches to a stacked interval set
+# repeat each pitch possibility
+# cloud pitches to use ranges (for each point!)
+# save the pitch cloud
+# make for_line_pitches_alter cloud 
+
+
 music.add_data("force_line_durations", [durationtools.Duration(2,4) for i in range(6)])
 music.add_data("force_line_durations_wrap", [durationtools.Duration(3,8) for i in range(8)])
 music.add_data("force_line_durations_alter", [durationtools.Duration(1,4) for i in range(12)])
@@ -78,10 +89,11 @@ music.add_transform(
 
 music.add_transform(
     MakeMusic(
-        pitches = "force_line_pitches",
+        pitches = "force_line_pitches_alter",
         durations="force_line_durations",
         #times=2,
         part = "violinI",
+        start_flag="first_hit",
         skip_flags="ma",
         ))
 

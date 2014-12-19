@@ -274,7 +274,7 @@ class ModAddPoint(TransformBase):
         cycle.data[self.name].append(self.args["point"])
         cycle.data[self.name].sort()
 
-class AddPitchesCopy(TransformBase):
+class CopyPitches(TransformBase):
     def apply(self, cycle, previous_cycle):
         transpose = 0
         if "transpose" in self.args:
@@ -282,7 +282,7 @@ class AddPitchesCopy(TransformBase):
         copy_from = cycle.data[self.args["copy_from"]]
         cycle.data[self.name] = [pitch + transpose for pitch in copy_from]
 
-class AddPitchCopy(TransformBase):
+class CopyPitch(TransformBase):
     def apply(self, cycle, previous_cycle):
         transpose = 0
         if "transpose" in self.args:

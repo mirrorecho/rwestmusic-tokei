@@ -507,7 +507,7 @@
 			"file": "caesium.py",
 			"settings":
 			{
-				"buffer_size": 3947,
+				"buffer_size": 3942,
 				"line_ending": "Unix"
 			}
 		},
@@ -1367,15 +1367,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3947,
+						"buffer_size": 3942,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								453,
-								453
+								1238,
+								1238
 							]
 						],
 						"settings":
@@ -1487,7 +1487,7 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 60.0,
+						"translation.y": 540.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
