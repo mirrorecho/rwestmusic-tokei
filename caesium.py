@@ -65,16 +65,6 @@ music.add_data("force_pitches_wrap", force_pitches_wrap)
 music.add_data("force_pitches_alter", force_pitches_alter)
 music.add_data("force_pitches_alter_2", force_pitches_alter_2)
 
-# TO DO:
-# (DONE) quick way to copy pitches to a stacked interval set 9 total (2 a, bf, e, and 5 for each chord)
-# (DONE) repeat each pitch like [a bf bf bf a cs cs cs etc.]
-# cloud pitches to use ranges (for each point!)
-# winds ranges mid to widely spaced
-# make for_line_pitches_alter cloud (with winds ranges)
-# save the pitch cloud
-
-
-
 music.add_data("force_durations", [durationtools.Duration(2,4) for i in range(6)])
 music.add_data("force_durations_wrap", [durationtools.Duration(3,8) for i in range(8)])
 music.add_data("force_durations_alter", [durationtools.Duration(1,4) for i in range(12)])
@@ -82,10 +72,22 @@ music.add_data("force_durations_alter_2", [durationtools.Duration(1,8) for i in 
 
 music.add_data("force_harmonic_stack", [0, 3, 7, 7, 12])
 
-
 music.add_data("force_ma_cloud_pitches", ["a'" for i in range(24)])
 
 music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
+
+
+# TO DO:
+# (DONE) quick way to copy pitches to a stacked interval set 9 total (2 a, bf, e, and 5 for each chord)
+# (DONE) repeat each pitch like [a bf bf bf a cs cs cs etc.]
+# (DONE) better way to handle cloud pitch lines (matrix) with cycles (e.g. a single data definition for the whole matrix)
+# (DONE) --- arrange pitches from a matrix
+# save/load the pitch cloud
+# plan for how to deal with pre-saved data vs cycle-determined data (and keep pre-saved data from getting stagnant)
+# cloud pitches to use ranges (for each point!)
+# winds ranges mid to widely spaced
+# make for_line_pitches_alter cloud (with winds ranges)
+# cloud repeat indefinitely (thorugh command prompt) and periodically show, along with ratings
 
 # --------------------------------------------------------------------------------------
 music.add_transform(
@@ -104,114 +106,37 @@ music.add_transform(
 
 # --------------------------------------------------------------------------------------
 music.add_transform(
-    CopyPitches(
+    MakePitchLines(
         "force_cloud",
-        copy_from = "force_pitches_alter_2",
-        copy_to_names = ["force_cloud_1", "force_cloud_2", "force_cloud_3", "force_cloud_4", "force_cloud_5"],
-        transpose = "force_harmonic_stack"
+        copy_from = "force_ma_cloud_pitches",
+        harmonic_stack = "force_ma_harmonic_stack"
     ))
 music.add_transform(
-    CopyPitches(
-        "force_ma_cloud",
-        copy_from = "force_ma_cloud_pitches",
-        copy_to_names = ["force_ma_cloud_1", "force_ma_cloud_2", "force_ma_cloud_3", "force_ma_cloud_4"],
-        transpose = "force_ma_harmonic_stack"
+    MakePitchLines(
+        "force_cloud",
+        copy_from = "force_pitches_alter_2",
+        harmonic_stack = "force_harmonic_stack"
     ))
 
 # WORKS WELL ENOUGH????
 music.add_transform(
     ModCloudPitchesRearrangeLines(
-        "cloud_force",
-        pitch_lines = ["force_cloud_1", "force_cloud_2", "force_cloud_3", "force_cloud_4", "force_cloud_5", "force_ma_cloud_1", "force_ma_cloud_2", "force_ma_cloud_3", "force_ma_cloud_4"],
+        "force_cloud",
         tally_apps = [
             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
-            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11), (5,2), (2,4), (4,4)]), 
-            TallyMelodicIntervals(interval_ratings=[(0, -80), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (7,6), (10,-8), (11,-20)], over_incremental_multiplier=(12,-40))
+            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(interval_ratings=[(0, -99), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (10,-8), (11,-20), (12,-2)], over_incremental_multiplier=(12,-60))
             ],
-        times = 66,
-        start_flag = "first_hit",
+        tally_times = 22,
+        apply_flags = ["first_hit"],
     ))
 
-
 music.add_transform(
-    MakeMusic(
-        pitches = "force_cloud_5",
+    MakeMusicLines(
+        pitch_lines = "force_cloud",
         durations="force_durations_alter_2",
-        #times=2,
-        part = "flute1",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_cloud_4",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "flute2",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_cloud_3",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "oboe1",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_cloud_2",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "oboe2",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_cloud_1",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "oboe3",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_ma_cloud_4",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "clarinet2",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_ma_cloud_3",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "clarinet1",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_ma_cloud_2",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "bassoon2",
-        start_flag="first_hit",
-        skip_flags="ma",
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches = "force_ma_cloud_1",
-        durations="force_durations_alter_2",
-        #times=2,
-        part = "bassoon1",
-        start_flag="first_hit",
+        parts = ["bassoon2", "bassoon1", "clarinet2", "clarinet1", "oboe3", "oboe2", "oboe1", "flute2", "flute1"],
+        apply_flags=["first_hit"],
         skip_flags="ma",
         ))
 

@@ -24,6 +24,7 @@ def music_from_durations(durations, times=None, split_durations=None, pitches=No
     elif isinstance(durations, scoretools.Container):
         music = copy.deepcopy(durations)
     else:
+        # should durations also be copied here???
         music = scoretools.make_leaves([0], durations)
 
     if pitches is not None:
@@ -158,6 +159,30 @@ class MakeMusic(TransformBase):
         else:
             cycle.data[self.name] = music
 
+# handles basic parameters for pitch_lines, duration/durations/durations_lines, and parts... could be extended if needed (transpose, times, pitch_ranges, etc.)
+class MakeMusicLines(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        pitch_lines = cycle.data[self.args["pitch_lines"]]
+        if "duration" in self.args:
+            # all pitches on all lines get the same duration:
+            durations = [cycle.data[self.args["duration"]] for i in range(len(pitch_lines[0]))]
+            durations_lines = [durations for i in range(len(pitch_lines))]
+        elif "durations" in self.args:
+            # different durations for different pitch columns (but same for each line)
+            durations_lines = [cycle.data[self.args["durations"]] for i in range(len(pitch_lines))]
+        elif "durations_lines" in self.args:
+            # each pitch line has it's own unique line of durations
+            durations_lines = cycle.data[self.args["durations_lines"]]
+
+        if "parts" in self.args:
+            for pitch_line, durations_line, part in zip(pitch_lines, durations_lines, self.args["parts"]):
+                cycle.arrange_music(part, music_from_durations(
+                            durations=durations_line, 
+                            split_durations=cycle.measures_durations, 
+                            pitches=pitch_line
+                            ))
+        # anything else that should be done other than copy the lines to parts?
+
 class ArrangeAll(TransformBase):
     def apply(self, cycle, previous_cycle):
         for part_name, part in cycle.arrangement.parts.items():
@@ -221,17 +246,15 @@ class ModCloudPitchesRearrangeLines(TransformBase):
     # times 
     # pitch_lines 
     def apply(self, cycle, previous_cycle):
-        pitch_lines = [cycle.data[n] for n in self.args["pitch_lines"]]
+        pitch_lines = cycle.data[self.name]
         # assume we don't need the project, since we won't be showing anything directly...
         cloud = CloudPitches(pitch_lines=pitch_lines)
         cloud.randomize_all_columns()
         for tally_app in self.args["tally_apps"]:
             cloud.add_tally_app(tally_app)
-        for i in range(self.args["times"]):
+        for i in range(self.args["tally_times"]):
             cloud.get_tallies()
             cloud = cloud.get_rearranged()
-        for j, n in enumerate(self.args["pitch_lines"]):
-            cycle.data[n] = cloud.pitch_lines[j]
 
 class AddMusicFromIntervalRepeatCell(TransformBase):
     def apply(self, cycle, previous_cycle):
@@ -290,6 +313,16 @@ class CopyPitches(TransformBase):
         else:
             cycle.data[self.name] = [get_pitch_number(pitch) + transpose for pitch in copy_from]
 
+class MakePitchLines(TransformBase):
+    def apply(self, cycle, previous_cycle):
+        # create a new list if not already created:
+        if self.name not in cycle.data:
+            cycle.data[self.name] = []
+        copy_from = cycle.data[self.args["copy_from"]]
+        harmonic_stack = cycle.data[self.args["harmonic_stack"]]
+        for i, transpose in enumerate(harmonic_stack):
+            new_line = [get_pitch_number(pitch) + transpose for pitch in copy_from]
+            cycle.data[self.name].append(new_line)
 
 class CopyPitch(TransformBase):
     def apply(self, cycle, previous_cycle):

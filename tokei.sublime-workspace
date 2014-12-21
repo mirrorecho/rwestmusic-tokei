@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"bas",
+				"bassoon2"
+			],
+			[
+				"c",
+				"clarinet2"
+			],
+			[
+				"copy",
+				"copy_to_names"
+			],
+			[
 				"trumpet",
 				"trumpet1"
 			],
@@ -86,10 +98,6 @@
 			[
 				"steady_",
 				"steady_pitches"
-			],
-			[
-				"copy",
-				"copy_from"
 			],
 			[
 				"fifth",
@@ -491,7 +499,7 @@
 			"file": "cycles/transform.py",
 			"settings":
 			{
-				"buffer_size": 12042,
+				"buffer_size": 12565,
 				"line_ending": "Unix"
 			}
 		},
@@ -507,7 +515,7 @@
 			"file": "caesium.py",
 			"settings":
 			{
-				"buffer_size": 4291,
+				"buffer_size": 7850,
 				"line_ending": "Unix"
 			}
 		},
@@ -523,7 +531,7 @@
 			"file": "cloud/pitches.py",
 			"settings":
 			{
-				"buffer_size": 14419,
+				"buffer_size": 14346,
 				"line_ending": "Unix"
 			}
 		},
@@ -531,7 +539,7 @@
 			"file": "arrangement.py",
 			"settings":
 			{
-				"buffer_size": 14160,
+				"buffer_size": 14285,
 				"line_ending": "Unix"
 			}
 		},
@@ -653,6 +661,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"force_line_",
 			"ranges",
 			"measures_",
 			"measures_dura",
@@ -675,6 +684,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"force_",
 			"pitches",
 			"args",
 			"stop_iter",
@@ -826,7 +836,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
@@ -961,7 +971,7 @@
 						"translation.y": 180.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 5,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
@@ -1094,7 +1104,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 6,
+					"stack_index": 8,
 					"type": "text"
 				},
 				{
@@ -1103,15 +1113,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 12042,
+						"buffer_size": 12565,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10854,
-								10854
+								11490,
+								11490
 							]
 						],
 						"settings":
@@ -1225,10 +1235,10 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 2041.0,
+						"translation.y": 5199.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
@@ -1244,8 +1254,8 @@
 						"selection":
 						[
 							[
-								3947,
-								3947
+								4268,
+								4268
 							]
 						],
 						"settings":
@@ -1357,10 +1367,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 3898.0,
+						"translation.y": 3178.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 1,
 					"type": "text"
 				},
 				{
@@ -1369,15 +1379,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4291,
+						"buffer_size": 7850,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1243,
-								1243
+								2936,
+								2936
 							]
 						],
 						"settings":
@@ -1489,7 +1499,7 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 540.0,
+						"translation.y": 1583.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1624,7 +1634,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 8,
+					"stack_index": 9,
 					"type": "text"
 				},
 				{
@@ -1633,15 +1643,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14419,
+						"buffer_size": 14346,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								6612,
-								6612
+								1167,
+								1167
 							]
 						],
 						"settings":
@@ -1753,10 +1763,10 @@
 							"syntax": "Packages/Python/Python.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 2544.0,
+						"translation.y": 636.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 2,
 					"type": "text"
 				},
 				{
@@ -1765,15 +1775,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 14160,
+						"buffer_size": 14285,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								7929,
-								7929
+								7890,
+								7890
 							]
 						],
 						"settings":
@@ -1890,7 +1900,7 @@
 						"translation.y": 3975.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 4,
 					"type": "text"
 				},
 				{
@@ -1906,8 +1916,8 @@
 						"selection":
 						[
 							[
-								1626,
-								1626
+								711,
+								711
 							]
 						],
 						"settings":
@@ -2023,7 +2033,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 9,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
