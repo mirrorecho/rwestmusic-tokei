@@ -276,11 +276,20 @@ class ModAddPoint(TransformBase):
 
 class CopyPitches(TransformBase):
     def apply(self, cycle, previous_cycle):
+        copy_from = cycle.data[self.args["copy_from"]]
         transpose = 0
         if "transpose" in self.args:
             transpose = cycle.data[self.args["transpose"]]
-        copy_from = cycle.data[self.args["copy_from"]]
-        cycle.data[self.name] = [pitch + transpose for pitch in copy_from]
+        if "copy_to_names" in self.args:
+            if isinstance(transpose, list):
+                for copy_to_name, transpose_value in zip(self.args["copy_to_names"], transpose):
+                    cycle.data[copy_to_name] = [get_pitch_number(pitch) + transpose_value for pitch in copy_from]
+            else:
+                for copy_to_name in self.args["copy_to_names"]:
+                    cycle.data[copy_to_name] = [get_pitch_number(pitch) + transpose for pitch in copy_from]
+        else:
+            cycle.data[self.name] = [get_pitch_number(pitch) + transpose for pitch in copy_from]
+
 
 class CopyPitch(TransformBase):
     def apply(self, cycle, previous_cycle):

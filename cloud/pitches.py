@@ -36,7 +36,6 @@ class TallyAppBase:
 
 class TallyMelodicIntervals(TallyAppBase):
     def __init__(self, interval_ratings=[], over_incremental_multiplier=None, by_pitch_class=False, bidirectional=True, line_weights=None, column_weights=None):
-        # default is to dock off 100 points for parallel unisons/octaves
         self.interval_ratings = interval_ratings
         self.by_pitch_class = by_pitch_class
         self.bidirectional = bidirectional
