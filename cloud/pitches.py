@@ -2,8 +2,10 @@ from abjad import *
 
 from arrangement import Arrangement
 
+import os
 import random
 import copy
+import pickle
 
 def get_diatonic_spread(pitch_line):
     pass
@@ -143,20 +145,33 @@ class TallyCircleOfFifthsRange(TallyAppBase):
 
 class CloudPitches:
 
-    def __init__(self, pitch_lines, project="rwestmusic"):
+    def __init__(self, pitch_lines=None, filepath=None, project="rwestmusic"):
         self.project = project
         # QUESTION ... better to use abjad's pitchtools.PitchArray()?
-        self.pitch_lines = pitch_lines
-        self.num_lines = len(pitch_lines)
-        self.num_columns = len(pitch_lines[0])
-        self.dont_touch_pitches = None # [[]] # for future use
-        self.tally_apps = []
         
-        self.reset_tally()
+        self.filepath = filepath
 
+        self.dont_touch_pitches = None # [[]] # for future use
         self.voice_ranges = [["[A3 A5]"]] # TO DO... extrapolate last entry for total # of lines/columns
+
+        if pitch_lines is not None:
+            self.pitch_lines = pitch_lines
+        elif filepath is not None and os.path.isfile(filepath):
+            self.load()
+        else:
+            self.pitch_lines = [[]]
+
+        self.init_data()
+
+        self.tally_apps = []
+
         self.auto_move_into_ranges = True
         self.octave_transpositions_allowed = True
+
+    def init_data(self):
+        self.num_lines = len(self.pitch_lines)
+        self.num_columns = len(self.pitch_lines[0])
+        self.reset_tally()
 
     def reset_tally(self):
         # fill initial tallies with 0s 
@@ -292,11 +307,27 @@ class CloudPitches:
         return best_try
 
 
-    def save(self):
-        pass
+    def save(self, filepath=None):
+        if filepath==None:
+            filepath = self.filepath
+        cloud_data = {}
+        cloud_data["pitch_lines"] = self.pitch_lines
+        cloud_data["voice_ranges"] = self.voice_ranges
+        cloud_data["dont_touch_pitches"] = self.dont_touch_pitches
 
-    def load(self):
-        pass
+        with open(filepath, "wb") as p_file:
+            pickle.dump(cloud_data, p_file)
+
+    def load(self, filepath=None):
+        if filepath==None:
+            filepath = self.filepath
+
+        with open(filepath, "rb") as p_file:
+            cloud_data = pickle.load(p_file)
+
+        for pickle_attr in cloud_data:
+            setattr(self, pickle_attr, cloud_data[pickle_attr])
+        self.init_data()
 
     def show(self):
         arrangement = Arrangement(project=self.project, title="Cloud Pitch Lines: SCORE = " + str(self.tally_total), name="cloud-pitches-show")
@@ -309,6 +340,49 @@ class CloudPitches:
         # TO DO... show scores!
 
         arrangement.show_pdf()
+
+    # could create some trickery to make this not static...
+    @staticmethod
+    def tally_loop(cloud, times=22, filepath=None):
+
+        k=input("Enter 't' to rearrange and re-tally, 'l' to load, 's' to save, 'p' to show pdf, 'q' to quit: ")
+
+        if k== "t":
+            for i in range(times):
+                cloud = cloud.get_rearranged()
+            print("Tried rearranging " + str(times) + " times...")
+            print("New total tally:" + str(cloud.tally_total))
+            cloud = CloudPitches.tally_loop(cloud)
+
+        elif k == "l":
+            cloud.load(filepath)
+            print("Loaded " + filepath)
+            cloud.get_tallies()
+            print("Total tally:" + str(cloud.tally_total))
+            cloud = CloudPitches.tally_loop(cloud)
+
+        elif k == "p":
+            cloud.show()
+            cloud = CloudPitches.tally_loop(cloud)
+
+        elif k == "s":
+            cloud.save(filepath)
+            print("Saved!")
+            cloud = CloudPitches.tally_loop(cloud)
+
+        elif k == "q":
+            # do nothing to quit
+            pass
+
+        else:
+            print("(invalid entry)")
+            cloud = CloudPitches.tally_loop(cloud)
+
+        return cloud
+
+
+
+
 
     # TO DO... figure out how to build up a library of these weigting functions... such as:
     # - no parallel pitch classes

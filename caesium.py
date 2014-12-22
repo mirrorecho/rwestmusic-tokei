@@ -12,6 +12,8 @@ from cloud.pitches import *
 music = CycleLoop([(4,4) for i in range(3)])
 ma_duration = [(1,4)]
 
+empty_arrangement = TokeiArrangement()
+
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
 music.add_cycle()
@@ -82,8 +84,8 @@ music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
 # (DONE) repeat each pitch like [a bf bf bf a cs cs cs etc.]
 # (DONE) better way to handle cloud pitch lines (matrix) with cycles (e.g. a single data definition for the whole matrix)
 # (DONE) --- arrange pitches from a matrix
-# save/load the pitch cloud
-# plan for how to deal with pre-saved data vs cycle-determined data (and keep pre-saved data from getting stagnant)
+# (DONE) save/load the pitch cloud
+# (DONE... classes!) plan for how to deal with pre-saved data vs cycle-determined data (and keep pre-saved data from getting stagnant)
 # cloud pitches to use ranges (for each point!)
 # winds ranges mid to widely spaced
 # make for_line_pitches_alter cloud (with winds ranges)
@@ -119,17 +121,17 @@ music.add_transform(
     ))
 
 # WORKS WELL ENOUGH????
-music.add_transform(
-    ModCloudPitchesRearrangeLines(
-        "force_cloud",
-        tally_apps = [
-            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
-            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
-            TallyMelodicIntervals(interval_ratings=[(0, -99), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (10,-8), (11,-20), (12,-2)], over_incremental_multiplier=(12,-60))
-            ],
-        tally_times = 22,
-        apply_flags = ["first_hit"],
-    ))
+# music.add_transform(
+#     ModCloudPitchesRearrangeLines(
+#         "force_cloud",
+#         tally_apps = [
+#             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+#             TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+#             TallyMelodicIntervals(interval_ratings=[(0, -99), (1,9), (2,12), (3,9), (4,9), (5,6), (6,-6), (10,-8), (11,-20), (12,-2)], over_incremental_multiplier=(12,-60))
+#             ],
+#         tally_times = 22,
+#         apply_flags = ["first_hit"],
+#     ))
 
 music.add_transform(
     MakeMusicLines(

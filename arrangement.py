@@ -79,12 +79,13 @@ class Arrangement:
         self.score = scoretools.Score([])
         self.output_path = output_path
         self.project = project
+        self.project_path = output_path + "/" + project
         self.title = title
         self.name = name
 
     def pdf_path(self, subfolder=None):
         subfolder = subfolder + "/" if subfolder is not None else ""
-        return self.output_path + "/" + self.project + "/pdf/" + subfolder + self.project + "-" + self.name + ".pdf"
+        return self.project_path + "/pdf/" + subfolder + self.project + "-" + self.name + ".pdf"
 
     def add_part(self, name, instrument=None, cleff=None):
         self.parts[name] = Part(instrument, cleff)
