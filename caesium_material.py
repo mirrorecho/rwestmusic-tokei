@@ -1,13 +1,15 @@
 from abjad import *
 import os
 
-from arrangement import TokeiArrangement
+from tokei import TokeiArrangement
+from project import Project
 from cycles.loop import CycleLoop, Cycle
 from cycles.transform import *
 from cloud.pitches import * 
 
+tokei_project = Project("rwestmusic-tokei")
+tokei_arrangement = TokeiArrangement()
 
-empty_arrangement = TokeiArrangement()
 
 # ----------------------------------------------------------------------------
 # TO DO - TAKE THIS OUT OF caesium.py?
@@ -47,13 +49,16 @@ class ForceCloud1(ForceData):
         super().__init__()
         self.force_line_base = [p for p in joinalter_2(self.force_pitches, self.ma_pitch)]
         self.ma_base = [self.ma_pitch for i in range(24)]
-
-        self.filepath = self.arrangement.project_path + "/data/caesium_force_cloud_1.dat"
         
-        if autoload and os.path.isfile(self.filepath):
-            self.cloud = CloudPitches(project="rwestmusic-tokei", filepath=self.filepath)        
-        else:
-            self.init_cloud()            
+        self.filename="caesium_force_cloud_1.dat"
+
+        # create a new cloud... if autoload and the file exists, data will be auto loaded
+        self.cloud = CloudPitches(project=tokei_project, filename=self.filename, autoload=self.autoload) 
+
+        # if cloud data not already loaded, get our pitch lines, and load them
+        if not self.cloud.is_loaded:
+            self.cloud.init_data(pitch_lines=self.get_pitch_lines())
+            self.cloud.randomize_all_columns() 
         
         for app in self.tally_apps:
             self.cloud.add_tally_app(app)            
@@ -61,7 +66,7 @@ class ForceCloud1(ForceData):
         self.cloud.get_tallies()
 
 
-    def init_cloud(self):
+    def get_pitch_lines(self):
         pitch_lines = []
 
         for i, transpose in enumerate(self.force_harmonic_stack):
@@ -73,11 +78,9 @@ class ForceCloud1(ForceData):
             pitch_lines.append(
                 [get_pitch_number(pitch) + transpose for pitch in self.ma_base]
                 )
+        return pitch_lines
 
-        self.cloud = CloudPitches(pitch_lines=pitch_lines, project="rwestmusic-tokei", filepath=self.filepath)
-
-
-        self.cloud.randomize_all_columns()
 
     def tally_loop(self):
-        self.cloud = CloudPitches.tally_loop(cloud=self.cloud, filepath=self.filepath)
+        self.cloud = self.cloud.tally_loop()
+

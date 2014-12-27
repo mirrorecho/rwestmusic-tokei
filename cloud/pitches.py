@@ -145,18 +145,26 @@ class TallyCircleOfFifthsRange(TallyAppBase):
 
 class CloudPitches:
 
-    def __init__(self, pitch_lines=None, filepath=None, project="rwestmusic"):
-        self.project = project
+    def __init__(self, pitch_lines=None, filename=None, project=None, autoload=False):
+        self.is_loaded = False
+
+        if project is not None:
+            self.project = project
+        else:
+            self.project = Project()
+
         # QUESTION ... better to use abjad's pitchtools.PitchArray()?
-        
-        self.filepath = filepath
+        if filename is None:
+            filename = "cloud_data.dat"
+
+        self.filepath = self.project.data_path + "/" + filename
 
         self.dont_touch_pitches = None # [[]] # for future use
         self.voice_ranges = [["[A3 A5]"]] # TO DO... extrapolate last entry for total # of lines/columns
 
         if pitch_lines is not None:
             self.pitch_lines = pitch_lines
-        elif filepath is not None and os.path.isfile(filepath):
+        elif autoload and os.path.isfile(filepath):
             self.load()
         else:
             self.pitch_lines = [[]]
@@ -168,10 +176,15 @@ class CloudPitches:
         self.auto_move_into_ranges = True
         self.octave_transpositions_allowed = True
 
-    def init_data(self):
+    def init_data(self, pitch_lines = None):
+        if pitch_lines is not None:
+            self.pitch_lines = pitch_lines
         self.num_lines = len(self.pitch_lines)
         self.num_columns = len(self.pitch_lines[0])
         self.reset_tally()
+        try:
+            if len(self.pitch_lines[0]) > 0:
+                self.is_loaded = True
 
     def reset_tally(self):
         # fill initial tallies with 0s 
@@ -341,11 +354,15 @@ class CloudPitches:
 
         arrangement.show_pdf()
 
-    # could create some trickery to make this not static...
-    @staticmethod
-    def tally_loop(cloud, times=22, filepath=None):
+
+    def tally_loop(self, times=22, filepath=None):
 
         k=input("Enter 't' to rearrange and re-tally, 'l' to load, 's' to save, 'p' to show pdf, 'q' to quit: ")
+
+        cloud = self
+
+        if filepath is None:
+            filepath = self.filepath
 
         if k== "t":
             for i in range(times):

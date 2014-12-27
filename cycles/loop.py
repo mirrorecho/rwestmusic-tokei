@@ -1,5 +1,6 @@
 from abjad import *
-from arrangement import TokeiArrangement, Part, PianoStaffPart
+from arrangement import Arrangement, Part, PianoStaffPart
+from tokei import TokeiArrangement
 from cycles.transform import AddData
 
 class Cycle:
