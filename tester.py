@@ -1,9 +1,17 @@
 from abjad import *
 
-from arrangement import Arrangement
+# any way to avoid this sys path part??
+import sys
+sys.path.append("/Users/randallwest/Code/mirrorecho")
+
+import calliope.work
+
+f# rom arrangement import Arrangement
 from copy import deepcopy
 
-ar = Arrangement(project="rwestmusic-tokei", name="tester-arrangement")
+project = calliope.work.Project("rwestmusic-tokei")
+
+ar = calliope.work.Arrangement(project=project, name="tester-arrangement")
 ar.add_part(name='line1', instrument=instrumenttools.Violin(instrument_name="Line 1", short_instrument_name="1"))
 ar.add_part(name='line2', instrument=instrumenttools.Violin(instrument_name="Line 2", short_instrument_name="2"))
 ar.add_part(name='line3', instrument=instrumenttools.Violin(instrument_name="Line 3", short_instrument_name="3"))
