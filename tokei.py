@@ -1,4 +1,10 @@
-from arrangement import Arrangement
+from abjad import *
+
+# any way to avoid this sys path part??
+import sys
+sys.path.append("/Users/randallwest/Code/mirrorecho")
+
+from calliope.work import Arrangement
 
 class TokeiArrangement(Arrangement):
 

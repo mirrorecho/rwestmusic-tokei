@@ -1,15 +1,18 @@
 from abjad import *
+from tokei import TokeiArrangement
 
-from arrangement import TokeiArrangement
-from cycles.loop import CycleLoop, Cycle
-from cycles.transform import *
-from cloud.pitches import * 
+# any way to avoid this sys path part??
+import sys
+sys.path.append("/Users/randallwest/Code/mirrorecho")
+
+import calliope.cycles.loop
+from calliope.cycles.transform import *
+
+import calliope.cloud.pitches
 
 
 
-
-
-music = CycleLoop([(4,4) for i in range(3)])
+music = calliope.cycles.loop.CycleLoop(measures_durations=[(4,4) for i in range(3)], arrangement=TokeiArrangement())
 ma_duration = [(1,4)]
 
 empty_arrangement = TokeiArrangement()
