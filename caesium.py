@@ -12,7 +12,7 @@ import calliope.cloud.pitches
 
 
 
-music = calliope.cycles.loop.CycleLoop(measures_durations=[(4,4) for i in range(3)], arrangement=TokeiArrangement())
+music = calliope.cycles.loop.CycleLoop(measures_durations=[(4,4) for i in range(3)], arrangement_type=TokeiArrangement)
 ma_duration = [(1,4)]
 
 empty_arrangement = TokeiArrangement()
@@ -92,7 +92,9 @@ music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
 # cloud pitches to use ranges (for each point!)
 # winds ranges mid to widely spaced
 # make for_line_pitches_alter cloud (with winds ranges)
-# cloud repeat indefinitely (thorugh command prompt) and periodically show, along with ratings
+# tool to easily make a pitch range
+# move get_pitch_number and music_from_durations out of transform
+# (DONE... may add on) cloud repeat indefinitely (thorugh command prompt) and periodically show, along with ratings
 
 # --------------------------------------------------------------------------------------
 music.add_transform(

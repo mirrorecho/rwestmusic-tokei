@@ -4,14 +4,14 @@ from abjad import *
 import sys
 sys.path.append("/Users/randallwest/Code/mirrorecho")
 
-from calliope.work import Arrangement
+from calliope.work import Arrangement, Project
 
 class TokeiArrangement(Arrangement):
 
 
     def __init__(self):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", project="rwestmusic-tokei")
+        super().__init__(title="Tokei for Taiko and Orchestra", project=Project(name="rwestmusic-tokei"))
 
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))

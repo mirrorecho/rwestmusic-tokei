@@ -1,14 +1,20 @@
 from abjad import *
 import os
 
-from tokei import TokeiArrangement
-from project import Project
-from cycles.loop import CycleLoop, Cycle
-from cycles.transform import *
-from cloud.pitches import * 
+# any way to avoid this sys path part??
+import sys
+sys.path.append("/Users/randallwest/Code/mirrorecho")
 
-tokei_project = Project("rwestmusic-tokei")
+from tokei import TokeiArrangement
+from calliope.work import Project, Arrangement
+from calliope.cycles.loop import CycleLoop, Cycle
+from calliope.cycles.transform import *
+from calliope.cloud.pitches import * 
+
+import copy
+
 tokei_arrangement = TokeiArrangement()
+tokei_project = tokei_arrangement.project
 
 
 # ----------------------------------------------------------------------------
@@ -29,8 +35,9 @@ def joinalter_2(it, delimiter):
 
 class ForceData():
     def __init__(self):
-        self.arrangement = empty_arrangement
+        self.arrangement = tokei_arrangement
         self.force_pitches = ["bf", "cs'", "d'", "e'", "fs'", "g'"]
+        self.force_pitch_ranges = None
         self.ma_pitch = "a'"
         self.force_harmonic_stack = [0, 3, 7, 7, 12]
         self.ma_harmonic_stack = [0, 0, 1, 7]
@@ -49,11 +56,32 @@ class ForceCloud1(ForceData):
         super().__init__()
         self.force_line_base = [p for p in joinalter_2(self.force_pitches, self.ma_pitch)]
         self.ma_base = [self.ma_pitch for i in range(24)]
-        
+
         self.filename="caesium_force_cloud_1.dat"
 
+        # flutes:
+        self.force_pitch_ranges_high = [pitchtools.PitchRange("[" + str(i+6) + ", " + str(i+17) + "]") for i in range(24)]
+        # clarinets:
+        self.force_pitch_ranges_mid_high = [pitchtools.PitchRange("[" + str(i) + ", " + str(i+11) + "]") for i in range(24)]
+        # oboes: (2 at a time here??)
+        self.force_pitch_ranges_mid_low = [pitchtools.PitchRange("[" + str(22-i) + ", " + str((22-i)+11) + "]") for i in range(24)]
+        # bassoons:
+        self.force_pitch_ranges_low = [pitchtools.PitchRange("[" + str(-2-i) + ", " + str((-2-i)+11) + "]") for i in range(24)]
+
+        self.force_pitch_ranges = []
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_high))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_high))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_mid_high))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_mid_high))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_mid_low))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_mid_low))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_mid_low))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_low))
+        self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_low))
+
         # create a new cloud... if autoload and the file exists, data will be auto loaded
-        self.cloud = CloudPitches(project=tokei_project, filename=self.filename, autoload=self.autoload) 
+        self.cloud = CloudPitches(project=tokei_project, filename=self.filename, autoload=autoload, pitch_ranges=self.force_pitch_ranges) 
+        self.cloud.auto_move_into_ranges = True
 
         # if cloud data not already loaded, get our pitch lines, and load them
         if not self.cloud.is_loaded:
@@ -62,6 +90,8 @@ class ForceCloud1(ForceData):
         
         for app in self.tally_apps:
             self.cloud.add_tally_app(app)            
+
+        self.cloud.move_into_ranges()
 
         self.cloud.get_tallies()
 
