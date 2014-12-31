@@ -1,5 +1,6 @@
 from abjad import *
 from tokei import TokeiArrangement
+from caesium_material import ForceCloud1
 
 # any way to avoid this sys path part??
 import sys
@@ -28,58 +29,66 @@ music.add_cycle(add_flags=["2hits"])
 music.add_cycle(add_flags=["3hits"])
 
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
-# music.add_cycle()
-# music.add_cycle(add_flags=["1hit_2"])
-# music.add_cycle()
-# music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
-# music.add_cycle(add_flags=["final"])
+music.add_cycle()
+music.add_cycle(add_flags=["1hit_2"])
+music.add_cycle()
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+music.add_cycle()
+music.add_cycle(add_flags=["3hits_2"])
+music.add_cycle(add_flags=["final"])
+
 
 
 music.add_data("steady_durations", Duration(1,8))
 
 music.add_data("ma", scoretools.Container("r4 \\fermata"), apply_flags=["ma"])
 
-music.add_data("yoga_class", "c8-> r c    c-> r c    c-> r c r     c-> r c      c-> r c r     c-> r c r c r c")
+music.add_data("class", "c8-> r c    c-> r c    c-> r c r     c-> r c      c-> r c r     c-> r c r c r c")
+
+music.add_data("foce_osti_smooth_1", "c8-.-> c-. c-.    c-.-> c-. c-.   c-.-> c-. c-. c-.    c( c c) c( c c c)    c( c c c)   c(-> c) c-.->")
 
 music.add_data("steady_strike", "c8[ c]")
 
 #music.add_data("force_pitches", ["d'", "c'", "bf", "g", "a", "e"])
 #music.add_data("force_durations", [durationtools.Duration(1,4) for i in range(6)])
 
-def joinalter(it, delimiter):
-    for x in it:
-        yield delimiter
-        yield x
+# def joinalter(it, delimiter):
+#     for x in it:
+#         yield delimiter
+#         yield x
 
-def joinalter_2(it, delimiter):
-    for x in it:
-        yield delimiter
-        yield x
-        yield x
-        yield x
+# def joinalter_2(it, delimiter):
+#     for x in it:
+#         yield delimiter
+#         yield x
+#         yield x
+#         yield x
 
-force_pitches = ["bf'", "cs''", "d''", "e''", "fs''", "g''"]
-force_pitches_wrap = force_pitches.copy()
-force_pitches_wrap.insert(0, "a'")
-force_pitches_wrap.append("a'")
-force_pitches_alter = [p for p in joinalter(force_pitches, "a'")]
-force_pitches_alter_2 = [p for p in joinalter_2(force_pitches, "a'")]
+# force_pitches = ["bf'", "cs''", "d''", "e''", "fs''", "g''"]
+# force_pitches_wrap = force_pitches.copy()
+# force_pitches_wrap.insert(0, "a'")
+# force_pitches_wrap.append("a'")
+# force_pitches_alter = [p for p in joinalter(force_pitches, "a'")]
+# force_pitches_alter_2 = [p for p in joinalter_2(force_pitches, "a'")]
 
-music.add_data("force_pitches", force_pitches)
-music.add_data("force_pitches_wrap", force_pitches_wrap)
-music.add_data("force_pitches_alter", force_pitches_alter)
-music.add_data("force_pitches_alter_2", force_pitches_alter_2)
+# music.add_data("force_pitches", force_pitches)
+# music.add_data("force_pitches_wrap", force_pitches_wrap)
+# music.add_data("force_pitches_alter", force_pitches_alter)
+# music.add_data("force_pitches_alter_2", force_pitches_alter_2)
 
 music.add_data("force_durations", [durationtools.Duration(2,4) for i in range(6)])
 music.add_data("force_durations_wrap", [durationtools.Duration(3,8) for i in range(8)])
 music.add_data("force_durations_alter", [durationtools.Duration(1,4) for i in range(12)])
 music.add_data("force_durations_alter_2", [durationtools.Duration(1,8) for i in range(24)])
 
-music.add_data("force_harmonic_stack", [0, 3, 7, 7, 12])
+# music.add_data("force_harmonic_stack", [0, 3, 7, 7, 12])
 
-music.add_data("force_ma_cloud_pitches", ["a'" for i in range(24)])
+# music.add_data("force_ma_cloud_pitches", ["a'" for i in range(24)])
 
-music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
+# music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
+
+force_cloud1 = ForceCloud1()
+music.add_data("force_cloud", force_cloud1.cloud.pitch_lines)
 
 
 # TO DO:
@@ -89,17 +98,20 @@ music.add_data("force_ma_harmonic_stack", [0, 0, 1, 7])
 # (DONE) --- arrange pitches from a matrix
 # (DONE) save/load the pitch cloud
 # (DONE... classes!) plan for how to deal with pre-saved data vs cycle-determined data (and keep pre-saved data from getting stagnant)
-# cloud pitches to use ranges (for each point!)
-# winds ranges mid to widely spaced
+# (DONE... although very slow) cloud pitches to use ranges (for each point!)
+# (DONE) winds ranges mid to widely spaced
+# check on saving pitch ranges with the cloud
 # make for_line_pitches_alter cloud (with winds ranges)
+# arrangement auto clefs
 # tool to easily make a pitch range
-# move get_pitch_number and music_from_durations out of transform
+# move get_pitch_number and music_from_durations out of transformf
+# better to make an option to include a single pitch range per line? (instead of always a range per pitch?)
 # (DONE... may add on) cloud repeat indefinitely (thorugh command prompt) and periodically show, along with ratings
 
 # --------------------------------------------------------------------------------------
 music.add_transform(
     MakeMusic(
-        durations="yoga_class",
+        durations="class",
         part = "taiko1",
         skip_flags="ma",
         ))
@@ -112,18 +124,18 @@ music.add_transform(
         ))
 
 # --------------------------------------------------------------------------------------
-music.add_transform(
-    MakePitchLines(
-        "force_cloud",
-        copy_from = "force_ma_cloud_pitches",
-        harmonic_stack = "force_ma_harmonic_stack"
-    ))
-music.add_transform(
-    MakePitchLines(
-        "force_cloud",
-        copy_from = "force_pitches_alter_2",
-        harmonic_stack = "force_harmonic_stack"
-    ))
+# music.add_transform(
+#     MakePitchLines(
+#         "force_cloud",
+#         copy_from = "force_ma_cloud_pitches",
+#         harmonic_stack = "force_ma_harmonic_stack"
+#     ))
+# music.add_transform(
+#     MakePitchLines(
+#         "force_cloud",
+#         copy_from = "force_pitches_alter_2",
+#         harmonic_stack = "force_harmonic_stack"
+#     ))
 
 # WORKS WELL ENOUGH????
 # music.add_transform(
@@ -142,7 +154,7 @@ music.add_transform(
     MakeMusicLines(
         pitch_lines = "force_cloud",
         durations="force_durations_alter_2",
-        parts = ["bassoon2", "bassoon1", "clarinet2", "clarinet1", "oboe3", "oboe2", "oboe1", "flute2", "flute1"],
+        parts = ["flute1", "flute2", "oboe1", "oboe2", "oboe3", "clarinet1", "clarinet2", "bassoon1", "bassoon2"],
         apply_flags=["first_hit"],
         skip_flags="ma",
         ))
