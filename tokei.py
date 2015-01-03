@@ -13,6 +13,8 @@ class TokeiArrangement(Arrangement):
 
         super().__init__(title="Tokei for Taiko and Orchestra", project=Project(name="rwestmusic-tokei"))
 
+        self.add_perc_part(name='cycle', instrument=instrumenttools.UntunedPercussion(instrument_name="Cycle", short_instrument_name="[C]"))
+
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
         self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -98,4 +100,3 @@ class TokeiArrangement(Arrangement):
 
 
 
-        

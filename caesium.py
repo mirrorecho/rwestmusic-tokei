@@ -1,6 +1,6 @@
 from abjad import *
 from tokei import TokeiArrangement
-from caesium_material import ForceCloud1
+from caesium_material import ForceCloud1, ForceCloud2
 
 # any way to avoid this sys path part??
 import sys
@@ -18,36 +18,49 @@ ma_duration = [(1,4)]
 
 empty_arrangement = TokeiArrangement()
 
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# maybe these first few cycles should be indefinite repeats...?
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
-music.add_cycle()
+
+music.add_cycle(add_flags=["start_class1"])
 music.add_cycle()
 
 music.add_cycle(add_flags=["first_hit"])
 music.add_cycle()
-music.add_cycle(add_flags=["2hits"])
+music.add_cycle(add_flags=["2hits", "stop_class1"])
 music.add_cycle(add_flags=["3hits"])
 
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
-music.add_cycle()
 music.add_cycle(add_flags=["1hit_2"])
+music.add_cycle()
 music.add_cycle()
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
 music.add_cycle()
 music.add_cycle(add_flags=["3hits_2"])
+music.add_cycle(add_flags=["heating"])
 music.add_cycle(add_flags=["final"])
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
 
 
-
+# is this still used...?
 music.add_data("steady_durations", Duration(1,8))
+
+music.add_data("cycle_marker", "c4 r4 r2 | R1 | R1")
 
 music.add_data("ma", scoretools.Container("r4 \\fermata"), apply_flags=["ma"])
 
-music.add_data("class", "c8-> r c    c-> r c    c-> r c r     c-> r c      c-> r c r     c-> r c r c r c")
+music.add_data("class", "c8-> r c    c-> r c    c-> r c r     c-> r c      c-> r c r     c-> r c r c r c ||")
 
 music.add_data("foce_osti_smooth_1", "c8-.-> c-. c-.    c-.-> c-. c-.   c-.-> c-. c-. c-.    c( c c) c( c c c)    c( c c c)   c(-> c) c-.->")
 
 music.add_data("steady_strike", "c8[ c]")
+
+music.add_data("end_climb_strike", "r8 c\\p\\< c[ c] c[ c] c[ c]\\f\\!")
+
+music.add_data("steady_beat", "c4")
+
+music.add_data("class_simple_1", "r2 r4 c4 | c4 r4 r8 c8 r8 c8 | R1")
 
 #music.add_data("force_pitches", ["d'", "c'", "bf", "g", "a", "e"])
 #music.add_data("force_durations", [durationtools.Duration(1,4) for i in range(6)])
@@ -100,6 +113,9 @@ music.add_data("force_cloud", force_cloud1.cloud.pitch_lines)
 # (DONE... classes!) plan for how to deal with pre-saved data vs cycle-determined data (and keep pre-saved data from getting stagnant)
 # (DONE... although very slow) cloud pitches to use ranges (for each point!)
 # (DONE) winds ranges mid to widely spaced
+# mod that can overlay music
+# mod that can merge music
+# indefinite repeats at the beginning with shime / others? (instead of fixed number of cycles?)
 # check on saving pitch ranges with the cloud
 # make for_line_pitches_alter cloud (with winds ranges)
 # arrangement auto clefs
@@ -109,12 +125,16 @@ music.add_data("force_cloud", force_cloud1.cloud.pitch_lines)
 # (DONE... may add on) cloud repeat indefinitely (thorugh command prompt) and periodically show, along with ratings
 
 # --------------------------------------------------------------------------------------
+# cycle markers all the way through... for my sanity!
 music.add_transform(
     MakeMusic(
-        durations="class",
-        part = "taiko1",
+        durations="cycle_marker",
+        part = "cycle",
         skip_flags="ma",
         ))
+
+# --------------------------------------------------------------------------------------
+# shime steady all the way through
 music.add_transform(
     MakeMusic(
         durations="steady_strike",
@@ -122,6 +142,54 @@ music.add_transform(
         part = "shime",
         skip_flags="ma",
         ))
+# -----------------------------------------------
+# steady beat for half of the taikos for first several cycles
+music.add_transform(
+    MakeMusic(
+        durations="steady_beat",
+        times=12,
+        part = "taiko1",
+        stop_flag = "1hit_2",
+        skip_flags="ma",
+        ))
+# main class at the beginning (possibly make this a variation)
+music.add_transform(
+    MakeMusic(
+        durations="class",
+        start_flag="start_class1",
+        stop_flag="stop_class1",
+        part = "taiko2",
+        skip_flags="ma",
+        ))
+# -----------------------------------------------
+# now the 2nd taikos play steady strikes, and the first play the melody...
+music.add_transform(
+    MakeMusic(
+        durations="steady_strike",
+        times=12,
+        part = "taiko2",
+        start_flag = "1hit_2",
+        skip_flags="ma",
+        ))
+music.add_transform(
+    MakeMusic(
+        durations="class_simple_1",
+        start_flag="1hit_2",
+        part = "taiko1",
+        skip_flags="ma",
+        ))
+# -----------------------------------------------
+# as things heat up, gane starts steady strike
+music.add_transform(
+    MakeMusic(
+        durations="steady_strike",
+        times=12,
+        part = "gane",
+        start_flag = "heating",
+        skip_flags="ma",
+        ))
+
+
 
 # --------------------------------------------------------------------------------------
 # music.add_transform(
@@ -204,5 +272,6 @@ music.add_transform(
 music.apply_transforms()
 
 music_arrangement = music.make_arrangement()
+music_arrangement.show_pdf(part_names=["cycle", "trumpet1", "trumpet2", "gane", "shime", "taiko1", "taiko2", "odaiko"])
 
-music_arrangement.show_pdf(part_names=["taiko1", "flute1", "flute2", "oboe1", "oboe2", "oboe3", "clarinet1", "clarinet2", "bassoon1", "bassoon2"])
+#music_arrangement.show_pdf(part_names=["taiko1", "flute1", "flute2", "oboe1", "oboe2", "oboe3", "clarinet1", "clarinet2", "bassoon1", "bassoon2"])

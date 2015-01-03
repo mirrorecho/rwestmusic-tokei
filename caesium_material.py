@@ -100,7 +100,6 @@ class ForceData():
 
 # ----------------------------------------------------------------------------
 # TO DO... still think it would be better to inherit from CloudPitches...
-# (could also organize it better in conjunction with CloudPitches)
 class ForceCloud1(ForceData):
     def __init__(self, autoload=True):
         super().__init__(filename="caesium_force_cloud_1.dat", autoload=autoload)
@@ -137,7 +136,7 @@ class ForceCloud1(ForceData):
         self.force_pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_low))
 
 
-# these are a strings cloud....
+# these are a strings cloud... that stays in place in range and pitch material...
 class ForceCloud2(ForceData):
     def __init__(self, autoload=True):
         super().__init__(filename="caesium_force_cloud_2_strings.dat", autoload=autoload)
@@ -171,4 +170,4 @@ def exec_force_cloud_2():
     f2.tally_loop()
 
 
-exec_force_cloud_2()
+#exec_force_cloud_2()
