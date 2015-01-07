@@ -10,7 +10,10 @@ from cloud.pitches import *
 
 #question... multiple simultaneous cicles going on?? (assume no)
 
-#
+# TO DO...
+# - add an echo of the main stream melody in the cloud
+
+
 
 music = CycleLoop()
 music.add_cycle(add_flags=["start"])

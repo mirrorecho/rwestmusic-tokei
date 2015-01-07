@@ -18,11 +18,13 @@ ma_duration = [(1,4)]
 
 empty_arrangement = TokeiArrangement()
 
+# ... are the "ma" breaks too regular???
+
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+
 # maybe these first few cycles should be indefinite repeats...?
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
-
 music.add_cycle(add_flags=["start_class1"])
 music.add_cycle()
 
@@ -30,18 +32,78 @@ music.add_cycle(add_flags=["first_hit"])
 music.add_cycle()
 music.add_cycle(add_flags=["2hits", "stop_class1"])
 music.add_cycle(add_flags=["3hits"])
-
+# --- ma
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
+
 music.add_cycle(add_flags=["1hit_2"])
 music.add_cycle()
 music.add_cycle()
-music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
 music.add_cycle()
-music.add_cycle(add_flags=["3hits_2"])
-music.add_cycle(add_flags=["heating"])
-music.add_cycle(add_flags=["final"])
+# --- ma
 music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
 
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+
+music.add_cycle(add_flags=["3hits_2"])
+music.add_cycle(add_flags=["5hits_2"])
+# (note... this next cycle jumps back to 3 hits)
+music.add_cycle(add_flags=["3hits_2"])
+music.add_cycle(add_flags=["6hits_2"])
+# --- ma
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
+
+music.add_cycle(add_flags=["2hits_3"])
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+
+music.add_cycle(add_flags=["4hits_3"])
+music.add_cycle()
+music.add_cycle(add_flags=["5hits_3"])
+music.add_cycle(add_flags=["6hits_3"])
+# --- ma
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
+
+# for this next one (4hits_4) ... put all the hits towards the end
+# a build up here to the next hit.... now all the hits should be REALLY big
+music.add_cycle(add_flags=["heating", "4hits_4"])
+music.add_cycle(add_flags=["5hits_4"])
+music.add_cycle()
+music.add_cycle(add_flags=["6hits_4"])
+
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+# --- ma
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
+
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+
+music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+music.add_cycle(add_flags=["final"])
+# --- ma
+music.add_cycle(add_flags=["ma"], measures_durations=ma_duration)
+# -----------------------------------------------------------------
+# DONE!
 
 # is this still used...?
 music.add_data("steady_durations", Duration(1,8))
@@ -228,6 +290,7 @@ music.add_transform(
         ))
 
 # --------------------------------------------------------------------------------------
+# these are the "hits" that build throughout the entire work
 
 music.add_data("hit_points", [10], start_flag="first_hit", stop_flag="1hit_2")
 music.add_data("hit_pitches", ["a'", "e''"])
@@ -243,7 +306,38 @@ music.add_transform(
         start_flag="3hits",
         point=13
         ))
+# --------------------------------
 music.add_data("hit_points", [0], start_flag="1hit_2")
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        start_flag="3hits_2",
+        point=6
+        ))
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        start_flag="3hits_2",
+        point=10
+        ))
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        apply_flags=["5hits_2", "6hits_2"],
+        point=17
+        ))
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        apply_flags=["5hits_2", "6hits_2"],
+        point=21
+        ))
+music.add_transform(
+    ModAddPoint(
+        "hit_points",
+        apply_flags=["6hits_2"],
+        point=23
+        ))
 
 music.add_transform(
     MakeMusicFromHits(
