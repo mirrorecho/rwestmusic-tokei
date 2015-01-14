@@ -9,10 +9,22 @@ from tokei import TokeiArrangement
 
 wado_arr = TokeiArrangement(layout="standard", name="taiko-material", time_signature=TimeSignature((9,8)))
 
-wado_arr.parts["taiko1"].extend("c4 c c c")
+# TO DO... text spacing for taiko ki-ai
 
-wado_arr.show_pdf(part_names=["taiko1","taiko2"])
 
+wado_ideas = {}
+wado_ideas['up']=Container("r4_tsu c8_don         r4_tsu c8_don   c8_ka  c8_ra   c8_ka")
+wado_ideas['triples']=Container("c8_do c_ko c_do "*3)
+wado_ideas['conduct']=Container("c4_don r8   c4_don r8       r4.       |    c4_don r8      c4_ka r8    r4.")
+
+wado_arr.parts["taiko1"].extend(wado_ideas["up"])
+wado_arr.parts["taiko1"].extend(wado_ideas["conduct"])
+
+
+#wado_arr.show_pdf(part_names=["taiko1","taiko2"])
+
+wado_arr.make_score()
+print(format(wado_arr.score))
 
 
 # wadokei material on paper
@@ -20,8 +32,6 @@ wado_arr.show_pdf(part_names=["taiko1","taiko2"])
 
 # GOALS FOR TONIGHT....
 # tempi of each movement
-
-
 
 # get caesium taiko parts DONE!
 
