@@ -11,7 +11,7 @@ class TokeiArrangement(Arrangement):
 
     def __init__(self):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", project=Project(name="rwestmusic-tokei"))
+        super().__init__(title="Tokei for Taiko and Orchestra", project=Project(name="rwestmusic-tokei"), layout="orchestra")
 
         self.add_perc_part(name='cycle', instrument=instrumenttools.UntunedPercussion(instrument_name="Cycle", short_instrument_name="[C]"))
 
