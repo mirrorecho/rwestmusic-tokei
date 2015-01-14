@@ -4,7 +4,7 @@ from caesium_material import ForceCloud1, ForceCloud2
 
 # any way to avoid this sys path part??
 import sys
-sys.path.append("/Users/randallwest/Code/mirrorecho")
+sys.path.append("/home/randall/Code/mirrorecho")
 
 import calliope.cycles.loop
 from calliope.cycles.transform import *

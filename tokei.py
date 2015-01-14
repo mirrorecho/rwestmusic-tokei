@@ -2,16 +2,17 @@ from abjad import *
 
 # any way to avoid this sys path part??
 import sys
-sys.path.append("/Users/randallwest/Code/mirrorecho")
+sys.path.append("/home/randall/Code/mirrorecho")
 
 from calliope.work import Arrangement, Project
 
 class TokeiArrangement(Arrangement):
 
 
-    def __init__(self):
+    #  use **args here?
+    def __init__(self, layout="orchestra", name="full-score", time_signature=TimeSignature((4,4))):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", project=Project(name="rwestmusic-tokei"), layout="orchestra")
+        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=Project(name="rwestmusic-tokei"), layout=layout, time_signature=time_signature)
 
         self.add_perc_part(name='cycle', instrument=instrumenttools.UntunedPercussion(instrument_name="Cycle", short_instrument_name="[C]"))
 

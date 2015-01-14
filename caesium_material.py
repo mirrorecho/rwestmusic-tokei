@@ -3,7 +3,7 @@ import os
 
 # any way to avoid this sys path part??
 import sys
-sys.path.append("/Users/randallwest/Code/mirrorecho")
+sys.path.append("/home/randall/Code/mirrorecho")
 
 from tokei import TokeiArrangement
 from calliope.work import Project, Arrangement

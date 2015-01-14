@@ -3,7 +3,17 @@ import os
 
 # any way to avoid this sys path part??
 import sys
-sys.path.append("/Users/randallwest/Code/mirrorecho")
+sys.path.append("/home/randall/Code/mirrorecho")
+
+from tokei import TokeiArrangement
+
+wado_arr = TokeiArrangement(layout="standard", name="taiko-material", time_signature=TimeSignature((9,8)))
+
+wado_arr.parts["taiko1"].extend("c4 c c c")
+
+wado_arr.show_pdf(part_names=["taiko1","taiko2"])
+
+
 
 # wadokei material on paper
 # round ideas (may need to flesh out )
