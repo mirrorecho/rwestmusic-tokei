@@ -4,6 +4,34 @@
 		"selected_items":
 		[
 			[
+				"up",
+				"up_groove"
+			],
+			[
+				"ideas",
+				"ideas_dict"
+			],
+			[
+				"wado_",
+				"wado_ideas"
+			],
+			[
+				"wado",
+				"wado_arr"
+			],
+			[
+				"arrange",
+				"arrangement"
+			],
+			[
+				"down",
+				"down_beat"
+			],
+			[
+				"lead",
+				"lead_in"
+			],
+			[
 				"sec",
 				"second_worst_column_index"
 			],
@@ -198,10 +226,6 @@
 			[
 				"toki",
 				"tokei_arrangement"
-			],
-			[
-				"arrange",
-				"arrangement_type"
 			],
 			[
 				"tok",
@@ -490,30 +514,6 @@
 			[
 				"lil",
 				"lilypond_file"
-			],
-			[
-				"pit",
-				"pitch_number"
-			],
-			[
-				"pi",
-				"pitch_range  (variable)"
-			],
-			[
-				"steady",
-				"steady_range_mid"
-			],
-			[
-				"ref",
-				"ref_pitch"
-			],
-			[
-				"cye",
-				"cycles"
-			],
-			[
-				"fill",
-				"fill_skips"
 			]
 		]
 	},
@@ -539,7 +539,7 @@
 			"file": "caesium.py",
 			"settings":
 			{
-				"buffer_size": 11778,
+				"buffer_size": 11773,
 				"line_ending": "Unix"
 			}
 		},
@@ -555,7 +555,7 @@
 			"file": "taiko_material.py",
 			"settings":
 			{
-				"buffer_size": 1608,
+				"buffer_size": 3465,
 				"line_ending": "Unix"
 			}
 		},
@@ -563,7 +563,7 @@
 			"file": "caesium_material.py",
 			"settings":
 			{
-				"buffer_size": 9528,
+				"buffer_size": 9523,
 				"line_ending": "Unix"
 			}
 		},
@@ -657,8 +657,7 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/randallwest/Code/mirrorecho/rwestmusic-tokei",
-		"/Users/randallwest/Code/mirrorecho/calliope"
+		"/Users/randallwest/Code/mirrorecho/rwestmusic-tokei"
 	],
 	"file_history":
 	[
@@ -1062,7 +1061,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11778,
+						"buffer_size": 11773,
 						"regions":
 						{
 						},
@@ -1224,15 +1223,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1608,
+						"buffer_size": 3465,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								647,
-								647
+								1673,
+								1673
 							]
 						],
 						"settings":
@@ -1342,10 +1341,12 @@
 							"codeintel_tooltips": "popup",
 							"open_with_edit": true,
 							"sublime_auto_complete": true,
-							"syntax": "Packages/Python/Python.tmLanguage"
+							"syntax": "Packages/Python/Python.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 303.0,
+						"translation.y": 439.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -1357,7 +1358,7 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 9528,
+						"buffer_size": 9523,
 						"regions":
 						{
 						},
