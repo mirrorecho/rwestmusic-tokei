@@ -7,8 +7,7 @@
 		},
 		{
 			"follow_symlinks": true,
-			"path": "/home/randall/Code/mirrorecho/calliope"
+			"path": "../calliope"
 		}
-	],
-	"virtualenv": "/home/randall/Code/venvs/abjad_2.15"
+	]
 }
