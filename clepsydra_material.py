@@ -5,9 +5,7 @@ import settings
 # any way to avoid this sys path part??
 
 #TO DO
-# - if possible...
-# - L / R notes on music!!
-# - proportional music... 
+# - muffle taiko during ma?
 
 from tokei import TokeiArrangement
 from calliope.work import Project, Arrangement

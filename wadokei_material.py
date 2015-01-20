@@ -18,8 +18,12 @@ print("")
 # - able to change time signature
 # - harmonic ideas DOWN IN CODE for wadokei (can view and play at piano)
 # - basic integration with cycles
+# - - - dynamics for osc
 
-# - (later...)
+# SOON (important for the work)
+# - better ji osc arrangement
+
+# (later...)
 # - make kas X note-heads
 # - get dividers to work
 # - understand lilypond contexts!
@@ -50,6 +54,8 @@ class WadoMaterial():
 
         self.empty_measures = Container("R4. R4. R4. | " * 8)
 
+        self.rest = "R4. R4. R4."
+
         self.phrases = {}
         self.phrases['rest']="r4._tsu r4. r4."
         self.phrases['lead_in']="r4._tsu          c4._don          c4._don"
@@ -70,6 +76,8 @@ class WadoMaterial():
         self.part_names = []
 
         self.ji_osc = ["A5","B5","A5"]
+
+        self.ji_osc_durations = "c4.( c4.) c4.-- "
 
         self.pitch_stack_9ths = [0,14,28,42]
 
@@ -133,7 +141,12 @@ class WadoMaterial():
         # appending the new material's arrangement
         self.arrangement.append_arrangement(material.arrangement)
 
+    def make_music(self):
+        # for inherited classes to call to append actual material
+        pass
+
     def prepare_material(self):
+        self.make_music() #  !!
         for part_name in self.part_names:
             text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
             attach(text_length_on, self.arrangement.parts[part_name][0])
@@ -150,8 +163,12 @@ class Intro(WadoMaterial):
                     part_names= ["harmony_1","harmony_3"],
                     )
         self.cresc_blow_durations = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.clarinet_blow_durations = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.cresc_blow_durations_2 = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
+        self.clarinet_blow_durations = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.clarinet_blow_durations_2 = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+
+    def make_music(self):
         self.arrange_music(
                     duration_sets= ["c2. r4.  | "*2 + "c4. c2. |  c4. c4 c8 c4. ",
                                     self.measure_note * 4
@@ -160,14 +177,24 @@ class Intro(WadoMaterial):
                     part_names= ["harmony_1","harmony_3"],
                     )
 
+        # this is the blowing stuff...
         self.arrange_music(
                     duration_sets=[
-                        self.clarinet_blow_durations * 2,
-                        self.cresc_blow_durations * 2,
-                        self.cresc_blow_durations * 2,
+                        self.clarinet_blow_durations + self.clarinet_blow_durations_2 + self.rest + self.clarinet_blow_durations_2 + self.rest,
+                        self.cresc_blow_durations + self.cresc_blow_durations_2 + self.rest + self.cresc_blow_durations_2 + self.rest,
+                        self.cresc_blow_durations + self.cresc_blow_durations_2 + self.rest + self.cresc_blow_durations_2 + self.rest,
                         ],
                     pitch_sets=[["x"]], # placeholder for now...
                     part_names=["clarinet1", "clarinet2", "horn1", "horn2"]
+            )
+
+        # the ji osc...
+        self.arrange_music(
+                    duration_sets = [
+                        (self.ji_osc_durations * 2 + self.rest * 2) * 2, 
+                        (self.rest * 2 + self.ji_osc_durations * 2) * 2], 
+                    pitch_sets = [self.ji_osc], 
+                    part_names = ["flute1", "flute2"]
             )
 
         self.add_phrases("taiko1", [
@@ -184,6 +211,8 @@ class Intro(WadoMaterial):
 class Melody(WadoMaterial):
     def __init__(self):
         super().__init__()
+    
+    def make_music(self):
         self.add_phrases("taiko1", [
             "lead_in",
             "up_groove",
@@ -196,6 +225,8 @@ class Melody(WadoMaterial):
 class MelodySplit(WadoMaterial):
     def __init__(self):
         super().__init__()
+
+    def make_music(self):
         self.add_phrases("taiko1", [
             "lead_in",
             "up_groove",
@@ -210,7 +241,12 @@ class MelodySplit(WadoMaterial):
                 "split_ka"
             ])
 
+class Conduct(WadoMaterial):
+    def __init__(self):
+        super().__init__()
 
+    def make_music(self):
+        self.add_phrases("taiko1", ["conduct" for i in range(8)])
 
 class DayMusic():
     pass

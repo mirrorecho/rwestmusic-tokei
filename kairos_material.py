@@ -5,9 +5,12 @@ import settings
 # any way to avoid this sys path part??
 
 #TO DO
-# - if possible...
+# - fast straight hits on taiko with alternating crescendos...
+
+#(if possible...)
 # - L / R notes on music!!
 # - proportional music... 
+
 
 from tokei import TokeiArrangement
 from calliope.work import Project, Arrangement
