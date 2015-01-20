@@ -18,6 +18,7 @@ print("")
 # - able to change time signature
 # - harmonic ideas DOWN IN CODE for wadokei (can view and play at piano)
 # - basic integration with cycles
+
 # - (later...)
 # - make kas X note-heads
 # - get dividers to work
@@ -68,10 +69,35 @@ class WadoMaterial():
 
         self.part_names = []
 
+        self.ji_osc = ["A5","B5","A5"]
+
         self.pitch_stack_9ths = [0,14,28,42]
 
-        self.harmonies_old = ["B0", "C4"]
+        self.harmonies_old = [ 
+                [["B3","D4"],   ["C#4","E4"],   ["B3","D4"],    ["C#4","E4"],],
+                ["B2",          "A2",           "G2",            "A2",],
+            ]
 
+        self.harmonies_old_2 = [ 
+                [["B3","D4"],   ["A3","D4"],   ["B3","D4"], ["C#4","E4"],  "D4","G4","A4","C#5",   ],
+                ["B2",          "F2",          "G2",                       "A2",                   ],
+            ]
+
+
+        self.measure_note = "c2. r4. "
+
+    def arrange_music(self, duration_sets, pitch_sets, part_names):
+
+        for i, part_name in enumerate(part_names):
+            pitches = pitch_sets[i % len(pitch_sets)]
+            durations = duration_sets[i % len(duration_sets)]
+
+            # TO DO... could pass along split durations here...
+            self.arrangement.parts[part_name].extend(music_from_durations(durations=durations, pitches=pitches))
+
+            for part_name in part_names:
+                if part_name not in self.part_names:
+                    self.part_names.append(part_name)
 
 
     def add_phrases(self, part_name, phrases):
@@ -118,10 +144,32 @@ class WadoMaterial():
 class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
-        self.part_names.append("harmony_1")
-        self.arrangement.parts["harmony_1"].extend(music_from_durations("c2. c4 c8", pitches=[14, ["C4", "A4"], 21]))
-        self.part_names.append("harmony_3")
-        self.arrangement.parts["harmony_3"].extend("b,2. r4.")
+        self.arrange_music(
+                    duration_sets= [self.measure_note * 4 ],
+                    pitch_sets= self.harmonies_old, 
+                    part_names= ["harmony_1","harmony_3"],
+                    )
+        self.cresc_blow_durations = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.clarinet_blow_durations = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+
+        self.arrange_music(
+                    duration_sets= ["c2. r4.  | "*2 + "c4. c2. |  c4. c4 c8 c4. ",
+                                    self.measure_note * 4
+                                    ],
+                    pitch_sets= self.harmonies_old_2, 
+                    part_names= ["harmony_1","harmony_3"],
+                    )
+
+        self.arrange_music(
+                    duration_sets=[
+                        self.clarinet_blow_durations * 2,
+                        self.cresc_blow_durations * 2,
+                        self.cresc_blow_durations * 2,
+                        ],
+                    pitch_sets=[["x"]], # placeholder for now...
+                    part_names=["clarinet1", "clarinet2", "horn1", "horn2"]
+            )
+
         self.add_phrases("taiko1", [
             "down_beat",
             "rest",
