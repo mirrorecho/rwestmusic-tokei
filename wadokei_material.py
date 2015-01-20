@@ -6,28 +6,34 @@ import copy
 
 from tokei import TokeiArrangement
 
-from calliope.tools import music_from_durations
+from calliope.tools import music_from_durations, transpose_pitches
 
 print("")
 print("---------------------------------------------------------------------------")
 print("")
 
-# TO DO (TODAY... by 5:45)
-# - taiko material DOWN IN CODE for wadokei
-# - class structure for wadokei
+# TO DO (TODAY... by 2:00!)
+# - taiko material DOWN IN CODE (almost done)
+# - - - GREAT PLAN: core material (pitches, rythms, maybe even instrument sets, etc.)
+# - - - defined as properties... piecing it together defined as functions
+# - class structure  (almost done)
 # - able to change time signature
-# - harmonic ideas DOWN IN CODE for wadokei (can view and play at piano)
+# - harmonic ideas DOWN IN CODE f(can view and play at piano)
+# - orchestration ideas DOWN IN CODE
 # - basic integration with cycles
 # - - - dynamics for osc
 
 # SOON (important for the work)
 # - better ji osc arrangement
+# - use make_music function?
+# - move some of this code structure to calliope for general use (with other movements)
 
 # (later...)
 # - make kas X note-heads
 # - get dividers to work
 # - understand lilypond contexts!
-
+# - make everything proportional while in working mode
+# - show harmony #s above harmony reference lines for making it easier to arrange
 
 # cycle_measures = [Measure(TimeSignature((9,8)), "c4. r4. r4.") for i in range(3)  ]
 
@@ -81,16 +87,33 @@ class WadoMaterial():
 
         self.pitch_stack_9ths = [0,14,28,42]
 
+        # variant of this can be to anticipate the last upper harmony, then repeat it (so that it's similar to version 2 above the low G)
         self.harmonies_old = [ 
-                [["B3","D4"],   ["C#4","E4"],   ["B3","D4"],    ["C#4","E4"],],
-                ["B2",          "A2",           "G2",            "A2",],
+            [["B3","D4"],   ["C#4","E4"],   ["B3","D4"],    ["C#4","E4"],],
+            ["B2",          "A2",           "G2",            "A2",],
             ]
 
         self.harmonies_old_2 = [ 
-                [["B3","D4"],   ["A3","D4"],   ["B3","D4"], ["C#4","E4"],  "D4","G4","A4","C#5",   ],
-                ["B2",          "F2",          "G2",                       "A2",                   ],
+            [["D4","E4","B4","F#5"],    ["C#4","B4","C#5"], ["C#4","C#5","D#5"],    ["D4","A5"],    ["B4","E5"],    ["B3","D4"], ["C#4","E4"],  "D4","G4","A4","C#5",   ],
+            [["C2","D3"],               ["A2","D3","B3"],   ["G1","A2","B3"],       "F2",           "G2",                                       "A2",                   ],
             ]
 
+        self.harmonies_night = [
+            [["D#4","D#5"], "D#4","E4"],    "F#4","C#5"
+            [["C#2","C#3","B3"],            "A2"],
+            ]
+
+
+
+        self.harmonies_old_2_transposed = transpose_pitches(self.harmonies_old_2, 2)
+
+        self.harmonies_old_2_modulate = copy.deepcopy(self.harmonies_old_2_transposed)
+        self.harmonies_old_2_modulate[0][0] = copy.deepcopy(self.harmonies_old_2[0][0])
+        self.harmonies_old_2_modulate[1][0] = copy.deepcopy(self.harmonies_old_2[1][0])
+        self.harmonies_old_2_modulate[0][1] = copy.deepcopy(self.harmonies_old_2[0][1])
+        self.harmonies_old_2_modulate[1][1] = copy.deepcopy(self.harmonies_old_2[1][1])
+        self.harmonies_old_2_modulate[0][2] = ["C#4","D#5","D#6"]
+        self.harmonies_old_2_modulate[1][2] = ["A2","B3"]
 
         self.measure_note = "c2. r4. "
 
@@ -157,27 +180,43 @@ class WadoMaterial():
 class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
-        self.arrange_music(
-                    duration_sets= [self.measure_note * 4 ],
-                    pitch_sets= self.harmonies_old, 
-                    part_names= ["harmony_1","harmony_3"],
-                    )
+
         self.cresc_blow_durations = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
         self.cresc_blow_durations_2 = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
         self.clarinet_blow_durations = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
         self.clarinet_blow_durations_2 = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
-    def make_music(self):
+    def add_taiko(self, part_name="taiko1"):
+        self.add_phrases(part_name, [
+            "down_beat",
+            "rest",
+            "down_beat",
+            "rest",
+            "lead_in",
+            "down_beat",
+            "down_beat",
+            "rest",
+            ])
+
+    def add_harmony_ref(self):
         self.arrange_music(
-                    duration_sets= ["c2. r4.  | "*2 + "c4. c2. |  c4. c4 c8 c4. ",
-                                    self.measure_note * 4
+                    duration_sets= [self.measure_note * 4 ],
+                    pitch_sets= self.harmonies_old, 
+                    part_names= ["harmony_1","harmony_3"],
+                    )
+
+    def add_harmony_ref_2(self, pitch_sets_name="harmonies_old_2"):
+        self.arrange_music(
+                    duration_sets= ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                                    "c4. c4. c4. | " + (self.measure_note * 3),
                                     ],
-                    pitch_sets= self.harmonies_old_2, 
+                    pitch_sets= getattr(self, pitch_sets_name), 
                     part_names= ["harmony_1","harmony_3"],
                     )
 
         # this is the blowing stuff...
+    def add_cresc(self):
         self.arrange_music(
                     duration_sets=[
                         self.clarinet_blow_durations + self.clarinet_blow_durations_2 + self.rest + self.clarinet_blow_durations_2 + self.rest,
@@ -189,6 +228,7 @@ class Intro(WadoMaterial):
             )
 
         # the ji osc...
+    def add_orch_ji(self):
         self.arrange_music(
                     duration_sets = [
                         (self.ji_osc_durations * 2 + self.rest * 2) * 2, 
@@ -197,23 +237,23 @@ class Intro(WadoMaterial):
                     part_names = ["flute1", "flute2"]
             )
 
-        self.add_phrases("taiko1", [
-            "down_beat",
-            "rest",
-            "down_beat",
-            "rest",
-            "lead_in",
-            "down_beat",
-            "down_beat",
-            "rest",
-            ])
+
 
 class Melody(WadoMaterial):
     def __init__(self):
         super().__init__()
-    
-    def make_music(self):
-        self.add_phrases("taiko1", [
+
+    def add_harmony_ref_2(self, pitch_sets_name="harmonies_old_2_transposed"):
+        self.arrange_music(
+                    duration_sets= ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                                    "c4. c4. c4. | " + (self.measure_note * 3),
+                                    ],
+                    pitch_sets= getattr(self, pitch_sets_name), 
+                    part_names= ["harmony_1","harmony_3"],
+                    )
+
+    def add_taiko_melody(self, part_name="taiko1"):
+        self.add_phrases(part_name, [
             "lead_in",
             "up_groove",
             "conduct", # 2 bars
@@ -222,21 +262,9 @@ class Melody(WadoMaterial):
             "lead_in",
             ])
 
-class MelodySplit(WadoMaterial):
-    def __init__(self):
-        super().__init__()
-
-    def make_music(self):
-        self.add_phrases("taiko1", [
-            "lead_in",
-            "up_groove",
-            "conduct", # 2 bars
-            "conduct", # 2 bars
-            "up_ka",
-            "lead_in",
-            ])
+    def add_taiko_split(self, part_name="taiko2"):
         for i in range(4):
-            self.add_phrases("taiko2", [
+            self.add_phrases(part_name, [
                 "split_don",
                 "split_ka"
             ])
@@ -252,11 +280,32 @@ class DayMusic():
     pass
 
 
-material = Intro()
+intro1 = Intro()
+intro1.add_harmony_ref()
+intro1.add_harmony_ref_2()
+intro1.add_taiko()
+#intro1.add_taiko("taiko2")
+intro1.add_orch_ji()
+intro1.add_cresc()
+
+intro2 = Intro()
+intro2.add_harmony_ref_2()
+intro2.add_harmony_ref_2("harmonies_old_2_modulate")
+intro2.add_taiko()
+#intro1.add_taiko("taiko2")
+intro2.add_orch_ji()
+intro2.add_cresc()
+
+melody1 = Melody()
+melody1.add_harmony_ref_2()
+melody1.add_taiko_melody()
+#melody1.add_taiko_melody("taiko2")
+
 
 #material_music.append_material(MelodySplit())
 
-material.show()
+melody1.show()
+
 
 # material_music.prepare_material()
 # material_music.arrangement.make_score(part_names=material_music.part_names)
