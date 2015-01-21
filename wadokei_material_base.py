@@ -8,15 +8,13 @@ from tokei import TokeiArrangement
 
 from calliope.tools import music_from_durations, transpose_pitches
 
-# TO DO (BEFORE TAIKO OPEN SESSION)
+# TO DO TODAY
 # - class structure of wado material moved for general use
+# - - - in particular, what's a list, a list of a list, a property, a dictionary, etc. for parameters/attributes for pitch/rhythm material
 # - some material for kairos taiko
 # - list of ideas in preparation for taiko session tomorrow
-
-# TOMORROW
-# - buy headphones
 # - studio setup (play keyboard)?
-# - tech day?
+# - (maybe tech day?)
 # - (maybe finalize reverls stuff?)
 
 # SOON (important for the work)

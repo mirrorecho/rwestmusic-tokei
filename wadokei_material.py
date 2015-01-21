@@ -14,14 +14,14 @@ class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
 
-        self.cresc_blow_durations = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.cresc_blow_durations_2 = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.rhythms["cresc_blow_A"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.rhythms["cresc_blow_B"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
-        self.clarinet_blow_durations = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.clarinet_blow_durations_2 = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.rhythms["clarinet_blow_A"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.rhythms["clarinet_blow_B"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
-    def add_taiko(self, part_name="taiko1"):
-        self.add_phrases(part_name, [
+    def add_taiko(self, part_names=["taiko1"]):
+        self.arrrange_music(part_names=["taiko1"], rhythms=[[
             "down_beat",
             "taiko_rest",
             "down_beat",
@@ -30,19 +30,19 @@ class Intro(WadoMaterial):
             "down_beat",
             "down_beat",
             "taiko_rest",
-            ])
+            ]])
 
     def add_harmony_ref(self):
         self.arrange_music(
-                    duration_sets= [self.measure_note * 4 ],
-                    pitch_sets= self.harmonies_old, 
+                    rhythm_strings = [[self.measure_note * 4 ]],
+                    pitch_material= "ancient_A", 
                     part_names= ["harmony_1","harmony_3"],
                     respell_sets=["sharps"]
                     )
 
     def add_harmony_ref_2(self, pitch_sets_name="harmonies_old_2"):
         self.arrange_music(
-                    duration_sets= ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                    rhythm_strings = ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
                                     "c4. c4. c4. | " + (self.measure_note * 3),
                                     ],
                     pitch_sets= getattr(self, pitch_sets_name), 
@@ -52,13 +52,16 @@ class Intro(WadoMaterial):
 
         # this is the blowing stuff...
     def add_cresc(self):
+        clarinet_rhythms_list = ["clarinet_blow_A", "clarinet_blow_B", "rest", "clarinet_blow_B", "rest"]
+        blow_rhythms_list = ["cresc_blow_A","cresc_blow_B","rest","cresc_blow_B","rest"]
         self.arrange_music(
-                    duration_sets=[
-                        self.clarinet_blow_durations + self.clarinet_blow_durations_2 + self.rest + self.clarinet_blow_durations_2 + self.rest,
-                        self.cresc_blow_durations + self.cresc_blow_durations_2 + self.rest + self.cresc_blow_durations_2 + self.rest,
-                        self.cresc_blow_durations + self.cresc_blow_durations_2 + self.rest + self.cresc_blow_durations_2 + self.rest,
+                    rhythms=[
+                        clarinet_rhythms_list,
+                        clarinet_rhythms_list,
+                        blow_rhythms_list,
+                        blow_rhythms_list,
                         ],
-                    pitch_sets=[["x"]], # placeholder for now...
+                    pitch_material=[["x"]], # placeholder for now...
                     part_names=["clarinet1", "clarinet2", "horn1", "horn2"],
                     respell_sets=["sharps"]
             )
