@@ -6,10 +6,8 @@ import settings
 
 #TO DO
 # - fast straight hits on taiko with alternating crescendos...
-
-#(if possible...)
-# - L / R notes on music!!
-# - proportional music... 
+# - hand-playing
+# - (here or maybe another movement)... short fast series of 16th notes as accent (esp. mixed into hand playing)
 
 
 from tokei import TokeiArrangement

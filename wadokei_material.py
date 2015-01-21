@@ -10,10 +10,6 @@ from wadokei_material_base import WadoMaterial
 from calliope.tools import music_from_durations, transpose_pitches
 
 
-print("")
-print("---------------------------------------------------------------------------")
-print("")
-
 class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
@@ -27,13 +23,13 @@ class Intro(WadoMaterial):
     def add_taiko(self, part_name="taiko1"):
         self.add_phrases(part_name, [
             "down_beat",
-            "rest",
+            "taiko_rest",
             "down_beat",
-            "rest",
+            "taiko_rest",
             "lead_in",
             "down_beat",
             "down_beat",
-            "rest",
+            "taiko_rest",
             ])
 
     def add_harmony_ref(self):
@@ -41,6 +37,7 @@ class Intro(WadoMaterial):
                     duration_sets= [self.measure_note * 4 ],
                     pitch_sets= self.harmonies_old, 
                     part_names= ["harmony_1","harmony_3"],
+                    respell_sets=["sharps"]
                     )
 
     def add_harmony_ref_2(self, pitch_sets_name="harmonies_old_2"):
@@ -50,6 +47,7 @@ class Intro(WadoMaterial):
                                     ],
                     pitch_sets= getattr(self, pitch_sets_name), 
                     part_names= ["harmony_1","harmony_3"],
+                    respell_sets=["sharps"]
                     )
 
         # this is the blowing stuff...
@@ -61,7 +59,8 @@ class Intro(WadoMaterial):
                         self.cresc_blow_durations + self.cresc_blow_durations_2 + self.rest + self.cresc_blow_durations_2 + self.rest,
                         ],
                     pitch_sets=[["x"]], # placeholder for now...
-                    part_names=["clarinet1", "clarinet2", "horn1", "horn2"]
+                    part_names=["clarinet1", "clarinet2", "horn1", "horn2"],
+                    respell_sets=["sharps"]
             )
 
         # the ji osc...
@@ -87,7 +86,18 @@ class Melody(WadoMaterial):
                                     ],
                     pitch_sets= getattr(self, pitch_sets_name), 
                     part_names= ["harmony_1","harmony_3"],
+                    respell_sets=["sharps"]
                     )
+    def add_festival_lines_ref(self):
+        self.arrangement.parts["line_1"].extend(("R4. R4. R4. | " * 4) + " r4. r4.")
+        self.arrange_music(
+                duration_sets=[self.festival_rhythm_2], 
+                pitch_sets=[self.festival_pitches_1], 
+                part_names=["line_1"], 
+                transpose_sets=[-3], 
+                respell_sets=["sharps"]
+                )
+        self.arrangement.parts["line_1"].extend("R4. R4. R4. | " * 2)
 
     def add_harmony_night_ref(self, pitch_sets_name="harmonies_night_1"):
         self.arrange_music(
@@ -96,6 +106,29 @@ class Melody(WadoMaterial):
                                     ],
                     pitch_sets= getattr(self, pitch_sets_name), 
                     part_names= ["harmony_1","harmony_3"],
+                    respell_sets=["sharps"]
+                    )
+
+    def add_harmony_night_2_ref(self, pitch_sets_name="harmonies_night_2", transpose_sets=[0], respell_sets=["sharps"]):
+        self.arrange_music(
+                    duration_sets= ["c4. c2. | "*2 + self.measure_note + "c4. c4. c4. | ",
+                                    (self.measure_note * 3) + "c4. c2. | ",
+                                    ],
+                    pitch_sets= getattr(self, pitch_sets_name), 
+                    part_names= ["harmony_1","harmony_3"],
+                    respell_sets=respell_sets,
+                    transpose_sets=transpose_sets
+                    )
+    
+    def add_harmony_night_3_ref(self, pitch_sets_name="harmonies_night_3", transpose_sets=[0], respell_sets=["sharps"]):
+        self.arrange_music(
+                    duration_sets= ["c2. c4. | "*2 + "c4. c2. | " + self.measure_note,
+                                    (self.measure_note * 4),
+                                    ],
+                    pitch_sets= getattr(self, pitch_sets_name), 
+                    part_names= ["harmony_1","harmony_3"],
+                    respell_sets=respell_sets,
+                    transpose_sets=transpose_sets
                     )
 
 
@@ -131,7 +164,7 @@ intro1 = Intro()
 intro1.add_harmony_ref()
 intro1.add_harmony_ref_2()
 intro1.add_taiko()
-#intro1.add_taiko("taiko2")
+intro1.add_taiko("taiko2")
 intro1.add_orch_ji()
 intro1.add_cresc()
 
@@ -139,24 +172,43 @@ intro2 = Intro()
 intro2.add_harmony_ref_2()
 intro2.add_harmony_ref_2("harmonies_old_2_modulate")
 intro2.add_taiko()
-#intro1.add_taiko("taiko2")
+intro2.add_taiko("taiko2")
 intro2.add_orch_ji()
 intro2.add_cresc()
 
 melody1 = Melody()
 melody1.add_harmony_ref_2()
 melody1.add_harmony_night_ref()
+melody1.add_festival_lines_ref()
 melody1.add_taiko_melody()
-#melody1.add_taiko_melody("taiko2")
+melody1.add_taiko_melody("taiko2")
 
+melody2 = Melody()
+melody2.add_harmony_night_2_ref()
+melody2.add_harmony_night_3_ref()
+melody2.add_taiko_melody()
+melody2.add_taiko_split("taiko2")
+
+melody3 = Melody()
+melody3.add_harmony_night_2_ref(transpose_sets=[-1], respell_sets=["flats"])
+melody3.add_harmony_night_3_ref(transpose_sets=[4], respell_sets=["sharps"])
+melody3.add_taiko_melody("taiko2")
+melody3.add_taiko_split("taiko1")
 
 #material_music.append_material(MelodySplit())
 
-# melody1.show()
 w = WadoMaterial()
-w.arrangement.parts["harmony_1"].append("r4. r4.")
-w.arrange_music(duration_sets=[w.festival_rhythm_1], pitch_sets=[w.festival_pitches_1], part_names=["harmony_1"])
+w.append_material(intro1)
+w.append_material(intro2)
+w.append_material(melody1)
+w.append_material(melody2)
+w.append_material(melody3)
 w.show()
+
+
+# w.arrangement.parts["harmony_1"].append("r4. r4.")
+# w.arrange_music(duration_sets=[w.festival_rhythm_1], pitch_sets=[w.festival_pitches_1], part_names=["harmony_1"], transpose_sets=[-3], respell_sets=["sharps"])
+# w.show()
 
 
 # material_music.prepare_material()
