@@ -131,14 +131,10 @@ class WadoMaterial(TokeiArrangement):
         self.pitch_material["ancient_B_modulate"][1][2] = ["A2","B3"]
 
 
-
-
         # (for now, everything is in A... and will transpose as needed)
         # (the 3rd/4th pitch would be the important one here in most cases...)
         self.pitch_material["festival_A"] = ["F#4","G4","A4","A4","E5","A4","E5","A4"]
         self.pitch_material["festival_B"] = ["F#4","G4","E4","A4","E5","A4","E5","A4"]
-
-
 
         # TO DO... add downward lines.
 

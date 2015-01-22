@@ -42,7 +42,7 @@ class Intro(WadoMaterial):
 
     def add_harmony_ref_2(self, pitch_sets_name="harmonies_old_2"):
         self.arrange_music(
-                    rhythm_strings = ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                    rhythm_strings = [["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
                                     "c4. c4. c4. | " + (self.measure_note * 3),
                                     ],
                     pitch_sets= getattr(self, pitch_sets_name), 
@@ -69,10 +69,10 @@ class Intro(WadoMaterial):
         # the ji osc...
     def add_orch_ji(self):
         self.arrange_music(
-                    duration_sets = [
+                    rhythm_strings = [[
                         (self.ji_osc_durations * 2 + self.rest * 2) * 2, 
-                        (self.rest * 2 + self.ji_osc_durations * 2) * 2], 
-                    pitch_sets = [self.ji_osc], 
+                        (self.rest * 2 + self.ji_osc_durations * 2) * 2]], 
+                    pitch_material = [self.ji_osc], 
                     part_names = ["flute1", "flute2"]
             )
 
