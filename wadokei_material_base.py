@@ -12,7 +12,18 @@ from calliope.tools import music_from_durations, transpose_pitches
 # - class structure of wado material moved for general use
 # - - - in particular, what's a list, a list of a list, a property, a dictionary, etc. for parameters/attributes for pitch/rhythm material
 # - some material for kairos taiko
-# - list of ideas in preparation for taiko session tomorrow
+# - - - TRY HORSE BEAT JI 
+# - - - tsu don (repeated)
+# - - - 16th pickup (on top of horse beat)
+# - - - 4. 4. 4 on (on top of horse beat)
+# - - - hand taiko 
+# - list of ideas in preparation for taiko session tomorrow (in addition to kairos above)
+# - - - wadokei split (PRACTICE)
+# - - - wadokei movement section (TO FIGURE OUT)
+# - - - see how end of clepsyra sounds (FIGURE OUT PARTICULAR PHRASE ENDINGS)
+# - - - practice caesium (esp. with split)
+# - - - practice wadokei
+# - - - praactice clepsydra (expiremant more with pangs... decide tentative plan)
 # - studio setup (play keyboard)?
 # - (maybe tech day?)
 # - (maybe finalize reverls stuff?)
