@@ -41,25 +41,47 @@ from tokei import TokeiArrangement
 
 
 
-arr = TokeiArrangement()
-arr.material["pitch"]["rise_octaves"] = [
-                                ["C4","D4","E4", ["F4","F5"] ],
-                                ["C5","D5","E5", ["F5","F6"] ],
-                                ]
-arr.material["pitch"]["down_row_A"] = ["A3","G3","F3","E3"]
-arr.material["pitch"]["down_row_B"] = ["B3","A3","G3","F3"]
+# arr = TokeiArrangement()
+# arr.material["pitch"]["rise_octaves"] = [
+#                                 ["C4","D4","E4", ["F4","F5"] ],
+#                                 ["C5","D5","E5", ["F5","F6"] ],
+#                                 ]
+# arr.material["pitch"]["down_row_A"] = ["A3","G3","F3","E3"]
+# arr.material["pitch"]["down_row_B"] = ["B3","A3","G3","F3"]
 
-arr.material["rhythm"]["pickup"] = "c4. c8"
-arr.material["rhythm"]["straight"] = "c4 c4"
+# arr.material["rhythm"]["pickup"] = "c4. c8"
+# arr.material["rhythm"]["straight"] = "c4 c4"
 
-arr.material["rhythm"]["eighths_measure"] = "c8( c8 c8 c8)    c8( c8 c8 c8)"
-
-
-arr.arrange_music(part_names=["clarinet1","clarinet2"],pitch_material="rise_octaves",rhythm_material=[["pickup","straight"]])
-
-arr.arrange_music(part_names=["flute1","flute2"],pitches=[["G5","A5","B5",0]], rhythm_material=["eighths_measure"])
-
-arr.arrange_music(part_names=["oboe1","oboe2"],pitch_material=["down_row_A","down_row_B"], rhythms=["c4-. c4-. c4-. c4-. "])
+# arr.material["rhythm"]["eighths_measure"] = "c8( c8 c8 c8)    c8( c8 c8 c8)"
 
 
-arr.show_pdf()
+# arr.arrange_music(part_names=["clarinet1","clarinet2"],pitch_material="rise_octaves",rhythm_material=[["pickup","straight"]])
+
+# arr.arrange_music(part_names=["flute1","flute2"],pitches=[["G5","A5","B5",0]], rhythm_material=["eighths_measure"])
+
+# arr.arrange_music(part_names=["oboe1","oboe2"],pitch_material=["down_row_A","down_row_B"], rhythms=["c4-. c4-. c4-. c4-. "])
+
+
+# arr.show_pdf()
+
+
+c4 = Container("c'2 r2 | r2 c'2 ")
+t4 = TimeSignature((4,4))
+s4 = Staff()
+s4.extend(c4)
+attach(t4,s4[0])
+
+c3 = Container("c'2 r4 | g'4 g'4 g'4")
+t3 = TimeSignature((3,4))
+s3 = Staff()
+s3.extend(c3)
+attach(t3,s3[0])
+
+#attach(t3,s4[len(s4)-1])
+s4.extend(s3)
+
+print(s4)
+print(format(s4))
+show(s4)
+
+

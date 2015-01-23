@@ -153,13 +153,25 @@ class Melody(WadoMaterial):
             ]])
 
 class Conduct(WadoMaterial):
-    def __init__(self):
-        super().__init__()
-
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*8)
 
-class DayMusic():
+class DayMusicSplit(WadoMaterial):
+    def __init__(self):
+        super().__init__(time_signature=TimeSignature((6,8)))
+        self.empty_measures = Container("R2. | " * 12)
+
+    def add_taiko(self, part_names=["taiko1","taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[
+                [
+                    "taiko_day_swirl",
+                    "taiko_day_middle",
+                    "taiko_day_boom", 
+                ],
+                ["taiko_day_ji"]*3
+            ])
+
+class DayMusicEnd(WadoMaterial):
     pass
 
 
@@ -173,7 +185,7 @@ intro1.add_cresc()
 intro2 = Intro()
 intro2.add_harmony_ref_2()
 intro2.add_harmony_ref_2(pitch_material="ancient_B_modulate")
-intro1.add_taiko(part_names=["taiko1","taiko2"])
+intro2.add_taiko(part_names=["taiko1","taiko2"])
 intro2.add_orch_ji()
 intro2.add_cresc()
 
@@ -196,13 +208,28 @@ melody3.add_harmony_night_3_ref(transpose=[4], respell=["sharps"])
 melody3.add_taiko_melody(part_names=["taiko2"])
 melody3.add_taiko_split(part_names=["taiko1"])
 
-w = WadoMaterial()
-w.append_arrangement(intro1)
+day_music1 = DayMusicSplit()
+day_music1.add_taiko(part_names=["taiko1","taiko2"])
+day_music1.add_taiko(part_names=["taiko2","taiko1"])
+day_music1.show_pdf()
+
+
+w = intro1
 w.append_arrangement(intro2)
 w.append_arrangement(melody1)
 w.append_arrangement(melody2)
 w.append_arrangement(melody3)
+w.append_arrangement(day_music1)
 w.show_pdf()
+
+# w.make_score()
+# print(format(w.score))
+
+
+
+
+# day_music1.show_pdf(part_names=["taiko1","taiko2"])
+
 #w.show_pdf(part_names=["harmony_1","harmonony_3","taiko_1","taiko_2","flute_1"])
 
 #material_music.append_material(MelodySplit())

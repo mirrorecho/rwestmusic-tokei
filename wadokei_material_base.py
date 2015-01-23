@@ -63,9 +63,9 @@ from calliope.tools import music_from_durations, transpose_pitches
 
 # TO DO... something like this could be useful as a class for more generic uses...
 class WadoMaterial(TokeiArrangement):
-    def __init__(self):
+    def __init__(self, time_signature=TimeSignature((9,8)) ):
 
-        super().__init__(layout="standard", name="wadokei-material", time_signature=TimeSignature((9,8)))
+        super().__init__(layout="standard", name="wadokei-material", time_signature=time_signature )
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
@@ -85,12 +85,23 @@ class WadoMaterial(TokeiArrangement):
         self.material["rhythm"]['taiko_split_don']="c4_do  c8_don r8[ r8 c8_don] r8[ r8 c8_do]"
         self.material["rhythm"]['taiko_split_ka']="c4_ka c8_don r8[ r8 c8_don] r8[ r8 c8_don] "
 
-        # this is a 2-measure phrases...
+        # this is a 2-measure phrase...
         self.material["rhythm"]['taiko_conduct']="c4._don   c4._don    r4._tsu   |    c4._ka  c4._don   r4._tsu"
+
+        # the day music is all 4 bars...
+        self.material["rhythm"]["taiko_day_ji"] = "c4_do c8_ko "*8
+        self.material["rhythm"]["taiko_day_swirl"] = "c4._don r4. | c4._don r4. | r4._tsu  c4._don | c4._don r4."
+        self.material["rhythm"]["taiko_day_middle"] = "r4_tsu c8_do  c4._don | "*4
+        self.material["rhythm"]["taiko_day_boom"] = "c4._don "*8
         
+        self.material["rhythm"]["taiko_day_back_forth"] = "c4._don r4. | "*4
+        
+        self.material["rhythm"]["taiko_day_end"] = "c4. "*6 + "c4_do c8_ko c4_do c8_don->"
+
         # not sure I'll use these...
         self.material["rhythm"]['taiko_triples']="c8_do c_ko c_do "*3
         self.material["rhythm"]['taiko_mostly_triples']="c4_do c8_ko " + "c8_do c_ko c_do "*2
+
 
         self.material["rhythm"]["ji_osc"] = "c4.( c4.) c4.-- "
 
@@ -169,56 +180,11 @@ class WadoMaterial(TokeiArrangement):
 
 
 
-
-
-    # def arrange_music(self, duration_sets, pitch_sets, part_names, respell_sets=[None], transpose_sets=[0]):
-
-    #     for i, part_name in enumerate(part_names):
-    #         pitches = pitch_sets[i % len(pitch_sets)]
-    #         durations = duration_sets[i % len(duration_sets)]
-    #         respell = respell_sets[i % len(respell_sets)]
-    #         transpose=transpose_sets[i % len(transpose_sets)]
-
-    #         # TO DO... could pass along split durations here...
-    #         self.arrangement.parts[part_name].extend(music_from_durations(durations=durations, pitches=pitches, transpose=transpose, respell=respell))
-
-    #         for part_name in part_names:
-    #             if part_name not in self.part_names:
-    #                 self.part_names.append(part_name)
-
-
-    # def add_phrases(self, part_name, phrases):
-    #     """
-    #     adds phrases to a part in an arrangement... 
-    #     """
-    #     for phrase_name in phrases:
-    #         self.arrangement.parts[part_name].extend(self.phrases[phrase_name])
-
-    #     if part_name not in self.part_names:
-    #         self.part_names.append(part_name)
-
-    # def show(self):
-    #     self.prepare_material()
-    #     self.arrangement.show_pdf(part_names=self.part_names)
-
-    # def append_material(self, material):
-    #     # making sure all parts from the new material are included in this material
-    #     for part_name in material.part_names:
-    #         if part_name not in self.part_names:
-    #             self.part_names.append(part_name)
-        
-    #     # adding rests to any empty parts
-    #     self.fill_empty_parts_with_rests()
-    #     material.fill_empty_parts_with_rests()
-        
-    #     # appending the new material's arrangement
-    #     self.arrangement.append_arrangement(material.arrangement)
-
-    # def make_music(self):
-    #     # for inherited classes to call to append actual material
-    #     pass
-
     def prepare_score(self):
+        
+        self.fill_empty_parts_with_rests()
+
         for part_name in self.parts:
-            text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
-            attach(text_length_on, self.parts[part_name][0])
+            if part_name in ["taiko1","taiko2"]:
+                text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
+                attach(text_length_on, self.parts[part_name][0])
