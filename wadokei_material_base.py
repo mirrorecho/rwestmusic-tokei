@@ -46,6 +46,7 @@ from calliope.tools import music_from_durations, transpose_pitches
 # - understand lilypond contexts!
 # - make everything proportional while in working mode
 # - show harmony #s above harmony reference lines for making it easier to arrange
+# - ties of chords don't work in arranging music (not an issue now, since no parts will actually contain chords)
 
 # cycle_measures = [Measure(TimeSignature((9,8)), "c4. r4. r4.") for i in range(3)  ]
 
@@ -73,83 +74,83 @@ class WadoMaterial(TokeiArrangement):
 
         self.empty_measures = Container("R4. R4. R4. | " * 8)
 
-        self.rhythms["rest"] = "R4. R4. R4."
-        self.rhythms["taiko_rest"] = "r4._tsu r4. r4."
+        self.material["rhythm"]["rest"] = "R4. R4. R4."
+        self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4."
 
-        self.rhythms['taiko_lead_in']="r4._tsu          c4._don          c4._don"
-        self.rhythms['taiko_down_beat']="c4._don    r4.                   r4."
-        self.rhythms['taiko_up_ka']="r8_tsu[ r c8_don]         r8_tsu[ r c8_do]         c8_ka    c8_ra   c8_ka"
-        self.rhythms['taiko_up_groove']="r8_tsu[ r c8_don]         r8[ r c8_do]          c4_do           c8_ko"
+        self.material["rhythm"]['taiko_lead_in']="r4._tsu          c4._don          c4._don"
+        self.material["rhythm"]['taiko_down_beat']="c4._don    r4.                   r4."
+        self.material["rhythm"]['taiko_up_ka']="r8_tsu[ r c8_don]         r8_tsu[ r c8_do]         c8_ka    c8_ra   c8_ka"
+        self.material["rhythm"]['taiko_up_groove']="r8_tsu[ r c8_don]         r8[ r c8_do]          c4_do           c8_ko"
         
-        self.rhythms['taiko_split_don']="c4_do  c8_don r8[ r8 c8_don] r8[ r8 c8_do]"
-        self.rhythms['taiko_split_ka']="c4_ka c8_don r8[ r8 c8_don] r8[ r8 c8_don] "
+        self.material["rhythm"]['taiko_split_don']="c4_do  c8_don r8[ r8 c8_don] r8[ r8 c8_do]"
+        self.material["rhythm"]['taiko_split_ka']="c4_ka c8_don r8[ r8 c8_don] r8[ r8 c8_don] "
 
         # this is a 2-measure phrases...
-        self.rhythms['taiko_conduct']="c4._don   c4._don    r4._tsu   |    c4._ka  c4._don   r4._tsu"
+        self.material["rhythm"]['taiko_conduct']="c4._don   c4._don    r4._tsu   |    c4._ka  c4._don   r4._tsu"
         
         # not sure I'll use these...
-        self.rhythms['taiko_triples']="c8_do c_ko c_do "*3
-        self.rhythms['taiko_mostly_triples']="c4_do c8_ko " + "c8_do c_ko c_do "*2
+        self.material["rhythm"]['taiko_triples']="c8_do c_ko c_do "*3
+        self.material["rhythm"]['taiko_mostly_triples']="c4_do c8_ko " + "c8_do c_ko c_do "*2
 
-        self.rhythms["ji_osc"] = "c4.( c4.) c4.-- "
+        self.material["rhythm"]["ji_osc"] = "c4.( c4.) c4.-- "
 
         # note... this will typically start on a pickup
-        self.rhythms["festival_A"] = "c4( c8)    c4 -. c8( ~ c4. c4.)     c4.--->  c4.( c4.) "
-        self.rhythms["festival_B"] = "c4-- c8-.      c4. ~ c4. ~ c4. "
+        self.material["rhythm"]["festival_A"] = "c4( c8)    c4 -. c8( ~ c4. c4.)     c4.--->  c4.( c4.) "
+        self.material["rhythm"]["festival_B"] = "c4-- c8-.      c4. ~ c4. ~ c4. "
         # this one would typically start on the 2nd beat
-        self.rhythms["festival_C"] = "c4.( c4.)        c4. ~ c4. ~ c4. "
+        self.material["rhythm"]["festival_C"] = "c4.( c4.)        c4. ~ c4. ~ c4. "
         # this one would typically start on the downbeat
-        self.rhythms["festival_D"] = "c4.( c4. c4.)       c4. ~ c4. ~ c4. "
+        self.material["rhythm"]["festival_D"] = "c4.( c4. c4.)       c4. ~ c4. ~ c4. "
 
-        self.rhythms["measure_note" = "c2. ~ c4. "
+        self.material["rhythm"]["measure_note"] = "c2. r4. "
 
 
-        self.pitch_material["ji_osc"] = ["A5","B5","A5"]
+        self.material["pitch"]["ji_osc"] = ["A5","B5","A5"]
 
-        self.pitch_material["9ths"] = [0,14,28,42]
+        self.material["pitch"]["9ths"] = [0,14,28,42]
 
         # variant of this can be to anticipate the last upper harmony, then repeat it (so that it's similar to version 2 above the low G)
-        self.pitch_material["ancient_A"] = [ 
+        self.material["pitch"]["ancient_A"] = [ 
             [["B3","D4"],   ["C#4","E4"],   ["B3","D4"],    ["C#4","E4"],],
             ["B2",          "A2",           "G2",            "A2",],
             ]
 
-        self.pitch_material["ancient_B"] = [ 
+        self.material["pitch"]["ancient_B"] = [ 
             [["D4","E4","B4","F#5"],    ["C#4","B4","C#5"], ["C#4","C#5","D#5"],    ["D4","A5"],    ["B4","E5"],    ["B3","D4"], ["C#4","E4"],  "D4","G4","A4","C#5",   ],
             [["C2","D3"],               ["A2","D3","B3"],   ["G1","A2","B3"],       "F2",           "G2",                                       "A2",                   ],
             ]
 
-        self.pitch_material["ancient_B_up2"] = transpose_pitches(self.pitch_material["ancient_B"], 2)
+        self.material["pitch"]["ancient_B_up2"] = transpose_pitches(self.material["pitch"]["ancient_B"], 2)
 
         # TO DO... some better way to copy pitch material
-        self.pitch_material["ancient_B_modulate"] = copy.deepcopy(self.pitch_material["ancient_B_up2"])
-        self.pitch_material["ancient_B_modulate"][0][0] = copy.deepcopy(self.pitch_material["ancient_B"][0][0])
-        self.pitch_material["ancient_B_modulate"][1][0] = copy.deepcopy(self.pitch_material["ancient_B"][1][0])
-        self.pitch_material["ancient_B_modulate"][0][1] = copy.deepcopy(self.pitch_material["ancient_B"][0][1])
-        self.pitch_material["ancient_B_modulate"][1][1] = copy.deepcopy(self.pitch_material["ancient_B"][1][1])
-        self.pitch_material["ancient_B_modulate"][0][2] = ["C#4","D#5","D#6"]
-        self.pitch_material["ancient_B_modulate"][1][2] = ["A2","B3"]
+        self.material["pitch"]["ancient_B_modulate"] = copy.deepcopy(self.material["pitch"]["ancient_B_up2"])
+        self.material["pitch"]["ancient_B_modulate"][0][0] = copy.deepcopy(self.material["pitch"]["ancient_B"][0][0])
+        self.material["pitch"]["ancient_B_modulate"][1][0] = copy.deepcopy(self.material["pitch"]["ancient_B"][1][0])
+        self.material["pitch"]["ancient_B_modulate"][0][1] = copy.deepcopy(self.material["pitch"]["ancient_B"][0][1])
+        self.material["pitch"]["ancient_B_modulate"][1][1] = copy.deepcopy(self.material["pitch"]["ancient_B"][1][1])
+        self.material["pitch"]["ancient_B_modulate"][0][2] = ["C#4","D#5","D#6"]
+        self.material["pitch"]["ancient_B_modulate"][1][2] = ["A2","B3"]
 
 
         # (for now, everything is in A... and will transpose as needed)
         # (the 3rd/4th pitch would be the important one here in most cases...)
-        self.pitch_material["festival_A"] = ["F#4","G4","A4","A4","E5","A4","E5","A4"]
-        self.pitch_material["festival_B"] = ["F#4","G4","E4","A4","E5","A4","E5","A4"]
+        self.material["pitch"]["festival_A"] = ["F#4","G4","A4","A4","E5","A4","E5","A4"]
+        self.material["pitch"]["festival_B"] = ["F#4","G4","E4","A4","E5","A4","E5","A4"]
 
         # TO DO... add downward lines.
 
-        self.pitch_material["night_A"] = [
+        self.material["pitch"]["night_A"] = [
                 # D# E festival swing goes here
             [["D#4","D#5"],             ["F#4","C#5"],  ["A4","C#5","F#5"], "C#6","F#5",    ["D#4","D#5"], ],
             [["C#2","C#3","B3"],        "A2",           ["F#2","A3"],                       ["A2","A3"]],
             ]
         # TO DO... add some of the festival lines in here (see notes)
-        self.pitch_material["night_B"] = [
+        self.material["pitch"]["night_B"] = [
             ["F#4", "F5",   "D#4",  ["B3","D#4","G#4"],     ["G#4","D#5","F5","F#5"],   ["G#4","D#5","F5","F#5"],   ["C#4","C#5"],  ["D#4","D#5"]],
             ["B2",          "B2",                           "G#2",                      ["C#3","B3"],               ["A2","A3"],]
         ]
         # TO DO... add some of the festival lines in here (see notes)
-        self.pitch_material["night_C"] = [
+        self.material["pitch"]["night_C"] = [
             [["Eb4","Eb5"],     ["F4","F5"],    ["G4","A5"],    "C5",   "Eb4",      "D5",       ["F4","C5"]],
             [["Eb2","Eb3"],                     ["Eb2","F3"],           ["F2","Eb3"],           "A2"],
         ]
@@ -161,7 +162,7 @@ class WadoMaterial(TokeiArrangement):
         # BUT... HARMONIES FOR 3 may not be dark enough?
 
 
-        self.pitch_material["day_A"] = [
+        self.material["pitch"]["day_A"] = [
             [],
             [],
         ]
