@@ -1,4 +1,9 @@
 from abjad import *
+import settings
+
+import copy
+
+from tokei import TokeiArrangement
 
 # # any way to avoid this sys path part??
 # import sys
@@ -35,3 +40,26 @@ from abjad import *
 # ar.show_pdf()
 
 
+
+arr = TokeiArrangement()
+arr.material["pitch"]["rise_octaves"] = [
+                                ["C4","D4","E4", ["F4","F5"] ],
+                                ["C5","D5","E5", ["F5","F6"] ],
+                                ]
+arr.material["pitch"]["down_row_A"] = ["A3","G3","F3","E3"]
+arr.material["pitch"]["down_row_B"] = ["B3","A3","G3","F3"]
+
+arr.material["rhythm"]["pickup"] = "c4. c8"
+arr.material["rhythm"]["straight"] = "c4 c4"
+
+arr.material["rhythm"]["eighths_measure"] = "c8( c8 c8 c8)    c8( c8 c8 c8)"
+
+
+arr.arrange_music(part_names=["clarinet1","clarinet2"],pitch_material="rise_octaves",rhythm_material=[["pickup","straight"]])
+
+arr.arrange_music(part_names=["flute1","flute2"],pitches=[["G5","A5","B5",0]], rhythm_material=["eighths_measure"])
+
+arr.arrange_music(part_names=["oboe1","oboe2"],pitch_material=["down_row_A","down_row_B"], rhythms=["c4-. c4-. c4-. c4-. "])
+
+
+arr.show_pdf()
