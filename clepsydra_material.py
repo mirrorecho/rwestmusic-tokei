@@ -6,8 +6,12 @@ import settings
 
 #TO DO
 # - muffle taiko during ma?
+# - EVERYONE DIFFERENT (at least one spot!!!)
+# - my copyright
 
 from tokei import TokeiArrangement
+
+# need to import all of this?
 from calliope.work import Project, Arrangement
 from calliope.cycles.loop import CycleLoop, Cycle
 from calliope.cycles.transform import *
@@ -38,15 +42,13 @@ class WaterCloudStringsEcho(WaterCloudBase):
 class WaterCloudWindsEcho(WaterCloudBase):
     pass
 
-# thought... perhaps all of these fragments could inherit from a base class in tools... with stuff
-# for transposing, repeating, changing durations, etc.
 class Stream():
     def __init__(self, ref_pitch="E4"):
         self.relative_pitches = [0, 2, 0, -2, -3, 0, -5, -7, -2, -9, 3, -2]
         self.ref_pitch = get_pitch_number(ref_pitch)
         self.next_ref_pitch = ref_pitch + 1
         # maybe durations works better as a list instead of a string?
-        self.durations = "c8( c c) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
+        self.rhythm = "c8( c c) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
         self.split_durations = [durationtools.Duration(4,4) for i in range(3)]
 
     def get_transposed_pitches(self, ref_pitch=None):
@@ -60,7 +62,7 @@ class Stream():
         if durations is None:
             durations = self.durations
         return get_muisic_from_durations(
-                        durations=durations, 
+                        durations=rhythm, 
                         pitches=get_transposed_pitches(ref_pitch),
                         split_durations=self.split_durations)
 
@@ -80,49 +82,53 @@ class StreamHint2(StreamHint1):
         #self.relative_pitches = [p if i in (0,1,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
-class StreamHint3(StreamHint2):
-    pass
+class ClepsydraMaterial(TokeiArrangement):
+    def __init__(self, time_signature=TimeSignature((4,4)) ):
+
+        super().__init__(layout="standard", name="clepsydra-material", time_signature=time_signature )
+        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
+        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
+        self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
+
+        self.empty_measures = Container("R1 " * 3)
+
+        # note, this would typically start on the pickup before a strong beat (before ichi or san)
+        self.material["rhythm"]["taiko_cresc"] = "c8\\p\\<_do c_do[ c_ko] c_do[ c\\mf->_don] "
+        self.material["rhythm"]["taiko_melody_1"] = "r4 r8 " + self.material["rhythm"]["taiko_cresc"] + "r8 c_don r c_don  r c_do c4->_don |  c8_da\\p\\< c_da    r c_da    c_da c_da    r c_da"
+        self.material["rhythm"]["taiko_melody_2"] = "c8_da[ c_da]\\mp   c_ka[\\p c_ka]    r8  c_ka   r8  c_ka   |  c4_don\\mf   r8 c_don r8 c_don r8 " + self.material["rhythm"]["taiko_cresc"] + "r2"
+
+        self.material["rhythm"]["taiko_do_don"] = "c8->_do c8->_don r4 r4 c8->_do c8->_do "
+
+        self.material["rhythm"]["taiko_intro_1"] = "c8_do[ c_ko] "*8 + self.material["rhythm"]["taiko_do_don"]
+        self.material["rhythm"]["taiko_intro_2"] = "c8_do c_don r4^KATA r2 | R1 | c8_do c_don r4^KATA r2 "
 
 
-class TaikoMaterial():
-    def __init__(self):
-        self.line ="R1 " * 3
+    def add_taiko_melody(self):
+        self.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=[[
+            "taiko_melody_1", "taiko_melody_2"
+            ]])
 
-    def get_music_string(self):
-        return self.line
+    def prepare_score(self):
+        
+        self.fill_empty_parts_with_rests()
 
-    def get_music(self):
-        return music_from_durations(self.get_music_string())
-
-    def show(self):
-        arr = TokeiArrangement(layout="standard", name="clepsydra-taiko-material", time_signature=TimeSignature((4,4)))
-        arr.parts["taiko1"].extend(self.get_music())
-        arr.show_pdf(part_names=["taiko1"])   
-
-# better to go this route?
-taikos = {}
-taikos["doko"] = "r8^do c8^ko "
-
-class TaikoIntro(TaikoMaterial):
-    def __init__(self):
-        self.line1 = "c8^do c^ko " * 8
-        self.line1 += "c8->^do c8->^don r4 r4 c8->^do c8->^do "
-        self.line2 = "c8^do c^don r4^KATA r2 | R1 | c8^do c^don r4^KATA r2 "
-
-    def get_music_string(self):
-        return (self.line1 * 2) + (self.line2 * 4)
+        for part_name in self.parts:
+            if part_name in ["taiko1","taiko2","odaiko"]:
+                text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
+                attach(text_length_on, self.parts[part_name][0])
+                dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
+                attach(dynamic_up, self.parts[part_name][0])
 
 
-class TaikoMelody(TaikoMaterial):
-    def __init__(self):
-        self.line1 = "r4^KATA r8 c8\\p\\<^do c^do c^ko c^do c\\mf->^don |  r8 c^don  r c^don  r c^do c4->^don |  c8->^do c^don r8 c^do c^do c^don r4 "
-        self.line2 = "c8^do c^don r8  c^ka r8  c^ka r8  c^ka      |  c4^don   r8 c^don r8 c^don r8 c\\p\\<^do |  c^do c^ko c^do c\\mf->^don r2^KATA "
+c = ClepsydraMaterial()
+c.add_taiko_melody()
+c.show_pdf()
 
-    def get_music_string(self):
-        return self.line1 + self.line2
 
-taiko_music = TaikoMaterial()
-taiko_music.line = TaikoIntro().get_music_string() + (TaikoMelody().get_music_string()) * 2
+# taiko_music = TaikoMaterial()
+# taiko_music.line = TaikoIntro().get_music_string() + (TaikoMelody().get_music_string()) * 2
 
-taiko_music.show()
+# taiko_music.show()
 

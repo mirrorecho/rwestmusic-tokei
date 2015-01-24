@@ -1,5 +1,7 @@
 from abjad import *
 
+from clepsydra_material import ClepsydraMaterial
+
 from arrangement import TokeiArrangement
 from cycles.loop import CycleLoop, Cycle
 from cycles.transform import *
@@ -15,7 +17,7 @@ from cloud.pitches import *
 
 
 
-music = CycleLoop()
+music = calliope.cycles.loop.CycleLoop(measures_durations=[(4,4) for i in range(3)], arrangement_type=ClepsydraMaterial)
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
 music.add_cycle(add_flags=["before_movin"])
@@ -25,11 +27,6 @@ music.add_cycle()
 music.add_cycle()
 music.add_cycle(add_flags=["final"])
 
-# is this the best way to deal with the meter and measures??
-music.add_data("measures_durations", [durationtools.Duration(4,4) for i in range(3)])
-
-# add A pitch as the main ji pitch
-music.add_data("ji_pitch", pitchtools.NumberedPitch("a''"))
 
 # add reference pitch of E for the first couple of cycles only
 music.add_data("ref_pitch", pitchtools.NumberedPitch("e''"), stop_flag="start_movin")

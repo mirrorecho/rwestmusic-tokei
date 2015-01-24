@@ -52,6 +52,7 @@ class TokeiArrangement(Arrangement):
         self.add_part(name='cello', instrument=instrumenttools.Violin(instrument_name="Cello", short_instrument_name="vc."))
         self.add_part(name='bass', instrument=instrumenttools.Violin(instrument_name="Bass", short_instrument_name="cb."))
  
+        self.material["pitch"]["ji"]="A4"
 
         # self.violinI = scoretools.Container()
         # self.violinI_div_1 = scoretools.Container()
