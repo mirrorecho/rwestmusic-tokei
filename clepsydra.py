@@ -13,6 +13,7 @@ from cloud.pitches import *
 #question... multiple simultaneous cicles going on?? (assume no)
 
 # TO DO...
+# - TO DO... get the cloud going properly
 # - add an echo of the main stream melody in the cloud
 
 
@@ -45,110 +46,92 @@ music.transforms.append(
 music.add_rhythm_material("push",  "c4\\downbow " * 12)
 
 # would be better to figure out how to fill the whole thing with straight quarter notes...
-music.add_transform(
-    MakeMusic(
-        pitch="ji_pitch", 
-        rhythm_material = "push_durations",
-        part = "violinI",
+music.arrange_music(
+        pitch_material=["ji"], 
+        rhythm_material = ["push"],
+        part_names = ["violinI"],
         stop_flag="start_movin"
-        ))
-# TO DO... add down bows...
+        )
 
-music.add_transform(
-    MakeMusic(
-        pitch="ji_pitch", 
-        durations="measures_durations",
-        part = "flute1"
-        ))
+music.arrange_music(
+        pitch_material=["ji", "ref"], 
+        rhythm_material=[["measure_note"*3]],
+        part_names = ["flute1","flute2"]
+        )
 
-music.add_transform(
-    MakeMusic(
-        pitch="ref_pitch", 
-        durations="measures_durations",
-        part = "flute2"
-        ))
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # rhythmic fabric:
-music.add_data("pattern_ma", "b8 b8 r4 r2 R1 R1")
+# are we even using this...? if so, move it to the class?
+music.add_rhythm_material("pattern_ma", "b8 b8 r4 r2 R1 R1")
 
-music.add_data("pattern1", "r8 c8 r8 c8 c4 c4")
+music.add_rhythm_material("pattern1", "r8 c8 r8 c8 c4 c4")
 
-music.add_transform(
-    MakeMusic(
-        durations="pattern_ma",
-        part = "taiko1"
-        ))
-
-music.add_transform(
-    MakeMusic(
-        durations="pattern1",
-        part = "taiko2",
-        times = 3
-        ))
+music.arrange_music(
+        rhythm_material=["pattern_ma", "pattern1"], 
+        part_names = ["taiko1","taiko2"]
+        )
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
-# STEADY (harmonic sequence)
+# CLOUD (WAS STEADY) (harmonic sequence)
 
 # add constant 8th note durations
-music.add_data("steady_durations", Duration(1,8))
+# music.add_data("steady_durations", Duration(1,8))
 
-# descending 4ths cell intervals:
-music.add_data("steady_intervals", [-2, -2, -1, -2])
+# # descending 4ths cell intervals:
+# music.add_data("steady_intervals", [-2, -2, -1, -2])
 
-# the steady lines are each doubled at a 5th...
-music.add_data("steady_double_harmony", 7)
+# # the steady lines are each doubled at a 5th...
+# music.add_data("steady_double_harmony", 7)
 
-# mid range:
-music.add_data("steady_range_mid", value = pitchtools.PitchRange('[C4, C5]'))
+# # mid range:
+# music.add_material("steady_range_mid", value = pitchtools.PitchRange('[C4, C5]'))
 
-music.add_transform(
-    AddPitchesFromIntervalRepeatCell(
-        "steady_pitches", 
-        intervals = "steady_intervals",
-        start_pitch = "ref_pitch",
-        times = 6
-        ))
+# music.add_transform(
+#     AddPitchesFromIntervalRepeatCell(
+#         "steady_pitches", 
+#         intervals = "steady_intervals",
+#         start_pitch = "ref_pitch",
+#         times = 6
+#         ))
 
-music.add_transform(
-    AddPitchesCopy(
-        "steady_pitches_harmony",
-        copy_from = "steady_pitches",
-        transpose = "steady_double_harmony"
-    ))
+# music.add_transform(
+#     AddPitchesCopy(
+#         "steady_pitches_harmony",
+#         copy_from = "steady_pitches",
+#         transpose = "steady_double_harmony"
+#     ))
 
+# # STEADY 2 (counterpoint on top of sequence)
 
-# -----------------------------------------------------
-# STEADY 2 (counterpoint on top of sequence)
+# # the conterpart starts on the 3rd
+# music.add_data("steady2_start_above_ref", 4)
 
-# the conterpart starts on the 3rd
-music.add_data("steady2_start_above_ref", 4)
+# music.add_transform(
+#     AddPitchCopy(
+#         "ref_stream2_pitch",
+#         copy_from = "ref_pitch",
+#         transpose = "steady2_start_above_ref"
+#     ))
 
-music.add_transform(
-    AddPitchCopy(
-        "ref_stream2_pitch",
-        copy_from = "ref_pitch",
-        transpose = "steady2_start_above_ref"
-    ))
+# # descending 4ths cell intervals:
+# music.add_data("steady2_intervals", [3, 5, -2, -1])
 
-# descending 4ths cell intervals:
-music.add_data("steady2_intervals", [3, 5, -2, -1])
+# music.add_transform(
+#     AddPitchesFromIntervalRepeatCell(
+#         "steady2_pitches", 
+#         intervals = "steady2_intervals",
+#         start_pitch = "ref_stream2_pitch",
+#         times = 6
+#         ))
 
-music.add_transform(
-    AddPitchesFromIntervalRepeatCell(
-        "steady2_pitches", 
-        intervals = "steady2_intervals",
-        start_pitch = "ref_stream2_pitch",
-        times = 6
-        ))
-
-music.add_transform(
-    AddPitchesCopy(
-        "steady2_pitches_harmony",
-        copy_from = "steady2_pitches",
-        transpose = "steady_double_harmony" #transposition is the same as steady
-    ))
+# music.add_transform(
+#     AddPitchesCopy(
+#         "steady2_pitches_harmony",
+#         copy_from = "steady2_pitches",
+#         transpose = "steady_double_harmony" #transposition is the same as steady
+#     ))
 
 # -----------------------------------------------------
 # now rearrange and arrange!
@@ -167,52 +150,50 @@ music.add_transform(
 #         start_flag = "before_movin",
 #     ))
 
-music.add_transform(
-    MakeMusic(
-        pitches="steady_pitches", 
-        durations = "steady_durations",
-        part = "oboe1",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches="steady_pitches_harmony", 
-        durations = "steady_durations",
-        part = "oboe2",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches="steady2_pitches", 
-        durations = "steady_durations",
-        part = "clarinet1",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
-music.add_transform(
-    MakeMusic(
-        pitches="steady2_pitches_harmony", 
-        durations = "steady_durations",
-        part = "clarinet2",
-        start_flag = "before_movin",
-        pitch_range = "steady_range_mid"
-        ))
+# music.add_transform(
+#     MakeMusic(
+#         pitches="steady_pitches", 
+#         durations = "steady_durations",
+#         part = "oboe1",
+#         start_flag = "before_movin",
+#         pitch_range = "steady_range_mid"
+#         ))
+# music.add_transform(
+#     MakeMusic(
+#         pitches="steady_pitches_harmony", 
+#         durations = "steady_durations",
+#         part = "oboe2",
+#         start_flag = "before_movin",
+#         pitch_range = "steady_range_mid"
+#         ))
+# music.add_transform(
+#     MakeMusic(
+#         pitches="steady2_pitches", 
+#         durations = "steady_durations",
+#         part = "clarinet1",
+#         start_flag = "before_movin",
+#         pitch_range = "steady_range_mid"
+#         ))
+# music.add_transform(
+#     MakeMusic(
+#         pitches="steady2_pitches_harmony", 
+#         durations = "steady_durations",
+#         part = "clarinet2",
+#         start_flag = "before_movin",
+#         pitch_range = "steady_range_mid"
+#         ))
 
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)
 
-# the stream melody pitch sequence
-music.add_data("stream_pitches", [0, 2, 0, -2, -3, 0, -5, -7, -2, -9, 3, -2])
 
 # the stream melody durations
-music.add_data("stream_durations", [
-                Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 4), Duration(1, 8), 
-                Duration(3, 8), Duration(1,4), Duration(1,4), Duration(1,4), Duration(3,8), Duration(5,8)
-                ])
+# music.add_data("stream_durations", [
+#                 Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 4), Duration(1, 8), 
+#                 Duration(3, 8), Duration(1,4), Duration(1,4), Duration(1,4), Duration(3,8), Duration(5,8)
+#                 ])
 
 music.add_transform(
     MakeMusic(
@@ -231,16 +212,10 @@ music.add_transform(
         ))
 
 
-# ARRANGEMENT STUFF:
-
-
+# FINAL BUBBLE STUFF:
 
 music.apply_transforms()
 
-music_arrangement = music.make_arrangement()
+bubble = music.make_bubble()
 
-music_arrangement.show_pdf()
-
-# music_arrangement.make_score()
-# play(music_arrangement.score)
-
+bubble.show_pdf()

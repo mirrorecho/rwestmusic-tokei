@@ -36,20 +36,35 @@ from tokei import TokeiBubble
 from calliope.cycles.loop import CycleLoop
 from wadokei_material_base import WadoMaterial
 
+class MyClass():
+    def my_function(self, great="boo", *args, **kwargs):
+        print(great)
+
+args = {}
+args["great"]="YO!"
+args["something_else"]="Boo..."
+
+c = MyClass()
+f = "my_function"
+
+
+
+
+
 # b = TokeiBubble(measures_durations=[])
 # b.fill_empty_parts_with_rests()
 # b.show_pdf()
 
-m = CycleLoop(bubble_type=WadoMaterial)
-m.add_cycle()
-m.cycles[0].parts["taiko1"].append("c1")
+# m = CycleLoop(bubble_type=WadoMaterial)
+# m.add_cycle()
+# m.cycles[0].parts["taiko1"].append("c1")
 
-m.add_cycle(bubble_type=WadoMaterial)
+# m.add_cycle(bubble_type=WadoMaterial)
 
 
-music = m.make_bubble()
+# music = m.make_bubble()
 
-music.show_pdf()
+# music.show_pdf()
 
 # # any way to avoid this sys path part??
 # import sys

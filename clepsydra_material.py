@@ -80,9 +80,9 @@ class StreamHint2(StreamHint1):
         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
 class ClepsydraMaterial(TokeiBubble):
-    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3 ):
+    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3, layout=None):
 
-        super().__init__(layout="standard", name="clepsydra-material", time_signature=time_signature, measures_durations=measures_durations )
+        super().__init__(name="clepsydra-material", time_signature=time_signature, measures_durations=measures_durations,layout=layout, )
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
@@ -90,6 +90,8 @@ class ClepsydraMaterial(TokeiBubble):
         self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
         self.empty_measures = Container("R1 " * 3)
+
+        self.stream = Stream()
 
         # note, this would typically start on the pickup before a strong beat (before ichi or san)
         self.material["rhythm"]["taiko_cresc"] = "c8\\p\\<_do c_do[ c_ko] c_do[ c\\mf->_don] "
@@ -100,6 +102,14 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["taiko_intro_1"] = "c8_do[ c_ko] "*8 + self.material["rhythm"]["taiko_do_don"]
         self.material["rhythm"]["taiko_intro_2"] = "c8_do c_don r4^KATA r2 | R1 | c8_do c_don r4^KATA r2 "
+
+        self.material["rhythm"]["steady_8ths"] = "c8 "*24
+
+        self.material["measure_note"] = "c1"
+
+        self.material["pitch"]["cloud"] = [
+                    [ ]
+                ]
 
     def add_taiko_melody(self):
         self.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=[[
@@ -117,28 +127,7 @@ class ClepsydraMaterial(TokeiBubble):
                 dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
                 attach(dynamic_up, self.parts[part_name][0])
 
-music = CycleLoop(bubble_type=ClepsydraMaterial)
-music.add_cycle(add_flags=["start"])
-music.add_cycle(add_flags=["after_start"])
-music.add_cycle()
-music.add_cycle(add_flags=["before_movin"])
-music.add_cycle(add_flags=["start_movin"])
-music.add_cycle(add_flags=["final"])
 
-music.add_rhythm_material("push",  "c4\\downbow " * 12)
-music.add_rhythm_material("push",  "c4\\upbow " * 12, apply_flags=["after_start"])
-
-music.arrange_music(
-        pitch_material=["ji"], 
-        rhythm_material = ["push"],
-        part_names = ["violinI"],
-        stop_flag="start_movin"
-        )
-
-music.apply_transforms()
-
-bubble = music.make_bubble()
-bubble.show_pdf()
 
 # c = ClepsydraMaterial()
 # c.add_taiko_melody()
