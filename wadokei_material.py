@@ -4,7 +4,7 @@ import settings
 
 import copy
 
-from tokei import TokeiArrangement
+from tokei import TokeiBubble
 from wadokei_material_base import WadoMaterial
 
 from calliope.tools import music_from_durations, transpose_pitches
@@ -211,16 +211,18 @@ melody3.add_taiko_split(part_names=["taiko1"])
 day_music1 = DayMusicSplit()
 day_music1.add_taiko(part_names=["taiko1","taiko2"])
 day_music1.add_taiko(part_names=["taiko2","taiko1"])
-day_music1.show_pdf()
+# day_music1.show_pdf()
 
 
 w = intro1
-w.append_arrangement(intro2)
-w.append_arrangement(melody1)
-w.append_arrangement(melody2)
-w.append_arrangement(melody3)
-w.append_arrangement(day_music1)
-w.show_pdf()
+w.append_bubble(intro2)
+w.append_bubble(melody1)
+w.append_bubble(melody2)
+w.append_bubble(melody3)
+w.append_bubble(day_music1)
+w.show_pdf(part_names=["harmony_3","taiko2","flute2"])
+
+# print(format(w))
 
 # w.make_score()
 # print(format(w.score))

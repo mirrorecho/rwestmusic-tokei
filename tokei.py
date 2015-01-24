@@ -4,9 +4,9 @@ from abjad import *
 import sys
 sys.path.append("/home/randall/Code/mirrorecho")
 
-from calliope.work import Arrangement, Project
+from calliope.work import Bubble, Project
 
-class TokeiArrangement(Arrangement):
+class TokeiBubble(Bubble):
 
 
     #  use **args here?

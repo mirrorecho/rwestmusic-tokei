@@ -4,7 +4,7 @@ import settings
 
 import copy
 
-from tokei import TokeiArrangement
+from tokei import TokeiBubble
 
 from calliope.tools import music_from_durations, transpose_pitches
 
@@ -62,7 +62,7 @@ from calliope.tools import music_from_durations, transpose_pitches
 
 
 # TO DO... something like this could be useful as a class for more generic uses...
-class WadoMaterial(TokeiArrangement):
+class WadoMaterial(TokeiBubble):
     def __init__(self, time_signature=TimeSignature((9,8)) ):
 
         super().__init__(layout="standard", name="wadokei-material", time_signature=time_signature )
