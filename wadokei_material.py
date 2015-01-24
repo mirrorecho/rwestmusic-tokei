@@ -158,8 +158,7 @@ class Conduct(WadoMaterial):
 
 class DayMusicSplit(WadoMaterial):
     def __init__(self):
-        super().__init__(time_signature=TimeSignature((6,8)))
-        self.empty_measures = Container("R2. | " * 12)
+        super().__init__(time_signature=TimeSignature((6,8)), measures_durations=[(6,8)]*12)
 
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[

@@ -9,11 +9,11 @@ import settings
 # - EVERYONE DIFFERENT (at least one spot!!!)
 # - my copyright
 
-from tokei import TokeiArrangement
+from tokei import TokeiBubble
 
 # need to import all of this?
-from calliope.work import Project, Arrangement
-from calliope.cycles.loop import CycleLoop, Cycle
+from calliope.work import Project, Bubble
+from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 from calliope.cloud.pitches import * 
 from calliope.tools import get_pitch_range, get_pitch_number, music_from_durations
@@ -21,9 +21,6 @@ from calliope.tools import get_pitch_range, get_pitch_number, music_from_duratio
 
 import copy
 
-# are these needed?
-tokei_arrangement = TokeiArrangement()
-tokei_project = tokei_arrangement.project
 
 # -------------------------------------------------------------
 
@@ -82,10 +79,10 @@ class StreamHint2(StreamHint1):
         #self.relative_pitches = [p if i in (0,1,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
-class ClepsydraMaterial(TokeiArrangement):
-    def __init__(self, time_signature=TimeSignature((4,4)) ):
+class ClepsydraMaterial(TokeiBubble):
+    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3 ):
 
-        super().__init__(layout="standard", name="clepsydra-material", time_signature=time_signature )
+        super().__init__(layout="standard", name="clepsydra-material", time_signature=time_signature, measures_durations=measures_durations )
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
@@ -104,7 +101,6 @@ class ClepsydraMaterial(TokeiArrangement):
         self.material["rhythm"]["taiko_intro_1"] = "c8_do[ c_ko] "*8 + self.material["rhythm"]["taiko_do_don"]
         self.material["rhythm"]["taiko_intro_2"] = "c8_do c_don r4^KATA r2 | R1 | c8_do c_don r4^KATA r2 "
 
-
     def add_taiko_melody(self):
         self.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=[[
             "taiko_melody_1", "taiko_melody_2"
@@ -121,10 +117,32 @@ class ClepsydraMaterial(TokeiArrangement):
                 dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
                 attach(dynamic_up, self.parts[part_name][0])
 
+music = CycleLoop(bubble_type=ClepsydraMaterial)
+music.add_cycle(add_flags=["start"])
+music.add_cycle(add_flags=["after_start"])
+music.add_cycle()
+music.add_cycle(add_flags=["before_movin"])
+music.add_cycle(add_flags=["start_movin"])
+music.add_cycle(add_flags=["final"])
 
-c = ClepsydraMaterial()
-c.add_taiko_melody()
-c.show_pdf()
+music.add_rhythm_material("push",  "c4\\downbow " * 12)
+music.add_rhythm_material("push",  "c4\\upbow " * 12, apply_flags=["after_start"])
+
+music.arrange_music(
+        pitch_material=["ji"], 
+        rhythm_material = ["push"],
+        part_names = ["violinI"],
+        stop_flag="start_movin"
+        )
+
+music.apply_transforms()
+
+bubble = music.make_bubble()
+bubble.show_pdf()
+
+# c = ClepsydraMaterial()
+# c.add_taiko_melody()
+#c.show_pdf()
 
 
 # taiko_music = TaikoMaterial()

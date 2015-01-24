@@ -32,7 +32,24 @@ import settings
 
 import copy
 
-from tokei import TokeiArrangement
+from tokei import TokeiBubble
+from calliope.cycles.loop import CycleLoop
+from wadokei_material_base import WadoMaterial
+
+# b = TokeiBubble(measures_durations=[])
+# b.fill_empty_parts_with_rests()
+# b.show_pdf()
+
+m = CycleLoop(bubble_type=WadoMaterial)
+m.add_cycle()
+m.cycles[0].parts["taiko1"].append("c1")
+
+m.add_cycle(bubble_type=WadoMaterial)
+
+
+music = m.make_bubble()
+
+music.show_pdf()
 
 # # any way to avoid this sys path part??
 # import sys
@@ -94,23 +111,23 @@ from tokei import TokeiArrangement
 # arr.show_pdf()
 
 
-c4 = Container("c'2 r2 | r2 c'2 ")
-t4 = TimeSignature((4,4))
-s4 = Staff()
-s4.extend(c4)
-attach(t4,s4[0])
+# c4 = Container("c'2 r2 | r2 c'2 ")
+# t4 = TimeSignature((4,4))
+# s4 = Staff()
+# s4.extend(c4)
+# attach(t4,s4[0])
 
-c3 = Container("c'2 r4 | g'4 g'4 g'4")
-t3 = TimeSignature((3,4))
-s3 = Staff()
-s3.extend(c3)
-attach(t3,s3[0])
+# c3 = Container("c'2 r4 | g'4 g'4 g'4")
+# t3 = TimeSignature((3,4))
+# s3 = Staff()
+# s3.extend(c3)
+# attach(t3,s3[0])
 
-#attach(t3,s4[len(s4)-1])
-s4.extend(s3)
+# #attach(t3,s4[len(s4)-1])
+# s4.extend(s3)
 
-print(s4)
-print(format(s4))
-show(s4)
+# print(s4)
+# print(format(s4))
+# show(s4)
 
 

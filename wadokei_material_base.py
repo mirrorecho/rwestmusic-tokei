@@ -63,16 +63,17 @@ from calliope.tools import music_from_durations, transpose_pitches
 
 # TO DO... something like this could be useful as a class for more generic uses...
 class WadoMaterial(TokeiBubble):
-    def __init__(self, time_signature=TimeSignature((9,8)) ):
+    def __init__(self, time_signature=TimeSignature((9,8)), 
+        measures_durations=[(9,8)]*8,
+        rest_measures = "R4. R4. R4. "*8,
+        ):
 
-        super().__init__(layout="standard", name="wadokei-material", time_signature=time_signature )
+        super().__init__(layout="standard", name="wadokei-material", time_signature=time_signature, measures_durations=measures_durations)
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
         self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
         self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
-
-        self.empty_measures = Container("R4. R4. R4. | " * 8)
 
         self.material["rhythm"]["rest"] = "R4. R4. R4."
         self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4."
@@ -187,4 +188,5 @@ class WadoMaterial(TokeiBubble):
         for part_name in self.parts:
             if part_name in ["taiko1","taiko2"]:
                 text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
-                attach(text_length_on, self.parts[part_name][0])
+                if len(self.parts[part_name]) > 0:
+                    attach(text_length_on, self.parts[part_name][0])

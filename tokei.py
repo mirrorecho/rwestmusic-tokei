@@ -10,9 +10,9 @@ class TokeiBubble(Bubble):
 
 
     #  use **args here?
-    def __init__(self, layout="orchestra", name="full-score", time_signature=TimeSignature((4,4))):
+    def __init__(self, layout="orchestra", name="full-score", time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=Project(name="rwestmusic-tokei"), layout=layout, time_signature=time_signature)
+        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=Project(name="rwestmusic-tokei"), layout=layout, measures_durations=measures_durations, time_signature=time_signature)
 
         self.add_perc_part(name='cycle', instrument=instrumenttools.UntunedPercussion(instrument_name="Cycle", short_instrument_name="[C]"))
 
@@ -52,7 +52,7 @@ class TokeiBubble(Bubble):
         self.add_part(name='cello', instrument=instrumenttools.Violin(instrument_name="Cello", short_instrument_name="vc."))
         self.add_part(name='bass', instrument=instrumenttools.Violin(instrument_name="Bass", short_instrument_name="cb."))
  
-        self.material["pitch"]["ji"]="A4"
+        self.material["pitch"]["ji"]=["A5"]
 
         # self.violinI = scoretools.Container()
         # self.violinI_div_1 = scoretools.Container()

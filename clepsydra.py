@@ -3,7 +3,7 @@ from abjad import *
 from clepsydra_material import ClepsydraMaterial
 
 from arrangement import TokeiArrangement
-from cycles.loop import CycleLoop, Cycle
+from cycles.loop import CycleLoop
 from cycles.transform import *
 from cloud.pitches import * 
 
@@ -17,7 +17,7 @@ from cloud.pitches import *
 
 
 
-music = calliope.cycles.loop.CycleLoop(measures_durations=[(4,4) for i in range(3)], arrangement_type=ClepsydraMaterial)
+music = CycleLoop(measures_durations=[(4,4)]*3, bubble_type=ClepsydraMaterial)
 music.add_cycle(add_flags=["start"])
 music.add_cycle()
 music.add_cycle(add_flags=["before_movin"])
@@ -29,12 +29,12 @@ music.add_cycle(add_flags=["final"])
 
 
 # add reference pitch of E for the first couple of cycles only
-music.add_data("ref_pitch", pitchtools.NumberedPitch("e''"), stop_flag="start_movin")
+music.add_pitch_material("ref", ["E5"], stop_flag="start_movin")
 
 # at the "start_movin" flag, the reference pitch starts incrementing by 1
 music.transforms.append(
     ModTransposePitch(
-        "ref_pitch", 
+        "ref", 
         value = 1,
         start_flag = "start_movin"
         ))
@@ -42,14 +42,13 @@ music.transforms.append(
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # PUSHING THE JI and REF
 
-#music.add_data("push_durations",  [Duration(1,4) for i in range(12)])
-music.add_data("push_durations",  "c4\downbow " * 12)
+music.add_rhythm_material("push",  "c4\\downbow " * 12)
 
 # would be better to figure out how to fill the whole thing with straight quarter notes...
 music.add_transform(
     MakeMusic(
         pitch="ji_pitch", 
-        durations = "push_durations",
+        rhythm_material = "push_durations",
         part = "violinI",
         stop_flag="start_movin"
         ))
