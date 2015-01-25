@@ -40,12 +40,13 @@ from wadokei_material import WadoMaterial
 
 bubble = TokeiBubble()
 
-for i in range(20):
-    new_bubble = TokeiBubble()
-    bubble.arrange_music(part_names=[p for p in bubble.parts], rhythms=["b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3], )
-    bubble.append_bubble(new_bubble)
-print("NOW SHOWING PDF....")
-bubble.show_pdf()
+# for i in range(2):
+#     new_bubble = TokeiBubble()
+#     bubble.arrange_music(part_names=[p for p in bubble.parts], rhythms=["b8(\\p\\< b8) b8(\\ff b8) b8( b8) b8( b8) "*3], )
+#     bubble.append_bubble(new_bubble)
+# print("NOW SHOWING PDF....")
+# bubble.show_pdf()
+
 
 # for i in range(20):
 #     bubble.arrange_music(part_names=[p for p in bubble.parts], rhythms=["b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3], )
