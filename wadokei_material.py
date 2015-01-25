@@ -181,6 +181,17 @@ class WadoMaterial(TokeiBubble):
             [],
         ]
 
+        # the ji osc...
+    def add_orch_ji(self):
+        self.arrange_music(
+                    rhythm_material= [
+                        ["ji_osc", "ji_osc", "rest", "rest"], 
+                        ["rest", "rest", "ji_osc", "ji_osc"],  
+                        ],
+                    pitch_material = ["ji_osc"], 
+                    part_names = ["flute1", "flute2"]
+            )
+
 
 
     def prepare_score(self):

@@ -8,6 +8,7 @@ from tokei import TokeiBubble
 from wadokei_material import WadoMaterial
 
 from calliope.tools import music_from_durations, transpose_pitches
+from calliope.cycles.loop import CycleLoop
 
 
 class Intro(WadoMaterial):
@@ -87,16 +88,7 @@ class Intro(WadoMaterial):
             )
 
 
-        # the ji osc...
-    def add_orch_ji(self):
-        self.arrange_music(
-                    rhythm_material= [
-                        ["ji_osc", "ji_osc", "rest", "rest"], 
-                        ["rest", "rest", "ji_osc", "ji_osc"],  
-                        ],
-                    pitch_material = ["ji_osc"], 
-                    part_names = ["flute1", "flute2"]
-            )
+
 
 
 class Melody(WadoMaterial):
@@ -171,10 +163,9 @@ class Melody(WadoMaterial):
             ]])
 
     def add_taiko_split(self, part_names=["taiko2"]):
-        self.arrange_music(part_names=part_names, rhythm_material=[[
-            ["taiko_split_don"]*2,
-            ["taiko_split_ka"]*2
-        ]])
+        self.arrange_music(part_names=part_names, rhythm_material=[
+            ["taiko_split_don", "taiko_split_ka"]*2,
+        ])
 
 class Conduct(WadoMaterial):
     def add_taiko(self, part_names=["taiko1","taiko2"]):
@@ -197,13 +188,15 @@ class DayMusicSplit(WadoMaterial):
 class DayMusicEnd(WadoMaterial):
     pass
 
+
+# THIS IS ACTUALLY HARDER TO FOLLOW... HOW TO SIMPLIFY????
 music = CycleLoop(bubble_type=WadoMaterial)
 # intro cycles:
 music.add_cycle(bubble_type=Intro, flags=["intro_1_a", "taiko_a", "intro_a"])
 music.add_cycle(bubble_type=Intro, flags=["intro_1_b", "taiko_b", "intro_b"])
 music.add_cycle(bubble_type=Intro, flags=["intro_2_a", "taiko_a", "intro_a"])
 music.add_cycle(bubble_type=Intro, flags=["intro_2_b", "taiko_b", "intro_b"])
-# melody cycles:
+# # melody cycles:
 music.add_cycle(bubble_type=Melody, flags=["melody_1_a", "taiko_a","melody_start"])
 music.add_cycle(bubble_type=Melody, flags=["melody_1_b", "taiko_b"])
 music.add_cycle(bubble_type=Melody, flags=["melody_2_a", "taiko_a", "taiko_split"])
@@ -215,31 +208,48 @@ music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
 music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 
-music.exec_method(add_orch_ji)
+# ----------------------------------------------------------
 
-music.exec_method(add_cresc_a, apply_flags=["intro_a"])
-music.exec_method(add_cresc_b, apply_flags=["intro_b"])
+music.exec_method("add_orch_ji")
 
+music.exec_method("add_cresc_a", apply_flags=["intro_a"])
+music.exec_method("add_cresc_b", apply_flags=["intro_b"])
+
+# ----------------------------------------------------------
 # harmonies/lines reference parts:
-music.exec_method(add_harmony_ref, apply_flags=["intro_1_a"])
-music.exec_method(add_harmony_ref_2, apply_flags=["intro_1_b"])
-music.exec_method(add_harmony_ref_2, apply_flags=["intro_2_a"])
-music.exec_method(add_harmony_ref_2, pitch_material="ancient_B_modulate", apply_flags=["intro_2_b"])
-music.exec_method(add_harmony_ref_2, apply_flags=["melody_1_a"])
-music.exec_method(add_harmony_night_ref, apply_flags=["melody_1_b"])
+music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
+music.exec_method("add_harmony_ref_2", apply_flags=["intro_1_b"])
+music.exec_method("add_harmony_ref_2", apply_flags=["intro_2_a"])
+music.exec_method("add_harmony_ref_2", pitch_material="ancient_B_modulate", apply_flags=["intro_2_b"])
+music.exec_method("add_harmony_ref_2", apply_flags=["melody_1_a"])
+music.exec_method("add_harmony_night_ref", apply_flags=["melody_1_b"])
 # TO DO... add festival lines ref
-music.exec_method(add_harmony_night_2_ref, apply_flags=["melody_2_a"])
-music.exec_method(add_harmony_night_3_ref, apply_flags=["melody_2_b"])
+music.exec_method("add_harmony_night_2_ref", apply_flags=["melody_2_a"])
+music.exec_method("add_harmony_night_3_ref", apply_flags=["melody_2_b"])
+music.exec_method("add_harmony_night_2_ref", transpose=[-1], respell=["flats"],  apply_flags=["melody_3_a"])
+music.exec_method("add_harmony_night_3_ref", transpose=[4], respell=["sharps"], apply_flags=["melody_3_b"])
 
-music.exec_method(add_taiko_a, apply_flags=["taiko_a"], skip_flags=["taiko_split"])
-music.exec_method(add_taiko_b, apply_flags=["taiko_b"], skip_flags=["taiko_split")
-# here's the taiko melody split:
-music.exec_method(add_taiko_a, part_names=["taiko1"], apply_flags=["melody_2_a"])
-music.exec_method(add_taiko_b, part_names=["taiko1"], apply_flags=["melody_2_b"])
-music.exec_method(add_taiko_split, part_names=["taiko2"], apply_flags=["melody_2_a","melody_2_b"])
-music.exec_method(add_taiko_a, part_names=["taiko2"], apply_flags=["melody_3_a"])
-music.exec_method(add_taiko_b, part_names=["taiko2"], apply_flags=["melody_3_b"])
-music.exec_method(add_taiko_split, part_names=["taiko1"], apply_flags=["melody_3_a","melody_3_b"])
+# ----------------------------------------------------------
+# the taiko parts
+music.exec_method("add_taiko_a", apply_flags=["taiko_a"], skip_flags=["taiko_split"])
+music.exec_method("add_taiko_b", apply_flags=["taiko_b"], skip_flags=["taiko_split"])
+# here's the taiko melody split (simplify this code??):
+music.exec_method("add_taiko_a", part_names=["taiko1"], apply_flags=["melody_2_a"])
+music.exec_method("add_taiko_b", part_names=["taiko1"], apply_flags=["melody_2_b"])
+music.exec_method("add_taiko_split", part_names=["taiko2"], apply_flags=["melody_2_a","melody_2_b"])
+music.exec_method("add_taiko_a", part_names=["taiko2"], apply_flags=["melody_3_a"])
+music.exec_method("add_taiko_b", part_names=["taiko2"], apply_flags=["melody_3_b"])
+music.exec_method("add_taiko_split", part_names=["taiko1"], apply_flags=["melody_3_a","melody_3_b"])
+# here's the taiko day music
+music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day_music_1"])
+music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day_music_2"])
+# next up.... add
+
+music.apply_transforms()
+
+bubble = music.make_bubble()
+
+bubble.show_pdf()
 
 
 # intro1 = Intro()
@@ -269,15 +279,15 @@ music.exec_method(add_taiko_split, part_names=["taiko1"], apply_flags=["melody_3
 # melody2.add_taiko_melody(part_names=["taiko1"])
 # melody2.add_taiko_split(part_names=["taiko2"])
 
-melody3 = Melody()
-melody3.add_harmony_night_2_ref(transpose=[-1], respell=["flats"])
-melody3.add_harmony_night_3_ref(transpose=[4], respell=["sharps"])
-melody3.add_taiko_melody(part_names=["taiko2"])
-melody3.add_taiko_split(part_names=["taiko1"])
+# melody3 = Melody()
+# melody3.add_harmony_night_2_ref(transpose=[-1], respell=["flats"])
+# melody3.add_harmony_night_3_ref(transpose=[4], respell=["sharps"])
+# melody3.add_taiko_melody(part_names=["taiko2"])
+# melody3.add_taiko_split(part_names=["taiko1"])
 
-day_music1 = DayMusicSplit()
-day_music1.add_taiko(part_names=["taiko1","taiko2"])
-day_music1.add_taiko(part_names=["taiko2","taiko1"])
+# day_music1 = DayMusicSplit()
+# day_music1.add_taiko(part_names=["taiko1","taiko2"])
+# day_music1.add_taiko(part_names=["taiko2","taiko1"])
 # day_music1.show_pdf()
 
 

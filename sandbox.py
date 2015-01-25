@@ -34,20 +34,77 @@ import copy
 
 from tokei import TokeiBubble
 from calliope.cycles.loop import CycleLoop
-from wadokei_material_base import WadoMaterial
-
-class MyClass():
-    def my_function(self, great="boo", *args, **kwargs):
-        print(great)
-
-args = {}
-args["great"]="YO!"
-args["something_else"]="Boo..."
-
-c = MyClass()
-f = "my_function"
+from wadokei_material import WadoMaterial
 
 
+
+bubble = TokeiBubble()
+
+for i in range(20):
+    new_bubble = TokeiBubble()
+    bubble.arrange_music(part_names=[p for p in bubble.parts], rhythms=["b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3], )
+    bubble.append_bubble(new_bubble)
+print("NOW SHOWING PDF....")
+bubble.show_pdf()
+
+# for i in range(20):
+#     bubble.arrange_music(part_names=[p for p in bubble.parts], rhythms=["b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3], )
+# bubble.show_pdf()
+
+
+# for i in range(20):
+#     for pa in bubble:
+#         pa.extend("b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3)
+# bubble.show_pdf()
+
+# sc = Score()
+# for i in range(30):
+#     sc.append(Staff())
+
+# for i in range(20):
+#     for pa in sc:
+#         pa.extend("b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*3)
+
+# show(sc)
+
+# sc = Score()
+# for i in range(29):
+#     sc.append(Staff("b8(\\p\\< b8) b8(\\ff\\> b8) b8( b8) b8( b8)\\! "*60))
+
+
+
+#show(sc)
+
+
+    
+#print(format(bubble))
+
+
+
+
+#----------------------------------------
+# sc1 = Score()
+# sc2 = Score()
+
+# sc1.extend([Container("r2 r2"), Container("r4 r4 r4 r4"), ])
+# sc2.extend([Staff("b2 b2"), Staff("b4 b4 b4 b4"), ])
+
+# sc1.extend(sc2)
+
+# show(sc1)
+
+
+#----------------------------------------
+# class MyClass():
+#     def my_function(self, great="boo", *args, **kwargs):
+#         print(great)
+
+# args = {}
+# args["great"]="YO!"
+# args["something_else"]="Boo..."
+
+# c = MyClass()
+# f = "my_function"
 
 
 
