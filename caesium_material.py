@@ -211,6 +211,16 @@ class ForceCloud2C(ForceCloud2):
         cellos_range = [get_pitch_range(-i, 11-i) for i in range(24)]
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
+class CaesiumMaterial(TokeiBubble):
+    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3, layout="orchestra"):
+
+        super().__init__(name="caesium-material", time_signature=time_signature, measures_durations=measures_durations,layout=layout, )
+        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
+        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.2"), clef="bass")
+        self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
+
 
 
 f = ForceCloud2B()

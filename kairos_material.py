@@ -44,7 +44,7 @@ class KaiMaterial(TokeiBubble):
                 measures_durations=[(4,4)]*8, 
                 rest_measures="R1 "*8):
 
-        super().__init__(name="kairos-material-2", time_signature=time_signature, measures_durations=measures_durations)
+        super().__init__(name="kairos-material", time_signature=time_signature, measures_durations=measures_durations)
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
@@ -52,8 +52,6 @@ class KaiMaterial(TokeiBubble):
 
         self.remove(self.parts["shime"])
         del self.parts["shime"]
-        self.remove(self.parts["gane"])
-        del self.parts["gane"]
 
         # maybe switch E and D?
         self.material["pitch"]["long_cycle"]=["C#2","F#2","D2","E2"]

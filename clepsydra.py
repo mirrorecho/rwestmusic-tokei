@@ -1,12 +1,10 @@
 from abjad import *
 import settings
 
-from clepsydra_material import ClepsydraMaterial
+from clep_m import *
 
-from arrangement import TokeiArrangement
-from cycles.loop import CycleLoop
-from cycles.transform import *
-from cloud.pitches import * 
+from calliope.cycles.loop import CycleLoop
+from calliope.cycles.transform import *
 
 
 # cycles and transformations...
@@ -19,27 +17,52 @@ from cloud.pitches import *
 
 
 
-music = CycleLoop(measures_durations=[(4,4)]*3, bubble_type=ClepsydraMaterial)
-music.add_cycle(add_flags=["start"])
-music.add_cycle()
-music.add_cycle(add_flags=["before_movin"])
-music.add_cycle(add_flags=["start_movin"])
-music.add_cycle()
-music.add_cycle()
-music.add_cycle()
-music.add_cycle(add_flags=["final"])
+music = CycleLoop(bubble_type=ClepsydraMaterial)
+music.add_cycle(flags=["start"])
+# music.add_cycle()
+music.add_cycle(flags=["before_movin"])
+music.add_cycle(flags=["start_movin"])
+music.add_cycle(flags=["next_movin"])
+# music.add_cycle()
+# music.add_cycle()
+# music.add_cycle(add_flags=["final"])
 
 
 # add reference pitch of E for the first couple of cycles only
-music.add_pitch_material("ref", ["E5"], stop_flag="start_movin")
+music.add_pitch_material("ref", ["E5"], stop_flag="next_movin")
+music.add_pitch_material("next_ref", ["F5"], stop_flag="next_movin")
 
 # at the "start_movin" flag, the reference pitch starts incrementing by 1
 music.transforms.append(
     ModTransposePitch(
         "ref", 
         value = 1,
-        start_flag = "start_movin"
+        start_flag = "next_movin"
         ))
+music.transforms.append(
+    ModTransposePitch(
+        "next_ref", 
+        value = 1,
+        start_flag = "next_movin"
+        ))
+
+winds_up_pitches=WaterCloudWindsUp(name="clep-cloud-winds-up").cloud.pitch_lines
+music.add_pitch_material("winds_up", value=winds_up_pitches, apply_flags=["start_movin"])
+music.arrange_music(
+            part_names=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"],
+            pitch_material="winds_up",
+            rhythm_material=["8ths_tied_cresc"],
+            apply_flags=["start_movin"]
+            )
+music.arrange_music(
+            part_names=["bassoon1","bassoon2"],
+            pitch_material=["ji", ["ref", "next_ref"]],
+            rhythms=["c1\\p\\< ~ c1 ~ c1\\mf", "c1(\\p\\< ~ c1 c1)\\mf"],
+            apply_flags=["start_movin"],
+            transpose=[-24]
+            )
+
+
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # PUSHING THE JI and REF
@@ -56,8 +79,8 @@ music.arrange_music(
 
 music.arrange_music(
         pitch_material=["ji", "ref"], 
-        rhythm_material=[["measure_note"*3]],
-        part_names = ["flute1","flute2"]
+        rhythm_material=[["measure_note"]*3],
+        part_names = ["harmony_1","harmony_2"]
         )
 
 
@@ -196,27 +219,18 @@ music.arrange_music(
 #                 Duration(3, 8), Duration(1,4), Duration(1,4), Duration(1,4), Duration(3,8), Duration(5,8)
 #                 ])
 
-music.add_transform(
-    MakeMusic(
-        "stream_music",
-        start_pitch = "ref_pitch", 
-        relative_pitches = "stream_pitches",
-        durations = "stream_durations",
+music.arrange_music(
+        part_names=["flute1"],
+        #start_pitch = "ref_pitch", 
+        #relative_pitches = "stream_pitches",
+        rhythm_material = ["steady_8ths"],
         start_flag = "before_movin",
-        ))
-
-music.add_transform(
-    CopyMusic(
-        copy_from="stream_music", 
-        part = "trumpet1",
-        start_flag = "before_movin"
-        ))
-
+        )
 
 # FINAL BUBBLE STUFF:
 
 music.apply_transforms()
 
-bubble = music.make_bubble()
+bubble = music.make_bubble(flags=["before_movin","start_movin"])
 
 bubble.show_pdf()
