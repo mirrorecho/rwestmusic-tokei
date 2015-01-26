@@ -1,4 +1,5 @@
 from abjad import *
+import settings
 
 from clepsydra_material import ClepsydraMaterial
 

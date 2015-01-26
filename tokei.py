@@ -14,8 +14,6 @@ class TokeiBubble(Bubble):
 
         super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=Project(name="rwestmusic-tokei"), layout=layout, measures_durations=measures_durations, time_signature=time_signature)
 
-        self.add_perc_part(name='cycle', instrument=instrumenttools.UntunedPercussion(instrument_name="Cycle", short_instrument_name="[C]"))
-
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
         self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -48,9 +46,9 @@ class TokeiBubble(Bubble):
         
         self.add_part(name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
         self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
-        self.add_part(name='viola', instrument=instrumenttools.Violin(instrument_name="Viola", short_instrument_name="vla"))
-        self.add_part(name='cello', instrument=instrumenttools.Violin(instrument_name="Cello", short_instrument_name="vc."))
-        self.add_part(name='bass', instrument=instrumenttools.Violin(instrument_name="Bass", short_instrument_name="cb."))
+        self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"))
+        self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
+        self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."))
  
         self.material["pitch"]["ji"]=["A5"]
 
