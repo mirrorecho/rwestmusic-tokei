@@ -23,38 +23,46 @@ music.add_cycle(flags=["start"])
 music.add_cycle()
 music.add_cycle(flags=["start_taiko"])
 music.add_cycle()
+# ------------------------------------
 music.add_cycle(flags=["before_movin"])
 music.add_cycle(flags=["start_movin", "winds_up"])
 music.add_cycle(flags=["next_movin"])
 music.add_cycle(flags=["winds_down"])
+# ------------------------------------
 music.add_cycle(flags=["stream_hint1"])
 music.add_cycle()
+music.add_cycle()
+music.add_cycle()
+# -------------------------------------------------------------------
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
-music.add_cycle(flags=["free"])
+# ------------------------------------
 music.add_cycle(flags=["free"])
 music.add_cycle(flags=["free"])
 music.add_cycle(flags=["free"])
 music.add_cycle()
+# ------------------------------------
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
-music.add_cycle(flags=["free"])
+# -------------------------------------------------------------------
 music.add_cycle(flags=["free"])
 music.add_cycle(flags=["free"])
 music.add_cycle(flags=["free"])
 music.add_cycle()
+# ------------------------------------
 music.add_cycle(flags=["taiko_melody_1"]) # make a variant of the melody?
 music.add_cycle(flags=["taiko_melody_2"])
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
+# ------------------------------------
 music.add_cycle()
 music.add_cycle(flags=["slowing"])
 music.add_cycle(flags=["slowing"])
-music.add_cycle(add_flags=["final"])
+music.add_cycle(flags=["final"])
 
 
 # add reference pitch of E for the first couple of cycles only
@@ -104,28 +112,29 @@ music.arrange_music(
 
 # --------------------------------------------------------------------------------------------
 # taiko melody
-music.arrange_music(
-            part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_melody_1"],
-            apply_flags=["taiko_melody_1"]
-            )
-music.arrange_music(
-            part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_melody_1"],
-            apply_flags=["taiko_melody_2"]
-            )
+# music.arrange_music(
+#             part_names=["taiko1","taiko2"], 
+#             rhythm_material=["taiko_melody_1"],
+#             apply_flags=["taiko_melody_1"]
+#             )
+# music.arrange_music(
+#             part_names=["taiko1","taiko2"], 
+#             rhythm_material=["taiko_melody_1"],
+#             apply_flags=["taiko_melody_2"]
+#             )
 # --------------------------------------------------------------------------------------------
 # CLOUD (WAS STEADY) (harmonic sequence)
 
 high_winds=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"]
-winds_up_pitches=WaterCloudWindsUp(name="clep-cloud-winds-up").cloud.pitch_lines
+winds_up_pitches=WaterCloudWindsUp(name="clep-cloud-winds-up").cloud_pitches()
 music.arrange_music(
             part_names=high_winds,
             pitches=winds_up_pitches,
             rhythm_material=["8ths_tied_cresc"],
             apply_flags=["winds_up"]
             )
-winds_down_pitches=WaterCloudWindsDown(name="clep-cloud-winds-down").cloud.pitch_lines
+
+winds_down_pitches=WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5").cloud_pitches()
 music.arrange_music(
             part_names=high_winds,
             pitches=winds_down_pitches,
@@ -181,6 +190,6 @@ music.exec_method("arrange_stream",
 
 music.apply_transforms()
 
-bubble = music.make_bubble()
+bubble = music.make_bubble(flags=["winds_down"])
 
 bubble.show_pdf()

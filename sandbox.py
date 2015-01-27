@@ -32,15 +32,24 @@ import settings
 
 import copy
 
-from tokei import TokeiBubble
+from tokei import TokeiBubble, TokeiCloud
 from calliope.cycles.loop import CycleLoop
-from wadokei_material import WadoMaterial
 from calliope.tools import get_pitch_number
 
-pitch = "C#2"
-arrange_fundamental = get_pitch_number(pitch)
-arrange_harmonic=4
-print([pitchtools.NumberedPitch.from_hertz(261.6 * (2**(arrange_fundamental/12)) * arrange_harmonic)])
+from wado_m import WadoMaterial
+from caes_m import *
+
+# f = ForceCloud2C(name="caesium-force-cloud-2-strings-down")
+# f.cloud.show()
+
+c = CaesiumMaterialOdd()
+c.show_pdf()
+
+
+# pitch = "C#2"
+# arrange_fundamental = get_pitch_number(pitch)
+# arrange_harmonic=4
+# print([pitchtools.NumberedPitch.from_hertz(261.6 * (2**(arrange_fundamental/12)) * arrange_harmonic)])
 
 # p = pitchtools.NumberedPitch.from_hertz(261.6 * 2**(pitch/12))
 # print(p)

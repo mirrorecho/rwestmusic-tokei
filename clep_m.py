@@ -1,5 +1,4 @@
 from abjad import *
-import os
 import settings
 
 # any way to avoid this sys path part??
@@ -9,7 +8,7 @@ import settings
 # - EVERYONE DIFFERENT (at least one spot!!!)
 # - my copyright
 
-from tokei import TokeiBubble
+from tokei import TokeiBubble, TokeiCloud
 
 # need to import all of this?
 from calliope.work import Project, Bubble
@@ -21,77 +20,25 @@ from calliope.tools import get_pitch_range, get_pitch_number, music_from_duratio
 
 import copy
 
-tok = TokeiBubble() # empty tokei bubble so that we can use its properties...
-
 
 # -------------------------------------------------------------
 # thought... just inherit from cloud???
-class WaterCloudBase():
+class WaterCloudBase(TokeiCloud):
     def __init__(self, 
-            name="cly-cloud", 
             start_pitch=4, 
-            ref_pitch=None,
-            ji_pitch="A5",
-            autoload=True,
+            *args,
+            **kwargs
             ):
-        # if ref_pitch is not None:
-        #     self.transpose = 0
-        # else:
-        #     self.transpose = ref_pitch - start_pitch 
+        self.start_pitch=get_pitch_number(start_pitch)
+        super().__init__(*args, **kwargs)
 
-        self.start_pitch = get_pitch_number(start_pitch)
-        self.ji_pitch =  get_pitch_number(ji_pitch)
-        self.name=name
-        self.filename = self.name + ".dat"
-        self.autoload = autoload
+    def prepare_pitches(self):
         self.next_interval=1
         self.intervals=[0, -2, -2, -1, -2]
         self.counter_intervals=[4, 3, 5, -2, -5]
         self.stream_intervals=[0, 2, -2, -2, -1, 0, 3, -5, 0, 0, -2, 0, 5, 0, -7, 0, 12, 0, 0, -5, 0, 0, 0, 0]
         self.double_interval=7
-        
-        self.pitch_ranges = [[pitchtools.PitchRange("[C4,B4]")]]
-
-        self.prepare_pitches()
         self.pitches = [[],[],[],[]]
-        self.get_pitches()
-
-        self.tally_apps = [
-            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
-            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
-            TallyMelodicIntervals(interval_ratings=[(0, -60), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], over_incremental_multiplier=(12,-60)),
-            TallyRepeatedJumps(),
-        ]
-
-        self.prepare_cloud()
-              
-        self.cloud = CloudPitches(project=tok.project, filename=self.filename, autoload=self.autoload, pitch_ranges=self.pitch_ranges) 
-        self.cloud.auto_move_into_ranges = True
-
-        for app in self.tally_apps:
-            self.cloud.add_tally_app(app)     
-
-        # if cloud data not already loaded, get our pitch lines, and load them
-        if not self.cloud.is_loaded:
-            self.cloud.init_data(pitch_lines=self.pitches)
-            self.cloud.randomize_all_columns() 
-        
-        self.cloud.get_tallies()
-
-    #MAYBE NOT NEEDED
-    # def cloud_pitches(self):
-    #     if self.transpose:
-    #         return transpose_pitches(self.cloud.pitch_lines, self.transpose)
-    #     else:
-    #         return self.cloud.pitch_lines
-
-    def prepare_pitches(self):
-        # a hook so that inherited classes can add/do stuff without overriding __init__
-        pass
-
-    def prepare_cloud(self):
-        # a hook so that inherited classes can add/do stuff without overriding __init__
-        pass
 
     def get_pitches(self):
         self.cell=IntervalRepeatCell(intervals=self.intervals, start_pitch=self.start_pitch, pitch_range=self.pitch_ranges[0][0])
@@ -105,27 +52,14 @@ class WaterCloudBase():
         self.pitches[3]=[p + self.double_interval for p in self.pitches[2]]
         self.stream_pitches = pitches_from_intervals(intervals=self.stream_intervals,start_pitch=self.start_pitch)
 
-    def add_ref_rows(self, times=1):
-        for t in range(times):
-            self.pitches.append([self.start_pitch for i in range(len(self.pitches[0]))])
-
-    def add_ji_rows(self, times=1):
-        for t in range(times):
-            self.pitches.append([self.ji_pitch for i in range(len(self.pitches[0]))])
+    def add_ref_row(self, times=1):
+        self.add_single_pitch_row(self.start_pitch)
 
     def add_stream(self, times=1, offset=0):
         for t in range(times):
             self.pitches.append(
                 [self.stream_pitches[(i-offset) % len(self.stream_pitches)] for i in range(len(self.stream_pitches)) ]
                 )
-
-    def duplicate_row(self, index=0, times=1):
-        for t in range(times):
-            self.pitches.append(self.pitches[index].copy())
-
-    def tally_loop(self):
-        self.cloud = self.cloud.tally_loop()
-
     def next(self, times=1):
         self.start_pitch += (self.next_interval * times)
 
@@ -133,7 +67,7 @@ class WaterCloudWindsUp(WaterCloudBase):
     def prepare_cloud(self):
         self.duplicate_row(0)
         self.duplicate_row(2)
-        self.add_ji_rows()
+        self.add_ji_row()
 
         self.tally_apps = [
             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
@@ -147,6 +81,7 @@ class WaterCloudWindsUp(WaterCloudBase):
             TallyRepeatedJumps(),
         ]
 
+    def get_pitch_ranges(self):
         self.pitch_ranges = get_pitch_ranges(
             num_lines=len(self.pitches), 
             times=24,
@@ -158,7 +93,7 @@ class WaterCloudWindsDown(WaterCloudBase):
     def prepare_cloud(self):
         self.duplicate_row(0)
         self.duplicate_row(2)
-        self.add_ji_rows()
+        self.add_ji_row()
 
         self.tally_apps = [
             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
@@ -171,7 +106,8 @@ class WaterCloudWindsDown(WaterCloudBase):
                     ),
             TallyRepeatedJumps(),
         ]
-
+    
+    def get_pitch_ranges(self):
         self.pitch_ranges = get_pitch_ranges(
             num_lines=len(self.pitches), 
             times=24,
@@ -284,18 +220,6 @@ class ClepsydraMaterial(TokeiBubble):
                     rhythms=[stream.rhythm(offset=rhythm_offset, rhythm_end=rhythm_end)],
                     pitches=[stream.pitches(offset=pitch_offset)],
                     )
-
-
-    def prepare_score(self):
-        
-        self.fill_empty_parts_with_rests()
-
-        for part_name in self.parts:
-            if part_name in ["taiko1","taiko2","odaiko"]:
-                text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
-                attach(text_length_on, self.parts[part_name][0])
-                dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
-                attach(dynamic_up, self.parts[part_name][0])
 
 
 # w = WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5")

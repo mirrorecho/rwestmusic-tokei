@@ -119,15 +119,10 @@ class KaiMaterial(TokeiBubble):
 
         self.arrange_music(pitches=pitches,**kwargs)
 
+    # TO DO... remove this override (text length on was making stuff look weird here...)
     def prepare_score(self):
-        
+                
         self.fill_empty_parts_with_rests()
-
-        # for part_name in self.parts:
-        #     if part_name in ["taiko1","taiko2"]:
-        #         text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
-        #         if len(self.parts[part_name]) > 0:
-        #             attach(text_length_on, self.parts[part_name][0])
 
 
 class KaiFree(KaiMaterial):

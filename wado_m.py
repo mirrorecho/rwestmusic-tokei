@@ -191,15 +191,3 @@ class WadoMaterial(TokeiBubble):
                     pitch_material = ["ji_osc"], 
                     part_names = ["flute1", "flute2"]
             )
-
-
-
-    def prepare_score(self):
-        
-        self.fill_empty_parts_with_rests()
-
-        for part_name in self.parts:
-            if part_name in ["taiko1","taiko2"]:
-                text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
-                if len(self.parts[part_name]) > 0:
-                    attach(text_length_on, self.parts[part_name][0])
