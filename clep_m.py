@@ -17,7 +17,7 @@ from calliope.cycles.loop import CycleLoop
 from calliope.cycles.cells import IntervalRepeatCell
 from calliope.cycles.transform import *
 from calliope.cloud.pitches import * 
-from calliope.tools import get_pitch_range, get_pitch_number, music_from_durations, pitches_from_intervals, get_pitch_ranges
+from calliope.tools import get_pitch_range, get_pitch_number, music_from_durations, pitches_from_intervals, get_pitch_ranges, transpose_pitches
 
 import copy
 
@@ -30,9 +30,15 @@ class WaterCloudBase():
     def __init__(self, 
             name="cly-cloud", 
             start_pitch=4, 
+            ref_pitch=None,
             ji_pitch="A5",
             autoload=True,
             ):
+        # if ref_pitch is not None:
+        #     self.transpose = 0
+        # else:
+        #     self.transpose = ref_pitch - start_pitch 
+
         self.start_pitch = get_pitch_number(start_pitch)
         self.ji_pitch =  get_pitch_number(ji_pitch)
         self.name=name
@@ -53,7 +59,7 @@ class WaterCloudBase():
         self.tally_apps = [
             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
             TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
-            TallyMelodicIntervals(interval_ratings=[(0, -20), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], over_incremental_multiplier=(12,-60)),
+            TallyMelodicIntervals(interval_ratings=[(0, -60), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], over_incremental_multiplier=(12,-60)),
             TallyRepeatedJumps(),
         ]
 
@@ -71,6 +77,13 @@ class WaterCloudBase():
             self.cloud.randomize_all_columns() 
         
         self.cloud.get_tallies()
+
+    #MAYBE NOT NEEDED
+    # def cloud_pitches(self):
+    #     if self.transpose:
+    #         return transpose_pitches(self.cloud.pitch_lines, self.transpose)
+    #     else:
+    #         return self.cloud.pitch_lines
 
     def prepare_pitches(self):
         # a hook so that inherited classes can add/do stuff without overriding __init__
@@ -122,12 +135,50 @@ class WaterCloudWindsUp(WaterCloudBase):
         self.duplicate_row(2)
         self.add_ji_rows()
 
+        self.tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(
+                    interval_ratings=[(0, -80), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], 
+                    over_incremental_multiplier=(12,-60),
+                    up_rating=20,
+                    down_rating=-12,
+                    ),
+            TallyRepeatedJumps(),
+        ]
+
         self.pitch_ranges = get_pitch_ranges(
             num_lines=len(self.pitches), 
             times=24,
             low_pitches=[5,5,2,2,2,-5,-5],
             increments=[[0,1]]
             )
+
+class WaterCloudWindsDown(WaterCloudBase):
+    def prepare_cloud(self):
+        self.duplicate_row(0)
+        self.duplicate_row(2)
+        self.add_ji_rows()
+
+        self.tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(
+                    interval_ratings=[(0, -80), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], 
+                    over_incremental_multiplier=(12,-60),
+                    up_rating=-12,
+                    down_rating=20,
+                    ),
+            TallyRepeatedJumps(),
+        ]
+
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=len(self.pitches), 
+            times=24,
+            low_pitches=["G5","G5","Eb5","Eb5","Eb5","Bb4","Bb4"],
+            increments=[[0,-1,-1]]
+            )
+
 
 
 class WaterCloudStringsUp(WaterCloudBase):
@@ -208,6 +259,12 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["steady_8ths"] = "c8 "*24
         
+        self.material["rhythm"]["8ths_slured"] = "c8( c c c) "*6
+        self.material["rhythm"]["8ths_slured_mf"] = "c8(\\mf c c c) " + "c8( c c c) "*5
+
+        self.material["rhythm"]["last_measure_cresc"] = "R1 R1 c2.\\pp\\< ~ c4\\! "
+        # self.material["rhythm"]["last_measure_cresc"] = "R1 R1 c1\\mp\\< \\mf\\! "
+
         self.material["rhythm"]["8ths_tied_cresc"] = """c8\\p( c c c) c( c c c) | 
                     c(\\< c c c) c( c c c) | c( c c c) c(\\mf\\! c c c) |
                     """
@@ -236,7 +293,7 @@ class ClepsydraMaterial(TokeiBubble):
                 attach(dynamic_up, self.parts[part_name][0])
 
 
-# w = WaterCloudWindsUp(name="clep-cloud-winds-up")
+# w = WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5")
 # w.tally_loop()
 #w.cloud.show()
 
