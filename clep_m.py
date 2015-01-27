@@ -169,9 +169,9 @@ class StreamHint2(StreamHint1):
         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
 class ClepsydraMaterial(TokeiBubble):
-    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3, layout="orchestra"):
+    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra"):
 
-        super().__init__(name="clepsydra-material", time_signature=time_signature, measures_durations=measures_durations,layout=layout, )
+        super().__init__(name="clepsydra-material", measures_durations=measures_durations, layout=layout, )
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))

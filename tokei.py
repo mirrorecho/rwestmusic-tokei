@@ -12,9 +12,9 @@ JI_PITCH = get_pitch_number("A5")
 class TokeiBubble(Bubble):
 
     #  use **args here?
-    def __init__(self, layout="orchestra", name="full-score", time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3):
+    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, time_signature=time_signature)
+        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations)
 
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
@@ -105,11 +105,13 @@ class TokeiBubble(Bubble):
         self.fill_empty_parts_with_rests()
 
         for part_name in self.parts:
-            if part_name in ["taiko1","taiko2","odaiko"]:
+            if part_name in ["taiko1","taiko2","odaiko"] and len(self.parts[part_name])>0:
                 text_length_on = indicatortools.LilyPondCommand('textLengthOn', 'before')
                 attach(text_length_on, self.parts[part_name][0])
                 dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
                 attach(dynamic_up, self.parts[part_name][0])
+
+# --------------------------------------------------------------------------------------------
 
 class TokeiCloud():
     def __init__(self, 

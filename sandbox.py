@@ -42,9 +42,29 @@ from caes_m import *
 # f = ForceCloud2C(name="caesium-force-cloud-2-strings-down")
 # f.cloud.show()
 
-c = CaesiumMaterialOdd()
-c.show_pdf()
+# c = CaesiumMaterialOdd()
+# c.show_pdf()
 
+
+measures_durations = [(4,4), (7,8), (7,8), (10,8) ]
+if any([not Duration(d).is_assignable for d in measures_durations]):
+    rest_measures = scoretools.make_rests(measures_durations)
+else:
+    rest_measures = scoretools.make_multimeasure_rests(measures_durations)
+c = Container(rest_measures)
+
+s = Staff()
+s.extend(scoretools.make_spacer_skip_measures(measures_durations))
+mutate(s).replace_measure_contents(c)
+
+music = Container("c'4( d'2. ~ d'8[)\\fermata e']  e'[ e'] e'[ e'] f'" )
+
+
+# mutate(music).rewrite_meter(measures_durations)
+# show(music)
+
+mutate(s).replace_measure_contents(music)
+show(s)
 
 # pitch = "C#2"
 # arrange_fundamental = get_pitch_number(pitch)
