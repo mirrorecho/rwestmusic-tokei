@@ -191,40 +191,42 @@ class WaterCloudWindsEcho(WaterCloudBase):
     pass
 
 class Stream():
-    def __init__(self, ref_pitch="E4"):
-        self.relative_pitches = [0, 2, 0, -2, -3, 0, -5, -7, -2, -9, 3, -2]
+    def __init__(self, ref_pitch="E5"):
+        #                         0     1    2    3     4    5    6    7    8    9    10   11
+        self.relative_pitches = ["E5","F#5","E5","D5","C#5","E5","B4","A4","D5","G4","G5","D5"]
+        #self.relative_pitches = [0,    2,    0,   -2,  -3,    0,  -5, -7,  -2,   -9,  3,  -2]
         self.ref_pitch = get_pitch_number(ref_pitch)
+        self.transpose = self.ref_pitch - get_pitch_number(self.relative_pitches[0])
         self.next_ref_pitch = self.ref_pitch + 1
-        # maybe durations works better as a list instead of a string?
-        self.rhythm = "c8( c c) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
+        # maybe durations works better back as a string?
+        #              0     1   2    3    4    5      6          7      8      9      10      11 
+        self.rhythms=["c8(","c","c)","c(","c4)","c8(","c8 ~ c4)","c4--","c4--","c4--","c4.--","c8-- ~ c4 r4"]
         self.split_durations = [durationtools.Duration(4,4) for i in range(3)]
 
-    def get_transposed_pitches(self, ref_pitch=None):
-        if ref_pitch is None:
-            ref_pitch = self.ref_pitch
-        else:
-            ref_pitch = get_pitch_number(ref_pitch)
-        return [p + ref_pitch for p in self.relative_pitches]
+    def remove(self, indices=(0,)):
+        self.relative_pitches=[p for i,p in enumerate(self.relative_pitches) if i not in indices]
+        self.rhythms=[r for i,r in enumerate(self.rhythms) if i not in indices]
 
-    def get_music(self, durations=None, ref_pitch=None):
-        if durations is None:
-            durations = self.durations
-        return get_muisic_from_durations(
-                        durations=rhythm, 
-                        pitches=get_transposed_pitches(ref_pitch),
-                        split_durations=self.split_durations)
+    def pitches(self, offset=0):
+        return transpose_pitches(self.relative_pitches[offset:], self.transpose)
+
+    def rhythm(self, offset=0, rhythm_end=None):
+        return " ".join(self.rhythms[offset:rhythm_end])
 
 # this one descends down the whole way...
 class StreamHint1(Stream):
-    def __init__(self, ref_pitch="E4"):
-        super.__init__(ref_pitch=ref_pitch)
+    def __init__(self, ref_pitch="E5"):
+        super().__init__(ref_pitch=ref_pitch)
+        self.remove((2,3,5,8,10))
+        self.rhythms=["c8(","c4.","c2)","c4(","c2)","c4( ~ c4.","c8 ~ c4) r4"]
+
         # NEED TO FIX...
         # self.relative_pitches = [p if i in (0,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
-        self.durations = "r4 c8( c c4 c4) r4 c2( c4) c2. r4"
+        # self.durations = "r4 c8( c c4 c4) r4 c2( c4) c2. r4"
 
 # STILL WORKING ON THIS...
 class StreamHint2(StreamHint1):
-    def __init__(self, ref_pitch="E4"):
+    def __init__(self, ref_pitch="E5"):
         super.__init__(ref_pitch=ref_pitch)
         self.relative_pitches[4] += 12
         #self.relative_pitches = [p if i in (0,1,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
@@ -269,17 +271,20 @@ class ClepsydraMaterial(TokeiBubble):
                     c(\\< c c c) c( c c c) | c( c c c) c(\\mf\\! c c c) |
                     """
 
+        self.material["rhythm"]["dotted"]="c4. c8 ~ c4 c4 ~ c8 c4. "*2
+
 
         self.material["rhythm"]["measure_note"] = "c1 "
 
-        self.material["pitch"]["cloud"] = [
-                    [ ]
-                ]
+    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None):
+        stream = stream_type(ref_pitch=self.material["pitch"]["ref"][0])
 
-    def add_taiko_melody(self):
-        self.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=[[
-            "taiko_melody_1", "taiko_melody_2"
-            ]])
+        self.arrange_music(
+                    part_names=[part_name],
+                    rhythms=[stream.rhythm(offset=rhythm_offset, rhythm_end=rhythm_end)],
+                    pitches=[stream.pitches(offset=pitch_offset)],
+                    )
+
 
     def prepare_score(self):
         

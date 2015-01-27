@@ -18,14 +18,43 @@ from calliope.cycles.transform import *
 
 
 music = CycleLoop(bubble_type=ClepsydraMaterial)
+
 music.add_cycle(flags=["start"])
-# music.add_cycle()
+music.add_cycle()
+music.add_cycle(flags=["start_taiko"])
+music.add_cycle()
 music.add_cycle(flags=["before_movin"])
 music.add_cycle(flags=["start_movin", "winds_up"])
 music.add_cycle(flags=["next_movin"])
 music.add_cycle(flags=["winds_down"])
-# music.add_cycle()
-# music.add_cycle(add_flags=["final"])
+music.add_cycle(flags=["stream_hint1"])
+music.add_cycle()
+music.add_cycle(flags=["taiko_melody_1"])
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle(flags=["taiko_melody_1"])
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle()
+music.add_cycle(flags=["taiko_melody_1"])
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle(flags=["taiko_melody_1"])
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle(flags=["free"])
+music.add_cycle()
+music.add_cycle(flags=["taiko_melody_1"]) # make a variant of the melody?
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle(flags=["taiko_melody_1"])
+music.add_cycle(flags=["taiko_melody_2"])
+music.add_cycle()
+music.add_cycle(flags=["slowing"])
+music.add_cycle(flags=["slowing"])
+music.add_cycle(add_flags=["final"])
 
 
 # add reference pitch of E for the first couple of cycles only
@@ -56,7 +85,8 @@ music.arrange_music(
         pitch_material=["ji"], 
         rhythm_material = ["push"],
         part_names = ["violinI"],
-        stop_flag="start_movin"
+        stop_flag="start_movin",
+        apply_flags=["winds_down"],
         )
 
 music.arrange_music(
@@ -65,7 +95,26 @@ music.arrange_music(
         part_names = ["harmony_1","harmony_2"]
         )
 
-# ----------------------------------------------------------------------------------------------------------------------------------------
+music.arrange_music(
+        part_names=["violinII"],
+        pitches=[["E5","B4"]], 
+        rhythm_material=["dotted"],
+        apply_flags=["winds_down"],
+        )
+
+# --------------------------------------------------------------------------------------------
+# taiko melody
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_melody_1"],
+            apply_flags=["taiko_melody_1"]
+            )
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_melody_1"],
+            apply_flags=["taiko_melody_2"]
+            )
+# --------------------------------------------------------------------------------------------
 # CLOUD (WAS STEADY) (harmonic sequence)
 
 high_winds=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"]
@@ -91,7 +140,6 @@ music.arrange_music(
             apply_flags=["winds_down"]
             )
 
-
 music.arrange_music(
             part_names=["bassoon1","bassoon2"],
             pitch_material=["ji", ["ref", "next_ref"]],
@@ -100,52 +148,39 @@ music.arrange_music(
             transpose=[-24]
             )
 
+# ----------------------------------------------------------------------------------------------------------------------------------------
+# THE STREAM (MAIN MELODY)
 
-
-
+music.exec_method("arrange_stream",
+            part_name="trumpet1",
+            apply_after_flags="start_movin",
+            )
+music.exec_method("arrange_stream",
+            part_name="trumpet2",
+            apply_flags="stream_hint1",
+            stream_type=StreamHint1,
+            )
 
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # rhythmic fabric:
 # are we even using this...? if so, move it to the class?
-music.add_rhythm_material("pattern_ma", "b8 b8 r4 r2 R1 R1")
+# music.add_rhythm_material("pattern_ma", "b8 b8 r4 r2 R1 R1")
 
-music.add_rhythm_material("pattern1", "r8 c8 r8 c8 c4 c4")
-
-music.arrange_music(
-        rhythm_material=["pattern_ma", "pattern1"], 
-        part_names = ["taiko1","taiko2"]
-        )
-
-
-# ----------------------------------------------------------------------------------------------------------------------------------------
-# CLOUD (WAS STEADY) (harmonic sequence)
-
-
-
-
-# ----------------------------------------------------------------------------------------------------------------------------------------
-# THE STREAM (MAIN MELODY)
-
-
-# the stream melody durations
-# music.add_data("stream_durations", [
-#                 Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 8), Duration(1, 4), Duration(1, 8), 
-#                 Duration(3, 8), Duration(1,4), Duration(1,4), Duration(1,4), Duration(3,8), Duration(5,8)
-#                 ])
+# music.add_rhythm_material("pattern1", "r8 c8 r8 c8 c4 c4")
 
 # music.arrange_music(
-#         part_names=["flute1"],
-#         #start_pitch = "ref_pitch", 
-#         #relative_pitches = "stream_pitches",
-#         rhythm_material = ["steady_8ths"],
-#         start_flag = "before_movin",
+#         rhythm_material=["pattern_ma", "pattern1"], 
+#         part_names = ["taiko1","taiko2"]
 #         )
+
+# ----------------------------------------------------------------------------------------------------------------------------------------
+
 
 # FINAL BUBBLE STUFF:
 
 music.apply_transforms()
 
-bubble = music.make_bubble(flags=["winds_up","next_movin","winds_down"])
+bubble = music.make_bubble()
 
 bubble.show_pdf()
