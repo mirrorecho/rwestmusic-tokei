@@ -64,7 +64,7 @@ c.add_cycle(flags=["normal2"])
 
 
 c.arrange_music(part_names=["flute2","oboe2"],
-    rhythms=["b'1( a'2.) "*6 ],
+    rhythms=["b'1(\\<\\p a'2.)\\!\\f "*6 ],
     apply_flags=["start","next"],
     )
 
@@ -75,12 +75,12 @@ c.arrange_music(part_names=["flute2","oboe2"],
 
 
 c.arrange_music(part_names=["clarinet1","clarinet2"],
-    rhythms=["b''8 "*24 ],
+    rhythms=["b''8(\\f  b') "*12 ],
     apply_flags=["odd1","odd2"],
     )
 
 c.arrange_music(part_names=["violinI","violinII"],
-    rhythms=["a4  "*12 ],
+    rhythms=["a4\\mp  "*12 ],
     apply_flags=["normal1"],
     )
 

@@ -4,7 +4,7 @@ import settings
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 from calliope.cloud.pitches import * 
-from calliope.tools import get_pitch_range
+from calliope.tools import get_pitch_range, get_pitch_number, transpose_pitches
 
 from tokei import TokeiBubble, TokeiCloud
 
@@ -29,6 +29,14 @@ import copy
 
 # to do... some of this stuff could be more generic...
 class ForceData(TokeiCloud):
+    def __init__(self, 
+            start_pitch="A3", 
+            *args,
+            **kwargs
+            ):
+        self.start_pitch=get_pitch_number(start_pitch)
+        super().__init__(*args, **kwargs)
+
 
     def force_by_index(self, indices):
         self.force_line_base = [self.force_pitches[i % len(self.force_pitches)] for i in indices]
@@ -36,8 +44,12 @@ class ForceData(TokeiCloud):
     def prepare_pitches(self):
         self.divisions = 24
         self.force_pitches = ["bf", "cs'", "d'", "e'", "fs'", "g'"]
+        if self.start_pitch != get_pitch_number("A3"):
+            self.force_pitches = transpose_pitches(self.force_pitches, get_pitch_number("A3")-self.start_pitch)
         self.force_harmonic_stack = [0, 3, 7]
         self.ji_harmonic_stack = [0, 1, 7]
+        # low harmonic stack is usually based on ji...
+        self.low_harmonic_stack = transpose_pitches([0, 6, 7, 12], self.start_pitch -24)
     
     def get_base_lines(self):
         # can be overriden to do things like alternating between force pitches and other things
@@ -182,7 +194,22 @@ class CaesiumMaterial(TokeiBubble):
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
         self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.2"), clef="bass")
-        self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
+        #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
+
+        self.force_data = ForceData()
+
+        # TO DO... functionize this...!
+        self.material["pitch"]["force_stack"] = self.force_data.force_harmonic_stack
+
+        self.material["pitch"]["force_row"] = self.force_data.force_pitches
+
+        self.material["pitch"]["swell_stack"] = [
+                        [self.force_data.ji_pitch - 24], 
+                        [self.force_data.force_pitches[0]],
+                        ]
+
+        self.material["pitch"]["low_stack"] = [[p] for p in self.force_data.low_harmonic_stack]
+
 
         self.material["rhythm"]["doko_f"] = "c8_do[\\f  c8_ko] "+ "c8_do[  c8_ko] "*11
 
@@ -193,6 +220,8 @@ class CaesiumMaterial(TokeiBubble):
                     c8_don[ r8 r8]     c8_don[ r8]        c8_don[ r8]    
                     c8_don[ r8]        c8_don[ r8]     c8_don[ r8 r8] """
 
+        self.material["rhythm"]["taiko_ji"]="c8_do c_ko " * 12 
+
         self.material["rhythm"]["taiko_1"]="""  
             c8_do[\\<  c8_ko]   c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko]  
             c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko]\\!
@@ -200,16 +229,27 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["taiko_2"]="c8_ka[ c8_do  c8_don]   c8_ka[ c8_do  c8_don ] " * 4
 
+        self.material["rhythm"]["smack"] = "c8-.->\\sfz r4 r2 R1 R1"
+
+        self.material["rhythm"]["swell"] = "R1 c1\\mp\\< ~ c1\\!"
+
+        self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
+
 class CaesiumMaterialOdd(CaesiumMaterial):
     def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
         super().__init__(measures_durations=measures_durations, odd_meters=True)
 
+        rest_1 = "r4. r4. r4 r4 "
+        rest_2 = "r4. r4 r4 "
+        rest_3 = "r4 r4 r4. "
+
+        self.material["rhythm"]["smack"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
 
 class CaesiumMa(CaesiumMaterial):
     def __init__(self):    
         super().__init__(measures_durations=[(4,4)]*1)
 
     def arrange_ma(self):
-        self.arrange_music(part_names=parts, rhythms=["s4. r4\\fermata s4."])
+        self.arrange_music(part_names=self.parts, rhythms=["s4. r4\\fermata s4."])
 
 
