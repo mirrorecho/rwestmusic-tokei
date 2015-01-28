@@ -12,7 +12,7 @@ JI_PITCH = get_pitch_number("A5")
 class TokeiBubble(Bubble):
 
     #  use **args here?
-    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False):
+    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False, div_strings=False):
 
         super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters)
 
@@ -46,12 +46,31 @@ class TokeiBubble(Bubble):
         self.add_perc_part(name='taiko1', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 1", short_instrument_name="t.1"))
         self.add_perc_part(name='taiko2', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 2 ", short_instrument_name="t.2."))
         
-        self.add_part(name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
-        self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
-        self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"))
-        self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
-        self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."))
- 
+        if not div_strings:
+            self.add_part(name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
+            self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
+            self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"))
+            self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
+            self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."))
+        else:
+            self.add_part(name='violinI_div1', instrument=instrumenttools.Violin(instrument_name="Violin I 1", short_instrument_name="vln.I.1"))
+            self.add_part(name='violinI_div2', instrument=instrumenttools.Violin(instrument_name="Violin I 2", short_instrument_name="vln.I.2"))
+            self.add_part(name='violinII_div1', instrument=instrumenttools.Violin(instrument_name="Violin II 1", short_instrument_name="vln.II.1"))
+            self.add_part(name='violinII_div2', instrument=instrumenttools.Violin(instrument_name="Violin II 2", short_instrument_name="vln.II.2"))
+            self.add_part(name='viola_div1', instrument=instrumenttools.Viola(instrument_name="Viola 1", short_instrument_name="vla.1"))
+            self.add_part(name='viola_div2', instrument=instrumenttools.Viola(instrument_name="Viola 2", short_instrument_name="vla.2"))
+            self.add_part(name='cello_div1', instrument=instrumenttools.Cello(instrument_name="Cello 1", short_instrument_name="vc.1"), clef="bass")
+            self.add_part(name='cello_div2', instrument=instrumenttools.Cello(instrument_name="Cello 2", short_instrument_name="vc.2"), clef="bass")
+            self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"))
+            self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"))
+
+        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
+        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.2"), clef="bass")
+
+        self.add_perc_part(name='dummy', instrument=instrumenttools.UntunedPercussion(instrument_name=".", short_instrument_name="."))
+
         self.material["pitch"]["ji"]=[JI_PITCH]
 
         # self.violinI = scoretools.Container()

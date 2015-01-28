@@ -7,6 +7,7 @@ from caes_m import *
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 
+string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
 
 music = CycleLoop(bubble_type=CaesiumMaterial)
 
@@ -21,15 +22,15 @@ music.add_cycle()
 # ------------------------------------
 # 5-8:
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
-music.add_cycle(flags=["2hits", "stop_class1", "taiko_1"])
-music.add_cycle(flags=["3hits","melody"])
-music.add_cycle(flags=["melody"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["3hits_a","melody"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # ------------------------------------
 # 9-12
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-# music.add_cycle(flags=["1hit_2"])
-# music.add_cycle()
-# music.add_cycle()
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(flags=["1hit_b", "string_nasty_3"])
+music.add_cycle(flags=["string_nasty_2"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # # -------------------------------------------------------------------
 # music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 
@@ -127,16 +128,29 @@ music.arrange_music(rhythm_material=["melody"], part_names=["taiko1","taiko2","o
 music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"], 
     rhythm_material=["swell"], pitch_material="swell_stack")
 
+music.arrange_music(part_names=["perc1"], apply_before_flags=["ma"], rhythm_material=["swell_cymb"])
+
 # --------------------------------------------------------------------------------------
 # LOW HITS:
 
-music.arrange_music(part_names=["tuba","trombone1", "trombone2"], apply_flags=["melody"], 
-    rhythm_material=["smack"], pitch_material="low_stack")
+music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], apply_flags=["melody"], 
+    rhythm_material=["smack","smack","smack","smack_perc"], pitch_material="low_stack")
+
+# --------------------------------------------------------------------------------------
+# STRING NASTIES AND CLOUD:
+
+music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_3"], 
+    rhythm_material=["string_nasty_3"], pitches=[["x"]])
+
+music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
+    rhythm_material=["string_nasty_2"], pitches=[["x"]])
 
 # --------------------------------------------------------------------------------------
 # these are the "hits" that build throughout the entire work
 
-music.add_material("hit_points", [0], start_flag="1hit_a", stop_flag="1hit_b")
+music.add_material("hit_points", [0], start_flag="1hit_a", 
+    #stop_flag="1hit_b"
+    )
 music.add_pitch_material("hits", value=[["A5","E5"]])
 
 # music.add_data("hit_pitches", ["a'", "e''"])
@@ -216,9 +230,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-music.cycles[4].show_pdf()
-
-bubble = music.make_bubble(iters=[4,5])
+bubble = music.make_bubble(iters=[9,10,11])
 
 bubble.show_pdf()
 
