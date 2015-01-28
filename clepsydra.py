@@ -28,7 +28,7 @@ music.add_cycle(flags=["before_movin"])
 music.add_cycle(flags=["start_movin", "winds_up"])
 music.add_cycle(flags=["next_movin"])
 music.add_cycle(flags=["winds_down"])
-# ------------------------------------
+------------------------------------
 music.add_cycle(flags=["stream_hint1"])
 music.add_cycle()
 music.add_cycle()
@@ -123,7 +123,7 @@ music.arrange_music(
 #             apply_flags=["taiko_melody_2"]
 #             )
 # --------------------------------------------------------------------------------------------
-# CLOUD (WAS STEADY) (harmonic sequence)
+# CLOUD  (harmonic sequence)
 
 high_winds=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"]
 winds_up_pitches=WaterCloudWindsUp(name="clep-cloud-winds-up").cloud_pitches()
@@ -190,6 +190,6 @@ music.exec_method("arrange_stream",
 
 music.apply_transforms()
 
-bubble = music.make_bubble(flags=["winds_down"])
+bubble = music.make_bubble()
 
 bubble.show_pdf()

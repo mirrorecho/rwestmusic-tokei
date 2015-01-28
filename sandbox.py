@@ -32,7 +32,7 @@ import settings
 
 import copy
 
-from tokei import TokeiBubble, TokeiCloud
+from tokei import TokeiBubble, TokeiCloud, TokeiFree
 from calliope.cycles.loop import CycleLoop
 from calliope.tools import get_pitch_number
 
@@ -42,27 +42,174 @@ from caes_m import *
 # f = ForceCloud2C(name="caesium-force-cloud-2-strings-down")
 # f.cloud.show()
 
+# t = TimeSignature( ((3,8),(9,8)) )
+# s = Staff("b8 "*12)
+# #attach(t,s)
+# show(s)
+
+class TokeiOdd(TokeiBubble):
+    def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
+        super().__init__(measures_durations=measures_durations, odd_meters=True)
+
+
+c = CycleLoop(bubble_type=TokeiBubble)
+c.add_cycle(bubble_type=TokeiFree, flags=["start"])
+c.add_cycle(bubble_type=TokeiFree, flags=["next"])
+c.add_cycle(bubble_type=TokeiOdd, flags=["odd1"])
+c.add_cycle(bubble_type=TokeiOdd, flags=["odd2"])
+c.add_cycle(flags=["normal1"])
+c.add_cycle(flags=["normal1"])
+c.add_cycle(bubble_type=TokeiFree, flags=["start"])
+c.add_cycle(flags=["normal2"])
+
+
+c.arrange_music(part_names=["flute2","oboe2"],
+    rhythms=["b'1( a'2.) "*6 ],
+    apply_flags=["start","next"],
+    )
+
+c.arrange_music(part_names=["flute2","oboe2"],
+    rhythms=["b''8 "*24 ],
+    apply_flags=["odd1","odd2"],
+    )
+
+
+c.arrange_music(part_names=["clarinet1","clarinet2"],
+    rhythms=["b''8 "*24 ],
+    apply_flags=["odd1","odd2"],
+    )
+
+c.arrange_music(part_names=["violinI","violinII"],
+    rhythms=["a4  "*12 ],
+    apply_flags=["normal1"],
+    )
+
+
+c.apply_transforms()
+bubble = c.make_bubble()
+#scoretools.append_spacer_skips_to_underfull_measures_in_expr(bubble)
+
+#bubble.make_score()
+#print(format(bubble))
+
+
+bubble.show_pdf()
+
+
+
+
+
+# tok = TokeiBubble()
+# tok.parts["flute1"].extend("b1 "*3)
+# #scoretools.append_spacer_skips_to_underfull_measures_in_expr(tok)
+
+# tok1 = TokeiFree()
+# tok1.parts["flute1"][0].extend("b16( c'1) f'4")
+# tok1.parts["oboe2"][0].extend("b16( c'1) f'4 "*7)
+
+
+# # tok2 = TokeiFree()
+# # tok2.parts["clarinet1"][0].extend("b16( c'1) f'4 "*3)
+
+# tok1.align_parts()
+# #tok2.align_parts()
+
+# tok.append_bubble(tok1)
+# # tok.append_bubble(tok2)
+
+# print(format(tok))
+# tok.show_pdf()
+
+# m = Measure((1,4))
+# m.automatically_adjust_time_signature = True
+# m.append("c'4 "*14)
+# show(m)
+
+# m2 = Measure((1,4))
+# m2.automatically_adjust_time_signature = True
+# m2.extend(m)
+
+# show(m2)
+
+# c0 = CaesiumMaterial(measures_durations=[])
+
+# cg = CaesiumMaterial()
+# cg.arrange_music(part_names=["flute1"],rhythms=["a8 "*24])
+
+# cg2 = CaesiumMaterial()
+# cg2.arrange_music(part_names=["flute1"],rhythms=["a8 "*24])
+
 # c = CaesiumMaterialOdd()
-# c.show_pdf()
+# #c = CaesiumMaterial(measures_durations=[(3,4)]*4)
+# #c.arrange_music(part_names=["flute1"],rhythms=["b4. b4. b4 b4    a4. a4 a4    b4 b4    b4."])
+# c.arrange_music(part_names=["flute1"],rhythms=["b8 "*24])
+
+# c2 = CaesiumMaterial()
+# #c2.arrange_music(part_names=["flute1"],rhythms=["g'1 "*3])
+# c2.arrange_music(part_names=["flute1"],rhythms=["b8 "*24])
+
+# c3 = CaesiumMaterial()
+# c3.arrange_music(part_names=["flute1"],rhythms=["a'1 "*3])
+
+# c0.append_bubble(c, divider=True)
+# c0.append_bubble(cg, divider=True)
+# c0.append_bubble(cg2, divider=True)
+# c0.append_bubble(c2, divider=True)
+# c0.append_bubble(c3, divider=True)
+# c0.show_pdf()
 
 
-measures_durations = [(4,4), (7,8), (7,8), (10,8) ]
-if any([not Duration(d).is_assignable for d in measures_durations]):
-    rest_measures = scoretools.make_rests(measures_durations)
-else:
-    rest_measures = scoretools.make_multimeasure_rests(measures_durations)
-c = Container(rest_measures)
+# ------------------------------------------------------------
 
-music = Container("c'4( d'2. ~ d'8[)\\fermata e']  e'[ e'] e'[ e'] f'" )
+# measures_durations = [(3,4), (4,4), (7,8),  (3,4)]
+# if any([not Duration(d).is_assignable for d in measures_durations]):
+#     rest_measures = scoretools.make_rests(measures_durations)
+# else:
+#     rest_measures = scoretools.make_multimeasure_rests(measures_durations)
+# c = Container(rest_measures)
 
-s = Container()
-for m in measures_durations:
-    s.append(Measure(m))
+# music = Container("c'4( d'2. ~ d'8 )\\fermata  e'  e'[ e' d'] b b b b b b b b b b b b b b b " )
 
-s[0].extend(music)
-mutate(s[0]).split(measures_durations)
-scoretools.append_spacer_skips_to_underfull_measures_in_expr(s)
-show(s)
+# #music = Container("b8 ~ b8" )
+
+# s = Staff()
+
+# for m in measures_durations:
+#     s.append(Measure(m))
+
+# s.append(Measure((1,8)))
+
+# s[0].extend(music)
+# mutate(s[0]).split(measures_durations)
+# for i,m in enumerate(s):
+#     m.time_signature = TimeSignature(measures_durations[i])
+# for e in s:
+#     print(e)
+#scoretools.append_spacer_skips_to_underfull_measures_in_expr(s)
+
+
+# m = Measure((1,8))
+# m.extend(music)
+
+# c2 = Container()
+# for i in m3:
+#     c2.extend(i)
+# show(c2)
+
+
+# s.append(music)
+# print(music)
+
+# # s.append(music)
+# # print(s[1])
+# # scoretools.append_spacer_skips_to_underfull_measures_in_expr(s)
+
+# s2=Staff()
+# s2.extend(c)
+
+# #mutate(s2).replace_measure_contents(s)
+
+# show(Score([s2,s]))
 
 
 

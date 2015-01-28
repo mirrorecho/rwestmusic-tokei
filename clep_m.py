@@ -178,7 +178,6 @@ class ClepsydraMaterial(TokeiBubble):
         self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
         self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
-        self.remove(self.parts["odaiko"])
         del self.parts["odaiko"]
 
         self.empty_measures = Container("R1 " * 3)

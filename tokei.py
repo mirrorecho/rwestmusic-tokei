@@ -12,9 +12,9 @@ JI_PITCH = get_pitch_number("A5")
 class TokeiBubble(Bubble):
 
     #  use **args here?
-    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3):
+    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations)
+        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters)
 
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
@@ -102,7 +102,7 @@ class TokeiBubble(Bubble):
 
     def prepare_score(self):
         
-        self.fill_empty_parts_with_rests()
+        # self.fill_empty_parts_with_rests()
 
         for part_name in self.parts:
             if part_name in ["taiko1","taiko2","odaiko"] and len(self.parts[part_name])>0:
@@ -110,6 +110,59 @@ class TokeiBubble(Bubble):
                 attach(text_length_on, self.parts[part_name][0])
                 dynamic_up = indicatortools.LilyPondCommand('dynamicUp', 'before')
                 attach(dynamic_up, self.parts[part_name][0])
+
+
+
+# TO DO... move this to calliope for general use!
+class TokeiFree(TokeiBubble):
+    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8)]):
+
+        super().__init__(name=name, measures_durations=measures_durations, odd_meters=False)
+
+        self.free = True
+
+        for part_name in self.parts:
+            free_measure = Measure(self.measures_durations[0])
+            free_measure.automatically_adjust_time_signature = True
+            self.parts[part_name].append(free_measure)
+
+    def align_parts(self):
+
+        print("aligning parts...")
+
+        longest_part_length = 0
+        longest_part = None
+        for part_name, part in self.parts.items():
+            part_length = part[0].time_signature.numerator / part[0].time_signature.denominator
+            if part_length > longest_part_length:
+                longest_part = part
+                longest_part_length = part_length
+            
+        longest_measure_duration = (longest_part[0].time_signature.numerator, longest_part[0].time_signature.denominator)
+
+        # not too elegant... don't know a better way to reset the time signatures through...
+        for part_name, part in self.parts.items():
+            m = part[0]
+            part.remove(m)
+            m2 = Measure(longest_measure_duration)
+            m2.extend(m[:])
+            part.append(m2)
+            scoretools.append_spacer_skips_to_underfull_measures_in_expr(part)
+
+        # measure_lengths = [part[0].time_signature.numerator / part[0].time_signature.denominator for part_name, part in self.parts.items()]
+
+        # longest_measure = self.parts.items()[measure_lengths.index(max(measure_lengths))][0]
+
+        for part_name, part in self.parts.items():
+            part[0].automatically_adjust_time_signature = True
+
+        self.time_signatures = [TimeSignature(longest_measure_duration)]
+
+    def prepare_score(self):
+        self.align_parts()
+        
+
+
 
 # --------------------------------------------------------------------------------------------
 

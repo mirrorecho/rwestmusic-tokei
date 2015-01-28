@@ -175,9 +175,9 @@ class ForceCloud2C(ForceCloud2):
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
 class CaesiumMaterial(TokeiBubble):
-    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*3, layout="orchestra"):
+    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", odd_meters=False):
 
-        super().__init__(name="caesium-material", time_signature=time_signature, measures_durations=measures_durations,layout=layout, )
+        super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, odd_meters=odd_meters)
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
@@ -201,8 +201,8 @@ class CaesiumMaterial(TokeiBubble):
         self.material["rhythm"]["taiko_2"]="c8_ka[ c8_do  c8_don]   c8_ka[ c8_do  c8_don ] " * 4
 
 class CaesiumMaterialOdd(CaesiumMaterial):
-    def __init__(self, time_signature=TimeSignature((10,8)), measures_durations=[(10,8), (7,8), (7,8)], layout="orchestra"):
-        super().__init__(time_signature=time_signature, measures_durations=measures_durations)
+    def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
+        super().__init__(measures_durations=measures_durations, odd_meters=True)
 
 
 class CaesiumMa(CaesiumMaterial):
