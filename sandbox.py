@@ -53,18 +53,55 @@ else:
     rest_measures = scoretools.make_multimeasure_rests(measures_durations)
 c = Container(rest_measures)
 
-s = Staff()
-s.extend(scoretools.make_spacer_skip_measures(measures_durations))
-mutate(s).replace_measure_contents(c)
-
 music = Container("c'4( d'2. ~ d'8[)\\fermata e']  e'[ e'] e'[ e'] f'" )
+
+s = Container()
+for m in measures_durations:
+    s.append(Measure(m))
+
+s[0].extend(music)
+mutate(s[0]).split(measures_durations)
+scoretools.append_spacer_skips_to_underfull_measures_in_expr(s)
+show(s)
+
+
+
+#mutate(music).split(measures_durations)
+n = 0
+# for i in music:
+#     print(i)
+#     if len(s) > n:
+#         if s[n].is_full:
+#             n += 1
+#         if len(s) > n:
+#             s[n].append(i)
+
+# scoretools.append_spacer_skips_to_underfull_measures_in_expr(s)
+# show(s)
+
+# s.extend(scoretools.make_spacer_skip_measures(measures_durations))
+# mutate(s).replace_measure_contents(c)
+
+
 
 
 # mutate(music).rewrite_meter(measures_durations)
 # show(music)
 
-mutate(s).replace_measure_contents(music)
-show(s)
+# mutate(s).replace_measure_contents(music)
+# s[0].extend(music)
+
+# show(s)
+
+# m = Measure((7,8))
+# # ... this will be great for free music!!!!
+# m.automatically_adjust_time_signature=True
+# m.always_format_time_signature=False
+# m.extend(music)
+# show(m)
+
+
+
 
 # pitch = "C#2"
 # arrange_fundamental = get_pitch_number(pitch)
