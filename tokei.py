@@ -28,6 +28,8 @@ class TokeiBubble(Bubble):
 
         self.add_part(name='horn1', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 1", short_instrument_name="hn.1"))
         self.add_part(name='horn2', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 2", short_instrument_name="hn.2"))
+        self.add_part(name='horn3', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 3", short_instrument_name="hn.3"))
+        self.add_part(name='horn4', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 4", short_instrument_name="hn.4"))
         self.add_part(name='trumpet1', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 1", short_instrument_name="tpt.1"))
         self.add_part(name='trumpet2', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 2", short_instrument_name="tpt.2"))
         self.add_part(name='trombone1', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"), clef="bass")
@@ -61,11 +63,11 @@ class TokeiBubble(Bubble):
             self.add_part(name='viola_div2', instrument=instrumenttools.Viola(instrument_name="Viola 2", short_instrument_name="vla.2"))
             self.add_part(name='cello_div1', instrument=instrumenttools.Cello(instrument_name="Cello 1", short_instrument_name="vc.1"), clef="bass")
             self.add_part(name='cello_div2', instrument=instrumenttools.Cello(instrument_name="Cello 2", short_instrument_name="vc.2"), clef="bass")
-            self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"))
-            self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"))
+            self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"), clef="bass")
+            self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"), clef="bass")
 
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        #self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
         self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.2"), clef="bass")
 

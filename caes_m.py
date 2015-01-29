@@ -4,7 +4,7 @@ import settings
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 from calliope.cloud.pitches import * 
-from calliope.tools import get_pitch_range, get_pitch_number, transpose_pitches
+from calliope.tools import get_pitch_range, get_pitch_number, transpose_pitches, get_pitch_ranges
 
 from tokei import TokeiBubble, TokeiCloud
 
@@ -45,7 +45,7 @@ class ForceData(TokeiCloud):
         self.divisions = 24
         self.force_pitches = ["bf", "cs'", "d'", "e'", "fs'", "g'"]
         if self.start_pitch != get_pitch_number("A3"):
-            self.force_pitches = transpose_pitches(self.force_pitches, get_pitch_number("A3")-self.start_pitch)
+            self.force_pitches = transpose_pitches(self.force_pitches, self.start_pitch-get_pitch_number("A3"))
         self.force_harmonic_stack = [0, 3, 7]
         self.ji_harmonic_stack = [0, 1, 7]
         # low harmonic stack is usually based on ji...
@@ -99,6 +99,80 @@ class ForceData(TokeiCloud):
         ]
 
 # ----------------------------------------------------------------------------
+
+class ForceUp4(ForceData):
+    def __init__(self, *args, **kwargs):
+        super().__init__(start_pitch="C#4", *args, **kwargs)
+
+    def prepare_pitches(self):
+        super().prepare_pitches()    
+        self.divisions=10
+        self.force_harmonic_stack = [0, 3, 7]
+        self.ji_harmonic_stack = [-8, -1, 0]
+        # low harmonic stack is usually based on ji...
+        self.low_harmonic_stack = transpose_pitches([0, 7, 10, 12], self.start_pitch -24)
+
+
+class ForceUp4BrassMelody(ForceUp4):
+    def prepare_pitches(self):
+        super().prepare_pitches()    
+        self.force_pitches.insert(0, self.start_pitch)
+
+    def get_base_lines(self):
+        super().get_base_lines()
+        self.force_by_index([0, 1, 2, 3,     4, 3, 4,  5, 6, 6])
+
+    # moves upward slightly
+    def get_pitch_ranges(self):
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=6, 
+            times=10,
+            high_intervals=[13], # may make the lines better...?
+            low_pitches=("Eb4","D4","A3","F#3","A3","F#3"),
+            increments=[[0,1,1]]
+            )
+
+
+class ForceMoveUp4(ForceData):
+    def prepare_pitches(self):
+        super().prepare_pitches()    
+        self.force_pitches = ["a", "bf", "cs'", "d'", "cs'", "fs'","d'", "gs'","as'","b'"]
+        if self.start_pitch != get_pitch_number("A3"):
+            self.force_pitches = transpose_pitches(self.force_pitches, get_pitch_number("A3")-self.start_pitch)
+        self.force_harmonic_stack = [0, 3, 7]
+    
+    def get_base_lines(self):
+        super().get_base_lines()
+        self.force_by_index([0,0,0, 1,1,1, 2,2, 3,3,   4,4,4, 5,5, 6,6,  7,7, 8,8, 9,9,9])
+   
+class ForceMoveUp4WindsDown(ForceMoveUp4):
+    def prepare_pitches(self):
+        super().prepare_pitches()    
+        self.force_harmonic_stack = [0,0, 3,3, 7,7]
+
+    def prepare_cloud(self):
+        self.tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-66), 
+            # don't care some much about parralel intervals here...
+            #TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(
+                    interval_ratings=[(0, -200), (1,40), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], 
+                    over_incremental_multiplier=(12,-60),
+                    up_rating=-12,
+                    down_rating=20,
+                    ),
+            TallyRepeatedJumps(),
+        ]
+    
+    def get_pitch_ranges(self):
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=9, 
+            times=24,
+            low_pitches=["G5","G5","Eb5","Eb5","Eb5","Bb4","Bb4","Bb3","Bb3"],
+            increments=[[0,-1,-1]]*7 + [[-1]]*2 #bassoons going down faster...
+            )
+
+
 
 class ForceData1(ForceData):
 
@@ -212,14 +286,19 @@ class CaesiumMaterial(TokeiBubble):
                     c8_don[ r8 r8]     c8_don[ r8]        c8_don[ r8]    
                     c8_don[ r8]        c8_don[ r8]     c8_don[ r8 r8] """
 
+        self.material["rhythm"]["melody_hits"]="""
+                    c8[-> c8 c8]   c8[-> c8 c8]   c8[-> c8]    c8[-> c8]  
+                    c8[-> c8 c8]     c8[-> c8]        c8[-> c8]    
+                    c8[-> c8]        c8[-> c8]     c8[-> c8 c8] """
+
         self.material["rhythm"]["taiko_ji"]="c8_do c_ko " * 12 
 
-        self.material["rhythm"]["taiko_1"]="""  
+        self.material["rhythm"]["taiko_2"]="""  
             c8_do[\\<  c8_ko]   c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko]  
             c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko]\\!
             r8_tsu c8->_don r8_tsu c8->_don r8_tsu c8->_don r8_tsu c8->_don """
 
-        self.material["rhythm"]["taiko_2"]="c8_ka[ c8_do  c8_don]   c8_ka[ c8_do  c8_don ] " * 4
+        self.material["rhythm"]["taiko_3"]="c8_ka[ c8_do  c8_don]   c8_ka[ c8_do  c8_don ] " * 4
 
         self.material["rhythm"]["smack"] = "c8-.->\\sfz r4 r2 R1 R1"
 
@@ -234,6 +313,12 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["staccato"] ="c8-.[ c-.] "*12
 
+        # just used on odd meters?
+        self.material["rhythm"]["melody_push"] = """c4.---> c4.-- c8--[ r8] c8--[ r8]
+                        c4.---> c8--[ r8] c8--[ r8]
+                        c4---> c8--[ r8] c4.--
+                        """
+
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
 
         self.force_start() # do we always need to run this??
@@ -242,7 +327,7 @@ class CaesiumMaterial(TokeiBubble):
         force = ForceData()
 
         # TO DO... functionize this...!
-        self.material["pitch"]["force_stack"] = force.force_harmonic_stack
+        self.material["pitch"]["force_stack"] = [[p + force.start_pitch] for p in force.force_harmonic_stack]
 
         self.material["pitch"]["force_row"] = force.force_pitches
 
@@ -251,7 +336,8 @@ class CaesiumMaterial(TokeiBubble):
                         [force.force_pitches[0]],
                         ]
 
-        self.material["pitch"]["low_stack"] = [[p] for p in force.low_harmonic_stack]
+        self.material["pitch"]["low_stack"] = [[p + force.start_pitch] for p in force.low_harmonic_stack]
+        self.material["pitch"]["ji_stack"] = [[p + force.ji_pitch] for p in force.ji_harmonic_stack]
 
     def force_strings_melody(self, cloud_name="caes-cloud-strings-melody"):
         force = ForceCloudStringsMelody(name=cloud_name)
@@ -270,6 +356,43 @@ class CaesiumMaterial(TokeiBubble):
             self.material["strings_cloud_respell"]=["sharps","flats","flats","sharps","sharps","flats","sharps","sharps"]
         else:
             self.material["strings_cloud_respell"]=[None]
+
+
+    def force_winds_up4_down(self, cloud_name="caes-cloud-winds-up4-down"):
+        force = ForceMoveUp4WindsDown(name=cloud_name)
+
+        # self.material["pitch"]["accents"] = [[force.ji_pitch for d in range(force.divisions)]]+transpose_pitches(
+        #                 [force.pitches[2], force.pitches[1], force.pitches[0] ], 12)
+
+        self.material["pitch"]["force_stack"] = force.force_harmonic_stack
+        self.material["pitch"]["force_row"] = force.force_pitches
+
+        self.material["pitch"]["winds_cloud"] = force.cloud_pitches()
+        
+        if cloud_name == "caes-cloud-winds-up4-down":
+            self.material["winds_cloud_respell"]=["flats","flats","sharps","sharps","flats","sharps","flats","sharps"]
+        else:
+            self.material["winds_cloud_respell"]=[None]
+
+    def force_brass_4_melody(self, cloud_name="caes-cloud-highbrass-4-melody"):
+        force = ForceUp4BrassMelody(name=cloud_name)
+
+        # self.material["pitch"]["accents"] = [[force.ji_pitch for d in range(force.divisions)]]+transpose_pitches(
+        #                 [force.pitches[2], force.pitches[1], force.pitches[0] ], 12)
+
+        self.material["pitch"]["force_stack"] = [[p + force.start_pitch] for p in force.force_harmonic_stack]
+
+        self.material["pitch"]["force_row"] = force.force_pitches
+
+        self.material["pitch"]["brass_lines"] = force.cloud_pitches()
+        
+        if cloud_name == "caes-cloud-highbrass-4-melody":
+            self.material["brass_lines_respell"]=["flats","sharps","flats","sharps","sharps","sharps"]
+        else:
+            self.material["brass_lines_respell"]=[None]
+        
+        self.material["pitch"]["low_stack"] = [[p + force.start_pitch] for p in force.low_harmonic_stack]
+        self.material["pitch"]["ji_stack"] = [[p + force.ji_pitch] for p in force.ji_harmonic_stack]
 
 
 class CaesiumMaterialOdd(CaesiumMaterial):

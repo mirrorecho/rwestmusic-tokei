@@ -8,6 +8,8 @@ from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 
 string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
+wind_parts=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
+brass_parts=["horn1","horn2","horn3","horn4","trumpet1","trumpet2","trombone1","trombone2","tuba"]
 
 music = CycleLoop(bubble_type=CaesiumMaterial)
 
@@ -28,22 +30,24 @@ music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # ------------------------------------
 # 9-12
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["1hit_b", "string_nasty_3"])
-music.add_cycle(flags=["string_nasty_2"])
+music.add_cycle(flags=["1hit_b", "string_nasty_3", "taiko3"])
+music.add_cycle(flags=["string_nasty_2", "taiko2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # # -------------------------------------------------------------------
 # 13-16
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(flags=["1hit_b", "string_melody_cloud"])
 music.add_cycle(flags=["1hit_b", "string_melody_cloud_up"])
-music.add_cycle(flags=["winds_melody_cloud"]) # NEED TO DO THIS ONE!
-
-# # -------------------------------------------------------------------
-
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
+music.add_cycle(flags=["winds_up4_cloud_down"]) 
+# ------------------------------------
+# 17-20
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
+# not too crazy about repeating this guy verbatim...
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
+music.add_cycle(flags=["string_nasty_3", "taiko_3"])
+music.add_cycle(flags=["string_nasty_2", "taiko_2"])
+# ------------------------------------
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 
 # music.add_cycle(flags=["3hits_2"])
 # music.add_cycle(flags=["5hits_2"])
@@ -120,6 +124,12 @@ music.arrange_music(rhythm_material=["taiko_ji"], part_names=["taiko1","taiko2",
 
 music.arrange_music(rhythm_material=["melody"], part_names=["taiko1","taiko2","odaiko"], apply_flags=["melody"])
 
+music.arrange_music(rhythm_material=["melody_hits"], part_names=["taiko1","taiko2"], apply_flags=["melody_hits"])
+music.arrange_music(rhythm_material=["melody"], part_names=["odaiko"], apply_flags=["melody_hits"])
+
+music.arrange_music(rhythm_material=["taiko_2"], part_names=["taiko1","taiko2"], apply_flags=["taiko_2"])
+music.arrange_music(rhythm_material=["taiko_3"], part_names=["taiko1","taiko2"], apply_flags=["taiko_3"])
+
 # -----------------------------------------------
 # as things heat up, gane starts steady strike
 #??? use this....
@@ -133,11 +143,36 @@ music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"],
 
 music.arrange_music(part_names=["perc1"], apply_before_flags=["ma"], rhythm_material=["swell_cymb"])
 
+
 # --------------------------------------------------------------------------------------
 # LOW HITS:
 
 music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], apply_flags=["melody"], 
     rhythm_material=["smack","smack","smack","smack_perc"], pitch_material="low_stack")
+
+# --------------------------------------------------------------------------------------
+# CLEARER "MELODIES"
+
+music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-highbrass-4-melody", apply_flags=["brass_melody"])
+
+music.arrange_music(part_names=["trumpet2","trumpet1","horn3","horn1","horn2","horn4"], 
+    apply_flags=["brass_melody"], 
+    rhythm_material=["melody_push"], 
+    pitch_material="brass_lines",
+    respell_material="brass_lines_respell"
+    )
+
+# --------------------------------------------------------------------------------------
+# PADDING:
+music.arrange_music(part_names=["cello_div2","cello_div1","viola_div2","viola_div1"], 
+    apply_flags=["midlow_strings_pad"], 
+    rhythms=["c4. ~ c4. ~ c4 ~ c4     c4. ~ c4 ~ c4     c4 ~ c4 ~ c4. "], 
+    pitch_material="ji_stack",
+    transpose=[-24,-24,-24,-12],
+    pitch_offset=[2]
+    #respell_material,
+    )
+
 
 # --------------------------------------------------------------------------------------
 # STRING NASTIES AND CLOUD:
@@ -148,8 +183,6 @@ music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_3"],
 music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
     rhythm_material=["string_nasty_2"], pitches=[["x"]])
 
-music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
-    rhythm_material=["string_nasty_2"], pitches=[["x"]])
 
 music.exec_method("force_strings_melody", apply_flags=["string_melody_cloud"])
 music.exec_method("force_strings_melody", cloud_name="caes-cloud-strings-melody-up", apply_flags=["string_melody_cloud_up"])
@@ -168,6 +201,17 @@ music.arrange_music(part_names=["oboe1","oboe2","flute2","oboe3","flute1"],
         respell=["sharps"],
         pitch_offset=[6],
         )
+
+music.exec_method("force_winds_up4_down", cloud_name="caes-cloud-winds-up4-down", apply_flags=["winds_up4_cloud_down"])
+
+music.arrange_music(part_names=wind_parts, 
+    apply_flags=["winds_up4_cloud_down"], 
+    rhythms=["c8[( c c c]) "*6], 
+    pitch_material="winds_cloud",
+    respell_material="winds_cloud_respell"
+    )
+
+
 
 # --------------------------------------------------------------------------------------
 # these are the "hits" that build throughout the entire work
@@ -231,6 +275,7 @@ music.add_transform(
         cycle_length=24,
         denominator=8,
         start_flag="1hit_a",
+        stop_flag="brass_melody",
         ))
 
 #transform hit points to come more often...
@@ -254,7 +299,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=[14,15])
+bubble = music.make_bubble()
 
 bubble.show_pdf()
 

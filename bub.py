@@ -6,6 +6,8 @@ from kai_m import *
 # force_strings = ForceCloudStringsMelodyUp(name="caes-cloud-strings-melody-up")
 # force_strings.tally_loop()
 
-c = CaesiumMaterial()
-c.force_strings_melody()
-print(c.material["pitch"]["accents"])
+f = ForceUp4BrassMelody(name="caes-cloud-highbrass-4-melody", autorandom=False)
+f.tally_loop()
+
+#music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
+
