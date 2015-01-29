@@ -100,7 +100,7 @@ class ForceData(TokeiCloud):
 
 # ----------------------------------------------------------------------------
 
-class ForceCloud1(ForceData):
+class ForceData1(ForceData):
 
     def prepare_pitches(self):
         super().prepare_pitches()
@@ -137,18 +137,21 @@ class ForceCloud1(ForceData):
         self.pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_low))
         self.pitch_ranges.append(copy.deepcopy(self.force_pitch_ranges_low))
 
-# these are a strings cloud... that stays in place in range and pitch material...
-class ForceCloud2(ForceData):
+
+class ForceDataMelody(ForceData):
     def prepare_pitches(self):
         super().prepare_pitches()
-        self.force_pitches.insert(0, self.ji_pitch)
+        self.force_pitches.insert(0, self.ji_pitch-24)
         self.force_harmonic_stack.append(7)
         self.force_harmonic_stack.append(12)
 
     def get_base_lines(self):
         super().get_base_lines()
         self.force_by_index([0,0,0, 1,1,1, 2,2,2,2,   3,3,3, 4,4,4,4,  5,5,5,5, 6,6,6])
-    
+
+
+# these are a strings cloud... that stays in place in range and pitch material...
+class ForceCloudStringsMelody(ForceDataMelody):
     # this could be better handled with new pitch range functions...
     def get_pitch_ranges(self):
         violins_range = [pitchtools.PitchRange("[G3, G5]") for i in range(24)]
@@ -156,8 +159,16 @@ class ForceCloud2(ForceData):
         cellos_range = [pitchtools.PitchRange("[F2, C4]") for i in range(24)]
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
+    # will probably used staccato... so don't care about repeated notes
+    def prepare_cloud(self):
+        self.tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-99), 
+            TallyMelodicIntervals(interval_ratings=[(0, 4), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], over_incremental_multiplier=(12,-60)),
+            TallyRepeatedJumps(),
+        ]
+
 # similar to above pitch cloud, but ranges move up
-class ForceCloud2A(ForceCloud2):
+class ForceCloudStringsMelodyUp(ForceCloudStringsMelody):
     # this could be better handled with new pitch range functions...
     def get_pitch_ranges(self):
         violins_range = [get_pitch_range(i-5, i+6) for i in range(24)]
@@ -166,7 +177,7 @@ class ForceCloud2A(ForceCloud2):
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
 # similar to above, but ranges move up after half-way through
-class ForceCloud2B(ForceCloud2):
+class ForceCloudStringsMelodyUpEnd(ForceCloudStringsMelody):
     # this could be better handled with new pitch range functions...
     def get_pitch_ranges(self):
         violins_range = [get_pitch_range(-5, 6) for i in range(12)]
@@ -178,7 +189,7 @@ class ForceCloud2B(ForceCloud2):
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
 # similar to above, but ranges move down
-class ForceCloud2C(ForceCloud2):
+class ForceCloudStringsMelodyDown(ForceCloudStringsMelody):
     # this could be better handled with new pitch range functions...
     def get_pitch_ranges(self):
         violins_range = [get_pitch_range(19-i, 30-i) for i in range(24)]
@@ -191,21 +202,6 @@ class CaesiumMaterial(TokeiBubble):
 
         super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, odd_meters=odd_meters, div_strings=True)
         #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
-
-        self.force_data = ForceData()
-
-        # TO DO... functionize this...!
-        self.material["pitch"]["force_stack"] = self.force_data.force_harmonic_stack
-
-        self.material["pitch"]["force_row"] = self.force_data.force_pitches
-
-        self.material["pitch"]["swell_stack"] = [
-                        [self.force_data.ji_pitch - 24], 
-                        [self.force_data.force_pitches[0]],
-                        ]
-
-        self.material["pitch"]["low_stack"] = [[p] for p in self.force_data.low_harmonic_stack]
-
 
         self.material["rhythm"]["doko_f"] = "c8_do[\\f  c8_ko] "+ "c8_do[  c8_ko] "*11
 
@@ -236,7 +232,44 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["swell_cymb"] = "R1 R1 c2:32\\pp\\< ~ c4.:32 c8->\\!\\f "
 
+        self.material["rhythm"]["staccato"] ="c8-.[ c-.] "*12
+
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
+
+        self.force_start() # do we always need to run this??
+
+    def force_start(self):
+        force = ForceData()
+
+        # TO DO... functionize this...!
+        self.material["pitch"]["force_stack"] = force.force_harmonic_stack
+
+        self.material["pitch"]["force_row"] = force.force_pitches
+
+        self.material["pitch"]["swell_stack"] = [
+                        [force.ji_pitch - 24], 
+                        [force.force_pitches[0]],
+                        ]
+
+        self.material["pitch"]["low_stack"] = [[p] for p in force.low_harmonic_stack]
+
+    def force_strings_melody(self, cloud_name="caes-cloud-strings-melody"):
+        force = ForceCloudStringsMelody(name=cloud_name)
+
+        self.material["pitch"]["accents"] = [[force.ji_pitch for d in range(force.divisions)]]+transpose_pitches(
+                        [force.pitches[2], force.pitches[1], force.pitches[0] ], 12)
+
+        self.material["pitch"]["force_stack"] = force.force_harmonic_stack
+        self.material["pitch"]["force_row"] = force.force_pitches
+
+        self.material["pitch"]["strings_cloud"] = force.cloud_pitches()
+        
+        if cloud_name == "caes-cloud-strings-melody":
+            self.material["strings_cloud_respell"]=["flats","flats","sharps","sharps","flats","sharps","sharps","flats"]
+        elif cloud_name == "caes-cloud-strings-melody-up":
+            self.material["strings_cloud_respell"]=["sharps","flats","flats","sharps","sharps","flats","sharps","sharps"]
+        else:
+            self.material["strings_cloud_respell"]=[None]
 
 
 class CaesiumMaterialOdd(CaesiumMaterial):
@@ -253,6 +286,11 @@ class CaesiumMaterialOdd(CaesiumMaterial):
         self.material["rhythm"]["swell"] = rest_1 + "c4.\\mp\\< ~ c4 ~ c4 ~ c4 ~ c4 ~ c4.\\!\\mf "
 
         self.material["rhythm"]["swell_cymb"] = rest_1 + rest_2 + "c4:32\\pp\\< ~ c4:32 ~ c4:32  c8->\\!\\f "
+
+        self.material["rhythm"]["staccato"] =""""c8-.[ c-. c-.]   c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.]
+                    c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.]
+                    c-.[ c-.]   c-.[ c-.] c-.[ c-. c-.]
+                    """ 
 
 class CaesiumMa(CaesiumMaterial):
     def __init__(self):    

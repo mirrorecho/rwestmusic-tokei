@@ -32,8 +32,11 @@ music.add_cycle(flags=["1hit_b", "string_nasty_3"])
 music.add_cycle(flags=["string_nasty_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # # -------------------------------------------------------------------
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-
+# 13-16
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(flags=["1hit_b", "string_melody_cloud"])
+music.add_cycle(flags=["1hit_b", "string_melody_cloud_up"])
+music.add_cycle(flags=["winds_melody_cloud"]) # NEED TO DO THIS ONE!
 
 # # -------------------------------------------------------------------
 
@@ -90,7 +93,7 @@ music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # music.add_cycle()
 # music.add_cycle()
 # music.add_cycle(flags=["final"])
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 
 # -----------------------------------------------------------------
 
@@ -144,6 +147,27 @@ music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_3"],
 
 music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
     rhythm_material=["string_nasty_2"], pitches=[["x"]])
+
+music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
+    rhythm_material=["string_nasty_2"], pitches=[["x"]])
+
+music.exec_method("force_strings_melody", apply_flags=["string_melody_cloud"])
+music.exec_method("force_strings_melody", cloud_name="caes-cloud-strings-melody-up", apply_flags=["string_melody_cloud_up"])
+
+music.arrange_music(part_names=string_parts[:-2], 
+    apply_flags=["string_melody_cloud","string_melody_cloud_up"], 
+    rhythm_material=["staccato"], 
+    pitch_material="strings_cloud",
+    respell_material="strings_cloud_respell"
+    )
+
+music.arrange_music(part_names=["oboe1","oboe2","flute2","oboe3","flute1"],
+        apply_flags=["string_melody_cloud","string_melody_cloud_up"], 
+        rhythms=["r2 r4 c4-.  c-. r4 r2 R1"],
+        pitch_material="accents",
+        respell=["sharps"],
+        pitch_offset=[6],
+        )
 
 # --------------------------------------------------------------------------------------
 # these are the "hits" that build throughout the entire work
@@ -230,7 +254,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=[9,10,11])
+bubble = music.make_bubble(iters=[14,15])
 
 bubble.show_pdf()
 

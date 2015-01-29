@@ -225,11 +225,11 @@ class TokeiCloud():
         # if cloud data not already loaded, get our pitch lines, and load them
         if not self.cloud.is_loaded:
             self.cloud.init_data(pitch_lines=self.pitches)
-            #if autorandom:
-                #self.cloud.randomize_all_columns() 
+            if autorandom:
+                self.cloud.randomize_all_columns() 
         
         # is this necessary?
-        #self.cloud.move_into_ranges()
+        self.cloud.move_into_ranges()
 
         self.cloud.get_tallies()
 
@@ -271,3 +271,18 @@ class TokeiCloud():
 
     def cloud_pitches(self):
         return self.cloud.pitch_lines
+
+    def show_cloud(self):
+        self.cloud.show()
+
+    def show(self):
+        bubble = Bubble(project=PROJECT, title="Cloud Pitches (pre-tallying):", name="cloud-pitches-pre-material")
+        for i, line in enumerate(self.pitches):
+            bubble.add_part(name="line" + str(i), instrument=instrumenttools.Instrument(instrument_name="Line " + str(i), short_instrument_name=str(i)))
+            line_music = scoretools.make_notes(line, durationtools.Duration(1,4))
+            bubble.parts["line" + str(i)].extend(line_music)
+
+        # TO DO... remove bar lines (or barlines every note?)
+        # TO DO... show scores!
+
+        bubble.show_pdf()
