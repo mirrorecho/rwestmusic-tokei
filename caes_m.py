@@ -11,22 +11,6 @@ from tokei import TokeiBubble, TokeiCloud
 import copy
 
 
-# ----------------------------------------------------------------------------
-# TO DO - TAKE THIS OUT OF caesium.py?
-
-# def joinalter(it, delimiter):
-#     for x in it:
-#         yield delimiter
-#         yield x
-
-# def joinalter_2(it, delimiter):
-#     for x in it:
-#         yield delimiter
-#         yield x
-#         yield x
-#         yield x
-
-
 # to do... some of this stuff could be more generic...
 class ForceData(TokeiCloud):
     def __init__(self, 
@@ -107,7 +91,7 @@ class ForceUp4(ForceData):
     def prepare_pitches(self):
         super().prepare_pitches()    
         self.divisions=10
-        self.force_harmonic_stack = [0, 3, 7]
+        # self.force_harmonic_stack = [0, 3, 7] # (same as force data)
         self.ji_harmonic_stack = [-8, -1, 0]
         # low harmonic stack is usually based on ji...
         self.low_harmonic_stack = transpose_pitches([0, 7, 10, 12], self.start_pitch -24)
@@ -131,6 +115,24 @@ class ForceUp4BrassMelody(ForceUp4):
             low_pitches=("Eb4","D4","A3","F#3","A3","F#3"),
             increments=[[0,1,1]]
             )
+
+# tumpets and 1,3 horns move up, 2,4 horns and trombones move down
+class ForceUp4BrassMelodyWiden(ForceUp4BrassMelody):
+    def prepare_pitches(self):
+        super().prepare_pitches()    
+        self.force_harmonic_stack.extend([0,7]) #add two lines for the trombones
+
+    # widen!
+    def get_pitch_ranges(self):
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=8, 
+            times=10,
+            high_intervals=[13], # may make the lines better...?
+            low_pitches=("B3","G3","E3","F#3","E3","F#3","F#3","F#3"),
+            increments=[[1,2],[1,2],[1,2],[-1,-2],[-1,2],[-1,-2],[-1,-2],[-1,-2]]
+            )
+
+
 
 
 class ForceMoveUp4(ForceData):
@@ -388,6 +390,8 @@ class CaesiumMaterial(TokeiBubble):
         
         if cloud_name == "caes-cloud-highbrass-4-melody":
             self.material["brass_lines_respell"]=["flats","sharps","flats","sharps","sharps","sharps"]
+        elif cloud_name == "caes-cloud-brass-4-melody-widen":
+            self.material["brass_lines_respell"]=["flats","flats","flats","sharps","flats","sharps","flats","sharps"]
         else:
             self.material["brass_lines_respell"]=[None]
         

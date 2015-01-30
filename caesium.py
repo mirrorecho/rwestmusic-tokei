@@ -43,7 +43,7 @@ music.add_cycle(flags=["winds_up4_cloud_down"])
 # 17-20
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
 # not too crazy about repeating this guy verbatim...
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
 music.add_cycle(flags=["string_nasty_3", "taiko_3"])
 music.add_cycle(flags=["string_nasty_2", "taiko_2"])
 # ------------------------------------
@@ -155,8 +155,17 @@ music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], appl
 
 music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-highbrass-4-melody", apply_flags=["brass_melody"])
 
+music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-brass-4-melody-widen", apply_flags=["brass_melody_widen"])
+
 music.arrange_music(part_names=["trumpet2","trumpet1","horn3","horn1","horn2","horn4"], 
     apply_flags=["brass_melody"], 
+    rhythm_material=["melody_push"], 
+    pitch_material="brass_lines",
+    respell_material="brass_lines_respell"
+    )
+
+music.arrange_music(part_names=brass_parts[:-1], 
+    apply_flags=["brass_melody_widen"], 
     rhythm_material=["melody_push"], 
     pitch_material="brass_lines",
     respell_material="brass_lines_respell"
@@ -299,7 +308,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble()
+bubble = music.make_bubble(iters=[17,18,19,20])
 
 bubble.show_pdf()
 
