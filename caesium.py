@@ -9,7 +9,8 @@ from calliope.cycles.transform import *
 
 string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
 wind_parts=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
-brass_parts=["horn1","horn2","horn3","horn4","trumpet1","trumpet2","trombone1","trombone2","tuba"]
+# putting instruments high to low (trumpets first) for ease of arranging
+brass_parts=["trumpet1","trumpet2","horn1","horn2","horn3","horn4","trombone1","trombone2","tuba"]
 
 music = CycleLoop(bubble_type=CaesiumMaterial)
 
@@ -30,93 +31,73 @@ music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # ------------------------------------
 # 9-12
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["1hit_b", "string_nasty_3", "taiko3"])
-music.add_cycle(flags=["string_nasty_2", "taiko2"])
+music.add_cycle(flags=["1hit_b", "string_nasty_3", "taiko_3"])
+music.add_cycle(flags=["string_nasty_2", "taiko_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # # -------------------------------------------------------------------
 # 13-16
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(flags=["1hit_b", "string_melody_cloud"])
 music.add_cycle(flags=["1hit_b", "string_melody_cloud_up"])
 music.add_cycle(flags=["winds_up4_cloud_down"]) 
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 # ------------------------------------
 # 17-20
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
-# not too crazy about repeating this guy verbatim...
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
 music.add_cycle(flags=["string_nasty_3", "taiko_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
 music.add_cycle(flags=["string_nasty_2", "taiko_2"])
 # ------------------------------------
+# 21-24
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-
-# music.add_cycle(flags=["3hits_2"])
-# music.add_cycle(flags=["5hits_2"])
-# # (note... this next cycle jumps back to 3 hits)
-# music.add_cycle(flags=["3hits_2"])
-# music.add_cycle(flags=["6hits_2"])
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle()
+music.add_cycle(flags=["taiko_2"])
+music.add_cycle(flags=["taiko_2"])
 # # -------------------------------------------------------------------
-
-# music.add_cycle(flags=["2hits_3"])
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-
-# music.add_cycle(flags=["4hits_3"])
-# music.add_cycle()
-# music.add_cycle(flags=["5hits_3"])
-# music.add_cycle(flags=["6hits_3"])
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+# 25-28 (key change to f)
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(flags=["taiko_2"])
+music.add_cycle(flags=["taiko_2"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+# ------------------------------------
+# 29-32
+# add something else to his ma?
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(flags=["taiko_3"])
+music.add_cycle(flags=["taiko_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+# ------------------------------------
+# 33-36
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+# add something else to his ma?
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 # # -------------------------------------------------------------------
+# 37-40
+# everyone plays, on melody, or in 3,6
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
+# ------------------------------------
+# 41-44
+# everyone plays, on melody, or in 2,4
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+# ------------------------------------
+# 45-48
+# a single tone, but not much of one
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
+# - silence
+music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 
-# # for this next one (4hits_4) ... put all the hits towards the end
-# # a build up here to the next hit.... now all the hits should be REALLY big
-# music.add_cycle(flags=["heating", "4hits_4"])
-# music.add_cycle(flags=["5hits_4"])
-# music.add_cycle()
-# music.add_cycle(flags=["6hits_4"])
-
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-# # -----------------------------------------------------------------
-
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle()
-# music.add_cycle(flags=["final"])
-# music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-
-# -----------------------------------------------------------------
-
-# old stuff... use it?
-# music.add_data("foce_osti_smooth_1", "c8-.-> c-. c-.    c-.-> c-. c-.   c-.-> c-. c-. c-.    c( c c) c( c c c)    c( c c c)   c(-> c) c-.->")
-
-# music.add_data("steady_strike", "c8[ c]")
-
-# music.add_data("end_climb_strike", "r8 c\\p\\< c[ c] c[ c] c[ c]\\f\\!")
-
-# music.add_data("steady_beat", "c4")
-
-# music.add_data("class_simple_1", "r2 r4 c4 | c4 r4 r8 c8 r8 c8 | R1")
-
-# force_cloud1 = ForceCloud1()
-# music.add_data("force_cloud", force_cloud1.cloud.pitch_lines)
-
-
-# -----------------------------------------------
+# ---------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
 # TAIKO PARTS
 
 # steady ji for first several cycles
@@ -129,6 +110,9 @@ music.arrange_music(rhythm_material=["melody"], part_names=["odaiko"], apply_fla
 
 music.arrange_music(rhythm_material=["taiko_2"], part_names=["taiko1","taiko2"], apply_flags=["taiko_2"])
 music.arrange_music(rhythm_material=["taiko_3"], part_names=["taiko1","taiko2"], apply_flags=["taiko_3"])
+
+music.arrange_music(rhythm_material=["melody","taiko_2"], part_names=["taiko1","taiko2"], apply_flags=["melody_split_2"])
+music.arrange_music(rhythm_material=["melody","taiko_3"], part_names=["taiko1","taiko2"], apply_flags=["melody_split_3"])
 
 # -----------------------------------------------
 # as things heat up, gane starts steady strike
@@ -308,7 +292,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=[17,18,19,20])
+bubble = music.make_bubble()
 
 bubble.show_pdf()
 

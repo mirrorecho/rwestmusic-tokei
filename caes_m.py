@@ -293,7 +293,7 @@ class CaesiumMaterial(TokeiBubble):
                     c8[-> c8 c8]     c8[-> c8]        c8[-> c8]    
                     c8[-> c8]        c8[-> c8]     c8[-> c8 c8] """
 
-        self.material["rhythm"]["taiko_ji"]="c8_do c_ko " * 12 
+        self.material["rhythm"]["taiko_ji"]="c8_do[ c_ko] " * 12 
 
         self.material["rhythm"]["taiko_2"]="""  
             c8_do[\\<  c8_ko]   c8_do[  c8_ko] c8_do[  c8_ko] c8_do[  c8_ko]  

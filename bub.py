@@ -16,7 +16,8 @@ from kai_m import *
 # f.tally_loop()
 
 f = ForceUp4BrassMelodyWiden(name="caes-cloud-brass-4-melody-widen", autorandom=False)
-f.tally_loop()
+f.show_cloud()
+#f.tally_loop()
 
 #music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
 
