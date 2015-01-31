@@ -3,7 +3,7 @@ import settings
 
 from calliope.work import Bubble, Project
 from calliope.cloud.pitches import CloudPitches, TallyCircleOfFifthsRange, TallyMelodicIntervals, TallyRepeatedJumps
-from calliope.tools import get_pitch_number
+from calliope.tools import get_pitch_number, attach_commands
 
 PROJECT = Project(name="rwestmusic-tokei")
 JI_PITCH = get_pitch_number("A5")
@@ -136,7 +136,7 @@ class TokeiBubble(Bubble):
 
 # TO DO... move this to calliope for general use!
 class TokeiFree(TokeiBubble):
-    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8)]):
+    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8), show_x_time=False]):
 
         super().__init__(name=name, measures_durations=measures_durations, odd_meters=False)
 
@@ -146,6 +146,16 @@ class TokeiFree(TokeiBubble):
             free_measure = Measure(self.measures_durations[0])
             free_measure.automatically_adjust_time_signature = True
             self.parts[part_name].append(free_measure)
+
+            if show_x_time:
+
+
+            kappaTimeX = {
+                    %\override Staff.TimeSignature #'style = #'default %is this needed?
+                    \override Staff.TimeSignature #'stencil = #(lambda (grob)
+                        (parenthesize-stencil (grob-interpret-markup grob \markup { \override #'(baseline-skip . 0.5) \column { "X" "X"} }) 0.1 0.4 0.4 0.1 ))
+                    \time 1000/1
+            }
 
     def align_parts(self):
 
