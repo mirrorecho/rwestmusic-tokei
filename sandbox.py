@@ -128,14 +128,21 @@ s2 = Staff()
 
 s1.extend("R1")
 
-s2.extend("r2")
-s2.extend(box_music("b4 a4 b8[ a8] "))
-s2.extend("s4")
+s1.extend(box_music("b4 a4 b8[ a8] r4", "freely, repeat", ((1,1),(1,1),) ))
+s1.extend("b1")
+
+s2.extend(box_music("b8 b8[ a8] "))
+
+s2.extend("b8 r2 | b1")
 
 s = Score()
 s.append(s1)
+
 s.append(s2)
 show(s)
+print(format(s))
+
+
 #print(format(s))
 
 # print(format(s))
