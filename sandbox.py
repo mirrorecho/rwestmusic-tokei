@@ -58,139 +58,52 @@ from caes_m import *
 
 print()
 print("----------------------------------------------------")
-# def attach_commands(music_object, commands):
-#     for c in commands:
-#         attach(c, music_object)
 
 
-# def line_staff_music(skip_length=(1,16)):
 
-#     skip = scoretools.Skip(skip_length)
-
-#     line_staff_commands = [
-#         indicatortools.LilyPondCommand("stopStaff", 'before'),
-#         indicatortools.LilyPondCommand("""override Staff.StaffSymbol #'line-positions = #'(
-#         -0.4 -0.3 -.2 -.1 0 .1 .2 .3 .4
-#         ;-0.5 0
-#         )""", 'before'),
-#         indicatortools.LilyPondCommand("startStaff", 'before'),
-#     ]
-
-#     normal_staff_commands = [
-#         indicatortools.LilyPondCommand("stopStaff", 'after'),
-#         indicatortools.LilyPondCommand("override Staff.StaffSymbol #'line-positions = #'(-4 -2 0 2 4)", 'after'),
-#         indicatortools.LilyPondCommand("startStaff", 'after'),
-#     ]
-
-#     attach_commands(skip, line_staff_commands)
-#     attach_commands(skip, normal_staff_commands)
-
-#     return skip
-
-# box_start_commands = [
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'break-align-symbol = #'custos", 'before'),
-#     indicatortools.LilyPondCommand("""once \\override Staff.TimeSignature.space-alist =
-#         #'((first-note . (fixed-space . 2.0))
-#            (right-edge . (extra-space . 0))
-#            ;; space after time signature ..
-#            (custos . (extra-space . 0)))""", 'before'),
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'text = \\markup { \\filled-box #'(0 . 0.4) #'(-1.4 . 1.4) #0 }", 'before'),
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'break-visibility = #end-of-line-invisible", 'before'),
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'Y-offset = ##f", 'before'),
-#     indicatortools.LilyPondCommand("once \\override Staff.BarLine #'space-alist = #'((breathing-sign fixed-space 0))", 'before'),
-#     indicatortools.LilyPondCommand("breathe", 'before'),
-#     ]
-# box_stop_commands = [
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'text = \markup { \\filled-box #'(0 . 0.4) #'(-1.4 . 1.4) #0 }", 'after'),
-#     indicatortools.LilyPondCommand("once \\override BreathingSign #'Y-offset = ##f", 'after'),
-#     indicatortools.LilyPondCommand("breathe", 'after'),
-# ]
-
-#override(box_start).breathing_sign.break_align_symbol - 'custos'
-    # \once\override BreathingSign #'break-align-symbol = #'custos
-    # \once \override Staff.TimeSignature.space-alist =
-    #     #'((first-note . (fixed-space . 2.0))
-    #        (right-edge . (extra-space . 0))
-    #        ;; space after time signature ..
-    #        (custos . (extra-space . 0)))
-    # \once\override BreathingSign #'text = \markup { \filled-box #'(0 . 0.4) #'(-1.4 . 1.4) #0 }
-    # \once\override BreathingSign #'break-visibility = #end-of-line-invisible
-    # \once\override BreathingSign #'Y-offset = ##f
+class TokeiOdd(TokeiBubble):
+    def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
+        super().__init__(measures_durations=measures_durations, odd_meters=True)
 
 
-# box_stop = indicatortools.LilyPondCommand('breathe', 'after')
-
-# attach_commands(box2[0], box_start_commands)
-# attach_commands(box2[-1], box_stop_commands)
-
-s1 = Staff()
-s2 = Staff()
-
-s1.extend("R1")
-
-s1.extend(box_music("b4 a4 b8[ a8] r4", "freely, repeat", ((1,1),(1,1),) ))
-s1.extend("b1")
-
-s2.extend(box_music("b8 b8[ a8] "))
-
-s2.extend("b8 r2 | b1")
-
-s = Score()
-s.append(s1)
-
-s.append(s2)
-show(s)
-print(format(s))
+c = CycleLoop(bubble_type=TokeiBubble)
+c.add_cycle(bubble_type=TokeiFree, flags=["start"])
+c.add_cycle(bubble_type=TokeiFree, flags=["next"])
+c.add_cycle(bubble_type=TokeiOdd, flags=["odd1"])
+c.add_cycle(bubble_type=TokeiOdd, flags=["odd2"])
+c.add_cycle(flags=["normal1"])
+c.add_cycle(flags=["normal1"])
+c.add_cycle(bubble_type=TokeiFree, flags=["start"])
+c.add_cycle(flags=["normal2"])
 
 
-#print(format(s))
+c.arrange_music(part_names=["flute2","oboe2"],
+    rhythms=[["r4", box_music("b'1(\\<\\p a'2.)\\!\\f "*6)] ],
+    apply_flags=["start","next"],
+    )
 
-# print(format(s))
-
-
-# class TokeiOdd(TokeiBubble):
-#     def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
-#         super().__init__(measures_durations=measures_durations, odd_meters=True)
-
-
-# c = CycleLoop(bubble_type=TokeiBubble)
-# c.add_cycle(bubble_type=TokeiFree, flags=["start"])
-# c.add_cycle(bubble_type=TokeiFree, flags=["next"])
-# c.add_cycle(bubble_type=TokeiOdd, flags=["odd1"])
-# c.add_cycle(bubble_type=TokeiOdd, flags=["odd2"])
-# c.add_cycle(flags=["normal1"])
-# c.add_cycle(flags=["normal1"])
-# c.add_cycle(bubble_type=TokeiFree, flags=["start"])
-# c.add_cycle(flags=["normal2"])
+c.arrange_music(part_names=["flute2","oboe2"],
+    rhythms=["b''8 "*24 ],
+    apply_flags=["odd1","odd2"],
+    )
 
 
-# c.arrange_music(part_names=["flute2","oboe2"],
-#     rhythms=["b'1(\\<\\p a'2.)\\!\\f "*6 ],
-#     apply_flags=["start","next"],
-#     )
+c.arrange_music(part_names=["clarinet1","clarinet2"],
+    rhythms=["b''8(\\f  b') "*12 ],
+    apply_flags=["odd1","odd2"],
+    )
 
-# c.arrange_music(part_names=["flute2","oboe2"],
-#     rhythms=["b''8 "*24 ],
-#     apply_flags=["odd1","odd2"],
-#     )
-
-
-# c.arrange_music(part_names=["clarinet1","clarinet2"],
-#     rhythms=["b''8(\\f  b') "*12 ],
-#     apply_flags=["odd1","odd2"],
-#     )
-
-# c.arrange_music(part_names=["violinI","violinII"],
-#     rhythms=["a4\\mp  "*12 ],
-#     apply_flags=["normal1"],
-#     )
+c.arrange_music(part_names=["violinI","violinII"],
+    rhythms=["a4\\mp  "*12 ],
+    apply_flags=["normal1"],
+    )
 
 
-# c.apply_transforms()
-# bubble = c.make_bubble()
+c.apply_transforms()
+bubble = c.make_bubble()
 
 
-# bubble.show_pdf()
+bubble.show_pdf()
 
 
 
