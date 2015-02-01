@@ -9,6 +9,5 @@
 			"follow_symlinks": true,
 			"path": "../calliope"
 		}
-	],
-	"virtualenv": "/home/randall/Code/venvs/abjad_2.15"
+	]
 }
