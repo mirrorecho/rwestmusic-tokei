@@ -150,36 +150,78 @@ class Stream():
         return " ".join(self.rhythms[offset:rhythm_end])
 
 # TO DO... should this also inherit from cloud?
-# ALSO... would ne neat to try this with other streams...
+# ALSO... would be neat to try this with other streams...
 class StreamCloud1(Stream):
-    def get_pitches(self):
+    def get_pitches(self, pitch_times=(1,1,1)):
         p_stack = self.pitches()
-        self.start_pitches = [[p] for p in p_stack[1:5]]
-        self.low_start_pitches = [[p_stack[7] - 12], [p_stack[7] - 24]]
+        # this could be more elegant....
+        self.mid_cloud = [[],[],[],[]]
+        self.low_pitches = [[],[]]
 
-        self.next_pitches = [ [p_stack[5]+12],[p_stack[6]+12],[p_stack[5]],[p_stack[6]], ]
-        # probably won't be used much
-        self.low_next_pitches = [[p_stack[7] - 13], [p_stack[7] - 24]]
+        for i,p in enumerate(p_stack[1:5]):
+            self.mid_cloud[i].extend( [p]*pitch_times[0] )
 
-        self.final_pitches = [ [p_stack[10]], [p_stack[8]], [p_stack[7]], ]
-        self.low_final_pitches = [[p_stack[9] - 12], [p_stack[9] - 24]]
+        self.low_pitches[0].extend([p_stack[7] - 12]*pitch_times[0])
+        self.low_pitches[1].extend([p_stack[7] - 24]*pitch_times[0])
 
+        self.mid_cloud[0].extend([p_stack[5]+12]*pitch_times[1])
+        self.mid_cloud[1].extend([p_stack[6]+12]*pitch_times[1])
+        self.mid_cloud[2].extend([p_stack[5]]*pitch_times[1])
+        self.mid_cloud[3].extend([p_stack[6]]*pitch_times[1])
+
+        self.low_pitches[0].extend([p_stack[7] - 12]*pitch_times[1])
+        self.low_pitches[1].extend([p_stack[7] - 24]*pitch_times[1])
+
+        self.mid_cloud[0].extend([p_stack[10]]*pitch_times[2])
+        self.mid_cloud[1].extend([p_stack[8]]*pitch_times[2])
+        self.mid_cloud[2].extend([p_stack[7]]*pitch_times[2])
+        self.mid_cloud[3].extend([p_stack[10]-12]*pitch_times[2])
+
+        self.low_pitches[0].extend([p_stack[9] - 12]*pitch_times[2])
+        self.low_pitches[1].extend([p_stack[9] - 24]*pitch_times[2])
 
 class StreamCloud2(Stream):
-    def get_pitches(self):
+    def get_pitches(self, pitch_times=(1,1,1)):
+        # this could be more elegant....
         p_stack = self.pitches()
-        self.start_pitches = [[p_stack[1]], [p_stack[4]]]
-        self.low_start_pitches = [[p_stack[2]-24], [p_stack[3]-36]]
 
-        self.next_pitches = [[p_stack[6]+12], [p_stack[5]]]
-        self.low_next_pitches = transpose_pitches(self.low_start_pitches, -2)
+        self.mid_cloud = [[],[],[],[]]
+        self.low_pitches = [[],[]]
 
-        self.final_pitches = [ [p_stack[7]+12], [p_stack[10]], [p_stack[8]], ]
-        self.low_final_pitches = [ [p_stack[0]-23], [p_stack[0]-25], ]
+        self.mid_cloud[0].extend([p_stack[1]]*pitch_times[0])
+        self.mid_cloud[1].extend([p_stack[4]]*pitch_times[0])
+        self.mid_cloud[2].extend([p_stack[1]]*pitch_times[0])
+        self.mid_cloud[3].extend([p_stack[4]]*pitch_times[0])
 
+        self.low_pitches[0].extend([p_stack[2] - 24]*pitch_times[0])
+        self.low_pitches[1].extend([p_stack[3] - 36]*pitch_times[0])
+
+        self.mid_cloud[0].extend([p_stack[6]+12]*pitch_times[1])
+        self.mid_cloud[1].extend([p_stack[5]]*pitch_times[1])
+        self.mid_cloud[2].extend([p_stack[6]+12]*pitch_times[1])
+        self.mid_cloud[3].extend([p_stack[5]]*pitch_times[1])
+
+        self.low_pitches[0].extend( [transpose_pitches(self.low_pitches[0][0], -2)]*pitch_times[1] )
+        self.low_pitches[1].extend( [transpose_pitches(self.low_pitches[1][0], -2)]*pitch_times[1] )
+
+        self.mid_cloud[0].extend([p_stack[7]+12]*pitch_times[2])
+        self.mid_cloud[1].extend([p_stack[10]]*pitch_times[2])
+        self.mid_cloud[2].extend([p_stack[8]]*pitch_times[2])
+        self.mid_cloud[3].extend([p_stack[8]]*pitch_times[2])
+
+        self.low_pitches[0].extend([p_stack[0]-23]*pitch_times[2])
+        self.low_pitches[1].extend([p_stack[0]-25]*pitch_times[2])
+
+class StreamHint1(Stream):
+    def __init__(self, ref_pitch="E5"):
+        super().__init__(ref_pitch=ref_pitch)
+        self.relative_pitches[7] = get_pitch_number(self.relative_pitches[7]) + 12
+        self.relative_pitches[11] = get_pitch_number(self.relative_pitches[11]) + 12
+        self.remove((0,1,5,6,9))
+        self.rhythms=["r4 c8(\\p c c2) | c4--\\< c4-- c8( c4.)\\mp R1"]    
 
 # this one descends down the whole way...
-class StreamHint1(Stream):
+class StreamHint2(Stream):
     def __init__(self, ref_pitch="E5"):
         super().__init__(ref_pitch=ref_pitch)
         self.remove((2,3,5,8,10))
@@ -190,12 +232,12 @@ class StreamHint1(Stream):
         # self.durations = "r4 c8( c c4 c4) r4 c2( c4) c2. r4"
 
 # STILL WORKING ON THIS...
-class StreamHint2(StreamHint1):
-    def __init__(self, ref_pitch="E5"):
-        super.__init__(ref_pitch=ref_pitch)
-        self.relative_pitches[4] += 12
-        #self.relative_pitches = [p if i in (0,1,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
-        self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
+# class StreamHint2(StreamHint1):
+#     def __init__(self, ref_pitch="E5"):
+#         super.__init__(ref_pitch=ref_pitch)
+#         self.relative_pitches[4] += 12
+#         #self.relative_pitches = [p if i in (0,1,3,4,6,7,9,10) for i, p in enumerate(self.relative_pitches)]
+#         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
 class ClepsydraMaterial(TokeiBubble):
     def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra"):
@@ -244,23 +286,20 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["pitch"]["slide_ji"] = ["A5", "A5", "G#5", "A5"]
 
-    def add_stream_cloud_pitches(self, stream_cloud_type=StreamCloud1):
+    def add_stream_cloud_pitches(self, pitch_times=(1,1,1), pitch_name="stream_cloud", stream_cloud_type=StreamCloud1):
         cloud = stream_cloud_type(ref_pitch=self.material["pitch"]["ref"][0])
-        cloud.get_pitches()
-        self.material["pitch"]["stream_cloud_start"] = cloud.start_pitches
-        self.material["pitch"]["stream_cloud_low_start"] = cloud.low_start_pitches
-        self.material["pitch"]["stream_cloud_next"] = cloud.next_pitches
-        self.material["pitch"]["stream_cloud_low_next"] = cloud.low_next_pitches
-        self.material["pitch"]["stream_cloud_final"] = cloud.final_pitches
-        self.material["pitch"]["stream_cloud_low_final"] = cloud.low_final_pitches
+        cloud.get_pitches(pitch_times)
+        self.material["pitch"][pitch_name + "_mid"] = cloud.mid_cloud
+        self.material["pitch"][pitch_name + "_low"] = cloud.low_pitches
 
-    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None):
+    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None, transpose=[0]):
         stream = stream_type(ref_pitch=self.material["pitch"]["ref"][0])
 
         self.arrange_music(
                     part_names=[part_name],
                     rhythms=[stream.rhythm(offset=rhythm_offset, rhythm_end=rhythm_end)],
                     pitches=[stream.pitches(offset=pitch_offset)],
+                    transpose=transpose
                     )
 
 

@@ -2,68 +2,14 @@ from abjad import *
 import settings
 
 from clep_m import *
+from clep_c import *
 
-from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 
-
-# cycles and transformations...
-
-#question... multiple simultaneous cicles going on?? (assume no)
-
 # TO DO...
-# - TO DO... get the cloud going properly
 # - add an echo of the main stream melody in the cloud
 
-
-
-music = CycleLoop(bubble_type=ClepsydraMaterial)
-
-music.add_cycle(flags=["start"])
-music.add_cycle()
-music.add_cycle(flags=["start_taiko"])
-music.add_cycle()
-# ------------------------------------
-music.add_cycle(flags=["before_movin"])
-music.add_cycle(flags=["start_movin", "winds_up"])
-music.add_cycle(flags=["next_movin"])
-music.add_cycle(flags=["winds_down"])
-#------------------------------------
-music.add_cycle(flags=["stream_hint1", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"])
-music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
-music.add_cycle(flags=["stream_cloud1", "stream_cloud_strings_staccato","cloud_swell3"])
-music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell4"])
-# -------------------------------------------------------------------
-music.add_cycle(flags=["taiko_melody_1"])
-music.add_cycle(flags=["taiko_melody_2"])
-music.add_cycle(flags=["taiko_melody_1"])
-music.add_cycle(flags=["taiko_melody_2"])
-# ------------------------------------
-music.add_cycle(flags=["free"])
-music.add_cycle(flags=["free"])
-music.add_cycle(flags=["free"])
-music.add_cycle()
-# ------------------------------------
-music.add_cycle(flags=["taiko_melody_1"])
-music.add_cycle(flags=["taiko_melody_2"])
-music.add_cycle(flags=["taiko_melody_1"])
-music.add_cycle(flags=["taiko_melody_2"])
-# -------------------------------------------------------------------
-music.add_cycle(flags=["free"])
-music.add_cycle(flags=["free"])
-music.add_cycle(flags=["free"])
-music.add_cycle()
-# ------------------------------------
-music.add_cycle(flags=["taiko_melody_1"]) # make a variant of the melody?
-music.add_cycle(flags=["taiko_melody_2"])
-music.add_cycle(flags=["taiko_melody_1"])
-music.add_cycle(flags=["taiko_melody_2"])
-# ------------------------------------
-music.add_cycle()
-music.add_cycle(flags=["slowing"])
-music.add_cycle(flags=["slowing"])
-music.add_cycle(flags=["final"])
-
+music = get_cycle_music()
 
 # add reference pitch of E for the first couple of cycles only
 music.add_pitch_material("ref", ["E5"], stop_flag="next_movin")
@@ -134,7 +80,7 @@ music.arrange_music(
             )
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_melody_1"],
+            rhythm_material=["taiko_melody_2"],
             apply_flags=["taiko_melody_2"]
             )
 # --------------------------------------------------------------------------------------------
@@ -173,29 +119,45 @@ music.arrange_music(
             )
 
 # a string cloud that kind of follows the melody
-music.exec_method("add_stream_cloud_pitches", apply_flags=["stream_cloud1"])
-music.exec_method("add_stream_cloud_pitches", stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
+music.exec_method("add_stream_cloud_pitches", pitch_times=(8,8,8), apply_flags=["stream_cloud1"])
+music.exec_method("add_stream_cloud_pitches",  pitch_times=(8,8,8), stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
+music.exec_method("add_stream_cloud_pitches", pitch_name="stream_cloud_single", pitch_times=(1,1,1), apply_flags=["stream_cloud1"])
+music.exec_method("add_stream_cloud_pitches",  pitch_name="stream_cloud_single", pitch_times=(1,1,1), stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
+
 music.arrange_music(
             part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
             apply_flags=["stream_cloud_strings_staccato"],
-            rhythms=["c8-. "*8],
-            pitch_material= "stream_cloud_start",
+            rhythms=["c8-. "*24],
+            pitch_material= "stream_cloud_mid",
             transpose=[-12],
             )
+
 music.arrange_music(
-            part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
-            apply_flags=["stream_cloud_strings_staccato"],
-            rhythms=["c8-. "*8],
-            pitch_material= "stream_cloud_next",
-            transpose=[-12],
+            part_names=["horn1","horn2"],
+            apply_flags=["cloud_swell1"],
+            rhythms=["R1 R1 c1\\p "],
+            pitch_material= "stream_cloud_single_mid",
+            transpose=[-24],
+            pitch_offset=[2],
             )
 music.arrange_music(
-            part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
-            apply_flags=["stream_cloud_strings_staccato"],
-            rhythms=["c8-. "*8],
-            pitch_material= "stream_cloud_final",
-            transpose=[-12,-12,-12,-24],
+            part_names=["horn3","horn4"],
+            apply_flags=["cloud_swell1"],
+            rhythms=["R1 R1 c1\\p "],
+            pitch_material= "stream_cloud_single_mid",
+            transpose=[-24],
+            pitch_offset=[2],
             )
+music.arrange_music(
+            part_names=["horn1","horn2","horn3","horn4"],
+            apply_flags=["cloud_swell2"],
+            rhythms=["r2 c2(\\< c1) c1\\mf "],
+            pitch_material= "stream_cloud_single_mid",
+            transpose=[-24],
+            respell=["flats"]
+            )
+
+
 
 
 # ---------------------------------------------------------------------------------------------
@@ -204,11 +166,17 @@ music.arrange_music(
 music.exec_method("arrange_stream",
             part_name="trumpet1",
             apply_after_flags=["start_movin"],
+            stream_type=StreamHint1,
+            transpose=[-12]
             )
 music.exec_method("arrange_stream",
             part_name="trumpet2",
             apply_flags=["stream_hint1"],
-            stream_type=StreamHint1,
+            stream_type=StreamHint2,
+            )
+music.exec_method("arrange_stream",
+            part_name="flute1",
+            apply_flags=["full_stream_1"],
             )
 
 
@@ -225,6 +193,6 @@ music.arrange_music(
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=(8,9,10,11))
+bubble = music.make_bubble(iters=(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15))
 
 bubble.show_pdf()
