@@ -67,6 +67,7 @@ class TokeiOdd(TokeiBubble):
 
 
 c = CycleLoop(bubble_type=TokeiBubble)
+c.add_cycle(flags=["normal1"])
 c.add_cycle(bubble_type=TokeiFree, flags=["start"])
 c.add_cycle(bubble_type=TokeiFree, flags=["next"])
 c.add_cycle(bubble_type=TokeiOdd, flags=["odd1"])
@@ -78,8 +79,13 @@ c.add_cycle(flags=["normal2"])
 
 
 c.arrange_music(part_names=["flute2","oboe2"],
-    rhythms=[["r4", box_music("b'1(\\<\\p a'2.)\\!\\f "*6)] ],
-    apply_flags=["start","next"],
+    rhythms=[["s8", box_music("b'1(\\<\\p a'2.)\\!\\f "*6)]],
+    apply_flags=["start"],
+    )
+
+c.arrange_music(part_names=["flute2","oboe2"],
+    rhythms=[["s8", box_music("b'1(\\<\\p a'2.)\\!\\f "*6)]],
+    apply_flags=["next"],
     )
 
 c.arrange_music(part_names=["flute2","oboe2"],
@@ -101,8 +107,9 @@ c.arrange_music(part_names=["violinI","violinII"],
 
 c.apply_transforms()
 bubble = c.make_bubble()
+bubble.make_score()
 
-
+#print(format(bubble))
 bubble.show_pdf()
 
 

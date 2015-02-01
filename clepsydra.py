@@ -29,10 +29,10 @@ music.add_cycle(flags=["start_movin", "winds_up"])
 music.add_cycle(flags=["next_movin"])
 music.add_cycle(flags=["winds_down"])
 #------------------------------------
-music.add_cycle(flags=["stream_hint1"])
-music.add_cycle()
-music.add_cycle()
-music.add_cycle()
+music.add_cycle(flags=["stream_hint1", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"])
+music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
+music.add_cycle(flags=["stream_cloud1", "stream_cloud_strings_staccato","cloud_swell3"])
+music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell4"])
 # -------------------------------------------------------------------
 music.add_cycle(flags=["taiko_melody_1"])
 music.add_cycle(flags=["taiko_melody_2"])
@@ -92,36 +92,51 @@ music.add_rhythm_material("push",  "c4\\downbow " * 12)
 music.arrange_music(
         pitch_material=["ji"], 
         rhythm_material = ["push"],
-        part_names = ["violinI"],
+        part_names = ["violinI_div1","violinI_div2",],
+        start_flag = "start",
         stop_flag="start_movin",
         apply_flags=["winds_down"],
         )
 
 music.arrange_music(
-        pitch_material=["ji", "ref"], 
-        rhythm_material=[["measure_note"]*3],
-        part_names = ["harmony_1","harmony_2"]
+        pitch_material=["slide_ji"], 
+        rhythm_material = ["slide"],
+        part_names = ["violinII_div1","violinII_div2",],
+        start_flag = "start",
+        stop_flag="start_movin",
+        respell=("sharps",)
         )
 
 music.arrange_music(
-        part_names=["violinII"],
+        part_names=["violinII_div1","violinII_div2",],
         pitches=[["E5","B4"]], 
         rhythm_material=["dotted"],
         apply_flags=["winds_down"],
         )
 
 # --------------------------------------------------------------------------------------------
-# taiko melody
-# music.arrange_music(
-#             part_names=["taiko1","taiko2"], 
-#             rhythm_material=["taiko_melody_1"],
-#             apply_flags=["taiko_melody_1"]
-#             )
-# music.arrange_music(
-#             part_names=["taiko1","taiko2"], 
-#             rhythm_material=["taiko_melody_1"],
-#             apply_flags=["taiko_melody_2"]
-#             )
+# taiko parts
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_intro_1","taiko_intro_2"],
+            start_flag="start_taiko",
+            stop_flag="start_movin",
+            )
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_do_don_cycle"],
+            apply_flags=["winds_up","winds_down"],
+            )
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_melody_1"],
+            apply_flags=["taiko_melody_1"]
+            )
+music.arrange_music(
+            part_names=["taiko1","taiko2"], 
+            rhythm_material=["taiko_melody_1"],
+            apply_flags=["taiko_melody_2"]
+            )
 # --------------------------------------------------------------------------------------------
 # CLOUD  (harmonic sequence)
 
@@ -157,39 +172,59 @@ music.arrange_music(
             transpose=[-24]
             )
 
-# ----------------------------------------------------------------------------------------------------------------------------------------
+# a string cloud that kind of follows the melody
+music.exec_method("add_stream_cloud_pitches", apply_flags=["stream_cloud1"])
+music.exec_method("add_stream_cloud_pitches", stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
+music.arrange_music(
+            part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
+            apply_flags=["stream_cloud_strings_staccato"],
+            rhythms=["c8-. "*8],
+            pitch_material= "stream_cloud_start",
+            transpose=[-12],
+            )
+music.arrange_music(
+            part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
+            apply_flags=["stream_cloud_strings_staccato"],
+            rhythms=["c8-. "*8],
+            pitch_material= "stream_cloud_next",
+            transpose=[-12],
+            )
+music.arrange_music(
+            part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
+            apply_flags=["stream_cloud_strings_staccato"],
+            rhythms=["c8-. "*8],
+            pitch_material= "stream_cloud_final",
+            transpose=[-12,-12,-12,-24],
+            )
+
+
+# ---------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)
 
 music.exec_method("arrange_stream",
             part_name="trumpet1",
-            apply_after_flags="start_movin",
+            apply_after_flags=["start_movin"],
             )
 music.exec_method("arrange_stream",
             part_name="trumpet2",
-            apply_flags="stream_hint1",
+            apply_flags=["stream_hint1"],
             stream_type=StreamHint1,
             )
 
 
-# ----------------------------------------------------------------------------------------------------------------------------------------
-# rhythmic fabric:
-# are we even using this...? if so, move it to the class?
-# music.add_rhythm_material("pattern_ma", "b8 b8 r4 r2 R1 R1")
+# ---------------------------------------------------------------------------------------------
 
-# music.add_rhythm_material("pattern1", "r8 c8 r8 c8 c4 c4")
-
-# music.arrange_music(
-#         rhythm_material=["pattern_ma", "pattern1"], 
-#         part_names = ["taiko1","taiko2"]
-#         )
-
-# ----------------------------------------------------------------------------------------------------------------------------------------
+music.arrange_music(
+        pitch_material=["ref"], 
+        rhythm_material=[["measure_note"]*3],
+        part_names = ["harmony_1"]
+        )
 
 
 # FINAL BUBBLE STUFF:
 
 music.apply_transforms()
 
-bubble = music.make_bubble()
+bubble = music.make_bubble(iters=(8,9,10,11))
 
 bubble.show_pdf()

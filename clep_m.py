@@ -149,6 +149,35 @@ class Stream():
     def rhythm(self, offset=0, rhythm_end=None):
         return " ".join(self.rhythms[offset:rhythm_end])
 
+# TO DO... should this also inherit from cloud?
+# ALSO... would ne neat to try this with other streams...
+class StreamCloud1(Stream):
+    def get_pitches(self):
+        p_stack = self.pitches()
+        self.start_pitches = [[p] for p in p_stack[1:5]]
+        self.low_start_pitches = [[p_stack[7] - 12], [p_stack[7] - 24]]
+
+        self.next_pitches = [ [p_stack[5]+12],[p_stack[6]+12],[p_stack[5]],[p_stack[6]], ]
+        # probably won't be used much
+        self.low_next_pitches = [[p_stack[7] - 13], [p_stack[7] - 24]]
+
+        self.final_pitches = [ [p_stack[10]], [p_stack[8]], [p_stack[7]], ]
+        self.low_final_pitches = [[p_stack[9] - 12], [p_stack[9] - 24]]
+
+
+class StreamCloud2(Stream):
+    def get_pitches(self):
+        p_stack = self.pitches()
+        self.start_pitches = [[p_stack[1]], [p_stack[4]]]
+        self.low_start_pitches = [[p_stack[2]-24], [p_stack[3]-36]]
+
+        self.next_pitches = [[p_stack[6]+12], [p_stack[5]]]
+        self.low_next_pitches = transpose_pitches(self.low_start_pitches, -2)
+
+        self.final_pitches = [ [p_stack[7]+12], [p_stack[10]], [p_stack[8]], ]
+        self.low_final_pitches = [ [p_stack[0]-23], [p_stack[0]-25], ]
+
+
 # this one descends down the whole way...
 class StreamHint1(Stream):
     def __init__(self, ref_pitch="E5"):
@@ -171,13 +200,8 @@ class StreamHint2(StreamHint1):
 class ClepsydraMaterial(TokeiBubble):
     def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra"):
 
-        super().__init__(name="clepsydra-material", measures_durations=measures_durations, layout=layout, )
-        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
-        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
-        self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
-        self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
-
+        super().__init__(name="clepsydra-material", measures_durations=measures_durations, layout=layout, div_strings=True)
+ 
         del self.parts["odaiko"]
 
         self.empty_measures = Container("R1 " * 3)
@@ -186,10 +210,16 @@ class ClepsydraMaterial(TokeiBubble):
 
         # note, this would typically start on the pickup before a strong beat (before ichi or san)
         self.material["rhythm"]["taiko_cresc"] = "c8\\p\\<_do c_do[ c_ko] c_do[ c\\mf->_don] "
-        self.material["rhythm"]["taiko_melody_1"] = "r4 r8 " + self.material["rhythm"]["taiko_cresc"] + "r8 c_don r c_don  r c_do c4->_don |  c8_da\\p\\< c_da    r c_da    c_da c_da    r c_da"
-        self.material["rhythm"]["taiko_melody_2"] = "c8_da[ c_da]\\mp   c_ka[\\p c_ka]    r8  c_ka   r8  c_ka   |  c4_don\\mf   r8 c_don r8 c_don r8 " + self.material["rhythm"]["taiko_cresc"] + "r2"
+        self.material["rhythm"]["taiko_melody_1"] = "r4 r8 " + self.material["rhythm"]["taiko_cresc"] + """
+            r8 c_don r c_don  r c_do c4->_don |  
+            c8_da\\p\\< c_da    r c_da    c_da c_da    r c_da\\!"""
+        self.material["rhythm"]["taiko_melody_2"] = """c8_da[ c_da]\\mp   c_ka[\\p c_ka]    r8  c_ka   r8  c_ka   |  
+            c4_don\\mf   r8 c_don r8 c_don r8 """ + self.material["rhythm"]["taiko_cresc"] + "r2"
 
         self.material["rhythm"]["taiko_do_don"] = "c8->_do c8->_don r4 r4 c8->_do c8->_do "
+
+        self.material["rhythm"]["taiko_do_don_only"] = "c8->_do c8->_don "
+        self.material["rhythm"]["taiko_do_don_cycle"] = self.material["rhythm"]["taiko_do_don_only"] + "r4 r2 R1 R1 "
 
         self.material["rhythm"]["taiko_intro_1"] = "c8_do[ c_ko] "*8 + self.material["rhythm"]["taiko_do_don"]
         self.material["rhythm"]["taiko_intro_2"] = "c8_do c_don r4^KATA r2 | R1 | c8_do c_don r4^KATA r2 "
@@ -208,8 +238,21 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["dotted"]="c4. c8 ~ c4 c4 ~ c8 c4. "*2
 
-
         self.material["rhythm"]["measure_note"] = "c1 "
+
+        self.material["rhythm"]["slide"] = "c1 c1 c4.( c8 ~ c2) "
+
+        self.material["pitch"]["slide_ji"] = ["A5", "A5", "G#5", "A5"]
+
+    def add_stream_cloud_pitches(self, stream_cloud_type=StreamCloud1):
+        cloud = stream_cloud_type(ref_pitch=self.material["pitch"]["ref"][0])
+        cloud.get_pitches()
+        self.material["pitch"]["stream_cloud_start"] = cloud.start_pitches
+        self.material["pitch"]["stream_cloud_low_start"] = cloud.low_start_pitches
+        self.material["pitch"]["stream_cloud_next"] = cloud.next_pitches
+        self.material["pitch"]["stream_cloud_low_next"] = cloud.low_next_pitches
+        self.material["pitch"]["stream_cloud_final"] = cloud.final_pitches
+        self.material["pitch"]["stream_cloud_low_final"] = cloud.low_final_pitches
 
     def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None):
         stream = stream_type(ref_pitch=self.material["pitch"]["ref"][0])

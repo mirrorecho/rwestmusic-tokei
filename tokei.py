@@ -69,7 +69,7 @@ class TokeiBubble(Bubble):
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         #self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
-        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.2"), clef="bass")
+        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
 
         self.add_perc_part(name='dummy', instrument=instrumenttools.UntunedPercussion(instrument_name=".", short_instrument_name="."))
 
@@ -136,26 +136,18 @@ class TokeiBubble(Bubble):
 
 # TO DO... move this to calliope for general use!
 class TokeiFree(TokeiBubble):
-    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8), show_x_time=False]):
+    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8)], 
+        show_x_time=True):
 
         super().__init__(name=name, measures_durations=measures_durations, odd_meters=False)
 
         self.free = True
+        self.show_x_time = show_x_time
 
         for part_name in self.parts:
             free_measure = Measure(self.measures_durations[0])
             free_measure.automatically_adjust_time_signature = True
             self.parts[part_name].append(free_measure)
-
-            if show_x_time:
-
-
-            kappaTimeX = {
-                    %\override Staff.TimeSignature #'style = #'default %is this needed?
-                    \override Staff.TimeSignature #'stencil = #(lambda (grob)
-                        (parenthesize-stencil (grob-interpret-markup grob \markup { \override #'(baseline-skip . 0.5) \column { "X" "X"} }) 0.1 0.4 0.4 0.1 ))
-                    \time 1000/1
-            }
 
     def align_parts(self):
 
@@ -180,17 +172,39 @@ class TokeiFree(TokeiBubble):
             part.append(m2)
             scoretools.append_spacer_skips_to_underfull_measures_in_expr(part)
 
-        # measure_lengths = [part[0].time_signature.numerator / part[0].time_signature.denominator for part_name, part in self.parts.items()]
+            m2.automatically_adjust_time_signature = True
 
-        # longest_measure = self.parts.items()[measure_lengths.index(max(measure_lengths))][0]
+            # if self.show_x_time:
+            #     time_command = indicatortools.LilyPondCommand("""override 
+            #                 Staff.TimeSignature #'stencil = #(lambda (grob)
+            #                 (parenthesize-stencil (grob-interpret-markup grob 
+            #                 (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+            #                 ) 0.1 0.4 0.4 0.1 ))""", "before")
+            # else:
+            #     time_command = indicatortools.LilyPondCommand("once \remove \"Time_signature_engraver\"", "before")
+            #     # \override Staff.TimeSignature #'stencil = #'default
+            # attach(time_command, m2)
 
-        for part_name, part in self.parts.items():
-            part[0].automatically_adjust_time_signature = True
 
         self.time_signatures = [TimeSignature(longest_measure_duration)]
 
+    def x_time_signatures(self):
+        for part_name, part in self.parts.items():
+            if self.show_x_time:
+                time_command = indicatortools.LilyPondCommand("""once \\override 
+                            Staff.TimeSignature #'stencil = #(lambda (grob)
+                            (parenthesize-stencil (grob-interpret-markup grob 
+                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+                            ) 0.1 0.4 0.4 0.1 ))""", "before")
+            else:
+                time_command = indicatortools.LilyPondCommand("once \\override Staff.TimeSignature.stencil = ##f", "before")
+                # attach the time sig command before the free measure
+                # attach the time sig command before the free measure
+            attach(time_command, part[0])  
+
     def prepare_score(self):
         self.align_parts()
+        self.x_time_signatures()
         
 
 
