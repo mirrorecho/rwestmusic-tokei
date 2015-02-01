@@ -208,6 +208,10 @@ music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
 music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 
+# conduct 8 times
+
+
+
 # ----------------------------------------------------------
 
 music.exec_method("add_orch_ji")
@@ -250,119 +254,3 @@ music.apply_transforms()
 bubble = music.make_bubble(iters=[0,1])
 
 bubble.show_pdf()
-
-#bubble = music.make_bubble()
-
-#bubble.show_pdf()
-
-
-# intro1 = Intro()
-# intro1.add_harmony_ref()
-# intro1.add_harmony_ref_2()
-# intro1.add_taiko(part_names=["taiko1","taiko2"])
-# intro1.add_orch_ji()
-# intro1.add_cresc()
-
-# intro2 = Intro()
-# intro2.add_harmony_ref_2()
-# intro2.add_harmony_ref_2(pitch_material="ancient_B_modulate")
-# intro2.add_taiko(part_names=["taiko1","taiko2"])
-# intro2.add_orch_ji()
-# intro2.add_cresc()
-
-# melody1 = Melody()
-# melody1.add_harmony_ref_2()
-# melody1.add_harmony_night_ref()
-# melody1.add_festival_lines_ref()
-# melody1.add_taiko_melody()
-# melody1.add_taiko_melody(part_names=["taiko2"])
-
-# melody2 = Melody()
-# melody2.add_harmony_night_2_ref()
-# melody2.add_harmony_night_3_ref()
-# melody2.add_taiko_melody(part_names=["taiko1"])
-# melody2.add_taiko_split(part_names=["taiko2"])
-
-# melody3 = Melody()
-# melody3.add_harmony_night_2_ref(transpose=[-1], respell=["flats"])
-# melody3.add_harmony_night_3_ref(transpose=[4], respell=["sharps"])
-# melody3.add_taiko_melody(part_names=["taiko2"])
-# melody3.add_taiko_split(part_names=["taiko1"])
-
-# day_music1 = DayMusicSplit()
-# day_music1.add_taiko(part_names=["taiko1","taiko2"])
-# day_music1.add_taiko(part_names=["taiko2","taiko1"])
-# day_music1.show_pdf()
-
-
-# w = intro1
-# w.append_bubble(intro2)
-# w.append_bubble(melody1)
-# w.append_bubble(melody2)
-# w.append_bubble(melody3)
-# w.append_bubble(day_music1)
-# w.show_pdf(part_names=["harmony_3","taiko2","flute2"])
-
-# print(format(w))
-
-# w.make_score()
-# print(format(w.score))
-
-
-
-
-# day_music1.show_pdf(part_names=["taiko1","taiko2"])
-
-#w.show_pdf(part_names=["harmony_1","harmonony_3","taiko_1","taiko_2","flute_1"])
-
-#material_music.append_material(MelodySplit())
-
-# w = WadoMaterial()
-# w.append_material(intro1)
-# w.append_material(intro2)
-# w.append_material(melody1)
-# w.append_material(melody2)
-# w.append_material(melody3)
-# w.show()
-
-
-# w.arrangement.parts["harmony_1"].append("r4. r4.")
-# w.arrange_music(duration_sets=[w.festival_rhythm_1], pitch_sets=[w.festival_pitches_1], part_names=["harmony_1"], transpose_sets=[-3], respell_sets=["sharps"])
-# w.show()
-
-
-# material_music.prepare_material()
-# material_music.arrangement.make_score(part_names=material_music.part_names)
-# print(format(material_music.arrangement.score))
-
-
-
-
-
-
-# cycle_measures = 
-
-# music = 
-
-
-
-# staff = Staff()
-# staff.extend(music)
-# show(staff)
-#attach(Articulation('staccato'), staff[0][0])
-
-
-
-#print(material_music.part_names)
-# material_music.arrangement.show_pdf()
-
-# c = Container("R1")
-
-# s = Staff()
-
-# s2 = Staff("r4 r4 r4 r4_tsu")
-
-# #s.extend(c)
-# s.extend(s2)
-
-# show(s)

@@ -70,10 +70,7 @@ class WadoMaterial(TokeiBubble):
         rest_measures = "R4. R4. R4. "*8,
         ):
 
-        super().__init__(layout="standard", name="wadokei-material", time_signature=time_signature, measures_durations=measures_durations)
-        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
-        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        super().__init__(layout="orchestra", name="wadokei-material", time_signature=time_signature, measures_durations=measures_durations)
         self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
         self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 

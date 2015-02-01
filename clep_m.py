@@ -97,7 +97,7 @@ class WaterCloudWindsDown(WaterCloudBase):
 
         self.tally_apps = [
             TallyCircleOfFifthsRange(over_range_multiplier=-99), 
-            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            # TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
             TallyMelodicIntervals(
                     interval_ratings=[(0, -80), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], 
                     over_incremental_multiplier=(12,-60),
@@ -115,7 +115,33 @@ class WaterCloudWindsDown(WaterCloudBase):
             increments=[[0,-1,-1]]
             )
 
+class WaterCloudStringsMelody(WaterCloudBase):
+    def prepare_cloud(self):
+        self.duplicate_row(2)
+        self.add_ji_row()
+        self.add_stream()
+        self.add_stream(offset=1)
 
+        self.tally_apps = [
+            TallyCircleOfFifthsRange(over_range_multiplier=-88), 
+            # TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(
+                    interval_ratings=[(0, -80), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,2), (10,-8), (11,-20), (12,1)], 
+                    over_incremental_multiplier=(12,-60),
+                    ),
+            TallyRepeatedJumps(),
+        ]
+    
+    def get_pitch_ranges(self):
+        range_increments=[[2,2,2,2,2,2,2,  -11,0,0,0,0,0,0,0,  11,-2,-2,-2,-2,-2,-2  ]]*6 
+        range_increments.extend([[-2,-2,-2,-2,-2,-2,-2,  11,0,0,0,0,0,0,0,  -11,2,2,2,2,2,2  ]]*2)
+
+        self.pitch_ranges  = get_pitch_ranges(
+            num_lines=8, 
+            times=24,
+            low_pitches=["C4","C4","C4","C4","G3","G3","E3","E3"],
+            increments=range_increments
+            )
 
 class WaterCloudStringsUp(WaterCloudBase):
     pass
@@ -286,13 +312,21 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["pitch"]["slide_ji"] = ["A5", "A5", "G#5", "A5"]
 
+    def arrange_cloud(self, cloud_name, cloud_type=WaterCloudBase, *args, **kwargs):
+        cloud = cloud_type(name=cloud_name, start_pitch=self.material["pitch"]["ref"][0])
+        self.arrange_music(
+                    pitches=cloud.cloud_pitches(),
+                    *args,
+                    **kwargs
+                    )
+
     def add_stream_cloud_pitches(self, pitch_times=(1,1,1), pitch_name="stream_cloud", stream_cloud_type=StreamCloud1):
         cloud = stream_cloud_type(ref_pitch=self.material["pitch"]["ref"][0])
         cloud.get_pitches(pitch_times)
         self.material["pitch"][pitch_name + "_mid"] = cloud.mid_cloud
         self.material["pitch"][pitch_name + "_low"] = cloud.low_pitches
 
-    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None, transpose=[0]):
+    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None, transpose=[0], respell=[None]):
         stream = stream_type(ref_pitch=self.material["pitch"]["ref"][0])
 
         self.arrange_music(

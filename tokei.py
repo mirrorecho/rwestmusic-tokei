@@ -243,6 +243,7 @@ class TokeiCloud():
         self.prepare_cloud()
               
         self.cloud = CloudPitches(project=PROJECT, filename=self.filename, autoload=self.autoload, pitch_ranges=self.pitch_ranges) 
+        # print(self.cloud.pitch_ranges[7])
         self.cloud.auto_move_into_ranges = True
 
         for app in self.tally_apps:

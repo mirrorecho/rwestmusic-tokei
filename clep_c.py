@@ -26,7 +26,7 @@ def get_cycle_music():
     music.add_cycle(flags=["taiko_melody_1"])
     music.add_cycle(flags=["taiko_melody_2"])
     # ------------------------------------
-    music.add_cycle(flags=["free"])
+    music.add_cycle(flags=["free"]) # This one's very long
     music.add_cycle(flags=["free"])
     music.add_cycle(flags=["free"])
     music.add_cycle()
@@ -36,7 +36,7 @@ def get_cycle_music():
     music.add_cycle(flags=["taiko_melody_1"])
     music.add_cycle(flags=["taiko_melody_2"])
     # -------------------------------------------------------------------
-    music.add_cycle(flags=["free"])
+    music.add_cycle(flags=["free"]) # this one's just a ji
     music.add_cycle(flags=["free"])
     music.add_cycle(flags=["free"])
     music.add_cycle()

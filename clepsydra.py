@@ -9,6 +9,8 @@ from calliope.cycles.transform import *
 # TO DO...
 # - add an echo of the main stream melody in the cloud
 
+string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
+
 music = get_cycle_music()
 
 # add reference pitch of E for the first couple of cycles only
@@ -157,12 +159,20 @@ music.arrange_music(
             respell=["flats"]
             )
 
-
+# the real cloud in the strings
+music.exec_method("arrange_cloud",
+            part_names=string_parts[:-2],
+            cloud_type=WaterCloudStringsMelody,
+            cloud_name="clep-cloud-strings-melody-1-B",
+            respell=["sharps"],
+            rhythms=[["c8(\\mp\\< c c) c(  c) c(\\mf c c) " + "c---. "*8 + "c( c c) c(  c) c( c) c-- "]],
+            apply_flags=["full_stream_1"]
+            )
 
 
 # ---------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)
-
+# TO DO... mute this trumpet
 music.exec_method("arrange_stream",
             part_name="trumpet1",
             apply_after_flags=["start_movin"],
@@ -177,6 +187,7 @@ music.exec_method("arrange_stream",
 music.exec_method("arrange_stream",
             part_name="flute1",
             apply_flags=["full_stream_1"],
+            respell=["sharps"]
             )
 
 
@@ -193,6 +204,6 @@ music.arrange_music(
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=(0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15))
+bubble = music.make_bubble(iters=(12,13,14,15))
 
 bubble.show_pdf()
