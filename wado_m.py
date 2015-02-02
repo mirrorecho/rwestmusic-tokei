@@ -66,8 +66,8 @@ from calliope.tools import music_from_durations, transpose_pitches
 # TO DO... something like this could be useful as a class for more generic uses...
 class WadoMaterial(TokeiBubble):
     def __init__(self, 
-        measures_durations=[(9,8)]*8,
-        rest_measures = "R4. R4. R4. "*8,
+        measures_durations=[(9,8)]*4,
+        rest_measures = "R4. R4. R4. "*4,
         ):
 
         super().__init__(layout="orchestra", name="wadokei-material", measures_durations=measures_durations)
@@ -193,11 +193,18 @@ class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
 
-        self.material["rhythm"]["cresc_blow_A"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.material["rhythm"]["cresc_blow_B"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.material["rhythm"]["clarinet_blow_a"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.material["rhythm"]["clarinet_blow_b"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
 
-        self.material["rhythm"]["clarinet_blow_A"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.material["rhythm"]["clarinet_blow_B"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.material["rhythm"]["cresc_blow_a"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.material["rhythm"]["cresc_blow_a2"] = "r4. r4. c4.\\pp\\< ~ | c4. ~ c4.\\mp\\! r4. "
+        
+        self.material["rhythm"]["cresc_blow_b"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.material["rhythm"]["cresc_blow_b2"] = "r4. r4. c4.\\pp\\< ~ | c4. ~ c4. ~ c4.\\mp\\! "
+
+        self.material["rhythm"]["clarinet_line"] = "c4.\\pp\\<( ~ c4. ~ c4. | c4. ~  c4. ~ c4.\\mp) "
+        self.material["rhythm"]["cresc_line"] = "r4. c4.\\pp\\<( ~ c4. | c4.)  c4.( c4.\\mp) "
+        self.material["rhythm"]["cresc_line_low"] = "r4. c4.\\pp\\<( ~ c4. | c4. ~  c4. ~ c4.\\mp) "
 
     def add_taiko_a(self, part_names=["taiko1", "taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[[
@@ -235,10 +242,11 @@ class Intro(WadoMaterial):
 
         # this is the blowing stuff...
     def add_cresc_a(self):
-        clarinet_rhythms_list = ["clarinet_blow_A", "clarinet_blow_B",]
-        blow_rhythms_list = ["cresc_blow_A","cresc_blow_B",]
+        clarinet_rhythms_list = ["clarinet_blow_a", "clarinet_blow_b",]
+        blow_rhythms_list = ["cresc_blow_a","cresc_blow_b",]
+        blow_rhythms_list2 = ["cresc_blow_a2","cresc_blow_b2",]
         self.arrange_music(
-                    rhythm_material=[clarinet_rhythms_list]*2 + [blow_rhythms_list]*4,
+                    rhythm_material=[clarinet_rhythms_list]*2 + [blow_rhythms_list]*2 + [blow_rhythms_list2]*2,
                     pitches=[["D4"],
                             ["B3"],
                             ["E4"],
@@ -252,17 +260,25 @@ class Intro(WadoMaterial):
 
     # to do... maybe this calls/inherits from above?
     def add_cresc_b(self):
-        clarinet_rhythms_list = ["rest", "clarinet_blow_B", "rest"]
-        blow_rhythms_list = ["rest","cresc_blow_B","rest"]
         self.arrange_music(
                     rhythm_material=[
-                        clarinet_rhythms_list,
-                        clarinet_rhythms_list,
-                        blow_rhythms_list,
-                        blow_rhythms_list,
-                        ],
-                    pitches=[["x"]], # placeholder for now...
-                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4"],
+                            ["rest", "clarinet_blow_b", "rest"],
+                            ["rest", "clarinet_line", "rest"],
+                            ["rest", "cresc_line", "rest"],
+                            ["rest", "cresc_line", "rest"],
+                            ["rest", "cresc_line", "rest"],
+                            ["rest", "cresc_line", "rest"],
+                            ["rest", "cresc_line_low", "rest"],
+                            ],
+                    pitches=[["A5"],
+                            ["D4", "E5"],
+                            ["D4","E4","D4","E4"],
+                            ["F3","B3","B3","C#4"],
+                            ["A3","E4","D4","E4"],
+                            ["D3","B3","B3","C#4"],
+                            ["F2", "G2"],
+                            ],
+                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4", "trombone1"],
                     respell=["sharps"]
             )
 
