@@ -4,7 +4,7 @@ import settings
 
 import copy
 
-from tokei import TokeiBubble
+from tokei import TokeiBubble, TokeiFree
 
 from calliope.tools import music_from_durations, transpose_pitches
 
@@ -65,14 +65,12 @@ from calliope.tools import music_from_durations, transpose_pitches
 
 # TO DO... something like this could be useful as a class for more generic uses...
 class WadoMaterial(TokeiBubble):
-    def __init__(self, time_signature=TimeSignature((9,8)), 
+    def __init__(self, 
         measures_durations=[(9,8)]*8,
         rest_measures = "R4. R4. R4. "*8,
         ):
 
-        super().__init__(layout="orchestra", name="wadokei-material", time_signature=time_signature, measures_durations=measures_durations)
-        self.add_part(name='harmony_2', instrument=instrumenttools.Violin(instrument_name="Harmony 2", short_instrument_name="har.2"))
-        self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
+        super().__init__(layout="orchestra", name="wadokei-material", measures_durations=measures_durations)
 
         self.material["rhythm"]["rest"] = "R4. R4. R4."
         self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4."
@@ -188,3 +186,190 @@ class WadoMaterial(TokeiBubble):
                     pitch_material = ["ji_osc"], 
                     part_names = ["flute1", "flute2"]
             )
+
+
+
+class Intro(WadoMaterial):
+    def __init__(self):
+        super().__init__()
+
+        self.material["rhythm"]["cresc_blow_A"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.material["rhythm"]["cresc_blow_B"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+
+        self.material["rhythm"]["clarinet_blow_A"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
+        self.material["rhythm"]["clarinet_blow_B"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+
+    def add_taiko_a(self, part_names=["taiko1", "taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[[
+            "taiko_down_beat",
+            "taiko_rest",
+            "taiko_down_beat",
+            "taiko_rest",
+            ]])
+
+    def add_taiko_b(self, part_names=["taiko1", "taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[[
+            "taiko_lead_in",
+            "taiko_down_beat",
+            "taiko_down_beat",
+            "taiko_rest",
+            ]])
+
+    def add_harmony_ref(self):
+        self.arrange_music(
+                    rhythms = [self.material["rhythm"]["measure_note"] * 4 ],
+                    pitch_material= "ancient_A", 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=["sharps"]
+                    )
+
+    def add_harmony_ref_2(self, pitch_material="ancient_B"):
+        self.arrange_music(
+                    rhythms = ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                                    "c4. c4. c4. | " + (self.material["rhythm"]["measure_note"] * 3),
+                                    ],
+                    pitch_material= pitch_material, 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=["sharps"]
+                    )
+
+        # this is the blowing stuff...
+    def add_cresc_a(self):
+        clarinet_rhythms_list = ["clarinet_blow_A", "clarinet_blow_B",]
+        blow_rhythms_list = ["cresc_blow_A","cresc_blow_B",]
+        self.arrange_music(
+                    rhythm_material=[clarinet_rhythms_list]*2 + [blow_rhythms_list]*4,
+                    pitches=[["D4"],
+                            ["B3"],
+                            ["E4"],
+                            ["B3"],
+                            ["C#4"],
+                            ["A3"],
+                            ],
+                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4"],
+                    respell=["sharps"]
+            )
+
+    # to do... maybe this calls/inherits from above?
+    def add_cresc_b(self):
+        clarinet_rhythms_list = ["rest", "clarinet_blow_B", "rest"]
+        blow_rhythms_list = ["rest","cresc_blow_B","rest"]
+        self.arrange_music(
+                    rhythm_material=[
+                        clarinet_rhythms_list,
+                        clarinet_rhythms_list,
+                        blow_rhythms_list,
+                        blow_rhythms_list,
+                        ],
+                    pitches=[["x"]], # placeholder for now...
+                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4"],
+                    respell=["sharps"]
+            )
+
+
+
+
+
+class Melody(WadoMaterial):
+    def __init__(self):
+        super().__init__()
+
+    def add_harmony_ref_2(self, pitch_material="ancient_B_up2"):
+        self.arrange_music(
+                    rhythms= ["c4. c4. c4. | c2. r4.  | c4. c4. c4. |  c4. c4 c8 c4. ",
+                                    "c4. c4. c4. | " + (self.material["rhythm"]["measure_note"] * 3),
+                                    ],
+                    pitch_material= pitch_material, 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=["sharps"]
+                    )
+    def add_festival_lines_ref(self):
+        self.arrange_music(part_names=["line_1"],rhythms=["R4. R4. R4. | "*4  + "r4. r4. "]),
+        self.arrange_music(
+                rhythm_material=["festival_B"], 
+                pitch_material=["festival_A"], 
+                part_names=["line_1"], 
+                transpose=[-3], 
+                respell=["sharps"]
+                )
+        self.arrange_music(part_names=["line_1"],rhythms=["R4. R4. R4. | "*2 ])
+
+    def add_harmony_night_ref(self, pitch_material="night_A"):
+        self.arrange_music(
+                    rhythms = [(self.material["rhythm"]["measure_note"] * 2) + "c4. c4. c4. | " + self.material["rhythm"]["measure_note"],
+                                    (self.material["rhythm"]["measure_note"] * 4),
+                                    ],
+                    pitch_material= pitch_material, 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=["sharps"]
+                    )
+
+    def add_harmony_night_2_ref(self, pitch_material="night_B", transpose=[0], respell=["sharps"]):
+        self.arrange_music(
+                    rhythms= ["c4. c2. | "*2 + self.material["rhythm"]["measure_note"] + "c4. c4. c4. | ",
+                                    (self.material["rhythm"]["measure_note"] * 3) + "c4. c2. | ",
+                                    ],
+                    pitch_material= pitch_material, 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=respell,
+                    transpose=transpose,
+                    )
+    
+    def add_harmony_night_3_ref(self, pitch_material="night_C", transpose=[0], respell=["sharps"]):
+        self.arrange_music(
+                    rhythms = ["c2. c4. | "*2 + "c4. c2. | " + self.material["rhythm"]["measure_note"],
+                                    (self.material["rhythm"]["measure_note"] * 4),
+                                    ],
+                    pitch_material= pitch_material, 
+                    part_names= ["harmony_1","harmony_2"],
+                    respell=respell,
+                    transpose=transpose,
+                    )
+
+
+    def add_taiko_a(self, part_names=["taiko1"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[[
+            "taiko_lead_in",
+            "taiko_up_groove",
+            "taiko_conduct", # 2 bars
+            ]])
+
+    def add_taiko_b(self, part_names=["taiko1"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[[
+            "taiko_conduct", # 2 bars
+            "taiko_up_ka",
+            "taiko_lead_in",
+            ]])
+
+    def add_taiko_split(self, part_names=["taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[
+            ["taiko_split_don", "taiko_split_ka"]*2,
+        ])
+
+class Conduct(WadoMaterial):
+    def add_taiko(self, part_names=["taiko1","taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*8)
+
+class DayMusicSplit(WadoMaterial):
+    def __init__(self):
+        super().__init__(measures_durations=[(6,8)]*12)
+
+    def add_taiko(self, part_names=["taiko1","taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[
+                [
+                    "taiko_day_swirl",
+                    "taiko_day_middle",
+                    "taiko_day_boom", 
+                ],
+                ["taiko_day_ji"]*3
+            ])
+
+class DayMusicEnd(WadoMaterial):
+    pass
+
+
+class WadoFree(WadoMaterial, TokeiFree):
+    # def __init__(self):
+    #     super(WadoMaterial).__init__()
+    #     super(TokeiFree).__init__()
+    pass

@@ -16,78 +16,78 @@ music = CycleLoop(bubble_type=CaesiumMaterial)
 
 # 0 is ma:
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa)
-# 1-4:
+# A 1-4:
 # maybe these first few cycles should be indefinite repeats...?
 music.add_cycle(flags=["start"])
 music.add_cycle()
 music.add_cycle(flags=["1hit_a"])
 music.add_cycle()
 # ------------------------------------
-# 5-8:
+# B 5-8:
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["3hits_a","melody"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # ------------------------------------
-# 9-12
+# C 9-12
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(flags=["1hit_b", "string_nasty_3", "taiko_3"])
 music.add_cycle(flags=["string_nasty_2", "taiko_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
 # # -------------------------------------------------------------------
-# 13-16
+# D 13-16
 music.add_cycle(flags=["1hit_b", "string_melody_cloud"])
 music.add_cycle(flags=["1hit_b", "string_melody_cloud_up"])
 music.add_cycle(flags=["winds_up4_cloud_down"]) 
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 # ------------------------------------
-# 17-20
+# E 17-20
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
 music.add_cycle(flags=["string_nasty_3", "taiko_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
 music.add_cycle(flags=["string_nasty_2", "taiko_2"])
 # ------------------------------------
-# 21-24
+# F 21-24
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
+music.add_cycle(flags=["taiko_2"])
+music.add_cycle(flags=["taiko_2"])
 music.add_cycle()
-music.add_cycle(flags=["taiko_2"])
-music.add_cycle(flags=["taiko_2"])
 # # -------------------------------------------------------------------
-# 25-28 (key change to f)
+# G 25-28 (key change to f)
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(flags=["taiko_2"])
 music.add_cycle(flags=["taiko_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
 # ------------------------------------
-# 29-32
+# H 29-32
 # add something else to his ma?
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(flags=["taiko_3"])
 music.add_cycle(flags=["taiko_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 # ------------------------------------
-# 33-36
+# I 33-36
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 # add something else to his ma?
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 # # -------------------------------------------------------------------
-# 37-40
+# J 37-40
 # everyone plays, on melody, or in 3,6
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
 # ------------------------------------
-# 41-44
+# K 41-44
 # everyone plays, on melody, or in 2,4
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
 # ------------------------------------
-# 45-48
+# L 45-48
 # a single tone, but not much of one
 music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
 music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
@@ -292,7 +292,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble()
+bubble = music.make_bubble(iters=(13,14,15,16))
 
 bubble.show_pdf()
 
