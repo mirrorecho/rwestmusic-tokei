@@ -176,6 +176,8 @@ class WadoMaterial(TokeiBubble):
             [],
         ]
 
+
+
         # the ji osc...
     def add_orch_ji(self):
         self.arrange_music(
@@ -193,18 +195,46 @@ class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
 
-        self.material["rhythm"]["clarinet_blow_a"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.material["rhythm"]["clarinet_blow_b"] = "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.material["cresc_a_parts"] = ["clarinet1", "clarinet2", "horn1", "horn2", "horn3","horn4"]
+        self.material["cresc_b_parts"] = self.material["cresc_a_parts"].copy() + ["trombone1"]
 
-        self.material["rhythm"]["cresc_blow_a"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "
-        self.material["rhythm"]["cresc_blow_a2"] = "r4. r4. c4.\\pp\\< ~ | c4. ~ c4.\\mp\\! r4. "
+        self.material["rhythm"]["cresc_a"] = [
+                        "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "]*2 + [ #clarinets
+                        "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4.\\mp\\! r4. "]*2 + [ #horns 1,2
+                        "r4. r4. c4.\\pp\\< ~ | c4. ~ c4.\\mp\\! r4. "]*2 # horns 3,4
+        # similar, but this one goes the entire length
+        self.material["rhythm"]["cresc_a2"] = [
+                        "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "]*2 + [ #clarinets
+                        "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "]*2 + [ #horns 1,2
+                        "r4. r4. c4.\\pp\\< ~ | c4. ~ c4. ~ c4.\\mp\\! "]*2 # horns 3,4
+
+        self.material["rhythm"]["cresc_b"]=[
+                        "c4.\\pp\\< ~ c4. ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "] + [ #clarinet 1
+                        "c4.\\pp\\<( ~ c4. ~ c4. | c4. ~  c4. ~ c4.\\mp) "] + [ #clarinet 2
+                        "r4. c4.\\pp\\<( ~ c4. | c4.)  c4.( c4.\\mp) "]*2 + [ #horns 1,2
+                        "r4. c4.\\pp\\<( ~ c4. | c4. ~  c4. ~ c4.\\mp) "]*3 + [# horns 3,4, trombone
+                        ]
+
+        self.material["pitch"]["cresc_a"]=[
+                            ["D4"],
+                            ["B3"],
+                            ["E4"],
+                            ["B3"],
+                            ["C#4"],
+                            ["A3"],
+                            ]
         
-        self.material["rhythm"]["cresc_blow_b"] = "r4. c4.\\pp\\< ~ c4. ~ | c4. ~ c4. ~ c4.\\mp\\! "
-        self.material["rhythm"]["cresc_blow_b2"] = "r4. r4. c4.\\pp\\< ~ | c4. ~ c4. ~ c4.\\mp\\! "
+        self.material["pitch"]["cresc_a2"] = self.material["pitch"]["cresc_a"]
 
-        self.material["rhythm"]["clarinet_line"] = "c4.\\pp\\<( ~ c4. ~ c4. | c4. ~  c4. ~ c4.\\mp) "
-        self.material["rhythm"]["cresc_line"] = "r4. c4.\\pp\\<( ~ c4. | c4.)  c4.( c4.\\mp) "
-        self.material["rhythm"]["cresc_line_low"] = "r4. c4.\\pp\\<( ~ c4. | c4. ~  c4. ~ c4.\\mp) "
+        self.material["pitch"]["cresc_b"] = [
+                            ["A5"],
+                            ["D4", "E5"],
+                            ["D4","E4","D4","E4"],
+                            ["F3","B3","B3","C#4"],
+                            ["A3","E4","D4","E4"],
+                            ["D3","B3","B3","C#4"],
+                            ["F2", "G2"],
+                            ]
 
     def add_taiko_a(self, part_names=["taiko1", "taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[[
@@ -239,56 +269,81 @@ class Intro(WadoMaterial):
                     part_names= ["harmony_1","harmony_2"],
                     respell=["sharps"]
                     )
-
         # this is the blowing stuff...
     def add_cresc_a(self):
-        clarinet_rhythms_list = ["clarinet_blow_a", "clarinet_blow_b",]
-        blow_rhythms_list = ["cresc_blow_a","cresc_blow_b",]
-        blow_rhythms_list2 = ["cresc_blow_a2","cresc_blow_b2",]
-        self.arrange_music(
-                    rhythm_material=[clarinet_rhythms_list]*2 + [blow_rhythms_list]*2 + [blow_rhythms_list2]*2,
-                    pitches=[["D4"],
-                            ["B3"],
-                            ["E4"],
-                            ["B3"],
-                            ["C#4"],
-                            ["A3"],
-                            ],
-                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4"],
-                    respell=["sharps"]
-            )
+        self.arrange_music(part_names=self.material["cresc_a_parts"],
+                    rhythm_material="cresc_a", pitch_material="cresc_a", respell=["sharps"])
+
+        self.arrange_music(part_names=self.material["cresc_a_parts"],
+                    rhythm_material="cresc_a2", pitch_material="cresc_a2", respell=["sharps"])
+
+
 
     # to do... maybe this calls/inherits from above?
     def add_cresc_b(self):
-        self.arrange_music(
-                    rhythm_material=[
-                            ["rest", "clarinet_blow_b", "rest"],
-                            ["rest", "clarinet_line", "rest"],
-                            ["rest", "cresc_line", "rest"],
-                            ["rest", "cresc_line", "rest"],
-                            ["rest", "cresc_line", "rest"],
-                            ["rest", "cresc_line", "rest"],
-                            ["rest", "cresc_line_low", "rest"],
-                            ],
-                    pitches=[["A5"],
-                            ["D4", "E5"],
-                            ["D4","E4","D4","E4"],
-                            ["F3","B3","B3","C#4"],
-                            ["A3","E4","D4","E4"],
-                            ["D3","B3","B3","C#4"],
-                            ["F2", "G2"],
-                            ],
-                    part_names=["clarinet1", "clarinet2", "horn1", "horn2","horn3","horn4", "trombone1"],
-                    respell=["sharps"]
-            )
+        self.arrange_music(part_names=self.material["cresc_b_parts"], rhythm_material=["rest"])
+
+        self.arrange_music(part_names=self.material["cresc_b_parts"],
+                    rhythm_material="cresc_b", pitch_material="cresc_b", respell=["sharps"])
+
+        self.arrange_music(part_names=self.material["cresc_b_parts"], rhythm_material=["rest"])
 
 
-
-
-
-class Melody(WadoMaterial):
+class Intro2(Intro):
     def __init__(self):
         super().__init__()
+
+        self.material["cresc_a_parts"] += ["trombone1", "trombone2"]
+        self.material["cresc_b_parts"] += ["trombone2"]
+
+        cresc_a_rh1 = "c4.\\p\\<( c4. c4. | c4. ~ c4.)\\mp\\! r4. " # clarinet 1 and trombones
+        cresc_a_rh2 = "c4.\\p\\<( ~ c4. c4. | c4. ~ c4.)\\mp\\! r4. " # clarinet 2
+        cresc_a_rh3 = "c4.\\p\\<( c4. ~ c4. | c4. ~ c4.)\\mp\\! r4. " # horns
+
+        self.material["rhythm"]["cresc_a"] = [
+                        cresc_a_rh1, cresc_a_rh2  ] + [ #clarines
+                        cresc_a_rh3 ]*4 + [ #horns
+                        cresc_a_rh2, cresc_a_rh1 ]*2 # trombones
+        
+        self.material["pitch"]["cresc_a"]=[
+                            ["F#5","C#5","D#5"],
+                            ["B4",       "C#5"],
+                            ["E4", "C#4",],
+                            ["D4", "B3"],
+                            ["E4", "C#4",],
+                            ["D4", "B3"],
+                            ["D3",        "A2"],
+                            ["C3", "A2",  "G2"],
+                            ]
+        self.material["pitch"]["cresc_a2"] = [
+                            ["B5"],
+                            ["E5", "D4"],
+                            ["E4","D4","E4","D4"],
+                            ["B3","G3","C#4","A3"],
+                            ["E4","D4","E4","D4"],
+                            ["B3","G3","C#4","A3"],
+                            ["G2", "A2"],
+                            ["G2", "A2"],
+                            ]
+        
+        self.material["pitch"]["cresc_b"] = transpose_pitches(self.material["pitch"]["cresc_b"], 2)
+        
+        # repeat trombone 1 pitches/rhythms for trombone 2:
+        self.material["rhythm"]["cresc_b"] += self.material["rhythm"]["cresc_b"][-1:]
+        self.material["pitch"]["cresc_b"] += self.material["pitch"]["cresc_b"][-1:]
+
+        # similar, but this one goes the entire length
+        self.material["rhythm"]["cresc_a2"] = self.material["rhythm"]["cresc_b"].copy()
+
+
+class MelodyBase(WadoMaterial):
+    def __init__(self):
+        super().__init__()
+        self.material["string_parts"] = ["violinI","violinII","viola","cello","bass"]
+
+    def arrange_strings(self):
+        self.arrange_music(part_names=self.material["string_parts"], pitches=[["x"]], rhythm_material="strings_move")
+
 
     def add_harmony_ref_2(self, pitch_material="ancient_B_up2"):
         self.arrange_music(
@@ -361,6 +416,28 @@ class Melody(WadoMaterial):
         self.arrange_music(part_names=part_names, rhythm_material=[
             ["taiko_split_don", "taiko_split_ka"]*2,
         ])
+
+
+
+class Melody(MelodyBase):
+    def __init__(self):
+        super().__init__()
+        self.material["rhythm"]["strings_move"]=["c4. "*12]
+        self.material["rhythm"]["winds_rh1"]=[""]
+        self.material["rhythm"]["winds_rh2"]=["c4. "*12]
+
+
+class MelodySwing1(Melody):
+    def __init__(self):
+        super().__init__()
+        self.material["rhythm"]["strings_move"]=["c4---. c8-- ~ c4  c8-- ~ c4 c8-- "*4]
+
+class MelodySwing2(MelodySwing1):
+    def __init__(self):
+        super().__init__()
+        self.material["rhythm"]["strings_move"]=["c4-- c8-. "*12]
+
+
 
 class Conduct(WadoMaterial):
     def add_taiko(self, part_names=["taiko1","taiko2"]):

@@ -23,15 +23,15 @@ music.add_cycle(bubble_type=WadoFree, flags=["intro_free_4", "free"])
 
 music.add_cycle(bubble_type=Intro, flags=["intro_1_a", "taiko_a", "intro_a"])
 music.add_cycle(bubble_type=Intro, flags=["intro_1_b", "taiko_b", "intro_b"])
-music.add_cycle(bubble_type=Intro, flags=["intro_2_a", "taiko_a", "intro_a"])
-music.add_cycle(bubble_type=Intro, flags=["intro_2_b", "taiko_b", "intro_b"])
+music.add_cycle(bubble_type=Intro2, flags=["intro_2_a", "taiko_a", "intro_a"])
+music.add_cycle(bubble_type=Intro2, flags=["intro_2_b", "taiko_b", "intro_b"])
 # # melody cycles:
-music.add_cycle(bubble_type=Melody, flags=["melody_1_a", "taiko_a","melody_start"])
-music.add_cycle(bubble_type=Melody, flags=["melody_1_b", "taiko_b"])
-music.add_cycle(bubble_type=Melody, flags=["melody_2_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody_2_b", "taiko_b", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody_3_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody_3_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_1_a", "taiko_a","melody_start"])
+music.add_cycle(bubble_type=MelodySwing1, flags=["melody","melody_1_b", "taiko_b"])
+music.add_cycle(bubble_type=MelodySwing2, flags=["melody","melody_2_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_2_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_3_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_3_b", "taiko_b", "taiko_split"])
 # day music cycles:
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
@@ -39,6 +39,11 @@ music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 
 # conduct 8 times
 
+
+
+# ----------------------------------------------------------
+# JI
+music.exec_method("add_orch_ji", skip_flags=["free"])
 
 
 # ----------------------------------------------------------
@@ -51,17 +56,14 @@ music.arrange_music(
             part_names=["taiko1","taiko2"], 
             apply_flags=["intro_free_3"], rhythms=["c4_do c4_do c4_don-> s2 r1\\fermata s2"],
             )
-
-
-# ----------------------------------------------------------
-
-
-music.exec_method("add_orch_ji", skip_flags=["free"])
-
 music.exec_method("add_cresc_a", apply_flags=["intro_a"])
 music.exec_method("add_cresc_b", apply_flags=["intro_b"])
 
 # ----------------------------------------------------------
+# MELODIES
+music.exec_method("arrange_strings", start_flag="melody_start", stop_flag="day_start")
+
+
 # harmonies/lines reference parts:
 music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
 music.exec_method("add_harmony_ref_2", apply_flags=["intro_1_b"])
@@ -93,6 +95,6 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=(4,5,6,7))
+bubble = music.make_bubble(flags=["melody_start"])
 
 bubble.show_pdf()
