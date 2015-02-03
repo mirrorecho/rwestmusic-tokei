@@ -102,15 +102,8 @@ class KaiMaterial(TokeiBubble):
                 
     #     self.fill_empty_parts_with_rests()
 
-    def prepare_material(self, previous_type=None):
-        # just a hook so that inherited types don't have to override init
-        # maybe this should be passed in through the cycle instead??
-        # if not self.is_previous_instance: # don't want to set the previous_kai for a previous_kai ... would be endless recursion!
-        #     if previous_type is not None:
-        #         self.previous_kai = previous_type(is_previous_instance=True)
-        #     else:
-        #         # if no previous type, then we'll use the current type as the previous one as well
-        #         self.previous_kai = type(self)(is_previous_instance=True)
+    def prepare_material(self):
+        # just a placeholder so that inherited types don't have to override init (calling this from the cycle loop)
         pass
 
     def add_taiko_material(self, rhythm):
@@ -126,77 +119,75 @@ class KaiMelody(KaiMaterial):
     pass 
 
 class KaiJi(KaiMaterial):
-    def prepare_material(self, previous_type=None):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
         self.add_taiko_material(self.material["rhythm"]["taiko_ji"])
-
  
-#----------------
+#-------------------------------------
 
 class Kai1(KaiMelody, KaiFree):
-    def prepare_material(self, previous_type=None):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         # TO DO... add box music here
         self.add_taiko_material("c4_dan c8_da c8_da r2\\fermata " + "s1 "*3)
     
 
 class Kai1Ji(KaiJi, KaiFree):
-    def prepare_material(self, previous_type=Kai1):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         # TO DO... add box music here
         self.add_taiko_material("c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3)
 
 class Kai2(KaiMelody):
-    def prepare_material(self, previous_type=Kai1Ji):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         self.add_taiko_material("r2 r4 r8[ c16 c] | c4 c8 c r2 | "  * 2)
 
 class Kai2Ji(KaiJi):
-    def prepare_material(self, previous_type=Kai2):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         self.add_taiko_material("c4_dan c8_da c_da "*3 + "c4_ka r4 | " *2)
 
 class Kai3(KaiMelody):
-    def prepare_material(self, previous_type=Kai2Ji):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         self.add_taiko_material("R1 " * 8)  
 
 class Kai3Ji(KaiJi):
-    def prepare_material(self, previous_type=Kai3):
-        super().prepare_material(previous_type)  
+    def prepare_material(self):
+        super().prepare_material()
         # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
 
 class Kai4(KaiMelody):
-    def prepare_material(self, previous_type=Kai3Ji):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         self.add_taiko_material("""r4_tsu c4_don r4_tsu c4_don | 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
 
 class Kai4Ji(KaiJi):
-    def prepare_material(self, previous_type=Kai4):
-        super().prepare_material(previous_type)  
+    def prepare_material(self):
+        super().prepare_material()
         # self.add_taiko_material("c8_do-> c_ko c_do-> c_ko-> "*8) # all hits ji?
 
 class Kai5(KaiMelody):
-    def prepare_material(self, previous_type=Kai4Ji):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
         print("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)
 
 class Kai5Ji(KaiJi):
-    def prepare_material(self, previous_type=Kai5):
-        super().prepare_material(previous_type)  
+    def prepare_material(self):
+        super().prepare_material()
 
 class Kai6(KaiMelody):
-    def prepare_material(self, previous_type=Kai5Ji):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
         print((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ")
 
 # use this one or not??
 class Kai6All(Kai6):
-    def prepare_material(self, previous_type=Kai6):
-        super().prepare_material(previous_type)
+    def prepare_material(self):
+        super().prepare_material()
