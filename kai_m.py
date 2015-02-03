@@ -4,14 +4,13 @@ import settings
 
 import copy
 
-from tokei import TokeiBubble
+from tokei import TokeiBubble, TokeiFree
 
-from calliope.tools import music_from_durations, transpose_pitches, get_pitch_number
+from calliope.tools import music_from_durations, transpose_pitches, get_pitch_number, box_music
 
 # any way to avoid this sys path part??
 
 # BEFORE REHEARSAL TODAY:
-# - - - kairos draft taiko parts (by 11:20)
 # - - - odaiko/shime parts throughout... rough draft (by 11:40)
 # - - - rough arrangement... (by 12:20)
 # - - - - - - TEMPOS
@@ -20,7 +19,6 @@ from calliope.tools import music_from_durations, transpose_pitches, get_pitch_nu
 # - - - kata... (by 12:40)
 # - - - taiko parts inputed/adjusted and printable (or fallback time)  (by 1:20)
 # - - - double check & adjust... rethink games (by 1:40)
-# - - - leave to print it! (by 1:40)
 
 #TO DO
 # - fast straight hits on taiko with alternating crescendos...
@@ -40,20 +38,20 @@ from calliope.tools import music_from_durations, transpose_pitches, get_pitch_nu
 
 class KaiMaterial(TokeiBubble):
     def __init__(self, 
-                time_signature=TimeSignature((4,4)), 
                 measures_durations=[(4,4)]*8, 
-                rest_measures="R1 "*8):
+                rest_measures="R1 "*8,
+                is_previous_instance = False,
+                ):
 
-        super().__init__(name="kairos-material", time_signature=time_signature, measures_durations=measures_durations)
-        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
-        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
-        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
+        super().__init__(name="kairos-material", measures_durations=measures_durations)
 
-        self.remove(self.parts["shime"])
-        del self.parts["shime"]
+        # use shime or not???
+        # self.remove(self.parts["shime"])
+        # del self.parts["shime"]
 
         # maybe switch E and D?
+        self.is_previous_instance = is_previous_instance
+
         self.material["pitch"]["long_cycle"]=["C#2","F#2","D2","E2"]
 
         self.material["pitch"]["cycle"]=["C#3","F#3","E3","D3"]
@@ -71,37 +69,17 @@ class KaiMaterial(TokeiBubble):
                     "E4","A4",   "E4","A4",   "F#4","C#5","D5","E4",   "E4","A4"]
 
         self.material["rhythm"]["soft_2bar_swell"] = "r8 c4.\\pp\\< ~  c2\\p\\> ~ | c1\\pp "
-        self.material["rhythm"]["bar_rest"] = "R1 "
 
-        # TO DO... add repeats / free measure around this
-        fast = "c8_don c16_do c_ko "
+        self.material["rhythm"]["taiko_ji"] = "c4_don c8_do c_ko " * 8
+        
+        self.material["rhythm"]["bar_rest"] = "R1 "
 
         self.material["rhythm"]["fill_notes"]="c1 "*8
 
-        self.material["rhythm"]["taiko_1_ji"]="c4_dan c8_da c8_da r2\\fermata " + "s1 "*3
-        self.material["rhythm"]["taiko_0_line"]=self.material["rhythm"]["taiko_1_ji"] # makes looping easier
-        self.material["rhythm"]["taiko_1_line"]="c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3
+        self.material["rhythm"]["taiko_fast"] = "c8_don c16_do c_ko "
 
-        self.material["rhythm"]["taiko_2_ji"] = ("c4_dan c8_da c_da "*3 + "c4_ka r4 | ")*2
-        self.material["rhythm"]["taiko_2_line"]= "r2 r4 r8[ c16 c] | c4 c8 c r2 | "  * 2
+        #self.prepare_material()
 
-        self.material["rhythm"]["taiko_3_ji"] = "c4_don\\pp c8_do c_ko "*7 + "c4_ka r4 | "
-        self.material["rhythm"]["taiko_3_line"]= "R1 | "*4
-
-        self.material["rhythm"]["taiko_4_ji"] = "r4_tsu c8_do c8_ko "*8
-        self.material["rhythm"]["taiko_4_line"]= """r4_tsu c4_don r4_tsu c4_don | 
-                    r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
-                    r4_tsu c8_do[ c8_don] r8[ c8_do] c8_do[ c8_ko] | """
-
-        self.material["rhythm"]["taiko_5_ji"] = "c8_do-> c_ko c_do-> c_ko-> "*8
-        self.material["rhythm"]["taiko_5_line"]= "r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast
-
-        self.material["rhythm"]["taiko_6_ji"] = "c4_don\\f c8_do c8_ko " + "c4_don c8_do c8_ko "*7
-        line_6_post = "c16_do[ c_ko c_do c_ko] c8_don[ c8_don] "+fast+ "c4_don "
-        self.material["rhythm"]["taiko_6_line"] =  line_6_post
-        self.material["rhythm"]["taiko_6_line"] += fast + "c4_don " + fast + "c4_don "
-        self.material["rhythm"]["taiko_6_line"] += "c8_do[ c_ko] c8_do[ c8_don] r8[ c8_do] "+fast
-        self.material["rhythm"]["taiko_6_line"] += line_6_post
 
     def arrange_harmonics(self, fundamentals=None, fundamental_material=None, harmonics=[0], **kwargs):
         # TO DO... this is SO similar to arranging pitches in Bubble... maybe combine into a tools function?
@@ -120,13 +98,105 @@ class KaiMaterial(TokeiBubble):
         self.arrange_music(pitches=pitches,**kwargs)
 
     # TO DO... remove this override (text length on was making stuff look weird here...)
-    def prepare_score(self):
+    # def prepare_score(self):
                 
-        self.fill_empty_parts_with_rests()
+    #     self.fill_empty_parts_with_rests()
 
+    def prepare_material(self, previous_type=None):
+        # just a hook so that inherited types don't have to override init
+        # maybe this should be passed in through the cycle instead??
+        # if not self.is_previous_instance: # don't want to set the previous_kai for a previous_kai ... would be endless recursion!
+        #     if previous_type is not None:
+        #         self.previous_kai = previous_type(is_previous_instance=True)
+        #     else:
+        #         # if no previous type, then we'll use the current type as the previous one as well
+        #         self.previous_kai = type(self)(is_previous_instance=True)
+        pass
 
-class KaiFree(KaiMaterial):
-    def __init__(self, time_signature=TimeSignature((4,4)), measures_durations=[(4,4)]*8):
+    def add_taiko_material(self, rhythm):
+        # note... for this to work, taiko material must always be strings I assume
+        self.material["rhythm"]["taiko"] = rhythm
+        self.material["rhythm"]["taiko1"] = rhythm * 2
+        self.material["rhythm"]["taiko2"] = copy.deepcopy(self.previous_kai.material["rhythm"]["taiko"]) + rhythm
 
-        super().__init__(time_signature=time_signature, measures_durations=measures_durations,)
+class KaiFree(KaiMaterial, TokeiFree):
+    pass
 
+class KaiMelody(KaiMaterial):
+    pass 
+
+class KaiJi(KaiMaterial):
+    def prepare_material(self, previous_type=None):
+        super().prepare_material(previous_type)
+        self.add_taiko_material(self.material["rhythm"]["taiko_ji"])
+
+ 
+#----------------
+
+class Kai1(KaiMelody, KaiFree):
+    def prepare_material(self, previous_type=None):
+        super().prepare_material(previous_type)
+        # TO DO... add box music here
+        self.add_taiko_material("c4_dan c8_da c8_da r2\\fermata " + "s1 "*3)
+    
+
+class Kai1Ji(KaiJi, KaiFree):
+    def prepare_material(self, previous_type=Kai1):
+        super().prepare_material(previous_type)
+        # TO DO... add box music here
+        self.add_taiko_material("c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3)
+
+class Kai2(KaiMelody):
+    def prepare_material(self, previous_type=Kai1Ji):
+        super().prepare_material(previous_type)
+        self.add_taiko_material("r2 r4 r8[ c16 c] | c4 c8 c r2 | "  * 2)
+
+class Kai2Ji(KaiJi):
+    def prepare_material(self, previous_type=Kai2):
+        super().prepare_material(previous_type)
+        self.add_taiko_material("c4_dan c8_da c_da "*3 + "c4_ka r4 | " *2)
+
+class Kai3(KaiMelody):
+    def prepare_material(self, previous_type=Kai2Ji):
+        super().prepare_material(previous_type)
+        self.add_taiko_material("R1 " * 8)  
+
+class Kai3Ji(KaiJi):
+    def prepare_material(self, previous_type=Kai3):
+        super().prepare_material(previous_type)  
+        # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
+
+class Kai4(KaiMelody):
+    def prepare_material(self, previous_type=Kai3Ji):
+        super().prepare_material(previous_type)
+        self.add_taiko_material("""r4_tsu c4_don r4_tsu c4_don | 
+                    r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
+                    r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
+
+class Kai4Ji(KaiJi):
+    def prepare_material(self, previous_type=Kai4):
+        super().prepare_material(previous_type)  
+        # self.add_taiko_material("c8_do-> c_ko c_do-> c_ko-> "*8) # all hits ji?
+
+class Kai5(KaiMelody):
+    def prepare_material(self, previous_type=Kai4Ji):
+        super().prepare_material(previous_type)
+        fast = self.material["rhythm"]["taiko_fast"]
+        self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
+        print("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)
+
+class Kai5Ji(KaiJi):
+    def prepare_material(self, previous_type=Kai5):
+        super().prepare_material(previous_type)  
+
+class Kai6(KaiMelody):
+    def prepare_material(self, previous_type=Kai5Ji):
+        super().prepare_material(previous_type)
+        fast = self.material["rhythm"]["taiko_fast"]
+        self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
+        print((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ")
+
+# use this one or not??
+class Kai6All(Kai6):
+    def prepare_material(self, previous_type=Kai6):
+        super().prepare_material(previous_type)

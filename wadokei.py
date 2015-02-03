@@ -59,6 +59,8 @@ music.arrange_music(
 music.exec_method("add_cresc_a", apply_flags=["intro_a"])
 music.exec_method("add_cresc_b", apply_flags=["intro_b"])
 
+music.attach_dynamics(part_names=["taiko1","taiko2"], dynamics=[["f"]], apply_flags=["intro_free_1"])
+
 # ----------------------------------------------------------
 # MELODIES
 music.exec_method("arrange_strings", start_flag="melody_start", stop_flag="day_start")
@@ -95,6 +97,6 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 
 music.apply_transforms()
 
-bubble = music.make_bubble(flags=["melody_start"])
+bubble = music.make_bubble(iters=[0])
 
-bubble.show_pdf()
+bubble.make_pdf()
