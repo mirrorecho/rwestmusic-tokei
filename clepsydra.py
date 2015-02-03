@@ -204,6 +204,8 @@ music.arrange_music(
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=(8,9,10,11))
+bubble = music.make_bubble(
+    #iters=(8,9,10,11)
+    )
 
-bubble.show_pdf()
+bubble.make_pdf()

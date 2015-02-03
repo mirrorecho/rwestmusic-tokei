@@ -292,9 +292,11 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 music.apply_transforms()
 
-bubble = music.make_bubble(iters=(13,14,15,16))
+bubble = music.make_bubble(
+    # iters=(13,14,15,16)
+    )
 
-bubble.show_pdf()
+bubble.make_pdf()
 
 #music_arrangement.show_pdf(part_names=["taiko1", "flute1", "flute2", "oboe1", "oboe2", "oboe3", "clarinet1", "clarinet2", "bassoon1", "bassoon2"])
 

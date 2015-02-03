@@ -70,13 +70,13 @@ class KaiMaterial(TokeiBubble):
 
         self.material["rhythm"]["soft_2bar_swell"] = "r8 c4.\\pp\\< ~  c2\\p\\> ~ | c1\\pp "
 
-        self.material["rhythm"]["taiko_ji"] = "c4_don c8_do c_ko " * 8
+        self.material["rhythm"]["taiko_ji"] = "c4_don c8_do[ c_ko] " * 8
         
         self.material["rhythm"]["bar_rest"] = "R1 "
 
         self.material["rhythm"]["fill_notes"]="c1 "*8
 
-        self.material["rhythm"]["taiko_fast"] = "c8_don c16_do c_ko "
+        self.material["rhythm"]["taiko_fast"] = "c8_don[ c16_do c_ko] "
 
         #self.prepare_material()
 
@@ -145,7 +145,7 @@ class Kai2(KaiMelody):
 class Kai2Ji(KaiJi):
     def prepare_material(self):
         super().prepare_material()
-        self.add_taiko_material("c4_dan c8_da c_da "*3 + "c4_ka r4 | " *2)
+        self.add_taiko_material(("c4_dan c8_da c_da "*3 + "c4_ka r4 | ") *2)
 
 class Kai3(KaiMelody):
     def prepare_material(self):
@@ -161,7 +161,8 @@ class Kai4(KaiMelody):
     def prepare_material(self):
         super().prepare_material()
         self.add_taiko_material("""r4_tsu c4_don r4_tsu c4_don | 
-                    r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
+                    r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | 
+                    c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
 
 class Kai4Ji(KaiJi):
@@ -174,7 +175,6 @@ class Kai5(KaiMelody):
         super().prepare_material()
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
-        print("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)
 
 class Kai5Ji(KaiJi):
     def prepare_material(self):
@@ -184,8 +184,7 @@ class Kai6(KaiMelody):
     def prepare_material(self):
         super().prepare_material()
         fast = self.material["rhythm"]["taiko_fast"]
-        self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
-        print((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] [r c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ")
+        self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] r[ c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
 
 # use this one or not??
 class Kai6All(Kai6):
