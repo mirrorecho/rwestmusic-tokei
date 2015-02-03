@@ -98,7 +98,7 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 music.apply_transforms()
 
 bubble = music.make_bubble(
-    # iters=(0,)
+    iters=(2,)
     )
 
 bubble.make_pdf()

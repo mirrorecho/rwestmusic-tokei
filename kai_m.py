@@ -78,8 +78,10 @@ class KaiMaterial(TokeiBubble):
 
         self.material["rhythm"]["taiko_fast"] = "c8_don[ c16_do c_ko] "
 
-        #self.prepare_material()
+        #self.kai_material()
 
+    def replace_kairos_A(self, other_pitch):
+        self.material["pitch"]["kairos_b"]=[p if p!= "A4" else other_pitch for p in self.material["pitch"]["kairos_b"]]
 
     def arrange_harmonics(self, fundamentals=None, fundamental_material=None, harmonics=[0], **kwargs):
         # TO DO... this is SO similar to arranging pitches in Bubble... maybe combine into a tools function?
@@ -102,15 +104,37 @@ class KaiMaterial(TokeiBubble):
                 
     #     self.fill_empty_parts_with_rests()
 
-    def prepare_material(self):
-        # just a placeholder so that inherited types don't have to override init (calling this from the cycle loop)
-        pass
 
     def add_taiko_material(self, rhythm):
         # note... for this to work, taiko material must always be strings I assume
         self.material["rhythm"]["taiko"] = rhythm
         self.material["rhythm"]["taiko1"] = rhythm * 2
         self.material["rhythm"]["taiko2"] = copy.deepcopy(self.previous_kai.material["rhythm"]["taiko"]) + rhythm
+
+    # all the kai functions are placeholders that can be overriden in the inherited classes 
+    def kai_material(self):
+        pass
+
+    def kai_holds(self):
+        pass
+
+    def kai_harmonics(self):
+        pass
+
+    def kai_cloud(self):
+        pass
+
+    def kai_kairos(self):
+        if "kairos_a_parts" in self.material:
+            self.arrange_music(
+                part_names=self.material["kairos_a_parts"], 
+                pitch_material=["kairos_a"], 
+                rhythm_material=["kairos_a"],)
+        if "kairos_b_parts" in self.material:
+            self.arrange_music(
+                part_names=self.material["kairos_b_parts"], 
+                pitch_material=["kairos_b"], 
+                rhythm_material=["kairos_b"],)
 
 class KaiFree(KaiMaterial, TokeiFree):
     pass
@@ -119,74 +143,103 @@ class KaiMelody(KaiMaterial):
     pass 
 
 class KaiJi(KaiMaterial):
-    def prepare_material(self):
+    def kai_material(self):
         self.add_taiko_material(self.material["rhythm"]["taiko_ji"])
  
 #-------------------------------------
 
 class Kai1(KaiMelody, KaiFree):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         # TO DO... add box music here
         self.add_taiko_material("c4_dan c8_da c8_da r2\\fermata " + "s1 "*3)
     
 
 class Kai1Ji(KaiJi, KaiFree):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         # TO DO... add box music here
         self.add_taiko_material("c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3)
 
 class Kai2(KaiMelody):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         self.add_taiko_material("r2 r4 r8[ c16 c] | c4 c8 c r2 | "  * 2)
+        self.material["pitch"]["holds"] = [["C#4", "D4", "C#4"]]
+        # TO DO... this should decresc back down!
+        hold_rh = "r4 c2.\\pp\\<   ~  c2\\p r2 "
+        self.material["rhythm"]["holds"] = [hold_rh + "R1 " + hold_rh + hold_rh + "R1 "]
+        # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
+        # (better a solo string)
+        self.material["kairos_a_parts"] = ["violinI"]
+
+    def kai_holds(self):
+        self.arrange_music(part_names=["bassoon1"], pitch_material="holds", rhythm_material="holds")
+
+    def kai_harmonics(self):
+        self.arrange_harmonics( 
+                part_names=["flute1","flute2","oboe1"], 
+                fundamental_material="low",
+                rhythm_material=[["soft_2bar_swell"]*2 + ["bar_rest"]*4],
+                harmonics=[10,6,8],
+                respell=["sharps"])
+        # TO DO... this transpose is in theory not allowed (may not sound as I want?) ...rearrange?
+        self.arrange_harmonics( 
+                part_names=["violinII","oboe2","oboe3"], 
+                fundamentals=[self.material["pitch"]["kairos_a"][2]],
+                rhythm_material=[["bar_rest"]+["soft_2bar_swell"]*2 + ["bar_rest"]*3],
+                harmonics=[9,5,4],
+                transpose=[-12],
+                respell=["sharps"])
 
 class Kai2Ji(KaiJi):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         self.add_taiko_material(("c4_dan c8_da c_da "*3 + "c4_ka r4 | ") *2)
+        # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
+        # (better a solo string)
+        self.material["kairos_b_parts"] = ["violinI"]
 
 class Kai3(KaiMelody):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         self.add_taiko_material("R1 " * 8)  
 
 class Kai3Ji(KaiJi):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
 
 class Kai4(KaiMelody):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         self.add_taiko_material("""r4_tsu c4_don r4_tsu c4_don | 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | 
                     c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
 
 class Kai4Ji(KaiJi):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         # self.add_taiko_material("c8_do-> c_ko c_do-> c_ko-> "*8) # all hits ji?
 
 class Kai5(KaiMelody):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
 
 class Kai5Ji(KaiJi):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
 
 class Kai6(KaiMelody):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] r[ c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
 
 # use this one or not??
 class Kai6All(Kai6):
-    def prepare_material(self):
-        super().prepare_material()
+    def kai_material(self):
+        super().kai_material()
