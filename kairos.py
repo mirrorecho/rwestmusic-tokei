@@ -38,6 +38,8 @@ class AddPreviousKai(TransformBase):
 music.add_transform(AddPreviousKai())
 music.exec_method("kai_material")
 
+music.add_sub_part(part_name="violinI_1", master_part_name="violinI", apply_flags=["1_ji","1_line"])
+
 music.add_pitch_material("low", ["C#2"])
 music.add_pitch_material("low", ["F#2"], start_iter=5)
 music.add_pitch_material("low", ["D2"], start_iter=7)
@@ -59,8 +61,9 @@ music.apply_transforms()
 
 bubble = music.make_bubble(
             #part_names=["line_1","line_2","harmony_2","taiko1","taiko2"], 
-            flags=["2_ji"],
-            #iters=(2,),
+            #flags=["2_ji"],
+            iters=(0,1,2,3),
+            #part_names=("violinI","violinII","viola"),
             )
 
 bubble.make_pdf()
