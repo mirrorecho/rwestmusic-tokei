@@ -1,9 +1,9 @@
-% 2015-02-03 18:52
+% 2015-02-03 23:54
 
 \version "2.18.2"
 \language "english"
 
-#(set-global-staff-size 13)
+#(set-global-staff-size 12)
 
 \header {
 	composer = \markup { Randall West }
@@ -11,6 +11,9 @@
 }
 
 \layout {
+	\context {
+		\override VerticalAxisGroup #'remove-first = ##t
+	}
 	\context {
 		\override VerticalAxisGroup #'remove-first = ##t
 	}
@@ -47,47 +50,6 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			r8
-			f''4. \pp ~ \<
-			f''2 \p ~ \>
-			f''1 \pp
-			r8
-			f''4. \pp ~ \<
-			f''2 \p ~ \>
-			f''1 \pp
-			R1
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "flute2" {
 			\set Staff.instrumentName = \markup { Flute 2 }
@@ -102,47 +64,6 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			r8
-			gs'4. \pp ~ \<
-			gs'2 \p ~ \>
-			gs'1 \pp
-			r8
-			gs'4. \pp ~ \<
-			gs'2 \p ~ \>
-			gs'1 \pp
-			R1
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "oboe1" {
 			\set Staff.instrumentName = \markup { Oboe 1 }
@@ -155,48 +76,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			r8
-			cs''4. \pp ~ \<
-			cs''2 \p ~ \>
-			cs''1 \pp
-			r8
-			cs''4. \pp ~ \<
-			cs''2 \p ~ \>
-			cs''1 \pp
-			R1
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "oboe2" {
@@ -210,48 +99,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			R1
-			r8
-			fs''4. \pp ~ \<
-			fs''2 \p ~ \>
-			fs''1 \pp
-			r8
-			fs''4. \pp ~ \<
-			fs''2 \p ~ \>
-			fs''1 \pp
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "oboe3" {
@@ -265,48 +122,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			R1
-			r8
-			d''4. \pp ~ \<
-			d''2 \p ~ \>
-			d''1 \pp
-			r8
-			d''4. \pp ~ \<
-			d''2 \p ~ \>
-			d''1 \pp
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "clarinet1" {
@@ -322,59 +147,6 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "clarinet2" {
 			\set Staff.instrumentName = \markup { Clarinet 2 in Bb }
@@ -389,61 +161,9 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "bassoon1" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Bassoon 1 }
 			\set Staff.shortInstrumentName = \markup { Bsn.1 }
 			\once \override 
@@ -456,51 +176,9 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			r4
-			cs'2. \pp ~ \<
-			cs'2 \p
-			r2
-			R1
-			r4
-			d'2. \pp ~ \<
-			d'2 \p
-			r2
-			r4
-			cs'2. \pp ~ \<
-			cs'2 \p
-			r2
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "bassoon2" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Bassoon 2 }
 			\set Staff.shortInstrumentName = \markup { Bsn.2 }
 			\once \override 
@@ -512,59 +190,6 @@
 			{
 				\time 32/4
 				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
 			}
 		}
 		\context Staff = "horn1" {
@@ -578,60 +203,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "horn2" {
@@ -645,60 +226,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "horn3" {
@@ -712,60 +249,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "horn4" {
@@ -779,60 +272,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "trumpet1" {
@@ -846,60 +295,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "trumpet2" {
@@ -913,63 +318,20 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "trombone1" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Tenor Trombone 1 }
 			\set Staff.shortInstrumentName = \markup { Tbn.1 }
 			\once \override 
@@ -980,63 +342,20 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "trombone2" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Tenor Trombone 2 }
 			\set Staff.shortInstrumentName = \markup { Tbn.2 }
 			\once \override 
@@ -1047,63 +366,20 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "tuba" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Tuba }
 			\set Staff.shortInstrumentName = \markup { Tba }
 			\once \override 
@@ -1114,60 +390,16 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context RhythmicStaff = "perc1" {
@@ -1183,59 +415,6 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context RhythmicStaff = "perc2" {
 			\set Staff.instrumentName = \markup { Percussion 2 }
@@ -1250,61 +429,9 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "timpani" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Timpani }
 			\set Staff.shortInstrumentName = \markup { Timp }
 			\once \override 
@@ -1316,126 +443,6 @@
 			{
 				\time 32/4
 				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-		}
-		\context RhythmicStaff = "shime" {
-			\set Staff.instrumentName = \markup { Shime }
-			\set Staff.shortInstrumentName = \markup { Sh. }
-			\once \override 
-			                            Staff.TimeSignature #'stencil = #(lambda (grob)
-			                            (parenthesize-stencil (grob-interpret-markup grob 
-			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-			                            ) 0.1 0.4 0.4 0.1 ))
-			\numericTimeSignature
-			{
-				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
 			}
 		}
 		\context RhythmicStaff = "odaiko" {
@@ -1453,59 +460,6 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context RhythmicStaff = "taiko1" {
 			\set Staff.instrumentName = \markup { Taiko 1 }
@@ -1522,25 +476,6 @@
 				\time 32/4
 				{
 					c4 _ \markup { dan }
-					c8 _ \markup { da }
-					c8 _ \markup { da }
-					r2 -\fermata
-					s1
-					s1
-					s1
-					c4 _ \markup { dan }
-					c8 _ \markup { da }
-					c8 _ \markup { da }
-					r2 -\fermata
-					s1
-					s1
-					s1
-				}
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				{
-					c4 _ \markup { dan }
 					c8 [ _ \markup { da }
 					c8 ]
 						^ \markup { repeat slowing down }
@@ -1560,86 +495,6 @@
 					s1
 				}
 			}
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
 		}
 		\context RhythmicStaff = "taiko2" {
 			\set Staff.instrumentName = \markup { Taiko 2 }
@@ -1663,25 +518,6 @@
 					s1
 					s1
 					c4 _ \markup { dan }
-					c8 _ \markup { da }
-					c8 _ \markup { da }
-					r2 -\fermata
-					s1
-					s1
-					s1
-				}
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				{
-					c4 _ \markup { dan }
-					c8 _ \markup { da }
-					c8 _ \markup { da }
-					r2 -\fermata
-					s1
-					s1
-					s1
-					c4 _ \markup { dan }
 					c8 [ _ \markup { da }
 					c8 ]
 						^ \markup { repeat slowing down }
@@ -1692,73 +528,6 @@
 					s1
 				}
 			}
-			c4 _ \markup { dan }
-			c8 [ _ \markup { da }
-			c8 ]
-				^ \markup { repeat slowing down }
-				_ \markup { da }
-			s2
-			s1
-			s1
-			s1
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			r2
-			r4
-			r8 [
-			c16
-			c16 ]
-			c4
-			c8
-			c8
-			r2
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { dan }
-			c8 _ \markup { da }
-			c8 _ \markup { da }
-			c4 _ \markup { ka }
-			r4
 		}
 		\context Staff = "violinI" {
 			\set Staff.instrumentName = \markup { Violin I }
@@ -1784,9 +553,64 @@
 						\time 32/4
 						s1 * 8
 					}
+				}
+				\context Staff = "violinI_2" {
+					\set Staff.instrumentName = \markup { Violin I }
+					\set Staff.shortInstrumentName = \markup { Vln.I }
 					\set Staff.alignAboveContext = #"violinI"
-					\once \override Staff.TimeSignature.stencil = ##f
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
 					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinI_3" {
+					\set Staff.instrumentName = \markup { Violin I }
+					\set Staff.shortInstrumentName = \markup { Vln.I }
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinI_4" {
+					\set Staff.instrumentName = \markup { Violin I }
+					\set Staff.shortInstrumentName = \markup { Vln.I }
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinI_5" {
+					\set Staff.instrumentName = \markup { Violin I }
+					\set Staff.shortInstrumentName = \markup { Vln.I }
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
 						s1 * 8
 					}
 				}
@@ -1795,61 +619,8 @@
 						\time 32/4
 						s1 * 8
 					}
-					{
-						s1 * 8
-					}
-					cs'1
-					cs'8 (
-					d'4. ~
-					d'2 )
-					r4
-					r8
-					cs'8 ~ (
-					cs'4
-					e'4
-					d'2. )
-					cs'4 (
-					e'4.
-					d'8 ~
-					d'4
-					fs'4
-					cs'2. )
-					cs'8 (
-					d'8 ~
-					d'4. )
-					cs'8 (
-					fs'4
-					e'4 )
-					fs'2.
-					cs'8 (
-					d'8 )
 				}
 			>>
-			r2
-			cs'2
-			e'4. (
-			cs'8 ~
-			cs'2 )
-			r4
-			r8
-			e'8 ~ (
-			e'2 ~
-			e'4.
-			fs'8 ~
-			fs'2 ~
-			fs'2. )
-			d'4 (
-			e'2. )
-			e'4 (
-			cs'4. )
-			e'8 ~ (
-			e'8
-			cs'4. )
-			fs'4 (
-			cs''8
-			d''8
-			e'4 )
-			e'4
 		}
 		\context Staff = "violinII" {
 			\set Staff.instrumentName = \markup { Violin II }
@@ -1860,51 +631,115 @@
 			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 			                            ) 0.1 0.4 0.4 0.1 ))
 			\numericTimeSignature
-			{
-				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			R1
-			r8
-			e'''4. \pp ~ \<
-			e'''2 \p ~ \>
-			e'''1 \pp
-			r8
-			e'''4. \pp ~ \<
-			e'''2 \p ~ \>
-			e'''1 \pp
-			R1
-			R1
-			R1
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
+			<<
+				\context Staff = "violinII_1" {
+					\set Staff.instrumentName = \markup { Violin II }
+					\set Staff.shortInstrumentName = \markup { Vln.II }
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						{
+							r2
+							cs'2
+							e'4. (
+							cs'8 ~
+							cs'2 )
+							r4
+							r8
+							e'8 ~ (
+							e'2 ~
+							e'4.
+							fs'8 ~
+							fs'2 ~
+							fs'2. )
+							d'4 (
+							e'2. )
+							e'4 (
+							cs'4. )
+							e'8 ~ (
+							e'8
+							cs'4. )
+							fs'4 (
+							cs''8
+							d''8
+							e'4 )
+							e'4
+						}
+					}
+				}
+				\context Staff = "violinII_2" {
+					\set Staff.instrumentName = \markup { Violin II }
+					\set Staff.shortInstrumentName = \markup { Vln.II }
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinII_3" {
+					\set Staff.instrumentName = \markup { Violin II }
+					\set Staff.shortInstrumentName = \markup { Vln.II }
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinII_4" {
+					\set Staff.instrumentName = \markup { Violin II }
+					\set Staff.shortInstrumentName = \markup { Vln.II }
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "violinII_5" {
+					\set Staff.instrumentName = \markup { Violin II }
+					\set Staff.shortInstrumentName = \markup { Vln.II }
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				{
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+			>>
 		}
 		\context Staff = "viola" {
 			\set Staff.instrumentName = \markup { Viola }
@@ -1915,65 +750,88 @@
 			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 			                            ) 0.1 0.4 0.4 0.1 ))
 			\numericTimeSignature
-			{
-				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
+			<<
+				\context Staff = "viola_1" {
+					\set Staff.instrumentName = \markup { Viola }
+					\set Staff.shortInstrumentName = \markup { Vla }
+					\set Staff.alignAboveContext = #"viola"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						{
+							cs'1
+							cs'8 (
+							d'4. ~
+							d'2 )
+							r4
+							r8
+							cs'8 ~ (
+							cs'4
+							e'4
+							d'2. )
+							cs'4 (
+							e'4.
+							d'8 ~
+							d'4
+							fs'4
+							cs'2. )
+							cs'8 (
+							d'8 ~
+							d'4. )
+							cs'8 (
+							fs'4
+							e'4 )
+							fs'2.
+							cs'8 (
+							d'8 )
+						}
+					}
+				}
+				\context Staff = "viola_2" {
+					\set Staff.instrumentName = \markup { Viola }
+					\set Staff.shortInstrumentName = \markup { Vla }
+					\set Staff.alignAboveContext = #"viola"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "viola_3" {
+					\set Staff.instrumentName = \markup { Viola }
+					\set Staff.shortInstrumentName = \markup { Vla }
+					\set Staff.alignAboveContext = #"viola"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				{
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+			>>
 		}
 		\context Staff = "cello" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Cello }
 			\set Staff.shortInstrumentName = \markup { Vc. }
 			\once \override 
@@ -1982,48 +840,74 @@
 			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 			                            ) 0.1 0.4 0.4 0.1 ))
 			\numericTimeSignature
-			{
-				\time 32/4
-				{
-					cs1 \p ~
-					cs1 ~
-					cs1
-					fs1 ~
-					fs1
-					e1 ~
-					e1
-					d1
+			<<
+				\context Staff = "cello_1" {
+					\set Staff.instrumentName = \markup { Cello }
+					\set Staff.shortInstrumentName = \markup { Vc. }
+					\set Staff.alignAboveContext = #"cello"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
 				}
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				{
-					cs1 \p ~
-					cs1 ~
-					cs1
-					fs1 ~
-					fs1
-					e1 ~
-					e1
-					d1
+				\context Staff = "cello_2" {
+					\set Staff.instrumentName = \markup { Cello }
+					\set Staff.shortInstrumentName = \markup { Vc. }
+					\set Staff.alignAboveContext = #"cello"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
 				}
-			}
-			cs1 \p ~
-			cs1 ~
-			cs1
-			fs1 ~
-			fs1
-			e1 ~
-			e1
-			d1
-			cs1 \p ~
-			cs1 ~
-			cs1
-			fs1 ~
-			fs1
-			e1 ~
-			e1
-			d1
+				\context Staff = "cello_3" {
+					\set Staff.instrumentName = \markup { Cello }
+					\set Staff.shortInstrumentName = \markup { Vc. }
+					\set Staff.alignAboveContext = #"cello"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				\context Staff = "cello_4" {
+					\set Staff.instrumentName = \markup { Cello }
+					\set Staff.shortInstrumentName = \markup { Vc. }
+					\set Staff.alignAboveContext = #"cello"
+					\once \override 
+					                            Staff.TimeSignature #'stencil = #(lambda (grob)
+					                            (parenthesize-stencil (grob-interpret-markup grob 
+					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+					                            ) 0.1 0.4 0.4 0.1 ))
+					\numericTimeSignature
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+				{
+					{
+						\time 32/4
+						s1 * 8
+					}
+				}
+			>>
 		}
 		\context Staff = "bass" {
 			\set Staff.instrumentName = \markup { Bass }
@@ -2037,59 +921,6 @@
 			{
 				\time 32/4
 				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
 			}
 		}
 		\context Staff = "line_1" {
@@ -2131,86 +962,6 @@
 					d'8 )
 				}
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				{
-					cs'1
-					cs'8 (
-					d'4. ~
-					d'2 )
-					r4
-					r8
-					cs'8 ~ (
-					cs'4
-					e'4
-					d'2. )
-					cs'4 (
-					e'4.
-					d'8 ~
-					d'4
-					fs'4
-					cs'2. )
-					cs'8 (
-					d'8 ~
-					d'4. )
-					cs'8 (
-					fs'4
-					e'4 )
-					fs'2.
-					cs'8 (
-					d'8 )
-				}
-			}
-			cs'1
-			cs'8 (
-			d'4. ~
-			d'2 )
-			r4
-			r8
-			cs'8 ~ (
-			cs'4
-			e'4
-			d'2. )
-			cs'4 (
-			e'4.
-			d'8 ~
-			d'4
-			fs'4
-			cs'2. )
-			cs'8 (
-			d'8 ~
-			d'4. )
-			cs'8 (
-			fs'4
-			e'4 )
-			fs'2.
-			cs'8 (
-			d'8 )
-			cs'1
-			cs'8 (
-			d'4. ~
-			d'2 )
-			r4
-			r8
-			cs'8 ~ (
-			cs'4
-			e'4
-			d'2. )
-			cs'4 (
-			e'4.
-			d'8 ~
-			d'4
-			fs'4
-			cs'2. )
-			cs'8 (
-			d'8 ~
-			d'4. )
-			cs'8 (
-			fs'4
-			e'4 )
-			fs'2.
-			cs'8 (
-			d'8 )
 		}
 		\context Staff = "line_2" {
 			\set Staff.instrumentName = \markup { Line 2 }
@@ -2251,86 +1002,20 @@
 					e'4
 				}
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
+		}
+		\context Staff = "line_3" {
+			\set Staff.instrumentName = \markup { Line 3 }
+			\set Staff.shortInstrumentName = \markup { Ln.3 }
+			\once \override 
+			                            Staff.TimeSignature #'stencil = #(lambda (grob)
+			                            (parenthesize-stencil (grob-interpret-markup grob 
+			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+			                            ) 0.1 0.4 0.4 0.1 ))
+			\numericTimeSignature
 			{
-				{
-					r2
-					cs'2
-					e'4. (
-					cs'8 ~
-					cs'2 )
-					r4
-					r8
-					e'8 ~ (
-					e'2 ~
-					e'4.
-					fs'8 ~
-					fs'2 ~
-					fs'2. )
-					d'4 (
-					e'2. )
-					e'4 (
-					cs'4. )
-					e'8 ~ (
-					e'8
-					cs'4. )
-					fs'4 (
-					cs''8
-					d''8
-					e'4 )
-					e'4
-				}
+				\time 32/4
+				s1 * 8
 			}
-			r2
-			cs'2
-			e'4. (
-			cs'8 ~
-			cs'2 )
-			r4
-			r8
-			e'8 ~ (
-			e'2 ~
-			e'4.
-			fs'8 ~
-			fs'2 ~
-			fs'2. )
-			d'4 (
-			e'2. )
-			e'4 (
-			cs'4. )
-			e'8 ~ (
-			e'8
-			cs'4. )
-			fs'4 (
-			cs''8
-			d''8
-			e'4 )
-			e'4
-			r2
-			cs'2
-			e'4. (
-			cs'8 ~
-			cs'2 )
-			r4
-			r8
-			e'8 ~ (
-			e'2 ~
-			e'4.
-			fs'8 ~
-			fs'2 ~
-			fs'2. )
-			d'4 (
-			e'2. )
-			e'4 (
-			cs'4. )
-			e'8 ~ (
-			e'8
-			cs'4. )
-			fs'4 (
-			cs''8
-			d''8
-			e'4 )
-			e'4
 		}
 		\context Staff = "harmony_1" {
 			\set Staff.instrumentName = \markup { Harmony 1 }
@@ -2345,61 +1030,9 @@
 				\time 32/4
 				s1 * 8
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
 		}
 		\context Staff = "harmony_2" {
+			\clef "bass"
 			\set Staff.instrumentName = \markup { Harmony 2 }
 			\set Staff.shortInstrumentName = \markup { Har.2 }
 			\once \override 
@@ -2411,18 +1044,29 @@
 			{
 				\time 32/4
 				{
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
+					cs1 ~
+					cs1 ~
+					cs1
+					fs1 ~
+					fs1
+					e1 ~
+					e1
+					d1
 				}
 			}
-			\once \override Staff.TimeSignature.stencil = ##f
+		}
+		\context Staff = "harmony_3" {
+			\clef "bass"
+			\set Staff.instrumentName = \markup { Harmony 3 }
+			\set Staff.shortInstrumentName = \markup { Har.3 }
+			\once \override 
+			                            Staff.TimeSignature #'stencil = #(lambda (grob)
+			                            (parenthesize-stencil (grob-interpret-markup grob 
+			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+			                            ) 0.1 0.4 0.4 0.1 ))
+			\numericTimeSignature
 			{
+				\time 32/4
 				{
 					cs,1
 					cs,1
@@ -2433,89 +1077,6 @@
 					cs,1
 					cs,1
 				}
-			}
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-			cs,1
-		}
-		\context RhythmicStaff = "dummy" {
-			\set Staff.instrumentName = \markup { . }
-			\set Staff.shortInstrumentName = \markup { . }
-			\once \override 
-			                            Staff.TimeSignature #'stencil = #(lambda (grob)
-			                            (parenthesize-stencil (grob-interpret-markup grob 
-			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-			                            ) 0.1 0.4 0.4 0.1 ))
-			\numericTimeSignature
-			{
-				\time 32/4
-				s1 * 8
-			}
-			\once \override Staff.TimeSignature.stencil = ##f
-			{
-				s1 * 8
-			}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
 			}
 		}
 	>>

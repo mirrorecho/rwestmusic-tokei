@@ -38,7 +38,41 @@ class AddPreviousKai(TransformBase):
 music.add_transform(AddPreviousKai())
 music.exec_method("kai_material")
 
-music.add_sub_part(part_name="violinI_1", master_part_name="violinI", apply_flags=["1_ji","1_line"])
+music.add_sub_part(part_name="violinI_1", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinI_2", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinI_3", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinI_4", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinI_5", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
+
+music.add_sub_part(part_name="violinII_1", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinII_2", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinII_3", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinII_4", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
+music.add_sub_part(part_name="violinII_5", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
+
+music.add_sub_part(part_name="viola_1", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
+music.add_sub_part(part_name="viola_2", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
+music.add_sub_part(part_name="viola_3", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
+
+music.add_sub_part(part_name="cello_1", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
+music.add_sub_part(part_name="cello_2", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
+music.add_sub_part(part_name="cello_3", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
+music.add_sub_part(part_name="cello_4", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
+
+
+music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_line", stop_flag="2_ji")
+music.add_rhythm_material("rest", "R1 "*4, start_flag="2_ji")
+
+music.add_pitch_material("cloud", [
+                    ["C#6","C#6","D6"],
+                    ["C#6","G#6","D6"],
+                    ["C#6","D6","C#6",],
+                    ])
+# TO DO... keep going on this
+music.add_rhythm_material("cloud", [
+                    ["s4", box_music(make_harmonics("c2.\\fermata\\ppp \\times 4/5 {c2( c2.)} "), 
+                        continue_lengths=[(1,1)]*6)],
+                    ])
 
 music.add_pitch_material("low", ["C#2"])
 music.add_pitch_material("low", ["F#2"], start_iter=5)
@@ -50,20 +84,23 @@ music.exec_method("replace_kairos_A", other_pitch="C#4", stop_flag="3_line")
 music.exec_method("kai_harmonics")
 music.exec_method("kai_holds")
 music.exec_method("kai_kairos")
+music.exec_method("kai_rest")
+music.exec_method("kai_cloud")
+music.exec_method("kai_cycles")
+music.exec_method("kai_low")
 
-music.arrange_music(part_names=["line_1","line_2"], pitch_material=["kairos_a","kairos_b"], rhythm_material=["kairos_a","kairos_b"])
-music.arrange_music(part_names=["harmony_2"], rhythm_material=["fill_notes"], pitch_material=["low"])
 music.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=["taiko1","taiko2"])
 
-music.arrange_music(part_names=["cello"], pitch_material=["cycle"],rhythms=["c1\\p ~ c1~ c1   c1~ c1   c1~ c1 c1"])
 
 music.apply_transforms()
 
 bubble = music.make_bubble(
             #part_names=["line_1","line_2","harmony_2","taiko1","taiko2"], 
             #flags=["2_ji"],
-            iters=(0,1,2,3),
+            iters=(0,1,),
             #part_names=("violinI","violinII","viola"),
             )
 
-bubble.make_pdf()
+bubble.make_pdf(
+    hide_empty=False
+    )
