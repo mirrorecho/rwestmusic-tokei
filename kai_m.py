@@ -67,14 +67,14 @@ class KaiMaterial(TokeiBubble):
         self.material["rhythm"]["kairos_a_7"] = "c2. "
         self.material["rhythm"]["kairos_a_8"] = "c8( c8) "
 
-        self.material["pitch"]["kairos_a"]=["C#4",   "C#4","D4",   "C#4","E4","D4",   "C#4","E4","D4","F#4",
-                    "C#4",   "C#4","D4",   "C#4","F#4","E4",   "F#4",   "C#4", "D4"]
+        self.material["pitch"]["kairos_a"]=[["C#4",   "C#4","D4",   "C#4","E4","D4",   "C#4","E4","D4","F#4",
+                            "C#4",   "C#4","D4",   "C#4","F#4","E4",   "F#4",   "C#4", "D4"]]
 
-        self.material["rhythm"]["kairos_b"]="""r2 c2 | c4.( c8 ~ c2) | r4 r8 c8( ~ c2 ~ | c4. c8 ~ c2 ~ | 
-                    c2.) c4( | c2.) c4( | c4.) c8( ~ c8 c4.) | c4( c8 c8 c4) c4"""
+        self.material["rhythm"]["kairos_b"]=["""r2 c2 | c4.( c8 ~ c2) | r4 r8 c8( ~ c2 ~ | c4. c8 ~ c2 ~ | 
+                            c2.) c4( | c2.) c4( | c4.) c8( ~ c8 c4.) | c4( c8 c8 c4) c4"""]
 
-        self.material["pitch"]["kairos_b"]=["A4","E4","A4",   "E4","F#4",   "D4","E4",   
-                    "E4","A4",   "E4","A4",   "F#4","C#5","D5","E4",   "E4","A4"]
+        self.material["pitch"]["kairos_b"]=[["A4","E4","A4",   "E4","F#4",   "D4","E4",   
+                            "E4","A4",   "E4","A4",   "F#4","C#5","D5","E4",   "E4","A4"]]
 
         self.material["rhythm"]["soft_2bar_swell"] = "r8 c4.\\pp\\< ~  c2\\p\\> ~ | c1\\pp "
 
@@ -85,6 +85,9 @@ class KaiMaterial(TokeiBubble):
         self.material["rhythm"]["fill_notes"]="c1 "*8
 
         self.material["rhythm"]["taiko_fast"] = "c8_don[ c16_do c_ko] "
+
+        self.material["rhythm"]["_s4"] = "s4 "
+
 
         self.material["kairos_a_parts"] = []
         self.material["kairos_b_parts"] = []
@@ -134,15 +137,23 @@ class KaiMaterial(TokeiBubble):
     def kai_material(self):
         pass
 
+    def kai_arrange_material(self, material):
+        parts_names_material = material + "_parts" 
+        if parts_names_material  in self.material:
+            self.arrange_music(
+                    part_names=self.material[parts_names_material], 
+                    pitch_material=material, 
+                    rhythm_material=material, 
+                    respell=["sharps"])
+
     def kai_holds(self):
-        pass
+        self.kai_arrange_material("holds")
 
     def kai_harmonics(self):
-        pass
+        self.kai_arrange_material("harmonics")
 
     def kai_cloud(self):
-        if "cloud_parts" in self.material:
-            self.arrange_music(part_names=self.material["cloud_parts"], pitch_material="cloud", rhythm_material="cloud", respell=["sharps"])
+        self.kai_arrange_material("cloud")
 
     def kai_rest(self):
         if "rest" in self.material["rhythm"]:
@@ -157,20 +168,17 @@ class KaiMaterial(TokeiBubble):
             self.arrange_music(part_names=["harmony_3"], rhythm_material=["fill_notes"], pitch_material=["low"])
 
     def kai_kairos(self):
-
+        self.material["rhythm"]["kairos_a"] = [" ".join(
+                                [self.material["rhythm"][k] 
+                                    for k in ["kairos_a_1","kairos_a_2","kairos_a_3","kairos_a_4",
+                                        "kairos_a_5","kairos_a_6","kairos_a_7","kairos_a_8"]
+                                ])]
         if not self.done:
             self.material["kairos_a_parts"].append("line_1")
             self.material["kairos_b_parts"].append("line_2")
 
-        self.arrange_music(
-            part_names=self.material["kairos_a_parts"], 
-            pitch_material=["kairos_a"], 
-            rhythm_material=[["kairos_a_1","kairos_a_2","kairos_a_3","kairos_a_4","kairos_a_5","kairos_a_6","kairos_a_7","kairos_a_8"]],)
-        
-        self.arrange_music(
-            part_names=self.material["kairos_b_parts"], 
-            pitch_material=["kairos_b"], 
-            rhythm_material=["kairos_b"],)
+        self.kai_arrange_material("kairos_a")
+        self.kai_arrange_material("kairos_b")
 
 class KaiFree(KaiMaterial, TokeiFree):
     pass
@@ -195,20 +203,13 @@ class Kai1(KaiMelody, KaiFree):
         self.material["kairos_a_parts"] = ["violinII_1"]
         self.material["rhythm"]["kairos_a_7"]="c1\\fermata "
         self.material["rhythm"]["kairos_a_8"]=""
-        self.material["pitch"]["kairos_a"] = ["C#5","C#5","D5","C#5","D5"]
+        self.material["pitch"]["kairos_a"] = [["C#5","C#5","D5","C#5","D5"]]
         self.material["rest_parts"]=self.material["wind_parts"] + self.material["brass_parts"] + ["viola","cello","bass","perc2","timpani","odaiko"]
         self.material["cloud_parts"]=["violinI_2","violinI_3","violinI_4","violinI_5",
                     "violinII_2","violinII_3","violinII_4","violinII_5",]
+        self.material["holds_parts"] = ["violinI_1"]
         self.done = True
 
-    def kai_holds(self):
-        self.arrange_music(part_names=["violinI_1"], 
-            rhythms=[["s4 ", box_music("s4 c1\\pp\\fermata s2", 
-                instruction="hold until B", 
-                continue_lengths=[(1,1)]*6 ) ]],
-            pitch_material=["low"],
-            transpose=[48],
-            )
 
 #--------------------------------------------------------------------------------------------
 class Kai1Ji(KaiJi, KaiFree):
@@ -218,9 +219,11 @@ class Kai1Ji(KaiJi, KaiFree):
         self.add_taiko_material("c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3)
         self.material["kairos_a_parts"] = ["viola_1"]
         self.material["kairos_b_parts"] = ["violinII_1"]
-        self.material["rest_parts"]=["oboe1","oboe2","oboe3","bassoon1","bassoon2","perc2","timpani","odaiko"] + self.material["brass_parts"]
+        self.material["rest_parts"]=["oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2","perc2","timpani","odaiko"] + self.material["brass_parts"]
         self.material["cloud_parts"]=["flute1","flute2","violinI_2","violinI_3","violinI_4","violinI_5",
-                    "violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola3"]
+                    "violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola_3"]
+        self.material["holds_parts"] = ["violinI_1"]
+        self.done=True
 
 
 #--------------------------------------------------------------------------------------------
@@ -249,7 +252,7 @@ class Kai2(KaiMelody, KaiFree):
         # TO DO... this transpose is in theory not allowed (may not sound as I want?) ...rearrange?
         self.arrange_harmonics( 
                 part_names=["violinII","oboe2","oboe3"], 
-                fundamentals=[self.material["pitch"]["kairos_a"][2]],
+                fundamentals=[self.material["pitch"]["kairos_a"][0][2]],
                 rhythm_material=[["bar_rest"]+["soft_2bar_swell"]*2 + ["bar_rest"]*3],
                 harmonics=[9,5,4],
                 transpose=[-12],

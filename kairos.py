@@ -7,7 +7,7 @@ import copy
 from tokei import TokeiBubble
 from kai_m import *
 
-from calliope.tools import music_from_durations, transpose_pitches
+from calliope.tools import music_from_durations, transpose_pitches, get_music_container
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 
@@ -68,16 +68,26 @@ music.add_pitch_material("cloud", [
                     ["C#6","G#6","D6"],
                     ["C#6","D6","C#6",],
                     ])
-# TO DO... keep going on this
-music.add_rhythm_material("cloud", [
-                    ["s4", box_music(make_harmonics("c2.\\fermata\\ppp \\times 4/5 {c2( c2.)} "), 
-                        continue_lengths=[(1,1)]*6)],
-                    ])
+
+# TO DO... keep going on this (maybe it should go in the base class...)
+music.add_rhythm_material("cloud", 
+                [get_music_container(["s4", box_music(
+                        make_harmonics("c2.\\fermata\\ppp \\times 4/5 {c2( c2.)} "), 
+                        continue_lengths=[(1,1)]*6)
+                ])])
 
 music.add_pitch_material("low", ["C#2"])
 music.add_pitch_material("low", ["F#2"], start_iter=5)
 music.add_pitch_material("low", ["D2"], start_iter=7)
 music.add_pitch_material("low", ["A2"], start_iter=9)
+
+music.add_pitch_material("holds", [["C#6"]])
+           
+music.add_rhythm_material("holds", 
+                    [get_music_container(["s4", box_music("s4 c1\\pp\\fermata s2", 
+                            instruction="hold until B", 
+                            continue_lengths=[(1,1)]*6 ) 
+                    ])])
 
 music.exec_method("replace_kairos_A", other_pitch="C#4", stop_flag="3_line")
 
@@ -102,5 +112,5 @@ bubble = music.make_bubble(
             )
 
 bubble.make_pdf(
-    hide_empty=False
+    hide_empty=True
     )

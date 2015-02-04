@@ -1,4 +1,4 @@
-% 2015-02-03 23:54
+% 2015-02-04 02:01
 
 \version "2.18.2"
 \language "english"
@@ -12,9 +12,11 @@
 
 \layout {
 	\context {
+		\Staff \RemoveEmptyStaves
 		\override VerticalAxisGroup #'remove-first = ##t
 	}
 	\context {
+		\RhythmicStaff \RemoveEmptyStaves
 		\override VerticalAxisGroup #'remove-first = ##t
 	}
 }
@@ -48,7 +50,125 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s4
+					\grace {
+						\hideNotes
+						r32
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+						\startStaff
+						\hideNotes
+						r16
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
+					}
+					cs'''2. -\fermata \ppp
+					\times 4/5 {
+						cs'''2 (
+						\afterGrace
+						d'''2. )
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\stopStaff
+					\override Staff.StaffSymbol #'line-positions = #'()
+					\startStaff
+				}
 			}
 		}
 		\context Staff = "flute2" {
@@ -62,7 +182,125 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s4
+					\grace {
+						\hideNotes
+						r32
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+						\startStaff
+						\hideNotes
+						r16
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
+					}
+					cs'''2. -\fermata \ppp
+					\times 4/5 {
+						gs'''2 (
+						\afterGrace
+						d'''2. )
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\hideNotes
+					r2
+					\unHideNotes
+					\grace {
+						\once \override Rest  #'stencil = #ly:text-interface::print
+						\once \override Rest.staff-position = #-2.2
+						\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+						r16
+					}
+					\hideNotes
+					r2
+					\unHideNotes
+					\stopStaff
+					\override Staff.StaffSymbol #'line-positions = #'()
+					\startStaff
+				}
 			}
 		}
 		\context Staff = "oboe1" {
@@ -76,6 +314,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					s1
 					s1
@@ -110,6 +361,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "oboe3" {
 			\set Staff.instrumentName = \markup { Oboe 3 }
@@ -133,6 +397,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "clarinet1" {
 			\set Staff.instrumentName = \markup { Clarinet 1 in Bb }
@@ -145,7 +422,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "clarinet2" {
@@ -159,7 +458,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "bassoon1" {
@@ -174,7 +495,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "bassoon2" {
@@ -189,7 +532,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "horn1" {
@@ -203,6 +568,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					s1
 					s1
@@ -237,6 +615,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "horn3" {
 			\set Staff.instrumentName = \markup { Horn in F 3 }
@@ -249,6 +640,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					s1
 					s1
@@ -283,6 +687,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "trumpet1" {
 			\set Staff.instrumentName = \markup { Trumpet in C 1 }
@@ -306,6 +723,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "trumpet2" {
 			\set Staff.instrumentName = \markup { Trumpet in C 2 }
@@ -318,6 +748,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					s1
 					s1
@@ -353,6 +796,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context Staff = "trombone2" {
 			\clef "bass"
@@ -366,6 +822,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					s1
 					s1
@@ -401,6 +870,19 @@
 					s1
 				}
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
 		}
 		\context RhythmicStaff = "perc1" {
 			\set Staff.instrumentName = \markup { Percussion 1 }
@@ -415,6 +897,10 @@
 				\time 32/4
 				s1 * 8
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
+			}
 		}
 		\context RhythmicStaff = "perc2" {
 			\set Staff.instrumentName = \markup { Percussion 2 }
@@ -427,7 +913,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context Staff = "timpani" {
@@ -442,7 +950,29 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context RhythmicStaff = "odaiko" {
@@ -458,7 +988,29 @@
 			\dynamicUp
 			{
 				\time 32/4
-				s1 * 8
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
 			}
 		}
 		\context RhythmicStaff = "taiko1" {
@@ -474,6 +1026,25 @@
 			\dynamicUp
 			{
 				\time 32/4
+				{
+					c4 _ \markup { dan }
+					c8 _ \markup { da }
+					c8 _ \markup { da }
+					r2 -\fermata
+					s1
+					s1
+					s1
+					c4 _ \markup { dan }
+					c8 _ \markup { da }
+					c8 _ \markup { da }
+					r2 -\fermata
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				{
 					c4 _ \markup { dan }
 					c8 [ _ \markup { da }
@@ -518,6 +1089,25 @@
 					s1
 					s1
 					c4 _ \markup { dan }
+					c8 _ \markup { da }
+					c8 _ \markup { da }
+					r2 -\fermata
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				{
+					c4 _ \markup { dan }
+					c8 _ \markup { da }
+					c8 _ \markup { da }
+					r2 -\fermata
+					s1
+					s1
+					s1
+					c4 _ \markup { dan }
 					c8 [ _ \markup { da }
 					c8 ]
 						^ \markup { repeat slowing down }
@@ -551,7 +1141,218 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							s4
+							cs'''1 -\fermata \pp
+							\afterGrace
+							s2
+							{
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							s4
+							cs'''1 -\fermata \pp
+							\afterGrace
+							s2
+							{
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinI_2" {
@@ -566,7 +1367,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinI_3" {
@@ -581,7 +1597,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinI_4" {
@@ -596,7 +1827,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinI_5" {
@@ -611,12 +2057,230 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinI"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				{
 					{
 						\time 32/4
+						s1 * 8
+					}
+					{
 						s1 * 8
 					}
 				}
@@ -645,11 +2309,40 @@
 					{
 						\time 32/4
 						{
+							cs''1
+							cs''8 (
+							d''4. ~
+							d''2 )
+							r4
+							r8
+							cs''8 ~ (
+							cs''4
+							d''4
+							cs''2. )
+							cs''4 (
+							d''4.
+							cs''8 ~
+							cs''4
+							d''4
+							cs''2. )
+							cs''8 (
+							d''8 ~
+							d''4. )
+							cs''8 (
+							d''4
+							cs''4 )
+							cs''1 -\fermata
+						}
+					}
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
 							r2
-							cs'2
+							a'2
 							e'4. (
-							cs'8 ~
-							cs'2 )
+							a'8 ~
+							a'2 )
 							r4
 							r8
 							e'8 ~ (
@@ -661,10 +2354,10 @@
 							d'4 (
 							e'2. )
 							e'4 (
-							cs'4. )
+							a'4. )
 							e'8 ~ (
 							e'8
-							cs'4. )
+							a'4. )
 							fs'4 (
 							cs''8
 							d''8
@@ -685,7 +2378,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinII_3" {
@@ -700,7 +2608,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinII_4" {
@@ -715,7 +2838,222 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "violinII_5" {
@@ -730,12 +3068,230 @@
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+					}
+					\set Staff.alignAboveContext = #"violinII"
+					\once \override Staff.TimeSignature.stencil = ##f
+					{
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								cs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				{
 					{
 						\time 32/4
+						s1 * 8
+					}
+					{
 						s1 * 8
 					}
 				}
@@ -750,16 +3306,26 @@
 			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 			                            ) 0.1 0.4 0.4 0.1 ))
 			\numericTimeSignature
+			{
+				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
 			<<
 				\context Staff = "viola_1" {
 					\set Staff.instrumentName = \markup { Viola }
 					\set Staff.shortInstrumentName = \markup { Vla }
 					\set Staff.alignAboveContext = #"viola"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
+					\once \override Staff.TimeSignature.stencil = ##f
 					\numericTimeSignature
 					{
 						\time 32/4
@@ -796,35 +3362,236 @@
 					\set Staff.instrumentName = \markup { Viola }
 					\set Staff.shortInstrumentName = \markup { Vla }
 					\set Staff.alignAboveContext = #"viola"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
+					\once \override Staff.TimeSignature.stencil = ##f
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								gs'''2 (
+								\afterGrace
+								d'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				\context Staff = "viola_3" {
 					\set Staff.instrumentName = \markup { Viola }
 					\set Staff.shortInstrumentName = \markup { Vla }
 					\set Staff.alignAboveContext = #"viola"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
+					\once \override Staff.TimeSignature.stencil = ##f
 					\numericTimeSignature
 					{
 						\time 32/4
-						s1 * 8
+						{
+							s4
+							\grace {
+								\hideNotes
+								r32
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+								\startStaff
+								\hideNotes
+								r16
+								\unHideNotes
+								\stopStaff
+								\override Staff.StaffSymbol #'line-positions = #'()
+								\startStaff
+							}
+							cs'''2. -\fermata \ppp
+							\times 4/5 {
+								d'''2 (
+								\afterGrace
+								cs'''2. )
+								{
+									\hideNotes
+									r32
+									\unHideNotes
+									\stopStaff
+									\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+									\startStaff
+								}
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\hideNotes
+							r2
+							\unHideNotes
+							\grace {
+								\once \override Rest  #'stencil = #ly:text-interface::print
+								\once \override Rest.staff-position = #-2.2
+								\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+								r16
+							}
+							\hideNotes
+							r2
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
 					}
 				}
 				{
 					{
-						\time 32/4
 						s1 * 8
 					}
 				}
@@ -840,74 +3607,23 @@
 			                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 			                            ) 0.1 0.4 0.4 0.1 ))
 			\numericTimeSignature
-			<<
-				\context Staff = "cello_1" {
-					\set Staff.instrumentName = \markup { Cello }
-					\set Staff.shortInstrumentName = \markup { Vc. }
-					\set Staff.alignAboveContext = #"cello"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
-					\numericTimeSignature
-					{
-						\time 32/4
-						s1 * 8
-					}
-				}
-				\context Staff = "cello_2" {
-					\set Staff.instrumentName = \markup { Cello }
-					\set Staff.shortInstrumentName = \markup { Vc. }
-					\set Staff.alignAboveContext = #"cello"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
-					\numericTimeSignature
-					{
-						\time 32/4
-						s1 * 8
-					}
-				}
-				\context Staff = "cello_3" {
-					\set Staff.instrumentName = \markup { Cello }
-					\set Staff.shortInstrumentName = \markup { Vc. }
-					\set Staff.alignAboveContext = #"cello"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
-					\numericTimeSignature
-					{
-						\time 32/4
-						s1 * 8
-					}
-				}
-				\context Staff = "cello_4" {
-					\set Staff.instrumentName = \markup { Cello }
-					\set Staff.shortInstrumentName = \markup { Vc. }
-					\set Staff.alignAboveContext = #"cello"
-					\once \override 
-					                            Staff.TimeSignature #'stencil = #(lambda (grob)
-					                            (parenthesize-stencil (grob-interpret-markup grob 
-					                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-					                            ) 0.1 0.4 0.4 0.1 ))
-					\numericTimeSignature
-					{
-						\time 32/4
-						s1 * 8
-					}
-				}
+			{
+				\time 32/4
 				{
-					{
-						\time 32/4
-						s1 * 8
-					}
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
 				}
-			>>
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
+			}
 		}
 		\context Staff = "bass" {
 			\set Staff.instrumentName = \markup { Bass }
@@ -920,6 +3636,19 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				{
+					s1
+					s1
+					s1
+					r1 -\fermata
+					s1
+					s1
+					s1
+					s1
+				}
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				s1 * 8
 			}
 		}
@@ -934,33 +3663,11 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				{
-					cs'1
-					cs'8 (
-					d'4. ~
-					d'2 )
-					r4
-					r8
-					cs'8 ~ (
-					cs'4
-					e'4
-					d'2. )
-					cs'4 (
-					e'4.
-					d'8 ~
-					d'4
-					fs'4
-					cs'2. )
-					cs'8 (
-					d'8 ~
-					d'4. )
-					cs'8 (
-					fs'4
-					e'4 )
-					fs'2.
-					cs'8 (
-					d'8 )
-				}
+				s1 * 8
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
 			}
 		}
 		\context Staff = "line_2" {
@@ -974,33 +3681,11 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				{
-					r2
-					cs'2
-					e'4. (
-					cs'8 ~
-					cs'2 )
-					r4
-					r8
-					e'8 ~ (
-					e'2 ~
-					e'4.
-					fs'8 ~
-					fs'2 ~
-					fs'2. )
-					d'4 (
-					e'2. )
-					e'4 (
-					cs'4. )
-					e'8 ~ (
-					e'8
-					cs'4. )
-					fs'4 (
-					cs''8
-					d''8
-					e'4 )
-					e'4
-				}
+				s1 * 8
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
 			}
 		}
 		\context Staff = "line_3" {
@@ -1014,6 +3699,10 @@
 			\numericTimeSignature
 			{
 				\time 32/4
+				s1 * 8
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				s1 * 8
 			}
 		}
@@ -1030,6 +3719,10 @@
 				\time 32/4
 				s1 * 8
 			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
+			}
 		}
 		\context Staff = "harmony_2" {
 			\clef "bass"
@@ -1043,16 +3736,11 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				{
-					cs1 ~
-					cs1 ~
-					cs1
-					fs1 ~
-					fs1
-					e1 ~
-					e1
-					d1
-				}
+				s1 * 8
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
 			}
 		}
 		\context Staff = "harmony_3" {
@@ -1067,16 +3755,11 @@
 			\numericTimeSignature
 			{
 				\time 32/4
-				{
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-					cs,1
-				}
+				s1 * 8
+			}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 8
 			}
 		}
 	>>
