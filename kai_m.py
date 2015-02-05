@@ -6,7 +6,7 @@ import copy
 
 from tokei import TokeiBubble, TokeiFree
 
-from calliope.tools import music_from_durations, transpose_pitches, get_pitch_number, box_music, make_harmonics
+from calliope.tools import music_from_durations, transpose_pitches, get_pitch_number, box_music, make_harmonics, replace_pitch
 
 # any way to avoid this sys path part??
 
@@ -102,8 +102,10 @@ class KaiMaterial(TokeiBubble):
 
         #self.kai_material()
 
-    def replace_kairos_A(self, other_pitch):
-        self.material["pitch"]["kairos_b"]=[p if p!= "A4" else other_pitch for p in self.material["pitch"]["kairos_b"]]
+
+    def replace_pitch(self, material, pitch, other_pitch):
+        self.material["pitch"][material] = replace_pitch(self.material["pitch"][material], pitch=pitch, other_pitch=other_pitch)
+
 
     def arrange_harmonics(self, fundamentals=None, fundamental_material=None, harmonics=[0], **kwargs):
         # TO DO... this is SO similar to arranging pitches in Bubble... maybe combine into a tools function?

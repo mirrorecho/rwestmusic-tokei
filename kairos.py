@@ -52,6 +52,7 @@ add_strings("violinI", "Violin I", "vln.I", 5, start_flag="1_line", stop_flag="3
 add_strings("violinII", "Violin II", "vln.II", 5, start_flag="1_line", stop_flag="3_ji",)
 add_strings("viola", "Viola", "vla", 4, start_flag="1_ji", stop_flag="3_ji")
 add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji")
+# music.add_sub_part(part_name="crotales", instrument_type=instrumenttools.Flute, instrument_name="Crotales", short_instrument_name="cro.", master_part_name="perc1", start_flag="1_line", stop_flag="3_ji")
 
 
 music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_line", stop_flag="2_ji")
@@ -83,7 +84,9 @@ music.add_rhythm_material("holds",
                             continue_lengths=[(1,1)]*6 ) 
                     ])])
 
-music.exec_method("replace_kairos_A", other_pitch="C#4", stop_flag="3_line")
+music.exec_method("replace_pitch", material="kairos_a", pitch="E4", other_pitch="C#4", apply_flags=["1_ji"])
+music.exec_method("replace_pitch", material="kairos_b", pitch="A4", other_pitch="C#5", stop_flag="3_line")
+music.exec_method("replace_pitch", material="kairos_b", pitch="E4", other_pitch="F#3", stop_flag="3_line")
 
 music.exec_method("kai_harmonics")
 music.exec_method("kai_holds")
@@ -94,6 +97,14 @@ music.exec_method("kai_cycles")
 music.exec_method("kai_low")
 
 music.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=["taiko1","taiko2"])
+music.arrange_music(part_names=["crotales"], rhythms=[get_music_container(
+                ["s4", box_music("s4 c2\\pp\\fermata c2\\fermata", 
+                            instruction="bowed, repeat", 
+                            continue_lengths=[(1,1)]*6 ) 
+                    ])],
+                pitches=[["C#4","G#5"]],
+                respell=["sharps"],
+                apply_flags=["1_line"])
 
 
 music.apply_transforms()
@@ -101,7 +112,7 @@ music.apply_transforms()
 bubble = music.make_bubble(
             #part_names=["line_1","line_2","harmony_2","taiko1","taiko2"], 
             #flags=["2_ji"],
-            iters=(0,1,2,3,4,5,6,7,8,9),
+            iters=(1,),
             #part_names=("violinI","violinII","viola"),
             )
 

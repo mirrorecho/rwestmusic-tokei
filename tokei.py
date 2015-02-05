@@ -38,7 +38,9 @@ class TokeiBubble(Bubble):
         self.add_part(name='trombone2', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"), clef="bass")
         self.add_part(name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"), clef="bass")
 
-        self.add_staff_group(name="perc", part_names=["perc1","perc2","timpani"])
+        # TO DO EVENTUALLY... shouldn't always add crotales.... and it shouldn't be a flute
+        self.add_staff_group(name="perc", part_names=["crotales","perc1","perc2","timpani"])
+        self.add_part(name='crotales', instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
         self.add_perc_part(name='perc1', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
         self.add_perc_part(name='perc2', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
         self.add_part(name='timpani', instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp", allowable_clefs=("bass", ),
