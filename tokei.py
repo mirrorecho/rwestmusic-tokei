@@ -16,6 +16,7 @@ class TokeiBubble(Bubble):
 
         super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters)
 
+        self.add_staff_group(name="winds", part_names=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"])
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
         self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
         self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
@@ -26,6 +27,7 @@ class TokeiBubble(Bubble):
         self.add_part(name='bassoon1', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"), clef="bass")
         self.add_part(name='bassoon2', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 2", short_instrument_name="bsn.2"), clef="bass")
 
+        self.add_staff_group(name="brass", part_names=["horn1","horn2","horn3","horn4","trumpet1","trumpet2","trombone1","trombone2","tuba"])
         self.add_part(name='horn1', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 1", short_instrument_name="hn.1"))
         self.add_part(name='horn2', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 2", short_instrument_name="hn.2"))
         self.add_part(name='horn3', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 3", short_instrument_name="hn.3"))
@@ -36,12 +38,14 @@ class TokeiBubble(Bubble):
         self.add_part(name='trombone2', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"), clef="bass")
         self.add_part(name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"), clef="bass")
 
+        self.add_staff_group(name="perc", part_names=["perc1","perc2","timpani"])
         self.add_perc_part(name='perc1', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
         self.add_perc_part(name='perc2', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
         self.add_part(name='timpani', instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp", allowable_clefs=("bass", ),
                         pitch_range="[D2, A3]", sounding_pitch_of_written_middle_c="C4"), clef="bass")
         #self.add_piano_staff_part(name='harp', instrument=instrumenttools.Harp(instrument_name="Harp", short_instrument_name="hp"))
        
+        self.add_staff_group(name="taiko", part_names=["shime","odaiko","taiko1","taiko2"])
         self.add_perc_part(name='shime', instrument=instrumenttools.UntunedPercussion(instrument_name="Shime", short_instrument_name="sh."))
         #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
         self.add_perc_part(name='odaiko', instrument=instrumenttools.UntunedPercussion(instrument_name="Odaiko", short_instrument_name="o.d."))
@@ -49,12 +53,14 @@ class TokeiBubble(Bubble):
         self.add_perc_part(name='taiko2', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 2 ", short_instrument_name="t.2."))
         
         if not div_strings:
+            self.add_staff_group(name="strings", part_names=["violinI","violinII","viola","cello","bass"])
             self.add_part(name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
             self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
             self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"))
             self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
             self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."))
         else:
+            self.add_staff_group(name="strings", part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"])
             self.add_part(name='violinI_div1', instrument=instrumenttools.Violin(instrument_name="Violin I 1", short_instrument_name="vln.I.1"))
             self.add_part(name='violinI_div2', instrument=instrumenttools.Violin(instrument_name="Violin I 2", short_instrument_name="vln.I.2"))
             self.add_part(name='violinII_div1', instrument=instrumenttools.Violin(instrument_name="Violin II 1", short_instrument_name="vln.II.1"))
@@ -66,6 +72,7 @@ class TokeiBubble(Bubble):
             self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"), clef="bass")
             self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"), clef="bass")
 
+        self.add_staff_group(name="ref", part_names=["line_1","line_2","line_3","harmony_1","harmony_2","harmony_3"])
         self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
         self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
         self.add_part(name='line_3', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 3", short_instrument_name="ln.3"))
@@ -74,6 +81,8 @@ class TokeiBubble(Bubble):
         self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
         # self.add_perc_part(name='dummy', instrument=instrumenttools.UntunedPercussion(instrument_name=".", short_instrument_name="."))
+
+
 
         self.material["pitch"]["ji"]=[JI_PITCH]
 
@@ -171,6 +180,10 @@ class TokeiFree(TokeiBubble):
             part.remove(m)
             m2 = Measure(longest_measure_duration)
             m2.extend(m[:])
+            accidental_command = indicatortools.LilyPondCommand("context Staff {#(set-accidental-style 'forget)}", "before")
+            accidental_command2 = indicatortools.LilyPondCommand("context Staff {#(set-accidental-style 'modern)}", "after")
+            attach(accidental_command, m2)
+            attach(accidental_command2, m2)
             part.append(m2)
             scoretools.append_spacer_skips_to_underfull_measures_in_expr(part)
 
@@ -202,7 +215,14 @@ class TokeiFree(TokeiBubble):
                 time_command = indicatortools.LilyPondCommand("once \\override Staff.TimeSignature.stencil = ##f", "before")
                 # attach the time sig command before the free measure
                 # attach the time sig command before the free measure
-            attach(time_command, part[0])  
+            # TO DO EVENTUALLY... THIS IS A VERY BAD HACK!
+            try:
+                if part.first_item is not None:
+                    attach(time_command, part.first_item)  
+                else:
+                    attach(time_command, part[0])  
+            except:
+                print("Warning... couldn't attach X time to part " + part_name)
 
     def prepare_score(self):
         self.align_parts()

@@ -272,6 +272,8 @@ music.add_transform(
         ))
 
 #transform hit points to come more often...
+music.arrange_music(part_names=["clarinet2"], rhythms=["r8 "*24], apply_flags=["1hit_a"])
+music.exec_method("change_instrument", part_name="clarinet2", instrument_name="Bass Clarinet", short_instrument_name="B.cl.", apply_flags=["1hit_a"])
 
 # --------------------------------------------------------------------------------------
 # MA arranging...
@@ -293,7 +295,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 music.apply_transforms()
 
 bubble = music.make_bubble(
-    # iters=(13,14,15,16)
+    iters=(0,1,2,3,4,5)
     )
 
 bubble.make_pdf()

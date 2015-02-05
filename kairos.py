@@ -38,26 +38,20 @@ class AddPreviousKai(TransformBase):
 music.add_transform(AddPreviousKai())
 music.exec_method("kai_material")
 
-music.add_sub_part(part_name="violinI_1", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinI_2", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinI_3", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinI_4", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinI_5", master_part_name="violinI", start_flag="1_line",stop_flag="3_ji")
-
-music.add_sub_part(part_name="violinII_1", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinII_2", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinII_3", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinII_4", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
-music.add_sub_part(part_name="violinII_5", master_part_name="violinII", start_flag="1_line",stop_flag="3_ji")
-
-music.add_sub_part(part_name="viola_1", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
-music.add_sub_part(part_name="viola_2", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
-music.add_sub_part(part_name="viola_3", master_part_name="viola", start_flag="1_ji",stop_flag="3_ji")
-
-music.add_sub_part(part_name="cello_1", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
-music.add_sub_part(part_name="cello_2", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
-music.add_sub_part(part_name="cello_3", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
-music.add_sub_part(part_name="cello_4", master_part_name="cello", start_flag="2_line",stop_flag="3_ji")
+# TO DO EVENTUALLY... standard way/place to do  this
+def add_strings(master_part_name, master_instrument_name, master_short_instrument_name, number, start_number=1, **kwargs):
+    for i in range(start_number, number+start_number):
+        j = str(i)
+        music.add_sub_part(
+            master_part_name=master_part_name,
+            part_name=master_part_name+"_"+j, 
+            instrument_name=master_instrument_name+"."+j,
+            short_instrument_name=master_short_instrument_name+"."+j,
+            **kwargs)
+add_strings("violinI", "Violin I", "vln.I", 5, start_flag="1_line", stop_flag="3_ji", show_instrument_instruction=False) # show_instrument_instruction on just as an example
+add_strings("violinII", "Violin II", "vln.II", 5, start_flag="1_line", stop_flag="3_ji",)
+add_strings("viola", "Viola", "vla", 4, start_flag="1_ji", stop_flag="3_ji")
+add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji")
 
 
 music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_line", stop_flag="2_ji")
@@ -107,10 +101,10 @@ music.apply_transforms()
 bubble = music.make_bubble(
             #part_names=["line_1","line_2","harmony_2","taiko1","taiko2"], 
             #flags=["2_ji"],
-            iters=(0,1,),
+            iters=(0,1,2,3,4,5,6,7,8,9),
             #part_names=("violinI","violinII","viola"),
             )
 
 bubble.make_pdf(
-    hide_empty=True
+    # hide_empty=True
     )

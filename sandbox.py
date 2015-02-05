@@ -59,70 +59,7 @@ from caes_m import *
 print()
 print("----------------------------------------------------")
 
-t = TokeiBubble()
-t.arrange_music(part_names=["flute1","violinI"], rhythms=["b1 a1 g1","b2 b2 a2 a2 g2 g2"])
 
-t1 = TokeFree()
-t1.arrange_music(part_names=["flute1","violinI"], rhythms=["b1 a1 g1","b2 b2 a2 a2 g2 g2 "*2])
-t1.add_sub_part("violinI_1", master_part_name="violinI")
-t1.add_sub_part("violinI_2", master_part_name="violinI")
-t1.add_sub_part("violinI_3", master_part_name="violinI")
-t1.arrange_music(part_names=["violinI_1"], rhythms=["a'4 "*12 ])
-t1.arrange_music(part_names=["violinI_2"], rhythms=["g'4 "*12 ])
-t1.arrange_music(part_names=["violinI_3"], rhythms=["f'4 "*12 ])
-
-t2 = TokeiBubble()
-t2.add_sub_part("violinI_1", master_part_name="violinI")
-t2.add_sub_part("violinI_2", master_part_name="violinI")
-t2.arrange_music(part_names=["flute1","violinI"], rhythms=["b1 a1 g1","b2 b2 a2 a2 g2 g2"])
-t2.arrange_music(part_names=["violinI_1"], rhythms=["b'4 "*12 ])
-t2.arrange_music(part_names=["violinI_2"], rhythms=["g'4 "*12 ])
-
-t3 = TokeiBubble()
-t3.arrange_music(part_names=["flute1","violinI"], rhythms=["b1 a1 g1","b2 b2 a2 a2 g2 g2"])
-
-t.append_bubble(t1)
-t.append_bubble(t2)
-t.append_bubble(t3)
-t.show_pdf()
-
-# s0_0 = Staff()
-
-# s1_1 = Staff()
-# s2_1 = Staff()
-# s0_1 = Staff()
-
-# s1_2 = Staff()
-# s2_2 = Staff()
-# s0_2 = Staff()
-
-# s0_3 = Staff()
-
-# s0_0.extend("c'1 c'1")
-
-# s1_1.extend("f'1")
-# s2_1.extend("e'1")
-# s0_1.extend("a4(\\fermata ~ a4\\p\\< a8[) a8] a8[ a8]\\mf")
-
-# s1_2.extend("b'1")
-# s2_2.extend("a'1")
-# s0_2.extend("g'1")
-
-# s0_3.extend("c''1")
-
-# c_1 = Container()
-# c_1.is_simultaneous = True
-# c_1.append(s1_1)
-# c_1.append(s2_1)
-
-# s0_1_c = Container()
-# s0_1_c.extend(s0_1)
-# c_1.append(s0_1_c)
-
-# s0_0.append(c_1)
-
-# print(format(s0_0))
-# show(s0_0)
 
 
 # class TokeiOdd(TokeiBubble):
