@@ -3,99 +3,46 @@ import settings
 
 from tokei import TokeiBubble
 from caes_m import *
+from caes_c import *
 
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
+from calliope.tools import get_pitch_range
 
 string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
 wind_parts=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
 # putting instruments high to low (trumpets first) for ease of arranging
-brass_parts=["trumpet1","trumpet2","horn1","horn2","horn3","horn4","trombone1","trombone2","tuba"]
+brass_parts=["trumpet1","trumpet2","horn1","horn3","horn2","horn4","trombone1","trombone2","tuba"]
 
-music = CycleLoop(bubble_type=CaesiumMaterial)
 
-# 0 is ma:
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa)
-# A 1-4:
-# maybe these first few cycles should be indefinite repeats...?
-music.add_cycle(flags=["start"])
-music.add_cycle()
-music.add_cycle(flags=["1hit_a"])
-music.add_cycle()
-# ------------------------------------
-# B 5-8:
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["3hits_a","melody"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
-# ------------------------------------
-# C 9-12
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["1hit_b", "string_nasty_3", "taiko_3"])
-music.add_cycle(flags=["string_nasty_2", "taiko_2"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
-# # -------------------------------------------------------------------
-# D 13-16
-music.add_cycle(flags=["1hit_b", "string_melody_cloud"])
-music.add_cycle(flags=["1hit_b", "string_melody_cloud_up"])
-music.add_cycle(flags=["winds_up4_cloud_down"]) 
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-# ------------------------------------
-# E 17-20
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
-music.add_cycle(flags=["string_nasty_3", "taiko_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
-music.add_cycle(flags=["string_nasty_2", "taiko_2"])
-# ------------------------------------
-# F 21-24
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["taiko_2"])
-music.add_cycle(flags=["taiko_2"])
-music.add_cycle()
-# # -------------------------------------------------------------------
-# G 25-28 (key change to f)
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["taiko_2"])
-music.add_cycle(flags=["taiko_2"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-# ------------------------------------
-# H 29-32
-# add something else to his ma?
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(flags=["taiko_3"])
-music.add_cycle(flags=["taiko_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-# ------------------------------------
-# I 33-36
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-# add something else to his ma?
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-# # -------------------------------------------------------------------
-# J 37-40
-# everyone plays, on melody, or in 3,6
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
-# ------------------------------------
-# K 41-44
-# everyone plays, on melody, or in 2,4
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-# ------------------------------------
-# L 45-48
-# a single tone, but not much of one
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
-# - silence
-music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
+brass_ranges_wide = [
+    get_pitch_range("B4","C6"), #trumpet 1
+    get_pitch_range("A4","A5"), #trumpet 2
+    get_pitch_range("F4","F5"), #horn 1
+    get_pitch_range("F4","F5"), #horn 3
+    get_pitch_range("G2","A3"), #horn 2
+    get_pitch_range("E2","E3"), #horn 4
+    get_pitch_range("E2","E3"), #trombone 1
+    get_pitch_range("E2","E3"), #trombone 2
+    get_pitch_range("D1","E2"), #tuba
+    ]
+# brass_ranges_high = [
+#     get_pitch_range(("C5","C6")), #trumpet 1
+#     get_pitch_range(("C5","C6")), #trumpet 2
+#     get_pitch_range(("F4","F5")), #horn 1
+#     get_pitch_range(("F4","F5")), #horn 2
+#     get_pitch_range(("F4","F5")), #horn 3
+#     get_pitch_range(("F4","F5")), #horn 4
 
-# ---------------------------------------------------------------------------------------------
+#     ]
+# brass_ranges_mid = [
+#     ]
+# brass_ranges_low = [
+#     ]
+
+music = get_cycle_music()
+
+
 # ---------------------------------------------------------------------------------------------
 # ---------------------------------------------------------------------------------------------
 # TAIKO PARTS
@@ -114,19 +61,46 @@ music.arrange_music(rhythm_material=["taiko_3"], part_names=["taiko1","taiko2"],
 music.arrange_music(rhythm_material=["melody","taiko_2"], part_names=["taiko1","taiko2"], apply_flags=["melody_split_2"])
 music.arrange_music(rhythm_material=["melody","taiko_3"], part_names=["taiko1","taiko2"], apply_flags=["melody_split_3"])
 
+# RELATED PERCUSSION
+music.arrange_music(rhythm_material=["smack_perc"], pitches=[[["A2","Bb2"]]], part_names=["timpani"], stop_flag="pre_melody")
+music.arrange_music(rhythm_material=["tsu_don"], pitches=[["A2","Bb2"]], part_names=["timpani"], apply_flags=["pre_melody"])
+
+music.attach_dynamics(part_names=["taiko1","taiko2","odaiko","timpani"], dynamics=[["ff"]], apply_flags=["start"])
+music.attach_articulations(part_names=["timpani"], articulations=[[">"]], stop_flag="melody")
+
 # -----------------------------------------------
 # as things heat up, gane starts steady strike
 #??? use this....
 #music.arrange_music("taiko_ji", part_names=["gane"], start_flag="gane")
 
 # --------------------------------------------------------------------------------------
+# RESTS:
+music.arrange_music(rhythm_material=["rest"], part_names=wind_parts + string_parts + ["perc1","perc2"],
+    stop_flag="melody")
+# music.arrange_music(rhythm_material=["rest"], part_names=["perc1"], skip_flags=["pre_melody"])
+
+
+
+music.arrange_music(rhythm_material=["rest"], part_names=brass_parts, stop_flag="hits")
+music.arrange_music(rhythm_material=["rest"], part_names=["trumpet1","trumpet2","horn3","horn4","trombone1","trombone2","tuba"], apply_flags=["pre_melody"])
+
+
+# --------------------------------------------------------------------------------------
 # SWELLS:
 
-music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"], 
+music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"], skip_flags=["brass_hits"],
     rhythm_material=["swell"], pitch_material="swell_stack")
 
 music.arrange_music(part_names=["perc1"], apply_before_flags=["ma"], rhythm_material=["swell_cymb"])
 
+# --------------------------------------------------------------------------------------
+# JI HITS:
+# maybe change the material as this goes by?
+music.copy_material("rhythm","hits_2_3","hits")
+music.arrange_music(part_names=brass_parts, apply_flags=["brass_hits"], 
+    rhythm_material=["hits"], pitch_material="ji_stack", 
+        pitch_range=brass_ranges_wide)
+music.attach_dynamics(part_names=brass_parts, dynamics=[["ff"]], apply_flags=["hits"])
 
 # --------------------------------------------------------------------------------------
 # LOW HITS:
@@ -204,80 +178,8 @@ music.arrange_music(part_names=wind_parts,
     respell_material="winds_cloud_respell"
     )
 
-
-
-# --------------------------------------------------------------------------------------
-# these are the "hits" that build throughout the entire work
-
-music.add_material("hit_points", [0], start_flag="1hit_a", 
-    #stop_flag="1hit_b"
-    )
-music.add_pitch_material("hits", value=[["A5","E5"]])
-
-# music.add_data("hit_pitches", ["a'", "e''"])
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         start_flag="2hits",
-#         point=6
-#         ))
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         start_flag="3hits",
-#         point=13
-#         ))
-# # --------------------------------
-# music.add_data("hit_points", [0], start_flag="1hit_2")
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         start_flag="3hits_2",
-#         point=6
-#         ))
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         start_flag="3hits_2",
-#         point=10
-#         ))
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         apply_flags=["5hits_2", "6hits_2"],
-#         point=17
-#         ))
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         apply_flags=["5hits_2", "6hits_2"],
-#         point=21
-#         ))
-# music.add_transform(
-#     ModAddPoint(
-#         "hit_points",
-#         apply_flags=["6hits_2"],
-#         point=23
-#         ))
-
-music.add_transform(
-    MakeMusicFromHits(
-        "hit_points",
-        part_names=["trumpet1", "trumpet2"],
-        pitch_material="hits",
-        cycle_length=24,
-        denominator=8,
-        start_flag="1hit_a",
-        stop_flag="brass_melody",
-        ))
-
-#transform hit points to come more often...
-music.arrange_music(part_names=["clarinet2"], rhythms=["r8 "*24], apply_flags=["1hit_a"])
-music.exec_method("change_instrument", part_name="clarinet2", instrument_name="Bass Clarinet", short_instrument_name="B.cl.", apply_flags=["1hit_a"])
-
 # --------------------------------------------------------------------------------------
 # MA arranging...
-
 
 # skip all transformations already created
 for t in music.transforms:
@@ -285,6 +187,8 @@ for t in music.transforms:
 
 # add the default ma transform
 music.exec_method("arrange_ma", apply_flags=["ma"])
+# self.arrange_music(part_names=basic_parts, rhythms=["s4. r4\\fermata s4. "])
+# music.arrange_music(part_names=wind_parts, apply_flags=["ma"], rhythms=["r4 r4 r4 r4 "])
 
 # Add any more ma-specific transormations here...
 
@@ -292,24 +196,9 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 # --------------------------------------------------------------------------------------
 
 
-music.apply_transforms()
+make_iters=(0,1,2,3,4,5,6,7,8,9,10,11,12)
 
-bubble = music.make_bubble(
-    iters=(0,1,2,3,4,5)
-    )
-
+music.apply_transforms(iters=make_iters)
+bubble = music.make_bubble(iters=make_iters)
 bubble.make_pdf()
 
-#music_arrangement.show_pdf(part_names=["taiko1", "flute1", "flute2", "oboe1", "oboe2", "oboe3", "clarinet1", "clarinet2", "bassoon1", "bassoon2"])
-
-
-
-# --------------------------------------------------------------------------------------
-# FOR DEBUGGING
-# for i,t in enumerate(music.transforms):
-#     print("#" + str(i))
-#     print(t.name)
-#     print(t.skip_flags)
-#     print(t.apply_flags)
-#     print(t.stop_flag)
-#     print("--------------------")

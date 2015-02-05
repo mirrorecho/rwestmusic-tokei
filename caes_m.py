@@ -279,6 +279,10 @@ class CaesiumMaterial(TokeiBubble):
         super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, odd_meters=odd_meters, div_strings=True)
         #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
 
+        del self.parts["crotales"]
+
+        self.material["rhythm"]["rest"] = "R1 "*3
+
         self.material["rhythm"]["doko_f"] = "c8_do[\\f  c8_ko] "+ "c8_do[  c8_ko] "*11
 
         self.material["rhythm"]["doko"] = "c8_do[  c8_ko] "*12
@@ -304,7 +308,11 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["smack"] = "c8-.->\\sfz r4 r2 R1 R1"
 
-        self.material["rhythm"]["smack_perc"] = "c8->\\sfz r4 r2 R1 R1"
+        self.material["rhythm"]["tsu_don"] = "R1 | R1 | r8[ c8->] r8[ c8->] r8[ c8->] r8[ c8->]"
+
+        self.material["rhythm"]["hits_2_3"]="r2 r4 c4-.-> |  c4-.-> r4 r2 | R1 "
+
+        self.material["rhythm"]["smack_perc"] = "c4-> r4 r2 R1 R1"
 
         self.material["rhythm"]["string_nasty_3"] = "c8[-> c] c8[ c]-> c8[ c]" * 4
         self.material["rhythm"]["string_nasty_2"] = "c8[-> c]  " * 12
@@ -322,6 +330,8 @@ class CaesiumMaterial(TokeiBubble):
                         """
 
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
+
+        self.copy_material("rhythm","smack","hits")
 
         self.force_start() # do we always need to run this??
 
@@ -407,8 +417,10 @@ class CaesiumMaterialOdd(CaesiumMaterial):
         rest_2 = "r4. r4 r4 "
         rest_3 = "r4 r4 r4. "
 
+        self.material["rhythm"]["rest"] = rest_1 + rest_2 + rest_3
+
         self.material["rhythm"]["smack"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
-        self.material["rhythm"]["smack_perc"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
+        self.material["rhythm"]["smack_perc"] = "c8->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
 
         self.material["rhythm"]["swell"] = rest_1 + "c4.\\mp\\< ~ c4 ~ c4 ~ c4 ~ c4 ~ c4.\\!\\mf "
 
@@ -424,8 +436,14 @@ class CaesiumMa(CaesiumMaterial):
         super().__init__(measures_durations=[(8,8)])
 
     def arrange_ma(self):
-        basic_parts = [p for p in self.parts if p not in ("perc1","dummy")]
-        self.arrange_music(part_names=basic_parts, rhythms=["s4. r4\\fermata s4."])
+        special_parts=["perc1", "dummy"]
         self.arrange_music(part_names=("perc1",), 
             rhythms=("s8^\"*dampen\" s4 r4\\fermata s4.",) )
-
+        # special_parts=[]
+        basic_parts = [p for p in self.parts if p not in special_parts]
+        self.arrange_music(part_names=basic_parts, rhythms=["s4. r4\\fermata s4. "])
+        # self.arrange_music(part_names=basic_parts, rhythms=["r4 r4 r4 r4 "])
+        time_command = indicatortools.LilyPondCommand("once \\override Staff.TimeSignature.stencil = ##f", "before")
+        for part_name, part in self.parts.items():
+            if len(part) > 0:
+                attach(time_command, part[0])
