@@ -4,9 +4,10 @@ import settings
 
 import copy
 
-from tokei import TokeiBubble, TokeiFree
+from tokei import TokeiBubble, TokeiFree, TokeiCloud
 
 from calliope.tools import *
+from calliope.cloud.pitches import * 
 
 # any way to avoid this sys path part??
 
@@ -48,17 +49,13 @@ class KaiCloud(TokeiCloud):
         self.start_pitch=get_pitch_number(start_pitch)
         super().__init__(*args, **kwargs)
 
-
-    def prepare_pitches(self):
-        pass
-
     def get_pitches(self):
         # TO DO MAYBE: echo the kairos:
         self.pitches = [
-            ["#F4"]*64 ,
-            ["E4"]*64 ,
-            ["D4"]*64 ,
-            ["C#4"]*64 ,
+            [get_pitch_number("F#4")]*64 ,
+            [get_pitch_number("E4")]*64 ,
+            [get_pitch_number("D4")]*64 ,
+            [get_pitch_number("C#4")]*64 ,
             ] * 5
 
     def prepare_cloud(self):
@@ -71,7 +68,7 @@ class KaiCloud(TokeiCloud):
 
 class KaiCloudStrings(KaiCloud):
     def get_pitches(self):
-        super().get_pitches
+        super().get_pitches()
         self.pitches = self.pitches[:-2]
 
     def get_pitch_ranges(self):

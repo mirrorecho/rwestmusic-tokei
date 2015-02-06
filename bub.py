@@ -24,6 +24,9 @@ from kai_m import *
 # f.show()
 # f.tally_loop()
 
+f = KaiCloudStrings(name="kai-cloud-strings-up")
+f.tally_loop()
+
 #music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
 
 # g = get_pitch_ranges(
