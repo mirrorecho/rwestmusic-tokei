@@ -26,6 +26,42 @@ brass_ranges_wide = [
     get_pitch_range("E2","E3"), #trombone 2
     get_pitch_range("D1","E2"), #tuba
     ]
+brass_ranges_mid = [
+    get_pitch_range("F4","G5"), #trumpet 1
+    get_pitch_range("D4","E5"), #trumpet 2
+    get_pitch_range("A3","B4"), #horn 1
+    get_pitch_range("G3","A4"), #horn 3
+    get_pitch_range("F3","G4"), #horn 2
+    get_pitch_range("E3","F4"), #horn 4
+    get_pitch_range("A2","B3"), #trombone 1
+    get_pitch_range("G2","A3"), #trombone 2
+    get_pitch_range("C2","E3"), #tuba
+    ]
+wind_ranges_mid = [
+    get_pitch_range("E5","F6"), #piccolo (flute 1)
+    get_pitch_range("E5","F6"), #flute (2)
+    get_pitch_range("G4","A5"), #oboe 1
+    get_pitch_range("F4","G5"), #oboe 2
+    get_pitch_range("E4","F5"), #oboe 3
+    get_pitch_range("A4","B5"), #clarinet 1
+    get_pitch_range("C3","D4"), #clarinet 2 (switch to bass?)  ... assume no
+    get_pitch_range("D3","E4"), #bassoon 1
+    get_pitch_range("G2","A3"), #bassoon 2
+]
+string_ranges_mid = [
+    get_pitch_range("D4","G5"), #violin I div 1
+    get_pitch_range("C4","F5"), #violin I div 2
+    get_pitch_range("D4","G5"), #violin II div 1
+    get_pitch_range("C4","F5"), #violin II div 2
+    get_pitch_range("G3","C5"), #viola div 1
+    get_pitch_range("F3","B4"), #viola div 2
+    get_pitch_range("G2","C4"), #cello div 1
+    get_pitch_range("F2","B3"), #cello div 2
+    get_pitch_range("A2","B3"), #bass div 1
+    get_pitch_range("G2","A3"), #bass div 2
+]
+swell_ranges = wind_ranges_mid + brass_ranges_mid + string_ranges_mid
+
 # brass_ranges_high = [
 #     get_pitch_range(("C5","C6")), #trumpet 1
 #     get_pitch_range(("C5","C6")), #trumpet 2
@@ -41,6 +77,17 @@ brass_ranges_wide = [
 #     ]
 
 music = get_cycle_music()
+# ---------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------
+# EXEC FORCE FUNCTIONS
+music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-highbrass-4-melody", apply_flags=["brass_melody"])
+
+music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-brass-4-melody-widen", apply_flags=["brass_melody_widen"])
+
+music.exec_method("force_strings_melody", apply_flags=["string_melody_cloud"])
+music.exec_method("force_strings_melody", cloud_name="caes-cloud-strings-melody-up", apply_flags=["string_melody_cloud_up"])
+
+music.exec_method("force_winds_up4_down", cloud_name="caes-cloud-winds-up4-down", apply_flags=["winds_up4_cloud_down"])
 
 
 # ---------------------------------------------------------------------------------------------
@@ -48,7 +95,7 @@ music = get_cycle_music()
 # TAIKO PARTS
 
 # steady ji for first several cycles
-music.arrange_music(rhythm_material=["taiko_ji"], part_names=["taiko1","taiko2","odaiko"], stop_flag="melody")
+music.arrange_music(rhythm_material=["taiko_ji"], part_names=["taiko1","taiko2","odaiko", "shime"], stop_flag="melody")
 
 music.arrange_music(rhythm_material=["melody"], part_names=["taiko1","taiko2","odaiko"], apply_flags=["melody"])
 
@@ -62,6 +109,8 @@ music.arrange_music(rhythm_material=["melody","taiko_2"], part_names=["taiko1","
 music.arrange_music(rhythm_material=["melody","taiko_3"], part_names=["taiko1","taiko2"], apply_flags=["melody_split_3"])
 
 # RELATED PERCUSSION
+music.arrange_music(rhythm_material=["rolls"], part_names=["perc1","shime"], apply_flags=["rolls"])
+
 music.arrange_music(rhythm_material=["smack_perc"], pitches=[[["A2","Bb2"]]], part_names=["timpani"], stop_flag="pre_melody")
 music.arrange_music(rhythm_material=["tsu_don"], pitches=[["A2","Bb2"]], part_names=["timpani"], apply_flags=["pre_melody"])
 
@@ -73,25 +122,7 @@ music.attach_articulations(part_names=["timpani"], articulations=[[">"]], stop_f
 #??? use this....
 #music.arrange_music("taiko_ji", part_names=["gane"], start_flag="gane")
 
-# --------------------------------------------------------------------------------------
-# RESTS:
-music.arrange_music(rhythm_material=["rest"], part_names=wind_parts + string_parts + ["perc1","perc2"],
-    stop_flag="melody")
-# music.arrange_music(rhythm_material=["rest"], part_names=["perc1"], skip_flags=["pre_melody"])
 
-
-
-music.arrange_music(rhythm_material=["rest"], part_names=brass_parts, stop_flag="hits")
-music.arrange_music(rhythm_material=["rest"], part_names=["trumpet1","trumpet2","horn3","horn4","trombone1","trombone2","tuba"], apply_flags=["pre_melody"])
-
-
-# --------------------------------------------------------------------------------------
-# SWELLS:
-
-music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"], skip_flags=["brass_hits"],
-    rhythm_material=["swell"], pitch_material="swell_stack")
-
-music.arrange_music(part_names=["perc1"], apply_before_flags=["ma"], rhythm_material=["swell_cymb"])
 
 # --------------------------------------------------------------------------------------
 # JI HITS:
@@ -111,9 +142,6 @@ music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], appl
 # --------------------------------------------------------------------------------------
 # CLEARER "MELODIES"
 
-music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-highbrass-4-melody", apply_flags=["brass_melody"])
-
-music.exec_method("force_brass_4_melody", cloud_name="caes-cloud-brass-4-melody-widen", apply_flags=["brass_melody_widen"])
 
 music.arrange_music(part_names=["trumpet2","trumpet1","horn3","horn1","horn2","horn4"], 
     apply_flags=["brass_melody"], 
@@ -151,8 +179,6 @@ music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"],
     rhythm_material=["string_nasty_2"], pitches=[["x"]])
 
 
-music.exec_method("force_strings_melody", apply_flags=["string_melody_cloud"])
-music.exec_method("force_strings_melody", cloud_name="caes-cloud-strings-melody-up", apply_flags=["string_melody_cloud_up"])
 
 music.arrange_music(part_names=string_parts[:-2], 
     apply_flags=["string_melody_cloud","string_melody_cloud_up"], 
@@ -169,14 +195,37 @@ music.arrange_music(part_names=["oboe1","oboe2","flute2","oboe3","flute1"],
         pitch_offset=[6],
         )
 
-music.exec_method("force_winds_up4_down", cloud_name="caes-cloud-winds-up4-down", apply_flags=["winds_up4_cloud_down"])
-
 music.arrange_music(part_names=wind_parts, 
     apply_flags=["winds_up4_cloud_down"], 
     rhythms=["c8[( c c c]) "*6], 
     pitch_material="winds_cloud",
     respell_material="winds_cloud_respell"
     )
+
+
+# --------------------------------------------------------------------------------------
+# SWELLS:
+
+music.arrange_music(part_names=["horn1","horn2"], apply_before_flags=["melody"], 
+    rhythm_material=["swell"], pitch_material="swell_melody")
+
+music.arrange_music(part_names=wind_parts+brass_parts+string_parts, apply_before_flags=["ma"], 
+    pitch_range=swell_ranges, rhythm_material=["swell"], pitch_material="swell_ma")
+
+music.arrange_music(part_names=["perc1"], apply_before_flags=["ma"], rhythm_material=["swell_cymb"])
+
+# --------------------------------------------------------------------------------------
+# RESTS:
+# TO DO... should be easy enough to apply rests to EVERYTHING that hasn't already been arranged...
+
+music.arrange_music(rhythm_material=["rest"], part_names=wind_parts + string_parts + ["perc1","perc2"],
+    stop_flag="melody")
+# music.arrange_music(rhythm_material=["rest"], part_names=["perc1"], skip_flags=["pre_melody"])
+
+music.arrange_music(rhythm_material=["rest"], part_names=brass_parts, stop_flag="hits")
+music.arrange_music(rhythm_material=["rest"], part_names=["trumpet1","trumpet2","horn3","horn4","trombone1","trombone2","tuba"], apply_flags=["pre_melody"])
+
+
 
 # --------------------------------------------------------------------------------------
 # MA arranging...
@@ -196,7 +245,7 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 # --------------------------------------------------------------------------------------
 
 
-make_iters=(0,1,2,3,4,5,6,7,8,9,10,11,12)
+make_iters=(8,9)
 
 music.apply_transforms(iters=make_iters)
 bubble = music.make_bubble(iters=make_iters)

@@ -244,6 +244,15 @@ class Kai2(KaiMelody, KaiFree):
     def kai_holds(self):
         self.arrange_music(part_names=["bassoon1"], pitch_material="holds", rhythm_material="holds")
 
+#--------------------------------------------------------------------------------------------
+class Kai2Ji(KaiJi):
+    def kai_material(self):
+        super().kai_material()
+        self.add_taiko_material(("c4_dan c8_da c_da "*3 + "c4_ka r4 | ") *2)
+        # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
+        # (better a solo string)
+        self.material["kairos_b_parts"] = ["violinI"]
+
     def kai_harmonics(self):
         self.arrange_harmonics( 
                 part_names=["flute1","flute2","oboe1"], 
@@ -259,14 +268,7 @@ class Kai2(KaiMelody, KaiFree):
                 harmonics=[9,5,4],
                 transpose=[-12],
                 respell=["sharps"])
-#--------------------------------------------------------------------------------------------
-class Kai2Ji(KaiJi):
-    def kai_material(self):
-        super().kai_material()
-        self.add_taiko_material(("c4_dan c8_da c_da "*3 + "c4_ka r4 | ") *2)
-        # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
-        # (better a solo string)
-        self.material["kairos_b_parts"] = ["violinI"]
+
 #--------------------------------------------------------------------------------------------
 class Kai3(KaiMelody):
     def kai_material(self):

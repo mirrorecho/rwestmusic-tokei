@@ -16,7 +16,7 @@ def get_cycle_music():
     music.add_cycle(flags=["pre_melody"])
     # ------------------------------------
     # B 5-8:
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody", "rolls"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
@@ -28,7 +28,7 @@ def get_cycle_music():
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
     # # -------------------------------------------------------------------
     # D 13-16
-    music.add_cycle(flags=["string_melody_cloud"])
+    music.add_cycle(flags=["string_melody_cloud", "brass_hits"])
     music.add_cycle(flags=["string_melody_cloud_up"])
     music.add_cycle(flags=["winds_up4_cloud_down"]) 
     music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
@@ -41,7 +41,7 @@ def get_cycle_music():
     # ------------------------------------
     # F 21-24
     music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
-    music.add_cycle(flags=["taiko_2"])
+    music.add_cycle(flags=["taiko_2", "brass_hits"])
     music.add_cycle(flags=["taiko_2"])
     music.add_cycle()
     # # -------------------------------------------------------------------
@@ -74,10 +74,10 @@ def get_cycle_music():
     # ------------------------------------
     # K 41-44
     # everyone plays, on melody, or in 2,4
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2", "brass_hits"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2", "brass_hits"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2", "brass_melody"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2", "brass_melody"])
     # ------------------------------------
     # L 45-48
     # a single tone, but not much of one

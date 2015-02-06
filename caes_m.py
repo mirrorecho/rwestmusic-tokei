@@ -314,10 +314,12 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["smack_perc"] = "c4-> r4 r2 R1 R1"
 
+        self.material["rhythm"]["rolls"] = "c1:32 ~ c1:32 ~ c1:32 "
+
         self.material["rhythm"]["string_nasty_3"] = "c8[-> c] c8[ c]-> c8[ c]" * 4
         self.material["rhythm"]["string_nasty_2"] = "c8[-> c]  " * 12
 
-        self.material["rhythm"]["swell"] = "R1 c1\\mp\\< ~ c1\\!\\mf "
+        self.material["rhythm"]["swell"] = "R1 c1\\p\\< ~ c1\\!\\f "
 
         self.material["rhythm"]["swell_cymb"] = "R1 R1 c2:32\\pp\\< ~ c4.:32 c8->\\!\\f "
 
@@ -331,9 +333,12 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
 
-        self.copy_material("rhythm","smack","hits")
 
         self.force_start() # do we always need to run this??
+
+        self.copy_material("rhythm","smack","hits")
+        # TO DO... use overrides or specific flags to develop this swell... over time
+        self.copy_material("pitch", "ji_stack", "swell_ma")
 
     def force_start(self):
         force = ForceData()
@@ -343,7 +348,7 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["pitch"]["force_row"] = force.force_pitches
 
-        self.material["pitch"]["swell_stack"] = [
+        self.material["pitch"]["swell_melody"] = [
                         [force.ji_pitch - 24], 
                         [force.force_pitches[0]],
                         ]
@@ -422,7 +427,7 @@ class CaesiumMaterialOdd(CaesiumMaterial):
         self.material["rhythm"]["smack"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
         self.material["rhythm"]["smack_perc"] = "c8->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
 
-        self.material["rhythm"]["swell"] = rest_1 + "c4.\\mp\\< ~ c4 ~ c4 ~ c4 ~ c4 ~ c4.\\!\\mf "
+        self.material["rhythm"]["swell"] = rest_1 + "c4.\\p\\< ~ c4 ~ c4 ~ c4 ~ c4 ~ c4 c8-.->\\!\\f "
 
         self.material["rhythm"]["swell_cymb"] = rest_1 + rest_2 + "c4:32\\pp\\< ~ c4:32 ~ c4:32  c8->\\!\\f "
 
@@ -430,6 +435,10 @@ class CaesiumMaterialOdd(CaesiumMaterial):
                     c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.]
                     c-.[ c-.]   c-.[ c-.] c-.[ c-. c-.]
                     """ 
+        self.material["rhythm"]["rolls"] = """c4.:32 ~ c4.:32 ~ c4:32 ~ c4:32 ~ 
+                    c4.:32 ~ c4:32 ~ c4:32 ~ 
+                    c4:32 ~ c4:32 ~ c4.:32"""
+
 
 class CaesiumMa(CaesiumMaterial):
     def __init__(self):    
