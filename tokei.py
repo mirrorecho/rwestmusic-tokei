@@ -60,7 +60,7 @@ class TokeiBubble(Bubble):
             self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
             self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"))
             self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
-            self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."))
+            self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."), clef="bass")
         else:
             self.add_staff_group(name="strings", part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"])
             self.add_part(name='violinI_div1', instrument=instrumenttools.Violin(instrument_name="Violin I 1", short_instrument_name="vln.I.1"))
