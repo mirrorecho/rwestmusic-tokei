@@ -7,7 +7,7 @@ import copy
 from tokei import TokeiBubble
 from kai_m import *
 
-from calliope.tools import music_from_durations, transpose_pitches, get_music_container
+from calliope.tools import music_from_durations, transpose_pitches, get_music_container, make_harmonics
 from calliope.cycles.loop import CycleLoop
 from calliope.cycles.transform import *
 
@@ -56,7 +56,7 @@ add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji")
 
 
 music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_line", stop_flag="2_ji")
-music.add_rhythm_material("rest", "R1 "*4, start_flag="2_ji")
+music.add_rhythm_material("rest", "R1 "*8, start_flag="2_ji")
 
 music.add_pitch_material("cloud", [
                     ["C#6","C#6","D6"],
@@ -67,36 +67,52 @@ music.add_pitch_material("cloud", [
 # TO DO... keep going on this (maybe it should go in the base class...)
 music.add_rhythm_material("cloud", 
                 [get_music_container(["s4", box_music(
-                        make_harmonics("c2.\\fermata\\ppp \\times 4/5 {c2( c2.)} "), 
+                        "c2.\\fermata\\ppp   c2( c2) ", 
                         continue_lengths=[(1,1)]*6)
                 ])])
+# ---------------------------------------------------------
+# LOW PITCHES
 
-music.add_pitch_material("low", ["C#2"])
-music.add_pitch_material("low", ["F#2"], start_iter=5)
-music.add_pitch_material("low", ["D2"], start_iter=7)
-music.add_pitch_material("low", ["A2"], start_iter=9)
+music.add_rhythm_material("low", ["c1 ~ "*7 + "c1 "], start_flag="2_ji")
 
-music.add_pitch_material("holds", [["C#6"]])
-           
+
+music.add_pitch_material("low", [["C#2"]])
+music.add_pitch_material("low", [["F#2"]], start_iter=5)
+music.add_pitch_material("low", [["D2"]], start_iter=7)
+music.add_pitch_material("low", [["A2"]], start_iter=9)
+
+# ---------------------------------------------------------
+# HOLDS
+music.add_pitch_material("holds", [["C#6"],["C#4"],[ "D4", "C#4"]]) # bassons and others come in lower, later
+
 music.add_rhythm_material("holds", 
                     [get_music_container(["s4", box_music("s4 c1\\pp\\fermata s2", 
                             instruction="hold until B", 
                             continue_lengths=[(1,1)]*6 ) 
                     ])])
 
+# TO DO... this should decresc back down!
+hold_rh = "r4 c2.\\pp\\<   ~  c2\\p r2 "
+music.add_rhythm_material("holds", [hold_rh + "R1 " + hold_rh + hold_rh + "R1 "], start_flag="2_ji")
+
+# ---------------------------------------------------------
+
 music.exec_method("replace_pitch", material="kairos_a", pitch="E4", other_pitch="C#4", apply_flags=["1_ji"])
 music.exec_method("replace_pitch", material="kairos_b", pitch="A4", other_pitch="C#5", stop_flag="3_line")
-music.exec_method("replace_pitch", material="kairos_b", pitch="E4", other_pitch="F#3", stop_flag="3_line")
+music.exec_method("replace_pitch", material="kairos_b", pitch="E4", other_pitch="C#4", stop_flag="3_line")
 
 music.exec_method("kai_harmonics")
 music.exec_method("kai_holds")
 music.exec_method("kai_kairos")
-music.exec_method("kai_rest")
 music.exec_method("kai_cloud")
 music.exec_method("kai_cycles")
 music.exec_method("kai_low")
 
+# ---------------------------------------------------------
+# SPECIAL ARRANGEMENTS
+
 music.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=["taiko1","taiko2"])
+
 music.arrange_music(part_names=["crotales"], rhythms=[get_music_container(
                 ["s4", box_music("s4 c2\\pp\\fermata c2\\fermata", 
                             instruction="bowed, repeat", 
@@ -106,16 +122,15 @@ music.arrange_music(part_names=["crotales"], rhythms=[get_music_container(
                 respell=["sharps"],
                 apply_flags=["1_line"])
 
+# fill everything empty up with rests
+music.arrange_music(part_names=kai.parts, rhythm_material=["rest"])
+# TO DO: doesn't work for sub-parts... why?
 
-music.apply_transforms()
+make_iters=(3,4)
 
-bubble = music.make_bubble(
-            #part_names=["line_1","line_2","harmony_2","taiko1","taiko2"], 
-            #flags=["2_ji"],
-            iters=(1,),
-            #part_names=("violinI","violinII","viola"),
-            )
-
+music.apply_transforms(iters=make_iters)
+bubble = music.make_bubble(iters=make_iters)
 bubble.make_pdf(
-    # hide_empty=True
+    hide_empty=True,
+    # part_names=["violinI","violinI_1","violinI_2"],
     )

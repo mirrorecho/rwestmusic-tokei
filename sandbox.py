@@ -34,7 +34,7 @@ import copy
 
 from tokei import TokeiBubble, TokeiCloud, TokeiFree
 from calliope.cycles.loop import CycleLoop
-from calliope.tools import get_pitch_number, box_music
+from calliope.tools import get_pitch_number, box_music, make_harmonics, get_pitch_hz
 
 from wado_m import WadoMaterial
 from caes_m import *
@@ -59,6 +59,17 @@ from caes_m import *
 print()
 print("----------------------------------------------------")
 
+c = Container("fs'''1\\pp ~ d''1")
+show(make_harmonics(
+    c,
+    harmonic_types = ["natural"],
+    strings=["D4"]
+    ))
+
+    # print(harmonic)
+    # print(pitchtools.NamedPitch(finger_pitch))
+
+# print(pitchtools.NamedPitch(string_pitch))
 
 
 

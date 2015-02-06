@@ -92,8 +92,6 @@ class KaiMaterial(TokeiBubble):
         self.material["kairos_a_parts"] = []
         self.material["kairos_b_parts"] = []
 
-        self.material["rest_parts"] = []
-
         self.material["wind_parts"]=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
         # putting instruments high to low (trumpets first) for ease of arranging
         self.material["brass_parts"]=["trumpet1","trumpet2","horn1","horn2","horn3","horn4","trombone1","trombone2","tuba"]
@@ -111,7 +109,7 @@ class KaiMaterial(TokeiBubble):
         # TO DO... this is SO similar to arranging pitches in Bubble... maybe combine into a tools function?
 
         if fundamentals is None and isinstance(fundamental_material, str):
-            fundamentals=self.material["pitch"][fundamental_material]
+            fundamentals=self.material["pitch"][fundamental_material][0]
 
         pitches = []
 
@@ -139,14 +137,15 @@ class KaiMaterial(TokeiBubble):
     def kai_material(self):
         pass
 
-    def kai_arrange_material(self, material):
+    def kai_arrange_material(self, material, *args, **kwargs):
         parts_names_material = material + "_parts" 
         if parts_names_material  in self.material:
             self.arrange_music(
                     part_names=self.material[parts_names_material], 
                     pitch_material=material, 
                     rhythm_material=material, 
-                    respell=["sharps"])
+                    respell=["sharps"],
+                    *args, **kwargs)
 
     def kai_holds(self):
         self.kai_arrange_material("holds")
@@ -156,10 +155,6 @@ class KaiMaterial(TokeiBubble):
 
     def kai_cloud(self):
         self.kai_arrange_material("cloud")
-
-    def kai_rest(self):
-        if "rest" in self.material["rhythm"]:
-            self.arrange_music(part_names=self.material["rest_parts"], rhythm_material=["rest"])
 
     def kai_cycles(self):
         if not self.done:
@@ -206,12 +201,15 @@ class Kai1(KaiMelody, KaiFree):
         self.material["rhythm"]["kairos_a_7"]="c1\\fermata "
         self.material["rhythm"]["kairos_a_8"]=""
         self.material["pitch"]["kairos_a"] = [["C#5","C#5","D5","C#5","D5"]]
-        self.material["rest_parts"]=self.material["wind_parts"] + self.material["brass_parts"] + ["viola","cello","bass","perc2","timpani","odaiko"]
         self.material["cloud_parts"]=["violinI_2","violinI_3","violinI_4","violinI_5",
                     "violinII_2","violinII_3","violinII_4","violinII_5",]
         self.material["holds_parts"] = ["violinI_1"]
         self.done = True
 
+    def kai_cloud(self):
+        self.kai_arrange_material("cloud", 
+            # harmonics_make=[True]
+            )
 
 #--------------------------------------------------------------------------------------------
 class Kai1Ji(KaiJi, KaiFree):
@@ -221,7 +219,6 @@ class Kai1Ji(KaiJi, KaiFree):
         self.add_taiko_material("c4_dan  c8_da[  c8_da]^\"repeat slowing down\"  s2 | " + "s1 "*3)
         self.material["kairos_a_parts"] = ["viola_1"]
         self.material["kairos_b_parts"] = ["violinII_1"]
-        self.material["rest_parts"]=["oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2","perc2","timpani","odaiko"] + self.material["brass_parts"]
         self.material["cloud_parts"]=["flute1","flute2","violinI_2","violinI_3","violinI_4","violinI_5",
                     "violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola_3"]
         self.material["holds_parts"] = ["violinI_1"]
@@ -233,16 +230,18 @@ class Kai2(KaiMelody, KaiFree):
     def kai_material(self):
         super().kai_material()
         self.add_taiko_material("r2 r4 r8[ c16 c] | c4 c8 c r2 | "  * 2)
-        self.material["pitch"]["holds"] = [["C#4", "D4", "C#4"]]
-        # TO DO... this should decresc back down!
-        hold_rh = "r4 c2.\\pp\\<   ~  c2\\p r2 "
-        self.material["rhythm"]["holds"] = [hold_rh + "R1 " + hold_rh + hold_rh + "R1 "]
         # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
         # (better a solo string)
-        self.material["kairos_a_parts"] = ["violinI"]
+        self.material["holds_parts"] = ["violinI_1", "bassoon1", "bassoon2"]
+        self.material["kairos_a_parts"] = ["trumpet1"]
+        self.material["kairos_b_parts"] = ["viola_1"]
+        self.material["cloud_parts"]=["flute1","flute2","violinI_2","violinI_3","violinI_4","violinI_5",
+                    "violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola_3"]
 
-    def kai_holds(self):
-        self.arrange_music(part_names=["bassoon1"], pitch_material="holds", rhythm_material="holds")
+    def kai_kairos(self):
+        super().kai_kairos()
+        self.attach_dynamics(dynamics=[["p"]], part_names=["trumpet1"])
+        self.attach_markup([["bucket mute"]], part_names=["trumpet1"])
 
 #--------------------------------------------------------------------------------------------
 class Kai2Ji(KaiJi):
@@ -251,8 +250,16 @@ class Kai2Ji(KaiJi):
         self.add_taiko_material(("c4_dan c8_da c_da "*3 + "c4_ka r4 | ") *2)
         # # TO DO... DON'T LIKE HOW THIS IS THE 1st VIOLINS SECTION AT ALL... REALLY SHOULD RE-ARRANGE
         # (better a solo string)
-        self.material["kairos_b_parts"] = ["violinI"]
+        self.material["kairos_a_parts"] = ["flute1"]
+        self.material["kairos_b_parts"] = ["trumpet1"]
+        self.material["low_parts"] = ["bass"]
 
+    def kai_low(self):
+        self.kai_arrange_material("low", 
+            transpose=[12]
+            )
+
+    # TO DO... move outa here...?
     def kai_harmonics(self):
         self.arrange_harmonics( 
                 part_names=["flute1","flute2","oboe1"], 
