@@ -134,6 +134,10 @@ class TokeiBubble(Bubble):
         # self.bass_1 =  scoretools.Container()
         # self.bass_2 =  scoretools.Container()
 
+    def add_cloud_pitches(self, cloud_type, cloud_name, material_name):
+        cloud = cloud_type(name=cloud_name)
+        self.material["pitch"][material_name] = cloud.cloud_pitches()
+
     def prepare_score(self):
         
         # self.fill_empty_parts_with_rests()

@@ -66,7 +66,7 @@ class KaiCloud(TokeiCloud):
         ]
 
 
-class KaiCloudStrings(KaiCloud):
+class KaiCloudStringsUp(KaiCloud):
     def get_pitches(self):
         super().get_pitches()
         self.pitches = self.pitches[:-2]
@@ -76,7 +76,7 @@ class KaiCloudStrings(KaiCloud):
             num_lines=18, 
             times=64,
             high_intervals=[13], # may make the lines better...?
-            low_pitches=["G3"]*10 + ["C3"]*8,
+            low_pitches=["G3"]*10 + ["C3"]*4 + ["C2"]*4,
             increments=[[0,0,1]]
             )
 
@@ -145,6 +145,9 @@ class KaiMaterial(TokeiBubble):
         self.material["brass_parts"]=["trumpet1","trumpet2","horn1","horn2","horn3","horn4","trombone1","trombone2","tuba"]
 
         self.done = False
+
+
+
 
         #self.kai_material()
 
@@ -410,7 +413,22 @@ class Kai3(KaiMelody):
 
 
 class Kai3Again(Kai3):
-    pass
+    def kai_material(self):
+        super().kai_material()
+        self.add_taiko_material("R1 " * 4)  
+        self.material["kairos_b_parts"] = ["flute1"]
+        self.kai_harmonics = self.previous_kai.kai_harmonics
+        self.material["cloud_parts"]=["violinI_1","violinI_2","violinI_3","violinI_4","violinI_5",
+            "violinII_1","violinII_2","violinII_3","violinII_4","violinII_5",
+            "viola_1","viola_2","viola_3","viola_4",
+            "cello_1","cello_2","cello_3","cello_4",]
+        self.material["low_parts"] = ["bass"]
+        self.material["holds_parts"] = ["bassoon1", "bassoon2"]
+        self.done=True
+
+    def kai_cloud(self):
+        self.kai_arrange_material("cloud")
+        self.attach_dynamics(part_names=self.material["cloud_next_parts"], dynamics=[["mp"]])
 
 #--------------------------------------------------------------------------------------------
 class Kai3Ji(KaiJi):

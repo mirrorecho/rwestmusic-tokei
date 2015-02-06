@@ -105,7 +105,9 @@ music.add_pitch_material("cloud_next", [
                     ], apply_flags=["2_ji"])
 music.add_pitch_material("cloud_next", [
                     ["E5"],["D5"],["C#5"],["F#4"],["E4"],["C#4"],["F#3"],["C#3"]
-                    ], apply_flags=["3_line","3_line_again"])
+                    ], apply_flags=["3_line"])
+music.exec_method("add_cloud_pitches", cloud_type=KaiCloudStringsUp, 
+    cloud_name="kai-cloud-strings-up", material_name="cloud", apply_flags="3_line_again")
 
 
 # TO DO... keep going on this (maybe it should go in the base class...)
@@ -135,7 +137,7 @@ music.add_rhythm_material("cloud",
                 stop_flag="2_ji")
 
 music.add_rhythm_material("cloud_next", ["R1 " + "c4. c8 ~ c4 c4-- "*7], apply_flags=["2_ji"])
-music.add_rhythm_material("cloud_next", ["c4. c8 ~ c4 c4-- "*8], apply_flags=["3_line","3_line_again"])
+music.add_rhythm_material("cloud_next", ["c4. c8 ~ c4 c4-- "*8], apply_flags=["3_line"])
 
 # TO DO.. vary this up....
 music.add_rhythm_material("cloud", 
@@ -143,13 +145,16 @@ music.add_rhythm_material("cloud",
                     " c4.\\fermata \\times 2/3 { c4( c2)  }  ", continue_lengths=[(1,1)]*7),               
                     ]),
                 ],
-                apply_flags=["2_ji","3_line","3_line_again"])
+                apply_flags=["2_ji","3_line"])
 
-music.add_rhythm_material("cloud", ["c4. c8 ~ c4 c4-- "*8], start_flag="3_ji")
-
+music.add_rhythm_material("cloud", ["c8-- "*64], start_flag="3_line_again")
 
 # TO DO MAYBE... could make unique rhythms for the lower parts...
 music.copy_material("rhythm", "cloud", "cloud_lower", start_flag="2_line")
+
+
+
+
 
 # ---------------------------------------------------------
 # HOLDS

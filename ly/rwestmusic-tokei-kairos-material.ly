@@ -1,4 +1,4 @@
-% 2015-02-06 16:42
+% 2015-02-06 17:44
 
 \version "2.18.2"
 \language "english"
@@ -484,38 +484,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.1 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						e''4. \mp
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
-						e''4.
-						e''8 ~
-						e''4
-						e''4 -\tenuto
+						e,8 -\tenuto \mp
+						fs,8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
 					}
 					\context Staff = "violinI_2" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -525,38 +557,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.2 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						d''4. \mp
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
-						d''4.
-						d''8 ~
-						d''4
-						d''4 -\tenuto
+						d,8 -\tenuto \mp
+						e,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
 					}
 					\context Staff = "violinI_3" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -566,122 +630,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.3 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							cs''4 (
-							\afterGrace
-							d''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						cs8 -\tenuto
+						d,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
 					}
 					\context Staff = "violinI_4" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -691,243 +703,139 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.4 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							gs''4 (
-							\afterGrace
-							d''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						gs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						gs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						cs8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin I.5 }
 						\set Staff.shortInstrumentName = \markup { vln.I.5 }
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							d''4 (
-							\afterGrace
-							cs''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
 					}
 				>>
 			}
@@ -944,38 +852,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.1 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						cs''4. \mp
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
-						cs''4.
-						cs''8 ~
-						cs''4
-						cs''4 -\tenuto
+						d,8 -\tenuto \mp
+						e,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
 					}
 					\context Staff = "violinII_2" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -985,38 +925,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.2 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						fs'4. \mp
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
-						fs'4.
-						fs'8 ~
-						fs'4
-						fs'4 -\tenuto
+						cs8 -\tenuto \mp
+						d,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
 					}
 					\context Staff = "violinII_3" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -1026,122 +998,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.3 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							d''4 (
-							\afterGrace
-							gs''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						gs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						cs8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
 					}
 					\context Staff = "violinII_4" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -1151,243 +1071,139 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.4 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							cs''4 (
-							\afterGrace
-							d''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin II.5 }
 						\set Staff.shortInstrumentName = \markup { vln.II.5 }
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							gs''4 (
-							\afterGrace
-							d''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						gs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						gs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						d,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
 					}
 				>>
 			}
@@ -1404,38 +1220,70 @@
 						\set Staff.shortInstrumentName = \markup { vla.1 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						e'4. \mp
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
-						e'4.
-						e'8 ~
-						e'4
-						e'4 -\tenuto
+						cs8 -\tenuto \mp
+						d,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
 					}
 					\context Staff = "viola_2" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -1445,38 +1293,70 @@
 						\set Staff.shortInstrumentName = \markup { vla.2 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						cs'4. \mp
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
-						cs'4.
-						cs'8 ~
-						cs'4
-						cs'4 -\tenuto
+						cs8 -\tenuto \mp
+						d,8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
 					}
 					\context Staff = "viola_3" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -1486,152 +1366,139 @@
 						\set Staff.shortInstrumentName = \markup { vla.3 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs''4. -\fermata
-						\times 2/3 {
-							d''4 (
-							\afterGrace
-							cs''2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs''2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Viola.4 }
 						\set Staff.shortInstrumentName = \markup { vla.4 }
-						{
-							\time 4/4
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
-						{
-							s1 * 1
-						}
+						d,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
 					}
 				>>
 			}
@@ -1650,38 +1517,70 @@
 						\set Staff.shortInstrumentName = \markup { vc.1 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						fs4. \mp
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
-						fs4.
-						fs8 ~
-						fs4
-						fs4 -\tenuto
+						cs8 -\tenuto \mp
+						d,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
 					}
 					\context Staff = "cello_2" {
 						\clef "bass"
@@ -1692,38 +1591,70 @@
 						\set Staff.shortInstrumentName = \markup { vc.2 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						cs4. \mp
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
-						cs4.
-						cs8 ~
-						cs4
-						cs4 -\tenuto
+						cs8 -\tenuto \mp
+						d,8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
 					}
 					\context Staff = "cello_3" {
 						\clef "bass"
@@ -1734,243 +1665,139 @@
 						\set Staff.shortInstrumentName = \markup { vc.3 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs'4. -\fermata
-						\times 2/3 {
-							d'4 (
-							\afterGrace
-							cs'2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						fs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						fs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						d,8 -\tenuto
+						e,8 -\tenuto
+						fs,8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs,8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e8 -\tenuto
+						d'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						e'8 -\tenuto
+						fs8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						cs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Cello.4 }
 						\set Staff.shortInstrumentName = \markup { vc.4 }
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						cs'4. -\fermata
-						\times 2/3 {
-							d'4 (
-							\afterGrace
-							cs'2 )
-							{
-								\hideNotes
-								r32
-								\unHideNotes
-								\stopStaff
-								\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-								\startStaff
-							}
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						cs'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						d'2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						d,8 -\tenuto
+						e,8 -\tenuto
+						cs8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e,8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						e8 -\tenuto
+						fs,8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						fs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						fs8 -\tenuto
+						cs8 -\tenuto
+						e8 -\tenuto
+						e8 -\tenuto
+						cs8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						d8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						fs8 -\tenuto
+						d'8 -\tenuto
+						cs'8 -\tenuto
+						d'8 -\tenuto
+						fs'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						cs'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						fs'8 -\tenuto
+						e'8 -\tenuto
+						d'8 -\tenuto
 					}
 				>>
 			}
