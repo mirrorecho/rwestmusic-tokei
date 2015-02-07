@@ -65,12 +65,25 @@ music.attach_dynamics(part_names=["taiko1","taiko2"], dynamics=[["f"]], apply_fl
 # MELODIES
 music.exec_method("arrange_strings", start_flag="melody_start", stop_flag="day_start")
 
+# ----------------------------------------------------------
+# REFEREMCE
+# intro is mostly B dis dis
+music.add_pitch_material("ref", [["C#3"]*4], apply_flags=["melody_1_a"]) # dis festival
+music.add_pitch_material("ref", [["F#3"]*4], apply_flags=["melody_1_b"]) # dis festival
+music.add_pitch_material("ref", [["G#2"]*4], respell=["sharps"], apply_flags=["melody_2_a"]) # (seems like it will go up...)
+music.add_pitch_material("ref", [["E#2"]*4], apply_flags=["melody_2_b"]) # dis dis TO festival (short)
+music.add_pitch_material("ref", [["F2"]*4], apply_flags=["melody_3_a"]) # dis dis TO festival (short) (also to stingy?)
+music.add_pitch_material("ref", [["G2"]*4], apply_flags=["melody_3_b"]) # dis festival TO festival
+
+
+music.arrange_music(part_names=["harmony_3"], pitch_material="ref", rhythm_material=["ref"])
 
 # harmonies/lines reference parts:
 music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
 music.exec_method("add_harmony_ref_2", apply_flags=["intro_1_b"])
 music.exec_method("add_harmony_ref_2", apply_flags=["intro_2_a"])
 music.exec_method("add_harmony_ref_2", pitch_material="ancient_B_modulate", apply_flags=["intro_2_b"])
+
 music.exec_method("add_harmony_ref_2", apply_flags=["melody_1_a"])
 music.exec_method("add_harmony_night_ref", apply_flags=["melody_1_b"])
 # TO DO... add festival lines ref
@@ -98,11 +111,11 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 iters=(
     # 0,1, # intro free
     # 2,3,
-    # 4,5, # intro regular
-    # 6,7,
+    4,5, # intro regular
+    6,7,
     8,9, # melody
     10,11,
-    # 12,13,
+    12,13,
     # 14,15,
     # 16,17,
     # 18,19,

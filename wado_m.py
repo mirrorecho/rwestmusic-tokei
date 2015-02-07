@@ -156,6 +156,9 @@ class WadoMaterial(TokeiBubble):
             [["Eb2","Eb3"],                     ["Eb2","F3"],           ["F2","Eb3"],           "A2"],
         ]
 
+        self.material["pitch"]["ref"] = [["A2", "A2", "A2", "A2"]]
+
+        self.material["rhythm"]["ref"] = "c4. ~ c4. ~ c4. " *4
 
         # NOTE... can use transposition of night harmonies 2 and 3 
         # in order to move up to the end of the night music!
@@ -186,6 +189,9 @@ class WadoMaterial(TokeiBubble):
 class Intro(WadoMaterial):
     def __init__(self):
         super().__init__()
+
+        # the intro is pretty much all in B-ish (dis)
+        self.material["pitch"]["ref"] = [["B2","B2","B2","B2"]]
 
         self.material["cresc_a_parts"] = ["clarinet1", "clarinet2", "horn1", "horn2", "horn3","horn4"]
         self.material["cresc_b_parts"] = self.material["cresc_a_parts"].copy() + ["trombone1"]
@@ -442,6 +448,7 @@ class Conduct(WadoMaterial):
 class DayMusicSplit(WadoMaterial):
     def __init__(self):
         super().__init__(measures_durations=[(6,8)]*12)
+        self.material["rhythm"]["ref"] = "c4. ~ c4. " *12
 
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[
