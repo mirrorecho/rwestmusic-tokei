@@ -111,7 +111,9 @@ music.add_pitch_material("cloud_next", [
                     ["E5"],["D5"],["C#5"],["F#4"],["E4"],["C#4"],["F#3"],["C#3"]
                     ], apply_flags=["3_line"])
 music.exec_method("add_cloud_pitches", cloud_type=KaiCloudStringsUp, 
-    cloud_name="kai-cloud-strings-up", material_name="cloud", apply_flags="3_line_again")
+    cloud_name="kai-cloud-strings-up", material_name="cloud", apply_flags=["3_line_again"])
+music.exec_method("add_cloud_pitches", cloud_type=KaiCloudStringsUp, 
+    cloud_name="kai-cloud-winds-up", material_name="cloud", apply_flags=["3_ji"])
 
 
 # TO DO... keep going on this (maybe it should go in the base class...)
@@ -152,6 +154,11 @@ music.add_rhythm_material("cloud",
                 apply_flags=["2_ji","3_line"])
 
 music.add_rhythm_material("cloud", ["c8( c8) "*32], start_flag="3_line_again")
+
+# ji rhythm that gives winds time to breathe...
+music.add_rhythm_material("cloud", ["c8( c c c) "*7 + """c8( c) r4 
+                        c8(\\< c c c) """ + "c8( c c c) "*6 + "c8( c)\\mf r4"],
+                        start_flag="3_ji")
 
 # TO DO MAYBE... could make unique rhythms for the lower parts...
 music.copy_material("rhythm", "cloud", "cloud_lower", start_flag="2_line")
@@ -265,7 +272,7 @@ make_flags=(
     # "2_ji",
     # "3_line",
     # "3_line_again",
-    "3_ji",
+    # "3_ji",
     "4_line",
     # "4_ji",
     # "5_line",

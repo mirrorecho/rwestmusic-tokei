@@ -511,10 +511,16 @@ class Kai3Ji(KaiJi):
         super().kai_material()
         self.material["kairos_a_parts"] = ["violinI","violinII"]
         self.material["counter_parts"] = ["viola","cello"]
+        self.material["cloud_parts"] =["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"]
+        self.done=True
         # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
 
     def kai_kairos(self):
         super().kai_kairos()
+
+    def kai_cloud(self):
+        self.kai_arrange_material("cloud", pitch_offset=[2])
+        self.attach_dynamics(part_names=self.material["cloud_parts"], dynamics=[["p"]])
 
 
 #--------------------------------------------------------------------------------------------
