@@ -182,7 +182,7 @@ class KaiMaterial(TokeiBubble):
                 is_previous_instance = False,
                 ):
 
-        super().__init__(name="kairos-material", measures_durations=measures_durations)
+        super().__init__(name="kairos-material", title="Kairos", measures_durations=measures_durations)
 
         # self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
@@ -324,7 +324,7 @@ class KaiMaterial(TokeiBubble):
         if not self.done:
             self.arrange_music(part_names=["harmony_3"], rhythm_material=["fill_notes"], pitch_material=["low"])
 
-    def kai_kairos(self):
+    def kai_kairos(self, skip_arrange=False):
         self.material["rhythm"]["kairos_a"] = [" ".join(
                                 [self.material["rhythm"][k] 
                                     for k in ["kairos_a_1","kairos_a_2","kairos_a_3","kairos_a_4",
@@ -334,8 +334,9 @@ class KaiMaterial(TokeiBubble):
             self.material["kairos_a_parts"].append("line_1")
             self.material["kairos_b_parts"].append("line_2")
 
-        self.kai_arrange_material("kairos_a")
-        self.kai_arrange_material("kairos_b")
+        if not skip_arrange:
+            self.kai_arrange_material("kairos_a")
+            self.kai_arrange_material("kairos_b")
 
 class KaiFree(KaiMaterial, TokeiFree):
     pass
@@ -586,6 +587,12 @@ class Kai4(KaiMelody):
         self.material["cloud_parts"] =["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
         self.material["counter_parts"] = ["horn1","horn2"]
 
+    def kai_kairos(self):
+        super().kai_kairos(skip_arrange=True)
+        self.kai_arrange_material("kairos_a", transpose=[0,0,12])
+        self.kai_arrange_material("kairos_b")
+
+
 #--------------------------------------------------------------------------------------------
 class Kai4Ji(KaiJi):
     def kai_material(self):
@@ -593,6 +600,12 @@ class Kai4Ji(KaiJi):
         # self.add_taiko_material("c8_do-> c_ko c_do-> c_ko-> "*8) # all hits ji?
         self.material["kairos_a_parts"] = ["trombone1","trombone2","tuba"]
         self.material["kairos_b_parts"] = ["violinI","violinII","viola","cello","bass"]
+
+    def kai_kairos(self):
+        super().kai_kairos(skip_arrange=True)
+        self.kai_arrange_material("kairos_a")
+        # TO DO... think about this pitch distribution....
+        self.kai_arrange_material("kairos_b", transpose=[0,0,-12,-24,-24])
 
 
 #--------------------------------------------------------------------------------------------
@@ -604,18 +617,45 @@ class Kai5(KaiMelody):
         self.material["counter_parts"] = ["horn3","horn4"]
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
+        self.material["cloud_parts"] = ["violinI","violinII","viola","cello"]
+
+    def kai_kairos(self):
+        super().kai_kairos(skip_arrange=True)
+        self.kai_arrange_material("kairos_a", transpose=[12,12,0,0])
+        # TO DO... think about this pitch distribution....
+        self.kai_arrange_material("kairos_b")
+
 #--------------------------------------------------------------------------------------------
 class Kai5Ji(KaiJi):
     def kai_material(self):
         super().kai_material()
+        self.material["kairos_a_parts"] = ["flute1","oboe1","clarinet1"]
+        self.material["kairos_b_parts"] = ["trumpet1","trumpet2","horn1","horn2"]
+        self.material["cloud_parts"] = ["violinI","violinII","viola","cello"]
+
+    def kai_kairos(self):
+        super().kai_kairos(skip_arrange=True)
+        self.kai_arrange_material("kairos_a", transpose=[24])
+        self.kai_arrange_material("kairos_b", transpose=[12,12,0,0])
+        # TO DO... think about this pitch distribution....
+
 #--------------------------------------------------------------------------------------------
 class Kai6(KaiMelody):
     def kai_material(self):
         super().kai_material()
+        self.material["kairos_b_parts"] = ["flute1","oboe1","clarinet1"]
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material((fast + "c8_don c8_don ")*4 + "c8_do[ c_do] c_do[ c_don] r[ c_do] " + fast + "c16_do[ c_ko c8_don] r[ c_don] r[ c_do] c4_don ") 
+        self.material["cloud_parts"] = ["violinI","violinII","viola","cello"]
+
+    def kai_kairos(self):
+        super().kai_kairos(skip_arrange=True)
+        self.kai_arrange_material("kairos_b", transpose=[24,12,12])
+
 #--------------------------------------------------------------------------------------------
 # use this one or not??
 class Kai6All(Kai6):
     def kai_material(self):
         super().kai_material()
+        self.material["kairos_b_parts"] =[]
+        self.material["cloud_parts"] = ["violinI","violinII","viola","cello"]

@@ -64,11 +64,15 @@ music.exec_method("replace_pitch", material="kairos_a", pitch="E4", other_pitch=
 music.exec_method("replace_pitch", material="kairos_b", pitch="A4", other_pitch="C#5", stop_flag="4_line")
 music.exec_method("replace_pitch", material="kairos_b", pitch="E4", other_pitch="C#4", stop_flag="3_line")
 
+# may be less confusing to do this in the classes...
 music.exec_method("transpose_pitch_material", material="kairos_a", transpose=24, apply_flags=["2_ji"])
 music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12, apply_flags=["3_line"])
 
-music.exec_method("transpose_pitch_material", material="kairos_a", transpose=12, start_flag="3_ji")
-music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12, start_flag="3_ji")
+music.exec_method("transpose_pitch_material", material="kairos_a", transpose=12, apply_flags=["3_ji"])
+music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12, apply_flags=["3_ji","4_line",])
+
+music.exec_method("transpose_pitch_material", material="kairos_a", transpose=-12, apply_flags=["4_line","4_ji"])
+music.exec_method("transpose_pitch_material", material="kairos_b", transpose=-12, apply_flags=["5_line",])
 
 
 
@@ -116,6 +120,13 @@ music.exec_method("add_cloud_pitches", cloud_type=KaiCloudStringsUp,
     cloud_name="kai-cloud-winds-up", material_name="cloud", apply_flags=["3_ji"])
 music.exec_method("add_cloud_pitches", cloud_type=KaiCloudStringsUp, 
     cloud_name="kai-cloud-winds", material_name="cloud", apply_flags=["4_line"])
+music.add_pitch_material("cloud", [
+                    ["A4"],
+                    # note... this is really copies of the cycle... a transform would be better than hard-coding the copy:
+                    ["C#4"]*18 + ["F#4"]*12 + ["E4"]*12 + ["D4"]*6,
+                    ["A3"],
+                    ["C#3"]*18 + ["F#3"]*12 + ["E3"]*12 + ["D3"]*6,
+                    ], start_flag="5_line")
 
 # TO DO... keep going on this (maybe it should go in the base class...)
 # IF HARMONICS WORK, tuplets may not be realistic
@@ -164,7 +175,7 @@ music.add_rhythm_material("cloud", ["""c8(\\< c) c( c)  c8( c) c( c)\\!\\>     c
                     r4 r8 c8(\\< c c) c( c)     c( c) c( c) c( c) c( c)     c(\\!\\>  c) c( c) c( c) c( c)    c( c) c( c)\\! 
                     r4 c8( c)\\<          c( c) c( c) c( c) c( c)     c( c) c( c) c( c)\\f  r4 """],
                         apply_flags=["4_line"])
-
+music.add_rhythm_material("cloud", ["c4-- c8-. c8-. "*16], start_flag="5_line")
 
 # TO DO MAYBE... could make unique rhythms for the lower parts...
 music.copy_material("rhythm", "cloud", "cloud_lower", start_flag="2_line")
@@ -272,19 +283,19 @@ music.arrange_music(part_names=kai.parts, rhythm_material=["rest"])
 # music.attach(attachments=[[indicatortools.LilyPondCommand("break")]], part_names=kai.parts)
 
 make_flags=(
-    # "1_line",
-    # "1_ji",
-    # "2_line",
-    # "2_ji",
-    # "3_line",
-    # "3_line_again",
-    # "3_ji",
+    "1_line",
+    "1_ji",
+    "2_line",
+    "2_ji",
+    "3_line",
+    "3_line_again",
+    "3_ji",
     "4_line",
-    # "4_ji",
-    # "5_line",
-    # "5_ji",
-    # "6_line",
-    # "6_all",
+    "4_ji",
+    "5_line",
+    "5_ji",
+    "6_line",
+    "6_all",
     )
 
 music.apply_transforms(flags=make_flags)

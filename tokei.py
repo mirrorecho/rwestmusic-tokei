@@ -12,9 +12,9 @@ JI_PITCH = get_pitch_number("A5")
 class TokeiBubble(Bubble):
 
     #  use **args here?
-    def __init__(self, layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False, div_strings=False):
+    def __init__(self, title="Tokei for Taiko and Orchestra", layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False, div_strings=False):
 
-        super().__init__(title="Tokei for Taiko and Orchestra", name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters)
+        super().__init__(title=title, name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters)
 
         self.add_staff_group(name="winds", part_names=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"])
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
@@ -153,10 +153,10 @@ class TokeiBubble(Bubble):
 
 # TO DO... move this to calliope for general use!
 class TokeiFree(TokeiBubble):
-    def __init__(self, name="full-score-free", layout="orchestra", measures_durations=[(24,8)], 
+    def __init__(self, title="Tokei for Taiko and Orchestra", name="full-score-free", layout="orchestra", measures_durations=[(24,8)], 
         show_x_time=True):
 
-        super().__init__(name=name, measures_durations=measures_durations, odd_meters=False)
+        super().__init__(name=name, title=title, measures_durations=measures_durations, odd_meters=False)
 
         self.free = True
         self.show_x_time = show_x_time
