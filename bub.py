@@ -30,7 +30,8 @@ from kai_m import *
 
 
 f = KaiCloudWindsUp(name="kai-cloud-winds-up", autorandom=True)
-f.show_cloud()
+# f.show_cloud()
+f.tally_loop()
 
 #music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
 
