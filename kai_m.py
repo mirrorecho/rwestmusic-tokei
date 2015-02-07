@@ -122,6 +122,56 @@ class KaiCloudWindsUp(KaiCloud):
             )
 
 
+class KaiCloudWinds(KaiCloud):
+    def get_pitches(self):
+        melody_pitches=["C#4","C#4","C#4","C#4","C#4","C#4","C#4","C#4",
+                        "C#4","D4", "D4", "D4", "D4", "D4", "D4", "D4"
+                        ,                 "C#4","C#4","C#4","E4", "E4",
+                        "D4", "D4", "D4", "D4", "D4", "D4", "C#4","C#4",
+                        "E4", "E4", "E4", "D4", "D4", "D4", "F#4","F#4", 
+                        "C#4","C#4","C#4","C#4",            "C#4","D4",
+                        "D4", "D4", "D4", "C#4","F#4","F#4","E4", "E4", 
+                        "F#4","F#4","F#4","F#4","F#4","F#4",           ]
+
+        self.pitches = get_pitch_number([
+            copy.deepcopy(melody_pitches),
+            copy.deepcopy(melody_pitches),
+            ["A4"]*57,
+            ["A4"]*57,
+            ["F#4"]*57,
+            ["E4"]*57,
+            ["D4"]*57,
+            ["D4"]*57,
+            ["C#4"]*57,
+            ])
+
+    def prepare_cloud(self):
+        self.tally_apps = [
+            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(interval_ratings=[(0, -200), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)],
+                over_incremental_multiplier=(12,-60) ),
+            TallyRepeatedJumps(),
+        ]
+
+    def get_pitch_ranges(self):
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=9, 
+            times=64,
+            high_intervals=[11], 
+            low_pitches=["C4","C4","E5","E5","E5","A3","A3","G3","G3",],
+            increments=[
+                        [2]*8 +[-2]*8 +       [1]*12 + [-1]*13 +          [1]*16,
+                        [2]*8 +[-2]*8 +       [1]*12 + [-1]*13 +          [1]*16,
+                        [-2]*8 +[2]*8 +       [-1]*12 + [1]*13 +          [-1]*16,
+                        [-2]*8 +[2]*8 +       [-1]*12 + [1]*13 +          [-1]*16,
+                        [-2]*8 +[2]*8 +       [-1]*12 + [1]*13 +          [-1]*16,
+                        [2]*8 +[-2]*8 +       [1]*12 + [-1]*13 +          [1]*16,
+                        [2]*8 +[-2]*8 +       [1]*12 + [-1]*13 +          [1]*16,
+                        [-2]*8 +[2]*8 +       [-1]*12 + [1]*13 +          [-1]*16,
+                        [-2]*8 +[2]*8 +       [-1]*12 + [1]*13 +          [-1]*16,
+                        ]
+            )
+
 
 
 
@@ -532,6 +582,8 @@ class Kai4(KaiMelody):
                     c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
         self.material["kairos_b_parts"] = ["violinI","violinII"]
+        self.material["kairos_a_parts"] = ["viola","cello","bass"]
+        self.material["cloud_parts"] =["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
 
 #--------------------------------------------------------------------------------------------
 class Kai4Ji(KaiJi):

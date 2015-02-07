@@ -29,7 +29,11 @@ from kai_m import *
 # f.tally_loop()
 
 
-f = KaiCloudWindsUp(name="kai-cloud-winds-up", autorandom=True)
+# f = KaiCloudWindsUp(name="kai-cloud-winds-up", autorandom=True)
+# # f.show_cloud()
+# f.tally_loop()
+
+f = KaiCloudWinds(name="kai-cloud-winds")
 # f.show_cloud()
 f.tally_loop()
 

@@ -1,4 +1,4 @@
-% 2015-02-06 22:43
+% 2015-02-06 23:52
 
 \version "2.18.2"
 \language "english"
@@ -45,98 +45,469 @@
 				\set Staff.shortInstrumentName = \markup { Fl.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs'8 \< (
+				d'8 )
+				a'8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				cs''8 (
+				cs'''8 \! ) \>
+				a''8 (
+				fs''8 )
+				d''8 (
+				a''8 )
+				a'8 (
+				d''8 )
+				a'8 (
+				fs'8 \! )
+				r4
+				r8
+				d'8 \< (
+				e'8
+				d'8 )
+				e'8 (
+				fs'8 )
+				a'8 (
+				d''8 )
+				e''8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				fs''8 (
+				a''8 )
+				d''8 \! \> (
+				e''8 )
+				fs''8 (
+				d''8 )
+				e''8 (
+				d''8 )
+				cs''8 (
+				fs'8 )
+				a'8 (
+				cs''8 )
+				a'8 (
+				cs'8 \! )
+				r4
+				a'8 (
+				d'8 ) \<
+				e'8 (
+				d'8 )
+				d''8 (
+				cs''8 )
+				a'8 (
+				fs'8 )
+				cs''8 (
+				d''8 )
+				a'8 (
+				fs''8 )
+				a''8 (
+				fs''8 )
+				a''8 (
+				fs''8 \f )
+				r4
 			}
 			\context Staff = "flute2" {
 				\set Staff.instrumentName = \markup { Flute 2 }
 				\set Staff.shortInstrumentName = \markup { Fl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				a'8 \< (
+				fs'8 )
+				d''8 (
+				cs''8 )
+				a'8 (
+				cs''8 )
+				d''8 (
+				a''8 \! ) \>
+				cs'''8 (
+				e''8 )
+				d''8 (
+				fs''8 )
+				e''8 (
+				a'8 )
+				d''8 (
+				d'8 \! )
+				r4
+				r8
+				cs'8 \< (
+				a'8
+				cs''8 )
+				e'8 (
+				a'8 )
+				d''8 (
+				a'8 )
+				d''8 (
+				fs''8 )
+				d''8 (
+				e''8 )
+				d''8 (
+				fs''8 )
+				cs''8 \! \> (
+				e''8 )
+				d''8 (
+				fs''8 )
+				a'8 (
+				d''8 )
+				a'8 (
+				cs''8 )
+				d''8 (
+				cs''8 )
+				fs'8 (
+				e'8 \! )
+				r4
+				d'8 (
+				e'8 ) \<
+				a'8 (
+				d'8 )
+				cs''8 (
+				d''8 )
+				e''8 (
+				d''8 )
+				a'8 (
+				e''8 )
+				fs''8 (
+				d''8 )
+				fs''8 (
+				fs''8 )
+				d''8 (
+				a''8 \f )
+				r4
 			}
 			\context Staff = "oboe1" {
 				\set Staff.instrumentName = \markup { Oboe 1 }
 				\set Staff.shortInstrumentName = \markup { Ob.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				e''8 \< (
+				d''8 )
+				cs''8 (
+				fs''8 )
+				cs''8 (
+				a'8 )
+				cs''8 (
+				e'8 \! ) \>
+				fs'8 (
+				a'8 )
+				d''8 (
+				d''8 )
+				fs''8 (
+				d''8 )
+				cs''8 (
+				d''8 \! )
+				r4
+				r8
+				a''8 \< (
+				fs''8
+				e''8 )
+				d''8 (
+				e''8 )
+				d''8 (
+				fs''8 )
+				d''8 (
+				e''8 )
+				a'8 (
+				a'8 )
+				d''8 (
+				cs''8 )
+				d''8 \! \> (
+				a'8 )
+				e''8 (
+				a'8 )
+				d''8 (
+				cs''8 )
+				d''8 (
+				a''8 )
+				fs''8 (
+				cs'''8 )
+				d'''8 (
+				cs'''8 \! )
+				r4
+				fs''8 (
+				a''8 ) \<
+				d'''8 (
+				a''8 )
+				d''8 (
+				a''8 )
+				cs''8 (
+				fs''8 )
+				e''8 (
+				d''8 )
+				fs''8 (
+				a'8 )
+				fs'8 (
+				a'8 )
+				fs'8 (
+				cs''8 \f )
+				r4
 			}
 			\context Staff = "oboe2" {
 				\set Staff.instrumentName = \markup { Oboe 2 }
 				\set Staff.shortInstrumentName = \markup { Ob.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs'''8 \< (
+				a''8 )
+				e''8 (
+				cs''8 )
+				d''8 (
+				cs''8 )
+				a'8 (
+				fs'8 \! ) \>
+				d'8 (
+				cs''8 )
+				a'8 (
+				d''8 )
+				d''8 (
+				e''8 )
+				d''8 (
+				a''8 \! )
+				r4
+				r8
+				cs'''8 \< (
+				a''8
+				d''8 )
+				cs''8 (
+				d''8 )
+				fs''8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				fs''8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				a'8 \! \> (
+				e''8 )
+				a'8 (
+				e''8 )
+				d''8 (
+				e''8 )
+				a''8 (
+				fs''8 )
+				a''8 (
+				d''8 )
+				cs'''8 (
+				d'''8 \! )
+				r4
+				cs'''8 (
+				fs''8 ) \<
+				d'''8 (
+				d''8 )
+				fs''8 (
+				cs''8 )
+				fs''8 (
+				cs''8 )
+				e''8 (
+				fs''8 )
+				d''8 (
+				cs''8 )
+				fs'8 (
+				a'8 )
+				fs'8 (
+				d'8 \f )
+				r4
 			}
 			\context Staff = "oboe3" {
 				\set Staff.instrumentName = \markup { Oboe 3 }
 				\set Staff.shortInstrumentName = \markup { Ob.3 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				d'''8 \< (
+				cs'''8 )
+				a''8 (
+				d''8 )
+				e''8 (
+				fs'8 )
+				a'8 (
+				d'8 \! ) \>
+				cs'8 (
+				d'8 )
+				e'8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				fs''8 (
+				a''8 \! )
+				r4
+				r8
+				d'''8 \< (
+				cs'''8
+				fs''8 )
+				a''8 (
+				e''8 )
+				cs''8 (
+				a''8 )
+				fs''8 (
+				a'8 )
+				d''8 (
+				cs''8 )
+				a'8 (
+				cs''8 )
+				fs'8 \! \> (
+				a'8 )
+				e''8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				fs''8 (
+				e''8 )
+				cs''8 (
+				a''8 )
+				cs'''8 (
+				fs''8 \! )
+				r4
+				d'''8 (
+				cs'''8 ) \<
+				d'''8 (
+				cs'''8 )
+				d''8 (
+				e''8 )
+				fs''8 (
+				e''8 )
+				d''8 (
+				a'8 )
+				fs''8 (
+				e''8 )
+				d''8 (
+				cs''8 )
+				d''8 (
+				a'8 \f )
+				r4
 			}
 			\context Staff = "clarinet1" {
 				\set Staff.instrumentName = \markup { Clarinet 1 in Bb }
 				\set Staff.shortInstrumentName = \markup { Cl.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs'8 \< (
+				e'8 )
+				cs'8 (
+				a'8 )
+				fs'8 (
+				e''8 )
+				cs''8 (
+				d''8 \! ) \>
+				cs''8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				d'8 (
+				e'8 \! )
+				r4
+				r8
+				cs'8 \< (
+				d'8
+				cs'8 )
+				a'8 (
+				d'8 )
+				a'8 (
+				cs''8 )
+				d''8 (
+				cs''8 )
+				d''8 (
+				fs''8 )
+				cs''8 (
+				d''8 )
+				e''8 \! \> (
+				cs''8 )
+				d''8 (
+				a'8 )
+				d''8 (
+				fs'8 )
+				e'8 (
+				fs'8 )
+				d'8 (
+				e'8 )
+				a'8 (
+				a8 \! )
+				r4
+				cs'8 (
+				a8 ) \<
+				d'8 (
+				e'8 )
+				a'8 (
+				d'8 )
+				a'8 (
+				d''8 )
+				fs'8 (
+				e''8 )
+				d''8 (
+				fs''8 )
+				e''8 (
+				fs''8 )
+				e''8 (
+				fs''8 \f )
+				r4
 			}
 			\context Staff = "clarinet2" {
 				\set Staff.instrumentName = \markup { Clarinet 2 in Bb }
 				\set Staff.shortInstrumentName = \markup { Cl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				fs'8 \< (
+				a'8 )
+				cs'8 (
+				a'8 )
+				cs''8 (
+				d''8 )
+				e''8 (
+				a''8 \! ) \>
+				e''8 (
+				d''8 )
+				a'8 (
+				cs''8 )
+				d''8 (
+				a'8 )
+				e'8 (
+				d'8 \! )
+				r4
+				r8
+				a8 \< (
+				d'8
+				cs'8 )
+				fs'8 (
+				cs'8 )
+				d'8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				cs''8 (
+				a'8 )
+				e''8 \! \> (
+				fs''8 )
+				a'8 (
+				d''8 )
+				a'8 (
+				d''8 )
+				fs'8 (
+				d'8 )
+				e'8 (
+				fs'8 )
+				e'8 (
+				cs'8 \! )
+				r4
+				e'8 (
+				d'8 ) \<
+				fs'8 (
+				d'8 )
+				a'8 (
+				fs'8 )
+				d'8 (
+				fs'8 )
+				a'8 (
+				cs''8 )
+				e''8 (
+				d''8 )
+				cs''8 (
+				d''8 )
+				fs''8 (
+				d''8 \f )
+				r4
 			}
 			\context Staff = "bassoon1" {
 				\clef "bass"
@@ -144,14 +515,67 @@
 				\set Staff.shortInstrumentName = \markup { Bsn.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				a8 \< (
+				cs'8 )
+				fs8 (
+				e8 )
+				d8 (
+				cs8 )
+				d8 (
+				cs8 \! ) \>
+				d8 (
+				a,8 )
+				d8 (
+				a,8 )
+				d8 (
+				cs8 )
+				a8 (
+				d'8 \! )
+				r4
+				r8
+				fs'8 \< (
+				cs'8
+				a8 )
+				d'8 (
+				e8 )
+				d8 (
+				e8 )
+				d8 (
+				a8 )
+				d8 (
+				a,8 )
+				e8 (
+				cs8 )
+				e8 \! \> (
+				d8 )
+				cs8 (
+				d8 )
+				fs8 (
+				a8 )
+				d8 (
+				d'8 )
+				cs'8 (
+				d'8 )
+				cs'8 (
+				d'8 \! )
+				r4
+				a8 (
+				d'8 ) \<
+				cs'8 (
+				a8 )
+				e8 (
+				a8 )
+				fs8 (
+				a8 )
+				e8 (
+				a8 )
+				cs8 (
+				a,8 )
+				d8 (
+				e8 )
+				a,8 (
+				fs,8 \f )
+				r4
 			}
 			\context Staff = "bassoon2" {
 				\clef "bass"
@@ -159,14 +583,67 @@
 				\set Staff.shortInstrumentName = \markup { Bsn.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				d'8 \< (
+				cs'8 )
+				d'8 (
+				cs8 )
+				a8 (
+				a,8 )
+				fs8 (
+				cs8 \! ) \>
+				a,8 (
+				d8 )
+				fs8 (
+				e8 )
+				d8 (
+				fs8 )
+				d'8 (
+				cs'8 \! )
+				r4
+				r8
+				e'8 \< (
+				cs'8
+				a8 )
+				e8 (
+				a8 )
+				e8 (
+				d8 )
+				cs8 (
+				d8 )
+				e8 (
+				d8 )
+				cs8 (
+				e8 )
+				a,8 \! \> (
+				d8 )
+				e8 (
+				cs8 )
+				d8 (
+				a8 )
+				fs8 (
+				a8 )
+				cs'8 (
+				a8 )
+				d'8 (
+				a8 \! )
+				r4
+				cs'8 (
+				d'8 ) \<
+				a8 (
+				fs8 )
+				d'8 (
+				cs'8 )
+				d8 (
+				a8 )
+				d8 (
+				e8 )
+				a8 (
+				fs8 )
+				a,8 (
+				d8 )
+				cs8 (
+				e8 \f )
+				r4
 			}
 		>>
 		\context StaffGroup = "brass" <<
@@ -583,14 +1060,31 @@
 				\set Staff.shortInstrumentName = \markup { Vla }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs''1
+				cs''8 (
+				d''4. ~
+				d''2 )
+				r4
+				r8
+				cs''8 ~ (
+				cs''4
+				e''4
+				d''2. )
+				cs''4 (
+				e''4.
+				d''8 ~
+				d''4
+				fs''4
+				cs''2. )
+				cs''8 (
+				d''8 ~
+				d''4. )
+				cs''8 (
+				fs''4
+				e''4 )
+				fs''2.
+				cs''8 (
+				d''8 )
 			}
 			\context Staff = "cello" {
 				\clef "bass"
@@ -598,14 +1092,31 @@
 				\set Staff.shortInstrumentName = \markup { Vc. }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs''1
+				cs''8 (
+				d''4. ~
+				d''2 )
+				r4
+				r8
+				cs''8 ~ (
+				cs''4
+				e''4
+				d''2. )
+				cs''4 (
+				e''4.
+				d''8 ~
+				d''4
+				fs''4
+				cs''2. )
+				cs''8 (
+				d''8 ~
+				d''4. )
+				cs''8 (
+				fs''4
+				e''4 )
+				fs''2.
+				cs''8 (
+				d''8 )
 			}
 			\context Staff = "bass" {
 				\clef "bass"
@@ -613,14 +1124,31 @@
 				\set Staff.shortInstrumentName = \markup { Cb. }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
-				R1
+				cs''1
+				cs''8 (
+				d''4. ~
+				d''2 )
+				r4
+				r8
+				cs''8 ~ (
+				cs''4
+				e''4
+				d''2. )
+				cs''4 (
+				e''4.
+				d''8 ~
+				d''4
+				fs''4
+				cs''2. )
+				cs''8 (
+				d''8 ~
+				d''4. )
+				cs''8 (
+				fs''4
+				e''4 )
+				fs''2.
+				cs''8 (
+				d''8 )
 			}
 		>>
 		\context StaffGroup = "ref" <<
