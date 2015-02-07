@@ -51,12 +51,13 @@ class KaiCloud(TokeiCloud):
 
     def get_pitches(self):
         # TO DO MAYBE: echo the kairos:
-        self.pitches = [
+        single_cloud = [
             [get_pitch_number("F#4")]*64 ,
             [get_pitch_number("E4")]*64 ,
             [get_pitch_number("D4")]*64 ,
             [get_pitch_number("C#4")]*64 ,
-            ] * 5
+            ]
+        self.pitches = copy.deepcopy(single_cloud) + copy.deepcopy(single_cloud) + copy.deepcopy(single_cloud) + copy.deepcopy(single_cloud) + copy.deepcopy(single_cloud)
 
     def prepare_cloud(self):
         self.tally_apps = [
@@ -75,10 +76,12 @@ class KaiCloudStringsUp(KaiCloud):
         self.pitch_ranges = get_pitch_ranges(
             num_lines=18, 
             times=64,
-            high_intervals=[13], # may make the lines better...?
-            low_pitches=["G3"]*10 + ["C3"]*4 + ["C2"]*4,
-            increments=[[0,0,1]]
+            high_intervals=[11], # may make the lines better...?
+            low_pitches=["G3","G3","G3","G3","G3","G3","G3","G3","G3","G3",
+                    "C3","C3","C3","C3",    "G2","G2","G2","G2",],
+            increments=[[0]*40 + [0,1]*6 + [1]*12]
             )
+        # print(self.pitch_ranges)
 
 
 class KaiMaterial(TokeiBubble):
