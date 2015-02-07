@@ -81,7 +81,47 @@ class KaiCloudStringsUp(KaiCloud):
                     "C3","C3","C3","C3",    "G2","G2","G2","G2",],
             increments=[[0]*40 + [0,1]*6 + [1]*12]
             )
-        # print(self.pitch_ranges)
+
+
+class KaiCloudWindsUp(KaiCloud):
+    def get_pitches(self):
+        self.pitches = get_pitch_number([
+            ["F#4"]*16 + ["A4","F#4","F#4"]*8 + ["A4","F#4"]*8 + ["A4"]*8,
+            ["C#4"]*32 + ["A4","D4","D4"]*8 + ["A4","D4"]*4,
+            ["D4"]*64,
+            ["F#4"]*64,
+            ["E4"]*64,
+            ["D4"]*64,
+            ["C#4"]*64,
+            ])
+
+    def prepare_cloud(self):
+        self.tally_apps = [
+            TallyParallelIntervals(interval_ratings=[(0,-20), (7,-11)]), 
+            TallyMelodicIntervals(interval_ratings=[(0, -200), (1,12), (2,22), (3,9), (4,9), (5,6), (6,-6), (7,-4), (10,-8), (11,-20), (12,-4)], 
+                over_incremental_multiplier=(12,-60),
+                up_rating=20,),
+            TallyRepeatedJumps(),
+        ]
+
+    def get_pitch_ranges(self):
+        self.pitch_ranges = get_pitch_ranges(
+            num_lines=7, 
+            times=64,
+            high_intervals=[11], 
+            low_pitches=["D4","D4","F#4","F#4","F#4","E3","E3"],
+            increments=[
+                        [0]*32 + [1,0,0]*11,
+                        [0]*32 + [1,0,0]*11,
+                        [0]*48 + [1,0]*4 + [0]*8,
+                        [0]*48 + [1,0]*4 + [0]*8,
+                        [0]*48 + [1,0]*4 + [0]*8,
+                        [0,0,0,1]*6 + [0,0,1]*14
+                        ]
+            )
+
+
+
 
 
 class KaiMaterial(TokeiBubble):
@@ -124,6 +164,12 @@ class KaiMaterial(TokeiBubble):
         self.material["pitch"]["kairos_b"]=[["A4","E4","A4",   "E4","F#4",   "D4","E4",   
                             "E4","A4",   "E4","A4",   "F#4","C#5","D5","E4",   "E4","A4"]]
 
+
+        self.material["pitch"]["counter"]=[
+                        ["C#4","C#4","D4", "C#4","D4", "D4", "D4", "C#4","C#4","E4", "F#4"],
+                        ["E3", "E3", "F#3","E3", "F#3","F#3","F#3","E3", "E3", "C#4","D4"]
+                        ]
+
         self.material["rhythm"]["soft_2bar_swell"] = "r8 c4.\\pp\\< ~  c2\\p\\> ~ | c1\\pp "
 
         self.material["rhythm"]["taiko_ji"] = "c4_don c8_do[ c_ko] " + "c4 c8 c_ko " * 7
@@ -139,6 +185,9 @@ class KaiMaterial(TokeiBubble):
 
         self.material["rhythm"]["_s4"] = "s4 "
 
+        self.material["rhythm"]["counter"]=["""c2. c4 ~ | c4. c8 ~ c2 ~ | c4. c8 ~ c2 | 
+                                        c4. c8 ~ c2 ~ | c4. c8 ~ c2 |
+                                        c4. c8 ~ c2 ~ | c2. c4 | c1 """]
 
         self.material["kairos_a_parts"] = []
         self.material["kairos_b_parts"] = []
@@ -216,6 +265,9 @@ class KaiMaterial(TokeiBubble):
     def kai_cycles(self):
         if not self.done:
             self.arrange_music(part_names=["harmony_2"], pitch_material=["cycle"],rhythms=["c1 ~ c1~ c1   c1~ c1   c1~ c1 c1"])
+
+    def kai_counter(self):
+        self.kai_arrange_material("counter")
 
     def kai_low(self):
         if not self.done:
@@ -457,6 +509,7 @@ class Kai3Ji(KaiJi):
     def kai_material(self):
         super().kai_material()
         self.material["kairos_a_parts"] = ["violinI","violinII"]
+        self.material["counter_parts"] = ["viola","cello"]
         # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
 
     def kai_kairos(self):

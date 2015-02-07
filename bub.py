@@ -24,9 +24,13 @@ from kai_m import *
 # f.show()
 # f.tally_loop()
 
-f = KaiCloudStringsUp(name="kai-cloud-strings-up")
+# f = KaiCloudStringsUp(name="kai-cloud-strings-up")
 # f.show()
-f.tally_loop()
+# f.tally_loop()
+
+
+f = KaiCloudWindsUp(name="kai-cloud-winds-up", autorandom=True)
+f.show_cloud()
 
 #music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["2hits_a", "stop_class1", "melody"])
 

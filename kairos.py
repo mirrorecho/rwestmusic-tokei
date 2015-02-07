@@ -195,6 +195,7 @@ music.exec_method("kai_holds")
 music.exec_method("kai_kairos")
 music.exec_method("kai_cloud")
 music.exec_method("kai_cycles")
+music.exec_method("kai_counter")
 music.exec_method("kai_low")
 
 # ---------------------------------------------------------
@@ -219,6 +220,17 @@ music.exec_method("change_instrument", part_name="violinI",
 music.exec_method("change_instrument", part_name="violinII", 
             instrument_name="Violin II", short_instrument_name="vln.II", 
             show_instruction=True, instruction_text="tutti Violin II",
+            apply_flags=["3_ji"]
+            )
+music.exec_method("change_instrument", part_name="viola", 
+            instrument_name="Viola", short_instrument_name="vla.", 
+            show_instruction=True, instruction_text="tutti Viola",
+            apply_flags=["3_ji"]
+            )
+
+music.exec_method("change_instrument", part_name="cello", 
+            instrument_name="Cello", short_instrument_name="vc.", 
+            show_instruction=True, instruction_text="tutti Cello",
             apply_flags=["3_ji"]
             )
 
@@ -252,7 +264,7 @@ make_flags=(
     # "2_line",
     # "2_ji",
     # "3_line",
-    "3_line_again",
+    # "3_line_again",
     "3_ji",
     "4_line",
     # "4_ji",
