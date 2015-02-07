@@ -6,7 +6,7 @@ import copy
 
 from tokei import TokeiBubble, TokeiFree
 
-from calliope.tools import music_from_durations, transpose_pitches
+from calliope.tools import *
 
 # TO DO TODAY
 # - list of ideas in preparation for taiko session tomorrow (in addition to kairos above)
@@ -106,6 +106,11 @@ class WadoMaterial(TokeiBubble):
         self.material["rhythm"]["measure_note"] = "c2. r4. "
 
 
+        self.material["rhythm"]["blow_crank_a"] = [
+                "c4( c8) c4-. r8 c4( c8)    c4-. r8 c4( c8) c4-. r8"*2]
+        self.material["rhythm"]["blow_crank_b"] = [
+                "c4-. r8 c4( c8) c4-. r8    c4( c8) c4-. r8 c4( c8)"*2]
+
         self.material["pitch"]["ji_osc"] = ["A5","B5","A5"]
 
         self.material["pitch"]["9ths"] = [0,14,28,42]
@@ -122,6 +127,10 @@ class WadoMaterial(TokeiBubble):
             ]
 
         self.material["pitch"]["ancient_B_up2"] = transpose_pitches(self.material["pitch"]["ancient_B"], 2)
+
+
+        # DO WE NEED A YO 3?
+        # DO WE WANT AN AUTO YO (based on ref?)
 
         # TO DO... some better way to copy pitch material
         self.material["pitch"]["ancient_B_modulate"] = copy.deepcopy(self.material["pitch"]["ancient_B_up2"])
@@ -156,7 +165,9 @@ class WadoMaterial(TokeiBubble):
             [["Eb2","Eb3"],                     ["Eb2","F3"],           ["F2","Eb3"],           "A2"],
         ]
 
-        self.material["pitch"]["ref"] = [["A2", "A2", "A2", "A2"]]
+        self.material["pitch"]["ref"] = [["A2", "A2", "A2", "G2"]]
+
+        self.material["yo_stack"] = [ 36, 26, 24, 12, -2]
 
         self.material["rhythm"]["ref"] = "c4. ~ c4. ~ c4. " *4
 
@@ -171,6 +182,19 @@ class WadoMaterial(TokeiBubble):
             [],
         ]
 
+        self.make_yo()
+
+    def make_yo(self, num_columns=12):
+        repeat_yos = round(num_columns / len(self.material["pitch"]["ref"][0]))
+        self.material["pitch"]["yo"] = []
+        
+        for s in self.material["yo_stack"]:
+            yo_row = []
+            for p in self.material["pitch"]["ref"][0]:
+                for i in range(repeat_yos):
+                    yo_row.append(get_pitch_number(p) + s)
+
+            self.material["pitch"]["yo"].append(yo_row)
 
 
         # the ji osc...
@@ -341,6 +365,7 @@ class MelodyBase(WadoMaterial):
         super().__init__()
         self.material["string_parts"] = ["violinI","violinII","viola","cello","bass"]
 
+
     def arrange_strings(self):
         self.arrange_music(part_names=self.material["string_parts"], 
             pitches=[["x"]], rhythm_material="strings_move")
@@ -427,6 +452,14 @@ class Melody(MelodyBase):
         self.material["rhythm"]["strings_move"]=["c4. "*12]
         self.material["rhythm"]["winds_rh1"]=[""]
         self.material["rhythm"]["winds_rh2"]=["c4. "*12]
+
+        self.material["pitch"]["yo"] = [
+                ["G#5","D#5","F5" ,   "B5" ,"B5" ,"B5" ,],
+                ["C#5","C#5","D#4",   "E5" ,"E5" ,"E5" ,],
+                ["F#4","C#4","C#4",   "E4" ,"E4" ,"E4" ,],
+                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,],
+                ["D2" ,"B2" ,"A1" ,   "G2" ,"G2" ,"G2" ,],
+                ]
 
 
 class MelodySwing1(Melody):

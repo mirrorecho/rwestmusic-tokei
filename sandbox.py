@@ -59,12 +59,48 @@ from caes_m import *
 print()
 print("----------------------------------------------------")
 
-c = Container("fs'''1\\pp ~ d''1")
-show(make_harmonics(
-    c,
-    harmonic_types = ["natural"],
-    strings=["D4"]
-    ))
+# t = TokeiBubble()
+# t.material["pitch"]["yo"] = [
+#                 ["C5","D5","E5","F5"],
+#                 ["C4","D4","E4","F4"],
+#                 ["F3","G3","A3","B3"],
+#                 ]
+
+# t.arrange_music(part_names=["violinI","violinII","viola","cello"],
+#     rhythms=["c4 "*8],
+#     pitch_material="yo",
+#     pitch_rows=[0,1,2,2],
+#     pitch_columns=[
+#             [0,0,1,1,2,2,3,3],
+#             [-1,-2,-3,-4],
+#             None,
+#             [0]
+#             ]
+#     )
+
+# t.show_pdf(hide_empty=True)
+
+
+w = WadoMaterial()
+w.arrange_music(part_names=["violinI","violinII","viola","cello"],
+    rhythms=["c4 "*12],
+    pitch_material="yo",
+    pitch_rows=[0,1,2,2],
+    pitch_columns=[
+            [0,0,1,1,2,2,3,3],
+            [-1,-2,-3,-4],
+            None,
+            [0]
+            ]
+    )
+w.show_pdf(hide_empty=True)
+
+# c = Container("fs'''1\\pp ~ d''1")
+# show(make_harmonics(
+#     c,
+#     harmonic_types = ["natural"],
+#     strings=["D4"]
+#     ))
 
     # print(harmonic)
     # print(pitchtools.NamedPitch(finger_pitch))

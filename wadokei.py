@@ -111,8 +111,8 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 iters=(
     # 0,1, # intro free
     # 2,3,
-    4,5, # intro regular
-    6,7,
+    # 4,5, # intro regular
+    # 6,7,
     8,9, # melody
     10,11,
     12,13,
