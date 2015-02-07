@@ -584,16 +584,24 @@ class Kai4(KaiMelody):
         self.material["kairos_b_parts"] = ["violinI","violinII"]
         self.material["kairos_a_parts"] = ["viola","cello","bass"]
         self.material["cloud_parts"] =["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
+        self.material["counter_parts"] = ["horn1","horn2"]
 
 #--------------------------------------------------------------------------------------------
 class Kai4Ji(KaiJi):
     def kai_material(self):
         super().kai_material()
         # self.add_taiko_material("c8_do-> c_ko c_do-> c_ko-> "*8) # all hits ji?
+        self.material["kairos_a_parts"] = ["trombone1","trombone2","tuba"]
+        self.material["kairos_b_parts"] = ["violinI","violinII","viola","cello","bass"]
+
+
 #--------------------------------------------------------------------------------------------
 class Kai5(KaiMelody):
     def kai_material(self):
         super().kai_material()
+        self.material["kairos_a_parts"] = ["trumpet1","trumpet2","horn1","horn2"]
+        self.material["kairos_b_parts"] = ["trombone1","trombone2","tuba"]
+        self.material["counter_parts"] = ["horn3","horn4"]
         fast = self.material["rhythm"]["taiko_fast"]
         self.add_taiko_material("r2 r4 "+fast+"c8_do c_ko r4 r4 "+fast+"c8_do[ c_ko] "*2 +"r4 "+fast+"c8_do[ c_ko] "*3 + fast)  
 #--------------------------------------------------------------------------------------------

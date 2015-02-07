@@ -1,4 +1,4 @@
-% 2015-02-06 23:52
+% 2015-02-07 00:04
 
 \version "2.18.2"
 \language "english"
@@ -45,6 +45,69 @@
 				\set Staff.shortInstrumentName = \markup { Fl.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				fs'8 \p (
+				e'8
+				d'8
+				cs''8 )
+				fs'8 (
+				cs''8
+				fs'8
+				e'8 )
+				d'8 (
+				fs'8
+				d'8
+				fs'8 )
+				d'8 (
+				e'8
+				d'8
+				e'8 )
+				fs'8 (
+				e'8
+				d'8
+				fs'8 )
+				d'8 (
+				cs''8
+				fs'8
+				e'8 )
+				cs''8 (
+				fs'8
+				cs''8
+				fs'8 )
+				cs''8 (
+				a'8 )
+				r4
+				fs'8 \< (
+				cs''8
+				fs'8
+				d''8 )
+				fs'8 (
+				d''8
+				fs'8
+				cs''8 )
+				fs'8 (
+				a'8
+				d''8
+				cs''8 )
+				e''8 (
+				d''8
+				fs''8
+				d''8 )
+				cs''8 (
+				e''8
+				cs''8
+				d''8 )
+				fs''8 (
+				d''8
+				cs''8
+				d''8 )
+				a''8 (
+				d''8
+				e''8
+				fs''8 )
+				a''8 (
+				cs''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				cs'8 \< (
 				d'8 )
 				a'8 (
@@ -52,15 +115,15 @@
 				cs''8 (
 				d''8 )
 				cs''8 (
-				cs'''8 \! ) \>
-				a''8 (
+				cs'''8 ) \>
+				d'''8 (
 				fs''8 )
-				d''8 (
-				a''8 )
-				a'8 (
+				a''8 (
+				d''8 )
+				fs''8 (
 				d''8 )
 				a'8 (
-				fs'8 \! )
+				fs'8 )
 				r4
 				r8
 				d'8 \< (
@@ -76,7 +139,7 @@
 				d''8 )
 				fs''8 (
 				a''8 )
-				d''8 \! \> (
+				d''8 \> (
 				e''8 )
 				fs''8 (
 				d''8 )
@@ -87,7 +150,7 @@
 				a'8 (
 				cs''8 )
 				a'8 (
-				cs'8 \! )
+				cs'8 )
 				r4
 				a'8 (
 				d'8 ) \<
@@ -112,6 +175,69 @@
 				\set Staff.shortInstrumentName = \markup { Fl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				fs'8 \p (
+				d'8
+				fs'8
+				e'8 )
+				fs'8 (
+				d'8
+				fs'8
+				cs''8 )
+				fs'8 (
+				e'8
+				cs''8
+				fs'8 )
+				cs''8 (
+				d'8
+				a'8
+				fs'8 )
+				e'8 (
+				a'8
+				cs''8
+				fs'8 )
+				e'8 (
+				fs'8
+				e'8
+				d'8 )
+				fs'8 (
+				d'8
+				e'8
+				d'8 )
+				e'8 (
+				d'8 )
+				r4
+				e'8 \< (
+				fs'8
+				d''8
+				e'8 )
+				fs'8 (
+				d''8
+				cs''8
+				fs'8 )
+				d''8 (
+				e''8
+				cs''8
+				d''8 )
+				cs''8 (
+				fs''8
+				a'8
+				d''8 )
+				fs''8 (
+				d''8
+				a'8
+				fs''8 )
+				d''8 (
+				a'8
+				d''8
+				cs''8 )
+				e''8 (
+				d''8
+				a''8
+				d''8 )
+				cs''8 (
+				fs''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				a'8 \< (
 				fs'8 )
 				d''8 (
@@ -119,15 +245,15 @@
 				a'8 (
 				cs''8 )
 				d''8 (
-				a''8 \! ) \>
+				a''8 ) \>
 				cs'''8 (
+				a''8 )
+				d''8 (
 				e''8 )
 				d''8 (
-				fs''8 )
-				e''8 (
 				a'8 )
 				d''8 (
-				d'8 \! )
+				d'8 )
 				r4
 				r8
 				cs'8 \< (
@@ -143,7 +269,7 @@
 				e''8 )
 				d''8 (
 				fs''8 )
-				cs''8 \! \> (
+				cs''8 \> (
 				e''8 )
 				d''8 (
 				fs''8 )
@@ -154,12 +280,12 @@
 				d''8 (
 				cs''8 )
 				fs'8 (
-				e'8 \! )
+				e'8 )
 				r4
 				d'8 (
 				e'8 ) \<
-				a'8 (
-				d'8 )
+				d'8 (
+				a'8 )
 				cs''8 (
 				d''8 )
 				e''8 (
@@ -169,7 +295,7 @@
 				fs''8 (
 				d''8 )
 				fs''8 (
-				fs''8 )
+				a''8 )
 				d''8 (
 				a''8 \f )
 				r4
@@ -179,22 +305,85 @@
 				\set Staff.shortInstrumentName = \markup { Ob.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				e''8 \p (
+				cs''8
+				fs'8
+				d''8 )
+				e''8 (
+				d''8
+				e''8
+				d''8 )
+				fs'8 (
+				d''8
+				e''8
+				cs''8 )
+				fs'8 (
+				cs''8
+				d''8
+				cs''8 )
+				d''8 (
+				fs'8
+				cs''8
+				d''8 )
+				a'8 (
+				fs'8
+				d''8
+				cs''8 )
+				d''8 (
+				cs''8
+				fs'8
+				e''8 )
+				d''8 (
+				cs''8 )
+				r4
+				a'8 \< (
+				d''8
+				cs''8
+				a'8 )
+				d''8 (
+				a'8
+				d''8
+				e''8 )
+				d''8 (
+				cs''8
+				d''8
+				e''8 )
+				d''8 (
+				e''8
+				d''8
+				cs''8 )
+				d''8 (
+				cs''8
+				d''8
+				e''8 )
+				d''8 (
+				cs''8
+				d''8
+				e''8 )
+				cs''8 (
+				d''8
+				fs''8
+				d''8 )
+				e''8 (
+				d''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				e''8 \< (
 				d''8 )
 				cs''8 (
-				fs''8 )
+				a''8 )
 				cs''8 (
 				a'8 )
 				cs''8 (
-				e'8 \! ) \>
+				e'8 ) \>
 				fs'8 (
 				a'8 )
-				d''8 (
+				fs'8 (
 				d''8 )
-				fs''8 (
+				e''8 (
 				d''8 )
 				cs''8 (
-				d''8 \! )
+				d''8 )
 				r4
 				r8
 				a''8 \< (
@@ -210,7 +399,7 @@
 				a'8 )
 				d''8 (
 				cs''8 )
-				d''8 \! \> (
+				d''8 \> (
 				a'8 )
 				e''8 (
 				a'8 )
@@ -221,12 +410,12 @@
 				fs''8 (
 				cs'''8 )
 				d'''8 (
-				cs'''8 \! )
+				cs'''8 )
 				r4
 				fs''8 (
 				a''8 ) \<
 				d'''8 (
-				a''8 )
+				fs''8 )
 				d''8 (
 				a''8 )
 				cs''8 (
@@ -236,9 +425,9 @@
 				fs''8 (
 				a'8 )
 				fs'8 (
-				a'8 )
+				e'8 )
 				fs'8 (
-				cs''8 \f )
+				a'8 \f )
 				r4
 			}
 			\context Staff = "oboe2" {
@@ -246,22 +435,85 @@
 				\set Staff.shortInstrumentName = \markup { Ob.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				cs''8 \p (
+				d''8
+				e''8
+				fs'8 )
+				d''8 (
+				cs''8
+				d''8
+				fs'8 )
+				cs''8 (
+				d''8
+				cs''8
+				d''8 )
+				fs'8 (
+				d''8
+				cs''8
+				d''8 )
+				cs''8 (
+				d''8
+				fs'8
+				cs''8 )
+				d''8 (
+				cs''8
+				d''8
+				fs'8 )
+				cs''8 (
+				d''8
+				cs''8
+				d''8 )
+				cs''8 (
+				d''8 )
+				r4
+				fs'8 \< (
+				d''8
+				a'8
+				fs'8 )
+				d''8 (
+				cs''8
+				e''8
+				d''8 )
+				e''8 (
+				d''8
+				fs'8
+				d''8 )
+				fs'8 (
+				d''8
+				e''8
+				fs'8 )
+				a'8 (
+				d''8
+				fs''8
+				d''8 )
+				e''8 (
+				d''8
+				e''8
+				d''8 )
+				a''8 (
+				fs''8
+				a''8
+				cs''8 )
+				d''8 (
+				e''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				cs'''8 \< (
 				a''8 )
 				e''8 (
-				cs''8 )
-				d''8 (
-				cs''8 )
-				a'8 (
-				fs'8 \! ) \>
-				d'8 (
-				cs''8 )
-				a'8 (
 				d''8 )
+				fs''8 (
+				cs''8 )
+				a'8 (
+				fs'8 ) \>
+				a'8 (
+				d'8 )
+				d''8 (
+				a'8 )
 				d''8 (
 				e''8 )
 				d''8 (
-				a''8 \! )
+				a''8 )
 				r4
 				r8
 				cs'''8 \< (
@@ -277,7 +529,7 @@
 				d''8 )
 				a'8 (
 				d''8 )
-				a'8 \! \> (
+				a'8 \> (
 				e''8 )
 				a'8 (
 				e''8 )
@@ -288,7 +540,7 @@
 				a''8 (
 				d''8 )
 				cs'''8 (
-				d'''8 \! )
+				d'''8 )
 				r4
 				cs'''8 (
 				fs''8 ) \<
@@ -303,7 +555,7 @@
 				d''8 (
 				cs''8 )
 				fs'8 (
-				a'8 )
+				d''8 )
 				fs'8 (
 				d'8 \f )
 				r4
@@ -313,22 +565,85 @@
 				\set Staff.shortInstrumentName = \markup { Ob.3 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				d''8 \p (
+				cs''8
+				d''8
+				cs''8 )
+				d''8 (
+				e''8
+				cs''8
+				fs'8 )
+				e''8 (
+				cs''8
+				fs'8
+				d''8 )
+				e''8 (
+				cs''8
+				fs'8
+				cs''8 )
+				fs'8 (
+				cs''8
+				d''8
+				e''8 )
+				cs''8 (
+				d''8
+				cs''8
+				a'8 )
+				fs'8 (
+				cs''8
+				d''8
+				cs''8 )
+				fs'8 (
+				e''8 )
+				r4
+				cs''8 \< (
+				d''8
+				e''8
+				d''8 )
+				cs''8 (
+				d''8
+				a'8
+				d''8 )
+				cs''8 (
+				fs'8
+				a'8
+				d''8 )
+				a'8 (
+				d''8
+				cs''8
+				e''8 )
+				d''8 (
+				fs''8
+				d''8
+				fs''8 )
+				d''8 (
+				fs''8
+				a'8
+				fs''8 )
+				d''8 (
+				cs''8
+				d''8
+				e''8 )
+				a''8 (
+				d''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				d'''8 \< (
 				cs'''8 )
 				a''8 (
-				d''8 )
-				e''8 (
+				cs''8 )
+				a'8 (
 				fs'8 )
 				a'8 (
-				d'8 \! ) \>
+				d'8 ) \>
 				cs'8 (
 				d'8 )
 				e'8 (
 				d''8 )
-				cs''8 (
+				a'8 (
 				d''8 )
 				fs''8 (
-				a''8 \! )
+				a''8 )
 				r4
 				r8
 				d'''8 \< (
@@ -344,7 +659,7 @@
 				cs''8 )
 				a'8 (
 				cs''8 )
-				fs'8 \! \> (
+				fs'8 \> (
 				a'8 )
 				e''8 (
 				d''8 )
@@ -355,12 +670,12 @@
 				cs''8 (
 				a''8 )
 				cs'''8 (
-				fs''8 \! )
+				a''8 )
 				r4
 				d'''8 (
 				cs'''8 ) \<
 				d'''8 (
-				cs'''8 )
+				a''8 )
 				d''8 (
 				e''8 )
 				fs''8 (
@@ -372,7 +687,7 @@
 				d''8 (
 				cs''8 )
 				d''8 (
-				a'8 \f )
+				cs''8 \f )
 				r4
 			}
 			\context Staff = "clarinet1" {
@@ -380,22 +695,85 @@
 				\set Staff.shortInstrumentName = \markup { Cl.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				cs'8 \p (
+				fs8
+				cs'8
+				d'8 )
+				cs'8 (
+				fs8
+				cs'8
+				d'8 )
+				cs'8 (
+				fs8
+				fs'8
+				e'8 )
+				cs'8 (
+				fs'8
+				cs'8
+				d'8 )
+				cs'8 (
+				d'8
+				e'8
+				cs'8 )
+				fs'8 (
+				e'8
+				cs'8
+				d'8 )
+				e'8 (
+				fs'8
+				d'8
+				cs'8 )
+				fs'8 (
+				cs'8 )
+				r4
+				d'8 \< (
+				fs'8
+				d'8
+				cs'8 )
+				d'8 (
+				e'8
+				fs'8
+				d''8 )
+				a'8 (
+				d''8
+				e'8
+				fs'8 )
+				d''8 (
+				cs''8
+				d''8
+				fs'8 )
+				e''8 (
+				d''8
+				e''8
+				d''8 )
+				cs''8 (
+				e''8
+				d''8
+				fs''8 )
+				d''8 (
+				a'8
+				cs''8
+				d''8 )
+				fs''8 (
+				d''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				cs'8 \< (
 				e'8 )
 				cs'8 (
-				a'8 )
-				fs'8 (
+				cs''8 )
+				d''8 (
 				e''8 )
 				cs''8 (
-				d''8 \! ) \>
+				d''8 ) \>
 				cs''8 (
 				d''8 )
 				cs''8 (
-				d''8 )
-				a'8 (
+				a'8 )
+				cs''8 (
 				d''8 )
 				d'8 (
-				e'8 \! )
+				e'8 )
 				r4
 				r8
 				cs'8 \< (
@@ -408,10 +786,10 @@
 				d''8 (
 				cs''8 )
 				d''8 (
-				fs''8 )
+				a'8 )
 				cs''8 (
 				d''8 )
-				e''8 \! \> (
+				e''8 \> (
 				cs''8 )
 				d''8 (
 				a'8 )
@@ -422,12 +800,12 @@
 				d'8 (
 				e'8 )
 				a'8 (
-				a8 \! )
+				a8 )
 				r4
 				cs'8 (
 				a8 ) \<
-				d'8 (
-				e'8 )
+				a'8 (
+				d'8 )
 				a'8 (
 				d'8 )
 				a'8 (
@@ -447,6 +825,69 @@
 				\set Staff.shortInstrumentName = \markup { Cl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				d'8 \p (
+				fs8
+				cs'8
+				fs8 )
+				cs'8 (
+				fs8
+				d'8
+				cs'8 )
+				d'8 (
+				cs'8
+				d'8
+				cs'8 )
+				d'8 (
+				fs8
+				e8
+				fs8 )
+				d'8 (
+				cs'8
+				fs8
+				d'8 )
+				cs'8 (
+				d'8
+				fs8
+				cs'8 )
+				d'8 (
+				e'8
+				a8
+				fs8 )
+				d'8 (
+				fs'8 )
+				r4
+				d'8 \< (
+				e'8
+				d'8
+				fs'8 )
+				e'8 (
+				fs'8
+				d'8
+				fs'8 )
+				d'8 (
+				fs'8
+				d'8
+				fs'8 )
+				a'8 (
+				fs'8
+				d''8
+				a'8 )
+				d''8 (
+				fs'8
+				a'8
+				cs''8 )
+				a'8 (
+				fs'8
+				fs''8
+				d''8 )
+				fs''8 (
+				e''8
+				d''8
+				a'8 )
+				d''8 (
+				a''8 \mf )
+				r4
+				\context Staff {#(set-accidental-style 'modern)}
 				fs'8 \< (
 				a'8 )
 				cs'8 (
@@ -454,21 +895,21 @@
 				cs''8 (
 				d''8 )
 				e''8 (
-				a''8 \! ) \>
+				a''8 ) \>
 				e''8 (
-				d''8 )
-				a'8 (
+				cs''8 )
+				d''8 (
 				cs''8 )
 				d''8 (
 				a'8 )
 				e'8 (
-				d'8 \! )
+				d'8 )
 				r4
 				r8
 				a8 \< (
 				d'8
 				cs'8 )
-				fs'8 (
+				e'8 (
 				cs'8 )
 				d'8 (
 				d''8 )
@@ -478,7 +919,7 @@
 				d''8 )
 				cs''8 (
 				a'8 )
-				e''8 \! \> (
+				e''8 \> (
 				fs''8 )
 				a'8 (
 				d''8 )
@@ -489,12 +930,12 @@
 				e'8 (
 				fs'8 )
 				e'8 (
-				cs'8 \! )
+				cs'8 )
 				r4
 				e'8 (
 				d'8 ) \<
 				fs'8 (
-				d'8 )
+				e'8 )
 				a'8 (
 				fs'8 )
 				d'8 (
@@ -504,7 +945,7 @@
 				e''8 (
 				d''8 )
 				cs''8 (
-				d''8 )
+				a'8 )
 				fs''8 (
 				d''8 \f )
 				r4
@@ -515,6 +956,15 @@
 				\set Staff.shortInstrumentName = \markup { Bsn.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				a8 \< (
 				cs'8 )
 				fs8 (
@@ -524,9 +974,9 @@
 				d8 (
 				cs8 \! ) \>
 				d8 (
-				a,8 )
+				e8 )
 				d8 (
-				a,8 )
+				fs8 )
 				d8 (
 				cs8 )
 				a8 (
@@ -543,7 +993,7 @@
 				d8 (
 				a8 )
 				d8 (
-				a,8 )
+				fs8 )
 				e8 (
 				cs8 )
 				e8 \! \> (
@@ -562,7 +1012,7 @@
 				a8 (
 				d'8 ) \<
 				cs'8 (
-				a8 )
+				d'8 )
 				e8 (
 				a8 )
 				fs8 (
@@ -572,7 +1022,7 @@
 				cs8 (
 				a,8 )
 				d8 (
-				e8 )
+				fs8 )
 				a,8 (
 				fs,8 \f )
 				r4
@@ -583,19 +1033,28 @@
 				\set Staff.shortInstrumentName = \markup { Bsn.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				d'8 \< (
 				cs'8 )
 				d'8 (
-				cs8 )
-				a8 (
+				fs8 )
+				e8 (
 				a,8 )
 				fs8 (
 				cs8 \! ) \>
 				a,8 (
 				d8 )
-				fs8 (
-				e8 )
-				d8 (
+				a,8 (
+				d8 )
+				a8 (
 				fs8 )
 				d'8 (
 				cs'8 \! )
@@ -604,7 +1063,7 @@
 				e'8 \< (
 				cs'8
 				a8 )
-				e8 (
+				fs8 (
 				a8 )
 				e8 (
 				d8 )
@@ -625,12 +1084,12 @@
 				cs'8 (
 				a8 )
 				d'8 (
-				a8 \! )
+				fs'8 \! )
 				r4
 				cs'8 (
 				d'8 ) \<
 				a8 (
-				fs8 )
+				cs'8 )
 				d'8 (
 				cs'8 )
 				d8 (
@@ -660,12 +1119,30 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "horn2" {
 				\set Staff.instrumentName = \markup { Horn in F 2 }
 				\set Staff.shortInstrumentName = \markup { Hn.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -688,12 +1165,30 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "horn4" {
 				\set Staff.instrumentName = \markup { Horn in F 4 }
 				\set Staff.shortInstrumentName = \markup { Hn.4 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -716,12 +1211,30 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "trumpet2" {
 				\set Staff.instrumentName = \markup { Trumpet in C 2 }
 				\set Staff.shortInstrumentName = \markup { Tpt.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -745,6 +1258,15 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "trombone2" {
 				\clef "bass"
@@ -760,6 +1282,15 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "tuba" {
 				\clef "bass"
@@ -767,6 +1298,15 @@
 				\set Staff.shortInstrumentName = \markup { Tba }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -791,12 +1331,30 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context RhythmicStaff = "perc1" {
 				\set Staff.instrumentName = \markup { Percussion 1 }
 				\set Staff.shortInstrumentName = \markup { Perc.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -819,6 +1377,15 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "timpani" {
 				\clef "bass"
@@ -826,6 +1393,15 @@
 				\set Staff.shortInstrumentName = \markup { Timp }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -884,6 +1460,47 @@
 				c8 ]
 				r4
 				c4
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
 			}
 			\context RhythmicStaff = "taiko1" {
 				\set Staff.instrumentName = \markup { Taiko 1 }
@@ -892,6 +1509,55 @@
 				\numericTimeSignature
 				\textLengthOn
 				\dynamicUp
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				\context Staff {#(set-accidental-style 'modern)}
 				r4 _ \markup { tsu }
 				c4 _ \markup { don }
 				r4 _ \markup { tsu }
@@ -944,6 +1610,35 @@
 				\numericTimeSignature
 				\textLengthOn
 				\dynamicUp
+				R1
+				R1
+				R1
+				R1
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { don }
 				c8 [ _ \markup { do }
 				c8 ] _ \markup { ko }
@@ -996,8 +1691,42 @@
 			\context Staff = "violinI" {
 				\set Staff.instrumentName = \markup { Violin I }
 				\set Staff.shortInstrumentName = \markup { Vln.I }
+				\set Staff.instrumentName = \markup { Violin I }
+				\set Staff.shortInstrumentName = \markup { vln.I }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				cs''1
+					^ \markup {
+						\italic
+							{
+								"tutti Violin I"
+							}
+						}
+				cs''8 (
+				d''4. ~
+				d''2 )
+				r4
+				r8
+				cs''8 ~ (
+				cs''4
+				e''4
+				d''2. )
+				cs''4 (
+				e''4.
+				d''8 ~
+				d''4
+				fs''4
+				cs''2. )
+				cs''8 (
+				d''8 ~
+				d''4. )
+				cs''8 (
+				fs''4
+				e''4 )
+				fs''2.
+				cs''8 (
+				d''8 )
+				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				a''2
 				e''4. (
@@ -1027,8 +1756,42 @@
 			\context Staff = "violinII" {
 				\set Staff.instrumentName = \markup { Violin II }
 				\set Staff.shortInstrumentName = \markup { Vln.II }
+				\set Staff.instrumentName = \markup { Violin II }
+				\set Staff.shortInstrumentName = \markup { vln.II }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				cs''1
+					^ \markup {
+						\italic
+							{
+								"tutti Violin II"
+							}
+						}
+				cs''8 (
+				d''4. ~
+				d''2 )
+				r4
+				r8
+				cs''8 ~ (
+				cs''4
+				e''4
+				d''2. )
+				cs''4 (
+				e''4.
+				d''8 ~
+				d''4
+				fs''4
+				cs''2. )
+				cs''8 (
+				d''8 ~
+				d''4. )
+				cs''8 (
+				fs''4
+				e''4 )
+				fs''2.
+				cs''8 (
+				d''8 )
+				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				a''2
 				e''4. (
@@ -1058,8 +1821,37 @@
 			\context Staff = "viola" {
 				\set Staff.instrumentName = \markup { Viola }
 				\set Staff.shortInstrumentName = \markup { Vla }
+				\set Staff.instrumentName = \markup { Viola }
+				\set Staff.shortInstrumentName = \markup { vla. }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				cs'2.
+					^ \markup {
+						\italic
+							{
+								"tutti Viola"
+							}
+						}
+				cs'4 ~
+				cs'4.
+				d'8 ~
+				d'2 ~
+				d'4.
+				cs'8 ~
+				cs'2
+				d'4.
+				d'8 ~
+				d'2 ~
+				d'4.
+				d'8 ~
+				d'2
+				cs'4.
+				cs'8 ~
+				cs'2 ~
+				cs'2.
+				e'4
+				fs'1
+				\context Staff {#(set-accidental-style 'modern)}
 				cs''1
 				cs''8 (
 				d''4. ~
@@ -1090,8 +1882,37 @@
 				\clef "bass"
 				\set Staff.instrumentName = \markup { Cello }
 				\set Staff.shortInstrumentName = \markup { Vc. }
+				\set Staff.instrumentName = \markup { Cello }
+				\set Staff.shortInstrumentName = \markup { vc. }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				e2.
+					^ \markup {
+						\italic
+							{
+								"tutti Cello"
+							}
+						}
+				e4 ~
+				e4.
+				fs8 ~
+				fs2 ~
+				fs4.
+				e8 ~
+				e2
+				fs4.
+				fs8 ~
+				fs2 ~
+				fs4.
+				fs8 ~
+				fs2
+				e4.
+				e8 ~
+				e2 ~
+				e2.
+				cs'4
+				d'1
+				\context Staff {#(set-accidental-style 'modern)}
 				cs''1
 				cs''8 (
 				d''4. ~
@@ -1124,6 +1945,15 @@
 				\set Staff.shortInstrumentName = \markup { Cb. }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				cs''1
 				cs''8 (
 				d''4. ~
@@ -1157,6 +1987,15 @@
 				\set Staff.shortInstrumentName = \markup { Ln.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				cs''1
 				cs''8 (
 				d''4. ~
@@ -1188,6 +2027,15 @@
 				\set Staff.shortInstrumentName = \markup { Ln.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				a''2
 				e''4. (
@@ -1227,12 +2075,30 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "harmony_1" {
 				\set Staff.instrumentName = \markup { Harmony 1 }
 				\set Staff.shortInstrumentName = \markup { Har.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -1248,6 +2114,15 @@
 				\set Staff.shortInstrumentName = \markup { Har.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				cs1 ~
 				cs1 ~
 				cs1
@@ -1263,6 +2138,15 @@
 				\set Staff.shortInstrumentName = \markup { Har.3 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				<d,>1
 				<d,>1
 				<d,>1
@@ -1278,6 +2162,15 @@
 			\set Staff.shortInstrumentName = \markup { . }
 			\context Staff {#(set-accidental-style 'modern)}
 			\numericTimeSignature
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1
 			R1
