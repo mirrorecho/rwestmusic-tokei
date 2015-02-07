@@ -393,7 +393,7 @@ class Kai3(KaiMelody):
         super().kai_material()
         self.add_taiko_material("R1 " * 4)  
         self.material["kairos_b_parts"] = ["flute1"]
-        self.kai_harmonics = self.previous_kai.kai_harmonics
+
         self.material["cloud_parts"]=["violinI_3","violinI_4","violinI_5",
             "violinII_3","violinII_4","violinII_5","viola_3"]
         self.material["cloud_next_parts"] = ["violinI_1","violinI_2",
@@ -408,6 +408,26 @@ class Kai3(KaiMelody):
             transpose=[12]
             )
 
+    # TO DO... add some string harmonics in here???
+    # ALSO... vary this up, or figure out how not to copy it verbatim....
+    def kai_harmonics(self):
+        self.arrange_harmonics( 
+                part_names=["flute2","oboe1","clarinet1"], 
+                fundamental_material="low",
+                rhythm_material=[["soft_2bar_swell"]*2 + ["bar_rest"]*4],
+                harmonics=[10,6,8],
+                transpose=[12],
+                respell=["sharps"])
+        # TO DO... this transpose is in theory not allowed (may not sound as I want?) ...rearrange?
+        self.arrange_harmonics( 
+                part_names=["oboe2","oboe3","clarinet2"], 
+                fundamentals=[self.material["pitch"]["kairos_a"][0][2]],
+                rhythm_material=[["bar_rest"]+["soft_2bar_swell"]*2 + ["bar_rest"]*3],
+                harmonics=[9,5,4],
+                transpose=[-36],
+                respell=["sharps"])
+
+
     def kai_cloud(self):
         super().kai_cloud()
         self.kai_arrange_material("cloud_next")
@@ -420,7 +440,6 @@ class Kai3Again(Kai3):
         super().kai_material()
         self.add_taiko_material("R1 " * 4)  
         self.material["kairos_b_parts"] = ["flute1"]
-        self.kai_harmonics = self.previous_kai.kai_harmonics
         self.material["cloud_parts"]=["violinI_1","violinI_2","violinI_3","violinI_4","violinI_5",
             "violinII_1","violinII_2","violinII_3","violinII_4","violinII_5",
             "viola_1","viola_2","viola_3","viola_4",
@@ -437,7 +456,11 @@ class Kai3Again(Kai3):
 class Kai3Ji(KaiJi):
     def kai_material(self):
         super().kai_material()
+        self.material["kairos_a_parts"] = ["violinI","violinII"]
         # self.add_taiko_material("r4_tsu c8_do c8_ko "*8 ) # offbeat ji?
+
+    def kai_kairos(self):
+        super().kai_kairos()
 
 
 #--------------------------------------------------------------------------------------------
@@ -448,6 +471,8 @@ class Kai4(KaiMelody):
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | 
                     c4_don c8_do c8_ko r4_tsu c8_do c8_ko 
                     r4_tsu c8_do[ c8_don] r8[ c8_do] c4_don | """)  
+        self.material["kairos_b_parts"] = ["violinI","violinII"]
+
 #--------------------------------------------------------------------------------------------
 class Kai4Ji(KaiJi):
     def kai_material(self):

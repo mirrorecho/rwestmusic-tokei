@@ -1,4 +1,4 @@
-% 2015-02-06 17:59
+% 2015-02-06 19:35
 
 \version "2.18.2"
 \language "english"
@@ -70,12 +70,52 @@
 				d''8
 				e'4 )
 				e'4
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "flute2" {
 				\set Staff.instrumentName = \markup { Flute 2 }
 				\set Staff.shortInstrumentName = \markup { Fl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				r8
+				as'''4. \pp ~ \<
+				as'''2 \p ~ \>
+				as'''1 \pp
+				r8
+				as'''4. \pp ~ \<
+				as'''2 \p ~ \>
+				as'''1 \pp
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -90,6 +130,28 @@
 				\set Staff.shortInstrumentName = \markup { Ob.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				r8
+				cs'''4. \pp ~ \<
+				cs'''2 \p ~ \>
+				cs'''1 \pp
+				r8
+				cs'''4. \pp ~ \<
+				cs'''2 \p ~ \>
+				cs'''1 \pp
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -105,6 +167,28 @@
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
 				R1
+				r8
+				e'4. \pp ~ \<
+				e'2 \p ~ \>
+				e'1 \pp
+				r8
+				e'4. \pp ~ \<
+				e'2 \p ~ \>
+				e'1 \pp
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
 				R1
 				R1
 				R1
@@ -119,6 +203,28 @@
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
 				R1
+				r8
+				fs4. \pp ~ \<
+				fs2 \p ~ \>
+				fs1 \pp
+				r8
+				fs4. \pp ~ \<
+				fs2 \p ~ \>
+				fs1 \pp
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
 				R1
 				R1
 				R1
@@ -132,6 +238,28 @@
 				\set Staff.shortInstrumentName = \markup { Cl.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				r8
+				fs'''4. \pp ~ \<
+				fs'''2 \p ~ \>
+				fs'''1 \pp
+				r8
+				fs'''4. \pp ~ \<
+				fs'''2 \p ~ \>
+				fs'''1 \pp
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -146,6 +274,28 @@
 				\set Staff.shortInstrumentName = \markup { Cl.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				r8
+				d4. \pp ~ \<
+				d2 \p ~ \>
+				d1 \pp
+				r8
+				d4. \pp ~ \<
+				d2 \p ~ \>
+				d1 \pp
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -175,6 +325,24 @@
 				cs'2 \p
 				r2
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "bassoon2" {
 				\clef "bass"
@@ -196,6 +364,24 @@
 				d'2 \p
 				r2
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 		>>
 		\context StaffGroup = "brass" <<
@@ -204,6 +390,24 @@
 				\set Staff.shortInstrumentName = \markup { Hn.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -226,12 +430,48 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "horn3" {
 				\set Staff.instrumentName = \markup { Horn in F 3 }
 				\set Staff.shortInstrumentName = \markup { Hn.3 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -254,6 +494,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "trumpet1" {
 				\set Staff.instrumentName = \markup { Trumpet in C 1 }
@@ -268,12 +526,48 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "trumpet2" {
 				\set Staff.instrumentName = \markup { Trumpet in C 2 }
 				\set Staff.shortInstrumentName = \markup { Tpt.2 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -297,6 +591,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "trombone2" {
 				\clef "bass"
@@ -312,6 +624,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "tuba" {
 				\clef "bass"
@@ -319,6 +649,24 @@
 				\set Staff.shortInstrumentName = \markup { Tba }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -343,12 +691,48 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context RhythmicStaff = "perc1" {
 				\set Staff.instrumentName = \markup { Percussion 1 }
 				\set Staff.shortInstrumentName = \markup { Perc.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -371,6 +755,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "timpani" {
 				\clef "bass"
@@ -378,6 +780,24 @@
 				\set Staff.shortInstrumentName = \markup { Timp }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -436,6 +856,88 @@
 				c8 ]
 				r4
 				c4
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
 			}
 			\context RhythmicStaff = "taiko1" {
 				\set Staff.instrumentName = \markup { Taiko 1 }
@@ -452,6 +954,100 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				\context Staff {#(set-accidental-style 'modern)}
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
+				c4 _ \markup { don }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
+				c4 _ \markup { don }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
 			}
 			\context RhythmicStaff = "taiko2" {
 				\set Staff.instrumentName = \markup { Taiko 2 }
@@ -468,6 +1064,82 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				\context Staff {#(set-accidental-style 'modern)}
+				c4 _ \markup { don }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				c4
+				c8
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c4 _ \markup { don }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
+				c4 _ \markup { don }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 _ \markup { do }
+				c8 _ \markup { ko }
+				r4 _ \markup { tsu }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { don }
+				r8 [
+				c8 ] _ \markup { do }
+				c4 _ \markup { don }
 			}
 		>>
 		\context StaffGroup = "strings" <<
@@ -484,70 +1156,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.1 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						d,8 -\tenuto \mp
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
+						cs'8 \mp (
+						d'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						fs'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						fs'8 )
+						e''8 (
+						d''8 )
+						e''8 (
+						cs''8 )
+						e''8 (
+						fs''8 )
+						e''8 (
+						fs''8 )
 					}
 					\context Staff = "violinI_2" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -557,70 +1229,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.2 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						e,8 -\tenuto \mp
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						d'8 -\tenuto
+						d'8 \mp (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						fs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs''8 )
+						fs'8 (
+						e'8 )
+						d''8 (
+						cs''8 )
+						d''8 (
+						fs''8 )
+						d''8 (
+						e''8 )
+						fs''8 (
+						cs''8 )
 					}
 					\context Staff = "violinI_3" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -630,70 +1302,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.3 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
+						e'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						fs'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						cs''8 (
+						e'8 )
+						fs'8 (
+						fs'8 )
+						e''8 (
+						cs''8 )
+						d''8 (
+						fs''8 )
+						cs''8 (
+						e''8 )
 					}
 					\context Staff = "violinI_4" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -703,141 +1375,184 @@
 						\set Staff.shortInstrumentName = \markup { vln.I.4 }
 						\set Staff.alignAboveContext = #"violinI"
 						\numericTimeSignature
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
+						d'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						d'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						fs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						e'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						cs''8 (
+						d''8 )
+						e''8 (
+						d''8 )
+						e''8 (
+						fs''8 )
+						cs''8 (
+						d''8 )
+						cs''8 (
+						fs''8 )
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin I.5 }
 						\set Staff.shortInstrumentName = \markup { vln.I.5 }
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						d'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						cs''8 )
+						fs'8 (
+						cs''8 )
+						d''8 (
+						cs''8 )
+						e''8 (
+						d''8 )
+						fs''8 (
+						d''8 )
+						\set Staff.instrumentName = \markup { Violin I }
+						\set Staff.shortInstrumentName = \markup { vln.I }
+						\context Staff {#(set-accidental-style 'modern)}
+						cs'1
+							^ \markup {
+								\italic
+									{
+										"tutti Violin I"
+									}
+								}
+						cs'8 (
+						d'4. ~
+						d'2 )
+						r4
+						r8
+						cs'8 ~ (
+						cs'4
+						e'4
+						d'2. )
+						cs'4 (
+						e'4.
+						d'8 ~
+						d'4
+						fs'4
+						cs'2. )
+						cs'8 (
+						d'8 ~
+						d'4. )
+						cs'8 (
+						fs'4
+						e'4 )
+						fs'2.
+						cs'8 (
+						d'8 )
 					}
 				>>
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "violinII" {
 				\set Staff.instrumentName = \markup { Violin II }
@@ -852,70 +1567,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.1 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						e,8 -\tenuto \mp
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						d'8 -\tenuto
+						e'8 \mp (
+						fs'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs''8 )
+						e''8 (
+						cs''8 )
+						d''8 (
+						e''8 )
+						fs''8 (
+						e''8 )
+						cs''8 (
+						d''8 )
 					}
 					\context Staff = "violinII_2" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -925,70 +1640,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.2 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						cs,8 -\tenuto \mp
-						e,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
+						d'8 \mp (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						cs'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						d'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs''8 )
+						d''8 (
+						e''8 )
+						fs''8 (
+						e''8 )
+						fs''8 (
+						cs''8 )
+						e''8 (
+						fs''8 )
 					}
 					\context Staff = "violinII_3" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -998,70 +1713,70 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.3 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
+						d'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						d''8 (
+						e''8 )
+						fs''8 (
+						e''8 )
+						d''8 (
+						cs''8 )
+						d''8 (
+						cs''8 )
 					}
 					\context Staff = "violinII_4" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -1071,141 +1786,184 @@
 						\set Staff.shortInstrumentName = \markup { vln.II.4 }
 						\set Staff.alignAboveContext = #"violinII"
 						\numericTimeSignature
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
+						fs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						cs'8 (
+						e'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						cs''8 (
+						d''8 )
+						cs''8 (
+						fs'8 )
+						e''8 (
+						fs''8 )
+						cs''8 (
+						fs''8 )
+						cs''8 (
+						fs''8 )
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin II.5 }
 						\set Staff.shortInstrumentName = \markup { vln.II.5 }
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						d'8 -\tenuto
+						cs'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						d'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						fs'8 )
+						d'8 (
+						cs'8 )
+						fs'8 (
+						d'8 )
+						fs'8 (
+						cs'8 )
+						fs'8 (
+						cs''8 )
+						cs''8 (
+						e'8 )
+						fs'8 (
+						d''8 )
+						cs''8 (
+						e''8 )
+						cs''8 (
+						e''8 )
+						fs''8 (
+						d''8 )
+						\set Staff.instrumentName = \markup { Violin II }
+						\set Staff.shortInstrumentName = \markup { vln.II }
+						\context Staff {#(set-accidental-style 'modern)}
+						cs'1
+							^ \markup {
+								\italic
+									{
+										"tutti Violin II"
+									}
+								}
+						cs'8 (
+						d'4. ~
+						d'2 )
+						r4
+						r8
+						cs'8 ~ (
+						cs'4
+						e'4
+						d'2. )
+						cs'4 (
+						e'4.
+						d'8 ~
+						d'4
+						fs'4
+						cs'2. )
+						cs'8 (
+						d'8 ~
+						d'4. )
+						cs'8 (
+						fs'4
+						e'4 )
+						fs'2.
+						cs'8 (
+						d'8 )
 					}
 				>>
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "viola" {
 				\set Staff.instrumentName = \markup { Viola }
@@ -1220,70 +1978,70 @@
 						\set Staff.shortInstrumentName = \markup { vla.1 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						cs,8 -\tenuto \mp
-						e,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
+						cs8 \mp (
+						e8 )
+						d8 (
+						cs8 )
+						e8 (
+						d8 )
+						fs8 (
+						cs8 )
+						e8 (
+						fs8 )
+						d8 (
+						e8 )
+						d8 (
+						fs8 )
+						cs8 (
+						d8 )
+						e8 (
+						d8 )
+						e8 (
+						d8 )
+						e8 (
+						fs8 )
+						cs8 (
+						d8 )
+						cs8 (
+						d8 )
+						cs8 (
+						e8 )
+						fs8 (
+						e8 )
+						cs8 (
+						d8 )
+						cs8 (
+						fs8 )
+						fs8 (
+						cs8 )
+						fs8 (
+						fs8 )
+						e8 (
+						cs8 )
+						d8 (
+						cs8 )
+						d8 (
+						e8 )
+						fs8 (
+						d8 )
+						fs8 (
+						d'8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e'8 )
+						fs8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						e'8 (
+						d''8 )
+						e'8 (
+						cs''8 )
 					}
 					\context Staff = "viola_2" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -1293,70 +2051,70 @@
 						\set Staff.shortInstrumentName = \markup { vla.2 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						cs,8 -\tenuto \mp
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
+						fs8 \mp (
+						e8 )
+						cs8 (
+						d8 )
+						cs8 (
+						fs8 )
+						d8 (
+						cs8 )
+						fs8 (
+						e8 )
+						d8 (
+						cs8 )
+						e8 (
+						d8 )
+						cs8 (
+						fs8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						fs8 )
+						e8 (
+						fs8 )
+						d8 (
+						cs8 )
+						d8 (
+						d8 )
+						fs8 (
+						e8 )
+						fs8 (
+						cs8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						fs8 (
+						e8 )
+						d8 (
+						e8 )
+						fs8 (
+						cs8 )
+						fs8 (
+						cs8 )
+						fs8 (
+						e8 )
+						fs8 (
+						d'8 )
+						cs'8 (
+						fs8 )
+						cs'8 (
+						fs8 )
+						e'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						cs'8 )
+						e'8 (
+						cs'8 )
+						fs'8 (
+						cs''8 )
+						d''8 (
+						cs''8 )
 					}
 					\context Staff = "viola_3" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -1366,141 +2124,159 @@
 						\set Staff.shortInstrumentName = \markup { vla.3 }
 						\set Staff.alignAboveContext = #"viola"
 						\numericTimeSignature
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
+						e8 (
+						fs8 )
+						cs8 (
+						d8 )
+						fs8 (
+						cs8 )
+						e8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						d8 )
+						cs8 (
+						e8 )
+						d8 (
+						fs8 )
+						d8 (
+						fs8 )
+						e8 (
+						cs8 )
+						d8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						e8 (
+						cs8 )
+						d8 (
+						e8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						d8 )
+						fs8 (
+						cs8 )
+						d8 (
+						fs8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						e8 (
+						fs8 )
+						fs8 (
+						cs8 )
+						d8 (
+						cs'8 )
+						fs8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						e'8 (
+						fs8 )
+						cs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						cs'8 (
+						fs'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						cs''8 )
+						fs'8 (
+						e''8 )
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Viola.4 }
 						\set Staff.shortInstrumentName = \markup { vla.4 }
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						d'8 -\tenuto
+						e8 (
+						cs8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e8 )
+						cs8 (
+						e8 )
+						fs8 (
+						d8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						fs8 (
+						cs8 )
+						d8 (
+						fs8 )
+						e8 (
+						d8 )
+						e8 (
+						cs8 )
+						e8 (
+						d8 )
+						fs8 (
+						e8 )
+						fs8 (
+						cs8 )
+						d8 (
+						e8 )
+						cs8 (
+						e8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e8 )
+						d8 (
+						e8 )
+						d8 (
+						cs8 )
+						e8 (
+						fs8 )
+						e8 (
+						cs'8 )
+						fs8 (
+						d'8 )
+						cs'8 (
+						fs8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						fs'8 )
+						e'8 (
+						d'8 )
+						fs'8 (
+						e'8 )
+						fs'8 (
+						d'8 )
+						e'8 (
+						fs'8 )
+						e'8 (
+						e''8 )
+						\context Staff {#(set-accidental-style 'modern)}
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
 					}
 				>>
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "cello" {
 				\clef "bass"
@@ -1517,70 +2293,70 @@
 						\set Staff.shortInstrumentName = \markup { vc.1 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						cs,8 -\tenuto \mp
-						e,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
+						fs8 \mp (
+						fs8 )
+						d8 (
+						cs8 )
+						fs8 (
+						d8 )
+						e8 (
+						fs8 )
+						e8 (
+						fs8 )
+						e8 (
+						cs8 )
+						d8 (
+						cs8 )
+						fs8 (
+						e8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						d8 )
+						cs8 (
+						fs8 )
+						fs8 (
+						e8 )
+						cs8 (
+						fs8 )
+						d8 (
+						d8 )
+						e8 (
+						fs8 )
+						cs8 (
+						e8 )
+						d8 (
+						e8 )
+						cs8 (
+						e8 )
+						cs8 (
+						fs8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						d8 )
+						e8 (
+						fs8 )
+						d8 (
+						e8 )
+						fs8 (
+						cs8 )
+						e8 (
+						d8 )
+						e8 (
+						d'8 )
+						e'8 (
+						fs8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						e'8 )
+						fs'8 (
+						e'8 )
 					}
 					\context Staff = "cello_2" {
 						\clef "bass"
@@ -1591,70 +2367,70 @@
 						\set Staff.shortInstrumentName = \markup { vc.2 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						cs,8 -\tenuto \mp
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e,8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
+						fs8 \mp (
+						e8 )
+						d8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						e8 )
+						d8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						e8 )
+						fs8 (
+						d8 )
+						cs8 (
+						e8 )
+						fs8 (
+						e8 )
+						fs8 (
+						d8 )
+						e8 (
+						cs8 )
+						d8 (
+						fs8 )
+						e8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						e8 )
+						fs8 (
+						d8 )
+						fs8 (
+						cs8 )
+						cs8 (
+						d8 )
+						cs8 (
+						e8 )
+						fs8 (
+						cs8 )
+						d8 (
+						e8 )
+						fs8 (
+						e8 )
+						d8 (
+						e8 )
+						cs8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						cs'8 )
+						d'8 (
+						cs'8 )
+						d'8 (
+						e'8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						fs'8 )
+						d'8 (
+						e'8 )
 					}
 					\context Staff = "cello_3" {
 						\clef "bass"
@@ -1665,141 +2441,159 @@
 						\set Staff.shortInstrumentName = \markup { vc.3 }
 						\set Staff.alignAboveContext = #"cello"
 						\numericTimeSignature
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs,8 -\tenuto
-						d,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						d,8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						fs8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
+						cs8 (
+						d8 )
+						e8 (
+						fs8 )
+						cs8 (
+						d8 )
+						e8 (
+						cs8 )
+						d8 (
+						cs8 )
+						fs8 (
+						e8 )
+						d8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						d8 )
+						e8 (
+						cs8 )
+						e8 (
+						cs8 )
+						fs8 (
+						d8 )
+						e8 (
+						fs8 )
+						d8 (
+						fs8 )
+						e8 (
+						fs8 )
+						d8 (
+						e8 )
+						cs8 (
+						d8 )
+						fs8 (
+						e8 )
+						d8 (
+						e8 )
+						fs8 (
+						fs8 )
+						e8 (
+						d8 )
+						fs8 (
+						e8 )
+						cs8 (
+						fs8 )
+						e8 (
+						fs8 )
+						d8 (
+						cs8 )
+						fs8 (
+						e8 )
+						cs8 (
+						fs8 )
+						e8 (
+						fs8 )
+						cs'8 (
+						d'8 )
+						fs'8 (
+						d'8 )
+						cs'8 (
+						d'8 )
+						e'8 (
+						d'8 )
 					}
 					{
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Cello.4 }
 						\set Staff.shortInstrumentName = \markup { vc.4 }
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						e,8 -\tenuto
-						cs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						fs,8 -\tenuto
-						cs8 -\tenuto
-						d8 -\tenuto
-						fs,8 -\tenuto
-						e8 -\tenuto
-						e8 -\tenuto
-						fs,8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						fs8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						d8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						cs8 -\tenuto
-						cs8 -\tenuto
-						e8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						e8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						e'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						cs'8 -\tenuto
-						fs8 -\tenuto
-						d'8 -\tenuto
-						fs'8 -\tenuto
-						e'8 -\tenuto
-						cs'8 -\tenuto
-						cs'8 -\tenuto
-						fs'8 -\tenuto
-						d'8 -\tenuto
+						e8 (
+						d8 )
+						e8 (
+						d8 )
+						e8 (
+						cs8 )
+						d8 (
+						fs8 )
+						d8 (
+						e8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e8 )
+						fs8 (
+						fs8 )
+						cs8 (
+						fs8 )
+						cs8 (
+						d8 )
+						fs8 (
+						e8 )
+						fs8 (
+						cs8 )
+						fs8 (
+						d8 )
+						cs8 (
+						e8 )
+						d8 (
+						e8 )
+						fs8 (
+						d8 )
+						e8 (
+						d8 )
+						e8 (
+						d8 )
+						cs8 (
+						d8 )
+						e8 (
+						d8 )
+						fs8 (
+						e8 )
+						fs8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						fs8 )
+						e8 (
+						d8 )
+						cs8 (
+						e8 )
+						fs8 (
+						d8 )
+						fs8 (
+						e8 )
+						fs8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						fs'8 (
+						e'8 )
+						d'8 (
+						fs'8 )
+						\context Staff {#(set-accidental-style 'modern)}
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
+						R1
 					}
 				>>
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "bass" {
 				\clef "bass"
@@ -1821,6 +2615,24 @@
 				fs2 \p
 				r2
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 		>>
 		\context StaffGroup = "ref" <<
@@ -1837,6 +2649,58 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				cs'1
+				cs'8 (
+				d'4. ~
+				d'2 )
+				r4
+				r8
+				cs'8 ~ (
+				cs'4
+				e'4
+				d'2. )
+				cs'4 (
+				e'4.
+				d'8 ~
+				d'4
+				fs'4
+				cs'2. )
+				cs'8 (
+				d'8 ~
+				d'4. )
+				cs'8 (
+				fs'4
+				e'4 )
+				fs'2.
+				cs'8 (
+				d'8 )
+				\context Staff {#(set-accidental-style 'modern)}
+				cs'1
+				cs'8 (
+				d'4. ~
+				d'2 )
+				r4
+				r8
+				cs'8 ~ (
+				cs'4
+				e'4
+				d'2. )
+				cs'4 (
+				e'4.
+				d'8 ~
+				d'4
+				fs'4
+				cs'2. )
+				cs'8 (
+				d'8 ~
+				d'4. )
+				cs'8 (
+				fs'4
+				e'4 )
+				fs'2.
+				cs'8 (
+				d'8 )
 			}
 			\context Staff = "line_2" {
 				\set Staff.instrumentName = \markup { Line 2 }
@@ -1851,6 +2715,58 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				r2
+				cs''2
+				e'4. (
+				cs''8 ~
+				cs''2 )
+				r4
+				r8
+				e'8 ~ (
+				e'2 ~
+				e'4.
+				fs'8 ~
+				fs'2 ~
+				fs'2. )
+				d'4 (
+				e'2. )
+				e'4 (
+				cs''4. )
+				e'8 ~ (
+				e'8
+				cs''4. )
+				fs'4 (
+				cs''8
+				d''8
+				e'4 )
+				e'4
+				\context Staff {#(set-accidental-style 'modern)}
+				r2
+				a'2
+				e'4. (
+				a'8 ~
+				a'2 )
+				r4
+				r8
+				e'8 ~ (
+				e'2 ~
+				e'4.
+				fs'8 ~
+				fs'2 ~
+				fs'2. )
+				d'4 (
+				e'2. )
+				e'4 (
+				a'4. )
+				e'8 ~ (
+				e'8
+				a'4. )
+				fs'4 (
+				cs''8
+				d''8
+				e'4 )
+				e'4
 			}
 			\context Staff = "line_3" {
 				\set Staff.instrumentName = \markup { Line 3 }
@@ -1865,12 +2781,48 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
 			}
 			\context Staff = "harmony_1" {
 				\set Staff.instrumentName = \markup { Harmony 1 }
 				\set Staff.shortInstrumentName = \markup { Har.1 }
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				R1
+				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
 				R1
@@ -1894,6 +2846,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				cs1 ~
+				cs1 ~
+				cs1
+				fs1 ~
+				fs1
+				e1 ~
+				e1
+				d1
+				\context Staff {#(set-accidental-style 'modern)}
+				cs1 ~
+				cs1 ~
+				cs1
+				fs1 ~
+				fs1
+				e1 ~
+				e1
+				d1
 			}
 			\context Staff = "harmony_3" {
 				\clef "bass"
@@ -1909,6 +2879,24 @@
 				R1
 				R1
 				R1
+				\context Staff {#(set-accidental-style 'modern)}
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				<fs,>1
+				\context Staff {#(set-accidental-style 'modern)}
+				<d,>1
+				<d,>1
+				<d,>1
+				<d,>1
+				<d,>1
+				<d,>1
+				<d,>1
+				<d,>1
 			}
 		>>
 		\context RhythmicStaff = "dummy" {
@@ -1916,6 +2904,24 @@
 			\set Staff.shortInstrumentName = \markup { . }
 			\context Staff {#(set-accidental-style 'modern)}
 			\numericTimeSignature
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			\context Staff {#(set-accidental-style 'modern)}
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			R1
+			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1
 			R1

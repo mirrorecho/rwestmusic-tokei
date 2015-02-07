@@ -67,6 +67,10 @@ music.exec_method("replace_pitch", material="kairos_b", pitch="E4", other_pitch=
 music.exec_method("transpose_pitch_material", material="kairos_a", transpose=24, apply_flags=["2_ji"])
 music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12, apply_flags=["3_line"])
 
+music.exec_method("transpose_pitch_material", material="kairos_a", transpose=12, start_flag="3_ji")
+music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12, start_flag="3_ji")
+
+
 
 # ---------------------------------------------------------
 # CLOUDS
@@ -147,7 +151,7 @@ music.add_rhythm_material("cloud",
                 ],
                 apply_flags=["2_ji","3_line"])
 
-music.add_rhythm_material("cloud", ["c8-- "*64], start_flag="3_line_again")
+music.add_rhythm_material("cloud", ["c8( c8) "*32], start_flag="3_line_again")
 
 # TO DO MAYBE... could make unique rhythms for the lower parts...
 music.copy_material("rhythm", "cloud", "cloud_lower", start_flag="2_line")
@@ -205,6 +209,19 @@ music.arrange_music(part_names=["odaiko"], rhythm_material=["constant"], start_f
 # ---------------------------------------------------------
 # SPECIAL ARRANGEMENTS
 
+# change instrument to tutti for the strings:
+music.exec_method("change_instrument", part_name="violinI", 
+            instrument_name="Violin I", short_instrument_name="vln.I", 
+            show_instruction=True, instruction_text="tutti Violin I",
+            apply_flags=["3_ji"]
+            )
+
+music.exec_method("change_instrument", part_name="violinII", 
+            instrument_name="Violin II", short_instrument_name="vln.II", 
+            show_instruction=True, instruction_text="tutti Violin II",
+            apply_flags=["3_ji"]
+            )
+
 music.arrange_music(part_names=["crotales"], rhythms=[get_music_container(
                 ["s4", box_music("s4 c2\\fermata c2\\fermata", 
                             instruction="bowed, repeat", 
@@ -236,8 +253,8 @@ make_flags=(
     # "2_ji",
     # "3_line",
     "3_line_again",
-    # "3_ji",
-    # "4_line",
+    "3_ji",
+    "4_line",
     # "4_ji",
     # "5_line",
     # "5_ji",
