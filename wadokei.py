@@ -26,12 +26,12 @@ music.add_cycle(bubble_type=Intro, flags=["intro_1_b", "taiko_b", "intro_b"])
 music.add_cycle(bubble_type=Intro2, flags=["intro_2_a", "taiko_a", "intro_a"])
 music.add_cycle(bubble_type=Intro2, flags=["intro_2_b", "taiko_b", "intro_b"])
 # # melody cycles:
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_1","melody_1_a", "taiko_a","melody_start"])
-music.add_cycle(bubble_type=MelodySwing1, flags=["melody","melody_1","melody_1_b", "taiko_b"])
-music.add_cycle(bubble_type=MelodySwing2, flags=["melody","melody_2","melody_2_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_2","melody_2_b", "taiko_b", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_3","melody_3_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_3","melody_3_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=MelodyA, flags=["melody","melody_1","melody_1_a", "taiko_a","melody_start"])
+music.add_cycle(bubble_type=MelodyB, flags=["melody","melody_1","melody_1_b", "taiko_b"])
+music.add_cycle(bubble_type=MelodySwingA, flags=["melody","melody_2","melody_2_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingB, flags=["melody","melody_2","melody_2_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingA, flags=["melody","melody_3","melody_3_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingB, flags=["melody","melody_3","melody_3_b", "taiko_b", "taiko_split"])
 # day music cycles:
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
@@ -40,10 +40,6 @@ music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 # conduct 8 times
 
 
-
-# ----------------------------------------------------------
-# JI
-music.exec_method("add_orch_ji", skip_flags=["free"])
 
 
 # ----------------------------------------------------------
@@ -62,15 +58,34 @@ music.exec_method("add_cresc_b", apply_flags=["intro_b"])
 music.attach_dynamics(part_names=["taiko1","taiko2"], dynamics=[["f"]], apply_flags=["intro_free_1"])
 # ----------------------------------------------------------
 # CRANKIES:
+music.arrange_music(part_names=["flute1","flute2"], 
+        rhythm_material=["blow_crank_a","blow_crank_b"], pitch_material="yo",
+        pitch_rows=[0], pitch_columns=[
+            [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
+            [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]],
+        apply_flags=["melody_1"])
 music.arrange_music(part_names=["clarinet1","clarinet2"], 
         rhythm_material=["blow_crank_a","blow_crank_b"], pitch_material="yo",
-        pitch_rows=[1,2], pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11]],
+        pitch_rows=[1], pitch_columns=[
+            [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
+            [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]],
         apply_flags=["melody_1"])
+# ----------------------------------------------------------
+# STRINGS MOVE:
+music.arrange_music(apply_flags=["melody_1"], part_material="strings", 
+    pitch_material="yo",rhythm_material="strings_move")
 
+music.arrange_music(apply_flags=["melody_2_a"], part_material="strings", 
+    pitch_material="yo",rhythm_material="strings_move",
+    pitch_columns=[[0,1,2,2,  3,4,5,5,  6,7,8,8,  9,10,11,11,],])
+music.arrange_music(apply_flags=["melody_2_b"], part_material="strings", 
+    pitch_material="yo",rhythm_material="strings_move",
+    pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,],])
 
 # ----------------------------------------------------------
-# MELODIES
-music.exec_method("arrange_strings", start_flag="melody_start", stop_flag="day_start")
+# JI
+# add orch JI only if nothing else going on...
+music.exec_method("add_orch_ji", skip_flags=["free"])
 
 # ----------------------------------------------------------
 # REFEREMCE
@@ -116,14 +131,14 @@ music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day
 # next up.... add
 
 iters=(
-    # 0,1, # intro free
-    # 2,3,
-    # 4,5, # intro regular
-    # 6,7,
-    8,9, # melody
-    # 10,11,
+    0,1, # intro free
+    2,3,
+    4,5, # intro regular
+    6,7,
+    8,9, # night melody
+    10,11,
     # 12,13,
-    # 14,15,
+    # 14,15, #day melody
     # 16,17,
     # 18,19,
     )
@@ -132,4 +147,4 @@ music.apply_transforms(iters=iters)
 
 bubble = music.make_bubble(iters=iters)
 
-bubble.make_pdf()
+bubble.make_pdf(hide_empty=True)

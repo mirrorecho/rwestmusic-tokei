@@ -111,10 +111,8 @@ class WadoMaterial(TokeiBubble):
         # self.material["rhythm"]["blow_crank_b"] = [
         #         "c4-. r8 c4( c8) c4-. r8    c4( c8) c4-. r8 c4( c8)"*2]
 
-        self.material["rhythm"]["blow_crank_a"] = [
-                "c4-- c8-- c4-. r8 c4-- c8--    c4-. r8 c4-- c8-- c4-. r8"*2]
-        self.material["rhythm"]["blow_crank_b"] = [
-                "c4-. r8 c4-- c8-- c4-. r8    c4-- c8-- c4-. r8 c4-- c8--"*2]
+        self.material["rhythm"]["blow_crank_a"] = "c4-- c8-- c4-. r8 c4-- c8--    c4-. r8 c4-- c8-- c4-. r8 "*2
+        self.material["rhythm"]["blow_crank_b"] = "c4-. r8 c4-- c8-- c4-. r8    c4-- c8-- c4-. r8 c4-- c8-- "*2
 
         self.material["pitch"]["ji_osc"] = ["A5","B5","A5"]
 
@@ -368,12 +366,7 @@ class Intro2(Intro):
 class MelodyBase(WadoMaterial):
     def __init__(self):
         super().__init__()
-        self.material["string_parts"] = ["violinI","violinII","viola","cello","bass"]
-
-
-    def arrange_strings(self):
-        self.arrange_music(part_names=self.material["string_parts"], 
-            pitches=[["x"]], rhythm_material="strings_move")
+        self.material["part"]["strings"] = ["violinI","violinII","viola","cello","bass"]
 
 
     def add_harmony_ref_2(self, pitch_material="ancient_B_up2"):
@@ -451,33 +444,58 @@ class MelodyBase(WadoMaterial):
 
 
 
-class Melody(MelodyBase):
+class MelodyA(MelodyBase):
     def __init__(self):
         super().__init__()
         self.material["rhythm"]["strings_move"]=["c4. "*12]
-        self.material["rhythm"]["winds_rh1"]=[""]
-        self.material["rhythm"]["winds_rh2"]=["c4. "*12]
+        self.material["rhythm"]["winds_rh1"]=[""] # what am I using this for?
+        self.material["rhythm"]["winds_rh2"]=["c4. "*12] # and this?
 
         self.material["pitch"]["yo"] = [
                 ["G#5","D#5","F5" ,   "B5" ,"B5" ,"B5" ,   "F#5","F#5","F#5",   "A5" ,"B5" ,"D#6",],
-                ["C#5","C#5","D#4",   "E5" ,"E5" ,"E5" ,   "C#5","C#5","C#5",   "B4" ,"D#5","F#5",],
+                ["C#5","C#5","D#5",   "E5" ,"E5" ,"E5" ,   "C#5","C#5","C#5",   "B4" ,"D#5","F#5",],
                 ["F#4","C#4","C#4",   "E4" ,"E4" ,"E4" ,   "F#4","F#4","F#4",   "E4" ,"A4" ,"B4" ,],
-                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,   "B3" ,"B3" ,"B3" ,   "C#4","C#4","C#4",],
+                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,   "A3" ,"A3" ,"A3" ,   "C#4","C#4","C#4",],
                 ["D2" ,"B2" ,"A1" ,   "G2" ,"G2" ,"G2" ,   "A2" ,"A2" ,"A2" ,   "B2" ,"B2" ,"B2" ,],
                 ]
 
-
-class MelodySwing1(Melody):
+class MelodyB(MelodyA):
     def __init__(self):
         super().__init__()
-        self.material["rhythm"]["strings_move"]=["c4---. c8-- ~ c4  c8-- ~ c4 c8-- "*4]
 
-class MelodySwing2(MelodySwing1):
+        self.material["pitch"]["yo"] = [
+                ["F#5","D#5","D#5",   "F#5","F#5","F#5",   "F#5","C#5","F#5",   "D#5","D#5","D#5",],
+                ["D#5","F#4","D#4",   "C#5","C#5","C#5",   "C#5","F#5","C#5",   "B4" ,"D#4","D#4",],
+                ["B3" ,"B3" ,"B3" ,   "F#4","F#4","F#4",   "A4" ,"A4" ,"A4" ,   "D#4","B3" ,"B3" ,],
+                ["C#3","C#3","C#3",   "A3" ,"A3" ,"A3" ,   "A3" ,"A3" ,"A3" ,   "A3" ,"A3" ,"A3" ,],
+                ["C#2","C#2","C#2",   "A2" ,"A2" ,"A2" ,   "F#2","F#2","F#2",   "A2" ,"A2" ,"A2" ,],
+                ]
+
+
+class MelodySwingA(MelodyA):
+    def __init__(self):
+        super().__init__()
+        self.material["rhythm"]["strings_move"]=["c4-.-> c8-- ~ c4  c8-- ~ c4 c8---. "*4]
+        self.material["pitch"]["yo"] = [
+                ["F#5","F6" ,"F6" ,   "B5" ,"G#5","G#5",   "F#5","F#5","F#5",   "F#5","C#5","D#6",],
+                ["G#4","G#4","A4" ,   "A4" ,"B4" ,"B4" ,   "F5" ,"F5" ,"F5" ,   "F5" ,"C#5","D#5",],
+                ["F#4","D#4","D#4",   "D#4","D#4","D#4",   "D#5","D#5","G#4",   "D#5","A4" ,"D#5",],
+                ["B3" ,"B3" ,"B3" ,   "B3" ,"B3" ,"B3" ,   "G#3","D#2","D#2",   "B3" ,"A3" ,"A3" ,],
+                ["B2" ,"B2" ,"B2" ,   "B2" ,"B2" ,"B2" ,   "G#2","G#2","G#2",   "C#3","A2" ,"A2" ,],
+                ]
+
+class MelodySwingB(MelodyB):
     def __init__(self):
         super().__init__()
         self.material["rhythm"]["strings_move"]=["c4-- c8-. "*12]
 
-
+        self.material["pitch"]["yo"] = [
+                ["D#6","D#6","F5" ,   "A5", "A5", "C5" ,   "Eb5","D6" ,"D6" ,   "C6" ,"A5" ,"Bb5",],
+                ["D#5","D#5","F4" ,   "G4", "C5" ,"C5" ,   "B4", "A4" ,"C5" ,   "C5" ,"C5" ,"C5" ,],
+                ["D#4","D#4","D#4",   "F4" ,"F4" ,"F4" ,   "A4", "Db4","C4" ,   "F4" ,"Bb4","Bb4",],
+                ["D#3","D#3","D#3",   "F3" ,"F3" ,"F3" ,   "Eb3","Eb3","Eb3",   "A3" ,"A3" ,"A3" ,],
+                ["D#2","D#2","D#2",   "Eb2","Eb2","Eb2",   "F2" ,"F2" ,"F2" ,   "A2" ,"A2" ,"A2" ,],
+                ]
 
 class Conduct(WadoMaterial):
     def add_taiko(self, part_names=["taiko1","taiko2"]):
