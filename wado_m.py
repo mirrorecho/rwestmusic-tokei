@@ -106,10 +106,15 @@ class WadoMaterial(TokeiBubble):
         self.material["rhythm"]["measure_note"] = "c2. r4. "
 
 
+        # self.material["rhythm"]["blow_crank_a"] = [
+        #         "c4( c8) c4-. r8 c4( c8)    c4-. r8 c4( c8) c4-. r8"*2]
+        # self.material["rhythm"]["blow_crank_b"] = [
+        #         "c4-. r8 c4( c8) c4-. r8    c4( c8) c4-. r8 c4( c8)"*2]
+
         self.material["rhythm"]["blow_crank_a"] = [
-                "c4( c8) c4-. r8 c4( c8)    c4-. r8 c4( c8) c4-. r8"*2]
+                "c4-- c8-- c4-. r8 c4-- c8--    c4-. r8 c4-- c8-- c4-. r8"*2]
         self.material["rhythm"]["blow_crank_b"] = [
-                "c4-. r8 c4( c8) c4-. r8    c4( c8) c4-. r8 c4( c8)"*2]
+                "c4-. r8 c4-- c8-- c4-. r8    c4-- c8-- c4-. r8 c4-- c8--"*2]
 
         self.material["pitch"]["ji_osc"] = ["A5","B5","A5"]
 
@@ -454,11 +459,11 @@ class Melody(MelodyBase):
         self.material["rhythm"]["winds_rh2"]=["c4. "*12]
 
         self.material["pitch"]["yo"] = [
-                ["G#5","D#5","F5" ,   "B5" ,"B5" ,"B5" ,],
-                ["C#5","C#5","D#4",   "E5" ,"E5" ,"E5" ,],
-                ["F#4","C#4","C#4",   "E4" ,"E4" ,"E4" ,],
-                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,],
-                ["D2" ,"B2" ,"A1" ,   "G2" ,"G2" ,"G2" ,],
+                ["G#5","D#5","F5" ,   "B5" ,"B5" ,"B5" ,   "F#5","F#5","F#5",   "A5" ,"B5" ,"D#6",],
+                ["C#5","C#5","D#4",   "E5" ,"E5" ,"E5" ,   "C#5","C#5","C#5",   "B4" ,"D#5","F#5",],
+                ["F#4","C#4","C#4",   "E4" ,"E4" ,"E4" ,   "F#4","F#4","F#4",   "E4" ,"A4" ,"B4" ,],
+                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,   "B3" ,"B3" ,"B3" ,   "C#4","C#4","C#4",],
+                ["D2" ,"B2" ,"A1" ,   "G2" ,"G2" ,"G2" ,   "A2" ,"A2" ,"A2" ,   "B2" ,"B2" ,"B2" ,],
                 ]
 
 

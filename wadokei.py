@@ -26,12 +26,12 @@ music.add_cycle(bubble_type=Intro, flags=["intro_1_b", "taiko_b", "intro_b"])
 music.add_cycle(bubble_type=Intro2, flags=["intro_2_a", "taiko_a", "intro_a"])
 music.add_cycle(bubble_type=Intro2, flags=["intro_2_b", "taiko_b", "intro_b"])
 # # melody cycles:
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_1_a", "taiko_a","melody_start"])
-music.add_cycle(bubble_type=MelodySwing1, flags=["melody","melody_1_b", "taiko_b"])
-music.add_cycle(bubble_type=MelodySwing2, flags=["melody","melody_2_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_2_b", "taiko_b", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_3_a", "taiko_a", "taiko_split"])
-music.add_cycle(bubble_type=Melody, flags=["melody","melody_3_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_1","melody_1_a", "taiko_a","melody_start"])
+music.add_cycle(bubble_type=MelodySwing1, flags=["melody","melody_1","melody_1_b", "taiko_b"])
+music.add_cycle(bubble_type=MelodySwing2, flags=["melody","melody_2","melody_2_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_2","melody_2_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_3","melody_3_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=Melody, flags=["melody","melody_3","melody_3_b", "taiko_b", "taiko_split"])
 # day music cycles:
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
@@ -60,6 +60,13 @@ music.exec_method("add_cresc_a", apply_flags=["intro_a"])
 music.exec_method("add_cresc_b", apply_flags=["intro_b"])
 
 music.attach_dynamics(part_names=["taiko1","taiko2"], dynamics=[["f"]], apply_flags=["intro_free_1"])
+# ----------------------------------------------------------
+# CRANKIES:
+music.arrange_music(part_names=["clarinet1","clarinet2"], 
+        rhythm_material=["blow_crank_a","blow_crank_b"], pitch_material="yo",
+        pitch_rows=[1,2], pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11]],
+        apply_flags=["melody_1"])
+
 
 # ----------------------------------------------------------
 # MELODIES
@@ -114,8 +121,8 @@ iters=(
     # 4,5, # intro regular
     # 6,7,
     8,9, # melody
-    10,11,
-    12,13,
+    # 10,11,
+    # 12,13,
     # 14,15,
     # 16,17,
     # 18,19,

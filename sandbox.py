@@ -85,7 +85,7 @@ w = WadoMaterial()
 w.arrange_music(part_names=["violinI","violinII","viola","cello"],
     rhythms=["c4 "*12],
     pitch_material="yo",
-    pitch_rows=[0,1,2,2],
+    pitch_rows=[[0,1],[1],[2],None,]
     pitch_columns=[
             [0,0,1,1,2,2,3,3],
             [-1,-2,-3,-4],
