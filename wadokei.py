@@ -95,10 +95,21 @@ music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day
 music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day_music_2"])
 # next up.... add
 
-music.apply_transforms()
-
-bubble = music.make_bubble(
-    iters=(2,)
+iters=(
+    # 0,1, # intro free
+    # 2,3,
+    # 4,5, # intro regular
+    # 6,7,
+    8,9, # melody
+    10,11,
+    # 12,13,
+    # 14,15,
+    # 16,17,
+    # 18,19,
     )
+
+music.apply_transforms(iters=iters)
+
+bubble = music.make_bubble(iters=iters)
 
 bubble.make_pdf()

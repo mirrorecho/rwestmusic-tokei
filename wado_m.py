@@ -263,22 +263,24 @@ class Intro(WadoMaterial):
                     )
         # this is the blowing stuff...
     def add_cresc_a(self):
-        self.arrange_music(part_names=self.material["cresc_a_parts"],
+        self.arrange_music(part_names=self.material["cresc_a_parts"], skip_arranged=[False],
                     rhythm_material="cresc_a", pitch_material="cresc_a", respell=["sharps"])
 
-        self.arrange_music(part_names=self.material["cresc_a_parts"],
+        self.arrange_music(part_names=self.material["cresc_a_parts"], skip_arranged=[False],
                     rhythm_material="cresc_a2", pitch_material="cresc_a2", respell=["sharps"])
 
 
 
     # to do... maybe this calls/inherits from above?
     def add_cresc_b(self):
-        self.arrange_music(part_names=self.material["cresc_b_parts"], rhythm_material=["rest"])
+        self.arrange_music(part_names=self.material["cresc_b_parts"],  skip_arranged=[False],
+                rhythm_material=["rest"])
 
-        self.arrange_music(part_names=self.material["cresc_b_parts"],
+        self.arrange_music(part_names=self.material["cresc_b_parts"], skip_arranged=[False],
                     rhythm_material="cresc_b", pitch_material="cresc_b", respell=["sharps"])
 
-        self.arrange_music(part_names=self.material["cresc_b_parts"], rhythm_material=["rest"])
+        self.arrange_music(part_names=self.material["cresc_b_parts"],  skip_arranged=[False],
+            rhythm_material=["rest"])
 
 
 class Intro2(Intro):
@@ -334,7 +336,8 @@ class MelodyBase(WadoMaterial):
         self.material["string_parts"] = ["violinI","violinII","viola","cello","bass"]
 
     def arrange_strings(self):
-        self.arrange_music(part_names=self.material["string_parts"], pitches=[["x"]], rhythm_material="strings_move")
+        self.arrange_music(part_names=self.material["string_parts"], 
+            pitches=[["x"]], rhythm_material="strings_move")
 
 
     def add_harmony_ref_2(self, pitch_material="ancient_B_up2"):
@@ -347,13 +350,14 @@ class MelodyBase(WadoMaterial):
                     respell=["sharps"]
                     )
     def add_festival_lines_ref(self):
-        self.arrange_music(part_names=["line_1"],rhythms=["R4. R4. R4. | "*4  + "r4. r4. "]),
+        self.arrange_music(part_names=["line_1"],rhythms=["R4. R4. R4. | "*4  + "r4. r4. "],
+                skip_arranged=[False])
         self.arrange_music(
                 rhythm_material=["festival_B"], 
                 pitch_material=["festival_A"], 
                 part_names=["line_1"], 
                 transpose=[-3], 
-                respell=["sharps"]
+                respell=["sharps"], skip_arranged=[False],
                 )
         self.arrange_music(part_names=["line_1"],rhythms=["R4. R4. R4. | "*2 ])
 
