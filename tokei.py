@@ -256,7 +256,7 @@ class TokeiCloud():
         self.autoload = autoload
 
         self.ji_pitch = JI_PITCH
-        self.pitches = [[]] # this will be a list of lists
+        self.pitches = [] # this will be a list of lists
         self.prepare_pitches()
 
         self.get_pitch_ranges()
