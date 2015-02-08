@@ -86,7 +86,7 @@ class WadoMaterial(TokeiBubble):
         
         self.material["rhythm"]["taiko_day_back_forth"] = "c4._don r4. | "*4
         
-        self.material["rhythm"]["taiko_day_end"] = "c4. "*6 + "c4_do c8_ko c4_do c8_don->"
+        # self.material["rhythm"]["taiko_day_end"] = "c4. "*6 + "c4_do c8_ko c4_do c8_don->"
 
         # not sure I'll use these...
         self.material["rhythm"]['taiko_triples']="c8_do c_ko c_do "*3
@@ -179,6 +179,7 @@ class WadoMaterial(TokeiBubble):
 
         # BUT... HARMONIES FOR 3 may not be dark enough?
 
+        self.material["part"]["brass"]=["trumpet1","trumpet2","horn1","horn2","horn3","horn4","trombone1","trombone2","tuba"]
 
         self.material["pitch"]["day_A"] = [
             [],
@@ -484,6 +485,10 @@ class MelodySwingA(MelodyA):
                 ["B2" ,"B2" ,"B2" ,   "B2" ,"B2" ,"B2" ,   "G#2","G#2","G#2",   "C#3","A2" ,"A2" ,],
                 ]
 
+    # TO DO... more adjustments to these pitches?
+    def yo3(self):
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -1)
+
 class MelodySwingB(MelodyB):
     def __init__(self):
         super().__init__()
@@ -497,14 +502,40 @@ class MelodySwingB(MelodyB):
                 ["D#2","D#2","D#2",   "Eb2","Eb2","Eb2",   "F2" ,"F2" ,"F2" ,   "A2" ,"A2" ,"A2" ,],
                 ]
 
-class Conduct(WadoMaterial):
-    def add_taiko(self, part_names=["taiko1","taiko2"]):
-        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*8)
+    # TO DO... more adjustments to these pitches? (especiall some of the really high stuff)
+    def yo3(self):
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], 4)
 
-class DayMusicSplit(WadoMaterial):
+
+class DayMusic(WadoMaterial):
     def __init__(self):
         super().__init__(measures_durations=[(6,8)]*12)
-        self.material["rhythm"]["ref"] = "c4. ~ c4. " *12
+        self.material["rhythm"]["ref"] = "c4. ~ c4. " * 12
+        self.material["pitch"]["ref"] = [["A2"]*4]
+
+        self.material["rhythm"]["day_yo"]=["""
+                        c4.->(\\mf c4.)      c4.(\\< c4.     c4.)->\\f r4.    r4. c4.--\\mf     
+                        c4.-- r4.     c4.\\mp ~  c4.     c4. ~  c4.     c4.-- r4.
+                        c4.--\\< c4.--   c4.-- c4.--    c4.-- c4. ~    c4. ~ c4.\\! """]
+
+        self.material["rhythm"]["day_lo"]=["""
+                        c4.->\\mf ~ c4.      c4.(\\< ~ c4.   c4.)->\\f  r4.    r4. c4. ~
+                        c4.  r4.      c4.\\mp ~  c4.     c4. ~  c4.     c4.-- r4.
+                        c4.--\\< c4.--   c4.-- c4.--    c4.-- c4. ~    c4. ~ c4.\\! """]
+
+        self.material["pitch"]["yo"] = [
+            ["E5" ,"A5" ,   "C#5","A4" ,   "B5" ,"E5" ,   "C#5",  "D#5","F#5",   "E5" ,"G5" ,   "F#5","E5"],
+            ["C#5","E5" ,   "A4" ,"E5" ,   "F#5","D#5",   "B4",   "F#4","D#5",   "G4" ,"E5" ,   "A4" ,"D#5"],
+            ["A4" ,"C#5",   "F#4","C#5",   "D#5","A4" ,   "E4",   "D#4","F#4",   "E4" ,"G4" ,   "F#4","B4" ,],
+            ["A3" ,"A3" ,   "B3" ,"B3" ,   "F#3","F#3",   "A3",   "B3" ,"B3" ,   "A3" ,"A3" ,   "B3" ,"B3" ,],
+            ["G2" ,"G2" ,   "A2" ,"A2" ,   "E2" ,"E2" ,   "G2",   "A2" ,"A2" ,   "G2" ,"G2" ,   "A2" ,"A2" ,]
+        ]
+        # TO DO... yo yo (all 8ths)
+
+    def add_orch_ji(self):
+        pass
+
+class DayMusicSplit(DayMusic):
 
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[
@@ -515,9 +546,20 @@ class DayMusicSplit(WadoMaterial):
                 ],
                 ["taiko_day_ji"]*3
             ])
+    def yo2(self):
+        pass
 
-class DayMusicEnd(WadoMaterial):
-    pass
+class DayMusicEnd(DayMusic):
+
+    def add_taiko(self, part_names=["taiko1","taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=[["taiko_day_back_forth"]*2 + ["taiko_day_boom"]])
+
+
+
+class Conduct(WadoMaterial):
+    def add_taiko(self, part_names=["taiko1","taiko2"]):
+        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*8)
+
 
 
 class WadoFree(WadoMaterial, TokeiFree):

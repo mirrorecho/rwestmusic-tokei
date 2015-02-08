@@ -39,8 +39,9 @@ music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 
 # conduct 8 times
 
-
-
+# ----------------------------------------------------------
+# YO METHODS / TRANSPOSITIONS:
+music.exec_method("yo3", apply_flags=["melody_3"])
 
 # ----------------------------------------------------------
 # INTRO
@@ -75,12 +76,25 @@ music.arrange_music(part_names=["clarinet1","clarinet2"],
 music.arrange_music(apply_flags=["melody_1"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move")
 
-music.arrange_music(apply_flags=["melody_2_a"], part_material="strings", 
+music.arrange_music(apply_flags=["melody_2_a","melody_3_a"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move",
     pitch_columns=[[0,1,2,2,  3,4,5,5,  6,7,8,8,  9,10,11,11,],])
-music.arrange_music(apply_flags=["melody_2_b"], part_material="strings", 
+music.arrange_music(apply_flags=["melody_2_b","melody_3_b"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move",
     pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,],])
+# ----------------------------------------------------------
+# DAY YO!
+music.arrange_music(part_names=["trumpet1","trumpet2","horn1","horn3"], pitch_material="yo", 
+            rhythm_material="day_yo",
+            pitch_rows=[0,1,2,2],
+            pitch_columns=[[0,1,2,3,4,  5,   5,6,6,6,   7,8,9,10,11,12  ]]
+            )
+music.arrange_music(part_names=["horn2","horn4","trombone1","trombone2","tuba"], pitch_material="yo", 
+            rhythm_material="day_lo",
+            pitch_rows=[3,3,3,4,4],
+            pitch_columns=[[0,2,4,5,    6,6,6,  7,8,9,10,11,12]],
+            transpose=[0,0,0,0,-12]
+            )
 
 # ----------------------------------------------------------
 # JI
@@ -116,6 +130,7 @@ music.exec_method("add_harmony_night_3_ref", transpose=[4], respell=["sharps"], 
 
 # ----------------------------------------------------------
 # the taiko parts
+# TO DO... this could be better organized with the classes (methods not needed just for arranging... )
 music.exec_method("add_taiko_a", apply_flags=["taiko_a"], skip_flags=["taiko_split"])
 music.exec_method("add_taiko_b", apply_flags=["taiko_b"], skip_flags=["taiko_split"])
 # here's the taiko melody split (simplify this code??):
@@ -126,21 +141,23 @@ music.exec_method("add_taiko_a", part_names=["taiko2"], apply_flags=["melody_3_a
 music.exec_method("add_taiko_b", part_names=["taiko2"], apply_flags=["melody_3_b"])
 music.exec_method("add_taiko_split", part_names=["taiko1"], apply_flags=["melody_3_a","melody_3_b"])
 # here's the taiko day music
-music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day_music_1"])
+music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day_music_1",])
 music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day_music_2"])
+music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day_music_end"])
 # next up.... add
 
 iters=(
-    0,1, # intro free
-    2,3,
-    4,5, # intro regular
-    6,7,
-    8,9, # night melody
-    10,11,
+    # 0,1, # intro free
+    # 2,3,
+    # 4,5, # intro regular
+    # 6,7,
+    # 8,9, # night melody
+    # 10,11,
     # 12,13,
-    # 14,15, #day melody
-    # 16,17,
-    # 18,19,
+    14, # day melody
+    15, 
+    16,
+    # 17, 18,19, # free/conduct
     )
 
 music.apply_transforms(iters=iters)
