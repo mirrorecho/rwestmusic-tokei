@@ -291,11 +291,11 @@ make_flags=(
     "3_line_again",
     "3_ji",
     "4_line",
-    # "4_ji",
-    # "5_line",
-    # "5_ji",
-    # "6_line",
-    # "6_all",
+    "4_ji",
+    "5_line",
+    "5_ji",
+    "6_line",
+    "6_all",
     )
 
 music.apply_transforms(flags=make_flags)

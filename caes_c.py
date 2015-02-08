@@ -37,8 +37,8 @@ def get_cycle_music():
     # E 17-20
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody", "midlow_strings_pad"],)
     music.add_cycle(flags=["string_nasty_3", "taiko_3"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
     music.add_cycle(flags=["string_nasty_2", "taiko_2"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_hits","brass_melody_widen", "midlow_strings_pad"],)
     # ------------------------------------
     # F 21-24
     music.add_cycle(flags=["ma"], bubble_type=CaesiumMa) # MA !!!!!!!!!!!!!!
