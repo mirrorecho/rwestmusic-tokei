@@ -22,38 +22,50 @@ music.transforms.append(
     ModTransposePitch(
         "ref", 
         value = 1,
-        start_flag = "next_movin"
+        start_flag = "next_movin",
+        skip_flags=["free"]
         ))
 music.transforms.append(
     ModTransposePitch(
         "next_ref", 
         value = 1,
-        start_flag = "next_movin"
+        start_flag = "next_movin",
+        skip_flags=["free"]
+        ))
+music.transforms.append(
+    ModTransposePitch(
+        "ref", 
+        value = 0,
+        start_flag = "next_movin",
+        apply_flags=["free"]
+        ))
+music.transforms.append(
+    ModTransposePitch(
+        "next_ref", 
+        value = 0,
+        start_flag = "next_movin",
+        apply_flags=["free"]
         ))
 
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # PUSHING THE JI and REF
 
 music.add_rhythm_material("push",  "c4\\downbow " * 12)
+music.add_rhythm_material("push", "c4\\downbow " * 8 + "R1 ", apply_flags=["start_pause"])
+music.add_rhythm_material("slide", "c1 c4.( c8 ~ c2) R1", apply_flags=["start_pause"])
 
 # would be better to figure out how to fill the whole thing with straight quarter notes...
-music.arrange_music(
-        pitch_material=["ji"], 
-        rhythm_material = ["push"],
-        part_names = ["violinI_div1","violinI_div2",],
-        start_flag = "start",
-        stop_flag="start_movin",
-        apply_flags=["winds_down"],
-        )
 
 music.arrange_music(
-        pitch_material=["slide_ji"], 
-        rhythm_material = ["slide"],
-        part_names = ["violinII_div1","violinII_div2",],
+        pitch_material=["ji", "ji", "slide_ji", "slide_ji"], 
+        rhythm_material = ["push","push","slide","slide"],
+        part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
         start_flag = "start",
-        stop_flag="start_movin",
+        stop_flag="start_taiko",
+        apply_flags=["winds_down"],
         respell=("sharps",)
         )
+music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["mf"]], apply_flags=["start"])
 
 music.arrange_music(
         part_names=["violinII_div1","violinII_div2",],
@@ -61,20 +73,47 @@ music.arrange_music(
         rhythm_material=["dotted"],
         apply_flags=["winds_down"],
         )
+# --------------------------------------------------------------------------------------------
+# FREE SECTIONS
+# if all else fails, violins cam tremolo on ji
+trem_parts = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",]
+music.arrange_music(
+        pitch_material=["ji", "slide_ji", "ji", "slide_ji"], 
+        pitch_offset=[1],
+        rhythm_material = "trem_repeat",
+        part_names = trem_parts,
+        apply_flags=["free"],
+        respell=["sharps"]
+        )
+# since the box instructions aren't working:
+music.attach_markup(part_names=trem_parts, markup_texts=[["repeat randomly"]], 
+    indices=[[1]], notes_only=[False], apply_flags=["start_taiko","start_taiko_2"])
+music.attach_markup(part_names=trem_parts, markup_texts=[["sim"]], 
+    indices=[[1]], notes_only=[False], apply_flags=["start_taiko_2"])
+
 
 # --------------------------------------------------------------------------------------------
 # taiko parts
+# TAIKO INTRO
 music.arrange_music(
-            part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_intro_1","taiko_intro_2"],
-            start_flag="start_taiko",
-            stop_flag="start_movin",
+            part_names=["shime","taiko1","taiko2"], 
+            rhythm_material=["taiko_free_intro_shime","taiko_free_intro_1","taiko_free_intro_2"],
+            apply_flags=["start_taiko"],
             )
 music.arrange_music(
-            part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_do_don_cycle"],
-            apply_flags=["winds_up","winds_down"],
+            part_names=["shime","taiko1","taiko2"], 
+            rhythm_material=["taiko_free_intro_shime_a","taiko_free_intro_a","taiko_free_intro_a"],
+            apply_flags=["start_taiko_2"],
             )
+
+#FREE
+music.arrange_music(
+            part_names=["shime","taiko1","taiko2"], 
+            rhythm_material=["taiko_free_shime","taiko_free_1","taiko_free_2"],
+            apply_flags=["free"],
+            )
+
+# TAIKO MELODY
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
             rhythm_material=["taiko_melody_1"],
@@ -85,6 +124,14 @@ music.arrange_music(
             rhythm_material=["taiko_melody_2"],
             apply_flags=["taiko_melody_2"]
             )
+# shime plays with melody
+music.arrange_music(
+            part_names=["shime"], 
+            rhythms=["c4 "*12],
+            apply_flags=["taiko_melody_1","taiko_melody_2"]
+            )
+
+
 # --------------------------------------------------------------------------------------------
 # CLOUD  (harmonic sequence)
 
@@ -120,11 +167,14 @@ music.arrange_music(
             transpose=[-24]
             )
 
+music.exec_method("add_stream_cloud_pitches", skip_flags=["stream_cloud1","stream_cloud2"])
+
 # a string cloud that kind of follows the melody
 music.exec_method("add_stream_cloud_pitches", pitch_times=(8,8,8), apply_flags=["stream_cloud1"])
 music.exec_method("add_stream_cloud_pitches",  pitch_times=(8,8,8), stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
 music.exec_method("add_stream_cloud_pitches", pitch_name="stream_cloud_single", pitch_times=(1,1,1), apply_flags=["stream_cloud1"])
 music.exec_method("add_stream_cloud_pitches",  pitch_name="stream_cloud_single", pitch_times=(1,1,1), stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
+
 
 music.arrange_music(
             part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
@@ -169,6 +219,27 @@ music.exec_method("arrange_cloud",
             apply_flags=["full_stream_1"]
             )
 
+# if all else fails, arrange the cloud in the low strings...
+music.arrange_music(
+    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",], 
+    pitch_material="stream_cloud_mid", 
+    respell=["sharps"],
+    rhythms=["c8( c8) "*12],
+    skip_flags=["free"],
+    pitch_range_material="string_ranges_low",
+    apply_flags=["cloud_low"]
+    )
+
+# if all else fails, arrange the cloud in the low strings...
+music.arrange_music(
+    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",], 
+    pitch_material="stream_cloud_mid", 
+    respell=["sharps"],
+    rhythms=["c8( c8) "*12],
+    skip_flags=["free"],
+    pitch_range_material="string_ranges_mid"
+    )
+
 
 # ---------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)
@@ -196,31 +267,31 @@ music.exec_method("arrange_stream",
 music.arrange_music(
         pitch_material=["ref"], 
         rhythm_material=[["measure_note"]*3],
-        part_names = ["harmony_1"]
+        part_names = ["line_1"],
         )
 
 
 # FINAL BUBBLE STUFF:
 iters = (
-    0,1,
+    # 0,1,
     2,3,
     4,5,
     6,7,
     8,9,
     10,11,
-    12,13,
-    14,15,
-    16,17,
-    18,19,
-    20,21,
-    22,23,
-    24,25,
-    26,27,
-    28,29,
-    30,31,
-    32,33,
-    34,35,
-    36
+    # 12,13,
+    # 14,15,
+    # 16,17,
+    # 18,19,
+    # 20,21,
+    # 22,23,
+    # 24,25,
+    # 26,27,
+    # 28,29,
+    # 30,31,
+    # 32,33,
+    # 34,35,
+    # 36
     )
 
 music.apply_transforms(iters=iters)

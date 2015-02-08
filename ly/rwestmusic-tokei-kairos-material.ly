@@ -1,4 +1,4 @@
-% 2015-02-08 00:37
+% 2015-02-08 09:43
 
 \version "2.18.2"
 \language "english"
@@ -314,6 +314,7 @@
 				fs'''2.
 				cs'''8 (
 				d'''8 )
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				cs'''2
@@ -340,6 +341,7 @@
 				d'''8
 				e''4 )
 				e''4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				cs''2
@@ -366,6 +368,7 @@
 				d''8
 				e'4 )
 				e'4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				fs'8 \p (
 				e'8
@@ -429,6 +432,7 @@
 				a''8 (
 				cs''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'8 \< (
 				d'8 )
@@ -753,6 +757,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				f'''4. \pp ~ \<
@@ -766,6 +771,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				as'''4. \pp ~ \<
@@ -779,6 +785,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				fs'8 \p (
 				d'8
@@ -842,6 +849,7 @@
 				cs''8 (
 				fs''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a'8 \< (
 				fs'8 )
@@ -972,6 +980,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				gs''4. \pp ~ \<
@@ -985,6 +994,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				cs'''4. \pp ~ \<
@@ -998,6 +1008,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				e''8 \p (
 				cs''8
@@ -1061,6 +1072,7 @@
 				e''8 (
 				d''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				e''8 \< (
 				d''8 )
@@ -1191,6 +1203,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1204,6 +1217,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1217,6 +1231,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs''8 \p (
 				d''8
@@ -1280,6 +1295,7 @@
 				d''8 (
 				e''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'''8 \< (
 				a''8 )
@@ -1410,6 +1426,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1423,6 +1440,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1436,6 +1454,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d''8 \p (
 				cs''8
@@ -1499,6 +1518,7 @@
 				a''8 (
 				d''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d'''8 \< (
 				cs'''8 )
@@ -1629,6 +1649,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				cs'''4. \pp ~ \<
@@ -1642,6 +1663,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r8
 				fs'''4. \pp ~ \<
@@ -1655,6 +1677,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'8 \p (
 				fs8
@@ -1718,6 +1741,7 @@
 				fs''8 (
 				d''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'8 \< (
 				e'8 )
@@ -1848,6 +1872,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1861,6 +1886,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				r8
@@ -1874,6 +1900,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d'8 \p (
 				fs8
@@ -1937,6 +1964,7 @@
 				d''8 (
 				a''8 \mf )
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				fs'8 \< (
 				a'8 )
@@ -2175,6 +2203,7 @@
 				cs'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				cs'2. \pp ~ \<
@@ -2190,6 +2219,7 @@
 				cs'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				cs'2. \pp ~ \<
@@ -2205,6 +2235,7 @@
 				cs'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2214,6 +2245,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a8 \< (
 				cs'8 )
@@ -2452,6 +2484,7 @@
 				d'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				d'2. \pp ~ \<
@@ -2467,6 +2500,7 @@
 				d'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				d'2. \pp ~ \<
@@ -2482,6 +2516,7 @@
 				d'2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2491,6 +2526,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d'8 \< (
 				cs'8 )
@@ -2619,6 +2655,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2628,6 +2665,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2637,6 +2675,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2646,6 +2685,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'2.
 				cs'4 ~
@@ -2731,6 +2771,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2740,6 +2781,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2749,6 +2791,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2758,6 +2801,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				e2.
 				e4 ~
@@ -2843,6 +2887,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2852,6 +2897,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2861,6 +2907,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2870,6 +2917,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2943,6 +2991,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2952,6 +3001,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2961,6 +3011,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -2970,6 +3021,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3077,6 +3129,7 @@
 				d''8
 				cs'4 )
 				cs'4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3086,6 +3139,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3095,6 +3149,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3104,6 +3159,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3177,6 +3233,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3186,6 +3243,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3195,6 +3253,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3204,6 +3263,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3278,6 +3338,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3287,6 +3348,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3296,6 +3358,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3305,6 +3368,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3379,6 +3443,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3388,6 +3453,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3397,6 +3463,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3406,6 +3473,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3480,6 +3548,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3489,6 +3558,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3498,6 +3568,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3507,6 +3578,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3900,6 +3972,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3909,6 +3982,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3918,6 +3992,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -3927,6 +4002,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4000,6 +4076,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4009,6 +4086,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4018,6 +4096,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4027,6 +4106,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4100,6 +4180,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4109,6 +4190,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4118,6 +4200,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4127,6 +4210,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4201,6 +4285,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4210,6 +4295,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4219,6 +4305,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4228,6 +4315,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4305,6 +4393,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4314,47 +4403,7 @@
 				R1
 				R1
 				R1
-				\context Staff {#(set-accidental-style 'modern)}
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
-				c4
-				r8 [
-				c8 ]
-				r4
-				c4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4
 				r8 [
@@ -4396,6 +4445,49 @@
 				c8 ]
 				r4
 				c4
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				c4
+				r8 [
+				c8 ]
+				r4
+				c4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4
 				r8 [
@@ -4582,6 +4674,7 @@
 				c8 _ \markup { da }
 				c4 _ \markup { ka }
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4591,6 +4684,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4600,6 +4694,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { don }
 				c8 [ _ \markup { do }
@@ -4649,6 +4744,7 @@
 				c4
 				c8
 				c8 _ \markup { ko }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4 _ \markup { tsu }
 				c4 _ \markup { don }
@@ -4826,6 +4922,7 @@
 				c8 _ \markup { da }
 				c4 _ \markup { ka }
 				r4
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { dan }
 				c8 _ \markup { da }
@@ -4853,6 +4950,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4862,6 +4960,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -4891,6 +4990,7 @@
 				c4
 				c8
 				c8 _ \markup { ko }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { don }
 				c8 [ _ \markup { do }
@@ -5362,6 +5462,7 @@
 						d'8 ~
 						d'4
 						d'4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin I.1 }
 						\set Staff.shortInstrumentName = \markup { vln.I.1 }
@@ -5398,6 +5499,7 @@
 						e''8 ~
 						e''4
 						e''4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin I.1 }
 						\set Staff.shortInstrumentName = \markup { vln.I.1 }
@@ -5466,6 +5568,7 @@
 						fs''8 )
 						e''8 (
 						fs''8 )
+						\bar "||"
 					}
 					\context Staff = "violinI_2" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -5937,6 +6040,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -5977,6 +6081,7 @@
 						d''8 ~
 						d''4
 						d''4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin I.2 }
 						\set Staff.shortInstrumentName = \markup { vln.I.2 }
@@ -6045,6 +6150,7 @@
 						e''8 )
 						fs''8 (
 						cs''8 )
+						\bar "||"
 					}
 					\context Staff = "violinI_3" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -6522,6 +6628,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -6642,6 +6749,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -6714,6 +6822,7 @@
 						fs''8 )
 						cs''8 (
 						e''8 )
+						\bar "||"
 					}
 					\context Staff = "violinI_4" {
 						\set Staff.instrumentName = \markup { Violin I }
@@ -7185,6 +7294,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -7305,6 +7415,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -7377,6 +7488,7 @@
 						d''8 )
 						cs''8 (
 						fs''8 )
+						\bar "||"
 					}
 					{
 						\context Staff {#(set-accidental-style 'forget)}
@@ -8191,6 +8303,7 @@
 						\once \override Staff.TimeSignature.stencil = ##f
 						{
 							s1 * 8
+							\bar "||"
 						}
 						\context Staff {#(set-accidental-style 'modern)}
 						\context Staff {#(set-accidental-style 'modern)}
@@ -8226,6 +8339,7 @@
 						cs'8 ~
 						cs'4
 						cs'4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin II.1 }
 						\set Staff.shortInstrumentName = \markup { vln.II.1 }
@@ -8262,6 +8376,7 @@
 						cs''8 ~
 						cs''4
 						cs''4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin II.1 }
 						\set Staff.shortInstrumentName = \markup { vln.II.1 }
@@ -8330,6 +8445,7 @@
 						e''8 )
 						cs''8 (
 						d''8 )
+						\bar "||"
 					}
 					\context Staff = "violinII_2" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -8801,6 +8917,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -8841,6 +8958,7 @@
 						fs'8 ~
 						fs'4
 						fs'4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Violin II.2 }
 						\set Staff.shortInstrumentName = \markup { vln.II.2 }
@@ -8909,6 +9027,7 @@
 						cs''8 )
 						e''8 (
 						fs''8 )
+						\bar "||"
 					}
 					\context Staff = "violinII_3" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -9386,6 +9505,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -9506,6 +9626,7 @@
 						}
 						\hideNotes
 						d''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -9578,6 +9699,7 @@
 						cs''8 )
 						d''8 (
 						cs''8 )
+						\bar "||"
 					}
 					\context Staff = "violinII_4" {
 						\set Staff.instrumentName = \markup { Violin II }
@@ -10049,6 +10171,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -10169,6 +10292,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -10241,6 +10365,7 @@
 						d''8 )
 						cs''8 (
 						fs''8 )
+						\bar "||"
 					}
 					{
 						\context Staff {#(set-accidental-style 'forget)}
@@ -10962,6 +11087,7 @@
 				e''4
 			}
 			\context Staff = "viola" {
+				\clef "alto"
 				\set Staff.instrumentName = \markup { Viola }
 				\set Staff.shortInstrumentName = \markup { Vla }
 				\context Staff {#(set-accidental-style 'forget)}
@@ -11095,6 +11221,7 @@
 						fs8 ~
 						fs4
 						fs4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Viola.1 }
 						\set Staff.shortInstrumentName = \markup { vla.1 }
@@ -11131,6 +11258,7 @@
 						e'8 ~
 						e'4
 						e'4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Viola.1 }
 						\set Staff.shortInstrumentName = \markup { vla.1 }
@@ -11199,6 +11327,7 @@
 						fs'8 )
 						e'8 (
 						cs''8 )
+						\bar "||"
 					}
 					\context Staff = "viola_2" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -11551,6 +11680,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -11591,6 +11721,7 @@
 						cs'8 ~
 						cs'4
 						cs'4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Viola.2 }
 						\set Staff.shortInstrumentName = \markup { vla.2 }
@@ -11659,6 +11790,7 @@
 						cs''8 )
 						d''8 (
 						cs''8 )
+						\bar "||"
 					}
 					\context Staff = "viola_3" {
 						\set Staff.instrumentName = \markup { Viola }
@@ -12017,6 +12149,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -12137,6 +12270,7 @@
 						}
 						\hideNotes
 						cs''2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -12209,6 +12343,7 @@
 						cs''8 )
 						fs'8 (
 						e''8 )
+						\bar "||"
 					}
 					{
 						\context Staff {#(set-accidental-style 'forget)}
@@ -12603,6 +12738,7 @@
 						cs8 ~
 						cs4
 						cs4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Cello.1 }
 						\set Staff.shortInstrumentName = \markup { vc.1 }
@@ -12639,6 +12775,7 @@
 						fs8 ~
 						fs4
 						fs4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Cello.1 }
 						\set Staff.shortInstrumentName = \markup { vc.1 }
@@ -12707,6 +12844,7 @@
 						e'8 )
 						fs'8 (
 						e'8 )
+						\bar "||"
 					}
 					\context Staff = "cello_2" {
 						\clef "bass"
@@ -12945,6 +13083,7 @@
 						}
 						\hideNotes
 						d'2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -12985,6 +13124,7 @@
 						cs8 ~
 						cs4
 						cs4 -\tenuto
+						\bar "||"
 						\context Staff {#(set-accidental-style 'modern)}
 						\set Staff.instrumentName = \markup { Cello.2 }
 						\set Staff.shortInstrumentName = \markup { vc.2 }
@@ -13053,6 +13193,7 @@
 						fs'8 )
 						d'8 (
 						e'8 )
+						\bar "||"
 					}
 					\context Staff = "cello_3" {
 						\clef "bass"
@@ -13291,6 +13432,7 @@
 						}
 						\hideNotes
 						d'2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -13411,6 +13553,7 @@
 						}
 						\hideNotes
 						d'2
+						\bar "||"
 						\unHideNotes
 						\stopStaff
 						\override Staff.StaffSymbol #'line-positions = #'()
@@ -13483,6 +13626,7 @@
 						d'8 )
 						e'8 (
 						d'8 )
+						\bar "||"
 					}
 					{
 						\context Staff {#(set-accidental-style 'forget)}
@@ -14140,6 +14284,7 @@
 				cs2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				cs2. \pp ~ \<
@@ -14155,6 +14300,7 @@
 				cs2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				fs2. \pp ~ \<
@@ -14170,6 +14316,7 @@
 				fs2 \p
 				r2
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14179,6 +14326,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs'1
 				cs'8 (
@@ -14271,6 +14419,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14280,6 +14429,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14289,6 +14439,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14298,6 +14449,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs1
 				cs8 (
@@ -14388,6 +14540,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14397,6 +14550,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14406,6 +14560,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14415,6 +14570,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r2
 				a''2
@@ -14505,6 +14661,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14514,6 +14671,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14523,6 +14681,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14532,6 +14691,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14605,6 +14765,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14614,6 +14775,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14623,6 +14785,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14632,6 +14795,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14706,6 +14870,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14715,6 +14880,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14724,6 +14890,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14733,6 +14900,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				cs1 ~
 				cs1 ~
@@ -14807,6 +14975,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14816,6 +14985,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14825,6 +14995,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R1
 				R1
@@ -14834,6 +15005,7 @@
 				R1
 				R1
 				R1
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				<d,>1
 				<d,>1
@@ -14908,6 +15080,7 @@
 			R1
 			R1
 			R1
+			\bar "||"
 			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1
@@ -14917,6 +15090,7 @@
 			R1
 			R1
 			R1
+			\bar "||"
 			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1
@@ -14926,6 +15100,7 @@
 			R1
 			R1
 			R1
+			\bar "||"
 			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1
@@ -14935,6 +15110,7 @@
 			R1
 			R1
 			R1
+			\bar "||"
 			\context Staff {#(set-accidental-style 'modern)}
 			R1
 			R1

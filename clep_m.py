@@ -8,7 +8,7 @@ import settings
 # - EVERYONE DIFFERENT (at least one spot!!!)
 # - my copyright
 
-from tokei import TokeiBubble, TokeiCloud
+from tokei import TokeiBubble, TokeiCloud, TokeiFree
 
 # need to import all of this?
 from calliope.work import Project, Bubble
@@ -16,7 +16,7 @@ from calliope.cycles.loop import CycleLoop
 from calliope.cycles.cells import IntervalRepeatCell
 from calliope.cycles.transform import *
 from calliope.cloud.pitches import * 
-from calliope.tools import get_pitch_range, get_pitch_number, music_from_durations, pitches_from_intervals, get_pitch_ranges, transpose_pitches
+from calliope.tools import *
 
 import copy
 
@@ -266,9 +266,10 @@ class StreamHint2(Stream):
 #         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
 class ClepsydraMaterial(TokeiBubble):
-    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra"):
+    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", div_strings=True):
 
-        super().__init__(name="clepsydra-material", measures_durations=measures_durations, layout=layout, div_strings=True)
+        super().__init__(name="clepsydra-material", title="Clepsydra", measures_durations=measures_durations, 
+            layout=layout, div_strings=True, tempo=((1, 4), 116))
  
         del self.parts["odaiko"]
 
@@ -287,10 +288,7 @@ class ClepsydraMaterial(TokeiBubble):
         self.material["rhythm"]["taiko_do_don"] = "c8->_do c8->_don r4 r4 c8->_do c8->_do "
 
         self.material["rhythm"]["taiko_do_don_only"] = "c8->_do c8->_don "
-        self.material["rhythm"]["taiko_do_don_cycle"] = self.material["rhythm"]["taiko_do_don_only"] + "r4 r2 R1 R1 "
-
-        self.material["rhythm"]["taiko_intro_1"] = "c8_do[ c_ko] "*8 + self.material["rhythm"]["taiko_do_don"]
-        self.material["rhythm"]["taiko_intro_2"] = "c8_do c_don r4^KATA r2 | R1 | c8_do c_don r4^KATA r2 "
+        # self.material["rhythm"]["taiko_do_don_cycle"] = self.material["rhythm"]["taiko_do_don_only"] + "r4 r2 R1 R1 "
 
         self.material["rhythm"]["steady_8ths"] = "c8 "*24
         
@@ -308,9 +306,14 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["measure_note"] = "c1 "
 
-        self.material["rhythm"]["slide"] = "c1 c1 c4.( c8 ~ c2) "
+        self.material["rhythm"]["slide"] = "c1\\p\\< c4.( c8 ~ c2) c1\\mf"
 
-        self.material["pitch"]["slide_ji"] = ["A5", "A5", "G#5", "A5"]
+        self.material["pitch"]["slide_ji"] = ["A5", "G#5", "A5", "A5",]
+
+        self.prepare_material()
+
+    def prepare_material(self):
+        pass
 
     def arrange_cloud(self, cloud_name, cloud_type=WaterCloudBase, *args, **kwargs):
         cloud = cloud_type(name=cloud_name, start_pitch=self.material["pitch"]["ref"][0])
@@ -335,6 +338,29 @@ class ClepsydraMaterial(TokeiBubble):
                     pitches=[stream.pitches(offset=pitch_offset)],
                     transpose=transpose
                     )
+
+class ClepFree(ClepsydraMaterial, TokeiFree):
+    def prepare_material(self):
+        super().prepare_material()
+        self.material["rhythm"]["taiko_free_intro_shime"] = "s4 s8 r1\\fermata s1 s1 c8[ c8]^\"(with taiko ka kas)\" r1\\fermata " 
+        self.material["rhythm"]["taiko_free_intro_1"] = "c8_do[ c_ko] ^repeat s1 c8_ka^\"random kas\" s1 s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
+        self.material["rhythm"]["taiko_free_intro_2"] = "c8_do[ c_ko] ^repeat s1 s1 c8_ka^\"random kas\" s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
+        
+        self.material["rhythm"]["taiko_free_intro_shime_a"] = "s4 r1\\fermata s1 s1 c8[ c8]^\"(4th ka ka)\" c8[-> c8]-> r1\\fermata " 
+        self.material["rhythm"]["taiko_free_intro_a"] = "c8_do[ c_ko] ^\"(sim)\" s1 s1  s1  c8_ka[ c8_ka]^\"(4th ka ka)\" c8_ka-> c8_ka-> r1\\fermata  " 
+
+        self.material["rhythm"]["taiko_free_shime"] = "s4 s8 r1\\fermata s1 s1 c8[ c8]^\"(with taiko do don)\" r1\\fermata " 
+        self.material["rhythm"]["taiko_free_1"] = "c8_da[ c_da] ^repeat s1 c8_dan->^\"random dan\" s1 s1  c8_do[ c8_don]^\"(do don together)\" s1 " 
+        self.material["rhythm"]["taiko_free_2"] = "c8_da[ c_da] ^repeat s1 s1 c8_dan->^\"random dan\" s1  c8_do[ c8_don]^\"(do don together)\" s1 " 
+
+        self.material["rhythm"]["trem_repeat"]=[
+                get_music_container([
+                    "s8", box_music("s4 r4 c1:32\\fermata r4 s8", continue_lengths=[(1,1)]*4)
+                    ]), 
+                get_music_container([
+                    "s8", box_music("s4 r4 c2( c2:32)\\fermata  r4 s8", continue_lengths=[(1,1)]*4)
+                    ]),
+                ]
 
 
 # w = WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5")

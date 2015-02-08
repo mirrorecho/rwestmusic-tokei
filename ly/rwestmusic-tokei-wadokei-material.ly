@@ -1,4 +1,4 @@
-% 2015-02-08 03:49
+% 2015-02-08 09:45
 
 \version "2.18.2"
 \language "english"
@@ -7,7 +7,7 @@
 
 \header {
 	composer = \markup { Randall West }
-	title = \markup { Tokei for Taiko and Orchestra }
+	title = \markup { Clepsydra }
 }
 
 \layout {
@@ -118,6 +118,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a''4. (
 				b''4. )
@@ -131,6 +132,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a''4. (
 				b''4. )
@@ -144,6 +146,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a''4. (
 				b''4. )
@@ -157,6 +160,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a''4. (
 				b''4. )
@@ -170,6 +174,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a''4. (
 				b''4. )
@@ -183,6 +188,7 @@
 				R4.
 				R4.
 				R4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -220,6 +226,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -257,6 +264,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g'''4. -\accent -\staccato
@@ -362,6 +370,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
 				R4.
@@ -375,6 +384,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
 				R4.
@@ -388,6 +398,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
 				R4.
@@ -401,6 +412,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
 				R4.
@@ -414,6 +426,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
 				R4.
@@ -427,6 +440,7 @@
 				a''4. (
 				b''4. )
 				a''4. -\tenuto
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -464,6 +478,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -501,6 +516,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				d'''4. -\accent -\staccato
@@ -606,6 +622,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -619,6 +636,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -632,6 +650,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -645,6 +664,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -658,6 +678,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -671,6 +692,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -709,6 +731,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -746,6 +769,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				b''4. -\accent -\staccato
@@ -851,6 +875,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -864,6 +889,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -877,6 +903,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -890,6 +917,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -903,6 +931,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -916,6 +945,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -954,6 +984,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -991,6 +1022,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g''4. -\accent -\staccato
@@ -1096,6 +1128,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1109,6 +1142,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1122,6 +1156,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1135,6 +1170,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1148,6 +1184,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1161,6 +1198,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1199,6 +1237,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1236,6 +1275,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				f'''4. -\accent -\staccato
@@ -1373,6 +1413,7 @@
 						\startStaff
 					}
 					s1 * 5/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1476,6 +1517,7 @@
 						\startStaff
 					}
 					s1 * 5/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1579,6 +1621,7 @@
 						\startStaff
 					}
 					s1 * 5/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1682,6 +1725,7 @@
 						\startStaff
 					}
 					s1 * 5/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1697,6 +1741,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1710,6 +1755,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1723,6 +1769,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1736,6 +1783,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1749,6 +1797,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1762,6 +1811,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1800,6 +1850,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1837,6 +1888,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g''4. -\accent -\staccato
@@ -1895,6 +1947,7 @@
 						b8 )
 					}
 					s1 * 33/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1919,6 +1972,7 @@
 						d'8 )
 					}
 					s1 * 33/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1943,6 +1997,7 @@
 						g8 )
 					}
 					s1 * 33/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1967,6 +2022,7 @@
 						ds'8 )
 					}
 					s1 * 33/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1982,6 +2038,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -1995,6 +2052,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2008,6 +2066,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2021,6 +2080,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2034,6 +2094,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2047,6 +2108,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2085,6 +2147,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2122,6 +2185,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				d'''4. -\accent -\staccato
@@ -2258,6 +2322,7 @@
 						\startStaff
 					}
 					s1 * 3/16
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2359,6 +2424,7 @@
 						\startStaff
 					}
 					s1 * 3/16
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2460,6 +2526,7 @@
 						\startStaff
 					}
 					s1 * 3/16
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2561,6 +2628,7 @@
 						\startStaff
 					}
 					s1 * 3/16
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2576,6 +2644,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2589,6 +2658,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2602,6 +2672,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2615,6 +2686,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2628,6 +2700,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2641,6 +2714,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2679,6 +2753,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -2716,6 +2791,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				b4. -\accent -\staccato
@@ -2853,6 +2929,7 @@
 						\startStaff
 					}
 					s1 * 3/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2955,6 +3032,7 @@
 						\startStaff
 					}
 					s1 * 3/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3057,6 +3135,7 @@
 						\startStaff
 					}
 					s1 * 3/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3159,6 +3238,7 @@
 						\startStaff
 					}
 					s1 * 3/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3174,6 +3254,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3187,6 +3268,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3200,6 +3282,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3213,6 +3296,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3226,6 +3310,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3239,6 +3324,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3277,6 +3363,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3314,6 +3401,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g'4. -\accent -\staccato
@@ -3421,6 +3509,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3434,6 +3523,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3447,6 +3537,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3460,6 +3551,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3473,6 +3565,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3486,32 +3579,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				f'4. -\accent \mf (
-				a'4. )
-				d'4. \< (
-				a'4.
-				b'4. -\accent \f )
-				r4.
-				r4.
-				f'4. -\tenuto \mf
-				f'4. -\tenuto
-				r4.
-				c'4. \mp ~
-				c'4.
-				c'4. ~
-				c'4.
-				c'4. -\tenuto
-				r4.
-				b4. -\tenuto \<
-				d'4. -\tenuto
-				c'4. -\tenuto
-				ef'4. -\tenuto
-				d'4. -\tenuto
-				g'4. ~
-				g'4. ~
-				g'4.
 				\context Staff {#(set-accidental-style 'modern)}
 				f'4. -\accent \mf (
 				a'4. )
@@ -3537,6 +3606,33 @@
 				g'4. ~
 				g'4. ~
 				g'4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f'4. -\accent \mf (
+				a'4. )
+				d'4. \< (
+				a'4.
+				b'4. -\accent \f )
+				r4.
+				r4.
+				f'4. -\tenuto \mf
+				f'4. -\tenuto
+				r4.
+				c'4. \mp ~
+				c'4.
+				c'4. ~
+				c'4.
+				c'4. -\tenuto
+				r4.
+				b4. -\tenuto \<
+				d'4. -\tenuto
+				c'4. -\tenuto
+				ef'4. -\tenuto
+				d'4. -\tenuto
+				g'4. ~
+				g'4. ~
+				g'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d''4. -\accent -\staccato
 				r4.
@@ -3641,6 +3737,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3654,6 +3751,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3667,6 +3765,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3680,6 +3779,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3693,6 +3793,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3706,32 +3807,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				f4. -\accent \mf ~
-				f4.
-				g4. ~ \< (
-				g4.
-				d4. -\accent \f )
-				r4.
-				r4.
-				d4. ~
-				d4.
-				r4.
-				f4. \mp ~
-				f4.
-				f4. ~
-				f4.
-				f4. -\tenuto
-				r4.
-				g4. -\tenuto \<
-				g4. -\tenuto
-				f4. -\tenuto
-				f4. -\tenuto
-				g4. -\tenuto
-				g4. ~
-				g4. ~
-				g4.
 				\context Staff {#(set-accidental-style 'modern)}
 				f4. -\accent \mf ~
 				f4.
@@ -3757,6 +3834,33 @@
 				g4. ~
 				g4. ~
 				g4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f4. -\accent \mf ~
+				f4.
+				g4. ~ \< (
+				g4.
+				d4. -\accent \f )
+				r4.
+				r4.
+				d4. ~
+				d4.
+				r4.
+				f4. \mp ~
+				f4.
+				f4. ~
+				f4.
+				f4. -\tenuto
+				r4.
+				g4. -\tenuto \<
+				g4. -\tenuto
+				f4. -\tenuto
+				f4. -\tenuto
+				g4. -\tenuto
+				g4. ~
+				g4. ~
+				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g4. -\accent -\staccato
 				r4.
@@ -3861,6 +3965,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3874,6 +3979,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3887,6 +3993,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3900,6 +4007,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3913,6 +4021,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -3926,32 +4035,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				f'4. -\accent \mf (
-				a'4. )
-				d'4. \< (
-				a'4.
-				b'4. -\accent \f )
-				r4.
-				r4.
-				f'4. -\tenuto \mf
-				f'4. -\tenuto
-				r4.
-				c'4. \mp ~
-				c'4.
-				c'4. ~
-				c'4.
-				c'4. -\tenuto
-				r4.
-				b4. -\tenuto \<
-				d'4. -\tenuto
-				c'4. -\tenuto
-				ef'4. -\tenuto
-				d'4. -\tenuto
-				g'4. ~
-				g'4. ~
-				g'4.
 				\context Staff {#(set-accidental-style 'modern)}
 				f'4. -\accent \mf (
 				a'4. )
@@ -3977,6 +4062,33 @@
 				g'4. ~
 				g'4. ~
 				g'4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f'4. -\accent \mf (
+				a'4. )
+				d'4. \< (
+				a'4.
+				b'4. -\accent \f )
+				r4.
+				r4.
+				f'4. -\tenuto \mf
+				f'4. -\tenuto
+				r4.
+				c'4. \mp ~
+				c'4.
+				c'4. ~
+				c'4.
+				c'4. -\tenuto
+				r4.
+				b4. -\tenuto \<
+				d'4. -\tenuto
+				c'4. -\tenuto
+				ef'4. -\tenuto
+				d'4. -\tenuto
+				g'4. ~
+				g'4. ~
+				g'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				b'4. -\accent -\staccato
 				r4.
@@ -4081,6 +4193,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4094,6 +4207,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4107,6 +4221,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4120,6 +4235,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4133,6 +4249,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4146,32 +4263,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				f4. -\accent \mf ~
-				f4.
-				g4. ~ \< (
-				g4.
-				d4. -\accent \f )
-				r4.
-				r4.
-				d4. ~
-				d4.
-				r4.
-				f4. \mp ~
-				f4.
-				f4. ~
-				f4.
-				f4. -\tenuto
-				r4.
-				g4. -\tenuto \<
-				g4. -\tenuto
-				f4. -\tenuto
-				f4. -\tenuto
-				g4. -\tenuto
-				g4. ~
-				g4. ~
-				g4.
 				\context Staff {#(set-accidental-style 'modern)}
 				f4. -\accent \mf ~
 				f4.
@@ -4197,6 +4290,33 @@
 				g4. ~
 				g4. ~
 				g4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f4. -\accent \mf ~
+				f4.
+				g4. ~ \< (
+				g4.
+				d4. -\accent \f )
+				r4.
+				r4.
+				d4. ~
+				d4.
+				r4.
+				f4. \mp ~
+				f4.
+				f4. ~
+				f4.
+				f4. -\tenuto
+				r4.
+				g4. -\tenuto \<
+				g4. -\tenuto
+				f4. -\tenuto
+				f4. -\tenuto
+				g4. -\tenuto
+				g4. ~
+				g4. ~
+				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				f,4. -\accent -\staccato
 				r4.
@@ -4301,6 +4421,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4314,6 +4435,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4327,6 +4449,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4340,6 +4463,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4353,6 +4477,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4366,32 +4491,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				c''4. -\accent \mf (
-				f''4. )
-				a'4. \< (
-				f'4.
-				g''4. -\accent \f )
-				r4.
-				r4.
-				c''4. -\tenuto \mf
-				c''4. -\tenuto
-				r4.
-				a'4. \mp ~
-				a'4.
-				a'4. ~
-				a'4.
-				a'4. -\tenuto
-				r4.
-				b'4. -\tenuto \<
-				d''4. -\tenuto
-				c''4. -\tenuto
-				ef''4. -\tenuto
-				d''4. -\tenuto
-				c''4. ~
-				c''4. ~
-				c''4.
 				\context Staff {#(set-accidental-style 'modern)}
 				c''4. -\accent \mf (
 				f''4. )
@@ -4417,6 +4518,33 @@
 				c''4. ~
 				c''4. ~
 				c''4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c''4. -\accent \mf (
+				f''4. )
+				a'4. \< (
+				f'4.
+				g''4. -\accent \f )
+				r4.
+				r4.
+				c''4. -\tenuto \mf
+				c''4. -\tenuto
+				r4.
+				a'4. \mp ~
+				a'4.
+				a'4. ~
+				a'4.
+				a'4. -\tenuto
+				r4.
+				b'4. -\tenuto \<
+				d''4. -\tenuto
+				c''4. -\tenuto
+				ef''4. -\tenuto
+				d''4. -\tenuto
+				c''4. ~
+				c''4. ~
+				c''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				f''4. -\accent -\staccato
 				r4.
@@ -4521,6 +4649,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4534,6 +4663,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4547,6 +4677,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4560,6 +4691,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4573,6 +4705,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4586,32 +4719,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				a'4. -\accent \mf (
-				c''4. )
-				f'4. \< (
-				c''4.
-				d''4. -\accent \f )
-				r4.
-				r4.
-				b'4. -\tenuto \mf
-				b'4. -\tenuto
-				r4.
-				g'4. \mp ~
-				g'4.
-				g'4. ~
-				g'4.
-				g'4. -\tenuto
-				r4.
-				d'4. -\tenuto \<
-				b'4. -\tenuto
-				ef'4. -\tenuto
-				c''4. -\tenuto
-				f'4. -\tenuto
-				b'4. ~
-				b'4. ~
-				b'4.
 				\context Staff {#(set-accidental-style 'modern)}
 				a'4. -\accent \mf (
 				c''4. )
@@ -4637,6 +4746,33 @@
 				b'4. ~
 				b'4. ~
 				b'4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				a'4. -\accent \mf (
+				c''4. )
+				f'4. \< (
+				c''4.
+				d''4. -\accent \f )
+				r4.
+				r4.
+				b'4. -\tenuto \mf
+				b'4. -\tenuto
+				r4.
+				g'4. \mp ~
+				g'4.
+				g'4. ~
+				g'4.
+				g'4. -\tenuto
+				r4.
+				d'4. -\tenuto \<
+				b'4. -\tenuto
+				ef'4. -\tenuto
+				c''4. -\tenuto
+				f'4. -\tenuto
+				b'4. ~
+				b'4. ~
+				b'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g''4. -\accent -\staccato
 				r4.
@@ -4742,6 +4878,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4755,6 +4892,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4768,6 +4906,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4781,6 +4920,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4794,6 +4934,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4807,32 +4948,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				f4. -\accent \mf ~
-				f4.
-				g4. ~ \< (
-				g4.
-				d4. -\accent \f )
-				r4.
-				r4.
-				d4. ~
-				d4.
-				r4.
-				f4. \mp ~
-				f4.
-				f4. ~
-				f4.
-				f4. -\tenuto
-				r4.
-				g4. -\tenuto \<
-				g4. -\tenuto
-				f4. -\tenuto
-				f4. -\tenuto
-				g4. -\tenuto
-				g4. ~
-				g4. ~
-				g4.
 				\context Staff {#(set-accidental-style 'modern)}
 				f4. -\accent \mf ~
 				f4.
@@ -4858,6 +4975,33 @@
 				g4. ~
 				g4. ~
 				g4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f4. -\accent \mf ~
+				f4.
+				g4. ~ \< (
+				g4.
+				d4. -\accent \f )
+				r4.
+				r4.
+				d4. ~
+				d4.
+				r4.
+				f4. \mp ~
+				f4.
+				f4. ~
+				f4.
+				f4. -\tenuto
+				r4.
+				g4. -\tenuto \<
+				g4. -\tenuto
+				f4. -\tenuto
+				f4. -\tenuto
+				g4. -\tenuto
+				g4. ~
+				g4. ~
+				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g,4. -\accent -\staccato
 				r4.
@@ -4963,6 +5107,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4976,6 +5121,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -4989,6 +5135,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5002,6 +5149,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5015,6 +5163,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5028,32 +5177,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				ef,4. -\accent \mf ~
-				ef,4.
-				f,4. ~ \< (
-				f,4.
-				c,4. -\accent \f )
-				r4.
-				r4.
-				c,4. ~
-				c,4.
-				r4.
-				ef,4. \mp ~
-				ef,4.
-				ef,4. ~
-				ef,4.
-				ef,4. -\tenuto
-				r4.
-				f,4. -\tenuto \<
-				f,4. -\tenuto
-				ef,4. -\tenuto
-				ef,4. -\tenuto
-				f,4. -\tenuto
-				f,4. ~
-				f,4. ~
-				f,4.
 				\context Staff {#(set-accidental-style 'modern)}
 				ef,4. -\accent \mf ~
 				ef,4.
@@ -5079,6 +5204,33 @@
 				f,4. ~
 				f,4. ~
 				f,4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				ef,4. -\accent \mf ~
+				ef,4.
+				f,4. ~ \< (
+				f,4.
+				c,4. -\accent \f )
+				r4.
+				r4.
+				c,4. ~
+				c,4.
+				r4.
+				ef,4. \mp ~
+				ef,4.
+				ef,4. ~
+				ef,4.
+				ef,4. -\tenuto
+				r4.
+				f,4. -\tenuto \<
+				f,4. -\tenuto
+				ef,4. -\tenuto
+				ef,4. -\tenuto
+				f,4. -\tenuto
+				f,4. ~
+				f,4. ~
+				f,4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d4. -\accent -\staccato
 				r4.
@@ -5184,6 +5336,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5197,6 +5350,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5210,6 +5364,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5223,6 +5378,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5236,6 +5392,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5249,32 +5406,8 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
-				\context Staff {#(set-accidental-style 'modern)}
-				ef,,4. -\accent \mf ~
-				ef,,4.
-				f,,4. ~ \< (
-				f,,4.
-				c,,4. -\accent \f )
-				r4.
-				r4.
-				c,,4. ~
-				c,,4.
-				r4.
-				ef,,4. \mp ~
-				ef,,4.
-				ef,,4. ~
-				ef,,4.
-				ef,,4. -\tenuto
-				r4.
-				f,,4. -\tenuto \<
-				f,,4. -\tenuto
-				ef,,4. -\tenuto
-				ef,,4. -\tenuto
-				f,,4. -\tenuto
-				f,,4. ~
-				f,,4. ~
-				f,,4.
 				\context Staff {#(set-accidental-style 'modern)}
 				ef,,4. -\accent \mf ~
 				ef,,4.
@@ -5300,6 +5433,33 @@
 				f,,4. ~
 				f,,4. ~
 				f,,4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				ef,,4. -\accent \mf ~
+				ef,,4.
+				f,,4. ~ \< (
+				f,,4.
+				c,,4. -\accent \f )
+				r4.
+				r4.
+				c,,4. ~
+				c,,4.
+				r4.
+				ef,,4. \mp ~
+				ef,,4.
+				ef,,4. ~
+				ef,,4.
+				ef,,4. -\tenuto
+				r4.
+				f,,4. -\tenuto \<
+				f,,4. -\tenuto
+				ef,,4. -\tenuto
+				ef,,4. -\tenuto
+				f,,4. -\tenuto
+				f,,4. ~
+				f,,4. ~
+				f,,4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				b,,4. -\accent -\staccato
 				r4.
@@ -5406,6 +5566,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5419,6 +5580,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5432,6 +5594,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5445,6 +5608,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5458,6 +5622,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5471,6 +5636,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5509,6 +5675,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5546,6 +5713,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5663,6 +5831,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5676,6 +5845,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5689,6 +5859,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5702,6 +5873,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5715,6 +5887,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5728,6 +5901,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5766,6 +5940,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5803,6 +5978,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5920,6 +6096,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5933,6 +6110,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5946,6 +6124,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5959,6 +6138,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5972,6 +6152,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -5985,6 +6166,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6023,6 +6205,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6060,6 +6243,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6178,6 +6362,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6191,6 +6376,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6204,6 +6390,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6217,6 +6404,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6230,6 +6418,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6243,6 +6432,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6281,6 +6471,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6318,6 +6509,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6437,6 +6629,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6450,6 +6643,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6463,6 +6657,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6476,6 +6671,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6489,6 +6685,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6502,6 +6699,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6540,6 +6738,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6577,6 +6776,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6696,6 +6896,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6709,6 +6910,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6722,6 +6924,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6735,6 +6938,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6748,6 +6952,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6761,6 +6966,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6799,6 +7005,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6836,6 +7043,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -6960,6 +7168,7 @@
 				c4. _ \markup { ka }
 				c4. _ \markup { don }
 				r4. _ \markup { tsu }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. _ \markup { don }
 				c4. _ \markup { don }
@@ -6979,6 +7188,7 @@
 				r4. _ \markup { tsu }
 				c4. _ \markup { don }
 				c4. _ \markup { don }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 9/8
@@ -6992,6 +7202,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7005,6 +7216,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7018,6 +7230,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7031,6 +7244,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. _ \markup { don }
@@ -7061,6 +7275,7 @@
 				c4. _ \markup { don }
 				c4. _ \markup { don }
 				c4. _ \markup { don }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { do }
 				c8 _ \markup { ko }
@@ -7110,6 +7325,7 @@
 				c8 _ \markup { ko }
 				c4 _ \markup { do }
 				c8 _ \markup { ko }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. _ \markup { don }
 				r4.
@@ -7216,6 +7432,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7229,6 +7446,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7242,6 +7460,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7255,6 +7474,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7268,6 +7488,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7281,6 +7502,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				c4 _ \markup { do }
@@ -7331,6 +7553,7 @@
 				c8 _ \markup { ko }
 				c4 _ \markup { do }
 				c8 _ \markup { ko }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. _ \markup { don }
 				r4.
@@ -7360,6 +7583,7 @@
 				c4. _ \markup { don }
 				c4. _ \markup { don }
 				c4. _ \markup { don }
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. _ \markup { don }
 				r4.
@@ -7466,6 +7690,7 @@
 				bf'4.
 				f'4.
 				g''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g''4.
 				g''4.
@@ -7479,6 +7704,7 @@
 				e''4.
 				cs''4.
 				d''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				e''4.
 				b'4.
@@ -7492,6 +7718,7 @@
 				f''4.
 				g''4.
 				b''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d''4.
 				b'4.
@@ -7505,6 +7732,7 @@
 				b'4.
 				b'4.
 				b'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d''4.
 				a'4.
@@ -7518,6 +7746,7 @@
 				ef''4.
 				f''4.
 				a''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c''4.
 				a'4.
@@ -7531,6 +7760,7 @@
 				a'4.
 				a'4.
 				a'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -7568,6 +7798,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7605,6 +7836,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g4. -\accent -\staccato
@@ -7710,6 +7942,7 @@
 				a'4.
 				f'4.
 				g'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g'4.
 				g'4.
@@ -7723,6 +7956,7 @@
 				e'4.
 				e'4.
 				e'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a'4.
 				a'4.
@@ -7736,6 +7970,7 @@
 				g'4.
 				b'4.
 				d''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				b'4.
 				d'4.
@@ -7749,6 +7984,7 @@
 				g'4.
 				b4.
 				b4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g'4.
 				g'4.
@@ -7762,6 +7998,7 @@
 				f'4.
 				a'4.
 				c''4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a'4.
 				c'4.
@@ -7775,6 +8012,7 @@
 				f'4.
 				a4.
 				a4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -7812,6 +8050,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -7849,6 +8088,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				f'4. -\accent -\staccato
@@ -7877,6 +8117,7 @@
 				d'4. -\accent -\tenuto
 			}
 			\context Staff = "viola" {
+				\clef "alto"
 				\set Staff.instrumentName = \markup { Viola }
 				\set Staff.shortInstrumentName = \markup { Vla }
 				\context Staff {#(set-accidental-style 'forget)}
@@ -7954,6 +8195,7 @@
 				g'4.
 				cs'4.
 				g'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g4.
 				g4.
@@ -7967,6 +8209,7 @@
 				a4.
 				d'4.
 				d'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d'4.
 				a4.
@@ -7980,6 +8223,7 @@
 				c'4.
 				f'4.
 				g'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g4.
 				g4.
@@ -7993,6 +8237,7 @@
 				b4.
 				g4.
 				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c'4.
 				g4.
@@ -8006,6 +8251,7 @@
 				bf4.
 				ef'4.
 				f'4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				f4.
 				f4.
@@ -8019,6 +8265,7 @@
 				a4.
 				f4.
 				f4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -8056,6 +8303,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8093,6 +8341,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				g4. -\accent -\staccato
@@ -8199,6 +8448,7 @@
 				ef4.
 				cs4.
 				cs4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g,4.
 				g,4.
@@ -8212,6 +8462,7 @@
 				cs4.
 				cs4.
 				cs4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4.
 				c4.
@@ -8225,6 +8476,7 @@
 				a4.
 				a4.
 				a4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a,4.
 				a,4.
@@ -8238,6 +8490,7 @@
 				f4.
 				f4.
 				f4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				bf,4.
 				bf,4.
@@ -8251,6 +8504,7 @@
 				g4.
 				g4.
 				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g,4.
 				g,4.
@@ -8264,6 +8518,7 @@
 				ef4.
 				ef4.
 				ef4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -8301,6 +8556,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8338,6 +8594,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				d,4. -\accent -\staccato
@@ -8444,6 +8701,7 @@
 				f4.
 				cs4.
 				cs4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g,4.
 				g,4.
@@ -8457,6 +8715,7 @@
 				cs4.
 				cs4.
 				cs4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				bf,4.
 				g4.
@@ -8470,6 +8729,7 @@
 				g4.
 				g4.
 				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a,4.
 				a,4.
@@ -8483,6 +8743,7 @@
 				f4.
 				f4.
 				f4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				af,4.
 				f4.
@@ -8496,6 +8757,7 @@
 				f4.
 				f4.
 				f4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g,4.
 				g,4.
@@ -8509,6 +8771,7 @@
 				ef4.
 				ef4.
 				ef4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 6/8
@@ -8546,6 +8809,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8583,6 +8847,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				b,,4. -\accent -\staccato
@@ -8690,6 +8955,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8703,6 +8969,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8716,6 +8983,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8729,6 +8997,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8742,6 +9011,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8755,6 +9025,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8793,6 +9064,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8830,6 +9102,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8947,6 +9220,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8960,6 +9234,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8973,6 +9248,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8986,6 +9262,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -8999,6 +9276,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9012,6 +9290,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9050,6 +9329,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9087,6 +9367,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9204,6 +9485,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9217,6 +9499,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9230,6 +9513,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9243,6 +9527,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9256,6 +9541,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9269,6 +9555,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9307,6 +9594,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9344,6 +9632,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9461,6 +9750,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9474,6 +9764,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9487,6 +9778,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9500,6 +9792,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9513,6 +9806,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9526,6 +9820,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9564,6 +9859,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9601,6 +9897,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9719,6 +10016,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9732,6 +10030,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9745,6 +10044,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9758,6 +10058,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9771,6 +10072,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9784,6 +10086,7 @@
 				}
 				{
 					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9822,6 +10125,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9859,6 +10163,7 @@
 				}
 				{
 					s1 * 3/4
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				{
@@ -9977,6 +10282,7 @@
 				c4. ~
 				c4. ~
 				c4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g4. ~
 				g4. ~
@@ -9990,6 +10296,7 @@
 				g4. ~
 				g4. ~
 				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a4. ~
 				a4. ~
@@ -10003,6 +10310,7 @@
 				a4. ~
 				a4. ~
 				a4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d4. ~
 				d4. ~
@@ -10016,6 +10324,7 @@
 				d4. ~
 				d4. ~
 				d4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				g4. ~
 				g4. ~
@@ -10029,6 +10338,7 @@
 				g4. ~
 				g4. ~
 				g4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c4. ~
 				c4. ~
@@ -10042,31 +10352,7 @@
 				c4. ~
 				c4. ~
 				c4.
-				\context Staff {#(set-accidental-style 'modern)}
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
-				f,4. ~
-				f,4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				f,4. ~
 				f,4.
@@ -10092,6 +10378,33 @@
 				f,4.
 				f,4. ~
 				f,4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				f,4. ~
+				f,4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				f,4. ~
 				f,4.
@@ -10197,6 +10510,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10210,6 +10524,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10223,6 +10538,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10236,6 +10552,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10249,6 +10566,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10262,6 +10580,7 @@
 			}
 			{
 				s1 * 9/8
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10300,6 +10619,7 @@
 			}
 			{
 				s1 * 3/4
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
@@ -10337,6 +10657,7 @@
 			}
 			{
 				s1 * 3/4
+				\bar "||"
 			}
 			\context Staff {#(set-accidental-style 'modern)}
 			{
