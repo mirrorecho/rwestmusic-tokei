@@ -347,7 +347,7 @@ class ClepFree(ClepsydraMaterial, TokeiFree):
         self.material["rhythm"]["taiko_free_intro_2"] = "c8_do[ c_ko] ^repeat s1 s1 c8_ka^\"random kas\" s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
         
         self.material["rhythm"]["taiko_free_intro_shime_a"] = "s4 r1\\fermata s1 s1 c8[ c8]^\"(4th ka ka)\" c8[-> c8]-> r1\\fermata " 
-        self.material["rhythm"]["taiko_free_intro_a"] = "c8_do[ c_ko] ^\"(sim)\" s1 s1  s1  c8_ka[ c8_ka]^\"(4th ka ka)\" c8_ka-> c8_ka-> r1\\fermata  " 
+        self.material["rhythm"]["taiko_free_intro_a"] = "c8_do[ c_ko] ^\"(sim)\" s1 s1  s1  c8_ka[ c8_ka]^\"(4th ka ka)\" c8_do-> c8_don-> r1\\fermata  " 
 
         self.material["rhythm"]["taiko_free_shime"] = "s4 s8 r1\\fermata s1 s1 c8[ c8]^\"(with taiko do don)\" r1\\fermata " 
         self.material["rhythm"]["taiko_free_1"] = "c8_da[ c_da] ^repeat s1 c8_dan->^\"random dan\" s1 s1  c8_do[ c8_don]^\"(do don together)\" s1 " 
