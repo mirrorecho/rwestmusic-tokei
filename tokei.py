@@ -233,6 +233,7 @@ class TokeiBubble(Bubble):
         self.material["all_ranges_wide"] = copy.deepcopy(
                     self.material["wind_ranges_hi"] + self.material["brass_ranges_wide"] + self.material["string_ranges_low"])
 
+        self.material["part"]["all"] = self.parts
 
     def add_cloud_pitches(self, cloud_type, cloud_name, material_name):
         cloud = cloud_type(name=cloud_name)

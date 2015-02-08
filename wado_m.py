@@ -370,11 +370,12 @@ class Intro2(Intro):
         self.material["rhythm"]["cresc_a2"] = self.material["rhythm"]["cresc_b"].copy()
 
 
+
 class MelodyBase(WadoMaterial):
     def __init__(self):
         super().__init__()
         self.material["part"]["strings"] = ["violinI","violinII","viola","cello","bass"]
-
+        self.material["rhythm"]["strings_move"]=["c4. "*12]
 
     def add_harmony_ref_2(self, pitch_material="ancient_B_up2"):
         self.arrange_music(
@@ -454,7 +455,6 @@ class MelodyBase(WadoMaterial):
 class MelodyA(MelodyBase):
     def __init__(self):
         super().__init__()
-        self.material["rhythm"]["strings_move"]=["c4. "*12]
         self.material["rhythm"]["winds_rh1"]=[""] # what am I using this for?
         self.material["rhythm"]["winds_rh2"]=["c4. "*12] # and this?
 
@@ -462,8 +462,8 @@ class MelodyA(MelodyBase):
                 ["G#5","D#5","F5" ,   "B5" ,"B5" ,"B5" ,   "F#5","F#5","F#5",   "A5" ,"B5" ,"D#6",],
                 ["C#5","C#5","D#5",   "E5" ,"E5" ,"E5" ,   "C#5","C#5","C#5",   "B4" ,"D#5","F#5",],
                 ["F#4","C#4","C#4",   "E4" ,"E4" ,"E4" ,   "F#4","F#4","F#4",   "E4" ,"A4" ,"B4" ,],
-                ["E3" ,"E3" ,"B2" ,   "G3" ,"G3" ,"G3" ,   "A3" ,"A3" ,"A3" ,   "C#4","C#4","C#4",],
-                ["D2" ,"B2" ,"A1" ,   "G2" ,"G2" ,"G2" ,   "A2" ,"A2" ,"A2" ,   "B2" ,"B2" ,"B2" ,],
+                ["E3" ,"E3" ,"B3" ,   "G3" ,"G3" ,"G3" ,   "A3" ,"A3" ,"A3" ,   "C#4","C#4","C#4",],
+                ["D2" ,"B2" ,"A2" ,   "G2" ,"G2" ,"G2" ,   "A2" ,"A2" ,"A2" ,   "B2" ,"B2" ,"B2" ,],
                 ]
 
 class MelodyB(MelodyA):
@@ -487,7 +487,7 @@ class MelodySwingA(MelodyA):
                 ["F#5","F6" ,"F6" ,   "B5" ,"G#5","G#5",   "F#5","F#5","F#5",   "F#5","C#5","D#6",],
                 ["G#4","G#4","A4" ,   "A4" ,"B4" ,"B4" ,   "F5" ,"F5" ,"F5" ,   "F5" ,"C#5","D#5",],
                 ["F#4","D#4","D#4",   "D#4","D#4","D#4",   "D#5","D#5","G#4",   "D#5","A4" ,"D#5",],
-                ["B3" ,"B3" ,"B3" ,   "B3" ,"B3" ,"B3" ,   "G#3","D#2","D#2",   "B3" ,"A3" ,"A3" ,],
+                ["B3" ,"B3" ,"B3" ,   "B3" ,"B3" ,"B3" ,   "G#3","D#3","D#3",   "B3" ,"A3" ,"A3" ,],
                 ["B2" ,"B2" ,"B2" ,   "B2" ,"B2" ,"B2" ,   "G#2","G#2","G#2",   "C#3","A2" ,"A2" ,],
                 ]
 
@@ -613,26 +613,27 @@ class Dusk1(WadoFree):
         super().__init__()
         m = MelodySwingB()
         m.yo3()
-        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["B3"]*4]
+
 class Dusk2(WadoFree):
     def __init__(self):
         super().__init__()
         m = MelodySwingA()
         m.yo3()
-        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["A3"]*4]
 class Dusk3(WadoFree):
     def __init__(self):
         super().__init__()
         m = MelodySwingB()
-        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["G3"]*4]
 class Dusk4(WadoFree):
     def __init__(self):
         super().__init__()
         m = MelodySwingA()
-        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["C3"]*4]
 
 class DarkMelodyA(MelodySwingA):
@@ -640,33 +641,39 @@ class DarkMelodyA(MelodySwingA):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
         self.material["pitch"]["ref"] = [["C3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyB(MelodySwingB):
     def __init__(self):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
         self.material["pitch"]["ref"] = [["G3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyC(MelodyA):
     def __init__(self):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["A3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyD(MelodyB):
     def __init__(self):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["D3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyE(MelodyA):
     def __init__(self):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["G3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyF(MelodyB):
     def __init__(self):
         super().__init__()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["C3"]*4]
+        self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
