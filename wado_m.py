@@ -588,6 +588,13 @@ class Conduct(WadoMaterial):
 
 
 class WadoFree(WadoMaterial, TokeiFree):
+    def add_orch_ji(self):
+        pass
+
+class WadoSolo(WadoFree):
+    pass
+
+class WadoMelodyLastA(MelodyBase, WadoFree):
     pass
 
 class Evening(WadoFree):
@@ -603,23 +610,27 @@ class Evening(WadoFree):
 
 class Dusk1(WadoFree):
     def __init__(self):
+        super().__init__()
         m = MelodySwingB()
         m.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
         self.material["pitch"]["ref"] = [["B3"]*4]
 class Dusk2(WadoFree):
     def __init__(self):
+        super().__init__()
         m = MelodySwingA()
         m.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
         self.material["pitch"]["ref"] = [["A3"]*4]
 class Dusk3(WadoFree):
     def __init__(self):
+        super().__init__()
         m = MelodySwingB()
         self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
         self.material["pitch"]["ref"] = [["G3"]*4]
 class Dusk4(WadoFree):
     def __init__(self):
+        super().__init__()
         m = MelodySwingA()
         self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
         self.material["pitch"]["ref"] = [["C3"]*4]
@@ -639,27 +650,23 @@ class DarkMelodyB(MelodySwingB):
 class DarkMelodyC(MelodyA):
     def __init__(self):
         super().__init__()
-        self.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["A3"]*4]
 
 class DarkMelodyD(MelodyB):
     def __init__(self):
         super().__init__()
-        self.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["D3"]*4]
 
 class DarkMelodyE(MelodyA):
     def __init__(self):
         super().__init__()
-        self.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["G3"]*4]
 
-class DarkMelodyD(MelodyB):
+class DarkMelodyF(MelodyB):
     def __init__(self):
         super().__init__()
-        self.yo3()
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["C3"]*4]

@@ -38,12 +38,54 @@ music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
 music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
 music.add_cycle(bubble_type=Evening, flags=["evening_1_a","evening"])
 music.add_cycle(bubble_type=Evening, flags=["evening_1_b","evening"])
+# dusk
+music.add_cycle(bubble_type=Dusk1, flags=["dusk_1"])
+music.add_cycle(bubble_type=Dusk1, flags=["dusk_2"])
+music.add_cycle(bubble_type=Dusk1, flags=["dusk_3"])
+music.add_cycle(bubble_type=Dusk1, flags=["dusk_4"])
+# conduct / dark melody
+music.add_cycle(bubble_type=DarkMelodyA, flags=["dark_melody_a"])
+music.add_cycle(bubble_type=DarkMelodyB, flags=["dark_melody_b"])
+music.add_cycle(bubble_type=DarkMelodyC, flags=["dark_melody_c"])
+music.add_cycle(bubble_type=DarkMelodyD, flags=["dark_melody_d"])
+music.add_cycle(bubble_type=DarkMelodyE, flags=["dark_melody_e"])
+music.add_cycle(bubble_type=DarkMelodyF, flags=["dark_melody_f"])
+# day music cycles:
+music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start","yo_down4"])
+music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2","yo_down4"])
+music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end","yo_down4"])
+#
+music.add_cycle(bubble_type=WadoSolo, flags=["solo_1"])
+music.add_cycle(bubble_type=WadoSolo, flags=["solo_2"])
+music.add_cycle(bubble_type=WadoSolo, flags=["solo_3"])
+music.add_cycle(bubble_type=WadoSolo, flags=["intro_solo"])
+music.add_cycle(bubble_type=WadoSolo, flags=["intro_speed_up"])
+# melody starts up again (the first/last one is free)
+music.add_cycle(bubble_type=WadoMelodyLastA, flags=["melody_last","melody_1","melody_1_a", "taiko_a","melody_start"])
+music.add_cycle(bubble_type=MelodyB, flags=["melody","melody_1","melody_1_b", "taiko_b"])
+music.add_cycle(bubble_type=MelodySwingA, flags=["melody","melody_2","melody_2_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingB, flags=["melody","melody_2","melody_2_b", "taiko_b", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingA, flags=["melody","melody_3","melody_3_a", "taiko_a", "taiko_split"])
+music.add_cycle(bubble_type=MelodySwingB, flags=["melody","melody_3","melody_3_b", "taiko_b", "taiko_split"])
+# day music cycles:
+music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
+music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
+music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
+music.add_cycle(bubble_type=Evening, flags=["evening_1_a","evening"])
+music.add_cycle(bubble_type=Evening, flags=["evening_1_b","evening"])
+
+
 
 # conduct 8 times
 
 # ----------------------------------------------------------
 # YO METHODS / TRANSPOSITIONS:
 music.exec_method("yo3", apply_flags=["melody_3"])
+
+music.exec_method("transpose_pitch_material", material="yo", transpose=-4, 
+    apply_flags=["yo_down4"])
+music.exec_method("transpose_pitch_material", material="ref", transpose=-4, 
+    apply_flags=["yo_down4"])
 
 # ----------------------------------------------------------
 # INTRO
@@ -59,6 +101,10 @@ music.exec_method("add_cresc_a", apply_flags=["intro_a"])
 music.exec_method("add_cresc_b", apply_flags=["intro_b"])
 
 music.attach_dynamics(part_names=["taiko1","taiko2"], dynamics=[["f"]], apply_flags=["intro_free_1"])
+# ----------------------------------------------------------
+# YO:
+music.exec_method("get_yo", apply_flags=["day_music_end","evening_1_a","evening_1_b"])
+
 # ----------------------------------------------------------
 # CRANKIES:
 music.arrange_music(part_names=["flute1","flute2"], 
@@ -85,6 +131,7 @@ music.arrange_music(apply_flags=["melody_2_b","melody_3_b"], part_material="stri
     pitch_material="yo",rhythm_material="strings_move",
     pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,],])
 # ----------------------------------------------------------
+
 # DAY YO!
 music.arrange_music(part_names=["trumpet1","trumpet2","horn1","horn3"], pitch_material="yo", 
             rhythm_material="day_yo",
@@ -99,17 +146,42 @@ music.arrange_music(part_names=["horn2","horn4","trombone1","trombone2","tuba"],
             transpose=[0,0,0,0,-12],
             apply_flags=["day_music_1","day_music_2"]
             )
-music.exec_method("get_yo", apply_flags=["day_music_end"])
+
 music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
     rhythm_material="yo", pitch_material="yo", respell=["sharps"], apply_flags=["day_music_end"])
 
 
 # ----------------------------------------------------------
 # EVENING:
+music.arrange_music(part_names=["oboe1","oboe2","oboe3"], pitch_material="yo", respell=["sharps"],
+    rhythms=["r8 c1\\ppp\\< ~ c1\\mp\\fermata r4 s4" ],
+    apply_flags=["evening_1_a"],
+    pitch_rows=[0,1,4],
+    transpose=[0,0,36])
+
 music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
     rhythms=["c8-.-> s1 r1\\fermata s2"], pitch_material="yo", respell=["sharps"], 
     apply_flags=["evening_1_a"])
 
+music.add_sub_part(
+            master_part_name="cello",
+            part_name="cello_s", 
+            instrument_name="Sollo Cello",
+            # show_instrument_instruction=True, 
+            short_instrument_name="s.vc.",
+            replace_master_part=False,
+            apply_flags=["evening_1_a","evening_1_b"],
+            # clef="tenor"
+            )
+music.arrange_music(part_names=["cello_s"], pitch_material="yo",pitch_rows=[2],
+    apply_flags=["evening_1_a"],rhythms=["s8 r1\\fermata s2 \\times 2/3 { c1(^\"Solo Cello\"\\pp\\< c2)\\mp } "])
+
+music.arrange_music(part_names=["cello_s"], pitch_material="yo",pitch_rows=[2],
+    apply_flags=["evening_1_b"],
+    rhythms=["\\times 4/5 { c2( c4) c4( c4) }  c8( c4.) c1\\fermata c1\\fermata c1\\fermata r4 "])
+
+# ----------------------------------------------------------
+# DUSK:
 
 
 # ----------------------------------------------------------
@@ -130,18 +202,18 @@ music.add_pitch_material("ref", [["G2"]*4], apply_flags=["melody_3_b"]) # dis fe
 music.arrange_music(part_names=["harmony_3"], pitch_material="ref", rhythm_material=["ref"])
 
 # harmonies/lines reference parts:
-music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
-music.exec_method("add_harmony_ref_2", apply_flags=["intro_1_b"])
-music.exec_method("add_harmony_ref_2", apply_flags=["intro_2_a"])
-music.exec_method("add_harmony_ref_2", pitch_material="ancient_B_modulate", apply_flags=["intro_2_b"])
+# music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
+# music.exec_method("add_harmony_ref_2", apply_flags=["intro_1_b"])
+# music.exec_method("add_harmony_ref_2", apply_flags=["intro_2_a"])
+# music.exec_method("add_harmony_ref_2", pitch_material="ancient_B_modulate", apply_flags=["intro_2_b"])
 
-music.exec_method("add_harmony_ref_2", apply_flags=["melody_1_a"])
-music.exec_method("add_harmony_night_ref", apply_flags=["melody_1_b"])
-# TO DO... add festival lines ref
-music.exec_method("add_harmony_night_2_ref", apply_flags=["melody_2_a"])
-music.exec_method("add_harmony_night_3_ref", apply_flags=["melody_2_b"])
-music.exec_method("add_harmony_night_2_ref", transpose=[-1], respell=["flats"],  apply_flags=["melody_3_a"])
-music.exec_method("add_harmony_night_3_ref", transpose=[4], respell=["sharps"], apply_flags=["melody_3_b"])
+# music.exec_method("add_harmony_ref_2", apply_flags=["melody_1_a"])
+# music.exec_method("add_harmony_night_ref", apply_flags=["melody_1_b"])
+# # TO DO... add festival lines ref
+# music.exec_method("add_harmony_night_2_ref", apply_flags=["melody_2_a"])
+# music.exec_method("add_harmony_night_3_ref", apply_flags=["melody_2_b"])
+# music.exec_method("add_harmony_night_2_ref", transpose=[-1], respell=["flats"],  apply_flags=["melody_3_a"])
+# music.exec_method("add_harmony_night_3_ref", transpose=[4], respell=["sharps"], apply_flags=["melody_3_b"])
 
 # ----------------------------------------------------------
 # the taiko parts
@@ -162,18 +234,31 @@ music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day
 # next up.... add
 
 iters=(
-    # 0,1, # intro free
-    # 2,3,
-    # 4,5, # intro regular
-    # 6,7,
-    # 8,9, # night melody
-    # 10,11,
-    # 12,13,
-    # 14, # day melody
-    # 15, 
-    16,
-    17, # evening...
-    # 18,19, # free/conduct
+    0,1, # intro free
+    2,3,
+    4,5, # intro regular
+    6,7,
+    8,9, # night melody
+    10,11,
+    12,13,
+    14, 15, 16, # day melody
+
+    17,18, # evening...
+    19, 20, # dusk
+    21, 22, 
+    23,24,
+    25,26,
+    27,28,
+    29,30,
+    31,32,
+    33,34,
+    35,36,
+    37,38,
+    39,40,
+    41,42,
+    43,44,
+    45,46,
+    47,48
     )
 
 music.apply_transforms(iters=iters)

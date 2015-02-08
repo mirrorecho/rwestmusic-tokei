@@ -1,4 +1,4 @@
-% 2015-02-07 22:25
+% 2015-02-08 01:28
 
 \version "2.18.2"
 \language "english"
@@ -80,10 +80,42 @@
 					{
 						a'''8 -\accent -\staccato
 						s1
-						a'''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -125,12 +157,44 @@
 				{
 					\time 36/8
 					{
-						b''8 -\accent -\staccato
+						af'''8 -\accent -\staccato
 						s1
-						b''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -172,12 +236,45 @@
 				{
 					\time 36/8
 					{
-						a''8 -\accent -\staccato
-						s1
-						a''1 -\fermata
-						s1
+						r8
+						a''1 \ppp ~ \<
+						a''1 -\fermata \mp
+						r4
+						s4
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -219,12 +316,45 @@
 				{
 					\time 36/8
 					{
-						a''8 -\accent -\staccato
-						s1
-						a''1 -\fermata
-						s1
+						r8
+						gs''1 \ppp ~ \<
+						gs''1 -\fermata \mp
+						r4
+						s4
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -266,12 +396,45 @@
 				{
 					\time 36/8
 					{
-						g''8 -\accent -\staccato
-						s1
-						g''1 -\fermata
-						s1
+						r8
+						cs''1 \ppp ~ \<
+						cs''1 -\fermata \mp
+						r4
+						s4
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -313,12 +476,44 @@
 				{
 					\time 36/8
 					{
-						a''8 -\accent -\staccato
+						cs'''8 -\accent -\staccato
 						s1
-						a''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -360,12 +555,44 @@
 				{
 					\time 36/8
 					{
-						b''8 -\accent -\staccato
+						a''8 -\accent -\staccato
 						s1
-						b''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -408,12 +635,44 @@
 				{
 					\time 36/8
 					{
-						a'8 -\accent -\staccato
+						af'8 -\accent -\staccato
 						s1
-						a'1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -456,12 +715,44 @@
 				{
 					\time 36/8
 					{
-						a'8 -\accent -\staccato
+						f'8 -\accent -\staccato
 						s1
-						a'1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -505,12 +796,44 @@
 				{
 					\time 36/8
 					{
-						b'8 -\accent -\staccato
+						cs''8 -\accent -\staccato
 						s1
-						b'1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -552,12 +875,44 @@
 				{
 					\time 36/8
 					{
-						a8 -\accent -\staccato
+						af8 -\accent -\staccato
 						s1
-						a1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -601,10 +956,42 @@
 					{
 						a'8 -\accent -\staccato
 						s1
-						a'1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -646,12 +1033,44 @@
 				{
 					\time 36/8
 					{
-						g,8 -\accent -\staccato
+						f,8 -\accent -\staccato
 						s1
-						g,1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -693,12 +1112,44 @@
 				{
 					\time 36/8
 					{
-						g''8 -\accent -\staccato
+						af''8 -\accent -\staccato
 						s1
-						g''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -740,12 +1191,44 @@
 				{
 					\time 36/8
 					{
-						a''8 -\accent -\staccato
+						cs''8 -\accent -\staccato
 						s1
-						a''1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -788,12 +1271,44 @@
 				{
 					\time 36/8
 					{
-						a,8 -\accent -\staccato
+						af,8 -\accent -\staccato
 						s1
-						a,1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -836,12 +1351,44 @@
 				{
 					\time 36/8
 					{
-						b,8 -\accent -\staccato
+						cs8 -\accent -\staccato
 						s1
-						b,1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -884,12 +1431,44 @@
 				{
 					\time 36/8
 					{
-						a,,8 -\accent -\staccato
+						cs,8 -\accent -\staccato
 						s1
-						a,,1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -948,6 +1527,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context RhythmicStaff = "perc1" {
 				\set Staff.instrumentName = \markup { Percussion 1 }
@@ -999,6 +1610,38 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				{
 					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1056,6 +1699,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context Staff = "timpani" {
 				\clef "bass"
@@ -1108,6 +1783,38 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				{
 					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1167,6 +1874,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context RhythmicStaff = "odaiko" {
 				\set Staff.instrumentName = \markup { Odaiko }
@@ -1223,6 +1962,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context RhythmicStaff = "taiko1" {
 				\set Staff.instrumentName = \markup { Taiko 1 }
@@ -1263,6 +2034,38 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				{
 					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1309,6 +2112,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 		>>
 		\context StaffGroup = "strings" <<
@@ -1352,10 +2187,42 @@
 					{
 						a8 -\accent -\staccato
 						s1
-						a1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -1397,12 +2264,44 @@
 				{
 					\time 36/8
 					{
-						g8 -\accent -\staccato
+						af8 -\accent -\staccato
 						s1
-						g1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -1444,12 +2343,44 @@
 				{
 					\time 36/8
 					{
-						a8 -\accent -\staccato
+						f8 -\accent -\staccato
 						s1
-						a1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -1483,21 +2414,107 @@
 				b,4. -\accent -\tenuto
 				fs,4. -\accent -\tenuto
 				af,4. -\accent -\tenuto
-				\context Staff {#(set-accidental-style 'forget)}
 				\once \override 
 				                            Staff.TimeSignature #'stencil = #(lambda (grob)
 				                            (parenthesize-stencil (grob-interpret-markup grob 
 				                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 				                            ) 0.1 0.4 0.4 0.1 ))
-				{
-					\time 36/8
-					{
-						b,8 -\accent -\staccato
-						s1
-						b,1 -\fermata
-						s1
+				<<
+					\context Staff = "cello_s" {
+						\set Staff.instrumentName = \markup { Cello }
+						\set Staff.shortInstrumentName = \markup { Vc. }
+						\context Staff {#(set-accidental-style 'forget)}
+						\set Staff.instrumentName = \markup { Sollo Cello }
+						\set Staff.shortInstrumentName = \markup { s.vc. }
+						\set Staff.alignAboveContext = #"cello"
+						\once \override 
+						                            Staff.TimeSignature #'stencil = #(lambda (grob)
+						                            (parenthesize-stencil (grob-interpret-markup grob 
+						                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+						                            ) 0.1 0.4 0.4 0.1 ))
+						\numericTimeSignature
+						{
+							\time 36/8
+							{
+								s8
+								r1 -\fermata
+								s2
+								\times 2/3 {
+									f'1 \pp \< ( ^ \markup { Solo Cello }
+									fs'2 \mp )
+								}
+							}
+							s1 * 15/8
+						}
+						\context Staff {#(set-accidental-style 'modern)}
+						\context Staff {#(set-accidental-style 'forget)}
+						\set Staff.instrumentName = \markup { Sollo Cello }
+						\set Staff.shortInstrumentName = \markup { s.vc. }
+						\set Staff.alignAboveContext = #"cello"
+						\once \override Staff.TimeSignature.stencil = ##f
+						{
+							\time 38/8
+							{
+								\times 4/5 {
+									f'2 (
+									fs'4 )
+									cs'4 (
+									fs'4 )
+								}
+								a'8 (
+								fs'4. )
+								f'1 -\fermata
+								fs'1 -\fermata
+								cs'1 -\fermata
+								r4
+							}
+						}
+						\context Staff {#(set-accidental-style 'modern)}
 					}
-					s1 * 11/8
+					{
+						\context Staff {#(set-accidental-style 'forget)}
+						{
+							\time 36/8
+							{
+								af,8 -\accent -\staccato
+								s1
+								r1 -\fermata
+								s2
+							}
+							s1 * 15/8
+						}
+						\context Staff {#(set-accidental-style 'modern)}
+						\context Staff {#(set-accidental-style 'forget)}
+						{
+							\time 38/8
+							s1 * 19/4
+						}
+						\context Staff {#(set-accidental-style 'modern)}
+						\context Staff {#(set-accidental-style 'forget)}
+						\once \override Staff.TimeSignature.stencil = ##f
+						{
+							\time 36/8
+							s1 * 9/2
+						}
+						\context Staff {#(set-accidental-style 'modern)}
+					}
+				>>
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -1540,12 +2557,44 @@
 				{
 					\time 36/8
 					{
-						a,,8 -\accent -\staccato
+						cs,8 -\accent -\staccato
 						s1
-						a,,1 -\fermata
-						s1
+						r1 -\fermata
+						s2
 					}
-					s1 * 11/8
+					s1 * 15/8
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 			}
@@ -1604,6 +2653,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context Staff = "line_2" {
 				\set Staff.instrumentName = \markup { Line 2 }
@@ -1655,6 +2736,38 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				{
 					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1712,6 +2825,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context Staff = "harmony_1" {
 				\set Staff.instrumentName = \markup { Harmony 1 }
@@ -1763,6 +2908,38 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				{
 					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1821,6 +2998,38 @@
 					s1 * 9/2
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					s1 * 19/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					s1 * 9/2
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 			\context Staff = "harmony_3" {
 				\clef "bass"
@@ -1876,6 +3085,104 @@
 					}
 				}
 				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 38/8
+					{
+						a,4. ~
+						a,4. ~
+						a,4.
+						a,4. ~
+						a,4. ~
+						a,4.
+						a,4. ~
+						a,4. ~
+						a,4.
+						g,4. ~
+						g,4. ~
+						g,4.
+					}
+					s1 * 1/4
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					\time 36/8
+					{
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+					}
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					{
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+					}
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					{
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+					}
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				\context Staff {#(set-accidental-style 'forget)}
+				\once \override Staff.TimeSignature.stencil = ##f
+				{
+					{
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+						b4. ~
+						b4. ~
+						b4.
+					}
+				}
+				\context Staff {#(set-accidental-style 'modern)}
 			}
 		>>
 		\context RhythmicStaff = "dummy" {
@@ -1928,6 +3235,38 @@
 			                            ) 0.1 0.4 0.4 0.1 ))
 			{
 				\time 36/8
+				s1 * 9/2
+			}
+			\context Staff {#(set-accidental-style 'modern)}
+			\context Staff {#(set-accidental-style 'forget)}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				\time 38/8
+				s1 * 19/4
+			}
+			\context Staff {#(set-accidental-style 'modern)}
+			\context Staff {#(set-accidental-style 'forget)}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				\time 36/8
+				s1 * 9/2
+			}
+			\context Staff {#(set-accidental-style 'modern)}
+			\context Staff {#(set-accidental-style 'forget)}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 9/2
+			}
+			\context Staff {#(set-accidental-style 'modern)}
+			\context Staff {#(set-accidental-style 'forget)}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
+				s1 * 9/2
+			}
+			\context Staff {#(set-accidental-style 'modern)}
+			\context Staff {#(set-accidental-style 'forget)}
+			\once \override Staff.TimeSignature.stencil = ##f
+			{
 				s1 * 9/2
 			}
 			\context Staff {#(set-accidental-style 'modern)}
