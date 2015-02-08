@@ -36,6 +36,8 @@ music.add_cycle(bubble_type=MelodySwingB, flags=["melody","melody_3","melody_3_b
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_1", "day_start"])
 music.add_cycle(bubble_type=DayMusicSplit, flags=["day_music_2"])
 music.add_cycle(bubble_type=DayMusicEnd, flags=["day_music_end"])
+music.add_cycle(bubble_type=Evening, flags=["evening_1_a","evening"])
+music.add_cycle(bubble_type=Evening, flags=["evening_1_b","evening"])
 
 # conduct 8 times
 
@@ -87,14 +89,28 @@ music.arrange_music(apply_flags=["melody_2_b","melody_3_b"], part_material="stri
 music.arrange_music(part_names=["trumpet1","trumpet2","horn1","horn3"], pitch_material="yo", 
             rhythm_material="day_yo",
             pitch_rows=[0,1,2,2],
-            pitch_columns=[[0,1,2,3,4,  5,   5,6,6,6,   7,8,9,10,11,12  ]]
+            pitch_columns=[[0,1,2,3,4,  5,   5,6,6,6,   7,8,9,10,11,12  ]],
+            apply_flags=["day_music_1","day_music_2"]
             )
 music.arrange_music(part_names=["horn2","horn4","trombone1","trombone2","tuba"], pitch_material="yo", 
             rhythm_material="day_lo",
             pitch_rows=[3,3,3,4,4],
             pitch_columns=[[0,2,4,5,    6,6,6,  7,8,9,10,11,12]],
-            transpose=[0,0,0,0,-12]
+            transpose=[0,0,0,0,-12],
+            apply_flags=["day_music_1","day_music_2"]
             )
+music.exec_method("get_yo", apply_flags=["day_music_end"])
+music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
+    rhythm_material="yo", pitch_material="yo", respell=["sharps"], apply_flags=["day_music_end"])
+
+
+# ----------------------------------------------------------
+# EVENING:
+music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
+    rhythms=["c8-.-> s1 r1\\fermata s2"], pitch_material="yo", respell=["sharps"], 
+    apply_flags=["evening_1_a"])
+
+
 
 # ----------------------------------------------------------
 # JI
@@ -107,10 +123,9 @@ music.exec_method("add_orch_ji", skip_flags=["free"])
 music.add_pitch_material("ref", [["C#3"]*4], apply_flags=["melody_1_a"]) # dis festival
 music.add_pitch_material("ref", [["F#3"]*4], apply_flags=["melody_1_b"]) # dis festival
 music.add_pitch_material("ref", [["G#2"]*4], respell=["sharps"], apply_flags=["melody_2_a"]) # (seems like it will go up...)
-music.add_pitch_material("ref", [["E#2"]*4], apply_flags=["melody_2_b"]) # dis dis TO festival (short)
+music.add_pitch_material("ref", [["D#2"]*4], apply_flags=["melody_2_b"]) # dis dis TO festival (short)
 music.add_pitch_material("ref", [["F2"]*4], apply_flags=["melody_3_a"]) # dis dis TO festival (short) (also to stingy?)
 music.add_pitch_material("ref", [["G2"]*4], apply_flags=["melody_3_b"]) # dis festival TO festival
-
 
 music.arrange_music(part_names=["harmony_3"], pitch_material="ref", rhythm_material=["ref"])
 
@@ -154,10 +169,11 @@ iters=(
     # 8,9, # night melody
     # 10,11,
     # 12,13,
-    14, # day melody
-    15, 
+    # 14, # day melody
+    # 15, 
     16,
-    # 17, 18,19, # free/conduct
+    17, # evening...
+    # 18,19, # free/conduct
     )
 
 music.apply_transforms(iters=iters)

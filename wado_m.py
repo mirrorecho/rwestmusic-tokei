@@ -188,6 +188,12 @@ class WadoMaterial(TokeiBubble):
 
         self.make_yo()
 
+    def reverse_yo(self):
+        return [
+            [  r[len(r)-p-1] for p in range(len(r))] for r in self.material["pitch"]["yo"]
+        ]
+
+
     def make_yo(self, num_columns=12):
         repeat_yos = round(num_columns / len(self.material["pitch"]["ref"][0]))
         self.material["pitch"]["yo"] = []
@@ -550,10 +556,29 @@ class DayMusicSplit(DayMusic):
         pass
 
 class DayMusicEnd(DayMusic):
+    def get_yo(self):
+        #remove the first colum...
+        yo = [
+                l[1:] for l in self.material["pitch"]["yo"]
+            ]
+        yo = transpose_pitches(yo, 2)
+        yo2 = copy.deepcopy(yo)
+
+        yo = replace_pitch(yo, "F4","F#4")
+        yo = replace_pitch(yo, "F5","F#5")
+        yo[2][1]= "A4" # don't want G# s yet! (but not replacing all)
+        yo[3][3] = "A3"
+        yo[3][4] = "A3"
+        yo_combo = [
+                yo[r] + yo2[r] for r in range(len(yo))
+                    ]
+        self.material["pitch"]["yo"] = yo_combo
+        self.material["rhythm"]["yo"] = ["c4.-.-> r4. "*8 + "c4.---> "*8]
+
+
 
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         self.arrange_music(part_names=part_names, rhythm_material=[["taiko_day_back_forth"]*2 + ["taiko_day_boom"]])
-
 
 
 class Conduct(WadoMaterial):
@@ -563,7 +588,78 @@ class Conduct(WadoMaterial):
 
 
 class WadoFree(WadoMaterial, TokeiFree):
-    # def __init__(self):
-    #     super(WadoMaterial).__init__()
-    #     super(TokeiFree).__init__()
     pass
+
+class Evening(WadoFree):
+    def get_yo(self):
+        self.material["pitch"]["yo"] = [
+            ["A5"],
+            ["G#5", "A5", "G#5", "F#5", "F5", "C#5", "G#5", "A5"],
+            ["F4", "F#4", "C#4", "F#4", "A4", "F#4"],
+            ["G#3", "F#3", "C#3", "G#3", "F#3"],
+            ["C#2", "G#2", "B2"],
+            ["C#1", "B1", "F#1"],
+        ]
+
+class Dusk1(WadoFree):
+    def __init__(self):
+        m = MelodySwingB()
+        m.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["ref"] = [["B3"]*4]
+class Dusk2(WadoFree):
+    def __init__(self):
+        m = MelodySwingA()
+        m.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["ref"] = [["A3"]*4]
+class Dusk3(WadoFree):
+    def __init__(self):
+        m = MelodySwingB()
+        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["ref"] = [["G3"]*4]
+class Dusk4(WadoFree):
+    def __init__(self):
+        m = MelodySwingA()
+        self.material["pitch"]["yo"] = transpose_pitches(m.reverse_yo(), -8)
+        self.material["pitch"]["ref"] = [["C3"]*4]
+
+class DarkMelodyA(MelodySwingA):
+    def __init__(self):
+        super().__init__()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
+        self.material["pitch"]["ref"] = [["C3"]*4]
+
+class DarkMelodyB(MelodySwingB):
+    def __init__(self):
+        super().__init__()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
+        self.material["pitch"]["ref"] = [["G3"]*4]
+
+class DarkMelodyC(MelodyA):
+    def __init__(self):
+        super().__init__()
+        self.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
+        self.material["pitch"]["ref"] = [["A3"]*4]
+
+class DarkMelodyD(MelodyB):
+    def __init__(self):
+        super().__init__()
+        self.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
+        self.material["pitch"]["ref"] = [["D3"]*4]
+
+class DarkMelodyE(MelodyA):
+    def __init__(self):
+        super().__init__()
+        self.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
+        self.material["pitch"]["ref"] = [["G3"]*4]
+
+class DarkMelodyD(MelodyB):
+    def __init__(self):
+        super().__init__()
+        self.yo3()
+        self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
+        self.material["pitch"]["ref"] = [["C3"]*4]

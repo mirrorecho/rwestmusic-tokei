@@ -3,7 +3,9 @@ import settings
 
 from calliope.work import Bubble, Project
 from calliope.cloud.pitches import CloudPitches, TallyCircleOfFifthsRange, TallyMelodicIntervals, TallyRepeatedJumps
-from calliope.tools import get_pitch_number, attach_commands
+from calliope.tools import get_pitch_number, attach_commands, get_pitch_range
+
+import copy
 
 PROJECT = Project(name="rwestmusic-tokei")
 JI_PITCH = get_pitch_number("A5")
@@ -133,6 +135,104 @@ class TokeiBubble(Bubble):
         # self.bass = scoretools.Container()
         # self.bass_1 =  scoretools.Container()
         # self.bass_2 =  scoretools.Container()
+
+        if div_strings:
+            self.material["part"]["strings"] = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"]
+        else:
+            self.material["part"]["strings"] = ["violinI","violinII","viola","cello","bass"]
+        self.material["part"]["winds"] = ["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"]
+        # putting instruments high to low (trumpets first) for ease of arranging
+        self.material["part"]["brass"] = ["trumpet1","trumpet2","horn1","horn3","horn2","horn4","trombone1","trombone2","tuba"]
+
+        self.material["part"]["pitched"] = self.material["part"]["winds"] + self.material["part"]["brass"] + self.material["part"]["strings"]
+
+        self.material["brass_ranges_wide"] = [
+            get_pitch_range("B4","C6"), #trumpet 1
+            get_pitch_range("A4","A5"), #trumpet 2
+            get_pitch_range("F4","F5"), #horn 1
+            get_pitch_range("F4","F5"), #horn 3
+            get_pitch_range("G2","A3"), #horn 2
+            get_pitch_range("E2","E3"), #horn 4
+            get_pitch_range("E2","E3"), #trombone 1
+            get_pitch_range("E2","E3"), #trombone 2
+            get_pitch_range("D1","E2"), #tuba
+            ]
+        self.material["brass_ranges_mid"] = [
+            get_pitch_range("F4","G5"), #trumpet 1
+            get_pitch_range("D4","E5"), #trumpet 2
+            get_pitch_range("A3","B4"), #horn 1
+            get_pitch_range("G3","A4"), #horn 3
+            get_pitch_range("F3","G4"), #horn 2
+            get_pitch_range("E3","F4"), #horn 4
+            get_pitch_range("A2","B3"), #trombone 1
+            get_pitch_range("G2","A3"), #trombone 2
+            get_pitch_range("C2","E3"), #tuba
+            ]
+        self.material["wind_ranges_mid"] = [
+            get_pitch_range("E5","F6"), #piccolo (flute 1)
+            get_pitch_range("E5","F6"), #flute (2)
+            get_pitch_range("G4","A5"), #oboe 1
+            get_pitch_range("F4","G5"), #oboe 2
+            get_pitch_range("E4","F5"), #oboe 3
+            get_pitch_range("A4","B5"), #clarinet 1
+            get_pitch_range("C3","D4"), #clarinet 2 (switch to bass?)  ... assume no
+            get_pitch_range("D3","E4"), #bassoon 1
+            get_pitch_range("G2","A3"), #bassoon 2
+        ]
+        self.material["wind_ranges_hi"] = [
+            get_pitch_range("B5","Bb6"), #piccolo (flute 1)
+            get_pitch_range("B5","Bb6"), #flute (2)
+            get_pitch_range("G5","F#6"), #oboe 1
+            get_pitch_range("G5","F#6"), #oboe 2
+            get_pitch_range("G5","F#6"), #oboe 3
+            get_pitch_range("G5","F#6"), #clarinet 1
+            get_pitch_range("G5","F#6"), #clarinet 2 (switch to bass?)  ... assume no
+            get_pitch_range("B3","Bb4"), #bassoon 1
+            get_pitch_range("B3","Bb4"), #bassoon 2
+        ]
+        if div_strings:
+            self.material["string_ranges_mid"] = [
+                get_pitch_range("D4","G5"), #violin I div 1
+                get_pitch_range("C4","F5"), #violin I div 2
+                get_pitch_range("D4","G5"), #violin II div 1
+                get_pitch_range("C4","F5"), #violin II div 2
+                get_pitch_range("G3","C5"), #viola div 1
+                get_pitch_range("F3","B4"), #viola div 2
+                get_pitch_range("G2","C4"), #cello div 1
+                get_pitch_range("F2","B3"), #cello div 2
+                get_pitch_range("A2","B3"), #bass div 1
+                get_pitch_range("G2","A3"), #bass div 2
+            ]
+            self.material["string_ranges_low"] = [
+                get_pitch_range("G3","G4"), #violin I div 1
+                get_pitch_range("G3","G4"), #violin I div 2
+                get_pitch_range("G3","G4"), #violin II div 1
+                get_pitch_range("G3","G4"), #violin II div 2
+                get_pitch_range("C3","C4"), #viola div 1
+                get_pitch_range("C3","C4"), #viola div 2
+                get_pitch_range("C2","C3"), #cello div 1
+                get_pitch_range("C2","C3"), #cello div 2
+                get_pitch_range("E1","E2"), #bass div 1
+                get_pitch_range("E1","E2"), #bass div 2
+            ]
+        else:
+            self.material["string_ranges_mid"] = [
+                get_pitch_range("D4","G5"), #violin I 
+                get_pitch_range("D4","G5"), #violin II 
+                get_pitch_range("G3","C5"), #viola  
+                get_pitch_range("G2","C4"), #cello  
+                get_pitch_range("A2","B3"), #bass 
+            ]
+            self.material["string_ranges_low"] = [
+                get_pitch_range("G3","G4"), #violin I 
+                get_pitch_range("G3","G4"), #violin II 
+                get_pitch_range("C3","C4"), #viola 
+                get_pitch_range("C2","C3"), #cello 
+                get_pitch_range("E1","E2"), #bass 
+            ]
+        self.material["all_ranges_wide"] = copy.deepcopy(
+                    self.material["wind_ranges_hi"] + self.material["brass_ranges_wide"] + self.material["string_ranges_low"])
+
 
     def add_cloud_pitches(self, cloud_type, cloud_name, material_name):
         cloud = cloud_type(name=cloud_name)
