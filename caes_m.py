@@ -326,6 +326,8 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["rhythm"]["staccato"] ="c8-.[ c-.] "*12
 
+        self.material["rhythm"]["ji"] = "c8->[ c8->] "*12
+
         # just used on odd meters?
         self.material["rhythm"]["melody_push"] = """c4.---> c4.-- c8--[ r8] c8--[ r8]
                         c4.---> c8--[ r8] c8--[ r8]
@@ -446,6 +448,10 @@ class CaesiumMaterialOdd(CaesiumMaterial):
         self.material["rhythm"]["holds"] = """c4.-> ~ c4. ~ c4 ~ c4  |  
                     c4.-> ~ c4 ~ c4  |  c4-> ~ c4 ~ c4. """
 
+        self.material["rhythm"]["ji"] = """c8->[ c-> c->]   c8->[ c-> c->]   c8->[ c->]   c8->[ c->]
+                    c8->[ c-> c->]   c8->[ c->]   c8->[ c->]
+                    c8->[ c->]   c8->[ c->]     c8->[ c-> c->]
+                    """
 
         for r_name, m in self.material["rhythm"].items():
             if isinstance(m,str):

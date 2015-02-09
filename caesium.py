@@ -124,6 +124,7 @@ music.exec_method("force_winds_up4_down", cloud_name="caes-cloud-winds-up4-down"
 music.arrange_music(rhythm_material=["taiko_ji"], part_names=["taiko1","taiko2","odaiko", "shime"], stop_flag="melody")
 
 music.arrange_music(rhythm_material=["melody"], part_names=["taiko1","taiko2","odaiko"], apply_flags=["melody"])
+music.arrange_music(rhythm_material=["taiko_ji"], part_names=["shime"], apply_flags=["melody"])
 
 music.arrange_music(rhythm_material=["melody_hits"], part_names=["taiko1","taiko2"], apply_flags=["melody_hits"])
 music.arrange_music(rhythm_material=["melody"], part_names=["odaiko"], apply_flags=["melody_hits"])
@@ -136,12 +137,22 @@ music.arrange_music(rhythm_material=["melody","taiko_3"], part_names=["taiko1","
 
 # RELATED PERCUSSION
 music.arrange_music(rhythm_material=["rolls"], part_names=["perc1","shime"], apply_flags=["rolls"])
+music.attach_markup(part_names=["perc1"], apply_flags=["rolls"], markup_texts=[["brake drum"]])
+
+
+# if perc 1 is not doing anything else, then brake drumb
+music.arrange_music(rhythm_material=["ji"], part_names=["perc1"], apply_flags=["melody"])
 
 music.arrange_music(rhythm_material=["smack_perc"], pitches=[[["A2","Bb2"]]], part_names=["timpani"], stop_flag="pre_melody")
-music.arrange_music(rhythm_material=["tsu_don"], pitches=[["A2","Bb2"]], part_names=["timpani"], apply_flags=["pre_melody"])
+music.arrange_music(rhythm_material=["tsu_don"], pitches=[["A2","Bb2"]], 
+    part_names=["timpani"], apply_flags=["pre_melody"])
 
 music.attach_dynamics(part_names=["taiko1","taiko2","odaiko","timpani"], dynamics=[["ff"]], apply_flags=["start"])
 music.attach_articulations(part_names=["timpani"], articulations=[[">"]], stop_flag="melody")
+
+music.arrange_music(rhythm_material=["tsu_don"], pitches=[["A2","Bb2"]], 
+    part_names=["timpani"], apply_flags=["taiko_2"])
+
 
 # -----------------------------------------------
 # as things heat up, gane starts steady strike
@@ -162,14 +173,20 @@ music.attach_dynamics(part_names=brass_parts, dynamics=[["ff"]], apply_flags=["h
 # --------------------------------------------------------------------------------------
 # LOW HITS / HOLDS:
 
-music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], apply_flags=["melody"], 
-    rhythm_material=["smack","smack","smack","smack_perc"], pitch_material="low_stack")
+music.arrange_music(part_names=["tuba","trombone1", "trombone2"], apply_flags=["melody"], 
+    rhythm_material=["smack"], pitch_material="low_stack")
+
+music.arrange_music(part_names=["timpani"], apply_flags=["melody"], 
+    rhythm_material=["smack_perc"], pitch_material=["ji"], pitch_range=[get_pitch_range("E2","E3")])
+
 
 music.arrange_music(part_names=["cello_div1","cello_div2","bass_div1","bass_div2"],
     rhythm_material=["holds"], pitch_material="lowest_strings", 
     apply_flags=["lowest_strings"])
 music.attach_dynamics(part_names=["cello_div1","cello_div2","bass_div1","bass_div2"],
     dynamics=[["f"]], apply_flags=["lowest_strings"]  )
+
+
 
 # --------------------------------------------------------------------------------------
 # CLEARER "MELODIES"
@@ -204,11 +221,22 @@ music.arrange_music(part_names=["cello_div2","cello_div1","viola_div2","viola_di
 # --------------------------------------------------------------------------------------
 # STRING NASTIES AND CLOUD:
 
+# THIS SHOULD ONLY BE ONE ARRANGE
 music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_3"], 
     rhythm_material=["string_nasty_3"], pitches=[["x"]])
 
 music.arrange_music(part_names=string_parts, apply_flags=["string_nasty_2"], 
     rhythm_material=["string_nasty_2"], pitches=[["x"]])
+
+music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"], 
+    apply_flags=["string_nasty_2","string_nasty_3"],
+    markup_texts=[["random pitch on G string"]])
+music.attach_markup(part_names=["viola_div1","viola_div2","cello_div1","cello_div2"], 
+    apply_flags=["string_nasty_2","string_nasty_3"],
+    markup_texts=[["random pitch on C string"]])
+music.attach_markup(part_names=["bass_div1","bass_div2"], 
+    apply_flags=["string_nasty_2","string_nasty_3"],
+    markup_texts=[["random pitch on E string"]])
 
 music.exec_method("transpose_pitch_material", material="strings_cloud", transpose=4, 
     apply_flags=["strings_cloud_trans4"])
@@ -297,11 +325,11 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 
 make_iters=(
-    # 0, # MA
+    0, # MA
     # 1,2, #A
     # 3,4,
-    5,6, #B
-    7,8,
+    # 5,6, #B
+    # 7,8,
     # 9,10, #C
     # 11,12,
     # 13,14, #D

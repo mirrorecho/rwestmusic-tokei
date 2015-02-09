@@ -50,7 +50,7 @@ def get_cycle_music():
     music.add_cycle(flags=["ma"], bubble_type=CaesiumMa, rehearsal_mark="G") # MA !!!!!!!!!!!!!!
     music.add_cycle(flags=["taiko_2", "brass_hits"])
     music.add_cycle(flags=["taiko_2", "brass_hits"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=[])
+    music.add_cycle(flags=["winds_up4_cloud_down"])
     # ------------------------------------
     # H 29-32
     # add something else to his ma?
@@ -60,7 +60,7 @@ def get_cycle_music():
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_3"])
     # ------------------------------------
     # I 33-36
-    music.add_cycle(flags=["taiko_2"], rehearsal_mark="I")
+    music.add_cycle(flags=["taiko_2", "winds_up4_cloud_down"], rehearsal_mark="I")
     music.add_cycle(flags=["taiko_2"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody_split_2"])
     # add something else to his ma?
