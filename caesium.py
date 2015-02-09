@@ -14,6 +14,8 @@ wind_parts=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","b
 # putting instruments high to low (trumpets first) for ease of arranging
 brass_parts=["trumpet1","trumpet2","horn1","horn3","horn2","horn4","trombone1","trombone2","tuba"]
 
+caes = CaesiumMaterial()
+caes_odd = CaesiumMaterialOdd()
 
 brass_ranges_wide = [
     get_pitch_range("B4","C6"), #trumpet 1
@@ -185,7 +187,7 @@ music.arrange_music(part_names=brass_parts[:-1],
 # PADDING:
 music.arrange_music(part_names=["cello_div2","cello_div1","viola_div2","viola_div1"], 
     apply_flags=["midlow_strings_pad"], 
-    rhythms=["c4. ~ c4. ~ c4 ~ c4     c4. ~ c4 ~ c4     c4 ~ c4 ~ c4. "], 
+    rhythms=["c4. ~ c4. ~ c4 ~ c4  \\bar\";\"   c4. ~ c4 ~ c4  \\bar\";\"    c4 ~ c4 ~ c4. "], 
     pitch_material="ji_stack",
     transpose=[-24,-24,-24,-12],
     pitch_offset=[2]
@@ -212,14 +214,14 @@ music.arrange_music(part_names=string_parts[:-2],
     )
 
 
-
-music.arrange_music(part_names=["oboe1","oboe2","flute2","oboe3","flute1"],
-        apply_flags=["string_melody_cloud","string_melody_cloud_up"], 
-        rhythms=["r2 r4 c4-.  c-. r4 r2 R1"],
-        pitch_material="accents",
-        respell=["sharps"],
-        pitch_offset=[6],
-        )
+#  WTF what's with this rhythm?????
+# music.arrange_music(part_names=["oboe1","oboe2","flute2","oboe3","flute1"],
+#         apply_flags=["string_melody_cloud","string_melody_cloud_up"], 
+#         rhythms=["r2 r4 c4-.  c-. r4 r2 R1"],
+#         pitch_material="accents",
+#         respell=["sharps"],
+#         pitch_offset=[6],
+#         )
 
 music.arrange_music(part_names=wind_parts, 
     apply_flags=["winds_up4_cloud_down"], 
@@ -259,8 +261,10 @@ music.arrange_music(part_names=string_parts,
 # RESTS:
 # TO DO... should be easy enough to apply rests to EVERYTHING that hasn't already been arranged...
 
-music.arrange_music(rhythm_material=["rest"], part_names=wind_parts + string_parts + ["perc1","perc2"],
-    stop_flag="melody")
+music.arrange_music(rhythm_material=["rest"], 
+    part_names = caes.parts,
+    # part_names=wind_parts + string_parts + ["perc1","perc2"],
+    skip_flags=["ma"])
 # music.arrange_music(rhythm_material=["rest"], part_names=["perc1"], skip_flags=["pre_melody"])
 
 music.arrange_music(rhythm_material=["rest"], part_names=brass_parts, stop_flag="hits")
@@ -290,8 +294,8 @@ make_iters=(
     0,1,2,
     3,4,
     5,6,
-    7,8,
-    9,10,
+    # 7,8,
+    # 9,10,
     # 11,12,
     # 13,14,
     # 15,16,
@@ -315,5 +319,7 @@ make_iters=(
 
 music.apply_transforms(iters=make_iters)
 bubble = music.make_bubble(iters=make_iters)
-bubble.make_pdf()
+# bubble.make_pdf()
+
+bubble.make_parts(part_names=["flute1","clarinet1","horn1"], work_name="caesium")
 

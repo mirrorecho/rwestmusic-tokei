@@ -294,13 +294,18 @@ make_flags=(
     "4_ji",
     "5_line",
     "5_ji",
-    "6_line",
-    "6_all",
+    # "6_line",
+    # "6_all",
     )
 
 music.apply_transforms(flags=make_flags)
 bubble = music.make_bubble(flags=make_flags)
-bubble.make_pdf(
-    hide_empty=True,
-    # part_names=["violinI","violinI_1","violinI_2"],
-    )
+# bubble.make_pdf(
+#     hide_empty=True,
+#     # part_names=["violinI","violinI_1","violinI_2"],
+#     )
+
+bubble.make_parts(part_names=[
+    ("violinI_1","violinI_2", "violinI")], 
+    work_name="kairos")
+

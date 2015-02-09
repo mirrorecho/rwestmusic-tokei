@@ -418,26 +418,30 @@ class CaesiumMaterialOdd(CaesiumMaterial):
     def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
         super().__init__(measures_durations=measures_durations, odd_meters=True)
 
-        rest_1 = "r4. r4. r4 r4 "
-        rest_2 = "r4. r4 r4 "
+        rest_1 = "r4. r4. r4 r4  | "
+        rest_2 = "r4. r4 r4 | "
         rest_3 = "r4 r4 r4. "
 
         self.material["rhythm"]["rest"] = rest_1 + rest_2 + rest_3
 
-        self.material["rhythm"]["smack"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
-        self.material["rhythm"]["smack_perc"] = "c8->[\\sfz r8 r]  r4. r4 r4 " + rest_2 + rest_3
+        self.material["rhythm"]["smack"] = "c8-.->[\\sfz r8 r]  r4. r4 r4 | " + rest_2 + rest_3
+        self.material["rhythm"]["smack_perc"] = "c8->[\\sfz r8 r]  r4. r4 r4 | " + rest_2 + rest_3
 
-        self.material["rhythm"]["swell"] = rest_1 + "c4.\\p\\< ~ c4 ~ c4 ~ c4 ~ c4 ~ c4 c8-.->\\!\\f "
+        self.material["rhythm"]["swell"] = rest_1 + "c4.\\p\\< ~ c4 ~ c4 ~ | c4 ~ c4 ~ c4 c8-.->\\!\\f "
 
         self.material["rhythm"]["swell_cymb"] = rest_1 + rest_2 + "c4:32\\pp\\< ~ c4:32 ~ c4:32  c8->\\!\\f "
 
-        self.material["rhythm"]["staccato"] =""""c8-.[ c-. c-.]   c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.]
-                    c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.]
-                    c-.[ c-.]   c-.[ c-.] c-.[ c-. c-.]
+        self.material["rhythm"]["staccato"] =""""c8-.[ c-. c-.]   c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.] |
+                    c-.[ c-. c-.]   c-.[ c-.]   c-.[ c-.] |
+                    c-.[ c-.]   c-.[ c-.] c-.[ c-. c-.] |
                     """ 
-        self.material["rhythm"]["rolls"] = """c4.:32 ~ c4.:32 ~ c4:32 ~ c4:32 ~ 
-                    c4.:32 ~ c4:32 ~ c4:32 ~ 
+        self.material["rhythm"]["rolls"] = """c4.:32 ~ c4.:32 ~ c4:32 ~ c4:32 ~ |
+                    c4.:32 ~ c4:32 ~ c4:32 ~ |
                     c4:32 ~ c4:32 ~ c4.:32"""
+
+        for r_name, m in self.material["rhythm"].items():
+            if isinstance(m,str):
+                self.material["rhythm"][r_name] = m.replace("|", " \\bar \";\" ")
 
 
 class CaesiumMa(CaesiumMaterial):

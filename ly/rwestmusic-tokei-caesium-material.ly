@@ -1,4 +1,4 @@
-% 2015-02-08 22:16
+% 2015-02-09 00:41
 
 \version "2.18.2"
 \language "english"
@@ -50,6 +50,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -70,65 +71,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a''4. \p ~ \<
-				a''4 ~
-				a''4 ~
-				a''4 ~
-				a''4 ~
-				a''4
-				a''8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "flute2" {
 				\set Staff.instrumentName = \markup { Flute 2 }
@@ -142,6 +111,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -162,65 +132,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf''4. \p ~ \<
-				bf''4 ~
-				bf''4 ~
-				bf''4 ~
-				bf''4 ~
-				bf''4
-				bf''8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
-				a'''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "oboe1" {
 				\set Staff.instrumentName = \markup { Oboe 1 }
@@ -234,6 +172,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -254,65 +193,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e''4. \p ~ \<
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4
-				e''8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "oboe2" {
 				\set Staff.instrumentName = \markup { Oboe 2 }
@@ -326,6 +233,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -346,65 +254,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a'4. \p ~ \<
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4
-				a'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "oboe3" {
 				\set Staff.instrumentName = \markup { Oboe 3 }
@@ -418,6 +294,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -438,65 +315,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf'4. \p ~ \<
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4
-				bf'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "clarinet1" {
 				\set Staff.instrumentName = \markup { Clarinet 1 in Bb }
@@ -510,6 +355,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -530,65 +376,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e''4. \p ~ \<
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4
-				e''8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "clarinet2" {
 				\set Staff.instrumentName = \markup { Clarinet 2 in Bb }
@@ -602,6 +416,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -622,65 +437,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a4. \p ~ \<
-				a4 ~
-				a4 ~
-				a4 ~
-				a4 ~
-				a4
-				a8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
-				a''8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "bassoon1" {
 				\clef "bass"
@@ -695,6 +478,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -715,65 +499,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf4. \p ~ \<
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4
-				bf8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "bassoon2" {
 				\clef "bass"
@@ -788,6 +540,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -808,65 +561,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e4. \p ~ \<
-				e4 ~
-				e4 ~
-				e4 ~
-				e4 ~
-				e4
-				e8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
-				a'8 -\staccato [
-				r8
-				r8 ]
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 		>>
 		\context StaffGroup = "brass" <<
@@ -882,6 +603,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -906,13 +628,16 @@
 				a1 \f
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				r4.
 				r4.
 				r4
 				r4
+				\bar ";"
 				a4. \p ~ \<
 				a4 ~
 				a4 ~
+				\bar ";"
 				a4 ~
 				a4 ~
 				a4
@@ -923,57 +648,15 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				a4. \p ~ \<
 				a4 ~
 				a4 ~
+				\bar ";"
 				a4 ~
 				a4 ~
 				a4
 				a8 -\accent -\staccato \f
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				r4.
-				r4.
-				r4
-				r4
-				a4. \p ~ \<
-				a4 ~
-				a4 ~
-				a4 ~
-				a4 ~
-				a4
-				a8 -\accent -\staccato \f
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				r4.
-				r4.
-				r4
-				r4
-				e'4. \p ~ \<
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4
-				e'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 			\context Staff = "horn2" {
 				\set Staff.instrumentName = \markup { Horn in F 2 }
@@ -987,6 +670,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1011,13 +695,16 @@
 				bf1 \f
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				r4.
 				r4.
 				r4
 				r4
+				\bar ";"
 				bf4. \p ~ \<
 				bf4 ~
 				bf4 ~
+				\bar ";"
 				bf4 ~
 				bf4 ~
 				bf4
@@ -1028,57 +715,15 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				bf4. \p ~ \<
 				bf4 ~
 				bf4 ~
+				\bar ";"
 				bf4 ~
 				bf4 ~
 				bf4
 				bf8 -\accent -\staccato \f
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				r4.
-				r4.
-				r4
-				r4
-				bf4. \p ~ \<
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4
-				bf8 -\accent -\staccato \f
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				r4.
-				r4.
-				r4
-				r4
-				bf4. \p ~ \<
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4
-				bf8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 			\context Staff = "horn3" {
 				\set Staff.instrumentName = \markup { Horn in F 3 }
@@ -1092,6 +737,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1116,51 +762,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a'4. \p ~ \<
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4
-				a'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "horn4" {
 				\set Staff.instrumentName = \markup { Horn in F 4 }
@@ -1174,6 +802,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1198,51 +827,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e'4. \p ~ \<
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4
-				e'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "trumpet1" {
 				\set Staff.instrumentName = \markup { Trumpet in C 1 }
@@ -1256,6 +867,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1280,51 +892,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a'4. \p ~ \<
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4
-				a'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "trumpet2" {
 				\set Staff.instrumentName = \markup { Trumpet in C 2 }
@@ -1338,6 +932,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1362,51 +957,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf'4. \p ~ \<
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4
-				bf'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "trombone1" {
 				\clef "bass"
@@ -1421,6 +998,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1445,29 +1023,18 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c,8 -\accent -\staccato \sfz [
 				r8
 				r8 ]
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
+				\bar ";"
 				r4
 				r4
 				r4.
@@ -1479,44 +1046,14 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4
 				r4
 				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 			\context Staff = "trombone2" {
 				\clef "bass"
@@ -1531,6 +1068,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1555,29 +1093,18 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				cs,8 -\accent -\staccato \sfz [
 				r8
 				r8 ]
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				cs,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
+				\bar ";"
 				r4
 				r4
 				r4.
@@ -1589,44 +1116,14 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4
 				r4
 				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				cs,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 			\context Staff = "tuba" {
 				\clef "bass"
@@ -1641,6 +1138,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1665,29 +1163,18 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				fs,,8 -\accent -\staccato \sfz [
 				r8
 				r8 ]
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				fs,,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
+				\bar ";"
 				r4
 				r4
 				r4.
@@ -1699,44 +1186,14 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4
 				r4
 				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				fs,,8 -\accent -\staccato \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 		>>
 		\context StaffGroup = "perc" <<
@@ -1753,6 +1210,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1773,59 +1231,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c4. :32 ~
 				c4. :32 ~
 				c4 :32 ~
 				c4 :32 ~
+				\bar ";"
 				c4. :32 ~
 				c4 :32 ~
 				c4 :32 ~
+				\bar ";"
 				c4 :32 ~
 				c4 :32 ~
 				c4. :32
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
-				c4 :32 \pp ~ \<
-				c4 :32 ~
-				c4 :32
-				c8 -\accent \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s8 ^ \markup { *dampen }
-				s4
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context RhythmicStaff = "perc2" {
 				\set Staff.instrumentName = \markup { Percussion 2 }
@@ -1839,6 +1271,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -1859,43 +1292,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "timpani" {
 				\clef "bass"
@@ -1910,6 +1333,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				<a, bf,>4 -\accent \ff
 				r4
 				r2
@@ -1943,29 +1367,18 @@
 				bf,8 -\accent ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				fs,8 -\accent \sfz [
 				r8
 				r8 ]
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				fs,8 -\accent \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
+				\bar ";"
 				r4
 				r4
 				r4.
@@ -1977,44 +1390,14 @@
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4.
 				r4
 				r4
+				\bar ";"
 				r4
 				r4
 				r4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				fs,8 -\accent \sfz [
-				r8
-				r8 ]
-				r4.
-				r4
-				r4
-				r4.
-				r4
-				r4
-				r4
-				r4
-				r4.
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 		>>
 		\context StaffGroup = "taiko" <<
@@ -2030,6 +1413,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				c8 [ _ \markup { do }
 				c8 ] _ \markup { ko }
 				c8 [ _ \markup { do }
@@ -2134,50 +1518,33 @@
 				c8 ] _ \markup { ko }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c4. :32 ~
 				c4. :32 ~
 				c4 :32 ~
 				c4 :32 ~
+				\bar ";"
 				c4. :32 ~
 				c4 :32 ~
 				c4 :32 ~
+				\bar ";"
 				c4 :32 ~
 				c4 :32 ~
 				c4. :32
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context RhythmicStaff = "odaiko" {
 				\set Staff.instrumentName = \markup { Odaiko }
@@ -2193,6 +1560,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				c8 \ff [ _ \markup { do }
 				c8 ] _ \markup { ko }
 				c8 [ _ \markup { do }
@@ -2297,6 +1665,7 @@
 				c8 ] _ \markup { ko }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
@@ -2347,76 +1716,6 @@
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
 			}
 			\context RhythmicStaff = "taiko1" {
 				\set Staff.instrumentName = \markup { Taiko 1 }
@@ -2432,6 +1731,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				c8 \ff [ _ \markup { do }
 				c8 ] _ \markup { ko }
 				c8 [ _ \markup { do }
@@ -2536,6 +1836,7 @@
 				c8 ] _ \markup { ko }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
@@ -2586,90 +1887,6 @@
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
 			}
 			\context RhythmicStaff = "taiko2" {
 				\set Staff.instrumentName = \markup { Taiko 2 }
@@ -2685,6 +1902,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				c8 \ff [ _ \markup { do }
 				c8 ] _ \markup { ko }
 				c8 [ _ \markup { do }
@@ -2789,6 +2007,7 @@
 				c8 ] _ \markup { ko }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 24/8
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
@@ -2839,90 +2058,6 @@
 				c8 [ _ \markup { don }
 				r8
 				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8 ]
-				c8 [ _ \markup { don }
-				r8
-				r8 ]
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
-				c8 [ _ \markup { ka }
-				c8 _ \markup { do }
-				c8 ] _ \markup { don }
 			}
 		>>
 		\context StaffGroup = "strings" <<
@@ -2938,6 +2073,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -2958,113 +2094,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a'4. \p ~ \<
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4
-				a'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "violinI_div2" {
 				\set Staff.instrumentName = \markup { Violin I 2 }
@@ -3078,6 +2134,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3098,113 +2155,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf'4. \p ~ \<
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4
-				bf'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "violinII_div1" {
 				\set Staff.instrumentName = \markup { Violin II 1 }
@@ -3218,6 +2195,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3238,113 +2216,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e''4. \p ~ \<
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4 ~
-				e''4
-				e''8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "violinII_div2" {
 				\set Staff.instrumentName = \markup { Violin II 2 }
@@ -3358,6 +2256,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3378,113 +2277,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a'4. \p ~ \<
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4 ~
-				a'4
-				a'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "viola_div1" {
 				\clef "alto"
@@ -3499,6 +2318,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3519,113 +2339,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf'4. \p ~ \<
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4 ~
-				bf'4
-				bf'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "viola_div2" {
 				\clef "alto"
@@ -3640,6 +2380,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3660,113 +2401,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e'4. \p ~ \<
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4 ~
-				e'4
-				e'8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "cello_div1" {
 				\clef "bass"
@@ -3781,6 +2442,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3801,113 +2463,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				a4. \p ~ \<
-				a4 ~
-				a4 ~
-				a4 ~
-				a4 ~
-				a4
-				a8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "cello_div2" {
 				\clef "bass"
@@ -3922,6 +2504,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -3942,113 +2525,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				bf4. \p ~ \<
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4 ~
-				bf4
-				bf8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "bass_div1" {
 				\clef "bass"
@@ -4063,6 +2566,7 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
+				\time 4/4
 				R1
 				R1
 				R1
@@ -4083,113 +2587,33 @@
 				R1
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
+				\time 24/8
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
+				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				r4.
 				r4.
 				r4
 				r4
-				e4. \p ~ \<
-				e4 ~
-				e4 ~
-				e4 ~
-				e4 ~
-				e4
-				e8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
 			\context Staff = "bass_div2" {
 				\clef "bass"
@@ -4204,803 +2628,55 @@
 				s4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R1
-				R1
-				R1
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R1
-				R1
-				R1
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R1
-				R1
-				R1
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R1
-				R1
-				R1
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				r4.
-				r4.
-				r4
-				r4
-				a4. \p ~ \<
-				a4 ~
-				a4 ~
-				a4 ~
-				a4 ~
-				a4
-				a8 -\accent -\staccato \f
-				\bar "||"
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\xNotesOn
-				\context Staff {#(set-accidental-style 'modern)}
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 -\accent ]
-				\xNotesOff
-				\xNotesOn
-				c'8 [
-				\xNotesOff
-				\xNotesOn
-				c'8 ]
-				\xNotesOff
-			}
-		>>
-		\context StaffGroup = "ref" <<
-			\context Staff = "line_1" {
-				\set Staff.instrumentName = \markup { Line 1 }
-				\set Staff.shortInstrumentName = \markup { Ln.1 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-			\context Staff = "line_2" {
-				\set Staff.instrumentName = \markup { Line 2 }
-				\set Staff.shortInstrumentName = \markup { Ln.2 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-			\context Staff = "line_3" {
-				\set Staff.instrumentName = \markup { Line 3 }
-				\set Staff.shortInstrumentName = \markup { Ln.3 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-			\context Staff = "harmony_1" {
-				\set Staff.instrumentName = \markup { Harmony 1 }
-				\set Staff.shortInstrumentName = \markup { Har.1 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-			\context Staff = "harmony_2" {
-				\clef "bass"
-				\set Staff.instrumentName = \markup { Harmony 2 }
-				\set Staff.shortInstrumentName = \markup { Har.2 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-			\context Staff = "harmony_3" {
-				\clef "bass"
-				\set Staff.instrumentName = \markup { Harmony 3 }
-				\set Staff.shortInstrumentName = \markup { Har.3 }
-				\tempo 4=120
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				\numericTimeSignature
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 24/8
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					s1 * 3
-					\bar "||"
-				}
-				\once \override Staff.TimeSignature.stencil = ##f
-				\context Staff {#(set-accidental-style 'modern)}
-				s4.
-				r4 -\fermata
-				s4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				{
-					\time 4/4
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-				{
-					s1 * 1
-				}
-			}
-		>>
-		\context RhythmicStaff = "dummy" {
-			\set Staff.instrumentName = \markup { . }
-			\set Staff.shortInstrumentName = \markup { . }
-			\tempo 4=120
-			\context Staff {#(set-accidental-style 'modern)}
-			\numericTimeSignature
-			{
-				\time 8/8
-				s1 * 1
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
 				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				R1
+				R1
+				R1
 				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
 				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
 				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
+				\context Staff {#(set-accidental-style 'modern)}
+				R1
+				R1
+				R1
 				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
+				\context Staff {#(set-accidental-style 'modern)}
 				\time 24/8
-				s1 * 3
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				r4.
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4.
+				r4
+				r4
+				\bar ";"
+				r4
+				r4
+				r4.
 			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 3
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 3
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 3
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				\time 8/8
-				s1 * 1
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-		}
+		>>
 	>>
 }
