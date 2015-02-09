@@ -90,6 +90,18 @@ music.exec_method("transpose_pitch_material", material="ref", transpose=-4,
 
 # ----------------------------------------------------------
 # INTRO
+
+# FREE INTRO
+music.arrange_music(part_names=["flute1","flute2"],
+    rhythms = get_music_container(["s8", box_music(
+        "s8 r4\\fermata c''1\\pp\\<( b''2.\\> d''2\\!) r4 s8", continue_lengths=[(1,1)]*2),]),
+    )
+music.attach_markup(part_names=["flute1","flute2"],
+    apply_flags=["intro_free_1"],
+    markup_texts=["wait for taiko strike, then repeat 2 or 3 times, slowing down"],
+    indices=[[1]])
+
+
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
             apply_flags=["intro_free_1","intro_free_2","intro_free_4"], rhythms=["c4_don-> s1 r1\\fermata s1"],
@@ -298,27 +310,27 @@ music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day
 
 iters=(
     0,1, # intro free
-    2,3,
-    4,5, # intro regular
-    6,7,
-    8,9, # night melody
-    10,11,
-    12,13,
-    14, 15, 16, # day melody
-    17,18, # evening...
-    19, 20, # dusk
-    21, 22, 
-    23,24, # dark melody
-    25,26,
-    27,28,
-    29,30,31,
-    32,33,34,35,36, # this is the solo...
-    37,38,
-    39,40,
-    41,42,
-    43,44,
-    45,46,
-    47,48
+    # 2,3,
+    # 4,5, # intro regular
+    # 6,7,
+    # 8,9, # night melody
+    # 10,11,
+    # 12,13,
+    # 14, 15, 16, # day melody
+    # 17,18, # evening...
+    # 19, 20, # dusk
+    # 21, 22, 
+    # 23,24, # dark melody
+    # 25,26,
+    # 27,28,
+    # 29,30,31,
+    # 32,33,34,35,36, # this is the solo...
+    # 37,38,
+    # 39,40,
+    # 41,42,
+    # 43,44,
+    # 45,46,
+    # 47,48
     )
 
 music.apply_transforms(iters=iters)

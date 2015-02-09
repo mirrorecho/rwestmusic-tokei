@@ -132,6 +132,7 @@ music.arrange_music(
             rhythms=["c4 "*12],
             apply_flags=["taiko_melody_1","taiko_melody_2"]
             )
+
 # --------------------------------------------------------------------------------------------
 # MELODY HELP
 music.arrange_music(part_names=["trombone1"], rhythm_material=["melody_1_help_a"], 
