@@ -149,11 +149,11 @@ class TokeiBubble(Bubble):
         self.material["brass_ranges_wide"] = [
             get_pitch_range("B4","C6"), #trumpet 1
             get_pitch_range("A4","A5"), #trumpet 2
-            get_pitch_range("F4","F5"), #horn 1
-            get_pitch_range("F4","F5"), #horn 3
-            get_pitch_range("G2","A3"), #horn 2
-            get_pitch_range("E2","E3"), #horn 4
-            get_pitch_range("E2","E3"), #trombone 1
+            get_pitch_range("G4","G5"), #horn 1
+            get_pitch_range("E4","E5"), #horn 3
+            get_pitch_range("A2","A3"), #horn 2
+            get_pitch_range("G2","G3"), #horn 4
+            get_pitch_range("G2","E3"), #trombone 1
             get_pitch_range("E2","E3"), #trombone 2
             get_pitch_range("D1","E2"), #tuba
             ]

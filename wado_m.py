@@ -590,11 +590,16 @@ class DayMusicEnd(DayMusic):
         self.arrange_music(part_names=part_names, rhythm_material=[["taiko_day_back_forth"]*2 + ["taiko_day_boom"]])
 
 
-class Conduct(WadoMaterial):
+class Conduct(MelodyBase):
     def add_taiko(self, part_names=["taiko1","taiko2"]):
-        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*8)
-
-
+        print("ARRANGING TAIKO CONDUCT")
+        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*2)
+    
+    def prepare_material(self):
+        self.material["rhythm"]["strings_conduct"]="""
+                        c4.\\p\\< ~ c4. ~ c4.\\mf        c4.^pizz r4. c4.--^arco
+                        r4.         c4.-- c4.^pizz       c4.      r4.   c4.^arco
+                        """
 
 class WadoFree(WadoMaterial, TokeiFree):
     def prepare_material(self):

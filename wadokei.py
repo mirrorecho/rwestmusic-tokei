@@ -220,17 +220,23 @@ music.arrange_music(part_names=["clarinet1","clarinet2","bassoon1","bassoon2"], 
                         continue_lengths=[(1,1)]*5)
                 ]), 
                 ],
-        apply_flags=["dusk_1","dusk_2","dusk_3","dusk_4"],
+        apply_flags=["dusk_1","dusk_2"],
         )
 
 # since the box instructions aren't working:
 music.attach_markup(part_names=["clarinet1","bassoon1","bassoon2"], markup_texts=[["repeat, slowing down"]], 
-    indices=[[1]], notes_only=[False], apply_flags=["evening_1_b","dusk_1","dusk_2","dusk_3","dusk_4"])
+    indices=[[1]], notes_only=[False], apply_flags=["evening_1_b","dusk_1","dusk_2"])
 
 
+music.arrange_music(part_material="all", rhythms=["s1 s1 s1 r1\\fermata s1 s1 s1"], apply_flags=["dusk_1","dusk_2"])
+# ----------------------------------------------------------
+# CONDUCT
+music.arrange_music(part_material="strings", 
+    pitch_material="yo",
+    rhythm_material=["strings_conduct"],
+    transpose=[0,0,0,0,12],
+    apply_flags=["conduct_1","conduct_2"])
 
-
-music.arrange_music(part_material="all", rhythms=["s1 s1 s1 r1\\fermata s1 s1 s1"], apply_flags=["dusk_1","dusk_2","dusk_3","dusk_4"])
 
 # ----------------------------------------------------------
 # SOLO
@@ -247,11 +253,10 @@ music.attach_markup(part_names=["timpani"],markup_texts=[["repeat (steady beat)"
 # add orch JI only if nothing else going on...
 music.exec_method("add_orch_ji", skip_flags=["free"])
 
-# FINALLY... RESTS
-music.arrange_music(rhythm_material=["bubble_rest"], part_names = wado.parts)
+
 
 # ----------------------------------------------------------
-# REFEREMCE
+# REFERENCE
 # intro is mostly B dis dis
 music.add_pitch_material("ref", [["C#3"]*4], apply_flags=["melody_1_a"]) # dis festival
 music.add_pitch_material("ref", [["F#3"]*4], apply_flags=["melody_1_b"]) # dis festival
@@ -293,25 +298,35 @@ music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day
 music.exec_method("add_taiko", part_names=["taiko2","taiko1"], apply_flags=["day_music_2"])
 music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["day_music_end"])
 # next up.... add
+music.exec_method("add_taiko", part_names=["taiko1","taiko2"], apply_flags=["conduct_1", "conduct_2"])
+
+
+# FINALLY... RESTS
+music.arrange_music(rhythm_material=["bubble_rest"], part_names = wado.parts)
+
+
 
 iters=(
-    # 0,1, # intro free
+    0,    #A  # intro free
+    1,
     # 2,3,
-    # 4,5, # intro regular
+    # 4,5,   #B # intro regular
     # 6,7,
-    # 8,9, # night melody
-    # 10,11,
+    # 8,9,   #C # night melody
+    # 10,11, #D 
     # 12,13,
-    # 14, 15, 16, # day melody
-    # 17,18, # evening...
-    # 19, 20, # dusk
-    # 21, 22, 
-    # 23,24, # dark melody
+    # 14,    #E # day melody
+    # 15, 
+    # 16, 
+    # 17,18, #F #evening...
+    # 19,20, #G #dusk
+    21,22, #H conduct
+    23,24, # dark melody
     # 25,26,
     # 27,28,
     # 29,30,31,
-    32,33, # this is the solo...
-    34,35,36,37, # intro again
+    # 32,33, # this is the solo...
+    # 34,35,36,37, # intro again
     # 37,38,
     # 39,40,
     # 41,42,

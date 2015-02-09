@@ -1,4 +1,4 @@
-% 2015-02-09 04:55
+% 2015-02-09 12:47
 
 \version "2.18.2"
 \language "english"
@@ -50,13 +50,78 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
-						s1
-						s1
-						r1 -\fermata
-						s1
-						s1
+						s8
+						\grace {
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+							\hideNotes
+							r16
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+						s8 ^ \markup { wait for taiko strike, then repeat 2 or 3 times, slowing down }
+						r4 -\fermata
+						c'1 \pp \< (
+						b'2. \mp \>
+						d'2 \p )
+						r4
+						\afterGrace
+						s8
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						c'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						b'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						d'2
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
 					}
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -64,11 +129,76 @@
 				\once \override Staff.TimeSignature.stencil = ##f
 				{
 					{
-						s1
-						s1
-						r1 -\fermata
-						s1
-						s1
+						s8
+						\grace {
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+							\hideNotes
+							r16
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+						s8 ^ \markup { sim. }
+						r4 -\fermata
+						e'1 \pp \< (
+						c'2. \mp \>
+						b'2 \p )
+						r4
+						\afterGrace
+						s8
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						e'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						c'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						b'2
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
 					}
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -141,26 +271,158 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
-						s1
-						s1
-						r1 -\fermata
-						s1
-						s1
+						s8
+						\grace {
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+							\hideNotes
+							r16
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+						s8 ^ \markup { wait for taiko strike, then repeat 2 or 3 times, slowing down }
+						r4 -\fermata
+						a'2 \pp \< (
+						fs'1 \mp )
+						r2
+						\afterGrace
+						s8
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						a'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						fs'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						a'2
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
 					}
+					s1 * 1/2
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
 				\once \override Staff.TimeSignature.stencil = ##f
 				{
 					{
-						s1
-						s1
-						r1 -\fermata
-						s1
-						s1
+						s8
+						\grace {
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+							\hideNotes
+							r16
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'()
+							\startStaff
+						}
+						s8 ^ \markup { sim. }
+						r4 -\fermata
+						g'2 \pp \< (
+						a'1 \mp )
+						r2
+						\afterGrace
+						s8
+						{
+							\hideNotes
+							r32
+							\unHideNotes
+							\stopStaff
+							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+							\startStaff
+						}
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						g'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						a'2
+						\unHideNotes
+						\hideNotes
+						r2
+						\unHideNotes
+						\grace {
+							\once \override Rest  #'stencil = #ly:text-interface::print
+							\once \override Rest.staff-position = #-2.2
+							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+							r16
+						}
+						\hideNotes
+						g'2
+						\unHideNotes
+						\stopStaff
+						\override Staff.StaffSymbol #'line-positions = #'()
+						\startStaff
 					}
+					s1 * 1/2
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -232,7 +494,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -240,6 +502,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -252,6 +516,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -323,7 +589,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -331,6 +597,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -343,6 +611,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -414,7 +684,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -422,6 +692,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -434,6 +706,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -505,7 +779,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -513,6 +787,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -525,6 +801,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -546,20 +824,6 @@
 				R4.
 				R4.
 				R4.
-				a''4. \pp ~ \<
-				a''4. ~
-				a''4. ~
-				a''4. ~
-				a''4. ~
-				a''4. \mp
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -574,12 +838,26 @@
 				R4.
 				R4.
 				R4.
-				b''4. \pp ~ \<
-				b''4. ~
-				b''4. ~
-				b''4. ~
-				b''4. ~
-				b''4. \mp
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -596,7 +874,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -604,6 +882,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -616,6 +896,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -637,20 +919,6 @@
 				R4.
 				R4.
 				R4.
-				d'4. \pp ~ \< (
-				d'4. ~
-				d'4.
-				e''4. ~
-				e''4. ~
-				e''4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -665,12 +933,26 @@
 				R4.
 				R4.
 				R4.
-				e'4. \pp ~ \< (
-				e'4. ~
-				e'4.
-				fs''4. ~
-				fs''4. ~
-				fs''4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -688,7 +970,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -696,6 +978,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -708,6 +992,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -780,7 +1066,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -788,6 +1074,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -800,6 +1088,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -873,7 +1163,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -881,6 +1171,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -893,6 +1185,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -914,20 +1208,6 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				d'4. \pp ~ \< (
-				d'4.
-				e'4. )
-				d'4. (
-				e'4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -942,12 +1222,26 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				e'4. \pp ~ \< (
-				e'4.
-				fs'4. )
-				e'4. (
-				fs'4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -964,7 +1258,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -972,6 +1266,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -984,6 +1280,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1005,20 +1303,6 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				f4. \pp ~ \< (
-				f4.
-				b4. )
-				b4. (
-				cs'4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -1033,12 +1317,26 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				g4. \pp ~ \< (
-				g4.
-				cs'4. )
-				cs'4. (
-				ds'4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -1055,7 +1353,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1063,6 +1361,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1075,6 +1375,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1096,20 +1398,6 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				a4. \pp ~ \< (
-				a4.
-				e'4. ~
-				e'4. ~
-				e'4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -1124,12 +1412,26 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				b4. \pp ~ \< (
-				b4.
-				fs'4. ~
-				fs'4. ~
-				fs'4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -1146,7 +1448,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1154,6 +1456,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1166,6 +1470,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1187,20 +1493,6 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				d4. \pp ~ \< (
-				d4.
-				b4. ~
-				b4. ~
-				b4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -1215,12 +1507,26 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				e4. \pp ~ \< (
-				e4.
-				cs'4. ~
-				cs'4. ~
-				cs'4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -1237,7 +1543,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1245,6 +1551,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1257,6 +1565,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1328,7 +1638,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1336,6 +1646,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1348,6 +1660,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1420,7 +1734,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1428,6 +1742,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1440,6 +1756,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1461,20 +1779,6 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				f,4. \pp ~ \< (
-				f,4.
-				g,4. ~
-				g,4. ~
-				g,4. \mp )
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
 				R4.
 				R4.
 				R4.
@@ -1489,12 +1793,26 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				g,4. \pp ~ \< (
-				g,4.
-				a,4. ~
-				a,4. ~
-				a,4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -1512,7 +1830,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1520,6 +1838,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1532,6 +1852,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1581,12 +1903,12 @@
 				R4.
 				R4.
 				R4.
-				r4.
-				g,4. \pp ~ \< (
-				g,4.
-				a,4. ~
-				a,4. ~
-				a,4. \mp )
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
+				R4.
 				R4.
 				R4.
 				R4.
@@ -1604,7 +1926,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1612,6 +1934,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1624,6 +1948,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1697,7 +2023,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1705,6 +2031,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1717,6 +2045,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1788,7 +2118,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1796,6 +2126,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1808,6 +2140,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1879,7 +2213,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -1887,6 +2221,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -1899,6 +2235,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -1971,88 +2309,15 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
-						s8
-						\grace {
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-							\hideNotes
-							r16
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'()
-							\startStaff
-						}
-						s8
-						a'4. \mf ^ \markup { repeat (steady beat) }
-						\afterGrace
-						s8
-						{
-							\hideNotes
-							r32
-							\unHideNotes
-							\stopStaff
-							\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
-							\startStaff
-						}
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						a'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						a'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						a'2
-						\unHideNotes
-						\hideNotes
-						r2
-						\unHideNotes
-						\grace {
-							\once \override Rest  #'stencil = #ly:text-interface::print
-							\once \override Rest.staff-position = #-2.2
-							\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
-							r16
-						}
-						\hideNotes
-						a'2
-						\unHideNotes
-						\stopStaff
-						\override Staff.StaffSymbol #'line-positions = #'()
-						\startStaff
+						s1
+						s1
+						r1 -\fermata
+						s1
+						s1
 					}
-					s1 * 1/4
+					s1 * 9/8
 					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2066,6 +2331,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2139,7 +2406,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2147,6 +2414,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2159,6 +2428,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2232,7 +2503,7 @@
 				\textLengthOn
 				\dynamicUp
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2240,6 +2511,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2252,6 +2525,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2325,15 +2600,14 @@
 				\textLengthOn
 				\dynamicUp
 				{
-					\time 40/8
+					\time 49/8
 					{
+						c4 -\accent \f _ \markup { don }
 						s1
-						c4. ^ \markup { solo taiko cadenza... }
-						s1
-						s1
+						r1 -\fermata
 						s1
 					}
-					s1 * 5/8
+					s1 * 23/8
 					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -2341,70 +2615,70 @@
 				\once \override Staff.TimeSignature.stencil = ##f
 				{
 					{
-						s1
+						c4 -\accent _ \markup { don }
 						s1
 						r1 -\fermata
 						s1
-						s1
 					}
+					s1 * 23/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				r4. _ \markup { tsu }
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r8 [ _ \markup { tsu }
+				r8
+				c8 ] _ \markup { don }
+				r8 [
+				r8
+				c8 ] _ \markup { do }
+				c4 _ \markup { do }
+				c8 _ \markup { ko }
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				r8 [ _ \markup { tsu }
+				r8
+				c8 ] _ \markup { don }
+				r8 [ _ \markup { tsu }
+				r8
+				c8 ] _ \markup { do }
+				c8 _ \markup { ka }
+				c8 _ \markup { ra }
+				c8 _ \markup { ka }
+				r4. _ \markup { tsu }
+				c4. _ \markup { don }
+				c4. _ \markup { don }
 			}
 			\context RhythmicStaff = "taiko2" {
 				\set Staff.instrumentName = \markup { Taiko 2 }
@@ -2420,56 +2694,46 @@
 				\textLengthOn
 				\dynamicUp
 				{
-					\time 40/8
+					\time 49/8
 					{
-						s1
+						c4 -\accent \f _ \markup { don }
 						s1
 						r1 -\fermata
 						s1
-						s1
 					}
+					s1 * 23/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
 				\once \override Staff.TimeSignature.stencil = ##f
 				{
 					{
-						s1
+						c4 -\accent _ \markup { don }
 						s1
 						r1 -\fermata
 						s1
-						s1
 					}
+					s1 * 23/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. _ \markup { don }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
+				c4. _ \markup { ka }
+				c4. _ \markup { don }
+				r4. _ \markup { tsu }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				R4.
@@ -2513,7 +2777,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2521,6 +2785,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2533,64 +2799,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				d'4. \pp ~ \<
-				d'4. ~
-				d'4. ~
-				d'4. ~
-				d'4. \mp
+				a''4. \p ~ \<
+				a''4. ~
+				a''4. \mf
+				a''4. ^ \markup { pizz }
 				r4.
-				d'4. \pp ~ \<
-				d'4. ~
-				d'4. ~
-				d'4. ~
-				d'4. ~
-				d'4. \mp
+				a''4. -\tenuto ^ \markup { arco }
+				r4.
+				a''4. -\tenuto
+				a''4. ^ \markup { pizz }
+				a''4.
+				r4.
+				a''4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				a''4. \p ~ \<
+				a''4. ~
+				a''4. \mf
+				a''4. ^ \markup { pizz }
+				r4.
+				a''4. -\tenuto ^ \markup { arco }
+				r4.
+				a''4. -\tenuto
+				a''4. ^ \markup { pizz }
+				a''4.
+				r4.
+				a''4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				fs''4. \p \< (
+				bf'4.
+				a''4.
+				a''4.
+				ef''4.
+				c''4.
+				c''4.
+				bf'4.
+				bf'4.
+				bf'4.
+				bf'4.
+				f'4.
+				g''4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				g''4.
+				g''4.
+				a'4.
 				cs''4.
-				ds''4.
-				fs''4. ~
-				fs''4. \mp )
-				r4.
-				b''4. \pp ~ \<
-				b''4. ~
-				b''4. ~
-				b''4. ~
-				b''4. ~
-				b''4. \mp
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				cs''4.
+				e'4.
+				g'4.
+				fs''4.
+				fs''4.
+				e''4.
+				cs''4.
+				d''4.
 			}
 			\context Staff = "violinII" {
 				\set Staff.instrumentName = \markup { Violin II }
@@ -2604,7 +2872,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2612,6 +2880,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2624,64 +2894,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				b4. \pp ~ \<
-				b4. ~
-				b4. ~
-				b4. ~
-				b4. \mp
-				r4.
-				b4. \pp ~ \<
-				b4. ~
-				b4. ~
-				b4. ~
-				b4. ~
-				b4. \mp
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
-				b'4. \p ~ \< (
-				b'4.
-				cs''4.
+				b'4. \p ~ \<
 				b'4. ~
-				b'4. \mp )
+				b'4. \mf
+				b'4. ^ \markup { pizz }
 				r4.
-				e''4. \pp ~ \< (
-				e''4. ~
-				e''4.
-				d'4. ~
-				d'4. ~
-				d'4. \mp )
+				b'4. -\tenuto ^ \markup { arco }
+				r4.
+				b'4. -\tenuto
+				b'4. ^ \markup { pizz }
+				b'4.
+				r4.
+				b'4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				b'4. \p ~ \<
+				b'4. ~
+				b'4. \mf
+				b'4. ^ \markup { pizz }
+				r4.
+				b'4. -\tenuto ^ \markup { arco }
+				r4.
+				b'4. -\tenuto
+				b'4. ^ \markup { pizz }
+				b'4.
+				r4.
+				b'4. ^ \markup { arco }
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c'4.
+				c'4.
+				cs'4.
+				cs'4.
+				ef'4.
+				ef'4.
+				a'4.
+				a'4.
+				a'4.
+				a'4.
+				f'4.
+				g'4.
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				g'4.
+				g'4.
+				a4.
+				b4.
+				e'4.
+				e'4.
+				ef'4.
+				cs'4.
+				e'4.
+				e'4.
+				e'4.
+				e'4.
 			}
 			\context Staff = "viola" {
 				\clef "alto"
@@ -2696,7 +2968,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2704,6 +2976,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2716,64 +2990,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
+				a'4. \p ~ \<
+				a'4. ~
+				a'4. \mf
+				a'4. ^ \markup { pizz }
 				r4.
-				e'4. \pp ~ \<
-				e'4. ~
-				e'4. ~
-				e'4. \mp
+				a'4. -\tenuto ^ \markup { arco }
 				r4.
+				a'4. -\tenuto
+				a'4. ^ \markup { pizz }
+				a'4.
 				r4.
-				e'4. \pp ~ \<
-				e'4. ~
-				e'4. ~
-				e'4. ~
-				e'4. \mp
+				a'4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				a'4. \p ~ \<
+				a'4. ~
+				a'4. \mf
+				a'4. ^ \markup { pizz }
+				r4.
+				a'4. -\tenuto ^ \markup { arco }
+				r4.
+				a'4. -\tenuto
+				a'4. ^ \markup { pizz }
+				a'4.
+				r4.
+				a'4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				e'4. \p \< (
-				cs'4. ~
+				bf4.
+				g4.
+				g4.
+				g4.
+				g4.
+				g4.
+				g'4.
+				g'4.
+				c'4.
+				g'4.
 				cs'4.
-				e'4. ~
-				e'4. \mp )
-				r4.
-				r4.
-				e'4. \pp ~ \< (
-				e'4.
-				d'4. )
-				e'4. (
-				d'4. \mp )
+				g'4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g4.
+				g4.
+				g4.
+				a4.
+				a4.
+				a4.
+				cs'4.
+				f4.
+				e4.
+				a4.
+				d'4.
+				d'4.
 			}
 			\context Staff = "cello" {
 				\clef "bass"
@@ -2788,7 +3064,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2796,6 +3072,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2808,64 +3086,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
+				a4. \p ~ \<
+				a4. ~
+				a4. \mf
+				a4. ^ \markup { pizz }
 				r4.
-				b4. \pp ~ \<
-				b4. ~
-				b4. ~
-				b4. \mp
+				a4. -\tenuto ^ \markup { arco }
 				r4.
+				a4. -\tenuto
+				a4. ^ \markup { pizz }
+				a4.
 				r4.
-				b4. \pp ~ \<
-				b4. ~
-				b4. ~
-				b4. ~
-				b4. \mp
+				a4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				a4. \p ~ \<
+				a4. ~
+				a4. \mf
+				a4. ^ \markup { pizz }
+				r4.
+				a4. -\tenuto ^ \markup { arco }
+				r4.
+				a4. -\tenuto
+				a4. ^ \markup { pizz }
+				a4.
+				r4.
+				a4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				d'4. \p \< (
-				b4. ~
-				b4.
-				d'4. ~
-				d'4. \mp )
-				r4.
-				r4.
-				b4. \pp ~ \< (
-				b4.
-				g4. )
-				cs'4. (
-				a4. \mp )
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				c4.
+				g,4.
+				g,4.
+				ef4.
+				cs4.
+				cs4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g,4.
+				g,4.
+				g,4.
+				a,4.
+				a,4.
+				a,4.
+				g,4.
+				g,4.
+				g,4.
+				cs4.
+				cs4.
+				cs4.
 			}
 			\context Staff = "bass" {
 				\clef "bass"
@@ -2880,7 +3160,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2888,6 +3168,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2900,64 +3182,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g4. \p ~ \<
+				g4. ~
+				g4. \mf
+				g4. ^ \markup { pizz }
+				r4.
+				g4. -\tenuto ^ \markup { arco }
+				r4.
+				g4. -\tenuto
+				g4. ^ \markup { pizz }
+				g4.
+				r4.
+				g4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g4. \p ~ \<
+				g4. ~
+				g4. \mf
+				g4. ^ \markup { pizz }
+				r4.
+				g4. -\tenuto ^ \markup { arco }
+				r4.
+				g4. -\tenuto
+				g4. ^ \markup { pizz }
+				g4.
+				r4.
+				g4. ^ \markup { arco }
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				ef4.
+				c4.
+				c4.
+				c4.
+				f4.
+				cs4.
+				cs4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g,4.
+				g,4.
+				g,4.
+				g,4.
+				g,4.
+				g,4.
+				a,4.
+				a,4.
+				a,4.
+				cs4.
+				cs4.
+				cs4.
 			}
 		>>
 		\context StaffGroup = "ref" <<
@@ -2973,7 +3257,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -2981,6 +3265,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -2993,6 +3279,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3064,7 +3352,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -3072,6 +3360,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3084,6 +3374,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3155,7 +3447,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -3163,6 +3455,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3175,6 +3469,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3246,7 +3542,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -3254,6 +3550,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3266,6 +3564,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3338,7 +3638,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -3346,6 +3646,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3358,6 +3660,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
@@ -3430,7 +3734,7 @@
 				                            ) 0.1 0.4 0.4 0.1 ))
 				\numericTimeSignature
 				{
-					\time 40/8
+					\time 49/8
 					{
 						s1
 						s1
@@ -3438,6 +3742,8 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar ";"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'forget)}
@@ -3450,64 +3756,66 @@
 						s1
 						s1
 					}
+					s1 * 9/8
+					\bar "||"
 				}
 				\context Staff {#(set-accidental-style 'modern)}
 				\context Staff {#(set-accidental-style 'modern)}
 				\time 9/8
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				g,4. ~
+				g,4. ~
+				g,4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				a,4. ~
+				a,4. ~
+				a,4.
+				g,4. ~
+				g,4. ~
+				g,4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				c4. ~
+				c4. ~
+				c4.
+				c4. ~
+				c4. ~
+				c4.
+				c4. ~
+				c4. ~
+				c4.
+				c4. ~
+				c4. ~
+				c4.
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
-				R4.
+				g4. ~
+				g4. ~
+				g4.
+				g4. ~
+				g4. ~
+				g4.
+				g4. ~
+				g4. ~
+				g4.
+				g4. ~
+				g4. ~
+				g4.
 			}
 		>>
 	>>
