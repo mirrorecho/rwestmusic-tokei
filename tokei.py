@@ -14,9 +14,9 @@ JI_PITCH = get_pitch_number("A5")
 class TokeiBubble(Bubble):
 
     #  use **args here?
-    def __init__(self, title="Tokei for Taiko and Orchestra", layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False, div_strings=False, tempo = ((1, 4), 120)):
+    def __init__(self, title="Tokei for Taiko and Orchestra", layout="orchestra", name="full-score", measures_durations=[(4,4)]*3, odd_meters=False, div_strings=False, tempo = ((1, 4), 120), rehearsal_mark=None):
 
-        super().__init__(title=title, name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters, tempo=tempo)
+        super().__init__(title=title, name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters, tempo=tempo, rehearsal_mark=rehearsal_mark)
 
         self.add_staff_group(name="winds", part_names=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"])
         self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
@@ -76,13 +76,13 @@ class TokeiBubble(Bubble):
             self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"), clef="bass")
             self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"), clef="bass")
 
-        # self.add_staff_group(name="ref", part_names=["line_1","line_2","line_3","harmony_1","harmony_2","harmony_3"])
-        # self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        # self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
-        # self.add_part(name='line_3', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 3", short_instrument_name="ln.3"))
-        # self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
-        # self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
-        # self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
+        self.add_staff_group(name="ref", part_names=["line_1","line_2","line_3","harmony_1","harmony_2","harmony_3"])
+        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
+        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        self.add_part(name='line_3', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 3", short_instrument_name="ln.3"))
+        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
+        self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
         # self.add_perc_part(name='dummy', instrument=instrumenttools.UntunedPercussion(instrument_name=".", short_instrument_name="."))
 
@@ -255,9 +255,10 @@ class TokeiBubble(Bubble):
 # TO DO... move this to calliope for general use!
 class TokeiFree(TokeiBubble):
     def __init__(self, title="Tokei for Taiko and Orchestra", name="full-score-free", layout="orchestra", measures_durations=[(24,8)], 
-        show_x_time=True, div_strings=False, tempo = ((1, 4), 120)):
+        show_x_time=True, div_strings=False, tempo = ((1, 4), 120), rehearsal_mark=None):
 
-        super().__init__(name=name, title=title, measures_durations=measures_durations, odd_meters=False, div_strings=div_strings, tempo=tempo)
+        super().__init__(name=name, title=title, measures_durations=measures_durations, odd_meters=False, 
+            div_strings=div_strings, tempo=tempo, rehearsal_mark=rehearsal_mark)
 
         self.free = True
         self.show_x_time = show_x_time

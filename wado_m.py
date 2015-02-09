@@ -60,19 +60,23 @@ class WadoMaterial(TokeiBubble):
     def __init__(self, 
         measures_durations=[(9,8)]*4,
         rest_measures = "R4. R4. R4. "*4,
+        rehearsal_mark=None
         ):
 
-        super().__init__(layout="orchestra", name="wadokei-material", measures_durations=measures_durations)
+        super().__init__(layout="orchestra", name="wadokei-material", 
+            measures_durations=measures_durations, tempo=((3, 8), 108), rehearsal_mark=None)
 
-        self.material["rhythm"]["rest"] = "R4. R4. R4."
-        self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4."
+        self.material["rhythm"]["rest"] = "R4. R4. R4. "
+        self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4. "
 
-        self.material["rhythm"]['taiko_lead_in']="r4._tsu          c4._don          c4._don"
-        self.material["rhythm"]['taiko_down_beat']="c4._don    r4.                   r4."
+        self.material["rhythm"]["bubble_rest"] = "R4. R4. R4. "*4
+
+        self.material["rhythm"]['taiko_lead_in']="r4._tsu          c4._don          c4._don "
+        self.material["rhythm"]['taiko_down_beat']="c4._don    r4.                   r4. "
         self.material["rhythm"]['taiko_up_ka']="r8_tsu[ r c8_don]         r8_tsu[ r c8_do]         c8_ka    c8_ra   c8_ka"
         self.material["rhythm"]['taiko_up_groove']="r8_tsu[ r c8_don]         r8[ r c8_do]          c4_do           c8_ko"
         
-        self.material["rhythm"]['taiko_split_don']="c4_do  c8_don r8[ r8 c8_don] r8[ r8 c8_do]"
+        self.material["rhythm"]['taiko_split_don']="c4_do  c8_don r8[ r8 c8_don] r8[ r8 c8_do] "
         self.material["rhythm"]['taiko_split_ka']="c4_ka c8_don r8[ r8 c8_don] r8[ r8 c8_don] "
 
         # this is a 2-measure phrase...
@@ -188,6 +192,9 @@ class WadoMaterial(TokeiBubble):
 
         self.make_yo()
 
+    def prepare_material(self):
+        pass
+
     def reverse_yo(self):
         return [
             [  r[len(r)-p-1] for p in range(len(r))] for r in self.material["pitch"]["yo"]
@@ -221,8 +228,8 @@ class WadoMaterial(TokeiBubble):
 
 
 class Intro(WadoMaterial):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
 
         # the intro is pretty much all in B-ish (dis)
         self.material["pitch"]["ref"] = [["B2","B2","B2","B2"]]
@@ -324,8 +331,8 @@ class Intro(WadoMaterial):
 
 
 class Intro2(Intro):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
 
         self.material["cresc_a_parts"] += ["trombone1", "trombone2"]
         self.material["cresc_b_parts"] += ["trombone2"]
@@ -372,8 +379,8 @@ class Intro2(Intro):
 
 
 class MelodyBase(WadoMaterial):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["part"]["strings"] = ["violinI","violinII","viola","cello","bass"]
         self.material["rhythm"]["strings_move"]=["c4. "*12]
 
@@ -453,8 +460,8 @@ class MelodyBase(WadoMaterial):
 
 
 class MelodyA(MelodyBase):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["rhythm"]["winds_rh1"]=[""] # what am I using this for?
         self.material["rhythm"]["winds_rh2"]=["c4. "*12] # and this?
 
@@ -467,8 +474,8 @@ class MelodyA(MelodyBase):
                 ]
 
 class MelodyB(MelodyA):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
 
         self.material["pitch"]["yo"] = [
                 ["F#5","D#5","D#5",   "F#5","F#5","F#5",   "F#5","C#5","F#5",   "D#5","D#5","D#5",],
@@ -480,8 +487,8 @@ class MelodyB(MelodyA):
 
 
 class MelodySwingA(MelodyA):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["rhythm"]["strings_move"]=["c4-.-> c8-- ~ c4  c8-- ~ c4 c8---. "*4]
         self.material["pitch"]["yo"] = [
                 ["F#5","F6" ,"F6" ,   "B5" ,"G#5","G#5",   "F#5","F#5","F#5",   "F#5","C#5","D#6",],
@@ -496,8 +503,8 @@ class MelodySwingA(MelodyA):
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -1)
 
 class MelodySwingB(MelodyB):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["rhythm"]["strings_move"]=["c4-- c8-. "*12]
 
         self.material["pitch"]["yo"] = [
@@ -514,10 +521,12 @@ class MelodySwingB(MelodyB):
 
 
 class DayMusic(WadoMaterial):
-    def __init__(self):
-        super().__init__(measures_durations=[(6,8)]*12)
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(measures_durations=[(6,8)]*12, rehearsal_mark=rehearsal_mark)
         self.material["rhythm"]["ref"] = "c4. ~ c4. " * 12
         self.material["pitch"]["ref"] = [["A2"]*4]
+
+        self.material["rhythm"]["bubble_rest"] = "R4. R4. "*12
 
         self.material["rhythm"]["day_yo"]=["""
                         c4.->(\\mf c4.)      c4.(\\< c4.     c4.)->\\f r4.    r4. c4.--\\mf     
@@ -588,6 +597,9 @@ class Conduct(WadoMaterial):
 
 
 class WadoFree(WadoMaterial, TokeiFree):
+    def prepare_material(self):
+        self.material["rhythm"]["bubble_rest"]="s1 s1 r1\\fermata s1 s1"
+
     def add_orch_ji(self):
         pass
 
@@ -609,71 +621,71 @@ class Evening(WadoFree):
         ]
 
 class Dusk1(WadoFree):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         m = MelodySwingB()
         m.yo3()
         self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["B3"]*4]
 
 class Dusk2(WadoFree):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         m = MelodySwingA()
         m.yo3()
         self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["A3"]*4]
 class Dusk3(WadoFree):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         m = MelodySwingB()
         self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["G3"]*4]
 class Dusk4(WadoFree):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         m = MelodySwingA()
         self.material["pitch"]["yo"] = [remove_pitch_repetitions(r) for r in transpose_pitches(m.reverse_yo(), -8)]
         self.material["pitch"]["ref"] = [["C3"]*4]
 
 class DarkMelodyA(MelodySwingA):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
         self.material["pitch"]["ref"] = [["C3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyB(MelodySwingB):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -8)
         self.material["pitch"]["ref"] = [["G3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyC(MelodyA):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["A3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyD(MelodyB):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -4)
         self.material["pitch"]["ref"] = [["D3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyE(MelodyA):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["G3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better
 
 class DarkMelodyF(MelodyB):
-    def __init__(self):
-        super().__init__()
+    def __init__(self, rehearsal_mark=None):
+        super().__init__(rehearsal_mark=rehearsal_mark)
         self.material["pitch"]["yo"] = transpose_pitches(self.material["pitch"]["yo"], -6)
         self.material["pitch"]["ref"] = [["C3"]*4]
         self.material["rhythm"]["strings_move"]=["c4. "*12] # TO DO.... make this better

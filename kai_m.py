@@ -180,9 +180,10 @@ class KaiMaterial(TokeiBubble):
                 measures_durations=[(4,4)]*8, 
                 rest_measures="R1 "*8,
                 is_previous_instance = False,
+                rehearsal_mark = None
                 ):
 
-        super().__init__(name="kairos-material", title="Kairos", measures_durations=measures_durations)
+        super().__init__(name="kairos-material", title="Kairos", measures_durations=measures_durations, rehearsal_mark=rehearsal_mark)
 
         # self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 

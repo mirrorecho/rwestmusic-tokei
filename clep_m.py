@@ -283,10 +283,10 @@ class StreamHint2(Stream):
 #         self.durations = "c8( c4) c( c4) c8( c4.) c4-- c4-- c4-- c4.-- c4.-- r4"
 
 class ClepsydraMaterial(TokeiBubble):
-    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", div_strings=True):
+    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", div_strings=True, rehearsal_mark=None):
 
         super().__init__(name="clepsydra-material", title="Clepsydra", measures_durations=measures_durations, 
-            layout=layout, div_strings=True, tempo=((1, 4), 116))
+            layout=layout, div_strings=True, tempo=((1, 4), 116), rehearsal_mark=rehearsal_mark)
  
         del self.parts["odaiko"]
 

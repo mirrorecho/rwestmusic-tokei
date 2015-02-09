@@ -291,35 +291,36 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 
 make_iters=(
-    0,1,2,
-    3,4,
-    5,6,
+    0, # MA
+    # 1,2, #A
+    # 3,4,
+    # 5,6, #B
     # 7,8,
-    # 9,10,
+    # 9,10, #C
     # 11,12,
-    # 13,14,
+    # 13,14, #D
     # 15,16,
-    # 17,18,
-    # 18,20,
-    # 21,22,
+    # 17,18, #E
+    # 19,20,
+    # 21,22, #F
     # 23,24,
-    # 25,26,
+    # 25,26, #G
     # 27,28,
-    # 29,30,
+    # 29,30, #H
     # 31,32,
-    # 33,34,
+    # 33,34, #I
     # 35,36,
-    # 37,38,
-    # 39,40,
-    # 41,42,
-    # 43,44,
-    # 45,46,
-    # 47,48,49
+    37,38, #J
+    39,40,
+    41,42, #K
+    43,44,
+    45,46, #L
+    47,48,49
     )
 
 music.apply_transforms(iters=make_iters)
 bubble = music.make_bubble(iters=make_iters)
-# bubble.make_pdf()
+bubble.make_pdf()
 
-bubble.make_parts(part_names=["flute1","clarinet1","horn1"], work_name="caesium")
+# bubble.make_parts(part_names=["flute1","clarinet1","horn1"], work_name="caesium")
 

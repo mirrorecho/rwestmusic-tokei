@@ -274,9 +274,10 @@ class ForceCloudStringsMelodyDown(ForceCloudStringsMelody):
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
 class CaesiumMaterial(TokeiBubble):
-    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", odd_meters=False):
+    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", odd_meters=False, rehearsal_mark=None):
 
-        super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, odd_meters=odd_meters, div_strings=True)
+        super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, 
+            odd_meters=odd_meters, div_strings=True, rehearsal_mark=rehearsal_mark, tempo=((1, 4), 160),)
         #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
 
         del self.parts["crotales"]
@@ -333,6 +334,7 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
 
+        self.material["rhythm"]["holds"] = ["c1  |   c1  |   c1  "]
 
         self.force_start() # do we always need to run this??
 
@@ -415,8 +417,8 @@ class CaesiumMaterial(TokeiBubble):
 
 
 class CaesiumMaterialOdd(CaesiumMaterial):
-    def __init__(self, measures_durations=[(10,8), (7,8), (7,8)]):
-        super().__init__(measures_durations=measures_durations, odd_meters=True)
+    def __init__(self, measures_durations=[(10,8), (7,8), (7,8)], rehearsal_mark=None):
+        super().__init__(measures_durations=measures_durations, odd_meters=True, rehearsal_mark=rehearsal_mark)
 
         rest_1 = "r4. r4. r4 r4  | "
         rest_2 = "r4. r4 r4 | "
@@ -439,14 +441,18 @@ class CaesiumMaterialOdd(CaesiumMaterial):
                     c4.:32 ~ c4:32 ~ c4:32 ~ |
                     c4:32 ~ c4:32 ~ c4.:32"""
 
+        self.material["rhythm"]["holds"] = """c4. ~ c4. ~ c4 ~ c4  |  
+                    c4. ~ c4 ~ c4  |  c4 ~ c4 ~ c4. """
+
+
         for r_name, m in self.material["rhythm"].items():
             if isinstance(m,str):
                 self.material["rhythm"][r_name] = m.replace("|", " \\bar \";\" ")
 
 
 class CaesiumMa(CaesiumMaterial):
-    def __init__(self):    
-        super().__init__(measures_durations=[(8,8)])
+    def __init__(self, rehearsal_mark=None):    
+        super().__init__(measures_durations=[(8,8)], rehearsal_mark=rehearsal_mark)
 
     def arrange_ma(self):
         special_parts=["perc1", "dummy"]
