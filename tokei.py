@@ -235,6 +235,8 @@ class TokeiBubble(Bubble):
 
         self.material["part"]["all"] = self.parts
 
+        self.material["rhythm"]["otoshi"] = "c4^otoshi \\p\\< r4 c4 r8 c4 c4 c8 c8 c16 c16 c1:32\\mf\\> c16 c16 c8 c8 c4 c4 r8 c4 r4 c4\\mp "
+
     def add_cloud_pitches(self, cloud_type, cloud_name, material_name):
         cloud = cloud_type(name=cloud_name)
         self.material["pitch"][material_name] = cloud.cloud_pitches()

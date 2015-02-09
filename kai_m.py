@@ -183,7 +183,8 @@ class KaiMaterial(TokeiBubble):
                 rehearsal_mark = None
                 ):
 
-        super().__init__(name="kairos-material", title="Kairos", measures_durations=measures_durations, rehearsal_mark=rehearsal_mark)
+        super().__init__(name="kairos-material", title="Kairos", measures_durations=measures_durations, 
+            rehearsal_mark=rehearsal_mark, tempo=((1, 4), 88))
 
         # self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
@@ -353,6 +354,17 @@ class KaiJi(KaiMaterial):
 #--------------------------------------------------------------------------------------------
 #--------------------------------------------------------------------------------------------
 
+class KaiOtoshi(KaiFree):
+    def kai_material(self):
+        super().kai_material()
+        self.material["holds_parts"] = ["violinI_1"]
+
+    def kai_holds(self):
+        super().kai_holds()
+        self.attach_dynamics(part_names=self.material["holds_parts"], dynamics=[["pp"]])
+        self.attach_markup(part_names=self.material["holds_parts"], 
+            markup_texts=[["hold until D"]])
+
 
 class Kai1(KaiMelody, KaiFree):
     def kai_material(self):
@@ -372,10 +384,6 @@ class Kai1(KaiMelody, KaiFree):
                 rhythms= [self.material["rhythm"]["taiko"] + "s1 "*4]
                 )
         self.done = True # YAY!
-
-    def kai_holds(self):
-        super().kai_holds()
-        self.attach_dynamics(part_names=self.material["holds_parts"], dynamics=[["pp"]])
 
     def kai_cloud(self):
         self.kai_arrange_material("cloud", 
@@ -419,7 +427,7 @@ class Kai2(KaiMelody, KaiFree):
         self.material["kairos_a_parts"] = ["trumpet1"]
         self.material["kairos_b_parts"] = ["viola_1"]
         self.material["cloud_parts"]=["flute1","flute2","violinI_2","violinI_3","violinI_4","violinI_5",
-                    "violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola_3"]
+                    "violinII_1","violinII_2","violinII_3","violinII_4","violinII_5","viola_2","viola_3"]
         self.material["cloud_lower_parts"]=["cello_1","cello_2","cello_3","cello_4",]
         self.material["low_parts"] = ["bass"]
         self.done = True # YAY!
@@ -480,7 +488,7 @@ class Kai2Ji(KaiJi):
                 fundamental_material="low",
                 rhythm_material=[["soft_2bar_swell"]*2 + ["bar_rest"]*4],
                 harmonics=[10,6,8],
-                transpose=[12],
+                # transpose=[12],
                 respell=["sharps"])
         # TO DO... this transpose is in theory not allowed (may not sound as I want?) ...rearrange?
         self.arrange_harmonics( 
@@ -488,7 +496,7 @@ class Kai2Ji(KaiJi):
                 fundamentals=[self.material["pitch"]["kairos_a"][0][2]],
                 rhythm_material=[["bar_rest"]+["soft_2bar_swell"]*2 + ["bar_rest"]*3],
                 harmonics=[9,5,4],
-                transpose=[-36],
+                transpose=[-48,-36,-36],
                 respell=["sharps"])
 
 
@@ -521,7 +529,7 @@ class Kai3(KaiMelody):
                 fundamental_material="low",
                 rhythm_material=[["soft_2bar_swell"]*2 + ["bar_rest"]*4],
                 harmonics=[10,6,8],
-                transpose=[12],
+                # transpose=[12],
                 respell=["sharps"])
         # TO DO... this transpose is in theory not allowed (may not sound as I want?) ...rearrange?
         self.arrange_harmonics( 
@@ -529,7 +537,7 @@ class Kai3(KaiMelody):
                 fundamentals=[self.material["pitch"]["kairos_a"][0][2]],
                 rhythm_material=[["bar_rest"]+["soft_2bar_swell"]*2 + ["bar_rest"]*3],
                 harmonics=[9,5,4],
-                transpose=[-36],
+                transpose=[-24,-12,-12],
                 respell=["sharps"])
 
 

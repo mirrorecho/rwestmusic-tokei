@@ -334,7 +334,9 @@ class CaesiumMaterial(TokeiBubble):
 
         self.material["pitch"]["dummy_cloud"] = ["x8^\"[CLOUD]\""] + ["x "]*23
 
-        self.material["rhythm"]["holds"] = ["c1  |   c1  |   c1  "]
+        self.material["rhythm"]["holds"] = "c1->  |   c1->  |   c1->  "
+
+        self.material["pitch"]["lowest_strings"]=[["C2"]]
 
         self.force_start() # do we always need to run this??
 
@@ -441,8 +443,8 @@ class CaesiumMaterialOdd(CaesiumMaterial):
                     c4.:32 ~ c4:32 ~ c4:32 ~ |
                     c4:32 ~ c4:32 ~ c4.:32"""
 
-        self.material["rhythm"]["holds"] = """c4. ~ c4. ~ c4 ~ c4  |  
-                    c4. ~ c4 ~ c4  |  c4 ~ c4 ~ c4. """
+        self.material["rhythm"]["holds"] = """c4.-> ~ c4. ~ c4 ~ c4  |  
+                    c4.-> ~ c4 ~ c4  |  c4-> ~ c4 ~ c4. """
 
 
         for r_name, m in self.material["rhythm"].items():

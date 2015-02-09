@@ -17,7 +17,7 @@ def get_cycle_music():
     # ------------------------------------
     # B 5-8:
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody", "rolls"], rehearsal_mark="B")
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody", "lowest_strings"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
     music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
     # ------------------------------------
@@ -25,7 +25,7 @@ def get_cycle_music():
     music.add_cycle(flags=["ma"], bubble_type=CaesiumMa, rehearsal_mark="C") # MA !!!!!!!!!!!!!!
     music.add_cycle(flags=["string_nasty_3", "taiko_3"])
     music.add_cycle(flags=["string_nasty_2", "taiko_2","brass_hits"])
-    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody"])
+    music.add_cycle(bubble_type=CaesiumMaterialOdd, flags=["melody", "lowest_strings"])
     # # # -------------------------------------------------------------------
     # # D 13-16
     music.add_cycle(flags=["string_melody_cloud", "brass_hits"], rehearsal_mark="D")

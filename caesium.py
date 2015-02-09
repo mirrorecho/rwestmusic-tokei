@@ -160,10 +160,16 @@ music.arrange_music(part_names=brass_parts, apply_flags=["brass_hits"],
 music.attach_dynamics(part_names=brass_parts, dynamics=[["ff"]], apply_flags=["hits"])
 
 # --------------------------------------------------------------------------------------
-# LOW HITS:
+# LOW HITS / HOLDS:
 
 music.arrange_music(part_names=["tuba","trombone1", "trombone2","timpani"], apply_flags=["melody"], 
     rhythm_material=["smack","smack","smack","smack_perc"], pitch_material="low_stack")
+
+music.arrange_music(part_names=["cello_div1","cello_div2","bass_div1","bass_div2"],
+    rhythm_material=["holds"], pitch_material="lowest_strings", 
+    apply_flags=["lowest_strings"])
+music.attach_dynamics(part_names=["cello_div1","cello_div2","bass_div1","bass_div2"],
+    dynamics=[["f"]], apply_flags=["lowest_strings"]  )
 
 # --------------------------------------------------------------------------------------
 # CLEARER "MELODIES"
@@ -291,11 +297,11 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 
 make_iters=(
-    0, # MA
+    # 0, # MA
     # 1,2, #A
     # 3,4,
-    # 5,6, #B
-    # 7,8,
+    5,6, #B
+    7,8,
     # 9,10, #C
     # 11,12,
     # 13,14, #D
@@ -310,12 +316,12 @@ make_iters=(
     # 31,32,
     # 33,34, #I
     # 35,36,
-    37,38, #J
-    39,40,
-    41,42, #K
-    43,44,
-    45,46, #L
-    47,48,49
+    # 37,38, #J
+    # 39,40,
+    # 41,42, #K
+    # 43,44,
+    # 45,46, #L
+    # 47,48,49
     )
 
 music.apply_transforms(iters=make_iters)

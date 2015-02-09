@@ -15,19 +15,20 @@ kai = KaiMaterial()
 
 music = CycleLoop(bubble_type=KaiMaterial)
 
-music.add_cycle(bubble_type=Kai1, flags=["1_line"])
-music.add_cycle(bubble_type=Kai1Ji, flags=["1_ji"])
-music.add_cycle(bubble_type=Kai2, flags=["2_line"])
-music.add_cycle(bubble_type=Kai2Ji, flags=["2_ji"])
-music.add_cycle(bubble_type=Kai3, flags=["3_line"])
-music.add_cycle(bubble_type=Kai3Again, flags=["3_line_again"])
-music.add_cycle(bubble_type=Kai3Ji, flags=["3_ji"])
-music.add_cycle(bubble_type=Kai4, flags=["4_line"])
-music.add_cycle(bubble_type=Kai4Ji, flags=["4_ji"])
-music.add_cycle(bubble_type=Kai5, flags=["5_line"])
-music.add_cycle(bubble_type=Kai5Ji, flags=["5_ji"])
-music.add_cycle(bubble_type=Kai6, flags=["6_line"])
-music.add_cycle(bubble_type=Kai6All, flags=["6_all"])
+music.add_cycle(bubble_type=KaiOtoshi, flags=["1_otoshi"])
+music.add_cycle(bubble_type=Kai1, flags=["1_line"], rehearsal_mark="A")
+music.add_cycle(bubble_type=Kai1Ji, flags=["1_ji"], rehearsal_mark="B")
+music.add_cycle(bubble_type=Kai2, flags=["2_line"], rehearsal_mark="C")
+music.add_cycle(bubble_type=Kai2Ji, flags=["2_ji"], rehearsal_mark="D")
+music.add_cycle(bubble_type=Kai3, flags=["3_line"], rehearsal_mark="E")
+music.add_cycle(bubble_type=Kai3Again, flags=["3_line_again"], rehearsal_mark="F")
+music.add_cycle(bubble_type=Kai3Ji, flags=["3_ji"], rehearsal_mark="G")
+music.add_cycle(bubble_type=Kai4, flags=["4_line"], rehearsal_mark="H")
+music.add_cycle(bubble_type=Kai4Ji, flags=["4_ji"], rehearsal_mark="I")
+music.add_cycle(bubble_type=Kai5, flags=["5_line"], rehearsal_mark="J")
+music.add_cycle(bubble_type=Kai5Ji, flags=["5_ji"], rehearsal_mark="K")
+music.add_cycle(bubble_type=Kai6, flags=["6_line"], rehearsal_mark="L")
+music.add_cycle(bubble_type=Kai6All, flags=["6_all"], rehearsal_mark="M")
 
 # FUTURE TO DO? ... build something like this directly into cycle loop?
 class AddPreviousKai(TransformBase):
@@ -49,14 +50,14 @@ def add_strings(master_part_name, master_instrument_name, master_short_instrumen
             instrument_name=master_instrument_name+"."+j,
             short_instrument_name=master_short_instrument_name+"."+j,
             **kwargs)
-add_strings("violinI", "Violin I", "vln.I", 5, start_flag="1_line", stop_flag="3_ji", show_instrument_instruction=False) # show_instrument_instruction on just as an example
-add_strings("violinII", "Violin II", "vln.II", 5, start_flag="1_line", stop_flag="3_ji",)
+add_strings("violinI", "Violin I", "vln.I", 5, start_flag="1_otoshi", stop_flag="3_ji", show_instrument_instruction=False) # show_instrument_instruction on just as an example
+add_strings("violinII", "Violin II", "vln.II", 5, start_flag="1_otoshi", stop_flag="3_ji",)
 add_strings("viola", "Viola", "vla", 4, start_flag="1_ji", stop_flag="3_ji")
 add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji", clef="bass")
 # music.add_sub_part(part_name="crotales", instrument_type=instrumenttools.Flute, instrument_name="Crotales", short_instrument_name="cro.", master_part_name="perc1", start_flag="1_line", stop_flag="3_ji")
 
 
-music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_line", stop_flag="2_ji")
+music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_otoshi", stop_flag="2_ji")
 music.add_rhythm_material("rest", "R1 "*8, start_flag="2_ji")
 # ---------------------------------------------------------
 # KAIROS
@@ -225,14 +226,20 @@ music.exec_method("kai_low")
 # ---------------------------------------------------------
 # TAIKO ARRANGEMENTS
 
+# otoshi at the beginning (and end)?
+music.arrange_music(part_names=["odaiko"], rhythm_material=["otoshi"], apply_flags=["1_otoshi"])
+# music.attach_dynamics(part_names=["odaiko"], dynamics=[["mf"]], apply_flags=["1_otoshi"])
+
 music.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=["taiko1","taiko2"], 
-    skip_flags=["1_line"])
+    skip_flags=["1_line","1_otoshi"])
 
 music.arrange_music(part_names=["odaiko"], rhythm_material=["shape_perc"], start_flag="3_line_again", stop_flag="5_line")
 music.arrange_music(part_names=["odaiko"], rhythm_material=["constant"], start_flag="5_line")
 
+
 # ---------------------------------------------------------
 # SPECIAL ARRANGEMENTS
+
 
 # change instrument to tutti for the strings:
 music.exec_method("change_instrument", part_name="violinI", 
@@ -283,29 +290,30 @@ music.arrange_music(part_names=kai.parts, rhythm_material=["rest"])
 # music.attach(attachments=[[indicatortools.LilyPondCommand("break")]], part_names=kai.parts)
 
 make_flags=(
-    "1_line",
-    "1_ji",
-    "2_line",
-    "2_ji",
-    "3_line",
-    "3_line_again",
-    "3_ji",
-    "4_line",
-    "4_ji",
-    "5_line",
-    "5_ji",
-    # "6_line",
-    # "6_all",
+    "1_otoshi", 
+    "1_line", #A
+    "1_ji",   #B
+    "2_line", #C
+    "2_ji",   #D
+    "3_line", #E
+    "3_line_again", #F
+    # "3_ji",   #G
+    # "4_line", #H
+    # "4_ji",   #I
+    # "5_line", #J
+    # "5_ji",   #K
+    # "6_line", #L
+    # "6_all",  #M
     )
 
 music.apply_transforms(flags=make_flags)
 bubble = music.make_bubble(flags=make_flags)
-# bubble.make_pdf(
-#     hide_empty=True,
-#     # part_names=["violinI","violinI_1","violinI_2"],
-#     )
+bubble.make_pdf(
+    # hide_empty=True,
+    # part_names=["violinI","violinI_1","violinI_2"],
+    )
 
-bubble.make_parts(part_names=[
-    ("violinI_1","violinI_2", "violinI")], 
-    work_name="kairos")
+# bubble.make_parts(part_names=[
+#     ("violinI_1","violinI_2", "violinI")], 
+#     work_name="kairos")
 
