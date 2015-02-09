@@ -63,6 +63,23 @@ class WaterCloudBase(TokeiCloud):
     def next(self, times=1):
         self.start_pitch += (self.next_interval * times)
 
+class WaterCloud(WaterCloudBase):
+    def prepare_cloud(self):
+        self.add_ref_row()
+        self.add_ji_row()
+        self.duplicate_row(0)
+        self.duplicate_row(2)
+        self.duplicate_row(1)
+        self.duplicate_row(1)
+        self.add_ref_row()
+        self.add_ji_row()
+        self.duplicate_row(0)
+        self.duplicate_row(2)
+        self.duplicate_row(1)
+        self.duplicate_row(3)
+        self.add_ref_row()
+        self.add_ji_row()
+
 class WaterCloudWindsUp(WaterCloudBase):
     def prepare_cloud(self):
         self.duplicate_row(0)
@@ -308,17 +325,32 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["slide"] = "c1\\p\\< c4.( c8 ~ c2) c1\\mf"
 
+        self.material["rhythm"]["melody_1_help_a"] = "r4 r8 c8\\mp\\< ~ c4 ~ c8  c\\mf ~ | c8[ c] ~ c[ c] ~ c[ c-.] r4 | R1 "
+        self.material["rhythm"]["melody_1_help_stac"] = """
+                c8-.[\\p\\< c-.]   c-.[ c-.]   c-.[ c-.]   c-.[ c-.->]\\mf
+                r8[    c8-.]       c-.[ c-.]   c-.[ c-.]   c-.->[ c-.]
+                c8-.[\\p c-.]   c-.[ c-.]   c-.[ c-.]   c-.[ c-.]
+                """
+
         self.material["pitch"]["slide_ji"] = ["A5", "G#5", "A5", "A5",]
+
+
 
         self.prepare_material()
 
     def prepare_material(self):
         pass
 
-    def arrange_cloud(self, cloud_name, cloud_type=WaterCloudBase, *args, **kwargs):
+    def arrange_cloud(self, cloud_name=None, cloud_ref_name=None, 
+        cloud_type=WaterCloud, save=False,
+        *args, **kwargs):
+        if cloud_ref_name is not None:
+            cloud_name = cloud_ref_name + "-ref-" + str(get_pitch_number(self.material["pitch"]["ref"][0]))
         cloud = cloud_type(name=cloud_name, start_pitch=self.material["pitch"]["ref"][0])
+        if save:
+            cloud.cloud.save()
         self.arrange_music(
-                    pitches=cloud.cloud_pitches(),
+                    pitches=copy.deepcopy(cloud.cloud_pitches()),
                     *args,
                     **kwargs
                     )

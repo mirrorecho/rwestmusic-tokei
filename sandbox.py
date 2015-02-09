@@ -80,20 +80,83 @@ print("----------------------------------------------------")
 
 # t.show_pdf(hide_empty=True)
 
+measures_durations=[(10,8), (7,8), (7,8)]
 
-w = WadoMaterial()
-w.arrange_music(part_names=["violinI","violinII","viola","cello"],
-    rhythms=["c4 "*12],
-    pitch_material="yo",
-    pitch_rows=[[0,1],[1],[2],None,]
-    pitch_columns=[
-            [0,0,1,1,2,2,3,3],
-            [-1,-2,-3,-4],
-            None,
-            [0]
-            ]
-    )
-w.show_pdf(hide_empty=True)
+rtm1 = "(10/8  (3/8 3/8 2/8 2/8))"
+meter1 = metertools.Meter(rtm1)
+print(meter1.pretty_rtm_format)
+
+rtm2 = "(7/8  (3/8 2/8 2/8))"
+meter2 = metertools.Meter(rtm2)
+
+rtm3 = "(7/8  (2/8 2/8 3/8 ))"
+meter3 = metertools.Meter(rtm3)
+
+music = Container("%{10%} b2. b4 b4 \\bar \";\"  b4.\\p\\< ~ b4 ~ b4  \\bar \";\"  ~  b4 ~ b4 ~  b4.\\mf ")
+s=Staff()
+# s=Staff("abj: | 7/8 b2.  b8 | ")
+
+# # m = Measure(TimeSignature((10, 8)), 
+# # # print(m.pretty_rtm_format)
+# mutate(s[0][:]).rewrite_meter(s[0])
+# show(s)
+
+funny_dumbass_measure = Measure(((24,8)))
+funny_dumbass_measure.extend(music)
+s.extend(funny_dumbass_measure)
+show(s)
+
+# mutate(odd_measures[0][:]).rewrite_meter(meter1, boundary_depth=1)
+# mutate(odd_measures[1][:]).rewrite_meter(meter2, boundary_depth=1)
+# mutate(odd_measures[2][:]).rewrite_meter(meter3, boundary_depth=1)
+# print(format(s))
+# s.extend(odd_measures)
+# show(s)
+
+# s2 = Staff()
+
+# s2.extend(m1)
+# s2.extend(m2)
+# s2.extend(m3)
+
+# show(s2)
+
+# s = Staff()
+# s.extend(music)
+
+# parseable = "abj: | 8/4  c'2 ~ "
+# parseable += " c'32 d'2.. ~ d'16 e'32 ~ "
+# parseable += " e'2 |"
+# staff = Staff(parseable)
+
+# rtm = '(8/4 ((2/4 (1/4 1/4)) (2/4 (1/4 1/4))))'
+# meter = metertools.Meter(rtm)
+# mutate(staff[1][:]).rewrite_meter(meter)
+
+# show(staff)
+
+
+
+
+# odd_measures = mutate(funny_dumbass_measure).split(measures_durations)
+# odd_measures = mutate(s[:]).rewrite_meter(meter)
+# show(odd_measures)
+
+
+
+# w = WadoMaterial()
+# w.arrange_music(part_names=["violinI","violinII","viola","cello"],
+#     rhythms=["c4 "*12],
+#     pitch_material="yo",
+#     pitch_rows=[[0,1],[1],[2],None,]
+#     pitch_columns=[
+#             [0,0,1,1,2,2,3,3],
+#             [-1,-2,-3,-4],
+#             None,
+#             [0]
+#             ]
+#     )
+# w.show_pdf(hide_empty=True)
 
 # c = Container("fs'''1\\pp ~ d''1")
 # show(make_harmonics(

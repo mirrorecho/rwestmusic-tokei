@@ -18,10 +18,10 @@ def get_cycle_music():
     #------------------------------------
     music.add_cycle(flags=["stream_hint1", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"])
     music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
-    music.add_cycle(flags=["stream_cloud1", "stream_cloud_strings_staccato","cloud_swell3"])
-    music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell4"])
+    music.add_cycle(flags=["stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"])
+    music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
     # -------------------------------------------------------------------
-    music.add_cycle(flags=["taiko_melody_1","full_stream_1"])
+    music.add_cycle(flags=["taiko_melody_1","full_stream_1", "melody_start_1"])
     music.add_cycle(flags=["taiko_melody_2"])
     music.add_cycle(flags=["taiko_melody_1"])
     music.add_cycle(flags=["taiko_melody_2"])

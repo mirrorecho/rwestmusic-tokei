@@ -6,6 +6,10 @@ from clep_c import *
 
 from calliope.cycles.transform import *
 
+clep = ClepsydraMaterial()
+
+SAVE_CLOUDS = True
+
 # TO DO...
 # - add an echo of the main stream melody in the cloud
 
@@ -36,14 +40,12 @@ music.transforms.append(
     ModTransposePitch(
         "ref", 
         value = 0,
-        start_flag = "next_movin",
         apply_flags=["free"]
         ))
 music.transforms.append(
     ModTransposePitch(
         "next_ref", 
         value = 0,
-        start_flag = "next_movin",
         apply_flags=["free"]
         ))
 
@@ -130,7 +132,10 @@ music.arrange_music(
             rhythms=["c4 "*12],
             apply_flags=["taiko_melody_1","taiko_melody_2"]
             )
-
+# --------------------------------------------------------------------------------------------
+# MELODY HELP
+music.arrange_music(part_names=["trombone1"], rhythm_material=["melody_1_help_a"], 
+        pitch_material=["ji"], transpose=[-24], apply_flags=["taiko_melody_1"] )
 
 # --------------------------------------------------------------------------------------------
 # CLOUD  (harmonic sequence)
@@ -164,6 +169,7 @@ music.arrange_music(
             pitch_material=["ji", ["ref", "next_ref"]],
             rhythms=["c1\\p\\< ~ c1 ~ c1\\mf", "c1(\\p\\< ~ c1 c1)\\mf"],
             apply_flags=["winds_up","winds_down"],
+            apply_before_flags=["melody_start_1"],
             transpose=[-24]
             )
 
@@ -219,7 +225,20 @@ music.exec_method("arrange_cloud",
             apply_flags=["full_stream_1"]
             )
 
-# if all else fails, arrange the cloud in the low strings...
+# could arrange the cloud in winds in some melody spots
+# TO DO... 
+music.exec_method("arrange_cloud", cloud_ref_name = "winds-cloud",
+    part_names=["flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2"], 
+    respell=["sharps"],
+    rhythm_material=["melody_1_help_stac"],
+    pitch_range=clep.material["wind_ranges_mid"][1:7],
+    apply_flags=["taiko_melody_1"],
+    pitch_columns=[[0,1,2,3,4,5,6,7,    1,2,3,4,5,6,7,   0,1,2,3,4,5,6,7]],
+    save=SAVE_CLOUDS
+    )
+
+
+# could arrange the cloud in low strings
 music.arrange_music(
     part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",], 
     pitch_material="stream_cloud_mid", 
@@ -268,30 +287,31 @@ music.arrange_music(
         pitch_material=["ref"], 
         rhythm_material=[["measure_note"]*3],
         part_names = ["line_1"],
+        pitch_range_material="string_ranges_mid"
         )
 
 
 # FINAL BUBBLE STUFF:
 iters = (
-    0,1,
-    2,3,
-    4,5,
-    6,7,
-    8,9,
-    10,11,
-    12,13,
-    14,15,
-    16,17,
-    18,19,
-    20,21,
-    22,23,
-    24,25,
-    26,27,
-    28,29,
-    30,31,
-    32,33,
-    34,35,
-    36
+    # 0,1,
+    # 2,3,
+    # 4,5,
+    # 6,7,
+    # 8,9,
+    # 10,11,
+    12,13, # fist melody
+    # 14,15,
+    # 16,17, # first free
+    # 18,19,
+    # 20,21,
+    # 22,23,
+    # 24,25,
+    # 26,27,
+    # 28,29,
+    # 30,31,
+    # 32,33,
+    # 34,35,
+    # 36
     )
 
 music.apply_transforms(iters=iters)

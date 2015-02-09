@@ -175,7 +175,7 @@ class TokeiBubble(Bubble):
             get_pitch_range("F4","G5"), #oboe 2
             get_pitch_range("E4","F5"), #oboe 3
             get_pitch_range("A4","B5"), #clarinet 1
-            get_pitch_range("C3","D4"), #clarinet 2 (switch to bass?)  ... assume no
+            get_pitch_range("C4","D5"), #clarinet 2 (switch to bass?)  ... assume no
             get_pitch_range("D3","E4"), #bassoon 1
             get_pitch_range("G2","A3"), #bassoon 2
         ]
