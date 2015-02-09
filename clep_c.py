@@ -22,7 +22,7 @@ def get_cycle_music():
     music.add_cycle(flags=["stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
     # -------------------------------------------------------------------
     music.add_cycle(flags=["taiko_melody_1","full_stream_1", "melody_start_1"],rehearsal_mark="D")
-    music.add_cycle(flags=["taiko_melody_2"])
+    music.add_cycle(flags=["taiko_melody_2", "trom_stream"])
     music.add_cycle(flags=["taiko_melody_1"])
     music.add_cycle(flags=["taiko_melody_2"])
     # ------------------------------------
@@ -41,8 +41,8 @@ def get_cycle_music():
     music.add_cycle(bubble_type=ClepFree, flags=["free"])
     music.add_cycle()
     # ------------------------------------
-    music.add_cycle(flags=["taiko_melody_1"],rehearsal_mark="H") # make a variant of the melody?
-    music.add_cycle(flags=["taiko_melody_2"])
+    music.add_cycle(flags=["taiko_melody_1","full_stream_2",],rehearsal_mark="H") # make a variant of the melody?
+    music.add_cycle(flags=["taiko_melody_2", "trom_stream"])
     music.add_cycle(flags=["taiko_melody_1"])
     music.add_cycle(flags=["taiko_melody_2"])
     # ------------------------------------

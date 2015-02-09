@@ -361,14 +361,16 @@ class ClepsydraMaterial(TokeiBubble):
         self.material["pitch"][pitch_name + "_mid"] = cloud.mid_cloud
         self.material["pitch"][pitch_name + "_low"] = cloud.low_pitches
 
-    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None, transpose=[0], respell=[None]):
+    def arrange_stream(self, part_name, stream_type=Stream, pitch_offset=0, rhythm_offset=0, rhythm_end=None, transpose=[0], respell=[None], pitch_range=[None]):
         stream = stream_type(ref_pitch=self.material["pitch"]["ref"][0])
 
         self.arrange_music(
                     part_names=[part_name],
                     rhythms=[stream.rhythm(offset=rhythm_offset, rhythm_end=rhythm_end)],
                     pitches=[stream.pitches(offset=pitch_offset)],
-                    transpose=transpose
+                    transpose=transpose,
+                    pitch_range=pitch_range,
+                    respell=respell
                     )
 
     def add_stream_pitches(self):

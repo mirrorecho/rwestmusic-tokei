@@ -240,6 +240,17 @@ music.exec_method("arrange_cloud",
             rhythms=[["c8(\\mp\\< c c) c(  c) c(\\mf c c) " + "c---. "*8 + "c( c c) c(  c) c( c) c-- "]],
             apply_flags=["full_stream_1"]
             )
+# the real cloud in the strings
+music.exec_method("arrange_cloud",
+            part_names=string_parts[:-2],
+            cloud_type=WaterCloudStringsMelody,
+            cloud_name="clep-cloud-strings-melody-1-B",
+            respell=["sharps"],
+            transpose=[-2],
+            rhythms=[["c8(\\mp\\< c c) c(  c) c(\\mf c c) " + "c---. "*8 + "c( c c) c(  c) c( c) c-- "]],
+            apply_flags=["full_stream_2"]
+            )
+
 
 # could arrange the cloud in winds in some melody spots
 # TO DO... 
@@ -271,30 +282,45 @@ music.arrange_music(
 music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2"], 
     indeces=[[1]],
     notes_only=[False],
-    markup_texts=[["repeat randomly until start of next movement"]]
+    markup_texts=[["repeat randomly until start of next movement"]],
+    apply_flags=["slowing"]
     )
 
 
 
 # ---------------------------------------------------------------------------------------------
 # THE STREAM (MAIN MELODY)
-# TO DO... mute this trumpet
 music.exec_method("arrange_stream",
             part_name="trumpet1",
             apply_after_flags=["start_movin"],
             stream_type=StreamHint1,
             transpose=[-12]
             )
+music.attach_markup(part_names=["trumpet1"], apply_after_flags=["start_movin"],
+    markup_texts=[["straight mute", "mute out"]], indices=[[1,8]], notes_only=[False])
+
 music.exec_method("arrange_stream",
             part_name="trumpet2",
             apply_flags=["stream_hint1"],
             stream_type=StreamHint2,
             )
+music.attach_markup(part_names=["trumpet2"], apply_flags=["stream_hint1"],
+    markup_texts=[["straight mute", "mute out"]], indices=[[0,9]], notes_only=[False])
+music.attach_dynamics(part_names=["trumpet2"], apply_flags=["stream_hint1"],
+    dynamics=[["mp"]])
+
 music.exec_method("arrange_stream",
             part_name="flute1",
             apply_flags=["full_stream_1"],
             respell=["sharps"]
             )
+music.exec_method("arrange_stream",
+            part_name="trombone1",
+            apply_flags=["trom_stream"],
+            respell=["flats"],
+            pitch_range=[get_pitch_range("C3","F4")]
+            )
+
 
 # ---------------------------------------------------------------------------------------------
 # ENDING....
@@ -311,7 +337,7 @@ music.arrange_music(part_names=["clarinet2"],
             respell=["sharps"],
             apply_flags=["slowing"]
             )
-music.attach_markup(part_names=["clarinet2"], markup_texts=[["repeat slowing down"]])
+music.attach_markup(part_names=["clarinet2"], markup_texts=[["repeat slowing down"]], apply_flags=["slowing"])
 
 
 
@@ -352,27 +378,27 @@ music.arrange_music(
 
 # FINAL BUBBLE STUFF:
 iters = (
-    0,1, #A
-    2,3,
+    # 0,1, #A
+    # 2,3,
     4,5, #B
     6,7,
     8,9, #C
-    10,11,
-    12,13, # D: fist melody
-    14,15,
-    16,17, # E: first free
-    18,19,
-    20,21, #F: 2nd melody
-    22,23,
-    24,25, #G
-    26,27,
-    28,29, #H  3rd melody
-    30,
-    31,
-    32, #I
-    33, 
-    34,35,
-    36
+    # 10,11,
+    # 12,13, # D: fist melody
+    # 14,15,
+    # 16,17, # E: first free
+    # 18,19,
+    # 20,21, #F: 2nd melody
+    # 22,23,
+    # 24,25, #G
+    # 26,27,
+    # 28,29, #H  3rd melody
+    # 30,
+    # 31,
+    # 32, #I
+    # 33, 
+    # 34,35,
+    # 36
     )
 
 music.apply_transforms(iters=iters)
