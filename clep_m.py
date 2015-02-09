@@ -371,6 +371,11 @@ class ClepsydraMaterial(TokeiBubble):
                     transpose=transpose
                     )
 
+    def add_stream_pitches(self):
+        stream = Stream(ref_pitch=self.material["pitch"]["ref"][0])
+        self.material["pitch"]["stream"]=stream.pitches()
+
+
 class ClepFree(ClepsydraMaterial, TokeiFree):
     def prepare_material(self):
         super().prepare_material()

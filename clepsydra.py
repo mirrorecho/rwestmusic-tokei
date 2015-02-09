@@ -49,6 +49,9 @@ music.transforms.append(
         apply_flags=["free"]
         ))
 
+# always adding the stream pitches....!
+music.exec_method("add_stream_pitches")
+
 # ----------------------------------------------------------------------------------------------------------------------------------------
 # PUSHING THE JI and REF
 
@@ -132,6 +135,18 @@ music.arrange_music(
             rhythms=["c4 "*12],
             apply_flags=["taiko_melody_1","taiko_melody_2"]
             )
+#slowing at the end:
+music.arrange_music(
+            part_names=["taiko1","taiko2","shime"], 
+            rhythms=["r8_tsu c8_da\\mp c8_da c8_da c8_da c8_dan->^\"repeat 4x\" ^\"slowing down\" ",
+                "r8_tsu c8_da\\mp c8_da c8_da c8_da c8_dan->^\"repeat 4x\" ^\"slowing down\" ",
+                "r2 r8      c1:32 ^\"repeat 4x\" ^\"slowing down\" "
+            ],
+            apply_flags=["slowing"]
+            )
+
+
+
 
 # --------------------------------------------------------------------------------------------
 # MELODY HELP
@@ -238,6 +253,71 @@ music.exec_method("arrange_cloud", cloud_ref_name = "winds-cloud",
     save=SAVE_CLOUDS
     )
 
+# the final cloud....
+# if all else fails, arrange the cloud in the low strings...
+music.arrange_music(
+    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2"], 
+    pitch_material="stream_cloud_mid", 
+    respell=["sharps"],
+            rhythms=[
+            get_music_container(["s8", 
+                box_music("s8 c1:32\\fermata\\ppp r4 s8",
+                    continue_lengths=[(1,1)]*6)
+                ])],
+    skip_flags=["free"],
+    pitch_range_material="string_ranges_mid",
+    apply_flags=["slowing"]
+    )
+music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2"], 
+    indeces=[[1]],
+    notes_only=[False],
+    markup_texts=[["repeat randomly until start of next movement"]]
+    )
+
+
+
+# ---------------------------------------------------------------------------------------------
+# THE STREAM (MAIN MELODY)
+# TO DO... mute this trumpet
+music.exec_method("arrange_stream",
+            part_name="trumpet1",
+            apply_after_flags=["start_movin"],
+            stream_type=StreamHint1,
+            transpose=[-12]
+            )
+music.exec_method("arrange_stream",
+            part_name="trumpet2",
+            apply_flags=["stream_hint1"],
+            stream_type=StreamHint2,
+            )
+music.exec_method("arrange_stream",
+            part_name="flute1",
+            apply_flags=["full_stream_1"],
+            respell=["sharps"]
+            )
+
+# ---------------------------------------------------------------------------------------------
+# ENDING....
+
+
+music.arrange_music(part_names=["clarinet2"], 
+            pitch_range=[get_pitch_range("A3","C5")],
+            pitch_material=["stream"],
+            rhythms=[
+            get_music_container(["s8", 
+                box_music("s8 \\times 4/5 { c4(\\p c1) } c2\\fermata c16( c4 c2.) ",
+                    continue_lengths=[(1,1)]*5)
+                ])],
+            respell=["sharps"],
+            apply_flags=["slowing"]
+            )
+music.attach_markup(part_names=["clarinet2"], markup_texts=[["repeat slowing down"]])
+
+
+
+# ---------------------------------------------------------------------------------------------
+
+
 
 # could arrange the cloud in low strings
 music.arrange_music(
@@ -261,28 +341,6 @@ music.arrange_music(
     )
 
 
-# ---------------------------------------------------------------------------------------------
-# THE STREAM (MAIN MELODY)
-# TO DO... mute this trumpet
-music.exec_method("arrange_stream",
-            part_name="trumpet1",
-            apply_after_flags=["start_movin"],
-            stream_type=StreamHint1,
-            transpose=[-12]
-            )
-music.exec_method("arrange_stream",
-            part_name="trumpet2",
-            apply_flags=["stream_hint1"],
-            stream_type=StreamHint2,
-            )
-music.exec_method("arrange_stream",
-            part_name="flute1",
-            apply_flags=["full_stream_1"],
-            respell=["sharps"]
-            )
-
-
-# ---------------------------------------------------------------------------------------------
 
 music.arrange_music(
         pitch_material=["ref"], 
@@ -294,25 +352,27 @@ music.arrange_music(
 
 # FINAL BUBBLE STUFF:
 iters = (
-    # 0,1,
-    # 2,3,
-    # 4,5,
-    # 6,7,
-    # 8,9,
-    # 10,11,
-    12,13, # fist melody
-    # 14,15,
-    # 16,17, # first free
-    # 18,19,
-    # 20,21,
-    # 22,23,
-    # 24,25,
-    # 26,27,
-    # 28,29,
-    # 30,31,
-    # 32,33,
-    # 34,35,
-    # 36
+    0,1, #A
+    2,3,
+    4,5, #B
+    6,7,
+    8,9, #C
+    10,11,
+    12,13, # D: fist melody
+    14,15,
+    16,17, # E: first free
+    18,19,
+    20,21, #F: 2nd melody
+    22,23,
+    24,25, #G
+    26,27,
+    28,29, #H  3rd melody
+    30,
+    31,
+    32, #I
+    33, 
+    34,35,
+    36
     )
 
 music.apply_transforms(iters=iters)

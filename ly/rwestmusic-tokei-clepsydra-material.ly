@@ -1,4 +1,4 @@
-% 2015-02-08 20:07
+% 2015-02-09 10:49
 
 \version "2.18.2"
 \language "english"
@@ -44,25 +44,41 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b''8 (
-				cs'''8
-				b''8 )
-				a''8 (
-				af''4 )
-				b''8 (
-				fs''8 ~
-				fs''4 )
-				e''4 -\tenuto
-				a''4 -\tenuto
-				d''4 -\tenuto
-				d'''4. -\tenuto
-				a''8 -\tenuto ~
-				a''4
-				r4
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -78,34 +94,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b''8 -\staccato \p [ \<
-				cs'''8 -\staccato ]
-				d'''8 -\staccato [
+				a''8 -\staccato \p [ \<
 				b''8 -\staccato ]
-				ds'''8 -\staccato [
-				fs''8 -\staccato ]
-				g''8 -\staccato [
-				b''8 -\accent -\staccato \mf ]
+				a''8 -\staccato [
+				d'''8 -\staccato ]
+				fs''8 -\staccato [
+				a''8 -\staccato ]
+				d'''8 -\staccato [
+				c'''8 -\accent -\staccato \mf ]
 				r8 [
-				cs'''8 -\staccato ]
+				b''8 -\staccato ]
+				a''8 -\staccato [
+				d'''8 -\staccato ]
+				fs''8 -\staccato [
+				a''8 -\staccato ]
+				d'''8 -\accent -\staccato [
+				c'''8 -\staccato ]
+				a''8 -\staccato \p [
+				b''8 -\staccato ]
+				a''8 -\staccato [
+				d'''8 -\staccato ]
+				fs''8 -\staccato [
+				a''8 -\staccato ]
 				d'''8 -\staccato [
-				b''8 -\staccato ]
-				ds'''8 -\staccato [
-				fs''8 -\staccato ]
-				g''8 -\accent -\staccato [
-				b''8 -\staccato ]
-				b''8 -\staccato \p [
-				cs'''8 -\staccato ]
-				d'''8 -\staccato [
-				b''8 -\staccato ]
-				ds'''8 -\staccato [
-				fs''8 -\staccato ]
-				g''8 -\staccato [
-				b''8 -\staccato ]
+				c'''8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				fs''8 -\staccato \p [ \<
+				e''8 -\staccato ]
+				d'''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\staccato [
+				b''8 -\accent -\staccato \mf ]
+				r8 [
+				e''8 -\staccato ]
+				d'''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\accent -\staccato [
+				b''8 -\staccato ]
+				fs''8 -\staccato \p [
+				e''8 -\staccato ]
+				d'''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\staccato [
+				b''8 -\staccato ]
+				b''8 -\staccato [
+				b''8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -121,34 +174,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				fs''8 -\staccato \p [ \<
-				cs''8 -\staccato ]
-				g'8 -\staccato [
-				fs''8 -\staccato ]
-				b'8 -\staccato [
+				a'8 -\staccato \p [ \<
+				e''8 -\staccato ]
+				a'8 -\staccato [
 				a'8 -\staccato ]
-				b'8 -\staccato [
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				f''8 -\staccato [
 				a'8 -\accent -\staccato \mf ]
 				r8 [
-				cs''8 -\staccato ]
-				g'8 -\staccato [
-				fs''8 -\staccato ]
-				b'8 -\staccato [
+				e''8 -\staccato ]
+				a'8 -\staccato [
 				a'8 -\staccato ]
-				b'8 -\accent -\staccato [
+				d''8 -\staccato [
 				a'8 -\staccato ]
-				fs''8 -\staccato \p [
-				cs''8 -\staccato ]
-				g'8 -\staccato [
-				fs''8 -\staccato ]
-				b'8 -\staccato [
+				f''8 -\accent -\staccato [
 				a'8 -\staccato ]
-				b'8 -\staccato [
+				a'8 -\staccato \p [
+				e''8 -\staccato ]
+				a'8 -\staccato [
+				a'8 -\staccato ]
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				f''8 -\staccato [
 				a'8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				a'8 -\staccato \p [ \<
+				a'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\staccato [
+				d''8 -\staccato ]
+				c''8 -\staccato [
+				a'8 -\accent -\staccato \mf ]
+				r8 [
+				a'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\staccato [
+				d''8 -\staccato ]
+				c''8 -\accent -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato \p [
+				a'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\staccato [
+				d''8 -\staccato ]
+				c''8 -\staccato [
+				a'8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -164,34 +254,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b'8 -\staccato \p [ \<
+				a'8 -\staccato \p [ \<
+				e''8 -\staccato ]
+				e''8 -\staccato [
+				b'8 -\staccato ]
+				cs''8 -\staccato [
 				a'8 -\staccato ]
-				b'8 -\staccato [
-				a'8 -\staccato ]
-				gs'8 -\staccato [
-				a'8 -\staccato ]
-				b'8 -\staccato [
+				d''8 -\staccato [
 				a'8 -\accent -\staccato \mf ]
 				r8 [
+				e''8 -\staccato ]
+				e''8 -\staccato [
+				b'8 -\staccato ]
+				cs''8 -\staccato [
 				a'8 -\staccato ]
-				b'8 -\staccato [
+				d''8 -\accent -\staccato [
 				a'8 -\staccato ]
-				gs'8 -\staccato [
+				a'8 -\staccato \p [
+				e''8 -\staccato ]
+				e''8 -\staccato [
+				b'8 -\staccato ]
+				cs''8 -\staccato [
 				a'8 -\staccato ]
-				b'8 -\accent -\staccato [
-				a'8 -\staccato ]
-				b'8 -\staccato \p [
-				a'8 -\staccato ]
-				b'8 -\staccato [
-				a'8 -\staccato ]
-				gs'8 -\staccato [
-				a'8 -\staccato ]
-				b'8 -\staccato [
+				d''8 -\staccato [
 				a'8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				fs'8 -\staccato \p [ \<
+				b'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				gs'8 -\staccato [
+				a'8 -\staccato ]
+				c''8 -\staccato [
+				a'8 -\accent -\staccato \mf ]
+				r8 [
+				b'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				gs'8 -\staccato [
+				a'8 -\staccato ]
+				c''8 -\accent -\staccato [
+				a'8 -\staccato ]
+				fs'8 -\staccato \p [
+				b'8 -\staccato ]
+				g'8 -\staccato [
+				a'8 -\staccato ]
+				gs'8 -\staccato [
+				a'8 -\staccato ]
+				c''8 -\staccato [
+				a'8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -207,34 +334,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b'8 -\staccato \p [ \<
+				cs''8 -\staccato \p [ \<
+				g'8 -\staccato ]
+				a'8 -\staccato [
 				a'8 -\staccato ]
 				a'8 -\staccato [
-				cs''8 -\staccato ]
+				g'8 -\staccato ]
 				a'8 -\staccato [
-				fs'8 -\staccato ]
-				g'8 -\staccato [
-				b'8 -\accent -\staccato \mf ]
+				a'8 -\accent -\staccato \mf ]
 				r8 [
+				g'8 -\staccato ]
+				a'8 -\staccato [
 				a'8 -\staccato ]
 				a'8 -\staccato [
-				cs''8 -\staccato ]
+				g'8 -\staccato ]
+				a'8 -\accent -\staccato [
+				a'8 -\staccato ]
+				cs''8 -\staccato \p [
+				g'8 -\staccato ]
 				a'8 -\staccato [
-				fs'8 -\staccato ]
-				g'8 -\accent -\staccato [
-				b'8 -\staccato ]
-				b'8 -\staccato \p [
 				a'8 -\staccato ]
 				a'8 -\staccato [
-				cs''8 -\staccato ]
+				g'8 -\staccato ]
 				a'8 -\staccato [
-				fs'8 -\staccato ]
-				g'8 -\staccato [
-				b'8 -\staccato ]
+				a'8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				b'8 -\staccato \p [ \<
+				e'8 -\staccato ]
+				g'8 -\staccato [
+				fs'8 -\staccato ]
+				b'8 -\staccato [
+				b'8 -\staccato ]
+				c''8 -\staccato [
+				b'8 -\accent -\staccato \mf ]
+				r8 [
+				e'8 -\staccato ]
+				g'8 -\staccato [
+				fs'8 -\staccato ]
+				b'8 -\staccato [
+				b'8 -\staccato ]
+				c''8 -\accent -\staccato [
+				b'8 -\staccato ]
+				b'8 -\staccato \p [
+				e'8 -\staccato ]
+				g'8 -\staccato [
+				fs'8 -\staccato ]
+				b'8 -\staccato [
+				b'8 -\staccato ]
+				c''8 -\staccato [
+				b'8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -250,34 +414,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				ds''8 -\staccato \p [ \<
-				a'8 -\staccato ]
-				b'8 -\staccato [
+				cs''8 -\staccato \p [ \<
+				e''8 -\staccato ]
+				f''8 -\staccato [
 				b'8 -\staccato ]
-				b'8 -\staccato [
-				d''8 -\staccato ]
-				a'8 -\staccato [
-				a'8 -\accent -\staccato \mf ]
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				as'8 -\staccato [
+				e''8 -\accent -\staccato \mf ]
 				r8 [
-				a'8 -\staccato ]
-				b'8 -\staccato [
+				e''8 -\staccato ]
+				f''8 -\staccato [
 				b'8 -\staccato ]
-				b'8 -\staccato [
-				d''8 -\staccato ]
-				a'8 -\accent -\staccato [
+				d''8 -\staccato [
 				a'8 -\staccato ]
-				ds''8 -\staccato \p [
-				a'8 -\staccato ]
-				b'8 -\staccato [
+				as'8 -\accent -\staccato [
+				e''8 -\staccato ]
+				cs''8 -\staccato \p [
+				e''8 -\staccato ]
+				f''8 -\staccato [
 				b'8 -\staccato ]
-				b'8 -\staccato [
-				d''8 -\staccato ]
-				a'8 -\staccato [
+				d''8 -\staccato [
 				a'8 -\staccato ]
+				as'8 -\staccato [
+				e''8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				b'8 -\staccato \p [ \<
+				b'8 -\staccato ]
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				ds''8 -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato [
+				d''8 -\accent -\staccato \mf ]
+				r8 [
+				b'8 -\staccato ]
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				ds''8 -\staccato [
+				a'8 -\staccato ]
+				a'8 -\accent -\staccato [
+				d''8 -\staccato ]
+				b'8 -\staccato \p [
+				b'8 -\staccato ]
+				d''8 -\staccato [
+				a'8 -\staccato ]
+				ds''8 -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato [
+				d''8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -293,34 +494,71 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				ds'8 -\staccato \p [ \<
-				a'8 -\staccato ]
-				d'8 -\staccato [
-				cs'8 -\staccato ]
-				gs'8 -\staccato [
+				a'8 -\staccato \p [ \< ^ \markup { repeat slowing down }
 				d'8 -\staccato ]
-				e'8 -\staccato [
-				fs'8 -\accent -\staccato \mf ]
+				c'8 -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato [
+				g'8 -\staccato ]
+				as'8 -\staccato [
+				a'8 -\accent -\staccato \mf ]
 				r8 [
-				a'8 -\staccato ]
-				d'8 -\staccato [
-				cs'8 -\staccato ]
-				gs'8 -\staccato [
 				d'8 -\staccato ]
-				e'8 -\accent -\staccato [
-				fs'8 -\staccato ]
-				ds'8 -\staccato \p [
+				c'8 -\staccato [
 				a'8 -\staccato ]
-				d'8 -\staccato [
-				cs'8 -\staccato ]
-				gs'8 -\staccato [
+				a'8 -\staccato [
+				g'8 -\staccato ]
+				as'8 -\accent -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato \p [
 				d'8 -\staccato ]
-				e'8 -\staccato [
-				fs'8 -\staccato ]
+				c'8 -\staccato [
+				a'8 -\staccato ]
+				a'8 -\staccato [
+				g'8 -\staccato ]
+				as'8 -\staccato [
+				a'8 -\staccato ]
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				ds'8 -\staccato \p [ \< ^ \markup { repeat slowing down }
+				fs'8 -\staccato ]
+				a'8 -\staccato [
+				fs'8 -\staccato ]
+				e'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\staccato [
+				fs'8 -\accent -\staccato \mf ]
+				r8 [
+				fs'8 -\staccato ]
+				a'8 -\staccato [
+				fs'8 -\staccato ]
+				e'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\accent -\staccato [
+				fs'8 -\staccato ]
+				ds'8 -\staccato \p [
+				fs'8 -\staccato ]
+				a'8 -\staccato [
+				fs'8 -\staccato ]
+				e'8 -\staccato [
+				a'8 -\staccato ]
+				b'8 -\staccato [
+				fs'8 -\staccato ]
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -357,6 +595,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "bassoon2" {
@@ -368,6 +628,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -416,6 +698,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "horn2" {
@@ -426,6 +730,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -472,6 +798,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "horn4" {
@@ -482,6 +830,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -528,6 +898,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "trumpet2" {
@@ -538,6 +930,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -590,6 +1004,33 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				r4
+				r8
+				a8 \mp ~ \<
+				a4 ~
+				a8
+				a8 \mf ~
+				a8 [
+				a8 ~ ]
+				a8 [
+				a8 ~ ]
+				a8 [
+				a8 -\staccato ]
+				r4
+				R1
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "trombone2" {
@@ -619,6 +1060,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "tuba" {
@@ -630,6 +1093,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -678,6 +1163,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context RhythmicStaff = "perc1" {
@@ -688,6 +1195,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -734,6 +1263,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "timpani" {
@@ -745,6 +1296,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -799,6 +1372,34 @@
 				c4
 				c4
 				c4
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
+				c4
 			}
 			\context RhythmicStaff = "taiko1" {
 				\set Staff.instrumentName = \markup { Taiko 1 }
@@ -808,6 +1409,52 @@
 				\numericTimeSignature
 				\textLengthOn
 				\dynamicUp
+				r4
+				r8
+				c8 \p \< _ \markup { do }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c8 [ _ \markup { do }
+				c8 -\accent \mf ] _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { do }
+				c4 -\accent _ \markup { don }
+				c8 \p \< _ \markup { da }
+				c8 _ \markup { da }
+				r8
+				c8 _ \markup { da }
+				c8 _ \markup { da }
+				c8 _ \markup { da }
+				r8
+				c8 _ \markup { da }
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c8 [ _ \markup { da }
+				c8 \mp ] _ \markup { da }
+				c8 \p [ _ \markup { ka }
+				c8 ] _ \markup { ka }
+				r8
+				c8 _ \markup { ka }
+				r8
+				c8 _ \markup { ka }
+				c4 \mf _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 \p \< _ \markup { do }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c8 [ _ \markup { do }
+				c8 -\accent \mf ] _ \markup { don }
+				r2
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
 				r4
 				r8
 				c8 \p \< _ \markup { do }
@@ -905,6 +1552,52 @@
 				c8 [ _ \markup { do }
 				c8 -\accent \mf ] _ \markup { don }
 				r2
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				r4
+				r8
+				c8 \p \< _ \markup { do }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c8 [ _ \markup { do }
+				c8 -\accent \mf ] _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { do }
+				c4 -\accent _ \markup { don }
+				c8 \p \< _ \markup { da }
+				c8 _ \markup { da }
+				r8
+				c8 _ \markup { da }
+				c8 _ \markup { da }
+				c8 _ \markup { da }
+				r8
+				c8 _ \markup { da }
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c8 [ _ \markup { da }
+				c8 \mp ] _ \markup { da }
+				c8 \p [ _ \markup { ka }
+				c8 ] _ \markup { ka }
+				r8
+				c8 _ \markup { ka }
+				r8
+				c8 _ \markup { ka }
+				c4 \mf _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 _ \markup { don }
+				r8
+				c8 \p \< _ \markup { do }
+				c8 [ _ \markup { do }
+				c8 ] _ \markup { ko }
+				c8 [ _ \markup { do }
+				c8 -\accent \mf ] _ \markup { don }
+				r2
 			}
 		>>
 		\context StaffGroup = "strings" <<
@@ -914,30 +1607,82 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				ds'8 \mp \< (
-				fs'8
+				b'8 (
+				a'8 )
+				c''8 (
 				b'8 )
-				cs''8 (
-				gs'8 )
-				gs''8 \mf (
-				e''8
-				fs''8 )
-				a'8 -\staccato -\tenuto
-				g'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				fs'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				as'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				a''8 (
-				d''8
+				a'8 (
+				c''8 )
+				b'8 (
+				a'8 )
+				c''8 (
+				b'8 )
+				a'8 (
+				c''8 )
+				b'8 (
+				a'8 )
+				c''8 (
+				b'8 )
+				a'8 (
+				c''8 )
+				b'8 (
+				a'8 )
+				c''8 (
+				b'8 )
+				a'8 (
+				c''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				c''8 (
 				as'8 )
-				a'8 (
-				g'8 )
-				a'8 (
-				ds'8 )
-				a'8 -\tenuto
+				cs''8 (
+				c''8 )
+				as'8 (
+				cs''8 )
+				c''8 (
+				as'8 )
+				cs''8 (
+				c''8 )
+				as'8 (
+				cs''8 )
+				c''8 (
+				as'8 )
+				cs''8 (
+				c''8 )
+				as'8 (
+				cs''8 )
+				c''8 (
+				as'8 )
+				cs''8 (
+				c''8 )
+				as'8 (
+				cs''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				cs''8 (
+				b'8 )
+				d''8 (
+				cs''8 )
+				b'8 (
+				d''8 )
+				cs''8 (
+				b'8 )
+				d''8 (
+				cs''8 )
+				b'8 (
+				d''8 )
+				cs''8 (
+				b'8 )
+				d''8 (
+				cs''8 )
+				b'8 (
+				d''8 )
+				cs''8 (
+				b'8 )
+				d''8 (
+				cs''8 )
+				b'8 (
+				d''8 )
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				d''8 (
@@ -971,30 +1716,82 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				ds'8 \mp \< (
-				cs''8
-				b'8 )
 				a'8 (
-				gs'8 )
-				gs''8 \mf (
-				e''8
-				fs''8 )
-				fs'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				fs'8 -\staccato -\tenuto
-				b'8 -\staccato -\tenuto
-				cs''8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				d''8 -\staccato -\tenuto
-				fs''8 (
-				d''8
-				ds''8 )
-				d''8 (
+				e''8 )
+				g'8 (
 				a'8 )
+				e''8 (
+				g'8 )
+				a'8 (
+				e''8 )
+				g'8 (
+				a'8 )
+				e''8 (
+				g'8 )
+				a'8 (
+				e''8 )
+				g'8 (
+				a'8 )
+				e''8 (
+				g'8 )
+				a'8 (
+				e''8 )
+				g'8 (
+				a'8 )
+				e''8 (
+				g'8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
 				as'8 (
+				f''8 )
+				gs'8 (
+				as'8 )
+				f''8 (
 				gs'8 )
-				as'8 -\tenuto
+				as'8 (
+				f''8 )
+				gs'8 (
+				as'8 )
+				f''8 (
+				gs'8 )
+				as'8 (
+				f''8 )
+				gs'8 (
+				as'8 )
+				f''8 (
+				gs'8 )
+				as'8 (
+				f''8 )
+				gs'8 (
+				as'8 )
+				f''8 (
+				gs'8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				b'8 (
+				fs'8 )
+				a'8 (
+				b'8 )
+				fs'8 (
+				a'8 )
+				b'8 (
+				fs'8 )
+				a'8 (
+				b'8 )
+				fs'8 (
+				a'8 )
+				b'8 (
+				fs'8 )
+				a'8 (
+				b'8 )
+				fs'8 (
+				a'8 )
+				b'8 (
+				fs'8 )
+				a'8 (
+				b'8 )
+				fs'8 (
+				a'8 )
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				c''8 (
@@ -1028,30 +1825,82 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				a'8 \mp \< (
-				b'8
-				d''8 )
-				b'8 (
+				g''8 (
 				a'8 )
-				b'8 \mf (
-				c''8
-				d''8 )
-				a'8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				f'8 -\staccato -\tenuto
-				g'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				c''8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				c''8 -\staccato -\tenuto
 				d''8 (
-				a''8
 				g''8 )
-				f''8 (
-				c''8 )
 				a'8 (
-				c''8 )
-				f'8 -\tenuto
+				d''8 )
+				g''8 (
+				a'8 )
+				d''8 (
+				g''8 )
+				a'8 (
+				d''8 )
+				g''8 (
+				a'8 )
+				d''8 (
+				g''8 )
+				a'8 (
+				d''8 )
+				g''8 (
+				a'8 )
+				d''8 (
+				g''8 )
+				a'8 (
+				d''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				gs'8 (
+				as'8 )
+				ds''8 (
+				gs'8 )
+				as'8 (
+				ds''8 )
+				gs'8 (
+				as'8 )
+				ds''8 (
+				gs'8 )
+				as'8 (
+				ds''8 )
+				gs'8 (
+				as'8 )
+				ds''8 (
+				gs'8 )
+				as'8 (
+				ds''8 )
+				gs'8 (
+				as'8 )
+				ds''8 (
+				gs'8 )
+				as'8 (
+				ds''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				a'8 (
+				b'8 )
+				e''8 (
+				a'8 )
+				b'8 (
+				e''8 )
+				a'8 (
+				b'8 )
+				e''8 (
+				a'8 )
+				b'8 (
+				e''8 )
+				a'8 (
+				b'8 )
+				e''8 (
+				a'8 )
+				b'8 (
+				e''8 )
+				a'8 (
+				b'8 )
+				e''8 (
+				a'8 )
+				b'8 (
+				e''8 )
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				as'8 (
@@ -1085,30 +1934,82 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				a'8 \mp \< (
-				fs'8
-				g'8 )
-				a'8 (
-				b'8 )
-				a''8 \mf (
-				b''8
-				d''8 )
-				cs''8 -\staccato -\tenuto
-				d''8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				g'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				g'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				c''8 -\staccato -\tenuto
-				d''8 (
-				f''8
-				d''8 )
+				fs'8 (
+				e''8 )
 				c''8 (
-				a'8 )
+				fs'8 )
+				e''8 (
+				c''8 )
+				fs'8 (
+				e''8 )
+				c''8 (
+				fs'8 )
+				e''8 (
+				c''8 )
+				fs'8 (
+				e''8 )
+				c''8 (
+				fs'8 )
+				e''8 (
+				c''8 )
+				fs'8 (
+				e''8 )
+				c''8 (
+				fs'8 )
+				e''8 (
+				c''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
 				g'8 (
-				a'8 )
-				g'8 -\tenuto
+				f''8 )
+				cs''8 (
+				g'8 )
+				f''8 (
+				cs''8 )
+				g'8 (
+				f''8 )
+				cs''8 (
+				g'8 )
+				f''8 (
+				cs''8 )
+				g'8 (
+				f''8 )
+				cs''8 (
+				g'8 )
+				f''8 (
+				cs''8 )
+				g'8 (
+				f''8 )
+				cs''8 (
+				g'8 )
+				f''8 (
+				cs''8 )
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				gs'8 (
+				fs'8 )
+				d''8 (
+				gs'8 )
+				fs'8 (
+				d''8 )
+				gs'8 (
+				fs'8 )
+				d''8 (
+				gs'8 )
+				fs'8 (
+				d''8 )
+				gs'8 (
+				fs'8 )
+				d''8 (
+				gs'8 )
+				fs'8 (
+				d''8 )
+				gs'8 (
+				fs'8 )
+				d''8 (
+				gs'8 )
+				fs'8 (
+				d''8 )
 				\bar "||"
 				\context Staff {#(set-accidental-style 'modern)}
 				a'8 (
@@ -1143,34 +2044,41 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				fs'8 \mp \< (
-				e'8
-				cs'8 )
-				fs'8 (
-				gs'8 )
-				fs'8 \mf (
-				a'8
-				b'8 )
-				gs'8 -\staccato -\tenuto
-				fs'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				fs'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				d'8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				d''8 (
-				a'8
-				d''8 )
-				a'8 (
-				b'8 )
-				a'8 (
-				a8 )
-				d'8 -\tenuto
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1187,34 +2095,41 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b8 \mp \< (
-				cs'8
-				a'8 )
-				e'8 (
-				a'8 )
-				b'8 \mf (
-				gs'8
-				b'8 )
-				cs'8 -\staccato -\tenuto
-				b8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				d'8 -\staccato -\tenuto
-				e'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				d'8 -\staccato -\tenuto
-				a'8 -\staccato -\tenuto
-				b'8 (
-				d''8
-				a'8 )
-				d''8 (
-				a'8 )
-				g'8 (
-				a8 )
-				a'8 -\tenuto
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1231,34 +2146,41 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				as8 \mp \< (
-				a8
-				fs8 )
-				a8 (
-				ds8 )
-				a,8 \mf (
-				g,8
-				a,8 )
-				fs8 -\staccato -\tenuto
-				e8 -\staccato -\tenuto
-				c'8 -\staccato -\tenuto
-				e8 -\staccato -\tenuto
-				d8 -\staccato -\tenuto
-				a8 -\staccato -\tenuto
-				f8 -\staccato -\tenuto
-				d8 -\staccato -\tenuto
-				b,8 (
-				c8
-				d8 )
-				f8 (
-				e8 )
-				d8 (
-				g8 )
-				a8 -\tenuto
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1275,34 +2197,41 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
-				b8 \mp \< (
-				a8
-				b8 )
-				a8 (
-				e8 )
-				d8 \mf (
-				b,8
-				a,8 )
-				e8 -\staccato -\tenuto
-				fs8 -\staccato -\tenuto
-				e8 -\staccato -\tenuto
-				a8 -\staccato -\tenuto
-				a8 -\staccato -\tenuto
-				e8 -\staccato -\tenuto
-				d8 -\staccato -\tenuto
-				g8 -\staccato -\tenuto
-				g,8 (
-				d8
-				g,8 )
-				a,8 (
-				e8 )
-				f8 (
-				c'8 )
-				as8 -\tenuto
-				\bar "||"
-				\context Staff {#(set-accidental-style 'modern)}
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1321,6 +2250,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1368,6 +2319,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 		>>
@@ -1378,6 +2351,16 @@
 				\tempo 4=116
 				\context Staff {#(set-accidental-style 'modern)}
 				\numericTimeSignature
+				a'1
+				a'1
+				a'1
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
+				bf'1
+				bf'1
+				bf'1
+				\bar "||"
+				\context Staff {#(set-accidental-style 'modern)}
 				b'1
 				b'1
 				b'1
@@ -1395,6 +2378,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1441,6 +2446,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "harmony_1" {
@@ -1451,6 +2478,28 @@
 				\numericTimeSignature
 				{
 					\time 4/4
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
 					s1 * 1
 				}
 				{
@@ -1498,6 +2547,28 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 			\context Staff = "harmony_3" {
@@ -1527,36 +2598,30 @@
 				}
 				{
 					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+					\bar "||"
+				}
+				\context Staff {#(set-accidental-style 'modern)}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
+				}
+				{
+					s1 * 1
 				}
 			}
 		>>
-		\context RhythmicStaff = "dummy" {
-			\set Staff.instrumentName = \markup { . }
-			\set Staff.shortInstrumentName = \markup { . }
-			\tempo 4=116
-			\context Staff {#(set-accidental-style 'modern)}
-			\numericTimeSignature
-			{
-				\time 4/4
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-				\bar "||"
-			}
-			\context Staff {#(set-accidental-style 'modern)}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-			{
-				s1 * 1
-			}
-		}
 	>>
 }
