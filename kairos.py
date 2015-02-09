@@ -205,6 +205,7 @@ music.add_rhythm_material("holds", [hold_rh + "R1 " + hold_rh + hold_rh + "R1 "]
 # LOW
 # assume low rhythm same as holds for the most part
 music.copy_material("rhythm", "holds", "low")
+music.copy_material("rhythm","swell_ji","low", apply_flags=["5_ji","6_line","6_all"])
 # music.add_rhythm_material("low", ["c1 ~ "*7 + "c1 "], start_flag="2_ji")
 
 music.add_pitch_material("low", [["C#2"]])
@@ -261,7 +262,7 @@ music.exec_method("change_instrument", part_name="viola",
 
 music.exec_method("change_instrument", part_name="cello", 
             instrument_name="Cello", short_instrument_name="vc.", 
-            show_instruction=True, instruction_text="tutti Cello",
+            show_instruction=True, instruction_text="tutti Cello    ",
             apply_flags=["3_ji"]
             )
 
@@ -290,18 +291,18 @@ music.arrange_music(part_names=kai.parts, rhythm_material=["rest"])
 # music.attach(attachments=[[indicatortools.LilyPondCommand("break")]], part_names=kai.parts)
 
 make_flags=(
-    "1_otoshi", 
-    "1_line", #A
-    "1_ji",   #B
-    "2_line", #C
-    "2_ji",   #D
-    "3_line", #E
-    "3_line_again", #F
+    # "1_otoshi", 
+    # "1_line", #A
+    # "1_ji",   #B
+    # "2_line", #C
+    # "2_ji",   #D
+    # "3_line", #E
+    # "3_line_again", #F
     # "3_ji",   #G
     # "4_line", #H
     # "4_ji",   #I
     # "5_line", #J
-    # "5_ji",   #K
+    "5_ji",   #K
     # "6_line", #L
     # "6_all",  #M
     )
