@@ -59,6 +59,14 @@ from caes_m import *
 print()
 print("----------------------------------------------------")
 
+s = Staff()
+s.extend("a4\\p\\< a4 a4 a4\\mf ")
+c = Container()
+c.extend(s)
+
+print(format(c))
+
+
 # t = TokeiBubble()
 # t.material["pitch"]["yo"] = [
 #                 ["C5","D5","E5","F5"],
@@ -80,31 +88,31 @@ print("----------------------------------------------------")
 
 # t.show_pdf(hide_empty=True)
 
-measures_durations=[(10,8), (7,8), (7,8)]
+# measures_durations=[(10,8), (7,8), (7,8)]
 
-rtm1 = "(10/8  (3/8 3/8 2/8 2/8))"
-meter1 = metertools.Meter(rtm1)
-print(meter1.pretty_rtm_format)
+# rtm1 = "(10/8  (3/8 3/8 2/8 2/8))"
+# meter1 = metertools.Meter(rtm1)
+# print(meter1.pretty_rtm_format)
 
-rtm2 = "(7/8  (3/8 2/8 2/8))"
-meter2 = metertools.Meter(rtm2)
+# rtm2 = "(7/8  (3/8 2/8 2/8))"
+# meter2 = metertools.Meter(rtm2)
 
-rtm3 = "(7/8  (2/8 2/8 3/8 ))"
-meter3 = metertools.Meter(rtm3)
+# rtm3 = "(7/8  (2/8 2/8 3/8 ))"
+# meter3 = metertools.Meter(rtm3)
 
-music = Container("%{10%} b2. b4 b4 \\bar \";\"  b4.\\p\\< ~ b4 ~ b4  \\bar \";\"  ~  b4 ~ b4 ~  b4.\\mf ")
-s=Staff()
-# s=Staff("abj: | 7/8 b2.  b8 | ")
+# music = Container("%{10%} b2. b4 b4 \\bar \";\"  b4.\\p\\< ~ b4 ~ b4  \\bar \";\"  ~  b4 ~ b4 ~  b4.\\mf ")
+# s=Staff()
+# # s=Staff("abj: | 7/8 b2.  b8 | ")
 
-# # m = Measure(TimeSignature((10, 8)), 
-# # # print(m.pretty_rtm_format)
-# mutate(s[0][:]).rewrite_meter(s[0])
+# # # m = Measure(TimeSignature((10, 8)), 
+# # # # print(m.pretty_rtm_format)
+# # mutate(s[0][:]).rewrite_meter(s[0])
+# # show(s)
+
+# funny_dumbass_measure = Measure(((24,8)))
+# funny_dumbass_measure.extend(music)
+# s.extend(funny_dumbass_measure)
 # show(s)
-
-funny_dumbass_measure = Measure(((24,8)))
-funny_dumbass_measure.extend(music)
-s.extend(funny_dumbass_measure)
-show(s)
 
 # mutate(odd_measures[0][:]).rewrite_meter(meter1, boundary_depth=1)
 # mutate(odd_measures[1][:]).rewrite_meter(meter2, boundary_depth=1)

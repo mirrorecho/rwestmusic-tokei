@@ -1,7 +1,22 @@
 from clep_m import *
-from wado_m import *
-from caes_m import *
-from kai_m import *
+from clepsydra import *
+
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A"])
+
+# --- CLEPSYDRA SECTION A ----------------------------------------------
+kwargs = {"section_name": "A", "iters":(0,1,2,3),
+    "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+    "ly_appends": [], }
+# --- CLEPSYDRA SECTION B ----------------------------------------------
+
+# clepsydra_music.show_pdf(**kwargs)
+clepsydra_music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+
+
+
+
+
+
 
 # f = ForceCloudStringsMelody(name="caes-cloud-strings-melody")
 # f.tally_loop()
@@ -29,9 +44,9 @@ from kai_m import *
 # f.tally_loop()
 
 
-f = KaiCloudWindsUp(name="kai-cloud-winds-up")
-# f.show_cloud()
-f.tally_loop()
+# f = KaiCloudWindsUp(name="kai-cloud-winds-up")
+# # f.show_cloud()
+# f.tally_loop()
 
 # f = KaiCloudWinds(name="kai-cloud-winds")
 # # f.show_cloud()

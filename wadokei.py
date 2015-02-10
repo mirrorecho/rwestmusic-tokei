@@ -183,7 +183,7 @@ music.add_sub_part(
             short_instrument_name="s.vc.",
             replace_master_part=False,
             apply_flags=["evening_1_a","evening_1_b"],
-            # clef="tenor"
+            clef="tenor"
             )
 music.arrange_music(part_names=["cello_s"], pitch_material="yo",pitch_rows=[2], respell=["flats"],
     apply_flags=["evening_1_a"],rhythms=["s8 r1\\fermata s2 \\times 2/3 { c1(^\"Solo Cello\"\\pp\\< c2 ~ } c8 c4)\\mp "])
@@ -265,7 +265,7 @@ music.add_pitch_material("ref", [["D#2"]*4], apply_flags=["melody_2_b"]) # dis d
 music.add_pitch_material("ref", [["F2"]*4], apply_flags=["melody_3_a"]) # dis dis TO festival (short) (also to stingy?)
 music.add_pitch_material("ref", [["G2"]*4], apply_flags=["melody_3_b"]) # dis festival TO festival
 
-music.arrange_music(part_names=["harmony_3"], pitch_material="ref", rhythm_material=["ref"], skip_flags=["free"] )
+# music.arrange_music(part_names=["harmony_3"], pitch_material="ref", rhythm_material=["ref"], skip_flags=["free"] )
 
 # harmonies/lines reference parts:
 # music.exec_method("add_harmony_ref", apply_flags=["intro_1_a"])
@@ -309,30 +309,30 @@ music.arrange_music(rhythm_material=["bubble_rest"], part_names = wado.parts)
 iters=(
     0,    #A  # intro free
     1,
-    # 2,3,
-    # 4,5,   #B # intro regular
-    # 6,7,
-    # 8,9,   #C # night melody
-    # 10,11, #D 
-    # 12,13,
-    # 14,    #E # day melody
-    # 15, 
-    # 16, 
-    # 17,18, #F #evening...
-    # 19,20, #G #dusk
+    2,3,
+    4,5,   #B # intro regular
+    6,7,
+    8,9,   #C # night melody
+    10,11, #D 
+    12,13,
+    14,    #E # day melody
+    15, 
+    16, 
+    17,18, #F #evening...
+    19,20, #G #dusk
     21,22, #H conduct
     23,24, # dark melody
-    # 25,26,
-    # 27,28,
-    # 29,30,31,
-    # 32,33, # this is the solo...
-    # 34,35,36,37, # intro again
-    # 37,38,
-    # 39,40,
-    # 41,42,
-    # 43,44,
-    # 45,46,
-    # 47,48,49 # in use???
+    25,26,
+    27,28,
+    29,30,31,
+    32,33, # this is the solo...
+    34,35,36,37, # intro again
+    37,38,
+    39,40,
+    41,42,
+    43,44,
+    45,46,
+    47,48,49 # in use???
     )
 
 music.apply_transforms(iters=iters)
@@ -340,3 +340,32 @@ music.apply_transforms(iters=iters)
 bubble = music.make_bubble(iters=iters)
 
 bubble.make_pdf()
+
+# bubble.make_parts(part_names=[
+#     "flute1",
+#     "flute2",
+#     "oboe1",
+#     "oboe2",
+#     "oboe3",
+#     "clarinet1",
+#     "clarinet2",
+#     "bassoon1",
+#     "bassoon2",
+#     "horn1",
+#     "horn2",
+#     "horn3",
+#     "horn4",
+#     "trumpet1",
+#     "trumpet2",
+#     "trombone1",
+#     "trombone2",
+#     "tuba",
+#     "perc1",
+#     ("perc2","timpani"),
+#     "violinI",
+#     "violinII",
+#     "viola",
+#     "cello",
+#     "bass",
+#     ], 
+#     work_name="wadokei")

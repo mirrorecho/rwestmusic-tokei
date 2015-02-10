@@ -64,7 +64,8 @@ class WadoMaterial(TokeiBubble):
         ):
 
         super().__init__(layout="orchestra", name="wadokei-material", 
-            measures_durations=measures_durations, tempo=((3, 8), 108), rehearsal_mark=None)
+            measures_durations=measures_durations, tempo=((3, 8), 108), rehearsal_mark=None,
+            title="Wadokei")
 
         self.material["rhythm"]["rest"] = "R4. R4. R4. "
         self.material["rhythm"]["taiko_rest"] = "r4._tsu r4. r4. "

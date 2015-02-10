@@ -294,6 +294,8 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.stream = Stream()
 
+        self.material["rhythm"]["rest"] = "R1 "*3
+
         # note, this would typically start on the pickup before a strong beat (before ichi or san)
         self.material["rhythm"]["taiko_cresc"] = "c8\\p\\<_do c_do[ c_ko] c_do[ c\\mf->_don] "
         self.material["rhythm"]["taiko_melody_1"] = "r4 r8 " + self.material["rhythm"]["taiko_cresc"] + """
@@ -333,8 +335,6 @@ class ClepsydraMaterial(TokeiBubble):
                 """
 
         self.material["pitch"]["slide_ji"] = ["A5", "G#5", "A5", "A5",]
-
-
 
         self.prepare_material()
 
@@ -381,6 +381,9 @@ class ClepsydraMaterial(TokeiBubble):
 class ClepFree(ClepsydraMaterial, TokeiFree):
     def prepare_material(self):
         super().prepare_material()
+
+        self.material["rhythm"]["rest"] = "s1 s1 s1 r1\\fermata s1 s1 s1 "
+
         self.material["rhythm"]["taiko_free_intro_shime"] = "s4 s8 r1\\fermata s1 s1 c8[ c8]^\"(with taiko ka kas)\" r1\\fermata " 
         self.material["rhythm"]["taiko_free_intro_1"] = "c8_do[ c_ko] ^repeat s1 c8_ka^\"random kas\" s1 s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
         self.material["rhythm"]["taiko_free_intro_2"] = "c8_do[ c_ko] ^repeat s1 s1 c8_ka^\"random kas\" s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
@@ -400,6 +403,11 @@ class ClepFree(ClepsydraMaterial, TokeiFree):
                     "s8", box_music("s4 r4 c2( c2:32)\\fermata  r4 s8", continue_lengths=[(1,1)]*4)
                     ]),
                 ]
+
+class ClepFreeFermata(ClepsydraMaterial):
+    def pepare_material(self):
+        super().prepare_material()
+        self.material["rhythm"]["rest"] = "s16 r1\\fermata s16 " * 3
 
 
 # w = WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5")

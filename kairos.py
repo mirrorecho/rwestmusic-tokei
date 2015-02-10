@@ -52,7 +52,7 @@ def add_strings(master_part_name, master_instrument_name, master_short_instrumen
             **kwargs)
 add_strings("violinI", "Violin I", "vln.I", 5, start_flag="1_otoshi", stop_flag="3_ji", show_instrument_instruction=False) # show_instrument_instruction on just as an example
 add_strings("violinII", "Violin II", "vln.II", 5, start_flag="1_otoshi", stop_flag="3_ji",)
-add_strings("viola", "Viola", "vla", 4, start_flag="1_ji", stop_flag="3_ji")
+add_strings("viola", "Viola", "vla", 4, start_flag="1_ji", stop_flag="3_ji", clef="alto")
 add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji", clef="bass")
 # music.add_sub_part(part_name="crotales", instrument_type=instrumenttools.Flute, instrument_name="Crotales", short_instrument_name="cro.", master_part_name="perc1", start_flag="1_line", stop_flag="3_ji")
 
@@ -285,32 +285,40 @@ music.attach_dynamics(part_names=["flute1"], dynamics=[["mp"]], apply_flags="2_j
 
 # fill everything empty up with rests
 music.arrange_music(part_names=kai.parts, rhythm_material=["rest"])
+# the sub parts...
+music.arrange_music(part_names=[
+    "violinI_1","violinI_2","violinI_3","violinI_4","violinI_5",
+    "violinII_1","violinII_2","violinII_3","violinII_4","violinII_5",
+    "viola_1","viola_2","viola_3","viola_4",
+    "cello_1","cello_2","cello_3","cello_4",
+    ], rhythm_material=["rest"])
+
 # TO DO: doesn't work for sub-parts... why?
 
 # formatting with page breaks for every cycle:
 # music.attach(attachments=[[indicatortools.LilyPondCommand("break")]], part_names=kai.parts)
 
 make_flags=(
-    # "1_otoshi", 
-    # "1_line", #A
-    # "1_ji",   #B
-    # "2_line", #C
-    # "2_ji",   #D
-    # "3_line", #E
-    # "3_line_again", #F
-    # "3_ji",   #G
-    # "4_line", #H
-    # "4_ji",   #I
-    # "5_line", #J
+    "1_otoshi", 
+    "1_line", #A
+    "1_ji",   #B
+    "2_line", #C
+    "2_ji",   #D
+    "3_line", #E
+    "3_line_again", #F
+    "3_ji",   #G
+    "4_line", #H
+    "4_ji",   #I
+    "5_line", #J
     "5_ji",   #K
-    # "6_line", #L
-    # "6_all",  #M
+    "6_line", #L
+    "6_all",  #M
     )
 
 music.apply_transforms(flags=make_flags)
 bubble = music.make_bubble(flags=make_flags)
 bubble.make_pdf(
-    # hide_empty=True,
+    hide_empty=True,
     # part_names=["violinI","violinI_1","violinI_2"],
     )
 
@@ -318,3 +326,33 @@ bubble.make_pdf(
 #     ("violinI_1","violinI_2", "violinI")], 
 #     work_name="kairos")
 
+
+
+bubble.make_parts(part_names=[
+    "flute1",
+    "flute2",
+    "oboe1",
+    "oboe2",
+    "oboe3",
+    "clarinet1",
+    "clarinet2",
+    "bassoon1",
+    "bassoon2",
+    "horn1",
+    "horn2",
+    "horn3",
+    "horn4",
+    "trumpet1",
+    "trumpet2",
+    "trombone1",
+    "trombone2",
+    "tuba",
+    "perc1",
+    ("perc2","timpani"),
+    "violinI",
+    "violinII",
+    "viola",
+    "cello",
+    "bass",
+    ], 
+    work_name="kairos")

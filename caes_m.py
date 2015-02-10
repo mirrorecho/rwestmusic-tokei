@@ -274,7 +274,7 @@ class ForceCloudStringsMelodyDown(ForceCloudStringsMelody):
         self.get_pitch_ranges_strings_divisi(violins_range=violins_range, violas_range=violas_range, cellos_range=cellos_range)
 
 class CaesiumMaterial(TokeiBubble):
-    def __init__(self, measures_durations=[(4,4)]*3, layout="orchestra", odd_meters=False, rehearsal_mark=None):
+    def __init__(self, measures_durations=[(4,4)]*3, title="Caesium", layout="orchestra", odd_meters=False, rehearsal_mark=None):
 
         super().__init__(name="caesium-material", measures_durations=measures_durations,layout=layout, 
             odd_meters=odd_meters, div_strings=True, rehearsal_mark=rehearsal_mark, tempo=((1, 4), 160),)

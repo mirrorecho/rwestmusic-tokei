@@ -19,70 +19,69 @@ class TokeiBubble(Bubble):
         super().__init__(title=title, name=name, project=PROJECT, layout=layout, measures_durations=measures_durations, odd_meters=odd_meters, tempo=tempo, rehearsal_mark=rehearsal_mark)
 
         self.add_staff_group(name="winds", part_names=["flute1","flute2","oboe1","oboe2","oboe3","clarinet1","clarinet2","bassoon1","bassoon2"])
-        self.add_part(name='flute1', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
-        self.add_part(name='flute2', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
-        self.add_part(name='oboe1', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
-        self.add_part(name='oboe2', instrument=instrumenttools.Oboe(instrument_name="Oboe 2", short_instrument_name="ob.2"))
-        self.add_part(name='oboe3', instrument=instrumenttools.Oboe(instrument_name="Oboe 3", short_instrument_name="ob.3"))
-        self.add_part(name='clarinet1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 1 in Bb", short_instrument_name="cl.1"))
-        self.add_part(name='clarinet2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 2 in Bb", short_instrument_name="cl.2"))
-        self.add_part(name='bassoon1', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"), clef="bass")
-        self.add_part(name='bassoon2', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 2", short_instrument_name="bsn.2"), clef="bass")
+        self.add_part(name='flute1', ly_name='fluteOne', instrument=instrumenttools.Flute(instrument_name="Flute 1", short_instrument_name="fl.1"))
+        self.add_part(name='flute2', ly_name='fluteTwo', instrument=instrumenttools.Flute(instrument_name="Flute 2", short_instrument_name="fl.2"))
+        self.add_part(name='oboe1', ly_name='oboeOne', instrument=instrumenttools.Oboe(instrument_name="Oboe 1", short_instrument_name="ob.1"))
+        self.add_part(name='oboe2', ly_name='oboeTwo', instrument=instrumenttools.Oboe(instrument_name="Oboe 2", short_instrument_name="ob.2"))
+        self.add_part(name='oboe3', ly_name='oboeThree', instrument=instrumenttools.Oboe(instrument_name="Oboe 3", short_instrument_name="ob.3"))
+        self.add_part(name='clarinet1', ly_name='clarinetOne', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 1 in Bb", short_instrument_name="cl.1"))
+        self.add_part(name='clarinet2', ly_name='clarinetTwo', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Clarinet 2 in Bb", short_instrument_name="cl.2"))
+        self.add_part(name='bassoon1', ly_name='bassoonOne', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 1", short_instrument_name="bsn.1"), clef="bass")
+        self.add_part(name='bassoon2', ly_name='bassoonTwo', instrument=instrumenttools.Bassoon(instrument_name="Bassoon 2", short_instrument_name="bsn.2"), clef="bass")
 
         self.add_staff_group(name="brass", part_names=["horn1","horn2","horn3","horn4","trumpet1","trumpet2","trombone1","trombone2","tuba"])
-        self.add_part(name='horn1', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 1", short_instrument_name="hn.1"))
-        self.add_part(name='horn2', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 2", short_instrument_name="hn.2"))
-        self.add_part(name='horn3', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 3", short_instrument_name="hn.3"))
-        self.add_part(name='horn4', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 4", short_instrument_name="hn.4"))
-        self.add_part(name='trumpet1', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 1", short_instrument_name="tpt.1"))
-        self.add_part(name='trumpet2', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 2", short_instrument_name="tpt.2"))
-        self.add_part(name='trombone1', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"), clef="bass")
-        self.add_part(name='trombone2', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"), clef="bass")
-        self.add_part(name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"), clef="bass")
+        self.add_part(name='horn1', ly_name='hornOne', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 1", short_instrument_name="hn.1"))
+        self.add_part(name='horn2', ly_name='hornTwo', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 2", short_instrument_name="hn.2"))
+        self.add_part(name='horn3', ly_name='hornThree', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 3", short_instrument_name="hn.3"))
+        self.add_part(name='horn4', ly_name='hornFour', instrument=instrumenttools.FrenchHorn(instrument_name="Horn in F 4", short_instrument_name="hn.4"))
+        self.add_part(name='trumpet1', ly_name='trumpetOne', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 1", short_instrument_name="tpt.1"))
+        self.add_part(name='trumpet2', ly_name='trumpetTwo', instrument=instrumenttools.Trumpet(instrument_name="Trumpet in C 2", short_instrument_name="tpt.2"))
+        self.add_part(name='trombone1', ly_name='tromboneOne', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 1", short_instrument_name="tbn.1"), clef="bass")
+        self.add_part(name='trombone2', ly_name='tromboneTwo', instrument=instrumenttools.TenorTrombone(instrument_name="Tenor Trombone 2", short_instrument_name="tbn.2"), clef="bass")
+        self.add_part(name='tuba', ly_name='tuba', instrument=instrumenttools.Tuba(instrument_name="Tuba", short_instrument_name="tba"), clef="bass")
 
         # TO DO EVENTUALLY... shouldn't always add crotales.... and it shouldn't be a flute
         self.add_staff_group(name="perc", part_names=["crotales","perc1","perc2","timpani"])
-        self.add_part(name='crotales', instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
-        self.add_perc_part(name='perc1', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
-        self.add_perc_part(name='perc2', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
-        self.add_part(name='timpani', instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp", allowable_clefs=("bass", ),
-                        pitch_range="[D2, A3]", sounding_pitch_of_written_middle_c="C4"), clef="bass")
+        self.add_part(name='crotales', ly_name='crotales', instrument=instrumenttools.Instrument(instrument_name="Crotales", short_instrument_name="cro."))
+        self.add_perc_part(name='perc1', ly_name='percOne', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 1", short_instrument_name="perc.1"))
+        self.add_perc_part(name='perc2', ly_name='percTwo', instrument=instrumenttools.UntunedPercussion(instrument_name="Percussion 2", short_instrument_name="perc.2"))
+        self.add_part(name='timpani', ly_name='timpani', instrument=instrumenttools.Instrument(instrument_name="Timpani", short_instrument_name="timp"), clef="bass")
         #self.add_piano_staff_part(name='harp', instrument=instrumenttools.Harp(instrument_name="Harp", short_instrument_name="hp"))
        
         self.add_staff_group(name="taiko", part_names=["shime","odaiko","taiko1","taiko2"])
-        self.add_perc_part(name='shime', instrument=instrumenttools.UntunedPercussion(instrument_name="Shime", short_instrument_name="sh."))
+        self.add_perc_part(name='shime', ly_name='shime', instrument=instrumenttools.UntunedPercussion(instrument_name="Shime", short_instrument_name="sh."))
         #self.add_perc_part(name='gane', instrument=instrumenttools.UntunedPercussion(instrument_name="Gane", short_instrument_name="gn."))
-        self.add_perc_part(name='odaiko', instrument=instrumenttools.UntunedPercussion(instrument_name="Odaiko", short_instrument_name="o.d."))
-        self.add_perc_part(name='taiko1', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 1", short_instrument_name="t.1"))
-        self.add_perc_part(name='taiko2', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 2 ", short_instrument_name="t.2."))
+        self.add_perc_part(name='odaiko', ly_name='odaiko', instrument=instrumenttools.UntunedPercussion(instrument_name="Odaiko", short_instrument_name="o.d."))
+        self.add_perc_part(name='taiko1', ly_name='taikoOne', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 1", short_instrument_name="t.1"))
+        self.add_perc_part(name='taiko2', ly_name='taikoTwo', instrument=instrumenttools.UntunedPercussion(instrument_name="Taiko 2 ", short_instrument_name="t.2."))
         
         if not div_strings:
             self.add_staff_group(name="strings", part_names=["violinI","violinII","viola","cello","bass"])
-            self.add_part(name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
-            self.add_part(name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
-            self.add_part(name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"), clef="alto")
-            self.add_part(name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
-            self.add_part(name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."), clef="bass")
+            self.add_part(name='violinI', ly_name='violinI', instrument=instrumenttools.Violin(instrument_name="Violin I", short_instrument_name="vln.I"))
+            self.add_part(name='violinII', ly_name='violinII', instrument=instrumenttools.Violin(instrument_name="Violin II", short_instrument_name="vln.II"))
+            self.add_part(name='viola', ly_name='viola', instrument=instrumenttools.Viola(instrument_name="Viola", short_instrument_name="vla"), clef="alto")
+            self.add_part(name='cello', ly_name='cello', instrument=instrumenttools.Cello(instrument_name="Cello", short_instrument_name="vc."), clef="bass")
+            self.add_part(name='bass', ly_name='bass', instrument=instrumenttools.Contrabass(instrument_name="Bass", short_instrument_name="cb."), clef="bass")
         else:
             self.add_staff_group(name="strings", part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2","viola_div1","viola_div2","cello_div1","cello_div2","bass_div1","bass_div2"])
-            self.add_part(name='violinI_div1', instrument=instrumenttools.Violin(instrument_name="Violin I 1", short_instrument_name="vln.I.1"))
-            self.add_part(name='violinI_div2', instrument=instrumenttools.Violin(instrument_name="Violin I 2", short_instrument_name="vln.I.2"))
-            self.add_part(name='violinII_div1', instrument=instrumenttools.Violin(instrument_name="Violin II 1", short_instrument_name="vln.II.1"))
-            self.add_part(name='violinII_div2', instrument=instrumenttools.Violin(instrument_name="Violin II 2", short_instrument_name="vln.II.2"))
-            self.add_part(name='viola_div1', instrument=instrumenttools.Viola(instrument_name="Viola 1", short_instrument_name="vla.1"), clef="alto")
-            self.add_part(name='viola_div2', instrument=instrumenttools.Viola(instrument_name="Viola 2", short_instrument_name="vla.2"), clef="alto")
-            self.add_part(name='cello_div1', instrument=instrumenttools.Cello(instrument_name="Cello 1", short_instrument_name="vc.1"), clef="bass")
-            self.add_part(name='cello_div2', instrument=instrumenttools.Cello(instrument_name="Cello 2", short_instrument_name="vc.2"), clef="bass")
-            self.add_part(name='bass_div1', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"), clef="bass")
-            self.add_part(name='bass_div2', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"), clef="bass")
+            self.add_part(name='violinI_div1', ly_name='violinIDivOne', instrument=instrumenttools.Violin(instrument_name="Violin I 1", short_instrument_name="vln.I.1"))
+            self.add_part(name='violinI_div2', ly_name='violinIDivTwo', instrument=instrumenttools.Violin(instrument_name="Violin I 2", short_instrument_name="vln.I.2"))
+            self.add_part(name='violinII_div1', ly_name='violinIIDivOne', instrument=instrumenttools.Violin(instrument_name="Violin II 1", short_instrument_name="vln.II.1"))
+            self.add_part(name='violinII_div2', ly_name='violinIIDivTwo', instrument=instrumenttools.Violin(instrument_name="Violin II 2", short_instrument_name="vln.II.2"))
+            self.add_part(name='viola_div1', ly_name='violaDivOne', instrument=instrumenttools.Viola(instrument_name="Viola 1", short_instrument_name="vla.1"), clef="alto")
+            self.add_part(name='viola_div2', ly_name='violaDivTwo', instrument=instrumenttools.Viola(instrument_name="Viola 2", short_instrument_name="vla.2"), clef="alto")
+            self.add_part(name='cello_div1', ly_name='celloDivOne', instrument=instrumenttools.Cello(instrument_name="Cello 1", short_instrument_name="vc.1"), clef="bass")
+            self.add_part(name='cello_div2', ly_name='celloDivTwo', instrument=instrumenttools.Cello(instrument_name="Cello 2", short_instrument_name="vc.2"), clef="bass")
+            self.add_part(name='bass_div1', ly_name='bassDivOne', instrument=instrumenttools.Contrabass(instrument_name="Bass 1", short_instrument_name="cb.1"), clef="bass")
+            self.add_part(name='bass_div2', ly_name='bassDivTwo', instrument=instrumenttools.Contrabass(instrument_name="Bass 2", short_instrument_name="cb.2"), clef="bass")
 
-        self.add_staff_group(name="ref", part_names=["line_1","line_2","line_3","harmony_1","harmony_2","harmony_3"])
-        self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
-        self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
-        self.add_part(name='line_3', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 3", short_instrument_name="ln.3"))
-        self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
-        self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
-        self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
+        # self.add_staff_group(name="ref", part_names=["line_1","line_2","line_3","harmony_1","harmony_2","harmony_3"])
+        # self.add_part(name='line_1', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 1", short_instrument_name="ln.1"))
+        # self.add_part(name='line_2', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 2", short_instrument_name="ln.2"))
+        # self.add_part(name='line_3', instrument=instrumenttools.ClarinetInBFlat(instrument_name="Line 3", short_instrument_name="ln.3"))
+        # self.add_part(name='harmony_1', instrument=instrumenttools.Violin(instrument_name="Harmony 1", short_instrument_name="har.1"))
+        # self.add_part(name='harmony_2', instrument=instrumenttools.Cello(instrument_name="Harmony 2", short_instrument_name="har.2"), clef="bass")
+        # self.add_part(name='harmony_3', instrument=instrumenttools.Cello(instrument_name="Harmony 3", short_instrument_name="har.3"), clef="bass")
 
         # self.add_perc_part(name='dummy', instrument=instrumenttools.UntunedPercussion(instrument_name=".", short_instrument_name="."))
 
@@ -151,9 +150,9 @@ class TokeiBubble(Bubble):
             get_pitch_range("A4","A5"), #trumpet 2
             get_pitch_range("G4","G5"), #horn 1
             get_pitch_range("E4","E5"), #horn 3
-            get_pitch_range("A2","A3"), #horn 2
-            get_pitch_range("G2","G3"), #horn 4
-            get_pitch_range("G2","E3"), #trombone 1
+            get_pitch_range("B2","B3"), #horn 2
+            get_pitch_range("A2","A3"), #horn 4
+            get_pitch_range("G2","G3"), #trombone 1
             get_pitch_range("E2","E3"), #trombone 2
             get_pitch_range("D1","E2"), #tuba
             ]

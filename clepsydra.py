@@ -59,18 +59,51 @@ music.add_rhythm_material("push",  "c4\\downbow " * 12)
 music.add_rhythm_material("push", "c4\\downbow " * 8 + "R1 ", apply_flags=["start_pause"])
 music.add_rhythm_material("slide", "c1 c4.( c8 ~ c2) R1", apply_flags=["start_pause"])
 
+music.arrange_music(apply_flags=["start_2"], part_names=["viola_div1"],
+    rhythms=["a''1:32\\pp \\glissando gs''1:32 \\glissando a''1:32"])
+music.arrange_music(apply_flags=["start_2"], part_names=["viola_div2"],
+    rhythms=["gs''1:32\\pp \\glissando a''1:32 \\glissando gs''1:32"])
+
+
+music.arrange_music(apply_flags=["start_pause"], part_names=["viola_div1"],
+    rhythms=["a''1:32 \\glissando gs''1:32 R1"])
+music.arrange_music(apply_flags=["start_pause"], part_names=["viola_div2"],
+    rhythms=["gs''1:32 \\glissando a''1:32 R1"])
+
 # would be better to figure out how to fill the whole thing with straight quarter notes...
+music.add_rhythm_material("whole", "c1:32\\pp c1:32 c1:32 ")
+music.add_pitch_material("ji_funny",["G#5","A5","A5","A5","A5","A5","A5","A5","G#5","A5","A5","A5",])
+music.arrange_music(
+        pitch_material=["ji","ji_funny","ji","ji"], 
+        rhythm_material = ["push","push","whole","whole"],
+        part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
+        apply_flags=["start", "start_2", "start_pause", "winds_down"],
+        respell=("sharps",)
+        )
+music.arrange_music(part_names=["clarinet2"],rhythm_material=["rest"], apply_flags=["start"])
+
+music.exec_method("change_instrument", part_name="clarinet2", 
+            instrument_name="Bass Clarinet in Bb", short_instrument_name="B. cl.", 
+            show_instruction=False,
+            apply_flags=["start"]
+            )
+music.arrange_music(part_names=["clarinet2"], 
+    rhythms=[get_music_container(["s8", box_music("s16^\"freely\"     a8.\\ppp\\< a8 a2 | a1 | a2 a8 a8.\\mf   s16"), "s8"])]
+    , apply_flags=["start_2"])
 
 music.arrange_music(
         pitch_material=["ji", "ji", "slide_ji", "slide_ji"], 
         rhythm_material = ["push","push","slide","slide"],
         part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
-        start_flag = "start",
+        start_flag = "start_2",
         stop_flag="start_taiko",
         apply_flags=["winds_down"],
         respell=("sharps",)
         )
-music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["mf"]], apply_flags=["start"])
+music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["mf"]], 
+    apply_flags=["start_2"])
+music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["p"]], 
+    apply_flags=["start"])
 
 music.arrange_music(
         part_names=["violinII_div1","violinII_div2",],
@@ -325,7 +358,6 @@ music.exec_method("arrange_stream",
 # ---------------------------------------------------------------------------------------------
 # ENDING....
 
-
 music.arrange_music(part_names=["clarinet2"], 
             pitch_range=[get_pitch_range("A3","C5")],
             pitch_material=["stream"],
@@ -339,11 +371,7 @@ music.arrange_music(part_names=["clarinet2"],
             )
 music.attach_markup(part_names=["clarinet2"], markup_texts=[["repeat slowing down"]], apply_flags=["slowing"])
 
-
-
 # ---------------------------------------------------------------------------------------------
-
-
 
 # could arrange the cloud in low strings
 music.arrange_music(
@@ -351,7 +379,7 @@ music.arrange_music(
     pitch_material="stream_cloud_mid", 
     respell=["sharps"],
     rhythms=["c8( c8) "*12],
-    skip_flags=["free"],
+    skip_flags=["free", "free2", "free3"],
     pitch_range_material="string_ranges_low",
     apply_flags=["cloud_low"]
     )
@@ -362,47 +390,49 @@ music.arrange_music(
     pitch_material="stream_cloud_mid", 
     respell=["sharps"],
     rhythms=["c8( c8) "*12],
-    skip_flags=["free"],
+    skip_flags=["free", "free2", "free3"],
     pitch_range_material="string_ranges_mid"
     )
 
-
-
+# finally, rests
 music.arrange_music(
-        pitch_material=["ref"], 
-        rhythm_material=[["measure_note"]*3],
-        part_names = ["line_1"],
-        pitch_range_material="string_ranges_mid"
-        )
+    part_names=clep.parts, 
+    rhythm_material=["rest"],
+    )
 
+# ---------------------------------------------------------------------------------------------
+
+
+# music.arrange_music(
+#         pitch_material=["ref"], 
+#         rhythm_material=[["measure_note"]*3],
+#         part_names = ["line_1"],
+#         pitch_range_material="string_ranges_mid"
+#         )
 
 # FINAL BUBBLE STUFF:
 iters = (
-    0,1, #A
-    2,3,
-    4,5, #B
-    6,7,
-    8,9, #C
-    10,11,
-    12,13, # D: fist melody
-    14,15,
-    16,17, # E: first free
-    18,19,
-    20,21, #F: 2nd melody
-    22,23,
-    24,25, #G
-    26,27,
-    28,29, #H  3rd melody
-    30,
-    31,
-    32, #I
-    33, 
-    34,35,
-    36
+    # 0,1, #A
+    # 2,3,
+    # 4,5, #B
+    # 6,7,
+    # 8,9, #C
+    # 10,11,
+    # 12,13, # D: fist melody
+    # 14,15,
+    # 16,17, # E: first free
+    # 18,19,
+    # 20,21, #F: 2nd melody
+    # 22,23,
+    # 24,25, #G
+    # 26,27,
+    # 28,29, #H  3rd melody
+    # 30,
+    # 31,
+    # 32, #I
+    # 33, 
+    # 34,35,
+    # 36
     )
 
-music.apply_transforms(iters=iters)
-
-bubble = music.make_bubble(iters=iters)
-
-bubble.make_pdf()
+clepsydra_music = music
