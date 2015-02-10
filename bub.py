@@ -4,11 +4,13 @@ from clepsydra import *
 clep.make_ly_includes(ly_folder="clepsydra", sections=["A"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
+# kwargs = {"section_name": "_A", "iters":(0,1,2,3),
+#     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+#     "ly_appends": [], }
+# --- CLEPSYDRA SECTION B ----------------------------------------------
 kwargs = {"section_name": "A", "iters":(0,1,2,3),
     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
     "ly_appends": [], }
-# --- CLEPSYDRA SECTION B ----------------------------------------------
-
 # clepsydra_music.show_pdf(**kwargs)
 clepsydra_music.make_ly_music(ly_folder="clepsydra", **kwargs), 
 

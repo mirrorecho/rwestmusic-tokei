@@ -59,16 +59,6 @@ music.add_rhythm_material("push",  "c4\\downbow " * 12)
 music.add_rhythm_material("push", "c4\\downbow " * 8 + "R1 ", apply_flags=["start_pause"])
 music.add_rhythm_material("slide", "c1 c4.( c8 ~ c2) R1", apply_flags=["start_pause"])
 
-music.arrange_music(apply_flags=["start_2"], part_names=["viola_div1"],
-    rhythms=["a''1:32\\pp \\glissando gs''1:32 \\glissando a''1:32"])
-music.arrange_music(apply_flags=["start_2"], part_names=["viola_div2"],
-    rhythms=["gs''1:32\\pp \\glissando a''1:32 \\glissando gs''1:32"])
-
-
-music.arrange_music(apply_flags=["start_pause"], part_names=["viola_div1"],
-    rhythms=["a''1:32 \\glissando gs''1:32 R1"])
-music.arrange_music(apply_flags=["start_pause"], part_names=["viola_div2"],
-    rhythms=["gs''1:32 \\glissando a''1:32 R1"])
 
 # would be better to figure out how to fill the whole thing with straight quarter notes...
 music.add_rhythm_material("whole", "c1:32\\pp c1:32 c1:32 ")
@@ -80,30 +70,20 @@ music.arrange_music(
         apply_flags=["start", "start_2", "start_pause", "winds_down"],
         respell=("sharps",)
         )
-music.arrange_music(part_names=["clarinet2"],rhythm_material=["rest"], apply_flags=["start"])
 
 music.exec_method("change_instrument", part_name="clarinet2", 
             instrument_name="Bass Clarinet in Bb", short_instrument_name="B. cl.", 
             show_instruction=False,
             apply_flags=["start"]
             )
-music.arrange_music(part_names=["clarinet2"], 
-    rhythms=[get_music_container(["s8", box_music("s16^\"freely\"     a8.\\ppp\\< a8 a2 | a1 | a2 a8 a8.\\mf   s16"), "s8"])]
-    , apply_flags=["start_2"])
 
 music.arrange_music(
         pitch_material=["ji", "ji", "slide_ji", "slide_ji"], 
         rhythm_material = ["push","push","slide","slide"],
         part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
-        start_flag = "start_2",
-        stop_flag="start_taiko",
         apply_flags=["winds_down"],
         respell=("sharps",)
         )
-music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["mf"]], 
-    apply_flags=["start_2"])
-music.attach_dynamics(part_names=["violinI_div1","violinI_div2"], dynamics=[["p"]], 
-    apply_flags=["start"])
 
 music.arrange_music(
         part_names=["violinII_div1","violinII_div2",],
@@ -111,6 +91,7 @@ music.arrange_music(
         rhythm_material=["dotted"],
         apply_flags=["winds_down"],
         )
+
 # --------------------------------------------------------------------------------------------
 # FREE SECTIONS
 # if all else fails, violins cam tremolo on ji

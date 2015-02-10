@@ -153,7 +153,6 @@ clarinetTwoA = {
 	R1
 	R1
 	R1
-	s8
 	\grace {
 		\hideNotes
 		r32
@@ -168,15 +167,26 @@ clarinetTwoA = {
 		\override Staff.StaffSymbol #'line-positions = #'()
 		\startStaff
 	}
-	s16
-	a8.  \ppp  \<
-	a8
-	a2
-	a1
-	a2
-	a8
-	a8.  \mf  \!
-	\afterGrace
+    a2.\fermata \ppp  \< ^"freely"
+    
+    s16
+
+    e4(
+        \tuplet 3/2 {  fs4   d'2) }
+
+	cs'8(
+    e'8
+    b'4
+	a'8)
+	
+    cs''16(
+        d''16
+        e''4)
+    r8
+    d''8--
+	a''8(   \mf  \!
+	
+    \afterGrace
 	s16
 	{
 		\hideNotes
@@ -192,9 +202,9 @@ clarinetTwoA = {
 		\override Staff.StaffSymbol #'line-positions = #'()
 		\startStaff
 	}
-	s8
-	R1
-	R1
+	a''1) \> ~ ^"in time"
+	a''1 \p \!
+
 	R1
 	R1
 	R1
