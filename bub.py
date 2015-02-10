@@ -1,14 +1,14 @@
 from clep_m import *
 from clepsydra import *
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["A"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),
 #     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION B ----------------------------------------------
-kwargs = {"section_name": "A", "iters":(0,1,2,3),
+kwargs = {"section_name": "B", "iters":(4,5,6,7),
     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
     "ly_appends": [], }
 # clepsydra_music.show_pdf(**kwargs)

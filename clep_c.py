@@ -5,14 +5,18 @@ from calliope.cycles.loop import CycleLoop
 
 def get_cycle_music():
     music = CycleLoop(bubble_type=ClepsydraMaterial)
-
     music.add_cycle(flags=["start"])
     music.add_cycle(flags=["start_2"])
     music.add_cycle(flags=["start_pause"], rehearsal_mark="A")
     music.add_cycle(flags=["start_pause"])
     # ------------------------------------
+    # ------------------------------------
+    # ------------------------------------
+    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
+    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
     music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
     music.add_cycle(bubble_type=ClepFree, flags=["start_taiko_2", "free", "before_movin"],rehearsal_mark="B")
+
     music.add_cycle(flags=["start_movin", "winds_up"])
     music.add_cycle(flags=["next_movin"])
     music.add_cycle(flags=["winds_down"])

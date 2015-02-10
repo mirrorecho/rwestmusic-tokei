@@ -18,36 +18,37 @@ string_parts= ["violinI_div1","violinI_div2","violinII_div1","violinII_div2","vi
 music = get_cycle_music()
 
 # add reference pitch of E for the first couple of cycles only
-music.add_pitch_material("ref", ["E5"], stop_flag="next_movin")
-music.add_pitch_material("next_ref", ["F5"], stop_flag="next_movin")
+music.add_pitch_material("ref", ["E5"])
+music.add_pitch_material("next_ref", ["F5"])
 
 # at the "start_movin" flag, the reference pitch starts incrementing by 1
-music.transforms.append(
-    ModTransposePitch(
-        "ref", 
-        value = 1,
-        start_flag = "next_movin",
-        skip_flags=["free"]
-        ))
-music.transforms.append(
-    ModTransposePitch(
-        "next_ref", 
-        value = 1,
-        start_flag = "next_movin",
-        skip_flags=["free"]
-        ))
-music.transforms.append(
-    ModTransposePitch(
-        "ref", 
-        value = 0,
-        apply_flags=["free"]
-        ))
-music.transforms.append(
-    ModTransposePitch(
-        "next_ref", 
-        value = 0,
-        apply_flags=["free"]
-        ))
+# ... will need to be added manuallly...
+# music.transforms.append(
+#     ModTransposePitch(
+#         "ref", 
+#         value = 1,
+#         start_flag = "next_movin",
+#         skip_flags=["free"]
+#         ))
+# music.transforms.append(
+#     ModTransposePitch(
+#         "next_ref", 
+#         value = 1,
+#         start_flag = "next_movin",
+#         skip_flags=["free"]
+#         ))
+# music.transforms.append(
+#     ModTransposePitch(
+#         "ref", 
+#         value = 0,
+#         apply_flags=["free"]
+#         ))
+# music.transforms.append(
+#     ModTransposePitch(
+#         "next_ref", 
+#         value = 0,
+#         apply_flags=["free"]
+#         ))
 
 # always adding the stream pitches....!
 music.exec_method("add_stream_pitches")
