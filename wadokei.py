@@ -33,6 +33,23 @@ music.exec_method("transpose_pitch_material", material="ref", transpose=-4,
 # ----------------------------------------------------------
 # INTRO
 
+music.arrange_music(part_names=["crotales"],
+    rhythms=["R4. R4. R4. |  a'8[ r8 r8]  r4. r4. |  R4. R4. R4. | a'8[ r8 r8]  r4. r4.  | " ],
+    apply_flags=["B1","B3"]
+    )
+music.attach_dynamics(part_names=["crotales"],
+    apply_flags=["B1"], dynamics=[["mp"]])
+
+music.arrange_music(part_names=["bass"],
+    rhythms=["b,4.\\p\< ~ b,4. a4-- a8\\mf( b4. ~ b4.)  r4. | b,4.\\p\< ~ b,4. a4-- g8\\mf( ~ g4.  a4. ~ a4.) "],
+            apply_flags=["B3"]
+    )
+music.arrange_music(part_names=["bass"],
+    rhythms=["r4. b,4.--\\p\\< a,4.--     g,4. a,4( b,8)-- b,4( cs8)--      fs4( cs'8)-- cs'4.( ds'4.)\\mf  ds'4.( e'4.) b4. "],
+            apply_flags=["B4"]
+    )
+
+
 # FREE INTRO
 music.add_rhythm_material("flute_intro", [get_music_container(["s8", box_music(
         "s8 r4\\fermata c1\\pp\\<( c2.\\mp\\> c2\\!\\p) r4 s8", continue_lengths=[(1,1)]*3),]),
@@ -95,29 +112,72 @@ music.arrange_music(part_names=["flute1","flute2"],
         pitch_rows=[0], pitch_columns=[
             [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
             [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]],
-            respell=[["sharps"]],
+            respell=["sharps"],
         apply_flags=["melody_1"])
 music.arrange_music(part_names=["clarinet1","clarinet2"], 
         rhythm_material=["blow_crank_a","blow_crank_b"], pitch_material="yo",
         pitch_rows=[1], pitch_columns=[
             [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
             [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]],
-            respell=[["flats"]],
+            respell=["sharps"],
         apply_flags=["melody_1"])
+
+
+music.arrange_music(part_names=["oboe1","oboe2","oboe3"], 
+        rhythm_material=["blow_crank_a","blow_crank_a","blow_crank_b"], pitch_material="yo",
+        transpose=[0,-12,0],
+        pitch_rows=[1,0,1], pitch_columns=[
+            [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
+            [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
+            [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]
+            ],
+
+            respell=["flats"],
+            apply_flags=["D1","D2","D3","D4","O1","O2","O3","O4"],
+        )
+
+
+music.arrange_music(part_names=["bassoon1","bassoon2"], 
+        rhythm_material=["blow_crank_a","blow_crank_b"], pitch_material="yo",
+        pitch_rows=[3,4], pitch_columns=[
+            [0,0,1,2,2,3,4,4,5,6,6,7,8,8,9,10,10,11],
+            [0,1,1,2,3,3,4,5,5,6,7,7,8,9,9,10,11,11]],
+            respell=["flats"],
+            apply_flags=["O1","O2","O3","O4"],
+        )
+
+
 # ----------------------------------------------------------
-# STRINGS MOVE:
+# STRINGS MOVE / NIGHT:
+
+music.arrange_music(part_names=["crotales"],
+    rhythms=["cs'8[ r8 r8]  r4. r4. | R4. R4. R4. |   R4. R4. R4. | a'8[ r8 r8]  r4. r4.  | " ],
+    apply_flags=["C1"]
+    )
+music.arrange_music(part_names=["crotales"],
+    rhythms=["R4. R4. R4. | cs''8[ r8 r8]  r4. r4. |   R4. R4. R4. | ds''8[ r8 r8]  r4. r4.  | " ],
+    apply_flags=["C2"]
+    )
+
+
+
 music.arrange_music(apply_flags=["melody_1","dark_melody"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move",
+    respell=["sharps"],
     transpose=[0,0,0,0,12])
 
 music.arrange_music(apply_flags=["melody_2_a","melody_3_a"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move",
+    respell=["flats"],
     pitch_columns=[[0,1,2,2,  3,4,5,5,  6,7,8,8,  9,10,11,11,],],
     transpose=[0,0,0,0,12])
+
 music.arrange_music(apply_flags=["melody_2_b","melody_3_b"], part_material="strings", 
     pitch_material="yo",rhythm_material="strings_move",
+    respell=["flats"],
+    pitch_rows=[1,0,2,3,4,5,6,7,8,9],
     pitch_columns=[[0,0,1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8,9,9,10,10,11,11,],],
-    transpose=[0,0,0,0,12])
+    transpose=[0,-12,0,0,12])
 music.attach_dynamics(part_names=wado.material["part"]["strings"], dynamics=[["p"]],apply_flags=["melody_1_a"])
 
 # ----------------------------------------------------------
@@ -210,7 +270,7 @@ music.arrange_music(part_names=["clarinet1","clarinet2","bassoon1","bassoon2"], 
                     "s8\\times 2/3 { c8\\p  c8 c8 ~ } c4 c2 ", 
                         continue_lengths=[(1,1)]*5)
                 ]),
-                "\\times 4/5 { c8(\\pp\\< c c) c( c ~ } c4) c2.\\mf c4( c8)  c4( c8) r4  c4( c8)",
+                " s4 \\times 4/5 { c8(\\pp\\< c c) c( c ~ } c4) c2.\\mf c4( c8)  c4( c8) r4  c4( c8) s4 r1\\fermata ",
                 get_music_container(["r4", box_music(
                             "s8 c2\\fermata\\p  c4( c8) c16( c2) ", 
                                 continue_lengths=[(1,1)]*5)
@@ -233,7 +293,7 @@ music.arrange_music(part_material="all", rhythms=["s1 s1 s1 r1\\fermata s1 s1 s1
 # CONDUCT
 music.arrange_music(part_material="strings", 
     pitch_material="yo",
-    rhythm_material=["strings_conduct"],
+    rhythm_material=["strings_conduct",],
     transpose=[0,0,0,0,12],
     apply_flags=["conduct_1","conduct_2"])
 
@@ -306,66 +366,113 @@ music.arrange_music(rhythm_material=["bubble_rest"], part_names = wado.parts)
 
 
 
-iters=(
-    0,    #A  # intro free
-    1,
-    2,3,
-    4,5,   #B # intro regular
-    6,7,
-    8,9,   #C # night melody
-    10,11, #D 
-    12,13,
-    14,    #E # day melody
-    15, 
-    16, 
-    17,18, #F #evening...
-    19,20, #G #dusk
-    21,22, #H conduct
-    23,24, # dark melody
-    25,26,
-    27,28,
-    29,30,31,
-    32,33, # this is the solo...
-    34,35,36,37, # intro again
-    37,38,
-    39,40,
-    41,42,
-    43,44,
-    45,46,
-    47,48,49 # in use???
-    )
 
-music.apply_transforms(iters=iters)
+# wado.make_ly_includes(ly_folder="wadokei", sections=["C","D"])
+wado.make_ly_includes(ly_folder="wadokei", sections=[
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    ])
 
-bubble = music.make_bubble(iters=iters)
+# #  --- WADOKEI SECTION A ----------------------------------------------
+kwargs = {"section_name": "A", "iters":(0,1,2,3),
+    "ly_prepends":[
+    "\\tempo 4. = 120"
+    # "\\time 4/4", 
+    "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# #  --- WADOKEI SECTION B ----------------------------------------------
+kwargs = {"section_name": "B", "iters":(4,5,6,7),
+     "ly_prepends":["\\time 9/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# #  --- WADOKEI SECTION C ----------------------------------------------
+kwargs = {"section_name": "C", "iters":(8,9),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# #  --- WADOKEI SECTION D ----------------------------------------------
+kwargs = {"section_name": "D", "iters":(10,11,12,13),
+     # "ly_prepends":[],
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# #  --- WADOKEI SECTION E ----------------------------------------------
+kwargs = {"section_name": "E", "iters":(14,15,16),
+     "ly_prepends":["\\time 6/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION F ----------------------------------------------
+kwargs = {"section_name": "F", "iters":(17,18),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION G ----------------------------------------------
+kwargs = {"section_name": "G", "iters":(19,20),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION H ----------------------------------------------
+kwargs = {"section_name": "H", "iters":(21,22),
+     "ly_prepends":["\\time 9/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION I (melody # 2) ----------------------------------------------
+kwargs = {"section_name": "I", "iters":(23,24),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION J ----------------------------------------------
+kwargs = {"section_name": "J", "iters":(25,26,27,28),
+     "ly_prepends":["\\time 9/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION K ----------------------------------------------
+kwargs = {"section_name": "K", "iters":(29,30,31),
+     "ly_prepends":["\\time 6/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION L (melody # 2) ----------------------------------------------
+kwargs = {"section_name": "L", "iters":(32,33),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION M ----------------------------------------------
+kwargs = {"section_name": "M", "iters":(34,35,36,37),
+     "ly_prepends":["\\time 9/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION N ----------------------------------------------
+kwargs = {"section_name": "N", "iters":(38,39),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION O ----------------------------------------------
+kwargs = {"section_name": "O", "iters":(40,41,42,43),
+     "ly_prepends":[],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # --- WADOKEI SECTION P ----------------------------------------------
+kwargs = {"section_name": "P", "iters":(44,45,46),
+     "ly_prepends":["\\time 6/8"],
+    "ly_appends":[], }
+music.make_ly_music(ly_folder="wadokei", **kwargs), 
 
-bubble.make_pdf()
 
-# bubble.make_parts(part_names=[
-#     "flute1",
-#     "flute2",
-#     "oboe1",
-#     "oboe2",
-#     "oboe3",
-#     "clarinet1",
-#     "clarinet2",
-#     "bassoon1",
-#     "bassoon2",
-#     "horn1",
-#     "horn2",
-#     "horn3",
-#     "horn4",
-#     "trumpet1",
-#     "trumpet2",
-#     "trombone1",
-#     "trombone2",
-#     "tuba",
-#     "perc1",
-#     ("perc2","timpani"),
-#     "violinI",
-#     "violinII",
-#     "viola",
-#     "cello",
-#     "bass",
-#     ], 
-#     work_name="wadokei")
+
+
+

@@ -179,15 +179,15 @@ class TokeiBubble(Bubble):
             get_pitch_range("G2","A3"), #bassoon 2
         ]
         self.material["wind_ranges_hi"] = [
-            get_pitch_range("B5","Bb6"), #piccolo (flute 1)
-            get_pitch_range("B5","Bb6"), #flute (2)
-            get_pitch_range("G5","F#6"), #oboe 1
-            get_pitch_range("G5","F#6"), #oboe 2
-            get_pitch_range("G5","F#6"), #oboe 3
-            get_pitch_range("G5","F#6"), #clarinet 1
-            get_pitch_range("G5","F#6"), #clarinet 2 (switch to bass?)  ... assume no
-            get_pitch_range("B3","Bb4"), #bassoon 1
-            get_pitch_range("B3","Bb4"), #bassoon 2
+            get_pitch_range("Bb5","Bb6"), #piccolo (flute 1)
+            get_pitch_range("Bb5","Bb6"), #flute (2)
+            get_pitch_range("F#5","F#6"), #oboe 1
+            get_pitch_range("F#5","F#6"), #oboe 2
+            get_pitch_range("F#5","F#6"), #oboe 3
+            get_pitch_range("E5","E6"), #clarinet 1
+            get_pitch_range("E5","E6"), #clarinet 2 (switch to bass?)  ... assume no
+            get_pitch_range("Bb3","Bb4"), #bassoon 1
+            get_pitch_range("Bb3","Bb4"), #bassoon 2
         ]
         if div_strings:
             self.material["string_ranges_mid"] = [
@@ -211,8 +211,8 @@ class TokeiBubble(Bubble):
                 get_pitch_range("C3","C4"), #viola div 2
                 get_pitch_range("C2","C3"), #cello div 1
                 get_pitch_range("C2","C3"), #cello div 2
-                get_pitch_range("E1","E2"), #bass div 1
-                get_pitch_range("E1","E2"), #bass div 2
+                get_pitch_range("E2","E3"), #bass div 1
+                get_pitch_range("E2","E3"), #bass div 2
             ]
         else:
             self.material["string_ranges_mid"] = [
@@ -227,7 +227,7 @@ class TokeiBubble(Bubble):
                 get_pitch_range("G3","G4"), #violin II 
                 get_pitch_range("C3","C4"), #viola 
                 get_pitch_range("C2","C3"), #cello 
-                get_pitch_range("E2","E2"), #bass 
+                get_pitch_range("E2","E3"), #bass 
             ]
         self.material["all_ranges_mid"] = copy.deepcopy(
                     self.material["wind_ranges_mid"] + self.material["brass_ranges_mid"] + self.material["string_ranges_mid"])

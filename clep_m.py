@@ -405,6 +405,18 @@ class ClepFree(ClepsydraMaterial, TokeiFree):
             "c8_ka s8", is_percussion=True, continue_lengths=[(1,1)]*2), "s16",
         ])
 
+        self.material["rhythm"]["taiko_free_1"] = get_music_container(["s16", box_music(
+            "c8_do[\\f c_ko \\hideNotes s8 c8] \\unHideNotes s8", is_percussion=True, continue_lengths=[(1,1)]*2), "s8",
+        box_music(
+            "c8_ka s8", is_percussion=True, continue_lengths=[(1,1)]*3), "s16",
+        ])
+        self.material["rhythm"]["taiko_free_2"] = get_music_container(["s16", box_music(
+            "c8_do[\\f c_ko \\hideNotes s8 c8] \\unHideNotes s8", is_percussion=True, continue_lengths=[(1,1)]*3), "s8",
+        box_music(
+            "c8_ka s8", is_percussion=True, continue_lengths=[(1,1)]*2), "s16",
+        ])
+
+
         self.material["rhythm"]["taiko_free_intro_2_a"] = get_music_container(["s16", box_music(
             "c8_ka[-> c_ka]-> c8_do[ c_ko \\hideNotes s8 c8] \\unHideNotes ", is_percussion=True, continue_lengths=[(1,1)]*2), "s8",
         box_music(

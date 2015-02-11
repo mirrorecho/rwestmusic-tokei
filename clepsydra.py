@@ -107,9 +107,12 @@ music.arrange_music(
 
 music.exec_method("change_instrument", part_name="clarinet2", 
             instrument_name="Bass Clarinet in Bb", short_instrument_name="B. cl.", 
-            show_instruction=False,
-            apply_flags=["start"]
+            show_instruction=True,
+            apply_flags=["F1"]
             )
+
+
+
 music.exec_method("change_instrument", part_name="clarinet2", 
             instrument_name="Clarinet", short_instrument_name="Cl. 2", 
             show_instruction=False,
@@ -163,6 +166,13 @@ music.arrange_music(
             rhythm_material=["taiko_free_intro_shime","taiko_free_intro_2_a","taiko_free_intro_2_b"],
             apply_flags=["start_taiko_2","start_taiko_3","start_taiko_4"],
             )
+
+music.arrange_music(
+            part_names=["shime","taiko1","taiko2"], 
+            rhythm_material=["taiko_free_1","taiko_free_2","taiko_free_1"],
+            apply_flags=["F1","F2","F3","F4"]
+            )
+
 music.arrange_music(
             part_names=["shime","taiko1","taiko2"], 
             rhythms=["c8-> c8-> c-> c-> r2\\fermata"],
@@ -180,6 +190,17 @@ music.arrange_music(part_names=["clarinet1","clarinet2"],
                 ) ,"s16"])],
             apply_flags=["start_taiko_3","start_taiko_4"]
             ) 
+
+w_b = WaterCloudBase(start_pitch="Eb4", autorandom=False)
+music.arrange_music(part_names=["clarinet2"],
+            rhythms = ["""s8 r1\\fermata s8 c1(\\fermata \\times 7/8 {c4) c8( c8 c8 c8 c8 ~ } 
+                        c4) r4 c2(  c2.)\\fermata r1\\fermata """],
+            pitches=[w_b.pitches[3]],
+            apply_flags=["F2"],
+            respell=["flats"]
+            ) 
+
+
 music.arrange_music(part_names=["oboe1", "oboe2","oboe3"],
             rhythms = [get_music_container(["s16", box_music(
                 "s8 r8 b1 b8->-. b8->-. r4\\fermata s8", continue_lengths=[(1,1)]*4
@@ -547,7 +568,7 @@ music.arrange_music(part_names=["timpani"],
     )
 music.arrange_music(part_names=["timpani"], 
     apply_flags=["E2","E4"],
-    rhythms=["R1 | gs,4 r4 r2 | r4 r8 gs,8-> r4 "]
+    rhythms=["R1 | gs,4 r4 r2 | r4 r8 gs,8-> r2 "]
     )
 
 
@@ -694,8 +715,8 @@ music.arrange_music(
 # ---------------------------------------------------------------------------------------------
 
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C", "D", "E", ])
-# clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C", "D", "E", "F"])
+# clep.make_ly_includes(ly_folder="clepsydra", sections=["F"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),

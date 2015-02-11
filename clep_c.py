@@ -34,10 +34,10 @@ def get_cycle_music():
     music.add_cycle(flags=["ref_C#", "E3", "taiko_melody_1", "full_stream_2",])
     music.add_cycle(flags=["ref_D", "E4", "taiko_melody_2"])
     # ------------------------------------
-    music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_Eb", "free2"], rehearsal_mark="E") # This one's longer... come in one at a time
-    music.add_cycle( bubble_type=ClepFreeFermata, flags=["ref_Eb","free2"])
-    music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_Eb","free2"])
-    music.add_cycle(flags=["ref_Eb"])
+    music.add_cycle(bubble_type=ClepFree,  flags=["F1", "ref_Eb", "free2"], rehearsal_mark="E") # This one's longer... come in one at a time
+    music.add_cycle( bubble_type=ClepFree,  flags=["F2","ref_Eb","free2"])
+    music.add_cycle(bubble_type=ClepFree,  flags=["F3","ref_Eb","free2"])
+    music.add_cycle(bubble_type=ClepFree,  flags=["F4","ref_Eb"])
     # ------------------------------------
     music.add_cycle(flags=["ref_E","taiko_melody_1", "cloud_low"],rehearsal_mark="F")
     music.add_cycle(flags=["ref_F","taiko_melody_2", "cloud_low"])

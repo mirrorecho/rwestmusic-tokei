@@ -594,7 +594,7 @@ class DayMusicEnd(DayMusic):
 class Conduct(MelodyBase):
     def add_taiko(self, part_names=["taiko1","taiko2"]):
         print("ARRANGING TAIKO CONDUCT")
-        self.arrange_music(part_names=part_names, rhythm_material=["taiko_conduct"]*2)
+        self.arrange_music(part_names=part_names, rhythm_material=[["taiko_conduct"]*2])
     
     def prepare_material(self):
         self.material["rhythm"]["strings_conduct"]="""
