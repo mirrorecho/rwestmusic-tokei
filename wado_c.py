@@ -72,5 +72,6 @@ def get_cycle_music():
     music.add_cycle(bubble_type=DayMusicSplit, flags=["P1", "day_music_1", "day_start"], rehearsal_mark="P")
     music.add_cycle(bubble_type=DayMusicSplit, flags=["P2","day_music_2"])
     music.add_cycle(bubble_type=DayMusicEnd, flags=["P3","day_music_end"])
+    music.add_cycle(bubble_type=DayMusicEnd, flags=["P4","final"])
 
     return music

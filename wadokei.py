@@ -200,6 +200,31 @@ music.arrange_music(part_names=["horn2","horn4","trombone1","trombone2","tuba"],
 music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
     rhythm_material="yo", pitch_material="yo", respell=["sharps"], apply_flags=["day_music_end"])
 
+music.arrange_music(apply_flags=["day_music_end"],
+    part_names=["timpani",
+    # "perc1"
+    ],
+    rhythms=[
+    "a,4.:32\mf \\< ~ " + "a,4.:32 ~ "*22 + "a,4.:32\\ff",
+    ]
+    )
+music.arrange_music(apply_flags=["final"],
+    part_names=["taiko1","taiko2",
+    "perc1","perc2",
+    "timpani","crotales"],
+    rhythms=["c4._don-> r4.", "c4._don-> r4.", 
+    "R4. R4.", "c4.-> r4.", 
+    "a,4.-> r4.", "R4. R4.", ]
+    )
+
+
+music.arrange_music(part_material="pitched", pitch_range_material="all_ranges_wide",
+    rhythms=["c4.-> r4."], 
+    pitch_columns=[[-1]],
+    pitch_material="yo", 
+    respell=["sharps"], 
+    apply_flags=["final"])
+
 
 # ----------------------------------------------------------
 # EVENING:
@@ -387,90 +412,91 @@ wado.make_ly_includes(ly_folder="wadokei", sections=[
     "P",
     ])
 
-# #  --- WADOKEI SECTION A ----------------------------------------------
-kwargs = {"section_name": "A", "iters":(0,1,2,3),
-    "ly_prepends":[
-    "\\tempo 4. = 120"
-    # "\\time 4/4", 
-    "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# #  --- WADOKEI SECTION B ----------------------------------------------
-kwargs = {"section_name": "B", "iters":(4,5,6,7),
-     "ly_prepends":["\\time 9/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# #  --- WADOKEI SECTION C ----------------------------------------------
-kwargs = {"section_name": "C", "iters":(8,9),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# #  --- WADOKEI SECTION D ----------------------------------------------
-kwargs = {"section_name": "D", "iters":(10,11,12,13),
-     # "ly_prepends":[],
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# #  --- WADOKEI SECTION E ----------------------------------------------
-kwargs = {"section_name": "E", "iters":(14,15,16),
-     "ly_prepends":["\\time 6/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION F ----------------------------------------------
-kwargs = {"section_name": "F", "iters":(17,18),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION G ----------------------------------------------
-kwargs = {"section_name": "G", "iters":(19,20),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION H ----------------------------------------------
-kwargs = {"section_name": "H", "iters":(21,22),
-     "ly_prepends":["\\time 9/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION I (melody # 2) ----------------------------------------------
-kwargs = {"section_name": "I", "iters":(23,24),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION J ----------------------------------------------
-kwargs = {"section_name": "J", "iters":(25,26,27,28),
-     "ly_prepends":["\\time 9/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION K ----------------------------------------------
-kwargs = {"section_name": "K", "iters":(29,30,31),
-     "ly_prepends":["\\time 6/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION L (melody # 2) ----------------------------------------------
-kwargs = {"section_name": "L", "iters":(32,33),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION M ----------------------------------------------
-kwargs = {"section_name": "M", "iters":(34,35,36,37),
-     "ly_prepends":["\\time 9/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION N ----------------------------------------------
-kwargs = {"section_name": "N", "iters":(38,39),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION O ----------------------------------------------
-kwargs = {"section_name": "O", "iters":(40,41,42,43),
-     "ly_prepends":[],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
-# # --- WADOKEI SECTION P ----------------------------------------------
-kwargs = {"section_name": "P", "iters":(44,45,46),
-     "ly_prepends":["\\time 6/8"],
-    "ly_appends":[], }
-music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # #  --- WADOKEI SECTION A ----------------------------------------------
+# kwargs = {"section_name": "A", "iters":(0,1,2,3),
+#     "ly_prepends":[
+#     "\\tempo 4. = 120"
+#     # "\\time 4/4", 
+#     "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # #  --- WADOKEI SECTION B ----------------------------------------------
+# kwargs = {"section_name": "B", "iters":(4,5,6,7),
+#      "ly_prepends":["\\time 9/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # #  --- WADOKEI SECTION C ----------------------------------------------
+# kwargs = {"section_name": "C", "iters":(8,9),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # #  --- WADOKEI SECTION D ----------------------------------------------
+# kwargs = {"section_name": "D", "iters":(10,11,12,13),
+#      # "ly_prepends":[],
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # #  --- WADOKEI SECTION E ----------------------------------------------
+# kwargs = {"section_name": "E", "iters":(14,15,16),
+#      "ly_prepends":["\\time 6/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION F ----------------------------------------------
+# kwargs = {"section_name": "F", "iters":(17,18),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION G ----------------------------------------------
+# kwargs = {"section_name": "G", "iters":(19,20),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION H ----------------------------------------------
+# kwargs = {"section_name": "H", "iters":(21,22),
+#      "ly_prepends":["\\time 9/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION I (melody # 2) ----------------------------------------------
+# kwargs = {"section_name": "I", "iters":(23,24),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION J ----------------------------------------------
+# kwargs = {"section_name": "J", "iters":(25,26,27,28),
+#      "ly_prepends":["\\time 9/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION K ----------------------------------------------
+# kwargs = {"section_name": "K", "iters":(29,30,31),
+#      "ly_prepends":["\\time 6/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION L (melody # 2) ----------------------------------------------
+# kwargs = {"section_name": "L", "iters":(32,33),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION M ----------------------------------------------
+# kwargs = {"section_name": "M", "iters":(34,35,36,37),
+#      "ly_prepends":["\\time 9/8"],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION N ----------------------------------------------
+# kwargs = {"section_name": "N", "iters":(38,39),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION O ----------------------------------------------
+# kwargs = {"section_name": "O", "iters":(40,41,42,43),
+#      "ly_prepends":[],
+#     "ly_appends":[], }
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
+# # # --- WADOKEI SECTION P ----------------------------------------------
+# kwargs = {"section_name": "P", "iters":(44,45,46,47),
+#      "ly_prepends":["\\time 6/8"],
+#     "ly_appends":[], 
+#     "final_bar": "|."}
+# music.make_ly_music(ly_folder="wadokei", **kwargs), 
 
 
 

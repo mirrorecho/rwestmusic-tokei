@@ -312,7 +312,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Wadokei.Percussion"
   \score {
-      \percStaves
+     \percussionStaves 
      \header { piece = "Percussion" }
       \layout {
         \context {
@@ -335,7 +335,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff 
+          % % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -407,7 +408,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Wadokei.ViolinI"
   \score {
-      \violinIStaves
+      \violinIStaff
      \header { piece = "Violin I" }
       \layout {
         \context {
@@ -425,7 +426,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -437,7 +438,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Wadokei.ViolinII"
   \score {
-      \violinIIStaves
+      \violinIIStaff
      \header { piece = "Violin II" }
       \layout {
         \context {
@@ -455,7 +456,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -467,7 +468,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Wadokei.Viola"
   \score {
-      \violaStaves
+      \violaStaff
      \header { piece = "Viola" }
       \layout {
         \context {
@@ -485,7 +486,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -497,7 +498,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Wadokei.Cello"
   \score {
-      \celloStaves
+      \celloStaff
      \header { piece = "Cello" }
       \layout {
         \context {
@@ -515,7 +516,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -545,7 +546,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -577,7 +578,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff \RemoveEmptyStaves
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
