@@ -448,21 +448,37 @@ odaiko = {
 \odaikoP
 } 
 taikoOne = { 
+    \partBreak
 \taikoOneA
+\partBreak
 \taikoOneB
+\partBreak
 \taikoOneC
+\partBreak
 \taikoOneD
+\partBreak
 \taikoOneE
+\partBreak
 \taikoOneF
+\partBreak
 \taikoOneG
+\partBreak
 \taikoOneH
+\partBreak
 \taikoOneI
+\partBreak
 \taikoOneJ
+\partBreak
 \taikoOneK
+\partBreak
 \taikoOneL
+\partBreak
 \taikoOneM
+\partBreak
 \taikoOneN
+\partBreak
 \taikoOneO
+\partBreak
 \taikoOneP
 } 
 taikoTwo = { 
