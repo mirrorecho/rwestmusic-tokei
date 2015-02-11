@@ -1,6 +1,5 @@
 fluteOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	a''4. (
 	b''4. )
@@ -58,7 +57,6 @@ fluteOneO = {
  
 fluteTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -116,7 +114,6 @@ fluteTwoO = {
  
 oboeOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	af'4 -\tenuto
 	af'8 -\tenuto
@@ -222,7 +219,6 @@ oboeOneO = {
  
 oboeTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	gf'4 -\tenuto
 	gf'8 -\tenuto
@@ -328,7 +324,6 @@ oboeTwoO = {
  
 oboeThreeO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	af'4 -\staccato
 	r8
@@ -434,7 +429,6 @@ oboeThreeO = {
  
 clarinetOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -492,7 +486,6 @@ clarinetOneO = {
  
 clarinetTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -550,7 +543,6 @@ clarinetTwoO = {
  
 bassoonOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	b4 -\tenuto
 	b8 -\tenuto
@@ -656,7 +648,6 @@ bassoonOneO = {
  
 bassoonTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	b,4 -\staccato
 	r8
@@ -762,7 +753,6 @@ bassoonTwoO = {
  
 hornOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -820,7 +810,6 @@ hornOneO = {
  
 hornTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -878,7 +867,6 @@ hornTwoO = {
  
 hornThreeO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -936,7 +924,6 @@ hornThreeO = {
  
 hornFourO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -994,7 +981,6 @@ hornFourO = {
  
 trumpetOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1052,7 +1038,6 @@ trumpetOneO = {
  
 trumpetTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1110,7 +1095,6 @@ trumpetTwoO = {
  
 tromboneOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1168,7 +1152,6 @@ tromboneOneO = {
  
 tromboneTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1226,7 +1209,6 @@ tromboneTwoO = {
  
 tubaO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1284,7 +1266,6 @@ tubaO = {
  
 crotalesO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1342,7 +1323,6 @@ crotalesO = {
  
 percOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1400,7 +1380,6 @@ percOneO = {
  
 percTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1458,7 +1437,6 @@ percTwoO = {
  
 timpaniO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1516,7 +1494,6 @@ timpaniO = {
  
 shimeO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1574,7 +1551,6 @@ shimeO = {
  
 odaikoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	R4.
 	R4.
@@ -1632,7 +1608,6 @@ odaikoO = {
  
 taikoOneO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	r4. _ \markup { tsu }
 	c4. _ \markup { don }
@@ -1741,7 +1716,6 @@ taikoOneO = {
  
 taikoTwoO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	c4 _ \markup { do }
 	c8 _ \markup { don }
@@ -1850,7 +1824,6 @@ taikoTwoO = {
  
 violinIO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	gf''4 -\accent -\staccato
 	f'''8 -\tenuto ~
@@ -1956,7 +1929,6 @@ violinIO = {
  
 violinIIO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	af'4 -\accent -\staccato
 	af'8 -\tenuto ~
@@ -2062,7 +2034,6 @@ violinIIO = {
  
 violaO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	gf'4 -\accent -\staccato
 	ef'8 -\tenuto ~
@@ -2168,7 +2139,6 @@ violaO = {
  
 celloO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	b4 -\accent -\staccato
 	b8 -\tenuto ~
@@ -2274,7 +2244,6 @@ celloO = {
  
 bassO = {  
 \calliopeRehearsalMark O 
- \time 6/8 
  {
 	b4 -\accent -\staccato
 	b8 -\tenuto ~

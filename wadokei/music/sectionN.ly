@@ -1,6 +1,5 @@
 fluteOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -72,7 +71,6 @@ fluteOneN = {
  
 fluteTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -144,7 +142,6 @@ fluteTwoN = {
  
 oboeOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -184,7 +181,6 @@ oboeOneN = {
  
 oboeTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -224,7 +220,6 @@ oboeTwoN = {
  
 oboeThreeN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -264,7 +259,6 @@ oboeThreeN = {
  
 clarinetOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -336,7 +330,6 @@ clarinetOneN = {
  
 clarinetTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -408,7 +401,6 @@ clarinetTwoN = {
  
 bassoonOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -448,7 +440,6 @@ bassoonOneN = {
  
 bassoonTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -488,7 +479,6 @@ bassoonTwoN = {
  
 hornOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -528,7 +518,6 @@ hornOneN = {
  
 hornTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -568,7 +557,6 @@ hornTwoN = {
  
 hornThreeN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -608,7 +596,6 @@ hornThreeN = {
  
 hornFourN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -648,7 +635,6 @@ hornFourN = {
  
 trumpetOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -688,7 +674,6 @@ trumpetOneN = {
  
 trumpetTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -728,7 +713,6 @@ trumpetTwoN = {
  
 tromboneOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -768,7 +752,6 @@ tromboneOneN = {
  
 tromboneTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -808,7 +791,6 @@ tromboneTwoN = {
  
 tubaN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -848,7 +830,6 @@ tubaN = {
  
 crotalesN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -888,7 +869,6 @@ crotalesN = {
  
 percOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -928,7 +908,6 @@ percOneN = {
  
 percTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -968,7 +947,6 @@ percTwoN = {
  
 timpaniN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1008,7 +986,6 @@ timpaniN = {
  
 shimeN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1048,7 +1025,6 @@ shimeN = {
  
 odaikoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1088,7 +1064,6 @@ odaikoN = {
  
 taikoOneN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1147,7 +1122,6 @@ taikoOneN = {
  
 taikoTwoN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1187,7 +1161,6 @@ taikoTwoN = {
  
 violinIN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1235,7 +1208,6 @@ violinIN = {
  
 violinIIN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1283,7 +1255,6 @@ violinIIN = {
  
 violaN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1331,7 +1302,6 @@ violaN = {
  
 celloN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1379,7 +1349,6 @@ celloN = {
  
 bassN = {  
 \calliopeRehearsalMark N 
- \time 6/8 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 

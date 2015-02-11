@@ -1,6 +1,5 @@
 fluteOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	a''4. (
 	b''4. )
@@ -34,7 +33,6 @@ fluteOneI = {
  
 fluteTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -68,7 +66,6 @@ fluteTwoI = {
  
 oboeOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -102,7 +99,6 @@ oboeOneI = {
  
 oboeTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -136,7 +132,6 @@ oboeTwoI = {
  
 oboeThreeI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -170,7 +165,6 @@ oboeThreeI = {
  
 clarinetOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -204,7 +198,6 @@ clarinetOneI = {
  
 clarinetTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -238,7 +231,6 @@ clarinetTwoI = {
  
 bassoonOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -272,7 +264,6 @@ bassoonOneI = {
  
 bassoonTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -306,7 +297,6 @@ bassoonTwoI = {
  
 hornOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -340,7 +330,6 @@ hornOneI = {
  
 hornTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -374,7 +363,6 @@ hornTwoI = {
  
 hornThreeI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -408,7 +396,6 @@ hornThreeI = {
  
 hornFourI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -442,7 +429,6 @@ hornFourI = {
  
 trumpetOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -476,7 +462,6 @@ trumpetOneI = {
  
 trumpetTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -510,7 +495,6 @@ trumpetTwoI = {
  
 tromboneOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -544,7 +528,6 @@ tromboneOneI = {
  
 tromboneTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -578,7 +561,6 @@ tromboneTwoI = {
  
 tubaI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -612,7 +594,6 @@ tubaI = {
  
 crotalesI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -646,7 +627,6 @@ crotalesI = {
  
 percOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -680,7 +660,6 @@ percOneI = {
  
 percTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -714,7 +693,6 @@ percTwoI = {
  
 timpaniI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -748,7 +726,6 @@ timpaniI = {
  
 shimeI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -782,7 +759,6 @@ shimeI = {
  
 odaikoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -816,7 +792,6 @@ odaikoI = {
  
 taikoOneI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	r4. _ \markup { tsu }
 	c4. _ \markup { don }
@@ -861,7 +836,6 @@ taikoOneI = {
  
 taikoTwoI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	R4.
 	R4.
@@ -895,7 +869,6 @@ taikoTwoI = {
  
 violinII = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	as'4.
 	a''4.
@@ -929,7 +902,6 @@ violinII = {
  
 violinIII = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	c'4.
 	c'4.
@@ -963,7 +935,6 @@ violinIII = {
  
 violaI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	as4.
 	g4.
@@ -997,7 +968,6 @@ violaI = {
  
 celloI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	ds4.
 	ds4.
@@ -1031,7 +1001,6 @@ celloI = {
  
 bassI = {  
 \calliopeRehearsalMark I 
- \time 9/8 
  {
 	ds4.
 	ds4.
