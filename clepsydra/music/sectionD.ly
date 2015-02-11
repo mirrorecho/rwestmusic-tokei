@@ -408,18 +408,20 @@ crotalesD = {
 percOneD = {  
 \calliopeRehearsalMark D 
  {
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
+ 	\set Staff.instrumentName = \markup { Wood Block }
+	\set Staff.shortInstrumentName = \markup { W.b. }
+	c4 ^ "wood block" \mp c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
+	c4 c4 c4 c4
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -452,19 +454,19 @@ timpaniD = {
  {
 	gs,8-> \mf \! gs,8-> r4 r2 
 	R1
-	a1:32\mp \<
+	a,1:32\mp \<
 
 	a,8-> \mf \! a,8-> r4 r2 
 	R1
-	gs1:32\mp \<
+	gs,1:32\mp \<
 
 	gs,8-> \mf \! gs,8-> r4 r2 
 	R1
-	gs1:32\mp \<
+	gs,1:32\mp \<
 
 	gs,8-> \mf \! gs,8-> r4 r2 
 	R1
-	a1:32\mp \<
+	a,1:32\mp \<
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -474,7 +476,7 @@ timpaniD = {
 shimeD = {  
 \calliopeRehearsalMark D 
  {
-	c4
+	c4 \mp
 	c4
 	c4
 	c4
@@ -531,7 +533,7 @@ shimeD = {
 taikoOneD = {  
 \calliopeRehearsalMark D 
  {
-	c8 -\accent _ \markup { do }
+	c8 -\accent _ \markup { do } \mf
 	d8 -\accent _ \markup { don }
 	r4
 	r2
@@ -564,7 +566,7 @@ taikoOneD = {
 taikoTwoD = {  
 \calliopeRehearsalMark D 
  {
-	c8 -\accent _ \markup { do }
+	c8 -\accent _ \markup { do } \mf
 	d8 -\accent _ \markup { don }
 	r4
 	r2
@@ -1143,20 +1145,28 @@ violaDivTwoD = {
 celloDivOneD = {  
 \calliopeRehearsalMark D 
  {
-	gs,8  \mp  (
-	as,4.
-	f,2 )
+	r4
+	gs,8  \mf  (
+	as,8
+	f2 )
 	ds,4 (
-	cs,2 )
-	b,,4 ~ (
-	b,,4.
+	cs2 )
+	b,4 ~ (
+	b,4.
 	fs,8 ~
 	fs,4 )
 	r4
+	|
+	r4
+	a,8   (
+	g,8
+	fs2 )
+	d4 -\tenuto 
+	g,4 -\tenuto
+	c8 (
+	g4.   )
 	R1
-	R1
-	R1
-	ef'8 -\staccato  \mf %%%
+	ef'8 -\staccato 
 	ef'8 -\staccato
 	ef'8 -\staccato
 	ef'8 -\staccato
@@ -1213,19 +1223,28 @@ celloDivOneD = {
 celloDivTwoD = {  
 \calliopeRehearsalMark D 
  {
-	R1
-	R1
-	R1
 	r4
-	a,8  \p  (
+	gs,8  \mf  (
+	as,8
+	f2 )
+	ds,4 (
+	cs2 )
+	b,4 ~ (
+	b,4.
+	fs,8 ~
+	fs,4 )
+	r4
+	|
+	r4
+	a,8   (
 	g,8
-	fs,2 )
-	d4 -\tenuto \<
+	fs2 )
+	d4 -\tenuto
 	g,4 -\tenuto
 	c8 (
-	g4.  \mp  \! )
+	g4.  )
 	R1
-	ef8 -\staccato  \mf %%%
+	ef8 -\staccato  
 	ef8 -\staccato
 	ef8 -\staccato
 	ef8 -\staccato

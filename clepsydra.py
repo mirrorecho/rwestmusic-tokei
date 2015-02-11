@@ -223,20 +223,21 @@ music.arrange_music(part_names=["shime", "taiko1", "taiko2"],
     )
 
 # TAIKO MELODY
+
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_melody_1"],
+            rhythm_material=["taiko_melody_1","taiko_ji"],
             apply_flags=["taiko_melody_1"]
             )
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
-            rhythm_material=["taiko_melody_2"],
+            rhythm_material=["taiko_melody_2","taiko_ji"],
             apply_flags=["taiko_melody_2"]
             )
 # shime plays with melody
 music.arrange_music(
             part_names=["shime"], 
-            rhythms=["c4 "*12],
+            rhythms=["c8[ c]"*12],
             apply_flags=["taiko_melody_1","taiko_melody_2"]
             )
 #slowing at the end:
@@ -249,13 +250,43 @@ music.arrange_music(
             apply_flags=["slowing"]
             )
 
-
+# OTHER PERC:
+music.arrange_music(
+            part_names=["crotales"], 
+            rhythms=["a'4 " +"a'4 "*11],
+            apply_flags=["taiko_melody_1"],
+            )
+music.arrange_music(
+            part_names=["crotales"], 
+            rhythms=["R1 R1 r2 a''2\\mf ^\"bowed\""],
+            apply_flags=["E2"],
+            )
+music.arrange_music(
+            part_names=["crotales"], 
+            rhythms=["a'4 " +"a'4 "*9 + "r2 "],
+            apply_flags=["E4"],
+            )
+music.arrange_music(part_names=["perc1"],
+    apply_flags=["E2"],
+    rhythms=["R1 R1 r2 c2:32\\mp "],
+    )
+music.arrange_music(part_names=["perc2"],
+    apply_flags=["E2"],
+    rhythms=["r4^\"wood block\" c4:32\\pp ~ c4.:32 c8\\p | c4 r4 r2 R1 "],
+    )
 
 
 # --------------------------------------------------------------------------------------------
-# MELODY HELP
-music.arrange_music(part_names=["trombone1"], rhythm_material=["melody_1_help_a"], 
+# MELODY 1 HELP
+music.arrange_music(part_names=["trombone1","trombone2"], rhythm_material=["melody_1_help_a"], 
         pitch_material=["ji"], transpose=[-24], apply_flags=["taiko_melody_1"] )
+
+music.arrange_music(part_names=["flute1","flute2"],
+    apply_flags=["E2","E4"],
+    pitch_material=["ref","ji"],
+    pitch_range=[get_pitch_range("E5","E6")],
+    rhythms=["r4 c4:32\\mp ^\"Flz.\" ~ c2:32 | R1 R1 "])
+
 
 # --------------------------------------------------------------------------------------------
 # CLOUD  (harmonic sequence)
@@ -351,6 +382,47 @@ music.arrange_music(
             transpose=[-24]
             )
 
+music.arrange_music(
+            part_names=["bassoon1","bassoon2"],
+            pitch_material=["ji"],
+            rhythms=["R1 r2 r4 c4->\\mf \\> ~ |  c1\\p \\! "],
+            apply_flags=["E1","E3"],
+            transpose=[-12]
+            )
+
+music.arrange_music(part_names=["tuba"],
+    apply_flags=["E1"],
+    pitches=[["B2","E3","E3","A3","D4"]],
+    rhythms=["r2 r4 r8 c8\\mf ~ | c8 c8-. c4-- c4-- c4 ~ | c2\> r2\! "]
+    )
+
+
+music.arrange_music(
+    part_names=["bass_div1","bass_div2"],
+    apply_flags=["E1","E3"],
+    rhythms=["a,2\\p\\< ~ a,4. a,8->\\f  ~ a,1    a,1\\p "],
+    )
+music.arrange_music(
+    part_names=["bass_div1","bass_div2"],
+    apply_flags=["E2","E4"],
+    part_material=[["ji","ref","ref","ref","ref"]],
+    pitch_range=[get_pitch_range("E1","E2")],
+    rhythms=["c4 c4 ~ c2 ~ c1 c1\\f"],
+    )
+music.arrange_music(
+    apply_flags=["E2"],
+    part_names=["oboe1","oboe2","oboe3","bassoon1","bassoon2"],
+    rhythms=["R1 r4 r8[ c8]-.->\\mf r8[ c8]-.-> r4 R1"],
+    pitches=[["C5"],["C5"],["A4"],["C4"],["A4"]]
+    )
+music.arrange_music(
+    apply_flags=["E4"],
+    part_names=["oboe1","oboe2","oboe3","bassoon1","bassoon2"],
+    rhythms=["R1 r4 r8[ c8]-.->\\mf r8[ c8]-.-> r4 R1"],
+    pitches=[["D5"],["D5"],["A4"],["D4"],["A4"]]
+    )
+
+
 music.exec_method("add_stream_cloud_pitches", skip_flags=["stream_cloud1","stream_cloud2"])
 
 # a string cloud that kind of follows the melody
@@ -359,6 +431,21 @@ music.exec_method("add_stream_cloud_pitches",  pitch_times=(8,8,8), stream_cloud
 music.exec_method("add_stream_cloud_pitches", pitch_name="stream_cloud_single", pitch_times=(1,1,1), apply_flags=["stream_cloud1"])
 music.exec_method("add_stream_cloud_pitches",  pitch_name="stream_cloud_single", pitch_times=(1,1,1), stream_cloud_type=StreamCloud2, apply_flags=["stream_cloud2"])
 
+t_cloud = WaterCloudBase(autorandom=False, start_pitch=0)
+music.arrange_music(part_names=["tuba"],
+    apply_flags=["E2"],
+    pitches=[t_cloud.pitches[0]],
+    rhythms=["R1 " + "c8-- "*12 + " r2 "],
+    pitch_offset=[8],
+    transpose=[-12],
+    respell=["flats"]
+    )
+
+music.arrange_music(part_material="strings", pitch_range_material="string_ranges_mid",
+    pitch_material="stream_cloud_mid",
+    apply_flags=["E2","E4"],
+    rhythms=["c8( c) r4 r2 | R1 | R1 "]
+    )
 
 music.arrange_music(
             part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2"],
@@ -407,6 +494,9 @@ music.arrange_music(
             respell=["flats"]
             )
 
+
+
+
 # the real cloud in the strings
 music.exec_method("arrange_cloud",
             part_names=string_parts[:-2],
@@ -421,11 +511,15 @@ music.exec_method("arrange_cloud",
             part_names=string_parts[:-2],
             cloud_type=WaterCloudStringsMelody,
             cloud_name="clep-cloud-strings-melody-1-B",
-            respell=["sharps"],
-            transpose=[-2],
+            respell=["flats"],
+            transpose=[2],
             rhythms=[["c8(\\mp\\< c c) c(  c) c(\\mf c c) " + "c---. "*8 + "c( c c) c(  c) c( c) c-- "]],
             apply_flags=["full_stream_2"]
             )
+music.attach_markup(part_names=string_parts[:-2],
+    apply_flags=["E2","E4"],
+    markup_texts=[["sul pont.","normal","sul pont."]], indices=[[0,8,16]])
+
 
 
 # could arrange the cloud in winds in some melody spots
@@ -439,6 +533,23 @@ music.exec_method("arrange_cloud", cloud_ref_name = "winds-cloud",
     pitch_columns=[[0,1,2,3,4,5,6,7,    1,2,3,4,5,6,7,   0,1,2,3,4,5,6,7]],
     save=SAVE_CLOUDS
     )
+
+music.arrange_music(apply_flags="E1", part_names=["trumpet1","trumpet2","horn1","horn2","horn3","horn4"],
+    rhythms=["c2\\p\\< ~ c4. c8->-.\\mf \\! r8 c4.\\p \\< c4 c8-.->\\mf \\! r8 R1"],
+    pitches=[["B4"],["A4"],["B3"],["A3"],])
+music.arrange_music(apply_flags="E3", part_names=["trumpet1","trumpet2","horn1","horn2","horn3","horn4"],
+    rhythms=["c2\\p\\< ~ c4. c8->-.\\mf \\! r8 c4.\\p \\< c4 c8-.->\\mf \\! r8 R1"],
+    pitches=[["C#5"],["A4"],["C#4"],["A3"]])
+
+music.arrange_music(part_names=["timpani"], 
+    apply_flags=["E1","E3"],
+    rhythms=["r2 r4 r8 a,8\\mf | r2 r8 a,8 a,4:32 | R1^\"dampen\""]
+    )
+music.arrange_music(part_names=["timpani"], 
+    apply_flags=["E2","E4"],
+    rhythms=["R1 | gs,4 r4 r2 | r4 r8 gs,8-> r4 "]
+    )
+
 
 # the final cloud....
 # if all else fails, arrange the cloud in the low strings...
@@ -461,6 +572,8 @@ music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","v
     markup_texts=[["repeat randomly until start of next movement"]],
     apply_flags=["slowing"]
     )
+
+
 
 
 
@@ -517,11 +630,20 @@ music.exec_method("arrange_stream",
             respell=["sharps"]
             )
 music.exec_method("arrange_stream",
+            part_name="flute1",
+            apply_flags=["full_stream_2"],
+            respell=["sharps"],
+            stream_type=StreamHint2,
+            transpose=[12]
+            )
+music.exec_method("arrange_stream",
             part_name="trombone1",
             apply_flags=["trom_stream"],
             respell=["flats"],
             pitch_range=[get_pitch_range("C3","F4")]
             )
+
+
 
 
 # ---------------------------------------------------------------------------------------------
@@ -572,7 +694,8 @@ music.arrange_music(
 # ---------------------------------------------------------------------------------------------
 
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C", "D", "E", ])
+# clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),
@@ -591,7 +714,11 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
 #     "ly_prepends":[],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION E ----------------------------------------------
-kwargs = {"section_name": "E", "iters":(17,18,19,20),
+# kwargs = {"section_name": "E", "iters":(17,18,19,20),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# --- CLEPSYDRA SECTION F ----------------------------------------------
+kwargs = {"section_name": "F", "iters":(21,22,23,24),
     "ly_prepends":[],
     "ly_appends": [], }
 

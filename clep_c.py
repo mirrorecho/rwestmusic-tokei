@@ -29,10 +29,10 @@ def get_cycle_music():
     music.add_cycle(flags=["ref_Bb", "D", "D3", "stream_cloud1", "stream_low_strings", "stream_cloud_strings_staccato","cloud_swell1"])
     music.add_cycle(flags=["ref_Bb", "D", "D4", "stream_cloud2",  "stream_low_strings","stream_cloud_strings_staccato","cloud_swell2"])
     # -------------------------------------------------------------------
-    music.add_cycle(flags=["ref_B", "taiko_melody_1","full_stream_1", "melody_start_1"],rehearsal_mark="D")
-    music.add_cycle(flags=["ref_C", "taiko_melody_2", "trom_stream"])
-    music.add_cycle(flags=["ref_C#", "taiko_melody_1"])
-    music.add_cycle(flags=["ref_D", "taiko_melody_2"])
+    music.add_cycle(flags=["ref_B", "E1", "taiko_melody_1","full_stream_1", "melody_start_1"],rehearsal_mark="D")
+    music.add_cycle(flags=["ref_C", "E2", "taiko_melody_2", "trom_stream"])
+    music.add_cycle(flags=["ref_C#", "E3", "taiko_melody_1", "full_stream_2",])
+    music.add_cycle(flags=["ref_D", "E4", "taiko_melody_2"])
     # ------------------------------------
     music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_Eb", "free2"], rehearsal_mark="E") # This one's longer... come in one at a time
     music.add_cycle( bubble_type=ClepFreeFermata, flags=["ref_Eb","free2"])

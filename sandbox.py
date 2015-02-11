@@ -38,6 +38,10 @@ from calliope.tools import get_pitch_number, box_music, make_harmonics, get_pitc
 
 from wado_m import WadoMaterial
 from caes_m import *
+from clep_m import *
+
+s = WaterCloudBase(autorandom=False)
+s.show()
 
 # f = ForceCloud2C(name="caesium-force-cloud-2-strings-down")
 # f.cloud.show()

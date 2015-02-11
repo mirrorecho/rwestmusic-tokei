@@ -311,6 +311,8 @@ class ClepsydraMaterial(TokeiBubble):
 
         self.material["rhythm"]["steady_8ths"] = "c8 "*24
         
+        self.material["rhythm"]["taiko_ji"] = "c8_do[ c8_ko] " * 12
+
         self.material["rhythm"]["8ths_slured"] = "c8( c c c) "*6
         self.material["rhythm"]["8ths_slured_mf"] = "c8(\\mf c c c) " + "c8( c c c) "*5
 
@@ -354,6 +356,10 @@ class ClepsydraMaterial(TokeiBubble):
                     *args,
                     **kwargs
                     )
+
+    # def add_cloud_pitches(self, name, cloud_type=WaterCloudBase, autorandom=False, *args, **kwargs):
+    #     cloud = cloud_type(autorandom=autorandom)
+    #     self.material["pitch"][name] = cloud.pitches()
 
     def add_stream_cloud_pitches(self, pitch_times=(1,1,1), pitch_name="stream_cloud", stream_cloud_type=StreamCloud1):
         cloud = stream_cloud_type(ref_pitch=self.material["pitch"]["ref"][0])
