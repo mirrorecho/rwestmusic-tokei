@@ -1,8 +1,5 @@
 fluteOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -314,9 +311,6 @@ fluteOneB = {
  
 fluteTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -628,9 +622,6 @@ fluteTwoB = {
  
 oboeOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -866,9 +857,6 @@ oboeOneB = {
  
 oboeTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1104,9 +1092,6 @@ oboeTwoB = {
  
 oboeThreeB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1342,9 +1327,6 @@ oboeThreeB = {
  
 clarinetOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1580,9 +1562,6 @@ clarinetOneB = {
  
 clarinetTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1818,9 +1797,6 @@ clarinetTwoB = {
  
 bassoonOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1980,9 +1956,6 @@ bassoonOneB = {
  
 bassoonTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2142,9 +2115,6 @@ bassoonTwoB = {
  
 hornOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2227,9 +2197,6 @@ hornOneB = {
  
 hornTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2313,9 +2280,6 @@ hornTwoB = {
  
 hornThreeB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2399,9 +2363,6 @@ hornThreeB = {
  
 hornFourB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2485,9 +2446,6 @@ hornFourB = {
  
 trumpetOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2571,9 +2529,6 @@ trumpetOneB = {
  
 trumpetTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2657,9 +2612,6 @@ trumpetTwoB = {
  
 tromboneOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2743,9 +2695,6 @@ tromboneOneB = {
  
 tromboneTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2829,9 +2778,6 @@ tromboneTwoB = {
  
 tubaB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -2915,9 +2861,6 @@ tubaB = {
  
 crotalesB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3001,9 +2944,6 @@ crotalesB = {
  
 percOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3087,9 +3027,6 @@ percOneB = {
  
 percTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3173,9 +3110,6 @@ percTwoB = {
  
 timpaniB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3259,9 +3193,6 @@ timpaniB = {
  
 shimeB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3344,9 +3275,6 @@ shimeB = {
  
 taikoOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -3777,9 +3705,6 @@ taikoOneB = {
  
 taikoTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -4210,9 +4135,6 @@ taikoTwoB = {
  
 violinIDivOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -4588,9 +4510,6 @@ violinIDivOneB = {
  
 violinIDivTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -4970,9 +4889,6 @@ violinIDivTwoB = {
  
 violinIIDivOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -5348,9 +5264,6 @@ violinIIDivOneB = {
  
 violinIIDivTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -5730,9 +5643,6 @@ violinIIDivTwoB = {
  
 violaDivOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -5816,9 +5726,6 @@ violaDivOneB = {
  
 violaDivTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -5902,9 +5809,6 @@ violaDivTwoB = {
  
 celloDivOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -5988,9 +5892,6 @@ celloDivOneB = {
  
 celloDivTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -6074,9 +5975,6 @@ celloDivTwoB = {
  
 bassDivOneB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -6160,9 +6058,6 @@ bassDivOneB = {
  
 bassDivTwoB = {  
 \calliopeRehearsalMark B 
- \time 4/4 
- \numericTimeSignature 
- \context Staff {#(set-accidental-style 'modern)} 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
