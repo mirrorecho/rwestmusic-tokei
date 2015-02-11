@@ -733,8 +733,8 @@ percOneL = {
 		\time 40/8
 		{
 			s1
+			b4  ^" ad lib off of taiko cadenza"  s4 s2
 			s1
-			r1 -\fermata
 			s1
 			s1
 		}
@@ -824,7 +824,7 @@ timpaniL = {
 				\startStaff
 			}
 			s8
-			a'4.  \mf  ^ \markup { repeat (steady beat) }
+			a,4.  \mf  ^ \markup { repeat (steady beat) }
 			\afterGrace
 			s8
 			{
@@ -1013,7 +1013,7 @@ taikoOneL = {
 		{
 			s1
 			s1
-			r1 -\fermata
+			r1 -\fermata ^"taiko will cue the start of M after a pause"
 			s1
 			s1
 		}

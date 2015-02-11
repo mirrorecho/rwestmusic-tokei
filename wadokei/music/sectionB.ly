@@ -1048,7 +1048,7 @@ crotalesB = {
  {
 	R4.
 	R4.
-	R4.
+	R4. ^"crotales"
 	a'8  \mp  [
 	r8
 	r8 ]

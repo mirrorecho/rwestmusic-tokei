@@ -1,7 +1,7 @@
 fluteOneD = {  
 \calliopeRehearsalMark D 
  {
-	a''4. (
+	a''4. ( \mp
 	b''4. )
 	a''4. -\tenuto
 	a''4. (
@@ -64,7 +64,7 @@ fluteTwoD = {
 	R4.
 	R4.
 	R4.
-	a''4. (
+	a''4. ( \mp
 	b''4. )
 	a''4. -\tenuto
 	a''4. (
@@ -115,7 +115,7 @@ fluteTwoD = {
 oboeOneD = {  
 \calliopeRehearsalMark D 
  {
-	af'4 -\tenuto
+	af'4 -\tenuto \mf
 	af'8 -\tenuto
 	af'4 -\staccato
 	r8
@@ -220,7 +220,7 @@ oboeOneD = {
 oboeTwoD = {  
 \calliopeRehearsalMark D 
  {
-	gf'4 -\tenuto
+	gf'4 -\tenuto \mf
 	gf'8 -\tenuto
 	f''4 -\staccato
 	r8
@@ -325,7 +325,7 @@ oboeTwoD = {
 oboeThreeD = {  
 \calliopeRehearsalMark D 
  {
-	af'4 -\staccato
+	af'4 -\staccato \mf
 	r8
 	af'4 -\tenuto
 	af'8 -\tenuto
@@ -1228,54 +1228,22 @@ crotalesD = {
 percOneD = {  
 \calliopeRehearsalMark D 
  {
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
+	b4 \mp ^" wood block" b8 b4 b8 b4 b8
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
+	b4 b8 b4 b8 b4 b8 |
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1513,7 +1481,7 @@ odaikoD = {
 taikoOneD = {  
 \calliopeRehearsalMark D 
  {
-	r4. _ \markup { tsu }
+	r4. _ \markup { tsu } 
 	c4. _ \markup { don }
 	c4. _ \markup { don }
 	r8 [ _ \markup { tsu }
@@ -1729,7 +1697,7 @@ taikoTwoD = {
 violinID = {  
 \calliopeRehearsalMark D 
  {
-	gf''4 -\accent -\staccato
+	gf''4 -\accent -\staccato \mf
 	f'''8 -\tenuto ~
 	f'''4
 	f'''8 -\tenuto ~
@@ -1834,7 +1802,7 @@ violinID = {
 violinIID = {  
 \calliopeRehearsalMark D 
  {
-	af'4 -\accent -\staccato
+	af'4 -\accent -\staccato \mf
 	af'8 -\tenuto ~
 	af'4
 	a'8 -\tenuto ~
@@ -1939,7 +1907,7 @@ violinIID = {
 violaD = {  
 \calliopeRehearsalMark D 
  {
-	gf'4 -\accent -\staccato
+	gf'4 -\accent -\staccato \mf
 	ef'8 -\tenuto ~
 	ef'4
 	ef'8 -\tenuto ~
@@ -2044,7 +2012,7 @@ violaD = {
 celloD = {  
 \calliopeRehearsalMark D 
  {
-	b4 -\accent -\staccato
+	b4 -\accent -\staccato \mf
 	b8 -\tenuto ~
 	b4
 	b8 -\tenuto ~
@@ -2149,7 +2117,7 @@ celloD = {
 bassD = {  
 \calliopeRehearsalMark D 
  {
-	b4 -\accent -\staccato
+	b4 -\accent -\staccato \mf
 	b8 -\tenuto ~
 	b4
 	b8 -\tenuto ~

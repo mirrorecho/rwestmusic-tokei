@@ -58,6 +58,7 @@ oboeThree = {
 \oboeThreeH
 } 
 clarinetOne = { 
+\comporessFullBarRests
 \clarinetOneA
 \clarinetOneB
 \clarinetOneC
@@ -238,13 +239,21 @@ shime = {
 \shimeH
 } 
 taikoOne = { 
+\partBreak
 \taikoOneA
+\partBreak
 \taikoOneB
+\partBreak
 \taikoOneC
+\partBreak
 \taikoOneD
+\partBreak
 \taikoOneE
+\partBreak
 \taikoOneF
+\partBreak
 \taikoOneG
+\partBreak
 \taikoOneH
 } 
 taikoTwo = { 

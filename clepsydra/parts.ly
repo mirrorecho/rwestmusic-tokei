@@ -312,7 +312,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Clepsydra.Percussion"
   \score {
-      \percStaves
+      \percussionStaves
      \header { piece = "Percussion" }
       \layout {
         \context {
@@ -527,7 +527,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 \book {
   \bookOutputName "RandallWest-Clepsydra.Bass"
   \score {
-      \bassStaff
+     \tubaStaff
      \header { piece = "Bass" }
       \layout {
         \context {
@@ -537,18 +537,15 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \override BarNumber  #'stencil = #(make-stencil-boxer 0.1 0.25 ly:text-interface::print)
         }
         \context {
-          \StaffGroup
-          \remove Instrument_name_engraver
-        }
-        \context {
           \Staff
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
-              \override VerticalAxisGroup #'remove-first = ##t
-              \override Hairpin #'minimum-length = #6
-          }
+        \context {
+          \RhythmicStaff
+          \remove Instrument_name_engraver
+          \override Hairpin #'minimum-length = #6
+        }
       }
     }
   }

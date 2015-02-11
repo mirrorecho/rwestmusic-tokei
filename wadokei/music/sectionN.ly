@@ -1,44 +1,30 @@
 fluteOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			g''4 -\staccato
-			r8
-			g''4 -\tenuto
-			g''8 -\tenuto
-			g''4 -\staccato
-			r8
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	gs''4 -\tenuto
+	gs''8 -\tenuto
+	ds''4 -\staccato
+	r8
+	f''4 -\tenuto
+	f''8 -\tenuto
+	b''4 -\staccato
+	r8
+	b''4 -\tenuto
+	b''8 -\tenuto
+	b''4 -\staccato
+	r8
+	fs''4 -\tenuto
+	fs''8 -\tenuto
+	fs''4 -\staccato
+	r8
+	fs''4 -\tenuto
+	fs''8 -\tenuto
+	a''4 -\staccato
+	r8
+	b''4 -\tenuto
+	b''8 -\tenuto
+	ds'''4 -\staccato
+	r8
 	fs''4 -\tenuto
 	fs''8 -\tenuto
 	ds''4 -\staccato
@@ -72,44 +58,30 @@ fluteOneN = {
 fluteTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			a''4 -\tenuto
-			a''8 -\tenuto
-			a''4 -\staccato
-			r8
-			g''4 -\tenuto
-			g''8 -\tenuto
-			g''4 -\staccato
-			r8
-			g''4 -\tenuto
-			g''8 -\tenuto
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	gs''4 -\staccato
+	r8
+	ds''4 -\tenuto
+	ds''8 -\tenuto
+	f''4 -\staccato
+	r8
+	b''4 -\tenuto
+	b''8 -\tenuto
+	b''4 -\staccato
+	r8
+	b''4 -\tenuto
+	b''8 -\tenuto
+	fs''4 -\staccato
+	r8
+	fs''4 -\tenuto
+	fs''8 -\tenuto
+	fs''4 -\staccato
+	r8
+	a''4 -\tenuto
+	a''8 -\tenuto
+	b''4 -\staccato
+	r8
+	ds'''4 -\tenuto
+	ds'''8 -\tenuto
 	fs''4 -\staccato
 	r8
 	ds''4 -\tenuto
@@ -143,24 +115,18 @@ fluteTwoN = {
 oboeOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -182,24 +148,18 @@ oboeOneN = {
 oboeTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -221,24 +181,18 @@ oboeTwoN = {
 oboeThreeN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -260,44 +214,30 @@ oboeThreeN = {
 clarinetOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			a'4 -\staccato
-			r8
-			a'4 -\tenuto
-			a'8 -\tenuto
-			a'4 -\staccato
-			r8
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	cs''4 -\tenuto
+	cs''8 -\tenuto
+	cs''4 -\staccato
+	r8
+	ds''4 -\tenuto
+	ds''8 -\tenuto
+	e''4 -\staccato
+	r8
+	e''4 -\tenuto
+	e''8 -\tenuto
+	e''4 -\staccato
+	r8
+	cs''4 -\tenuto
+	cs''8 -\tenuto
+	cs''4 -\staccato
+	r8
+	cs''4 -\tenuto
+	cs''8 -\tenuto
+	b'4 -\staccato
+	r8
+	ds''4 -\tenuto
+	ds''8 -\tenuto
+	fs''4 -\staccato
+	r8
 	ds''4 -\tenuto
 	ds''8 -\tenuto
 	fs'4 -\staccato
@@ -331,44 +271,30 @@ clarinetOneN = {
 clarinetTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			b'4 -\tenuto
-			b'8 -\tenuto
-			b'4 -\staccato
-			r8
-			a'4 -\tenuto
-			a'8 -\tenuto
-			a'4 -\staccato
-			r8
-			a'4 -\tenuto
-			a'8 -\tenuto
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	cs''4 -\staccato
+	r8
+	cs''4 -\tenuto
+	cs''8 -\tenuto
+	ds''4 -\staccato
+	r8
+	e''4 -\tenuto
+	e''8 -\tenuto
+	e''4 -\staccato
+	r8
+	e''4 -\tenuto
+	e''8 -\tenuto
+	cs''4 -\staccato
+	r8
+	cs''4 -\tenuto
+	cs''8 -\tenuto
+	cs''4 -\staccato
+	r8
+	b'4 -\tenuto
+	b'8 -\tenuto
+	ds''4 -\staccato
+	r8
+	fs''4 -\tenuto
+	fs''8 -\tenuto
 	ds''4 -\staccato
 	r8
 	fs'4 -\tenuto
@@ -402,24 +328,18 @@ clarinetTwoN = {
 bassoonOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -441,24 +361,18 @@ bassoonOneN = {
 bassoonTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -480,24 +394,18 @@ bassoonTwoN = {
 hornOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -519,24 +427,18 @@ hornOneN = {
 hornTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -558,24 +460,18 @@ hornTwoN = {
 hornThreeN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -597,24 +493,18 @@ hornThreeN = {
 hornFourN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -636,24 +526,18 @@ hornFourN = {
 trumpetOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -675,24 +559,18 @@ trumpetOneN = {
 trumpetTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -714,24 +592,18 @@ trumpetTwoN = {
 tromboneOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -753,24 +625,18 @@ tromboneOneN = {
 tromboneTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -792,24 +658,18 @@ tromboneTwoN = {
 tubaN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -831,24 +691,18 @@ tubaN = {
 crotalesN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -870,24 +724,18 @@ crotalesN = {
 percOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -909,24 +757,18 @@ percOneN = {
 percTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -948,24 +790,18 @@ percTwoN = {
 timpaniN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -987,24 +823,18 @@ timpaniN = {
 shimeN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -1026,24 +856,18 @@ shimeN = {
 odaikoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -1065,37 +889,23 @@ odaikoN = {
 taikoOneN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			r4. _ \markup { tsu }
-			c4. _ \markup { don }
-			c4. _ \markup { don }
-			r8 [ _ \markup { tsu }
-			r8
-			c8 ] _ \markup { don }
-			r8 [
-			r8
-			c8 ] _ \markup { do }
-			c4 _ \markup { do }
-			c8 _ \markup { ko }
-			c4. _ \markup { don }
-			c4. _ \markup { don }
-			r4. _ \markup { tsu }
-			c4. _ \markup { ka }
-			c4. _ \markup { don }
-			r4. _ \markup { tsu }
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	r4. _ \markup { tsu }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
+	r8 [ _ \markup { tsu }
+	r8
+	c8 ] _ \markup { don }
+	r8 [
+	r8
+	c8 ] _ \markup { do }
+	c4 _ \markup { do }
+	c8 _ \markup { ko }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
+	c4. _ \markup { ka }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
 	c4. _ \markup { don }
 	c4. _ \markup { don }
 	r4. _ \markup { tsu }
@@ -1123,24 +933,18 @@ taikoOneN = {
 taikoTwoN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
+	R4.
 	R4.
 	R4.
 	R4.
@@ -1162,32 +966,18 @@ taikoTwoN = {
 violinIN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			a''4.  \p %%%
-			a''4.
-			a''4.
-			a''4.
-			a''4.
-			a''4.
-			a''4.
-			a''4.
-			a''4.
-			g''4.
-			g''4.
-			g''4.
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	gs''4.  \p %%%
+	ds''4.
+	f''4.
+	b''4.
+	b''4.
+	b''4.
+	fs''4.
+	fs''4.
+	fs''4.
+	a''4.
+	b''4.
+	ds'''4.
 	fs''4.
 	ds''4.
 	ds''4.
@@ -1209,32 +999,18 @@ violinIN = {
 violinIIN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			b'4.  \p %%%
-			b'4.
-			b'4.
-			b'4.
-			b'4.
-			b'4.
-			b'4.
-			b'4.
-			b'4.
-			a'4.
-			a'4.
-			a'4.
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	cs''4.  \p %%%
+	cs''4.
+	ds''4.
+	e''4.
+	e''4.
+	e''4.
+	cs''4.
+	cs''4.
+	cs''4.
+	b'4.
+	ds''4.
+	fs''4.
 	ds''4.
 	fs'4.
 	ds'4.
@@ -1256,32 +1032,18 @@ violinIIN = {
 violaN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			a'4.  \p %%%
-			a'4.
-			a'4.
-			a'4.
-			a'4.
-			a'4.
-			a'4.
-			a'4.
-			a'4.
-			g'4.
-			g'4.
-			g'4.
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	fs'4.  \p %%%
+	cs'4.
+	cs'4.
+	e'4.
+	e'4.
+	e'4.
+	fs'4.
+	fs'4.
+	fs'4.
+	e'4.
+	a'4.
+	b'4.
 	b4.
 	b4.
 	b4.
@@ -1303,32 +1065,18 @@ violaN = {
 celloN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			a4.  \p %%%
-			a4.
-			a4.
-			a4.
-			a4.
-			a4.
-			a4.
-			a4.
-			a4.
-			g4.
-			g4.
-			g4.
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	e4.  \p %%%
+	e4.
+	b4.
+	g4.
+	g4.
+	g4.
+	a4.
+	a4.
+	a4.
+	cs'4.
+	cs'4.
+	cs'4.
 	cs4.
 	cs4.
 	cs4.
@@ -1350,32 +1098,18 @@ celloN = {
 bassN = {  
 \calliopeRehearsalMark N 
  {
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
-	{
-		\time 40/8
-		{
-			g4.  \p %%%
-			g4.
-			g4.
-			g4.
-			g4.
-			g4.
-			g4.
-			g4.
-			g4.
-			f4.
-			f4.
-			f4.
-		}
-		s1 * 1/2
-	}
-	\context Staff {#(set-accidental-style 'modern)}
-	 \time 9/8 %%%
+	d4.  \p %%%
+	b4.
+	a4.
+	g4.
+	g4.
+	g4.
+	a4.
+	a4.
+	a4.
+	b4.
+	b4.
+	b4.
 	cs4.
 	cs4.
 	cs4.

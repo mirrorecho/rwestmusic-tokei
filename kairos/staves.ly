@@ -256,7 +256,7 @@ violinIIStaff = \new Staff \with {
 
 violaStaff = \new Staff \with {
   instrumentName = "Viola"
-  shortInstrumentName = "2"
+  shortInstrumentName = "viola"
   midiInstrument = "Va."
 }  {\clef alto \viola }
 

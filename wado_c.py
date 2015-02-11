@@ -61,7 +61,7 @@ def get_cycle_music():
     music.add_cycle(bubble_type=Intro2, flags=["M4", "intro_2_b", "taiko_b", "intro_b", "intro_return"])
 
     # melody starts up again (the first/last one is free)
-    music.add_cycle(bubble_type=WadoMelodyLastA, flags=["N1", "melody_last","melody_1","melody_1_a", "taiko_a","melody_start","free"], rehearsal_mark="N")
+    music.add_cycle(bubble_type=MelodyA, flags=["N1", "melody_last","melody_1","melody_1_a", "taiko_a","melody_start","free"], rehearsal_mark="N")
     music.add_cycle(bubble_type=MelodyB, flags=["N2", "melody","melody_1","melody_1_b", "taiko_b"])
 
     music.add_cycle(bubble_type=MelodySwingA, flags=["O1", "melody","melody_2","melody_2_a", "taiko_a", "taiko_split"], rehearsal_mark="O")

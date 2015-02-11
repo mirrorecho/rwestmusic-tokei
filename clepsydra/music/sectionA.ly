@@ -150,7 +150,7 @@ clarinetTwoA = {
  {
 	\set Staff.instrumentName = \markup { Bass Clarinet in Bb }
 	\set Staff.shortInstrumentName = \markup { B. cl. }
-	R1
+	R1 ^ "Bass Clarinet"
 	R1
 	R1
 	\grace {

@@ -748,23 +748,23 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=[
 #     "ly_prepends":[],
 #     "ly_appends": [], }
 # # # --- CLEPSYDRA SECTION E ----------------------------------------------
-kwargs = {"section_name": "E", "iters":(17,18,19,20),
-    "ly_prepends":[],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="clepsydra", **kwargs), 
-# # # --- CLEPSYDRA SECTION F ----------------------------------------------
-kwargs = {"section_name": "F", "iters":(21,22,23,24),
-    "ly_prepends":[],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="clepsydra", **kwargs), 
-kwargs = {"section_name": "G", "iters":(17,18,19,20),
-    "ly_prepends":["\\time 4/4"],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="clepsydra", **kwargs), 
-kwargs = {"section_name": "H", "iters":(29,),
-    "ly_prepends":[],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# kwargs = {"section_name": "E", "iters":(17,18,19,20),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# # # # --- CLEPSYDRA SECTION F ----------------------------------------------
+# kwargs = {"section_name": "F", "iters":(21,22,23,24),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# kwargs = {"section_name": "G", "iters":(17,18,19,20),
+#     "ly_prepends":["\\time 4/4"],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# kwargs = {"section_name": "H", "iters":(29,),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
 
 # kwargs = {"section_name": "H", "iters":(29,30,31,32),
 #     "ly_prepends":[],
@@ -772,7 +772,8 @@ music.make_ly_music(ly_folder="clepsydra", **kwargs),
 # music.make_ly_music(ly_folder="clepsydra", **kwargs), 
 # kwargs = {"section_name": "I", "iters":(33,),
 #     "ly_prepends":[],
-#     "ly_appends": [], }
+#     "ly_appends": [], 
+#     "final_bar": "|."}
 # music.make_ly_music(ly_folder="clepsydra", **kwargs), 
 
 

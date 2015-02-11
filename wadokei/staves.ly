@@ -257,12 +257,11 @@ violinIIStaff = \new Staff \with {
 
 violaStaff = \new Staff \with {
   instrumentName = "Viola"
-  shortInstrumentName = "2"
-  midiInstrument = "Va."
+  shortInstrumentName = "Vla."
+  midiInstrument = "viola"
 }  {\clef alto \viola }
 
-
-celloStaff = \new Staff \with {
+celloStaff = \new Staff = "cello" \with {
   instrumentName = "Cello"
   shortInstrumentName = "Vc."
   midiInstrument = "cello"

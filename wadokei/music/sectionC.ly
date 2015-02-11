@@ -941,30 +941,41 @@ taikoOneC = {
 taikoTwoC = {  
 \calliopeRehearsalMark C 
  {
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
-	R4.
+	r4. _ \markup { tsu }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
+	r8 [ _ \markup { tsu }
+	r8
+	c8 ] _ \markup { don }
+	r8 [
+	r8
+	c8 ] _ \markup { do }
+	c4 _ \markup { do }
+	c8 _ \markup { ko }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
+	c4. _ \markup { ka }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
+	c4. _ \markup { ka }
+	c4. _ \markup { don }
+	r4. _ \markup { tsu }
+	r8 [ _ \markup { tsu }
+	r8
+	c8 ] _ \markup { don }
+	r8 [ _ \markup { tsu }
+	r8
+	c8 ] _ \markup { do }
+	c8 _ \markup { ka }
+	c8 _ \markup { ra }
+	c8 _ \markup { ka }
+	r4. _ \markup { tsu }
+	c4. _ \markup { don }
+	c4. _ \markup { don }
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 

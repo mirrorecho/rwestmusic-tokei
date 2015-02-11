@@ -326,26 +326,32 @@ celloStaves = \new StaffGroup = violaStaves \with {
   \celloDivTwoStaff
 >>
 
-bassDivOneStaff = \new Staff \with {
-  instrumentName = "div 1"
-  shortInstrumentName = "1"
+bassStaff = \new Staff \with {
+  instrumentName = "Bass"
+  shortInstrumentName = "Cb."
   midiInstrument = "bass"
 } {\clef bass \bassDivOne }
 
-bassDivTwoStaff = \new Staff \with {
-  instrumentName = "div 2"
-  shortInstrumentName = "2"
-  midiInstrument = "bass"
-} {\clef bass \bassDivTwo }
+% bassDivOneStaff = \new Staff \with {
+%   instrumentName = "div 1"
+%   shortInstrumentName = "1"
+%   midiInstrument = "bass"
+% } {\clef bass \bassDivOne }
 
-bassStaves = \new StaffGroup = violaStaves \with {
-  instrumentName ="Bass"
-  shortInstrumentName = "Cb."
-  \override SystemStartBracket #'style = #'bar-line
-} <<
-  \bassDivOneStaff
-  \bassDivTwoStaff
->>
+% bassDivTwoStaff = \new Staff \with {
+%   instrumentName = "div 2"
+%   shortInstrumentName = "2"
+%   midiInstrument = "bass"
+% } {\clef bass \bassDivTwo }
+
+% bassStaves = \new StaffGroup = violaStaves \with {
+%   instrumentName ="Bass"
+%   shortInstrumentName = "Cb."
+%   \override SystemStartBracket #'style = #'bar-line
+% } <<
+%   \bassDivOneStaff
+%   \bassDivTwoStaff
+% >>
 
 stringStaves = \new StaffGroup 
 <<
@@ -353,5 +359,5 @@ stringStaves = \new StaffGroup
     \violinIIStaves
     \violaStaves
     \celloStaves
-    \bassStaves
+    \bassStaff
 >>

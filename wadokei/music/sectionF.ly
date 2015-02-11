@@ -1478,11 +1478,7 @@ violaF = {
 celloF = {  
 \calliopeRehearsalMark F 
  {
-	\once \override 
-	                            Staff.TimeSignature #'stencil = #(lambda (grob)
-	                            (parenthesize-stencil (grob-interpret-markup grob 
-	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
-	                            ) 0.1 0.4 0.4 0.1 ))
+
 	<<
 		\context Staff = "cello_s" {
 			\context Staff {#(set-accidental-style 'forget)}
@@ -1497,6 +1493,7 @@ celloF = {
 			{
 				\time 40/8
 				{
+					\clef tenor
 					s8
 					r1 -\fermata
 					s2
@@ -1516,6 +1513,12 @@ celloF = {
 			\set Staff.shortInstrumentName = \markup { s.vc. }
 			\set Staff.alignAboveContext = #"cello"
 			\once \override Staff.TimeSignature.stencil = ##f
+				\once \override 
+	                            Staff.TimeSignature #'stencil = #(lambda (grob)
+	                            (parenthesize-stencil (grob-interpret-markup grob 
+	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
+	                            ) 0.1 0.4 0.4 0.1 ))
+
 			{
 				\time 56/8
 				{
