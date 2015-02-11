@@ -5,6 +5,8 @@
 \include "music/sectionE.ly" 
 \include "music/sectionF.ly" 
 \include "music/sectionG.ly" 
+\include "music/sectionH.ly" 
+\include "music/sectionI.ly" 
 
 fluteOne = { 
 \fluteOneA
@@ -14,6 +16,8 @@ fluteOne = {
 \fluteOneE
 \fluteOneF
 \fluteOneG
+\fluteOneH
+\fluteOneI
 } 
 fluteTwo = { 
 \fluteTwoA
@@ -23,6 +27,8 @@ fluteTwo = {
 \fluteTwoE
 \fluteTwoF
 \fluteTwoG
+\fluteTwoH
+\fluteTwoI
 } 
 oboeOne = { 
 \oboeOneA
@@ -32,6 +38,8 @@ oboeOne = {
 \oboeOneE
 \oboeOneF
 \oboeOneG
+\oboeOneH
+\oboeOneI
 } 
 oboeTwo = { 
 \oboeTwoA
@@ -41,6 +49,8 @@ oboeTwo = {
 \oboeTwoE
 \oboeTwoF
 \oboeTwoG
+\oboeTwoH
+\oboeTwoI
 } 
 oboeThree = { 
 \oboeThreeA
@@ -50,6 +60,8 @@ oboeThree = {
 \oboeThreeE
 \oboeThreeF
 \oboeThreeG
+\oboeThreeH
+\oboeThreeI
 } 
 clarinetOne = { 
 \clarinetOneA
@@ -59,6 +71,8 @@ clarinetOne = {
 \clarinetOneE
 \clarinetOneF
 \clarinetOneG
+\clarinetOneH
+\clarinetOneI
 } 
 clarinetTwo = { 
 \clarinetTwoA
@@ -68,6 +82,8 @@ clarinetTwo = {
 \clarinetTwoE
 \clarinetTwoF
 \clarinetTwoG
+\clarinetTwoH
+\clarinetTwoI
 } 
 bassoonOne = { 
 \bassoonOneA
@@ -77,6 +93,8 @@ bassoonOne = {
 \bassoonOneE
 \bassoonOneF
 \bassoonOneG
+\bassoonOneH
+\bassoonOneI
 } 
 bassoonTwo = { 
 \bassoonTwoA
@@ -86,6 +104,8 @@ bassoonTwo = {
 \bassoonTwoE
 \bassoonTwoF
 \bassoonTwoG
+\bassoonTwoH
+\bassoonTwoI
 } 
 hornOne = { 
 \hornOneA
@@ -95,6 +115,8 @@ hornOne = {
 \hornOneE
 \hornOneF
 \hornOneG
+\hornOneH
+\hornOneI
 } 
 hornTwo = { 
 \hornTwoA
@@ -104,6 +126,8 @@ hornTwo = {
 \hornTwoE
 \hornTwoF
 \hornTwoG
+\hornTwoH
+\hornTwoI
 } 
 hornThree = { 
 \hornThreeA
@@ -113,6 +137,8 @@ hornThree = {
 \hornThreeE
 \hornThreeF
 \hornThreeG
+\hornThreeH
+\hornThreeI
 } 
 hornFour = { 
 \hornFourA
@@ -122,6 +148,8 @@ hornFour = {
 \hornFourE
 \hornFourF
 \hornFourG
+\hornFourH
+\hornFourI
 } 
 trumpetOne = { 
 \trumpetOneA
@@ -131,6 +159,8 @@ trumpetOne = {
 \trumpetOneE
 \trumpetOneF
 \trumpetOneG
+\trumpetOneH
+\trumpetOneI
 } 
 trumpetTwo = { 
 \trumpetTwoA
@@ -140,6 +170,8 @@ trumpetTwo = {
 \trumpetTwoE
 \trumpetTwoF
 \trumpetTwoG
+\trumpetTwoH
+\trumpetTwoI
 } 
 tromboneOne = { 
 \tromboneOneA
@@ -149,6 +181,8 @@ tromboneOne = {
 \tromboneOneE
 \tromboneOneF
 \tromboneOneG
+\tromboneOneH
+\tromboneOneI
 } 
 tromboneTwo = { 
 \tromboneTwoA
@@ -158,6 +192,8 @@ tromboneTwo = {
 \tromboneTwoE
 \tromboneTwoF
 \tromboneTwoG
+\tromboneTwoH
+\tromboneTwoI
 } 
 tuba = { 
 \tubaA
@@ -167,6 +203,8 @@ tuba = {
 \tubaE
 \tubaF
 \tubaG
+\tubaH
+\tubaI
 } 
 crotales = { 
 \crotalesA
@@ -176,6 +214,8 @@ crotales = {
 \crotalesE
 \crotalesF
 \crotalesG
+\crotalesH
+\crotalesI
 } 
 percOne = { 
 \percOneA
@@ -185,6 +225,8 @@ percOne = {
 \percOneE
 \percOneF
 \percOneG
+\percOneH
+\percOneI
 } 
 percTwo = { 
 \percTwoA
@@ -194,6 +236,8 @@ percTwo = {
 \percTwoE
 \percTwoF
 \percTwoG
+\percTwoH
+\percTwoI
 } 
 timpani = { 
 \timpaniA
@@ -203,6 +247,8 @@ timpani = {
 \timpaniE
 \timpaniF
 \timpaniG
+\timpaniH
+\timpaniI
 } 
 odaiko = { 
 \odaikoA
@@ -212,6 +258,8 @@ odaiko = {
 \odaikoE
 \odaikoF
 \odaikoG
+\odaikoH
+\odaikoI
 } 
 taikoOne = { 
 \taikoOneA
@@ -221,6 +269,8 @@ taikoOne = {
 \taikoOneE
 \taikoOneF
 \taikoOneG
+\taikoOneH
+\taikoOneI
 } 
 taikoTwo = { 
 \taikoTwoA
@@ -230,6 +280,8 @@ taikoTwo = {
 \taikoTwoE
 \taikoTwoF
 \taikoTwoG
+\taikoTwoH
+\taikoTwoI
 } 
 violinI = { 
 \violinIA
@@ -239,6 +291,8 @@ violinI = {
 \violinIE
 \violinIF
 \violinIG
+\violinIH
+\violinII
 } 
 violinII = { 
 \violinIIA
@@ -248,6 +302,8 @@ violinII = {
 \violinIIE
 \violinIIF
 \violinIIG
+\violinIIH
+\violinIII
 } 
 viola = { 
 \violaA
@@ -257,6 +313,8 @@ viola = {
 \violaE
 \violaF
 \violaG
+\violaH
+\violaI
 } 
 cello = { 
 \celloA
@@ -266,6 +324,8 @@ cello = {
 \celloE
 \celloF
 \celloG
+\celloH
+\celloI
 } 
 bass = { 
 \bassA
@@ -275,4 +335,6 @@ bass = {
 \bassE
 \bassF
 \bassG
+\bassH
+\bassI
 } 

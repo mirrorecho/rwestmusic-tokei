@@ -308,8 +308,8 @@ kai.make_ly_includes(ly_folder="kairos", sections=[
     "E",
     "F",
     "G",
-    # "H",
-    # "I",
+    "H",
+    "I",
     # "J",
     # "K",
     # "L",
@@ -322,18 +322,18 @@ kai.make_ly_includes(ly_folder="kairos", sections=[
 
 
 # # #  --- KAIROS SECTION A ----------------------------------------------
-kwargs = {"section_name": "_A", "iters":(0),
-    "ly_prepends":[
-    "\\tempo 4 = 88"
-    # "\\time 4/4", 
-    "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="kairos", **kwargs)
-# #  --- KAIROS SECTION B ----------------------------------------------
-kwargs = {"section_name": "_B", "iters":(2,3),
-    "ly_prepends":[],
-    "ly_appends": [], }
-music.make_ly_music(ly_folder="kairos", **kwargs), 
+# kwargs = {"section_name": "_A", "iters":(0),
+#     "ly_prepends":[
+#     "\\tempo 4 = 88"
+#     # "\\time 4/4", 
+#     "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="kairos", **kwargs)
+# # #  --- KAIROS SECTION B ----------------------------------------------
+# kwargs = {"section_name": "_B", "iters":(2,3),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="kairos", **kwargs), 
 # #  --- KAIROS SECTION C ----------------------------------------------
 kwargs = {"section_name": "C", "iters":(4,5),
     "run_iters":(0,1,2,3),
@@ -365,7 +365,12 @@ kwargs = {"section_name": "G", "iters":(12,13),
     "ly_appends": [], }
 music.make_ly_music(ly_folder="kairos", **kwargs), 
 
-
+# #  --- KAIROS SECTION C ----------------------------------------------
+kwargs = {"section_name": "H", "iters":(14,15),
+    "run_iters":(0,10,11),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
 
 
 

@@ -328,7 +328,7 @@ caes.make_ly_includes(ly_folder="caesium", sections=[
     # "A",
     # "B",
     # "C",
-    # "D",
+    "D",
     # "E",
     # "F",
     # "G",
@@ -364,7 +364,7 @@ caes.make_ly_includes(ly_folder="caesium", sections=[
 # music.make_ly_music(ly_folder="caesium", **kwargs), 
 # # #  --- CAESIUM SECTION C ----------------------------------------------
 kwargs = {"section_name": "D", "iters":(12,13,14,15),
-    "ly_prepends":["\\time 28/8"],
+    "ly_prepends":[],
     "ly_appends": [], }
 music.make_ly_music(ly_folder="caesium", **kwargs), 
 # # # #  --- CAESIUM SECTION E ----------------------------------------------

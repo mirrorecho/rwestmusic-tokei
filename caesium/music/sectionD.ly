@@ -1,6 +1,5 @@
 fluteOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -53,7 +52,6 @@ fluteOneD = {
  
 fluteTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -106,7 +104,6 @@ fluteTwoD = {
  
 oboeOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -159,7 +156,6 @@ oboeOneD = {
  
 oboeTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -212,7 +208,6 @@ oboeTwoD = {
  
 oboeThreeD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -265,7 +260,6 @@ oboeThreeD = {
  
 clarinetOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -318,7 +312,6 @@ clarinetOneD = {
  
 clarinetTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -371,7 +364,6 @@ clarinetTwoD = {
  
 bassoonOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -424,7 +416,6 @@ bassoonOneD = {
  
 bassoonTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -477,7 +468,6 @@ bassoonTwoD = {
  
 hornOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -513,7 +503,6 @@ hornOneD = {
  
 hornTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -549,7 +538,6 @@ hornTwoD = {
  
 hornThreeD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -585,7 +573,6 @@ hornThreeD = {
  
 hornFourD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -621,7 +608,6 @@ hornFourD = {
  
 trumpetOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -657,7 +643,6 @@ trumpetOneD = {
  
 trumpetTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -693,7 +678,6 @@ trumpetTwoD = {
  
 tromboneOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c,8 -\accent -\staccato  \sfz  [
 	r8
@@ -731,7 +715,6 @@ tromboneOneD = {
  
 tromboneTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	cs,8 -\accent -\staccato  \sfz  [
 	r8
@@ -769,7 +752,6 @@ tromboneTwoD = {
  
 tubaD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	fs,,8 -\accent -\staccato  \sfz  [
 	r8
@@ -807,7 +789,6 @@ tubaD = {
  
 percOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c8 -\accent [
 	c8 -\accent
@@ -851,7 +832,6 @@ percOneD = {
  
 percTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -883,7 +863,6 @@ percTwoD = {
  
 timpaniD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	<a, bf,>8
 	r8 [
@@ -923,7 +902,6 @@ timpaniD = {
  
 shimeD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c8 [ _ \markup { do }
 	c8 ] _ \markup { ko }
@@ -967,7 +945,6 @@ shimeD = {
  
 odaikoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c8 [ _ \markup { don }
 	r8
@@ -1011,7 +988,6 @@ odaikoD = {
  
 taikoOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c8 [ _ \markup { don }
 	r8
@@ -1055,7 +1031,6 @@ taikoOneD = {
  
 taikoTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c8 [ _ \markup { don }
 	r8
@@ -1099,7 +1074,6 @@ taikoTwoD = {
  
 violinIDivOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1173,7 +1147,6 @@ violinIDivOneD = {
  
 violinIDivTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1247,7 +1220,6 @@ violinIDivTwoD = {
  
 violinIIDivOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1321,7 +1293,6 @@ violinIIDivOneD = {
  
 violinIIDivTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1395,7 +1366,6 @@ violinIIDivTwoD = {
  
 violaDivOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1469,7 +1439,6 @@ violaDivOneD = {
  
 violaDivTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	r4.
 	r4.
@@ -1543,7 +1512,6 @@ violaDivTwoD = {
  
 celloDivOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c,4. -\accent  \f  ~
 	c,4. ~
@@ -1617,7 +1585,6 @@ celloDivOneD = {
  
 celloDivTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c,4. -\accent  \f  ~
 	c,4. ~
@@ -1691,7 +1658,6 @@ celloDivTwoD = {
  
 bassDivOneD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c,4. -\accent  \f  ~
 	c,4. ~
@@ -1723,7 +1689,6 @@ bassDivOneD = {
  
 bassDivTwoD = {  
 \calliopeRehearsalMark D 
- \time 28/8 
  {
 	c,4. -\accent  \f  ~
 	c,4. ~
