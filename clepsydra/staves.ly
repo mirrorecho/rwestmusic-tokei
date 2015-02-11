@@ -221,12 +221,12 @@ taikoOneStaff = \new RhythmicStaff \with {
   instrumentName = "Taiko A"
   shortInstrumentName = "T.A"
   midiInstrument = "percussion"
-} \taikoOne
+} {\dynamicUp \taikoOne}
 taikoTwoStaff = \new RhythmicStaff \with {
   instrumentName = "Taiko B"
   shortInstrumentName = "T.B"
   midiInstrument = "percussion"
-} \taikoTwo
+} {\dynamicUp \taikoTwo}
 
 
 taikoStaves = \new StaffGroup 
@@ -234,7 +234,7 @@ taikoStaves = \new StaffGroup
     \shimeStaff
     % \odaikoStaff
     \taikoOneStaff
-    \taikoOneStaff
+    \taikoTwoStaff
 >>
 
 

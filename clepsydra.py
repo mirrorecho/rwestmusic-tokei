@@ -437,13 +437,13 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
 #     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION B ----------------------------------------------
-# kwargs = {"section_name": "B", "iters":(4,5,6,7,8),
+# kwargs = {"section_name": "_B", "iters":(4,5,6,7,8),
 #     "ly_prepends":[],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION C ----------------------------------------------
-# kwargs = {"section_name": "C", "iters":(9,10,11,12),
-#     "ly_prepends":[],
-#     "ly_appends": [], }
+kwargs = {"section_name": "C", "iters":(9,10,11,12),
+    "ly_prepends":[],
+    "ly_appends": [], }
 
 
 music.make_ly_music(ly_folder="clepsydra", **kwargs), 
