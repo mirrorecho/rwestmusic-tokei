@@ -382,10 +382,37 @@ class ClepFree(ClepsydraMaterial, TokeiFree):
     def prepare_material(self):
         super().prepare_material()
 
-        self.material["rhythm"]["rest"] = "s1 s1 s1 r1\\fermata s1 s1 s1 "
+        self.material["rhythm"]["rest"] = "s1 s1 s2 r1\\fermata s2 s1 s1 "
 
-        self.material["rhythm"]["taiko_free_intro_shime"] = "s4 s8 r1\\fermata s1 s1 c8[ c8]^\"(with taiko ka kas)\" r1\\fermata " 
-        self.material["rhythm"]["taiko_free_intro_1"] = "c8_do[ c_ko] ^repeat s1 c8_ka^\"random kas\" s1 s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
+# ^\"(ka kas together)\"
+
+        self.material["rhythm"]["taiko_free_intro_shime"] = "s1 c8_ka[-> c_ka]-> s1 s1 r1\\fermata s1 s1" 
+        
+        self.material["rhythm"]["taiko_free_intro_1_a"] = get_music_container(["s16", box_music(
+            "c8_do[\\f c_ko \\hideNotes s8 c8] \\unHideNotes s8", is_percussion=True, continue_lengths=[(1,1)]*2), "s8",
+        box_music(
+            "c8_ka s8", is_percussion=True, continue_lengths=[(1,1)]*3), "s16",
+        ])
+        self.material["rhythm"]["taiko_free_intro_1_b"] = get_music_container(["s16", box_music(
+            "c8_do[\\f c_ko \\hideNotes s8 c8] \\unHideNotes s8", is_percussion=True, continue_lengths=[(1,1)]*3), "s8",
+        box_music(
+            "c8_ka s8", is_percussion=True, continue_lengths=[(1,1)]*2), "s16",
+        ])
+
+        self.material["rhythm"]["taiko_free_intro_2_a"] = get_music_container(["s16", box_music(
+            "c8_ka[-> c_ka]-> c8_do[ c_ko \\hideNotes s8 c8] \\unHideNotes ", is_percussion=True, continue_lengths=[(1,1)]*2), "s8",
+        box_music(
+            "c8_ka ", is_percussion=True, continue_lengths=[(1,1)]*3), "s16",
+        ])
+        self.material["rhythm"]["taiko_free_intro_2_b"] = get_music_container(["s16", box_music(
+            "c8_ka[-> c_ka]-> c8_do[ c_ko \\hideNotes s8 c8] \\unHideNotes ", is_percussion=True, continue_lengths=[(1,1)]*3), "s8",
+        box_music(
+            "c8_ka-> ", is_percussion=True, continue_lengths=[(1,1)]*2), "s16",
+        ])
+
+
+
+
         self.material["rhythm"]["taiko_free_intro_2"] = "c8_do[ c_ko] ^repeat s1 s1 c8_ka^\"random kas\" s1  c8_ka[ c8_ka]^\"(ka kas together)\" s1 " 
         
         self.material["rhythm"]["taiko_free_intro_shime_a"] = "s4 r1\\fermata s1 s1 c8[ c8]^\"(4th ka ka)\" c8[-> c8]-> r1\\fermata " 

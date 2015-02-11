@@ -227,8 +227,12 @@ class TokeiBubble(Bubble):
                 get_pitch_range("G3","G4"), #violin II 
                 get_pitch_range("C3","C4"), #viola 
                 get_pitch_range("C2","C3"), #cello 
-                get_pitch_range("E1","E2"), #bass 
+                get_pitch_range("E2","E2"), #bass 
             ]
+        self.material["all_ranges_mid"] = copy.deepcopy(
+                    self.material["wind_ranges_mid"] + self.material["brass_ranges_mid"] + self.material["string_ranges_mid"])
+
+
         self.material["all_ranges_wide"] = copy.deepcopy(
                     self.material["wind_ranges_hi"] + self.material["brass_ranges_wide"] + self.material["string_ranges_low"])
 

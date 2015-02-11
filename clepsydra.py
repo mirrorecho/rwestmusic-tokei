@@ -107,24 +107,69 @@ music.arrange_music(
         )
 # since the box instructions aren't working:
 music.attach_markup(part_names=trem_parts, markup_texts=[["repeat randomly"]], 
-    indices=[[1]], notes_only=[False], apply_flags=["start_taiko","start_taiko_2"])
+    indices=[[1]], notes_only=[False], apply_flags=["start_taiko",])
 music.attach_markup(part_names=trem_parts, markup_texts=[["sim"]], 
-    indices=[[1]], notes_only=[False], apply_flags=["start_taiko_2"])
+    indices=[[1]], notes_only=[False], apply_flags=["start_taiko_2","start_taiko_3","start_taiko_4"])
 
 
 # --------------------------------------------------------------------------------------------
 # taiko parts
-# TAIKO INTRO
+# INTRO
 music.arrange_music(
             part_names=["shime","taiko1","taiko2"], 
-            rhythm_material=["taiko_free_intro_shime","taiko_free_intro_1","taiko_free_intro_2"],
+            rhythm_material=["rest","taiko_free_intro_1_a","taiko_free_intro_1_b"],
             apply_flags=["start_taiko"],
             )
 music.arrange_music(
             part_names=["shime","taiko1","taiko2"], 
-            rhythm_material=["taiko_free_intro_shime_a","taiko_free_intro_a","taiko_free_intro_a"],
-            apply_flags=["start_taiko_2"],
+            rhythm_material=["taiko_free_intro_shime","taiko_free_intro_2_a","taiko_free_intro_2_b"],
+            apply_flags=["start_taiko_2","start_taiko_3","start_taiko_4"],
             )
+music.arrange_music(
+            part_names=["shime","taiko1","taiko2"], 
+            rhythms=["c8-> c8-> c-> c-> r2\\fermata"],
+            apply_flags=["start_taiko_5"],
+           )
+music.arrange_music(part_names=["flute1","flute2"],
+            rhythms = [get_music_container(["s16", box_music(
+                "s8 r8 b1 b8->-. b8->-. r4\\fermata s8", continue_lengths=[(1,1)]*4
+                ) ,"s16"])],
+            apply_flags=["start_taiko_1","start_taiko_2","start_taiko_3","start_taiko_4"]
+            ) 
+music.arrange_music(part_names=["clarinet1","clarinet2"],
+            rhythms = [get_music_container(["s16", box_music(
+                "s8 r8 b1 b8->-. b8->-. r4\\fermata s8", continue_lengths=[(1,1)]*4
+                ) ,"s16"])],
+            apply_flags=["start_taiko_3","start_taiko_4"]
+            ) 
+music.arrange_music(part_names=["oboe1", "oboe2","oboe3"],
+            rhythms = [get_music_container(["s16", box_music(
+                "s8 r8 b1 b8->-. b8->-. r4\\fermata s8", continue_lengths=[(1,1)]*4
+                ) ,"s16"])],
+            apply_flags=["start_taiko_3","start_taiko_4"]
+            ) 
+music.arrange_music(part_names=["bassoon1","bassoon2",],
+            rhythms = [get_music_container(["s16", box_music(
+                "s8 r8 b1 b8->-. b8->-. r4\\fermata s8", continue_lengths=[(1,1)]*4
+                ) ,"s16"])],
+            apply_flags=["start_taiko_4"]
+            ) 
+music.arrange_music(part_names=["horn1","trombone1"], 
+    rhythms=[   "s1 r1\\fermata  s1  a1\\fermata s1 s1 ", 
+                "s1 s2 r1 \\fermata s2  s1 a,1 \\fermata ^\"after horn 1\" s1 ",],
+    apply_flags=["start_taiko_4"])
+
+
+
+
+music.arrange_music(part_names=clep.parts, pitch_material=["ji"], 
+    pitch_range_material="all_ranges_mid",
+    part_material="pitched",
+    rhythms=["r4 c8-.-> c->-. r2\\fermata"],
+    apply_flags=["start_taiko_5"]
+    )
+
+
 
 #FREE
 music.arrange_music(
@@ -372,7 +417,7 @@ music.arrange_music(
     pitch_material="stream_cloud_mid", 
     respell=["sharps"],
     rhythms=["c8( c8) "*12],
-    skip_flags=["free", "free2", "free3"],
+    skip_flags=["free", "free2", "free3", "start_taiko_5"],
     pitch_range_material="string_ranges_mid"
     )
 
@@ -383,6 +428,21 @@ music.arrange_music(
     )
 
 # ---------------------------------------------------------------------------------------------
+
+
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
+
+# --- CLEPSYDRA SECTION A ----------------------------------------------
+# kwargs = {"section_name": "_A", "iters":(0,1,2,3),
+#     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+#     "ly_appends": [], }
+# --- CLEPSYDRA SECTION B ----------------------------------------------
+kwargs = {"section_name": "B", "iters":(4,5,6,7,8),
+    "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+    "ly_appends": [], }
+# clepsydra_music.show_pdf(**kwargs)
+music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+
 
 
 # music.arrange_music(
@@ -417,4 +477,3 @@ iters = (
     # 36
     )
 
-clepsydra_music = music

@@ -51,6 +51,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
     \windsStaves
     \brassStaves
     \percussionStaves
+    \taikoStaves
     \stringStaves
   >>
   \layout {

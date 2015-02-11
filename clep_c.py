@@ -13,9 +13,10 @@ def get_cycle_music():
     # ------------------------------------
     # ------------------------------------
     music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
-    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
-    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko", "free"])
-    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko_2", "free", "before_movin"],rehearsal_mark="B")
+    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko_2", "free"])
+    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko_3", "free"])
+    music.add_cycle(bubble_type=ClepFree, flags=["start_taiko_4", "free"])
+    music.add_cycle(flags=["start_taiko_5"])
 
     music.add_cycle(flags=["start_movin", "winds_up"])
     music.add_cycle(flags=["next_movin"])

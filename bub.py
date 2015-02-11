@@ -8,17 +8,11 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
 #     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION B ----------------------------------------------
-kwargs = {"section_name": "B", "iters":(4,5,6,7),
+kwargs = {"section_name": "B", "iters":(4,5,6,7,8),
     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
     "ly_appends": [], }
 # clepsydra_music.show_pdf(**kwargs)
 clepsydra_music.make_ly_music(ly_folder="clepsydra", **kwargs), 
-
-
-
-
-
-
 
 # f = ForceCloudStringsMelody(name="caes-cloud-strings-melody")
 # f.tally_loop()

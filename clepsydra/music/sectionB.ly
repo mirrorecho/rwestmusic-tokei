@@ -11,60 +11,301 @@ fluteOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -84,60 +325,301 @@ fluteTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -157,60 +639,225 @@ oboeOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -230,60 +877,225 @@ oboeTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -303,60 +1115,225 @@ oboeThreeB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -376,60 +1353,225 @@ clarinetOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -449,60 +1591,225 @@ clarinetTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -522,16 +1829,35 @@ bassoonOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -540,42 +1866,112 @@ bassoonOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -595,16 +1991,35 @@ bassoonTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -613,42 +2028,112 @@ bassoonTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
+			s16
+			\grace {
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+				\hideNotes
+				r16
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'()
+				\startStaff
+			}
+			s8
+			r8
+			b1
+			b8 -\accent -\staccato
+			b8 -\accent -\staccato
+			r4 -\fermata
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'()
+			\startStaff
+			s16
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -668,16 +2153,35 @@ hornOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -686,12 +2190,14 @@ hornOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -699,29 +2205,20 @@ hornOneB = {
 	{
 		{
 			s1
-			s1
-			s1
 			r1 -\fermata
 			s1
+			a1 -\fermata
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -741,16 +2238,35 @@ hornTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -759,12 +2275,14 @@ hornTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -773,28 +2291,20 @@ hornTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -814,16 +2324,35 @@ hornThreeB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -832,12 +2361,14 @@ hornThreeB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -846,28 +2377,20 @@ hornThreeB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -887,16 +2410,35 @@ hornFourB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -905,12 +2447,14 @@ hornFourB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -919,28 +2463,20 @@ hornFourB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -960,16 +2496,35 @@ trumpetOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -978,12 +2533,14 @@ trumpetOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -992,28 +2549,20 @@ trumpetOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1033,16 +2582,35 @@ trumpetTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1051,12 +2619,14 @@ trumpetTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1065,28 +2635,20 @@ trumpetTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1106,16 +2668,35 @@ tromboneOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1124,12 +2705,14 @@ tromboneOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1137,29 +2720,21 @@ tromboneOneB = {
 	{
 		{
 			s1
-			s1
-			s1
+			s2
 			r1 -\fermata
+			s2
 			s1
-			s1
+			a,1 -\fermata ^ \markup { after horn 1 }
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1179,16 +2754,35 @@ tromboneTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1197,12 +2791,14 @@ tromboneTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1211,28 +2807,20 @@ tromboneTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1252,16 +2840,35 @@ tubaB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1270,12 +2877,14 @@ tubaB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1284,28 +2893,20 @@ tubaB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a,8 -\accent -\staccato
+	a,8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1325,16 +2926,35 @@ crotalesB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1343,12 +2963,14 @@ crotalesB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1357,28 +2979,20 @@ crotalesB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1398,16 +3012,35 @@ percOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1416,12 +3049,14 @@ percOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1430,28 +3065,20 @@ percOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1471,16 +3098,35 @@ percTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1489,12 +3135,14 @@ percTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1503,28 +3151,20 @@ percTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1544,16 +3184,35 @@ timpaniB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1562,12 +3221,14 @@ timpaniB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -1576,28 +3237,20 @@ timpaniB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1617,72 +3270,72 @@ shimeB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
-			s4
-			s8
-			r1 -\fermata
 			s1
 			s1
-			c8 [
-			c8 ] ^ \markup { (with taiko ka kas) }
+			s2
 			r1 -\fermata
+			s2
+			s1
+			s1
 		}
-		s1 * 19/8
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
-			s4
-			s8
+			s1
+			c8 -\accent [ _ \markup { ka }
+			c8 -\accent ] _ \markup { ka }
+			s1
+			s1
 			r1 -\fermata
 			s1
 			s1
-			c8 [
-			c8 ] ^ \markup { (with taiko ka kas) }
-			r1 -\fermata
 		}
-		s1 * 19/8
-		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s4
-			s8
+			s1
+			c8 -\accent [ _ \markup { ka }
+			c8 -\accent ] _ \markup { ka }
+			s1
+			s1
 			r1 -\fermata
 			s1
 			s1
-			c8 [
-			c8 ] ^ \markup { (with taiko ka kas) }
-			r1 -\fermata
 		}
-		s1 * 19/8
-		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			s4
+			s1
+			c8 -\accent [ _ \markup { ka }
+			c8 -\accent ] _ \markup { ka }
+			s1
+			s1
 			r1 -\fermata
 			s1
 			s1
-			c8 [
-			c8 ] ^ \markup { (4th ka ka) }
-			c8 -\accent [
-			c8 -\accent ]
-			r1 -\fermata
 		}
-		s1 * 9/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1702,25 +3355,206 @@ taikoOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
+			s16
+			c8  \f  [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			s1
-			c8 [ _ \markup { ka }
+			s8
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			c8
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
+			c8
+			s8
+			\afterGrace
+			c8 ]
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
+		}
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1728,23 +3562,102 @@ taikoOneB = {
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			s1
-			c8 [ _ \markup { ka }
+			s8
+			\afterGrace
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1752,48 +3665,110 @@ taikoOneB = {
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			s1
-			c8 [ _ \markup { ka }
+			s8
+			\afterGrace
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
-		 \bar ";" %%%
+		s1 * 1/8
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { (sim) }
-				_ \markup { ko }
-			s1
-			s1
-			s1
-			c8 [ _ \markup { ka }
-			c8 ]
-				^ \markup { (4th ka ka) }
-				_ \markup { ka }
-			c8 -\accent _ \markup { do }
-			c8 -\accent _ \markup { don }
-			r1 -\fermata
-		}
-		s1 * 9/4
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1813,25 +3788,206 @@ taikoTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
-			s1
+			s16
+			c8  \f  [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			c8 [ _ \markup { ka }
+			s8
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			c8
+			\afterGrace
+			s8
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
+			c8
+			s8
+			\afterGrace
+			c8 ]
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8 -\accent
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
+		}
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1839,23 +3995,102 @@ taikoTwoB = {
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
-			s1
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			c8 [ _ \markup { ka }
+			s8
+			\afterGrace
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8 -\accent
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1863,48 +4098,110 @@ taikoTwoB = {
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
 		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { repeat }
-				_ \markup { ko }
-			s1
-			s1
+			s16
+			c8 -\accent [
+			c8 -\accent ]
+			c8 [
 			c8
-				^ \markup { random kas }
-				_ \markup { ka }
-			s1
-			c8 [ _ \markup { ka }
+			s8
+			\afterGrace
 			c8 ]
-				^ \markup { (ka kas together) }
-				_ \markup { ka }
-			s1
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s8
+			\afterGrace
+			c8 -\accent
+			{
+				\hideNotes
+				r32
+				\unHideNotes
+				\stopStaff
+				\override Staff.StaffSymbol #'line-positions = #'(-0.4 -0.3 -0.2 -0.1 0 0.1 0.2 0.3 0.4)
+				\startStaff
+			}
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\hideNotes
+			r2
+			\unHideNotes
+			\grace {
+				\once \override Rest  #'stencil = #ly:text-interface::print
+				\once \override Rest.staff-position = #-2.2
+				\once \override Rest #'text = \markup { \fontsize #6 { \general-align #Y #DOWN { \arrow-head #X #RIGHT ##t } } }
+				r16
+			}
+			\hideNotes
+			c'2
+			\unHideNotes
+			\stopStaff
+			\override Staff.StaffSymbol #'line-positions = #'(0)
+			\startStaff
+			s16
 		}
-		s1 * 19/8
-		 \bar ";" %%%
+		s1 * 1/8
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			c8 [ _ \markup { do }
-			c8 ]
-				^ \markup { (sim) }
-				_ \markup { ko }
-			s1
-			s1
-			s1
-			c8 [ _ \markup { ka }
-			c8 ]
-				^ \markup { (4th ka ka) }
-				_ \markup { ka }
-			c8 -\accent _ \markup { do }
-			c8 -\accent _ \markup { don }
-			r1 -\fermata
-		}
-		s1 * 9/4
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	c8 -\accent
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -1924,7 +4221,7 @@ violinIDivOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s8
 			\grace {
@@ -2007,13 +4304,14 @@ violinIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			s8
 			\grace {
@@ -2030,7 +4328,7 @@ violinIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -2096,7 +4394,7 @@ violinIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2119,7 +4417,7 @@ violinIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -2185,7 +4483,7 @@ violinIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2208,14 +4506,7 @@ violinIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4
-				^ \markup {
-					\column
-						{
-							"repeat randomly"
-							sim
-						}
-					}
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -2281,9 +4572,14 @@ violinIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -2303,7 +4599,7 @@ violinIDivTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s8
 			\grace {
@@ -2387,13 +4683,14 @@ violinIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			s8
 			\grace {
@@ -2410,7 +4707,7 @@ violinIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -2477,7 +4774,7 @@ violinIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2500,7 +4797,7 @@ violinIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -2567,7 +4864,7 @@ violinIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2590,14 +4887,7 @@ violinIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4
-				^ \markup {
-					\column
-						{
-							"repeat randomly"
-							sim
-						}
-					}
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -2664,9 +4954,14 @@ violinIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -2686,7 +4981,7 @@ violinIIDivOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s8
 			\grace {
@@ -2769,13 +5064,14 @@ violinIIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			s8
 			\grace {
@@ -2792,7 +5088,7 @@ violinIIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -2858,7 +5154,7 @@ violinIIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2881,7 +5177,7 @@ violinIIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -2947,7 +5243,7 @@ violinIIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2970,14 +5266,7 @@ violinIIDivOneB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4
-				^ \markup {
-					\column
-						{
-							"repeat randomly"
-							sim
-						}
-					}
+			s4 ^ \markup { sim }
 			r4
 			a''1 :32 -\fermata
 			r4
@@ -3043,9 +5332,14 @@ violinIIDivOneB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a8 -\accent -\staccato
+	a8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3065,7 +5359,7 @@ violinIIDivTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s8
 			\grace {
@@ -3149,13 +5443,14 @@ violinIIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			s8
 			\grace {
@@ -3172,7 +5467,7 @@ violinIIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -3239,7 +5534,7 @@ violinIIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -3262,7 +5557,7 @@ violinIIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4 ^ \markup { repeat randomly }
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -3329,7 +5624,7 @@ violinIIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -3352,14 +5647,7 @@ violinIIDivTwoB = {
 				\override Staff.StaffSymbol #'line-positions = #'()
 				\startStaff
 			}
-			s4
-				^ \markup {
-					\column
-						{
-							"repeat randomly"
-							sim
-						}
-					}
+			s4 ^ \markup { sim }
 			r4
 			gs''2 (
 			a''2 :32 -\fermata )
@@ -3426,9 +5714,14 @@ violinIIDivTwoB = {
 			\override Staff.StaffSymbol #'line-positions = #'()
 			\startStaff
 		}
-		s1 * 1
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3448,16 +5741,35 @@ violaDivOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3466,12 +5778,14 @@ violaDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3480,28 +5794,20 @@ violaDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3521,16 +5827,35 @@ violaDivTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3539,12 +5864,14 @@ violaDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3553,28 +5880,20 @@ violaDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3594,16 +5913,35 @@ celloDivOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3612,12 +5950,14 @@ celloDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3626,28 +5966,20 @@ celloDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3667,16 +5999,35 @@ celloDivTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3685,12 +6036,14 @@ celloDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3699,28 +6052,20 @@ celloDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3740,16 +6085,35 @@ bassDivOneB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3758,12 +6122,14 @@ bassDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3772,28 +6138,20 @@ bassDivOneB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a''8 -\accent -\staccato
+	a''8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -3813,16 +6171,35 @@ bassDivTwoB = {
 	                            (markup #:override '(baseline-skip . 0.5) #:column ("X" "X"))
 	                            ) 0.1 0.4 0.4 0.1 ))
 	{
-		\time 28/4
+		\time 49/8
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/8
+		 \bar ";" %%%
+	}
+	\context Staff {#(set-accidental-style 'modern)}
+	\context Staff {#(set-accidental-style 'forget)}
+	\once \override Staff.TimeSignature.stencil = ##f
+	{
+		\time 25/4
+		{
+			s1
+			s1
+			s2
+			r1 -\fermata
+			s2
+			s1
+			s1
+		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3831,12 +6208,14 @@ bassDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
+		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
@@ -3845,28 +6224,20 @@ bassDivTwoB = {
 		{
 			s1
 			s1
-			s1
+			s2
 			r1 -\fermata
-			s1
+			s2
 			s1
 			s1
 		}
+		s1 * 1/4
 	}
 	\context Staff {#(set-accidental-style 'modern)}
-	\context Staff {#(set-accidental-style 'forget)}
-	\once \override Staff.TimeSignature.stencil = ##f
-	{
-		{
-			s1
-			s1
-			s1
-			r1 -\fermata
-			s1
-			s1
-			s1
-		}
-	}
-	\context Staff {#(set-accidental-style 'modern)}
+	 \time 4/4 %%%
+	r4
+	a'8 -\accent -\staccato
+	a'8 -\accent -\staccato
+	r2 -\fermata
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
