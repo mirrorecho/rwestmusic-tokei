@@ -35,25 +35,25 @@ def get_cycle_music():
     music.add_cycle(flags=["ref_D", "E4", "taiko_melody_2"])
     # ------------------------------------
     music.add_cycle(bubble_type=ClepFree,  flags=["F1", "ref_Eb", "free2"], rehearsal_mark="E") # This one's longer... come in one at a time
-    music.add_cycle( bubble_type=ClepFree,  flags=["F2","ref_Eb","free2"])
+    music.add_cycle(bubble_type=ClepFree,  flags=["F2","ref_Eb","free2"])
     music.add_cycle(bubble_type=ClepFree,  flags=["F3","ref_Eb","free2"])
     music.add_cycle(bubble_type=ClepFree,  flags=["F4","ref_Eb"])
     # ------------------------------------
-    music.add_cycle(flags=["ref_E","taiko_melody_1", "cloud_low"],rehearsal_mark="F")
-    music.add_cycle(flags=["ref_F","taiko_melody_2", "cloud_low"])
-    music.add_cycle(flags=["ref_F#","taiko_melody_1"])
-    music.add_cycle(flags=["ref_G","taiko_melody_2"])
+    music.add_cycle(flags=["G1","ref_E","taiko_melody_1", "cloud_low"],rehearsal_mark="F")
+    music.add_cycle(flags=["G1","ref_F","taiko_melody_2", "cloud_low"])
+    music.add_cycle(flags=["G1","ref_F#","taiko_melody_1"])
+    music.add_cycle(flags=["G1","ref_G","taiko_melody_2"])
     # -------------------------------------------------------------------
-    music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_G#","free3"],rehearsal_mark="G") # this one's just a ji
-    music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_G#","free3"])
-    music.add_cycle(bubble_type=ClepFreeFermata, flags=["ref_G#","free3"])
-    music.add_cycle(flags=["ref_G#"])
-    # ------------------------------------
-    music.add_cycle(flags=["ref_A","taiko_melody_1","full_stream_2",],rehearsal_mark="H") # make a variant of the melody?
-    music.add_cycle(flags=["ref_Bb","taiko_melody_2", "trom_stream"])
-    music.add_cycle(flags=["ref_B","taiko_melody_1"])
-    music.add_cycle(flags=["ref_C#","taiko_melody_2"])
-    # ------------------------------------
+    # music.add_cycle(bubble_type=ClepFree, flags=["ref_G#","free"],rehearsal_mark="G") # this one's just a ji
+    # music.add_cycle(bubble_type=ClepFree, flags=["ref_G#","free"])
+    # music.add_cycle(bubble_type=ClepFree, flags=["ref_G#","free"])
+    # music.add_cycle(flags=["ref_G#"])
+    # # ------------------------------------
+    # music.add_cycle(flags=["ref_A","taiko_melody_1","full_stream_2",],rehearsal_mark="H") # make a variant of the melody?
+    # music.add_cycle(flags=["ref_Bb","taiko_melody_2", "trom_stream"])
+    # music.add_cycle(flags=["ref_B","taiko_melody_1"])
+    # music.add_cycle(flags=["ref_C#","taiko_melody_2"])
+    # # # ------------------------------------
     music.add_cycle(bubble_type=ClepFree, flags=["ref_D","slowing"], rehearsal_mark="I")
     
 

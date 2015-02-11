@@ -37,28 +37,39 @@ fluteOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -107,28 +118,39 @@ fluteTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -177,28 +199,39 @@ oboeOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -247,28 +280,39 @@ oboeTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -317,28 +361,39 @@ oboeThreeF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -387,28 +442,39 @@ clarinetOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -470,28 +536,39 @@ clarinetTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -540,28 +617,39 @@ bassoonOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -610,28 +698,39 @@ bassoonTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -680,28 +779,39 @@ hornOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -750,28 +860,39 @@ hornTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -820,28 +941,39 @@ hornThreeF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -890,28 +1022,39 @@ hornFourF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -960,28 +1103,39 @@ trumpetOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1030,28 +1184,39 @@ trumpetTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1100,28 +1265,39 @@ tromboneOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1170,28 +1346,39 @@ tromboneTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1240,28 +1427,39 @@ tubaF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1310,28 +1508,39 @@ crotalesF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1380,28 +1589,39 @@ percOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1450,28 +1670,39 @@ percTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1520,28 +1751,39 @@ timpaniF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1610,6 +1852,7 @@ shimeF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1627,13 +1870,14 @@ shimeF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 5/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1651,7 +1895,7 @@ shimeF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 13/8
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 }\bar "||" 
@@ -1719,6 +1963,7 @@ taikoOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1736,13 +1981,14 @@ taikoOneF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 5/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1760,7 +2006,7 @@ taikoOneF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 13/8
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 }\bar "||" 
@@ -1828,6 +2074,7 @@ taikoTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1845,13 +2092,14 @@ taikoTwoF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 5/8
 		 \bar ";" %%%
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
 			c8 [ _ \markup { da }
 			c8 ]
@@ -1869,7 +2117,7 @@ taikoTwoF = {
 				_ \markup { don }
 			s1
 		}
-		s1 * 11/8
+		s1 * 13/8
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 }\bar "||" 
@@ -1917,28 +2165,39 @@ violinIDivOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -1987,28 +2246,39 @@ violinIDivTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2057,28 +2327,39 @@ violinIIDivOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2127,28 +2408,39 @@ violinIIDivTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2197,28 +2489,39 @@ violaDivOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2267,28 +2570,39 @@ violaDivTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2337,28 +2651,39 @@ celloDivOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2407,28 +2732,39 @@ celloDivTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2477,28 +2813,39 @@ bassDivOneF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
@@ -2547,28 +2894,39 @@ bassDivTwoF = {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 21/4
 		{
+			\xNotesOn
+			c'8  \p  \< ^ \markup { ad lib on any D None E (with taiko pulse) }
+			\xNotesOff
 			s1
 			s1
-			s2
-			r1 -\fermata
-			s2
 			s1
 			s1
+			s1
+			\xNotesOn
+			c'8  \f  \!
+			\xNotesOff
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override Staff.TimeSignature.stencil = ##f
 	{
+		\time 25/4
 		{
+			\xNotesOn
+			c'8  \f  \> ^ \markup { sim., an any D None A, or Bb }
+			\xNotesOff
 			s1
 			s1
-			s2
+			s1
+			s1
+			s1
+			\xNotesOn
+			c'8  \p  \!
+			\xNotesOff
 			r1 -\fermata
-			s2
-			s1
-			s1
 		}
 	}
 	\context Staff {#(set-accidental-style 'modern)}

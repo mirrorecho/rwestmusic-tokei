@@ -40,6 +40,7 @@ class AddPreviousKai(TransformBase):
 music.add_transform(AddPreviousKai())
 music.exec_method("kai_material")
 
+
 # TO DO EVENTUALLY... standard way/place to do  this
 def add_strings(master_part_name, master_instrument_name, master_short_instrument_name, number, start_number=1, **kwargs):
     for i in range(start_number, number+start_number):
@@ -57,8 +58,9 @@ add_strings("cello", "Cello", "vc", 4, start_flag="2_line", stop_flag="3_ji", cl
 # music.add_sub_part(part_name="crotales", instrument_type=instrumenttools.Flute, instrument_name="Crotales", short_instrument_name="cro.", master_part_name="perc1", start_flag="1_line", stop_flag="3_ji")
 
 
-music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4, start_flag="1_otoshi", stop_flag="2_ji")
+music.add_rhythm_material("rest", "s1 "*3 + "r1\\fermata "+ "s1 "*4,  stop_flag="2_ji")
 music.add_rhythm_material("rest", "R1 "*8, start_flag="2_ji")
+
 # ---------------------------------------------------------
 # KAIROS
 music.exec_method("replace_pitch", material="kairos_a", pitch="E4", other_pitch="C#4", stop_flag="3_line")
@@ -74,7 +76,6 @@ music.exec_method("transpose_pitch_material", material="kairos_b", transpose=12,
 
 music.exec_method("transpose_pitch_material", material="kairos_a", transpose=-12, apply_flags=["4_line","4_ji"])
 music.exec_method("transpose_pitch_material", material="kairos_b", transpose=-12, apply_flags=["5_line",])
-
 
 
 # ---------------------------------------------------------
@@ -213,6 +214,8 @@ music.add_pitch_material("low", [["F#2"]], start_iter=5)
 music.add_pitch_material("low", [["D2"]], start_iter=7)
 music.add_pitch_material("low", [["A2"]], start_iter=9)
 
+
+
 # ---------------------------------------------------------
 # CLASS METHODS (primarily does the arranging...)
 
@@ -227,8 +230,8 @@ music.exec_method("kai_low")
 # ---------------------------------------------------------
 # TAIKO ARRANGEMENTS
 
-# otoshi at the beginning (and end)?
-music.arrange_music(part_names=["odaiko"], rhythm_material=["otoshi"], apply_flags=["1_otoshi"])
+
+
 # music.attach_dynamics(part_names=["odaiko"], dynamics=[["mf"]], apply_flags=["1_otoshi"])
 
 music.arrange_music(part_names=["taiko1","taiko2"], rhythm_material=["taiko1","taiko2"], 
@@ -295,32 +298,105 @@ music.arrange_music(part_names=[
 
 # TO DO: doesn't work for sub-parts... why?
 
+
+# wado.make_ly_includes(ly_folder="wadokei", sections=["C","D"])
+kai.make_ly_includes(ly_folder="kairos", sections=[
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    # "H",
+    # "I",
+    # "J",
+    # "K",
+    # "L",
+    # "M",
+    # "N",
+    # "O",
+    # "P",
+    ])
+
+
+
+# # #  --- KAIROS SECTION A ----------------------------------------------
+kwargs = {"section_name": "_A", "iters":(0),
+    "ly_prepends":[
+    "\\tempo 4 = 88"
+    # "\\time 4/4", 
+    "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs)
+# #  --- KAIROS SECTION B ----------------------------------------------
+kwargs = {"section_name": "_B", "iters":(2,3),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+# #  --- KAIROS SECTION C ----------------------------------------------
+kwargs = {"section_name": "C", "iters":(4,5),
+    "run_iters":(0,1,2,3),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+# #  --- KAIROS SECTION D ----------------------------------------------
+kwargs = {"section_name": "D", "iters":(6,7),
+    "run_iters":(0,4,5),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+# #  --- KAIROS SECTION  ----------------------------------------------
+kwargs = {"section_name": "E", "iters":(8,9),
+    "run_iters":(0,6,7),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+# #  --- KAIROS SECTION C ----------------------------------------------
+kwargs = {"section_name": "F", "iters":(10,11),
+    "run_iters":(0,8,9),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+# #  --- KAIROS SECTION C ----------------------------------------------
+kwargs = {"section_name": "G", "iters":(12,13),
+    "run_iters":(0,10,11),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="kairos", **kwargs), 
+
+
+
+
+
+
+
 # formatting with page breaks for every cycle:
 # music.attach(attachments=[[indicatortools.LilyPondCommand("break")]], part_names=kai.parts)
 
-make_flags=(
-    "1_otoshi", 
-    "1_line", #A
-    "1_ji",   #B
-    "2_line", #C
-    "2_ji",   #D
-    "3_line", #E
-    "3_line_again", #F
-    "3_ji",   #G
-    "4_line", #H
-    "4_ji",   #I
-    "5_line", #J
-    "5_ji",   #K
-    "6_line", #L
-    "6_all",  #M
-    )
+# make_flags=(
+#     "1_otoshi", 
+#     "1_line", #A
+#     "1_ji",   #B
+#     "2_line", #C
+#     "2_ji",   #D
+#     "3_line", #E
+#     "3_line_again", #F
+#     "3_ji",   #G
+#     "4_line", #H
+#     "4_ji",   #I
+#     "5_line", #J
+#     "5_ji",   #K
+#     "6_line", #L
+#     "6_all",  #M
+#     )
 
-music.apply_transforms(flags=make_flags)
-bubble = music.make_bubble(flags=make_flags)
-bubble.make_pdf(
-    hide_empty=True,
+# music.apply_transforms(flags=make_flags)
+# bubble = music.make_bubble(flags=make_flags)
+# bubble.make_pdf(
+#     hide_empty=True,
     # part_names=["violinI","violinI_1","violinI_2"],
-    )
+    # )
 
 # bubble.make_parts(part_names=[
 #     ("violinI_1","violinI_2", "violinI")], 
@@ -328,31 +404,31 @@ bubble.make_pdf(
 
 
 
-bubble.make_parts(part_names=[
-    "flute1",
-    "flute2",
-    "oboe1",
-    "oboe2",
-    "oboe3",
-    "clarinet1",
-    "clarinet2",
-    "bassoon1",
-    "bassoon2",
-    "horn1",
-    "horn2",
-    "horn3",
-    "horn4",
-    "trumpet1",
-    "trumpet2",
-    "trombone1",
-    "trombone2",
-    "tuba",
-    "perc1",
-    ("perc2","timpani"),
-    "violinI",
-    "violinII",
-    "viola",
-    "cello",
-    "bass",
-    ], 
-    work_name="kairos")
+# bubble.make_parts(part_names=[
+#     "flute1",
+#     "flute2",
+#     "oboe1",
+#     "oboe2",
+#     "oboe3",
+#     "clarinet1",
+#     "clarinet2",
+#     "bassoon1",
+#     "bassoon2",
+#     "horn1",
+#     "horn2",
+#     "horn3",
+#     "horn4",
+#     "trumpet1",
+#     "trumpet2",
+#     "trombone1",
+#     "trombone2",
+#     "tuba",
+#     "perc1",
+#     ("perc2","timpani"),
+#     "violinI",
+#     "violinII",
+#     "viola",
+#     "cello",
+#     "bass",
+#     ], 
+#     work_name="kairos")

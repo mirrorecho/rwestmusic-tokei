@@ -31,7 +31,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 #})
 
 \header {
-  title = "Clepsydra"
+  title = "Kairos
+"
   %instrument = "Orchestra"
   composer = "Randall West"
   tagline = "Copyright 2015 Randall West."
@@ -43,7 +44,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Flutes"
+  \bookOutputName "RandallWest-Kairos
+.Flutes"
   \score {
       \new StaffGroup <<
      \fluteOneStaff
@@ -73,7 +75,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Oboes"
+  \bookOutputName "RandallWest-Kairos
+.Oboes"
   \score {
       \new StaffGroup <<
      \oboeOneStaff
@@ -104,7 +107,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Clarinets"
+  \bookOutputName "RandallWest-Kairos
+.Clarinets"
   \score {
       \new StaffGroup <<
      \transpose c d  \clarinetOneStaff
@@ -134,7 +138,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Bassoons"
+  \bookOutputName "RandallWest-Kairos
+.Bassoons"
   \score {
       \new StaffGroup <<
      \bassoonOneStaff
@@ -164,7 +169,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Horns-1-2"
+  \bookOutputName "RandallWest-Kairos
+.Horns-1-2"
   \score {
       \new StaffGroup <<
      \transpose c g \hornOneStaff
@@ -194,7 +200,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Horns-3-4"
+  \bookOutputName "RandallWest-Kairos
+.Horns-3-4"
   \score {
       \new StaffGroup <<
      \transpose c g \hornThreeStaff
@@ -224,7 +231,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Trumpets"
+  \bookOutputName "RandallWest-Kairos
+.Trumpets"
   \score {
       \new StaffGroup <<
      \trumpetOneStaff
@@ -254,7 +262,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Trombones"
+  \bookOutputName "RandallWest-Kairos
+.Trombones"
   \score {
       \new StaffGroup <<
      \tromboneOneStaff
@@ -284,7 +293,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Tuba"
+  \bookOutputName "RandallWest-Kairos
+.Tuba"
   \score {
      \tubaStaff
      \header { piece = "Tuba" }
@@ -310,9 +320,10 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
   }
 %}
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Percussion"
+  \bookOutputName "RandallWest-Kairos
+.Percussion"
   \score {
-      \percStaves
+     \percussionStaves 
      \header { piece = "Percussion" }
       \layout {
         \context {
@@ -335,7 +346,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff 
+          % % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -351,7 +363,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %           system-system-spacing #'basic-distance = #14
 %           system-system-spacing #'padding = #12
 %         }
-%   \bookOutputName "RandallWest-Clepsydra.Percussion"
+%   \bookOutputName "RandallWest-Kairos.Percussion"
 %   \score {
 %       \new StaffGroup <<
 %       {
@@ -405,9 +417,10 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.ViolinI"
+  \bookOutputName "RandallWest-Kairos
+.ViolinI"
   \score {
-      \violinIStaves
+      \violinIStaff
      \header { piece = "Violin I" }
       \layout {
         \context {
@@ -425,7 +438,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -435,9 +448,10 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.ViolinII"
+  \bookOutputName "RandallWest-Kairos
+.ViolinII"
   \score {
-      \violinIIStaves
+      \violinIIStaff
      \header { piece = "Violin II" }
       \layout {
         \context {
@@ -455,7 +469,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -465,9 +479,10 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Viola"
+  \bookOutputName "RandallWest-Kairos
+.Viola"
   \score {
-      \violaStaves
+      \violaStaff
      \header { piece = "Viola" }
       \layout {
         \context {
@@ -485,7 +500,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -495,9 +510,10 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Cello"
+  \bookOutputName "RandallWest-Kairos
+.Cello"
   \score {
-      \celloStaves
+      \celloStaff
      \header { piece = "Cello" }
       \layout {
         \context {
@@ -515,7 +531,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -525,7 +541,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 }
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Bass"
+  \bookOutputName "RandallWest-Kairos
+.Bass"
   \score {
       \bassStaff
      \header { piece = "Bass" }
@@ -545,7 +562,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }
@@ -557,7 +574,8 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.TAIKO"
+  \bookOutputName "RandallWest-Kairos
+.TAIKO"
   \score {
       \taikoStaves
      \header { piece = "Taiko" }
@@ -577,7 +595,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
           \remove Instrument_name_engraver
           \override Hairpin #'minimum-length = #6
         }
-        \context {\Staff %{\RemoveEmptyStaves %}
+        \context {\Staff % \RemoveEmptyStaves
               \override VerticalAxisGroup #'remove-first = ##t
               \override Hairpin #'minimum-length = #6
           }

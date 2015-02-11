@@ -31,7 +31,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 #})
 
 \header {
-  title = "Clepsydra"
+  title = "Caesium"
   %instrument = "Orchestra"
   composer = "Randall West"
   tagline = "Copyright 2015 Randall West."
@@ -43,7 +43,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Flutes"
+  \bookOutputName "RandallWest-Caesium.Flutes"
   \score {
       \new StaffGroup <<
      \fluteOneStaff
@@ -73,7 +73,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Oboes"
+  \bookOutputName "RandallWest-Caesium.Oboes"
   \score {
       \new StaffGroup <<
      \oboeOneStaff
@@ -104,7 +104,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Clarinets"
+  \bookOutputName "RandallWest-Caesium.Clarinets"
   \score {
       \new StaffGroup <<
      \transpose c d  \clarinetOneStaff
@@ -134,7 +134,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Bassoons"
+  \bookOutputName "RandallWest-Caesium.Bassoons"
   \score {
       \new StaffGroup <<
      \bassoonOneStaff
@@ -164,7 +164,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Horns-1-2"
+  \bookOutputName "RandallWest-Caesium.Horns-1-2"
   \score {
       \new StaffGroup <<
      \transpose c g \hornOneStaff
@@ -194,7 +194,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Horns-3-4"
+  \bookOutputName "RandallWest-Caesium.Horns-3-4"
   \score {
       \new StaffGroup <<
      \transpose c g \hornThreeStaff
@@ -224,7 +224,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Trumpets"
+  \bookOutputName "RandallWest-Caesium.Trumpets"
   \score {
       \new StaffGroup <<
      \trumpetOneStaff
@@ -254,7 +254,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Trombones"
+  \bookOutputName "RandallWest-Caesium.Trombones"
   \score {
       \new StaffGroup <<
      \tromboneOneStaff
@@ -284,7 +284,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Tuba"
+  \bookOutputName "RandallWest-Caesium.Tuba"
   \score {
      \tubaStaff
      \header { piece = "Tuba" }
@@ -310,7 +310,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
   }
 %}
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Percussion"
+  \bookOutputName "RandallWest-Caesium.Percussion"
   \score {
       \percStaves
      \header { piece = "Percussion" }
@@ -351,7 +351,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %           system-system-spacing #'basic-distance = #14
 %           system-system-spacing #'padding = #12
 %         }
-%   \bookOutputName "RandallWest-Clepsydra.Percussion"
+%   \bookOutputName "RandallWest-Caesium.Percussion"
 %   \score {
 %       \new StaffGroup <<
 %       {
@@ -405,7 +405,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.ViolinI"
+  \bookOutputName "RandallWest-Caesium.ViolinI"
   \score {
       \violinIStaves
      \header { piece = "Violin I" }
@@ -435,7 +435,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.ViolinII"
+  \bookOutputName "RandallWest-Caesium.ViolinII"
   \score {
       \violinIIStaves
      \header { piece = "Violin II" }
@@ -465,7 +465,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Viola"
+  \bookOutputName "RandallWest-Caesium.Viola"
   \score {
       \violaStaves
      \header { piece = "Viola" }
@@ -495,7 +495,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 %}
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Cello"
+  \bookOutputName "RandallWest-Caesium.Cello"
   \score {
       \celloStaves
      \header { piece = "Cello" }
@@ -525,7 +525,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 }
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.Bass"
+  \bookOutputName "RandallWest-Caesium.Bass"
   \score {
       \bassStaff
      \header { piece = "Bass" }
@@ -557,7 +557,7 @@ calliopeRehearsalMark = #(define-music-function (parser location text)
 
 %%{---------------------------------------------------------------------------
 \book {
-  \bookOutputName "RandallWest-Clepsydra.TAIKO"
+  \bookOutputName "RandallWest-Caesium.TAIKO"
   \score {
       \taikoStaves
      \header { piece = "Taiko" }

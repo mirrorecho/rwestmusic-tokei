@@ -323,69 +323,73 @@ music.exec_method("arrange_ma", apply_flags=["ma"])
 
 # --------------------------------------------------------------------------------------
 
+# wado.make_ly_includes(ly_folder="wadokei", sections=["C","D"])
+caes.make_ly_includes(ly_folder="caesium", sections=[
+    # "A",
+    # "B",
+    # "C",
+    # "D",
+    # "E",
+    # "F",
+    # "G",
+    # "H",
+    # "I",
+    # "J",
+    # "K",
+    # "L",
+    # "M",
+    # "N",
+    # "O",
+    # "P",
+    ])
 
-make_iters=(
-    0, # MA
-    1,2, #A
-    3,4,
-    5,6, #B
-    7,8,
-    9,10, #C
-    11,12,
-    13,14, #D
-    15,16,
-    17,18, #E
-    19,20,
-    21,22, #F
-    23,24,
-    25,26, #G
-    27,28,
-    29,30, #H
-    31,32,
-    33,34, #I
-    35,36,
-    37,38, #J
-    39,40,
-    41,42, #K
-    43,44,
-    45,46, #L
-    47,48,49
-    )
+# # # #  --- CAESIUM SECTION A ----------------------------------------------
+# kwargs = {"section_name": "A", "iters":(0,1,2,3),
+#     "ly_prepends":[
+#     "\\tempo 4 = 160"
+#     # "\\time 4/4", 
+#     "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"
+#     ],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # # #  --- CAESIUM SECTION B ----------------------------------------------
+# kwargs = {"section_name": "B", "iters":(4,5,6,7),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # # #  --- CAESIUM SECTION C ----------------------------------------------
+# kwargs = {"section_name": "C", "iters":(8,9,10,11),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # #  --- CAESIUM SECTION C ----------------------------------------------
+kwargs = {"section_name": "D", "iters":(12,13,14,15),
+    "ly_prepends":["\\time 28/8"],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # # #  --- CAESIUM SECTION E ----------------------------------------------
+# kwargs = {"section_name": "E", "iters":(16,17,18,19),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # # #  --- CAESIUM SECTION E ----------------------------------------------
+# kwargs = {"section_name": "F", "iters":(16,17,18,19),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
+# # # #  --- CAESIUM SECTION E ----------------------------------------------
+# kwargs = {"section_name": "G", "iters":(16,17,18,19),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="caesium", **kwargs), 
 
-music.apply_transforms(iters=make_iters)
-bubble = music.make_bubble(iters=make_iters)
-bubble.make_pdf(
-    hide_empty=True
-    )
+
+# music.apply_transforms(iters=make_iters)
+# bubble = music.make_bubble(iters=make_iters)
+# bubble.make_pdf(
+#     hide_empty=True
+#     )
 
 # bubble.make_parts(part_names=["flute1","clarinet1","horn1"], work_name="caesium")
 
 
-bubble.make_parts(part_names=[
-    "flute1",
-    "flute2",
-    "oboe1",
-    "oboe2",
-    "oboe3",
-    "clarinet1",
-    "clarinet2",
-    "bassoon1",
-    "bassoon2",
-    "horn1",
-    "horn2",
-    "horn3",
-    "horn4",
-    "trumpet1",
-    "trumpet2",
-    "trombone1",
-    "trombone2",
-    "tuba",
-    "perc1",
-    ("violinI_div1","violinI_div2"),
-    ("violinII_div1","violinII_div2"),
-    ("viola_div1","viola_div2"),
-    ("cello_div1","cello_div2"),
-    ("bass_div1","bass_div2"),
-    ("perc2","timpani"),
-    ], 
-    work_name="caesium")

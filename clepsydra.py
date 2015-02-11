@@ -665,6 +665,16 @@ music.exec_method("arrange_stream",
             )
 
 
+music.arrange_music(part_names=clep.parts,
+    apply_flags=["F3"],
+    pitches=[["x"]],
+    rhythms = ["c8 ^\"ad lib on any D# or E (with taiko pulse)\" \\p \\< s1 s1 s1 s1 s1 c8 \\f \\! "]
+    )
+music.arrange_music(part_names=clep.parts,
+    apply_flags=["F4"],
+    pitches=[["x"]],
+    rhythms = ["c8 ^\"sim., an any D#, E, A, or Bb \" \\f \\> s1 s1 s1 s1 s1 c8 \\p  r1\\fermata "]
+    )
 
 
 # ---------------------------------------------------------------------------------------------
@@ -715,36 +725,60 @@ music.arrange_music(
 # ---------------------------------------------------------------------------------------------
 
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C", "D", "E", "F"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=[
+    "A", "B", "C", "D", "E", 
+    "F","G","H"
+    ])
 # clep.make_ly_includes(ly_folder="clepsydra", sections=["F"])
 
-# --- CLEPSYDRA SECTION A ----------------------------------------------
+# # # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),
 #     "ly_prepends":["\\time 4/4", "\\numericTimeSignature", "\\context Staff {#(set-accidental-style 'modern)}"],
 #     "ly_appends": [], }
-# --- CLEPSYDRA SECTION B ----------------------------------------------
+# # # --- CLEPSYDRA SECTION B ----------------------------------------------
 # kwargs = {"section_name": "_B", "iters":(4,5,6,7,8),
 #     "ly_prepends":[],
 #     "ly_appends": [], }
-# --- CLEPSYDRA SECTION C ----------------------------------------------
+# # # --- CLEPSYDRA SECTION C ----------------------------------------------
 # kwargs = {"section_name": "_C", "iters":(9,10,11,12),
 #     "ly_prepends":[],
 #     "ly_appends": [], }
-# --- CLEPSYDRA SECTION D ----------------------------------------------
+# # #  --- CLEPSYDRA SECTION D ----------------------------------------------
 # kwargs = {"section_name": "_D", "iters":(13,14,15,16),
 #     "ly_prepends":[],
 #     "ly_appends": [], }
-# --- CLEPSYDRA SECTION E ----------------------------------------------
-# kwargs = {"section_name": "E", "iters":(17,18,19,20),
-#     "ly_prepends":[],
-#     "ly_appends": [], }
-# --- CLEPSYDRA SECTION F ----------------------------------------------
+# # # --- CLEPSYDRA SECTION E ----------------------------------------------
+kwargs = {"section_name": "E", "iters":(17,18,19,20),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# # # --- CLEPSYDRA SECTION F ----------------------------------------------
 kwargs = {"section_name": "F", "iters":(21,22,23,24),
     "ly_prepends":[],
     "ly_appends": [], }
-
-
 music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+kwargs = {"section_name": "G", "iters":(17,18,19,20),
+    "ly_prepends":["\\time 4/4"],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+kwargs = {"section_name": "H", "iters":(29,),
+    "ly_prepends":[],
+    "ly_appends": [], }
+music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+
+# kwargs = {"section_name": "H", "iters":(29,30,31,32),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+# kwargs = {"section_name": "I", "iters":(33,),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# music.make_ly_music(ly_folder="clepsydra", **kwargs), 
+
+
+
+
+
 
 # # clepsydra_music.show_pdf(**kwargs)
 # music.make_ly_music(ly_folder="clepsydra", **kwargs), 
