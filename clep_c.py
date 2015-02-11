@@ -23,11 +23,11 @@ def get_cycle_music():
     music.add_cycle(flags=["winds_down","ref_F#"])
     music.add_cycle(flags=["stream_hint1","ref_G"])
     #------------------------------------
-    music.add_cycle(flags=["ref_G#", "stream_hint1", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"],rehearsal_mark="C")
-    music.add_cycle(flags=["ref_A", "stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
+    music.add_cycle(flags=["ref_G#", "D", "D1", "stream_hint2", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"],)
+    music.add_cycle(flags=["ref_A", "D", "D2", "stream_hint3", "stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
     # this Bb happens twice!
-    music.add_cycle(flags=["ref_Bb", "stream_cloud1", "stream_cloud_strings_staccato","cloud_swell1"])
-    music.add_cycle(flags=["ref_Bb", "stream_cloud2", "stream_cloud_strings_staccato","cloud_swell2"])
+    music.add_cycle(flags=["ref_Bb", "D", "D3", "stream_cloud1", "stream_low_strings", "stream_cloud_strings_staccato","cloud_swell1"])
+    music.add_cycle(flags=["ref_Bb", "D", "D4", "stream_cloud2",  "stream_low_strings","stream_cloud_strings_staccato","cloud_swell2"])
     # -------------------------------------------------------------------
     music.add_cycle(flags=["ref_B", "taiko_melody_1","full_stream_1", "melody_start_1"],rehearsal_mark="D")
     music.add_cycle(flags=["ref_C", "taiko_melody_2", "trom_stream"])

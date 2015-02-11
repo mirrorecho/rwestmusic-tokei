@@ -216,6 +216,12 @@ music.arrange_music(
             apply_flags=["free"],
             )
 
+# taiko do dons
+music.arrange_music(part_names=["shime", "taiko1", "taiko2"],
+    rhythms=["c4 "* 12, "c8_do-> d8_don-> r4 r2 R1 R1", "c8_do-> d8_don-> r4 r2 R1 R1"],
+    apply_flags=["D"]
+    )
+
 # TAIKO MELODY
 music.arrange_music(
             part_names=["taiko1","taiko2"], 
@@ -361,6 +367,20 @@ music.arrange_music(
             pitch_material= "stream_cloud_mid",
             transpose=[-12],
             )
+music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",
+    "cello_div1","cello_div2"], apply_flags=["D1",], markup_texts=[["normal"]])
+
+
+
+music.arrange_music(
+            part_names=["viola_div2","viola_div1","cello_div1","cello_div2"],
+            apply_flags=["stream_low_strings"],
+            rhythms=["c8-. "*24],
+            pitch_material= "stream_cloud_low",
+            transpose=[0,12,0,0,0]
+            )
+
+
 
 music.arrange_music(
             part_names=["horn1","horn2"],
@@ -460,6 +480,32 @@ music.exec_method("arrange_stream",
             apply_flags=["stream_hint1"],
             stream_type=StreamHint2,
             )
+
+music.exec_method("arrange_stream",
+            part_name="cello_div1",
+            apply_flags=["stream_hint2"],
+            stream_type=StreamHint2,
+            transpose=[-36],
+            respell=["sharps"],
+            )
+music.exec_method("arrange_stream",
+            part_name="cello_div2",
+            apply_flags=["stream_hint3"],
+            stream_type=StreamHint1,
+            transpose=[-36],
+            respell=["sharps"],
+            )
+music.attach_markup(part_names=["viola_div1", "viola_div2"], apply_flags=["D3",], markup_texts=[["normal"]])
+
+music.attach_dynamics(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",
+    ], apply_flags=["D1",], dynamics=[["mf"]])
+music.attach_dynamics(part_names=["cello_div1","cello_div2","viola_div1","viola_div2"
+    ], apply_flags=["D3",], dynamics=[["mf"]])
+
+music.attach_dynamics(part_names=["cello_div1","cello_div2"], apply_flags=["stream_hint2"],
+    dynamics=[["mp"]], respell=["sharps"])
+
+
 music.attach_markup(part_names=["trumpet2"], apply_flags=["stream_hint1"],
     markup_texts=[["straight mute", "mute out"]], indices=[[0,9]], notes_only=[False])
 music.attach_dynamics(part_names=["trumpet2"], apply_flags=["stream_hint1"],
@@ -526,7 +572,7 @@ music.arrange_music(
 # ---------------------------------------------------------------------------------------------
 
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),
