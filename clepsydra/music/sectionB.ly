@@ -1637,7 +1637,10 @@ clarinetTwoB = {
 	}
 	\context Staff {#(set-accidental-style 'modern)}
 	 \time 4/4 %%%
-	r4
+	\set Staff.instrumentName = \markup { Clarinet  }
+	\set Staff.shortInstrumentName = \markup { Cl. 2 }
+
+	r4 ^"Clarinet"
 	a'8 -\accent -\staccato
 	a'8 -\accent -\staccato
 	r2 -\fermata

@@ -21,6 +21,39 @@ music = get_cycle_music()
 music.add_pitch_material("ref", ["E5"])
 music.add_pitch_material("next_ref", ["F5"])
 
+music.add_pitch_material("ref", ["F5"], apply_flags=["ref_F"])
+music.add_pitch_material("next_ref", ["F#5"], apply_flags=["ref_F"])
+
+music.add_pitch_material("ref", ["F#5"], apply_flags=["ref_F#"])
+music.add_pitch_material("next_ref", ["G5"], apply_flags=["ref_F#"])
+
+music.add_pitch_material("ref", ["G5"], apply_flags=["ref_G"])
+music.add_pitch_material("next_ref", ["G#5"], apply_flags=["ref_G"])
+
+music.add_pitch_material("ref", ["G#5"], apply_flags=["ref_G#"])
+music.add_pitch_material("next_ref", ["A5"], apply_flags=["ref_G#"])
+
+music.add_pitch_material("ref", ["A5"], apply_flags=["ref_A"])
+music.add_pitch_material("next_ref", ["Bb5"], apply_flags=["ref_A"])
+
+music.add_pitch_material("ref", ["Bb5"], apply_flags=["ref_Bb"])
+music.add_pitch_material("next_ref", ["B5"], apply_flags=["ref_Bb"])
+
+music.add_pitch_material("ref", ["B5"], apply_flags=["ref_B"])
+music.add_pitch_material("next_ref", ["C5"], apply_flags=["ref_B"])
+
+music.add_pitch_material("ref", ["C5"], apply_flags=["ref_C"])
+music.add_pitch_material("next_ref", ["C#5"], apply_flags=["ref_C"])
+
+music.add_pitch_material("ref", ["C#5"], apply_flags=["ref_C#"])
+music.add_pitch_material("next_ref", ["D5"], apply_flags=["ref_C#"])
+
+music.add_pitch_material("ref", ["D5"], apply_flags=["ref_D"])
+music.add_pitch_material("next_ref", ["Eb5"], apply_flags=["ref_D"])
+
+music.add_pitch_material("ref", ["Eb5"], apply_flags=["ref_Eb"])
+music.add_pitch_material("next_ref", ["E5"], apply_flags=["ref_Eb"])
+
 # at the "start_movin" flag, the reference pitch starts incrementing by 1
 # ... will need to be added manuallly...
 # music.transforms.append(
@@ -68,7 +101,7 @@ music.arrange_music(
         pitch_material=["ji","ji_funny","ji","ji"], 
         rhythm_material = ["push","push","whole","whole"],
         part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
-        apply_flags=["start", "start_2", "start_pause", "winds_down"],
+        apply_flags=["start", "start_2", "start_pause"],
         respell=("sharps",)
         )
 
@@ -77,21 +110,26 @@ music.exec_method("change_instrument", part_name="clarinet2",
             show_instruction=False,
             apply_flags=["start"]
             )
+music.exec_method("change_instrument", part_name="clarinet2", 
+            instrument_name="Clarinet", short_instrument_name="Cl. 2", 
+            show_instruction=False,
+            apply_flags=["start_taiko_5"]
+            )
 
-music.arrange_music(
-        pitch_material=["ji", "ji", "slide_ji", "slide_ji"], 
-        rhythm_material = ["push","push","slide","slide"],
-        part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
-        apply_flags=["winds_down"],
-        respell=("sharps",)
-        )
+# music.arrange_music(
+#         pitch_material=["ji", "ji", "slide_ji", "slide_ji"], 
+#         rhythm_material = ["push","push","slide","slide"],
+#         part_names = ["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
+#         apply_flags=["winds_down"],
+#         respell=("sharps",)
+#         )
 
-music.arrange_music(
-        part_names=["violinII_div1","violinII_div2",],
-        pitches=[["E5","B4"]], 
-        rhythm_material=["dotted"],
-        apply_flags=["winds_down"],
-        )
+# music.arrange_music(
+#         part_names=["violinII_div1","violinII_div2",],
+#         pitches=[["E5","B4"]], 
+#         rhythm_material=["dotted"],
+#         apply_flags=["winds_down"],
+#         )
 
 # --------------------------------------------------------------------------------------------
 # FREE SECTIONS
@@ -222,23 +260,81 @@ music.arrange_music(
             part_names=high_winds,
             pitches=winds_up_pitches,
             rhythm_material=["8ths_tied_cresc"],
-            apply_flags=["winds_up"]
+            apply_flags=["winds_up"],
+            respell=[None,"flats",None,None,None,"sharps",None]
             )
+music.arrange_music(part_names=["viola_div1","viola_div2"],pitches=[winds_up_pitches[5]],
+    rhythm_material=["8ths_tied_cresc"],
+    apply_flags=["next_movin"],
+    respell=["flats"],
+    transpose=[-11]
+    )
+
 
 winds_down_pitches=WaterCloudWindsDown(name="clep-cloud-winds-down", start_pitch="F#5").cloud_pitches()
 music.arrange_music(
             part_names=high_winds,
             pitches=winds_down_pitches,
-            rhythm_material=["last_measure_cresc"],
+            rhythms=["R1 R1 c1\\pp "],
             transpose=[-12],
-            apply_before_flags=["winds_down"]
+            apply_flags=["next_movin"]
             )
 music.arrange_music(
             part_names=high_winds,
             pitches=winds_down_pitches,
             rhythm_material=["8ths_slured_mf"],
-            apply_flags=["winds_down"]
+            apply_flags=["winds_down"],
+            respell=["sharps","flats","sharps","sharps",None,None,"sharps"]
             )
+
+music.arrange_music(part_names=["viola_div1","viola_div2"],pitches=[winds_down_pitches[5]],
+    rhythm_material=["8ths_tied_cresc"],
+    apply_flags=["stream_hint1"],
+    respell=["sharps"],
+    transpose=[-11]
+    )
+
+
+
+music.arrange_music(
+    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
+    rhythms=["c4( c) "*6],
+    pitches=winds_up_pitches,
+    pitch_columns=[[0,2,4,6,8,10,12,14,16,18,20,22]],
+    transpose=[1],
+    apply_flags=["next_movin"],
+    respell=["sharps","sharps","flats","flats"]
+    )
+music.arrange_music(
+    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
+    rhythms=["c4( c) "*6],
+    pitches=winds_down_pitches,
+    pitch_range=[get_pitch_range("G3", "E5")],
+    pitch_columns=[[0,2,4,6,8,10,12,14,16,18,20,22]],
+    transpose=[-11],
+    respell=[None,"sharps",None,"sharps"],
+    apply_flags=["stream_hint1"]
+    )
+
+music.arrange_music(part_names=["crotales"],
+    pitch_material=["ref"],
+    transpose=[-12],
+    rhythms=["c4\\mf r4 r2 R1 R1"],
+    apply_flags=["next_movin","stream_hint1"])
+
+music.arrange_music(part_names=["perc2"],
+    rhythms=["c1:32\\pp ~ c1:32\\< ~ c1:32\\mp \\!"],
+    apply_flags=["winds_up","winds_down"])
+
+
+music.attach_dynamics(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",],
+    dynamics=[["p"]], apply_flags=["next_movin","stream_hint1"])
+# music.attach_dynamics(part_names=["viola_div1","viola_div2"],
+#     dynamics=[["pp"]], apply_flags=["next_movin","stream_hint1"])
+
+music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",
+    "viola_div1","viola_div2"], apply_flags=["next_movin","stream_hint1"],
+    markup_texts=[["sul pont."]])
 
 music.arrange_music(
             part_names=["bassoon1","bassoon2"],
@@ -352,11 +448,11 @@ music.attach_markup(part_names=["violinI_div1","violinI_div2","violinII_div1","v
 # THE STREAM (MAIN MELODY)
 music.exec_method("arrange_stream",
             part_name="trumpet1",
-            apply_after_flags=["start_movin"],
+            apply_flags=["next_movin"],
             stream_type=StreamHint1,
             transpose=[-12]
             )
-music.attach_markup(part_names=["trumpet1"], apply_after_flags=["start_movin"],
+music.attach_markup(part_names=["trumpet1"], apply_flags=["next_movin"],
     markup_texts=[["straight mute", "mute out"]], indices=[[1,8]], notes_only=[False])
 
 music.exec_method("arrange_stream",
@@ -412,14 +508,14 @@ music.arrange_music(
     )
 
 # if all else fails, arrange the cloud in the low strings...
-music.arrange_music(
-    part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",], 
-    pitch_material="stream_cloud_mid", 
-    respell=["sharps"],
-    rhythms=["c8( c8) "*12],
-    skip_flags=["free", "free2", "free3", "start_taiko_5"],
-    pitch_range_material="string_ranges_mid"
-    )
+# music.arrange_music(
+#     part_names=["violinI_div1","violinI_div2","violinII_div1","violinII_div2",], 
+#     pitch_material="stream_cloud_mid", 
+#     respell=["sharps"],
+#     rhythms=["c8( c8) "*12],
+#     skip_flags=["free", "free2", "free3", "start_taiko_5"],
+#     pitch_range_material="string_ranges_mid", 
+#     )
 
 # finally, rests
 music.arrange_music(
@@ -430,7 +526,7 @@ music.arrange_music(
 # ---------------------------------------------------------------------------------------------
 
 
-clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
+clep.make_ly_includes(ly_folder="clepsydra", sections=["A", "B", "C"])
 
 # --- CLEPSYDRA SECTION A ----------------------------------------------
 # kwargs = {"section_name": "_A", "iters":(0,1,2,3),
@@ -441,7 +537,10 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=["A","B"])
 #     "ly_prepends":[],
 #     "ly_appends": [], }
 # --- CLEPSYDRA SECTION C ----------------------------------------------
-kwargs = {"section_name": "C", "iters":(9,10,11,12),
+# kwargs = {"section_name": "_C", "iters":(9,10,11,12),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+kwargs = {"section_name": "D", "iters":(13,14,15,16),
     "ly_prepends":[],
     "ly_appends": [], }
 
