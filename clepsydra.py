@@ -586,7 +586,12 @@ clep.make_ly_includes(ly_folder="clepsydra", sections=["D"])
 # kwargs = {"section_name": "_C", "iters":(9,10,11,12),
 #     "ly_prepends":[],
 #     "ly_appends": [], }
-kwargs = {"section_name": "D", "iters":(13,14,15,16),
+# --- CLEPSYDRA SECTION D ----------------------------------------------
+# kwargs = {"section_name": "_D", "iters":(13,14,15,16),
+#     "ly_prepends":[],
+#     "ly_appends": [], }
+# --- CLEPSYDRA SECTION E ----------------------------------------------
+kwargs = {"section_name": "E", "iters":(17,18,19,20),
     "ly_prepends":[],
     "ly_appends": [], }
 
