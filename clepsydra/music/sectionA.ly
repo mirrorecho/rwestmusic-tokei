@@ -124,18 +124,18 @@ clarinetOneA = {
  \numericTimeSignature 
  \context Staff {#(set-accidental-style 'modern)} 
  {
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
-	R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
+    R1
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -150,7 +150,7 @@ clarinetTwoA = {
  {
 	\set Staff.instrumentName = \markup { Bass Clarinet in Bb }
 	\set Staff.shortInstrumentName = \markup { B. cl. }
-	R1 ^ "Bass Clarinet"
+	r1 ^ "Bass Clarinet"
 	R1
 	R1
 	\grace {
