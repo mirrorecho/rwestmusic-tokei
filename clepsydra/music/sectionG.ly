@@ -452,7 +452,7 @@ clarinetTwoG = {
 	a'8 -\staccato ]
 	a'8 -\staccato [
 	gs'8 -\staccato ]
-	R1
+	R1 ^ "to Bass Clarinet"
 	R1
 	R1
 }\bar "||" 
@@ -1308,6 +1308,7 @@ r4
 	c8 ] _ \markup { ko }
 	c8 [ _ \markup { do }
 	c8 -\accent  \mf  ] \! _ \markup { don }
+	r2
 }\bar "||" 
 } 
  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
