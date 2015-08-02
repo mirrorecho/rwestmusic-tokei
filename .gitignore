@@ -1,4 +1,20 @@
 ##########################################
+# settings file
+settings.py
+
+
+##########################################
+# misc data dump files
+*.dat
+
+
+##########################################
+# pdf folder and compressed files
+pdf/
+.tar.gz
+
+
+##########################################
 # Lilypond gitignore
 
 *.pdf
