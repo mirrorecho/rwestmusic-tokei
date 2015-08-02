@@ -9,6 +9,12 @@ settings.py
 
 
 ##########################################
+# pdf folder and compressed files
+pdf/
+.tar.gz
+
+
+##########################################
 # Lilypond gitignore
 
 *.pdf
