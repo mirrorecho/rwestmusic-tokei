@@ -30,18 +30,22 @@
 from abjad import *
 import settings
 
-import copy
+note = Note("c'4")
+attach(Multiplier(1,2),note)
+show(note)
 
-from tokei import TokeiBubble, TokeiCloud, TokeiFree
-from calliope.cycles.loop import CycleLoop
-from calliope.tools import get_pitch_number, box_music, make_harmonics, get_pitch_hz
 
-from wado_m import WadoMaterial
-from caes_m import *
-from clep_m import *
 
-s = WaterCloudBase(autorandom=False)
-s.show()
+# from tokei import TokeiBubble, TokeiCloud, TokeiFree
+# from calliope.cycles.loop import CycleLoop
+# from calliope.tools import get_pitch_number, box_music, make_harmonics, get_pitch_hz
+
+# from wado_m import WadoMaterial
+# from caes_m import *
+# from clep_m import *
+
+# s = WaterCloudBase(autorandom=False)
+# s.show()
 
 # f = ForceCloud2C(name="caesium-force-cloud-2-strings-down")
 # f.cloud.show()
@@ -60,15 +64,15 @@ s.show()
 # } {
 # }
 
-print()
-print("----------------------------------------------------")
+# print()
+# print("----------------------------------------------------")
 
-s = Staff()
-s.extend("a4\\p\\< a4 a4 a4\\mf ")
-c = Container()
-c.extend(s)
+# s = Staff()
+# s.extend("a4\\p\\< a4 a4 a4\\mf ")
+# c = Container()
+# c.extend(s)
 
-print(format(c))
+# print(format(c))
 
 
 # t = TokeiBubble()
