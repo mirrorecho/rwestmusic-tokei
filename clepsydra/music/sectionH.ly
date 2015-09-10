@@ -1,5 +1,5 @@
-fluteOneH = {  
-\calliopeRehearsalMark H 
+fluteOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -27,8 +27,8 @@ fluteOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-fluteTwoH = {  
-\calliopeRehearsalMark H 
+fluteTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -56,8 +56,8 @@ fluteTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-oboeOneH = {  
-\calliopeRehearsalMark H 
+oboeOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -85,8 +85,8 @@ oboeOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-oboeTwoH = {  
-\calliopeRehearsalMark H 
+oboeTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -114,8 +114,8 @@ oboeTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-oboeThreeH = {  
-\calliopeRehearsalMark H 
+oboeThreeh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -143,8 +143,8 @@ oboeThreeH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-clarinetOneH = {  
-\calliopeRehearsalMark H 
+clarinetOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -172,8 +172,8 @@ clarinetOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-clarinetTwoH = {  
-\calliopeRehearsalMark H 
+clarinetTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -289,8 +289,8 @@ clarinetTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-bassoonOneH = {  
-\calliopeRehearsalMark H 
+bassoonOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -318,8 +318,8 @@ bassoonOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-bassoonTwoH = {  
-\calliopeRehearsalMark H 
+bassoonTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -347,8 +347,8 @@ bassoonTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-hornOneH = {  
-\calliopeRehearsalMark H 
+hornOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -376,8 +376,8 @@ hornOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-hornTwoH = {  
-\calliopeRehearsalMark H 
+hornTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -405,8 +405,8 @@ hornTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-hornThreeH = {  
-\calliopeRehearsalMark H 
+hornThreeh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -434,8 +434,8 @@ hornThreeH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-hornFourH = {  
-\calliopeRehearsalMark H 
+hornFourh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -463,8 +463,8 @@ hornFourH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-trumpetOneH = {  
-\calliopeRehearsalMark H 
+trumpetOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -492,8 +492,8 @@ trumpetOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-trumpetTwoH = {  
-\calliopeRehearsalMark H 
+trumpetTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -521,8 +521,8 @@ trumpetTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-tromboneOneH = {  
-\calliopeRehearsalMark H 
+tromboneOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -550,8 +550,8 @@ tromboneOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-tromboneTwoH = {  
-\calliopeRehearsalMark H 
+tromboneTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -579,8 +579,8 @@ tromboneTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-tubaH = {  
-\calliopeRehearsalMark H 
+tubah = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -608,8 +608,8 @@ tubaH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-crotalesH = {  
-\calliopeRehearsalMark H 
+crotalesh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -637,8 +637,8 @@ crotalesH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-percOneH = {  
-\calliopeRehearsalMark H 
+percOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -666,8 +666,8 @@ percOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-percTwoH = {  
-\calliopeRehearsalMark H 
+percTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -695,8 +695,8 @@ percTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-timpaniH = {  
-\calliopeRehearsalMark H 
+timpanih = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -724,8 +724,8 @@ timpaniH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-shimeH = {  
-\calliopeRehearsalMark H 
+shimeh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -756,8 +756,8 @@ shimeH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-taikoOneH = {  
-\calliopeRehearsalMark H 
+taikoOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -792,8 +792,8 @@ taikoOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-taikoTwoH = {  
-\calliopeRehearsalMark H 
+taikoTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -828,8 +828,8 @@ taikoTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violinIDivOneH = {  
-\calliopeRehearsalMark H 
+violinIDivOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -953,8 +953,8 @@ violinIDivOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violinIDivTwoH = {  
-\calliopeRehearsalMark H 
+violinIDivTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1078,8 +1078,8 @@ violinIDivTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violinIIDivOneH = {  
-\calliopeRehearsalMark H 
+violinIIDivOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1203,8 +1203,8 @@ violinIIDivOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violinIIDivTwoH = {  
-\calliopeRehearsalMark H 
+violinIIDivTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1328,8 +1328,8 @@ violinIIDivTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violaDivOneH = {  
-\calliopeRehearsalMark H 
+violaDivOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1453,8 +1453,8 @@ violaDivOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-violaDivTwoH = {  
-\calliopeRehearsalMark H 
+violaDivTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1578,8 +1578,8 @@ violaDivTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-celloDivOneH = {  
-\calliopeRehearsalMark H 
+celloDivOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1607,8 +1607,8 @@ celloDivOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-celloDivTwoH = {  
-\calliopeRehearsalMark H 
+celloDivTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1636,8 +1636,8 @@ celloDivTwoH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-bassDivOneH = {  
-\calliopeRehearsalMark H 
+bassDivOneh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
@@ -1665,8 +1665,8 @@ bassDivOneH = {
   %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
  
  
-bassDivTwoH = {  
-\calliopeRehearsalMark H 
+bassDivTwoh = {  
+\calliopeRehearsalMark h 
  {
 	\context Staff {#(set-accidental-style 'forget)}
 	\once \override 
