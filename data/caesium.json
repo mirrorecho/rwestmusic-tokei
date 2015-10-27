@@ -1,4 +1,8 @@
 {
-    "taiko_straight" : "b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 b8 ",
+    "taiko_straight" : {
+        "music" : "b8 b8",
+        "lyrics" : "do ko",
+        "times" : 12
+        },
     "timpani_crunch" : "< a, bf, >4 -> "
 }

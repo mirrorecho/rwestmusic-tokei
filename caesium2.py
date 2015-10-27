@@ -107,10 +107,10 @@ class TimpaniCrunchLine(Line):
 
 class Straight4(In4Time):
     timpani = TimpaniCrunchLine()
-    shime = BubbleMaterial("caesium.taiko_straight")
-    odaiko = BubbleMaterial("caesium.taiko_straight")
-    taiko1 = BubbleMaterial("caesium.taiko_straight")
-    taiko2 = BubbleMaterial("caesium.taiko_straight")
+    shime = BubbleMaterial("caesium.taiko_straight.rhythm")
+    odaiko = BubbleMaterial("caesium.taiko_straight.rhythm")
+    taiko1 = BubbleMaterial("caesium.taiko_straight.rhythm")
+    taiko2 = BubbleMaterial("caesium.taiko_straight.rhythm")
 
 class SectionA(GridSequence, CaesiumMusic):
     grid_sequence = (Straight4, Straight4, Straight4, Straight4)
@@ -131,8 +131,13 @@ class CaesiumScore(TokeiScore):
 
 print("********************************")
 score = CaesiumScore( CaesiumSequence() )
+
+m = Material("caesium.taiko_straight")
+print( m.get() )
+
 # score = TokeiWinds( CaesiumMusic() )
 # score = TokeiFlutes( CaesiumMusic() )
-print(score)
-score.show()
+# score.save()
+# score.show()
+# score.save()
 # CaesiumMusic().show()
