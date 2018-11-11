@@ -466,7 +466,7 @@ class ClepFreeFermata(ClepsydraMaterial):
 
 
 # taiko_music = TaikoMaterial()
-# taiko_music.line = TaikoIntro().get_music_string() + (TaikoMelody().get_music_string()) * 2
+# taiko_music.line = TaikoIntro().get_music_contents() + (TaikoMelody().get_music_contents()) * 2
 
 # taiko_music.show()
 
